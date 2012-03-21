@@ -1,17 +1,9 @@
 <div class="page-header">
-  <h1>{{ page.title }} </h1>
+  <h1>{{ page.title }} <small>Supporting tagline</small></h1>
 </div>
 
 <div class="row">
-  <div class="span12">
-  {% unless page.tags == empty %}
-    <ul class="nav nav-pills">
-    {% assign tags_list = page.tags %}
-    {% include JB/tags_list %}
-    <p class="pull-right"><span>{{ page.date | date_to_long_string }}</span></p>
-    </ul>
-  {% endunless %}  
-
+  <div class="span8">
     {{ content }}
     <hr>
     <div class="pagination">
@@ -31,10 +23,18 @@
     </div>
     <hr>
     {% include JB/comments %}
-
-  
-<!-- X:S ZenBackWidget --><script type="text/javascript">document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//mikio.github.com/&nsid=96726291142699249%3A%3A103523484373654165&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));</script><!-- X:E ZenBackWidget -->
-
   </div>
   
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
+
+  {% unless page.tags == empty %}
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    {% assign tags_list = page.tags %}
+    {% include JB/tags_list %}
+    </ul>
+  {% endunless %}  
+  </div>
 </div>

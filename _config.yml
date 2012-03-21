@@ -12,7 +12,7 @@ pygments: true
 title : ざる魂
 tagline: Site Tagline
 author :
-  name : mikio
+  name : mikio_kun
   email : ocha.awk@gmail.com
   github : mikio
   twitter : mikio_kun
@@ -99,7 +99,7 @@ JB :
   analytics :
     provider : google 
     google : 
-        tracking_id : 'UA-123-12'
+        tracking_id : 'UA-30203998-1'
     getclicky :
       site_id : 
     mixpanel :
