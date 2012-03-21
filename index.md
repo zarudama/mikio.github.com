@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: ざる魂
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
