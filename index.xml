@@ -3,7 +3,7 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-02T21:46:47Z</updated>
+  <updated>2012-04-04T08:26:57Z</updated>
   <id>http://mikio.github.com/index.xml</id>
   <entry><title type="html">emacsで辞書を引けるようにしてみる</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/03/31_emacs.html"/><updated>2012-03-31T07:10:00Z</updated><published>2012-03-31T07:10:00Z</published><id>article/2012/03/31_emacs.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/sdic.html" term="sdic" label="sdic"/><content type="html">&lt;p&gt;
 &#26908;&#32034;&#12375;&#12390;&#12418;&#12289;&#22833;&#25943;&#12377;&#12427;&#12394;&#12392;&#24605;&#12387;&#12390;&#12356;&#12383;&#12425;&#36766;&#26360;&#12398;&#20316;&#25104;&#12395;&#22833;&#25943;&#12375;&#12390;&#12356;&#12383;&#12290;
@@ -25,7 +25,7 @@ no -S -e gene.txt | /usr/bin/perl contrib/gene.perl &amp;gt; gene.sdic
 
 
 &lt;pre class="src src-sh"&gt;gene.dic: contrib/gene.perl gene.txt
-    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &amp;gt; $&lt;span class="org-variable-name"&gt;@&lt;/span&gt;
+    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &amp;gt; $@
 &lt;/pre&gt;
 
 &lt;p&gt;
