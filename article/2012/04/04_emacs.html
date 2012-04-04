@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LVMではまった</title>
+    <title>emacsで辞書を引けるようにしてみる</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2010/index.html">2010</a> <span class="divider">/</span></li><li><a href="../../../article/2010/07/index.html">07</a> <span class="divider">/</span></li><li>LVMではまった</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>emacsで辞書を引けるようにしてみる</li>
   </ul>
 
       </div>
@@ -93,154 +93,224 @@
     <div class="well">
       <div class="row">
 	<div class="date span2">
-	  <div class=" date-y"><a href="../../../article/2010/index.html">2010</a>
+	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
-	  <div class=" date-m"><a href="../../../article/2010/07/index.html"> 7月</a></div>
-	  <div class=" date-d">26</div>
+	  <div class=" date-m"><a href="../../../article/2012/04/index.html"> 4月</a></div>
+	  <div class=" date-d">04</div>
 	</div>
-	<h1 class="offset1">LVMではまった</h1>
+	<h1 class="offset1">emacsで辞書を引けるようにしてみる</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous">&nbsp;</li><li class="next" style="text-align: right;"><a href="../../../article/2011/06/23_clojure.html">CLojureのインストール&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/04/04_dropboxgit.html"><i class="icon-chevron-left"></i>&nbsp;DropboxでGit</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
 
   </header>
   <div class="article-content">
-    <div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">LVM</h3>
+    <p>
+検索しても、失敗するなと思っていたら辞書の作成に失敗していた。
+</p>
+
+
+<pre class="src src-sh">$ make dict
+no -S -e gene.txt | /usr/bin/perl contrib/gene.perl &gt; gene.sdic
+/bin/sh: no: command not found
+/usr/bin/perl contrib/edict.perl edict &gt; jedict.sdic
+</pre>
+
+<p>
+「no」コマンドとはなんぞや？
+</p>
+<p>
+ということで、Makefileの雛形のMakefile.inを見てみたら、nkfのことのようだ。
+</p>
+
+
+<pre class="src src-sh">gene.dic: contrib/gene.perl gene.txt
+    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &gt; $@
+</pre>
+
+<p>
+さらにもう一度configureを実行してみたところ下記のように
+ワーニングがでていた。
+</p>
+
+
+<pre class="src src-sh">onfigure: warning: nkf not found
+</pre>
+
+<p>
+なにわともあれ、nkfをいれないとだな。apt-cygで探したけど無かったので手動でインストールした。
+</p>
+
+
+<pre class="src src-sh">tar xvfz nkf-2.1.2.tar.gz
+<span class="org-builtin">cd</span> nkf-2.1.2/
+make
+make install
+</pre>
+
+<p>
+その後、./configreからやり直し。&hellip;だがnkfが今だに見つからないとでる。
+</p>
+
+
+<pre class="src src-sh">$ sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
+loading cache ./config.cache
+checking for a BSD compatible install... (cached) /usr/bin/install -c
+checking whether build environment is sane... yes
+checking whether make sets ${<span class="org-variable-name">MAKE</span>}... (cached) yes
+checking for working aclocal... found
+checking for working autoconf... found
+checking for working automake... found
+checking for working autoheader... found
+checking for working makeinfo... found
+checking for emacs... (cached) /usr/bin/emacs
+</pre>
+
+<p>
+よく見ると、cacheを使っているようである。なので削除してリトライ。
+</p>
+
+
+<pre class="src src-sh">$ sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
+creating cache ./config.cache
+checking for a BSD compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking whether make sets ${<span class="org-variable-name">MAKE</span>}... yes
+checking for working aclocal... found
+checking for working autoconf... found
+checking for working automake... found
+checking for working autoheader... found
+checking for working makeinfo... found
+checking for emacs... /usr/bin/emacs
+checking where emacs files are in... /usr/local/share/emacs
+checking where .elc files should go... ~/Dropbox/dotfiles/emacs/site-lisp/sdic
+checking for nkf... /usr/local/bin/nkf
+checking for perl... /usr/bin/perl
+checking for gzip... /usr/bin/gzip
+checking for bzip2... /usr/bin/bzip2
+checking for cp... /usr/bin/cp
+checking for sort... /usr/local/bin/sort
+checking for EIWA Dictionary...         gene.sdic
+checking for WAEI Dictionary...         jedict.sdic
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating lisp/Makefile
+creating lisp/sdic.el
+creating lisp/sample.emacs
+creating install.el
+</pre>
+
+<p>
+やっと成功。。。あとはお決まりのコマンド。
+</p>
+
+
+<pre class="src src-sh">make clean
+make
+make install
+make install-info
+make dict
+make install-dict
+</pre>
+
+<p>
+と思ったら「make dict」がうまくいかない。
+</p>
+
+
+<pre class="src src-sh">$ make dict
+make: Nothing to be done for <span class="org-sh-quoted-exec">`dict'.</span>
+</pre>
+
+<p>
+どうも、*.sdicは、「make clean」で削除されないようだ。
+なので手動で削除してやり直し。
+</p>
+
+
+<pre class="src src-sh">$ rm *.sdic
+$ make dict
+/usr/local/bin/nkf -S -e gene.txt | /usr/bin/perl contrib/gene.perl &gt; gene.sdic
+/usr/bin/perl contrib/edict.perl edict &gt; jedict.sdic
+$ make install-dict
+/bin/sh ./mkinstalldirs ~/Dropbox/dict/sdic
+/usr/bin/install -c -m 644      gene.sdic ~/Dropbox/dict/sdic
+/usr/bin/install -c -m 644      jedict.sdic ~/Dropbox/dict/sdic
+</pre>
+
+<p>
+M-x sdicで試したところ、英和の変換はうまくいった。
+e2wmを使っているが、表示される場所がよろしくないので
+なんとか設定を調整して、e2wmのサブウィンドウにしたいところ。
+<img src="img/sdic/01.png"  alt="img/sdic/01.png" />
+</p>
+
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">和英がうまくいかない</h3>
 <div class="outline-text-3" id="text-1">
 
-<p>LVMよくわからないのでググる。
-下記を見る限り、LVMは作成されていて、容量が足りないわけだから
-既存のLVを増やさばいいということがわかった。
+<p>英和はうまくいったが、和英がうまくいかない。
+多分原因は、cygwinのgrepが日本語を検索できなからだと思う。
+試しに下記のコマンドを試したところ
 </p>
 
 
-<pre class="src src-sh">[miki@localhost ~]$ df -h
-Filesystem          &#12469;&#12452;&#12474;  &#20351;&#29992;  &#27531;&#12426; &#20351;&#29992;% &#12510;&#12454;&#12531;&#12488;&#20301;&#32622;
-/dev/md0              3.9G  2.3G  1.5G  61% /
-/dev/mapper/vg00-home
-                      3.9G  3.7G     0 100% /home
-/dev/mapper/vg00-var  3.9G  3.7G  836K 100% /var
-/dev/mapper/vg00-mysql
-                      3.9G  137M  3.6G   4% /var/lib/mysql
-tmpfs                1006M     0 1006M   0% /dev/shm
-</pre>
-
-
-<p>
-pgdisplayが見つからない。
-</p>
-
-
-<pre class="src src-sh">[miki@localhost ~]$ which pvdisplay
-/usr/bin/which: no pvdisplay<span class="org-keyword"> in</span> (/usr/kerberos/bin:/usr/local/jdk1.6.0_24//bin:/usr/local/bin:/bin:/usr/bin:/home/miki/bin)
-</pre>
-
-
-<p>
-もしかして個別にインストールが必要なのかとか、rootじゃないと使えないコマンドなのかとかで
-わざわざVGAの小型モニタかってrootで直接作業したけど見つからず＾＾。
-</p>
-<p>
-その後、下記コマンドで見つかった。
-</p>
-
-
-<pre class="src src-sh">[miki@localhost ~]$ whereis pvdisplay
-pvdisplay: /usr/sbin/pvdisplay /usr/share/man/man8/pvdisplay.8.gz
+<pre class="src src-sh">grep <span class="org-string">'&#12461;&#12473;&#12510;&#12540;&#12463;'</span> jedict.sdic
+&#65306;
+&lt;K&gt;&#12541;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;repetition mark<span class="org-keyword"> in</span> katakana
+&lt;K&gt;&#12542;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;voiced repetition mark<span class="org-keyword"> in</span> katakana
+&lt;K&gt;&#12445;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;repetition mark<span class="org-keyword"> in</span> hiragana
+&lt;K&gt;&#12446;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;voiced repetition mark<span class="org-keyword"> in</span> hiragana
+&lt;K&gt;&#12291;&lt;/K&gt;&lt;K&gt;&#12362;&#12394;&#12376;&#12367;&lt;/K&gt;ditto mark
+&lt;K&gt;&#20189;&lt;/K&gt;&lt;K&gt;&#12393;&#12358;&#12376;&#12423;&#12358;&lt;/K&gt;<span class="org-string">"as above"</span> mark
+&lt;K&gt;&#12293;&lt;/K&gt;repetition of kanji (sometimes voiced)
+&lt;K&gt;&#12294;&lt;/K&gt;&lt;K&gt;&#12375;&#12417;&lt;/K&gt;end or closure mark
+&#65306;
 </pre>
 
 <p>
-アホ過ぎる。。。
+おおお全部ヒットしてしまっているよ。。。。
+cygwinのコンソールからgrepしたときはヒットするのだが、
+自分がメインで使用しているemacsはGUI版なので
+裏でうごくものが、dosになっている。多分これが原因だろう。
+てことで、shellをdosじゃなくてbashにしてみる。
+と思ったが、eshellじゃなくて、shellはcygwinが動くように設定してあった。
+で、shell-modeでgrepしてみると、
 </p>
 
 
-
-<pre class="src src-sh">[miki@localhost ~]$ sudo /usr/sbin/pvdisplay
-  --- Physical volume ---
-  PV Name               /dev/md1
-  VG Name               vg00
-  PV Size               290.10 GB / not usable 5.00 MB
-  Allocatable           yes
-  PE Size (KByte)       32768
-  Total PE              9283
-  Free PE               8835
-  Allocated PE          448
-  PV UUID               p6XFrn-nSDe-mcgf-VcVm-o5ME-VWzW-1RoLh3
+<pre class="src src-sh">$ grep <span class="org-string">'&#12461;&#12473;&#12510;&#12540;&#12463;'</span> jedict.sdic
+grep <span class="org-string">'&#7;L&#7;X&#7;}&#7;[&#7;N'</span> jedict.sdic
+grep: Unmatched [ or [^
 </pre>
 
 <p>
-物理ボリュームが290GBあるということか。
-</p>
-
-<p>
-PV(PhisicalVolume): 物理ディスク
-VG(VlumeGroup)    : 物理ディスクを束ねた物(PVをまとめて大きな論理ハードディスクとみなす）
+こんな感じで化けてしまう。
 </p>
 <p>
-LV(LogicalVolume) : 論理ディスク
-</p>
-
-<p>
-論理ボリュームの/homeのディスクサイズを増やす
+ (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)
 </p>
 
 
-<pre class="src src-sh">$ sudo /usr/sbin/lvextend -L +80G /dev/vg00/home
-</pre>
-
-<p>
-増やしたらFilesysteを拡張する。本来はunmountする必要があるが、ext3はオンラインで拡張できるらいしい。
-</p>
-
-
-<pre class="src src-sh">$ sudo /sbin/resize2fs /dev/vg00/home
-</pre>
-
-
-<p>
-続いてvar下を増やす。
-</p>
-
-
-<pre class="src src-sh">sudo /usr/sbin/lvextend -L +30G /dev/vg00/var
-sudo /sbin/resize2fs /dev/vg00/var
-</pre>
-
-
-<p>
-さらにmysql下も増やす。
-</p>
-
-
-<pre class="src src-sh">sudo /usr/sbin/lvextend -L +100G /dev/vg00/mysql
-sudo /sbin/resize2fs /dev/vg00/var
-</pre>
-
-
-
-<p>
-これでとりあえずひと通り増やせた。
-/var配下は共有ディレクトリをふくんでるので今後、さらに増やす必要があるかも。
-逆にmysqlはwikipediaのデータを置かない限り100GBもいらないかもな。
-</p>
 </div>
 </div>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2010-07-26T19:25:00Z">
-      月曜日 7月, 26 2010 at 19:25:00
+    Posted on <time datetime="2012-04-04T21:45:00Z">
+      水曜日 4月, 04 2012 at 21:45:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/hamari.html">hamari</a></li><li><a href="../../../tags/lvm.html">lvm</a></li><li><a href="../../../tags/centos.html">centos</a></li>
+	<li><a href="../../../tags/emacs.html">emacs</a></li><li><a href="../../../tags/sdic.html">sdic</a></li><li><a href="../../../tags/hamari.html">hamari</a></li>
       </ul>
     </nav>
   </footer>

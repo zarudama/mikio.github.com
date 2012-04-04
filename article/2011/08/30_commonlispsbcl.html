@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>ざる魂</title>
+    <title>CommonLisp(SBCL)ってどう？</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -45,15 +45,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
-<li><a href="../../../article/2010/07/26_lvm.html">LVMではまった</a>
+<li><a href="../../../article/2012/04/04_emacs.html">emacsで辞書を引けるようにしてみる</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2012/04/04_dropboxgit.html">DropboxでGit</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2011/11/09_clojure1.html">Clojureでゲームプログラミングその1 実験編</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2011/10/04_clojure.html">一瞬だけclojureやめようかと思った理由</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2011/09/09_clojurecoommonlisp.html">clojureとCoommonLispの比較</a>
 
 </li>
 </ul>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../archives.html">Archives</a> <span class="divider">/</span></li><li><a href="../../index.html">article</a> <span class="divider">/</span></li><li><a href="../index.html">2010</a> <span class="divider">/</span></li><li>07</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2011/index.html">2011</a> <span class="divider">/</span></li><li><a href="../../../article/2011/08/index.html">08</a> <span class="divider">/</span></li><li>CommonLisp(SBCL)ってどう？</li>
   </ul>
 
       </div>
@@ -88,16 +88,80 @@
       
       
 
-<article>
+  <header class="article-header">
+
+    <div class="well">
+      <div class="row">
+	<div class="date span2">
+	  <div class=" date-y"><a href="../../../article/2011/index.html">2011</a>
+	  </div>
+	  <div class=" date-m"><a href="../../../article/2011/08/index.html"> 8月</a></div>
+	  <div class=" date-d">30</div>
+	</div>
+	<h1 class="offset1">CommonLisp(SBCL)ってどう？</h1>
+      </div>
+      <nav>
+	<ul class="pager">
+	  <li class="previous"><a href="../../../article/2011/06/23_clojure.html"><i class="icon-chevron-left"></i>&nbsp;CLojureのインストール</a></li><li class="next" style="text-align: right;"><a href="../../../article/2011/09/04_schemecommonlispclojure.html">SchemeとCommonLispとClojure&nbsp;<i class="icon-chevron-right"></i></a></li>
+	</ul>
+      </nav>
+    </div>
+
+  </header>
   <div class="article-content">
-    <nav class="archives">
-      <ul class="month 2010 7">
-  <li>26 <a href="../../../article/2010/07/26_lvm.html">LVMではまった</a></li>
+    <p>
+ComonLispのことが気になりだしたので、ちょっとだけ調べてみた。
+</p>
+<ul>
+<li>実行ファイルがめちゃ大きいらしい。３０MB超え。ひえぇええー
+</li>
+<li>CommonLispを使用したウェブサービスのリリース方法がない。
+<ul>
+<li>clojureだったらHelokuとかつかえる。
+</li>
 </ul>
 
-    </nav>
+</li>
+<li>日本語の情報が豊富
+</li>
+<li>GUIが弱い。Swingのようにオブジェクト指向で作られたライブラリならよいが
+</li>
+</ul>
+
+<p>　TKとか使ってるのは時代遅れでは？
+</p>
+
+
   </div>
-</article>
+  
+  <footer class="well article-footer">
+    Posted on <time datetime="2011-08-30T19:28:00Z">
+      火曜日 8月, 30 2011 at 19:28:00
+    </time>.
+    <nav class="tag-cloud">
+      <h1><i class="icon-tags"></i> related tags</h1>
+      <ul>
+	<li><a href="../../../tags/lisp.html">lisp</a></li><li><a href="../../../tags/commonlisp.html">commonlisp</a></li><li><a href="../../../tags/sbcl.html">sbcl</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <div id="topsy-tweet-search-results"></div>
+  <script src="../../../js/search_tweet.js" type="text/javascript" charset="utf-8"></script>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'mikiokunblog'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
       </div>
       <div id="footer">
 	<div class="container">
@@ -128,7 +192,7 @@
 	    <nav id="archives" class="span3">
 	      <h1>Archives</h1>
 	      <ul>
-		<li><a href="../../../article/2010/07/26_lvm.html">LVMではまった</a></li> 
+		<li><a href="../../../article/2012/04/04_emacs.html">emacsで辞書を引けるようにしてみる</a></li> <li><a href="../../../article/2012/04/04_dropboxgit.html">DropboxでGit</a></li> <li><a href="../../../article/2011/11/09_clojure1.html">Clojureでゲームプログラミングその1 実験編</a></li> <li><a href="../../../article/2011/10/04_clojure.html">一瞬だけclojureやめようかと思った理由</a></li> <li><a href="../../../article/2011/09/09_clojurecoommonlisp.html">clojureとCoommonLispの比較</a></li> <li><a href="../../../article/2011/09/04_schemecommonlispclojure.html">SchemeとCommonLispとClojure</a></li> <li><a href="../../../article/2011/08/30_commonlispsbcl.html">CommonLisp(SBCL)ってどう？</a></li> <li><a href="../../../article/2011/06/23_clojure.html">CLojureのインストール</a></li> <li><a href="../../../article/2010/07/26_lvm.html">LVMではまった</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
