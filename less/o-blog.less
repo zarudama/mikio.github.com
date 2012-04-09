@@ -197,24 +197,22 @@ html {
     }
 
     pre.src, pre.example, .modal-body > pre {
-	.buffer();
-	span {
-	    &.coderef-off { }
-	    &.linenr {
-		font-style: italic;
-		font-weight: bold;
+	    .buffer();
+	    span {
+	        &.coderef-off { }
+	        &.linenr {
+		        font-style: italic;
+		        font-weight: bold;
+	        }
+	        &.code-highlighted {background: darkolivegreen;}
+
 	    }
-	    &.code-highlighted {background: darkolivegreen;}
-
-	}
-    border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-    font-family: Verdana,Osaka,sans-serif;
-	/* font-family: courier, monospace; */
-    font-size: 90%;
-    overflow:auto;
-
+        border: 1pt solid #AEBDCC;
+	    background-color: #F3F5F7;
+	    padding: 5pt;
+        font-family: Verdana,Osaka,sans-serif;
+        font-size: 90%;
+        overflow:auto;
     }
 
 
@@ -284,12 +282,19 @@ body {
 }
 
 
+.article-content p {
+    font-family: "メイリオ",Arial,Helvetica,sans-serif;
+    /* font-family: Verdana,Osaka,sans-serif; */
+    font-size: 100%;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
 pre {
     border: 1pt solid #AEBDCC;
 	background-color: #F3F5F7;
 	padding: 5pt;
     font-family: Verdana,Osaka,sans-serif;
-	/* font-family: courier, monospace; */
     font-size: 90%;
     overflow:auto;
 }

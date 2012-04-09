@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>CommonLisp(SBCL)ってどう？</title>
+    <title>ClojureのSLIMEのREPLバッファに色がつかない</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2011/index.html">2011</a> <span class="divider">/</span></li><li><a href="../../../article/2011/08/index.html">08</a> <span class="divider">/</span></li><li>CommonLisp(SBCL)ってどう？</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>ClojureのSLIMEのREPLバッファに色がつかない</li>
   </ul>
 
       </div>
@@ -93,16 +93,16 @@
     <div class="well">
       <div class="row">
 	<div class="date span2">
-	  <div class=" date-y"><a href="../../../article/2011/index.html">2011</a>
+	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
-	  <div class=" date-m"><a href="../../../article/2011/08/index.html"> 8月</a></div>
-	  <div class=" date-d">30</div>
+	  <div class=" date-m"><a href="../../../article/2012/04/index.html"> 4月</a></div>
+	  <div class=" date-d">06</div>
 	</div>
-	<h1 class="offset1">CommonLisp(SBCL)ってどう？</h1>
+	<h1 class="offset1">ClojureのSLIMEのREPLバッファに色がつかない</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2011/06/23_clojure.html"><i class="icon-chevron-left"></i>&nbsp;CLojureのインストール</a></li><li class="next" style="text-align: right;"><a href="../../../article/2011/09/04_schemecommonlispclojure.html">SchemeとCommonLispとClojure&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html"><i class="icon-chevron-left"></i>&nbsp;Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
@@ -110,38 +110,60 @@
   </header>
   <div class="article-content">
     <p>
-ComonLispのことが気になりだしたので、ちょっとだけ調べてみた。
+emacs24にしたのが原因かわからないが、いつのまにかSLIMEのREPLバッファで
+色付けがされなくなっていた。
 </p>
-<ul>
-<li>実行ファイルがめちゃ大きいらしい。３０MB超え。ひえぇええー
-</li>
-<li>CommonLispを使用したウェブサービスのリリース方法がない。
-<ul>
-<li>clojureだったらHelokuとかつかえる。
-</li>
-</ul>
-
-</li>
-<li>日本語の情報が豊富
-</li>
-<li>GUIが弱い。Swingのようにオブジェクト指向で作られたライブラリならよいが
-</li>
-</ul>
-
-<p>　TKとか使ってるのは時代遅れでは？
+<p>
+この時、設定していたのは下記のコード。
 </p>
 
+
+<pre class="src src-clojure">(add-hook 'slime-repl-mode-hook (lambda () (clojure-mode-font-lock-setup)))
+</pre>
+
+
+<p>
+<a href="https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk">https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk</a>
+</p>
+<p>
+上記サイトによると手動でfont-lockを指定するとうまくいとこのこと。
+</p>
+
+
+<pre class="src src-clojure">M-x clojure-mode-font-lock-setup
+M-x font-lock-mode
+M-x font-lock-mode
+</pre>
+
+<p>
+自分も試したらうまくいった。
+</p>
+<p>
+で、最終的にサイトの指南にあるように下記を設定した。
+</p>
+
+
+<pre class="src src-clojure">(add-hook 'slime-repl-mode-hook
+               (lambda ()
+                 (clojure-mode-font-lock-setup)
+                 (font-lock-mode)
+                 (font-lock-mode)))
+</pre>
+
+<p>
+これでREPLバッファにも綺麗に色付けされるようになった。
+</p>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2011-08-30T19:28:00Z">
-      火曜日 8月, 30 2011 at 19:28:00
+    Posted on <time datetime="2012-04-06T14:00:00Z">
+      金曜日 4月, 06 2012 at 14:00:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/lisp.html">lisp</a></li><li><a href="../../../tags/commonlisp.html">commonlisp</a></li><li><a href="../../../tags/sbcl.html">sbcl</a></li>
+	<li><a href="../../../tags/clojure.html">clojure</a></li><li><a href="../../../tags/hamari.html">hamari</a></li><li><a href="../../../tags/emacs.html">emacs</a></li><li><a href="../../../tags/slime.html">slime</a></li>
       </ul>
     </nav>
   </footer>
