@@ -118,7 +118,7 @@
 &#12354;&#12427;&#25968;&#21015;&#12363;&#12425;&#37325;&#35079;&#12377;&#12427;&#35201;&#32032;&#12434;&#21462;&#12426;&#38500;&#12365;&#12394;&#12373;&#12356;&#12290;
 &#12383;&#12384;&#12375;&#12289;&#25968;&#21015;&#12398;&#38918;&#30058;&#12399;&#22793;&#26356;&#12375;&#12394;&#12356;&#12371;&#12392;&#12290;
 (&#20363;)
- 5 6 5 4 1 5 4 -&gt; 4 1 5
+ 3 5 6 5 4 1 5 4 -&gt; 3 6 1
 </pre>
 
 <p>
@@ -130,30 +130,15 @@
 </p>
 
 
-<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">&#35299;&#31572;&#12381;&#12398;1</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">user&gt; (remove-same-number '( 3 4 3 2 1 5 2))</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">(4 1 5)</span>
-(<span class="org-keyword">defn</span> <span class="org-function-name">uniq?</span>
-  <span class="org-doc">"coll&#12395;x&#12364;&#21547;&#12414;&#12428;&#12394;&#12369;&#12428;&#12400;true"</span>
-  [x coll]
-  (<span class="org-variable-name">=</span> (<span class="org-variable-name">count</span> (<span class="org-builtin">for</span> [n coll <span class="org-constant">:when</span> (<span class="org-variable-name">=</span> n x)] n)) 1))
-
-(<span class="org-keyword">defn</span> <span class="org-function-name">remove-same-number</span>
-  <span class="org-doc">"&#37325;&#35079;&#12377;&#12427;&#35201;&#32032;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;&#38918;&#30058;&#12399;&#32173;&#25345;&#12290;</span>
-<span class="org-doc">ex. 3 4 3 2 1 5 2 &#8658; 4 1 5"</span>
-  [coll]
-  (<span class="org-builtin">for</span> [x coll <span class="org-constant">:when</span> (uniq? x coll)] x))
-<span class="org-comment-delimiter">;; </span>
-
-<span class="org-comment-delimiter">;; </span><span class="org-comment">&#35299;&#31572;&#12381;&#12398;2</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">user&gt; (remove-same-number2 '( 3 4 3 2 1 5 2))</span>
-<span class="org-comment-delimiter">;; </span><span class="org-comment">(4 1 5)</span>
-(<span class="org-keyword">defn</span> <span class="org-function-name">remove-same-number2</span>
+<pre class="src src-clojure">(<span class="org-keyword">defn</span> <span class="org-function-name">remove-same-number</span>
     <span class="org-doc">"&#37325;&#35079;&#12377;&#12427;&#35201;&#32032;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;&#38918;&#30058;&#12399;&#32173;&#25345;&#12290;</span>
-<span class="org-doc">ex. 3 4 3 2 1 5 2 &#8658; 4 1 5"</span>
+<span class="org-doc">ex. 3 5 6 5 4 1 5 4 -&gt; 3 6 1"</span>
     [coll]
   (<span class="org-builtin">letfn</span> [(uniq? [x] (<span class="org-variable-name">=</span> (<span class="org-variable-name">count</span> (<span class="org-builtin">for</span> [n coll <span class="org-constant">:when</span> (<span class="org-variable-name">=</span> n x)] n)) 1))] 
     (<span class="org-builtin">for</span> [x coll <span class="org-constant">:when</span> (uniq? x)] x)))
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">user&gt; (remove-same-number '(3 5 6 5 4 1 5 4))</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(3 6 1)</span>
 </pre>
 
 <p>

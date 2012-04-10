@@ -3,7 +3,7 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-11T00:54:16Z</updated>
+  <updated>2012-04-11T01:47:46Z</updated>
   <id>http://mikio.github.com/index.xml</id>
   <entry><title type="html">Clojureで重複した要素を取り除く問題を解く</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/10_clojure.html"/><updated>2012-04-10T22:06:00Z</updated><published>2012-04-10T22:06:00Z</published><id>article/2012/04/10_clojure.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/problem.html" term="problem" label="problem"/><content type="html">&lt;p&gt;
 &#12392;&#12354;&#12427;&#38598;&#12414;&#12426;&#12391;&#12289;&#12503;&#12525;&#12464;&#12521;&#12511;&#12531;&#12464;&#12398;&#21839;&#38988;&#12364;&#20986;&#38988;&#12373;&#12428;&#12383;&#12290;
@@ -14,7 +14,7 @@
 &amp;#12354;&amp;#12427;&amp;#25968;&amp;#21015;&amp;#12363;&amp;#12425;&amp;#37325;&amp;#35079;&amp;#12377;&amp;#12427;&amp;#35201;&amp;#32032;&amp;#12434;&amp;#21462;&amp;#12426;&amp;#38500;&amp;#12365;&amp;#12394;&amp;#12373;&amp;#12356;&amp;#12290;
 &amp;#12383;&amp;#12384;&amp;#12375;&amp;#12289;&amp;#25968;&amp;#21015;&amp;#12398;&amp;#38918;&amp;#30058;&amp;#12399;&amp;#22793;&amp;#26356;&amp;#12375;&amp;#12394;&amp;#12356;&amp;#12371;&amp;#12392;&amp;#12290;
 (&amp;#20363;)
- 5 6 5 4 1 5 4 -&amp;gt; 4 1 5
+ 3 5 6 5 4 1 5 4 -&amp;gt; 3 6 1
 &lt;/pre&gt;
 
 &lt;p&gt;
@@ -26,30 +26,15 @@
 &lt;/p&gt;
 
 
-&lt;pre class="src src-clojure"&gt;&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#35299;&amp;#31572;&amp;#12381;&amp;#12398;1&lt;/span&gt;
-&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;user&amp;gt; (remove-same-number '( 3 4 3 2 1 5 2))&lt;/span&gt;
-&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;(4 1 5)&lt;/span&gt;
-(&lt;span class="org-keyword"&gt;defn&lt;/span&gt; &lt;span class="org-function-name"&gt;uniq?&lt;/span&gt;
-  &lt;span class="org-doc"&gt;"coll&amp;#12395;x&amp;#12364;&amp;#21547;&amp;#12414;&amp;#12428;&amp;#12394;&amp;#12369;&amp;#12428;&amp;#12400;true"&lt;/span&gt;
-  [x coll]
-  (&lt;span class="org-variable-name"&gt;=&lt;/span&gt; (&lt;span class="org-variable-name"&gt;count&lt;/span&gt; (&lt;span class="org-builtin"&gt;for&lt;/span&gt; [n coll &lt;span class="org-constant"&gt;:when&lt;/span&gt; (&lt;span class="org-variable-name"&gt;=&lt;/span&gt; n x)] n)) 1))
-
-(&lt;span class="org-keyword"&gt;defn&lt;/span&gt; &lt;span class="org-function-name"&gt;remove-same-number&lt;/span&gt;
-  &lt;span class="org-doc"&gt;"&amp;#37325;&amp;#35079;&amp;#12377;&amp;#12427;&amp;#35201;&amp;#32032;&amp;#12434;&amp;#21066;&amp;#38500;&amp;#12377;&amp;#12427;&amp;#12290;&amp;#38918;&amp;#30058;&amp;#12399;&amp;#32173;&amp;#25345;&amp;#12290;&lt;/span&gt;
-&lt;span class="org-doc"&gt;ex. 3 4 3 2 1 5 2 &amp;#8658; 4 1 5"&lt;/span&gt;
-  [coll]
-  (&lt;span class="org-builtin"&gt;for&lt;/span&gt; [x coll &lt;span class="org-constant"&gt;:when&lt;/span&gt; (uniq? x coll)] x))
-&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;
-
-&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#35299;&amp;#31572;&amp;#12381;&amp;#12398;2&lt;/span&gt;
-&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;user&amp;gt; (remove-same-number2 '( 3 4 3 2 1 5 2))&lt;/span&gt;
-&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;(4 1 5)&lt;/span&gt;
-(&lt;span class="org-keyword"&gt;defn&lt;/span&gt; &lt;span class="org-function-name"&gt;remove-same-number2&lt;/span&gt;
+&lt;pre class="src src-clojure"&gt;(&lt;span class="org-keyword"&gt;defn&lt;/span&gt; &lt;span class="org-function-name"&gt;remove-same-number&lt;/span&gt;
     &lt;span class="org-doc"&gt;"&amp;#37325;&amp;#35079;&amp;#12377;&amp;#12427;&amp;#35201;&amp;#32032;&amp;#12434;&amp;#21066;&amp;#38500;&amp;#12377;&amp;#12427;&amp;#12290;&amp;#38918;&amp;#30058;&amp;#12399;&amp;#32173;&amp;#25345;&amp;#12290;&lt;/span&gt;
-&lt;span class="org-doc"&gt;ex. 3 4 3 2 1 5 2 &amp;#8658; 4 1 5"&lt;/span&gt;
+&lt;span class="org-doc"&gt;ex. 3 5 6 5 4 1 5 4 -&amp;gt; 3 6 1"&lt;/span&gt;
     [coll]
   (&lt;span class="org-builtin"&gt;letfn&lt;/span&gt; [(uniq? [x] (&lt;span class="org-variable-name"&gt;=&lt;/span&gt; (&lt;span class="org-variable-name"&gt;count&lt;/span&gt; (&lt;span class="org-builtin"&gt;for&lt;/span&gt; [n coll &lt;span class="org-constant"&gt;:when&lt;/span&gt; (&lt;span class="org-variable-name"&gt;=&lt;/span&gt; n x)] n)) 1))] 
     (&lt;span class="org-builtin"&gt;for&lt;/span&gt; [x coll &lt;span class="org-constant"&gt;:when&lt;/span&gt; (uniq? x)] x)))
+
+&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;user&amp;gt; (remove-same-number '(3 5 6 5 4 1 5 4))&lt;/span&gt;
+&lt;span class="org-comment-delimiter"&gt;;; &lt;/span&gt;&lt;span class="org-comment"&gt;(3 6 1)&lt;/span&gt;
 &lt;/pre&gt;
 
 &lt;p&gt;
