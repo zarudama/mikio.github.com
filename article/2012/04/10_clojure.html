@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>clojureとCoommonLispの比較</title>
+    <title>Clojureで重複した要素を取り除く問題を解く</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2011/index.html">2011</a> <span class="divider">/</span></li><li><a href="../../../article/2011/09/index.html">09</a> <span class="divider">/</span></li><li>clojureとCoommonLispの比較</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>Clojureで重複した要素を取り除く問題を解く</li>
   </ul>
 
       </div>
@@ -93,16 +93,16 @@
     <div class="well">
       <div class="row">
 	<div class="date span2">
-	  <div class=" date-y"><a href="../../../article/2011/index.html">2011</a>
+	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
-	  <div class=" date-m"><a href="../../../article/2011/09/index.html">9</a></div>
-	  <div class=" date-d">09</div>
+	  <div class=" date-m"><a href="../../../article/2012/04/index.html">4</a></div>
+	  <div class=" date-d">10</div>
 	</div>
-	<h1 class="offset1">clojureとCoommonLispの比較</h1>
+	<h1 class="offset1">Clojureで重複した要素を取り除く問題を解く</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2011/09/04_schemecommonlispclojure.html"><i class="icon-chevron-left"></i>&nbsp;SchemeとCommonLispとClojure</a></li><li class="next" style="text-align: right;"><a href="../../../article/2011/10/04_clojure.html">一瞬だけclojureやめようかと思った理由&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/04/10_less.html"><i class="icon-chevron-left"></i>&nbsp;lessとは</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
@@ -110,45 +110,75 @@
   </header>
   <div class="article-content">
     <p>
-Clojureの起動が遅いことにイライラして、やっぱClojure勉強するよりCommonnLisp勉強すべきじゃね？
-ってことで調べた比較表。
+とある集まりで、プログラミングの問題が出題された。
 </p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<tbody>
-<tr><td class="left">比較内容</td><td class="left">Clojure</td><td class="left">CommonLisp</td></tr>
-<tr><td class="left">起動</td><td class="left">遅い</td><td class="left">早い</td></tr>
-<tr><td class="left">実行ファイル</td><td class="left">小さい</td><td class="left">大きい</td></tr>
-<tr><td class="left">配布のしやすさ</td><td class="left">面倒</td><td class="left">面倒（多分）</td></tr>
-<tr><td class="left">ライブラリ</td><td class="left">充実&amp;簡単に利用できる</td><td class="left">QuickLispが定番になりつつある</td></tr>
-<tr><td class="left">スタイル</td><td class="left">関数的</td><td class="left">手続き的</td></tr>
-<tr><td class="left">プロジェクト管理</td><td class="left">leinを使えば簡単</td><td class="left">CL-PROJECT(QuickLisp, ASDF)で簡単かも</td></tr>
-<tr><td class="left">書籍充実度</td><td class="left">あんまりない</td><td class="left">充実</td></tr>
-<tr><td class="left">ホスティング環境</td><td class="left">GAE, Herokuなど結構ある</td><td class="left">自宅サーバ,VPS,GAE(ABCL)</td></tr>
-<tr><td class="left">ウェブサーバー</td><td class="left">jetty</td><td class="left">CLACK?</td></tr>
-<tr><td class="left">全文検索</td><td class="left">lucine</td><td class="left">？？？</td></tr>
-<tr><td class="left">gameライブラリ</td><td class="left">jogl?</td><td class="left">sdl</td></tr>
-</tbody>
-</table>
 
+
+<pre class="src src-sh">&#21839;&#38988;
+&#12354;&#12427;&#25968;&#21015;&#12363;&#12425;&#37325;&#35079;&#12377;&#12427;&#35201;&#32032;&#12434;&#21462;&#12426;&#38500;&#12365;&#12394;&#12373;&#12356;&#12290;
+&#12383;&#12384;&#12375;&#12289;&#25968;&#21015;&#12398;&#38918;&#30058;&#12399;&#22793;&#26356;&#12375;&#12394;&#12356;&#12371;&#12392;&#12290;
+(&#20363;)
+ 5 6 5 4 1 5 4 -&gt; 4 1 5
+</pre>
 
 <p>
-Clojureは、関数型だからやりたいことやるのにもいろいろ引っ掛かりそうだが
-CommonLispでは代入オッケーの言語だからやりやすそう。
+こんなのササッと数分でとけないとやばいのかな？
+普段から鍛えてないので結構てこずりました。。。
+</p>
+<p>
+で、できた答えが以下。
+</p>
+
+
+<pre class="src src-clojure"><span class="org-comment-delimiter">;; </span><span class="org-comment">&#35299;&#31572;&#12381;&#12398;1</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">user&gt; (remove-same-number '( 3 4 3 2 1 5 2))</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(4 1 5)</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">uniq?</span>
+  <span class="org-doc">"coll&#12395;x&#12364;&#21547;&#12414;&#12428;&#12394;&#12369;&#12428;&#12400;true"</span>
+  [x coll]
+  (<span class="org-variable-name">=</span> (<span class="org-variable-name">count</span> (<span class="org-builtin">for</span> [n coll <span class="org-constant">:when</span> (<span class="org-variable-name">=</span> n x)] n)) 1))
+
+(<span class="org-keyword">defn</span> <span class="org-function-name">remove-same-number</span>
+  <span class="org-doc">"&#37325;&#35079;&#12377;&#12427;&#35201;&#32032;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;&#38918;&#30058;&#12399;&#32173;&#25345;&#12290;</span>
+<span class="org-doc">ex. 3 4 3 2 1 5 2 &#8658; 4 1 5"</span>
+  [coll]
+  (<span class="org-builtin">for</span> [x coll <span class="org-constant">:when</span> (uniq? x coll)] x))
+<span class="org-comment-delimiter">;; </span>
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">&#35299;&#31572;&#12381;&#12398;2</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">user&gt; (remove-same-number2 '( 3 4 3 2 1 5 2))</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">(4 1 5)</span>
+(<span class="org-keyword">defn</span> <span class="org-function-name">remove-same-number2</span>
+    <span class="org-doc">"&#37325;&#35079;&#12377;&#12427;&#35201;&#32032;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;&#38918;&#30058;&#12399;&#32173;&#25345;&#12290;</span>
+<span class="org-doc">ex. 3 4 3 2 1 5 2 &#8658; 4 1 5"</span>
+    [coll]
+  (<span class="org-builtin">letfn</span> [(uniq? [x] (<span class="org-variable-name">=</span> (<span class="org-variable-name">count</span> (<span class="org-builtin">for</span> [n coll <span class="org-constant">:when</span> (<span class="org-variable-name">=</span> n x)] n)) 1))] 
+    (<span class="org-builtin">for</span> [x coll <span class="org-constant">:when</span> (uniq? x)] x)))
+</pre>
+
+<p>
+uniq?関数で数列に指定した要素がいくつあるか数えて、
+forでフィルタしてシーケンスを作っています。
+</p>
+<p>
+まわりにclojurianいないし、ネットで手軽に声かけられる人もいないから
+上記コードがよいのかどうかさっぱりわかりません。。。
+</p>
+<p>
+腕に自信のあるClojurianのかた(いやなくても)、誰か添削してくれないかなぁ。
+てか、標準ライブラリに同じことする関数がありそう。
 </p>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2011-09-09T18:57:00Z">
-      金曜日 9月, 09 2011 at 18:57:00
+    Posted on <time datetime="2012-04-10T22:06:00Z">
+      火曜日 4月, 10 2012 at 22:06:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/clojure.html">clojure</a></li><li><a href="../../../tags/lisp.html">lisp</a></li>
+	<li><a href="../../../tags/clojure.html">clojure</a></li><li><a href="../../../tags/problem.html">problem</a></li>
       </ul>
     </nav>
   </footer>
