@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</title>
+    <title>emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</li>
   </ul>
 
       </div>
@@ -96,13 +96,13 @@
 	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
 	  <div class=" date-m"><a href="../../../article/2012/04/index.html">4</a></div>
-	  <div class=" date-d">06</div>
+	  <div class=" date-d">11</div>
 	</div>
-	<h1 class="offset1">Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</h1>
+	<h1 class="offset1">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/04/04_emacs.html"><i class="icon-chevron-left"></i>&nbsp;emacsで辞書を引けるようにしたがうまくいかない</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/06_clojureslimerepl.html">ClojureのSLIMEのREPLバッファに色がつかない&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/04/10_clojure.html"><i class="icon-chevron-left"></i>&nbsp;Clojureで重複した要素を取り除く問題を解く</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
@@ -110,147 +110,169 @@
   </header>
   <div class="article-content">
     <p>
-最近のclojure-swankには、emacsから直接swank-serverを起動するための「clojure-jack-in」とemacsコマンドがある。
-これを使うと、わざわざ別の端末でswank-serverを起動せずとも、直接裏でサーバーが起動してくれるのでとっても便利である。
-のはずなのだが、、、WindowsXPだと例によってうまく起動できないので(Linux版だと問題なし)、ちょっと修正しなくちゃいけない。
-ここではその過程をメモしておく。
+emacsを本格的に使いはじめる前はxyzzyを使い込んでました。
+xyzzyは非常に高機能で、特に愛用していたのが2画面ファイラです。
+コピー元とコピー先が表示される2画面ファイラは視覚的に非常にわかりやすく便利でした。
+</p>
+<p>
+emacsにはdiredという優れたファイラがあるのですが、
+1画面ファイラのためコピー先はタイプして指定する必要があります。履歴や補完が使えるとはいえ、やっぱり使いづらいです。
+そんな状態だったのですが、他の選択肢もなく(もしくは知らず)1画面の操作にも慣れDiredを愛用し、
+2画面ファイラの操作感をすっかり忘れてたころ、<a href="https://github.com/kiwanami/emacs-window-manager">e2wm</a> に出会ったのでした。
+e2wmは去年ぐらいから常用してるのですが、この拡張はウィンドウの分割状態を
+管理するもので、自分用のプラグインも簡単に作成できる仕組みになっています。
+</p>
+<p>
+2画面ファイラに限らず、ほかの様々な作業環境のウィンドウの分割を
+制御したいと思っていた自分には衝撃的でした!求めていたのはこれだよ!って感じです。
+</p>
+<p>
+この時から、再び2画面ファイラへの想いが再熱し、いろいろ調べてみました。
+すると、diredはなんと標準で2画面をサポートしてること(dired-dwim-target変数)、
+<a href="http://emacswiki.org/emacs/Sunrise_Commander">SunriseCommander </a>という出来のよさそうな2画面ファイラが存在すること、
+vimには既に2画面ファイラが実装されていることなどがわかりました。
+</p>
+<p>
+しかし、dired-dwim-targetでは画面分割がすぐに崩れてしまうし、
+SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの共存が厳しいことから、
+結局、e2wmの拡張パースペクティブとして自分でつくることにしました。
+</p>
+<p>
+といっても、書いたコードはほとんどなく、2画面UIの定義ぐらいです(中身はdiredなので)。
+参考にしたのもtwoパースペクティブのパクリでほとんどコピペです。
 </p>
 
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">結論</h3>
-<div class="outline-text-3" id="text-1">
+
+<script src="https://gist.github.com/2357888.js?file=e2wm-wfiler.el"></script>
 
 
 <p>
-結論を示すと下記のパッチでうまくいく。
+導入するには下記を実行して
 </p>
 
 
-<pre class="src src-sh">$ diff -u $<span class="org-variable-name">HOME</span>/bin/lein.bat.orig $<span class="org-variable-name">HOME</span>/bin/lein.bat
---- /cygdrive/c/Users/mikio/bin/lein.bat.orig  2012-04-05 12:59:29.352024000 +0900
-+++ /cygdrive/c/Users/mikio/bin/lein.bat       2012-04-06 13:32:27.537281600 +0900
-@@ -23,7 +23,7 @@
-
- <span class="org-keyword">if</span> <span class="org-string">"x%LEIN_HOME%"</span> == <span class="org-string">"x"</span> (
-     <span class="org-keyword">if</span> exist <span class="org-string">"%CD%\.lein"</span> (
--        if /I NOT %CD%==%USERPROFILE% echo Running<span class="org-keyword"> in</span> bundled mode.
-+        if /I NOT <span class="org-string">"%CD%"</span>==<span class="org-string">"%USERPROFILE%"</span> echo Running<span class="org-keyword"> in</span> bundled mode.
-         <span class="org-builtin">set</span> <span class="org-variable-name">LEIN_HOME</span>=%CD%<span class="org-string">\.</span>lein
-     ) <span class="org-keyword">else</span> (
-         <span class="org-builtin">set</span> <span class="org-variable-name">LEIN_HOME</span>=%USERPROFILE%<span class="org-string">\.</span>lein
-</pre>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">経過</h3>
-<div class="outline-text-3" id="text-2">
-
-<p>まずlein.bat自体がうまく動くのかためす。
-dos窓でlein.batを実行すると下記のエラーがでてしまう。   
-</p>
-
-
-<pre class="src src-sh">C:\Documents and Settings\mikio&gt;lein
-and &#12398;&#20351;&#12356;&#26041;&#12364;&#35492;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;
+<pre class="src src-emacs-lisp">(install-elisp <span class="org-string">"https://raw.github.com/gist/2357888/e6fea3452290c7b73dbeb2fe6123211356594c66/e2wm-wfiler.el"</span>)
 </pre>
 
 <p>
-。。。エラーメッセージが不親切すぎて何していいかわかりません。
-dosのバッチファイルを読むのは数年ぶりですがとりあえず
-</p>
-<p>
-デバッグ情報を出すために「echo off」を解除する
+.emacsなどで以下のように定義します。
 </p>
 
 
-<pre class="src src-sh">::@echo off
-
-<span class="org-builtin">set</span> <span class="org-variable-name">JAVA_OPTS</span>=-Dswank.encoding=utf-8-unix
-</pre>
-
-<p>
-すると下記で停止してることがわかった。
-</p>
-
-
-<pre class="src src-sh">C:\Documents and Settings\mikio&gt;if <span class="org-string">""</span> NEQ <span class="org-string">""</span> cd <span class="org-string">""</span>
-and &#12398;&#20351;&#12356;&#26041;&#12364;&#35492;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;
-C:\Documents and Settings\mikio&gt;        if /I NOT C:\Documents and Settings\<span class="org-variable-name">mikio</span>==C:\Documents and Settings\mikio echo Running<span class="org-keyword"> in</span> bundled mode.
+<pre class="src src-emacs-lisp">(<span class="org-keyword">require</span> '<span class="org-constant">e2wm</span>)
+(<span class="org-keyword">require</span> '<span class="org-constant">e2wm-config</span>)
+(<span class="org-keyword">require</span> '<span class="org-constant">e2wm-wfiler</span>)
 </pre>
 
 
 <p>
-IF文の条件式で与えられた変数が空白を含むために
-条件式が文法エラーになっているようだ。
-そこで、その条件式の変数部分をダブルクオーテーションで括ってみた。
+ファイラの呼出は
+</p>
+
+
+<pre class="src src-sh">M-x e2wm-wfiler
+</pre>
+
+<p>
+としてください。
 </p>
 <p>
-この状態でlein.batを実行してみたところ通常どおり実行できた。
+キーバインドは、以下になります。
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-f</td><td class="left">ウィンドウ移動</td></tr>
+<tr><td class="left">C-b</td><td class="left">ウィンドウ移動</td></tr>
+<tr><td class="left">P</td><td class="left">一方のウィンドウのディレクトリを同じにする</td></tr>
+<tr><td class="left">S</td><td class="left">サブウィンドウのトグル</td></tr>
+</tbody>
+</table>
+
+
+<p>
+キーバインドを変更したい場合は、下記のように設定してください。
 </p>
 
 
-<pre class="src src-sh">C:\Documents and Settings\mikio&gt;lein.bat
-Leiningen is a tool for working with Clojure projects.
-
-Several tasks are available:
-classpath   Print the classpath of the current project.
-clean       Remove compiled class files and jars from project.
-compile     Compile Clojure source into .class files.
-deploy      Build jar and deploy to remote repository.
-deps        Download :dependencies and put them<span class="org-keyword"> in</span> :library-path.
-help        Display a list of tasks or help for a given task.
-install     Install current project or download specified project.
-interactive Enter an interactive task shell. Aliased to <span class="org-string">"int"</span>.
-jack-in     Jack<span class="org-keyword"> in</span> to a Clojure SLIME session from Emacs.
-jar         Package up all the project<span class="org-string">'s files into a jar file.</span>
-<span class="org-string">javac       Compile Java source files.</span>
-<span class="org-string">new         Create a new project skeleton.</span>
-<span class="org-string">noir        Create and manage noir projects.</span>
-<span class="org-string">plugin      Manage user-level plugins.</span>
-<span class="org-string">pom         Write a pom.xml file to disk for Maven interop.</span>
-<span class="org-string">repl        Start a repl session either with the current project or standalone.</span>
-<span class="org-string">retest      Run only the test namespaces which failed last time around.</span>
-<span class="org-string">run         Run the project'</span>s -main function.
-search      Search remote maven repositories for matching jars.
-swank       Launch swank server for Emacs to connect.
-<span class="org-builtin">test</span>        Run the project<span class="org-string">'s tests.</span>
-<span class="org-string">test!       Run a project'</span>s tests after cleaning and fetching dependencies.
-trampoline  Run a task without nesting the project<span class="org-string">'s JVM inside Leiningen'</span>s.
-uberjar     Package up the project files and all dependencies into a jar file.
-upgrade     Upgrade Leiningen to the latest stable release.
-version     Print version for Leiningen and the current JVM.
-
-Run lein help $<span class="org-variable-name">TASK</span> for details.
-See also: readme, tutorial, copying, sample, deploying and news.
-
-C:\Documents and Settings\mikio&gt;
+<pre class="src src-emacs-lisp">(define-key e2wm:dp-wfiler-minor-mode-map (kbd <span class="org-string">"C-f"</span>) 'e2wm:dp-wfiler-move-buffers-command)
+(define-key e2wm:dp-wfiler-minor-mode-map (kbd <span class="org-string">"C-b"</span>) 'e2wm:dp-wfiler-move-buffers-command)
+(define-key e2wm:dp-wfiler-minor-mode-map (kbd <span class="org-string">"P"</span>) 'e2wm:dp-wfiler-sync-buffers-command)
 </pre>
 
 
 <p>
-この修正が完了した時点で「M-x clojure-jack-in」を実行してみたところ
-無事SLIMEのREPLバッファが表示されたよ!
+ちなみに自分の場合、<a href="https://github.com/myuhe/smartrep.el/pull/4">smartrepl.el</a> を使用してパースペクティブの切り替えを素早くできるようにしています(C-c 4で起動)。
 </p>
+
+
+<pre class="src src-emacs-lisp">(<span class="org-keyword">when</span> (<span class="org-keyword">require</span> '<span class="org-constant">smartrep</span> nil t)
+  (smartrep-define-key e2wm:pst-minor-mode-keymap <span class="org-string">"C-c"</span>
+    '(
+      (<span class="org-string">"m"</span>   . 'e2wm:pst-window-select-main-command) <span class="org-comment-delimiter">; </span><span class="org-comment">&#12513;&#12452;&#12531;&#12454;&#12452;&#12531;&#12489;&#12454;&#12434;&#36984;&#25246;&#12377;&#12427;</span>
+      (<span class="org-string">"I"</span>   . info)               <span class="org-comment-delimiter">; </span><span class="org-comment">info&#12434;&#36215;&#21205;&#12377;&#12427;</span>
+      (<span class="org-string">"L"</span>   . ielm)               <span class="org-comment-delimiter">; </span><span class="org-comment">ielm &#12434;&#36215;&#21205;&#12377;&#12427;&#65288;sub&#12391;&#36215;&#21205;&#12377;&#12427;&#65289;</span>
+      (<span class="org-string">"s"</span>   . 'e2wm:my-toggle-sub)  <span class="org-comment-delimiter">; </span><span class="org-comment">sub&#12398;&#34920;&#31034;&#12434;&#12488;&#12464;&#12523;&#12377;&#12427;</span>
+
+      (<span class="org-string">"1"</span> . 'e2wm:dp-code) 
+      (<span class="org-string">"2"</span> . 'e2wm:dp-two)
+      (<span class="org-string">"3"</span> . 'e2wm:dp-doc)
+      (<span class="org-string">"4"</span> . 'e2wm:dp-wfiler)
+      (<span class="org-string">"5"</span> . 'e2wm:dp-magit)
+      (<span class="org-string">"6"</span> . 'e2wm:dp-dashboard)
+
+      (<span class="org-string">"k"</span> . 'e2wm:pst-history-forward-command)
+      (<span class="org-string">"j"</span> . 'e2wm:pst-history-back-command)
+      )
+    ))
+</pre>
+
+
 <p>
-わざわざ別窓を開いてswank-serverを起動しなくて済むのでかなり快適になったよ!
+画面レイアウトには、e2wmを使用してますが、2画面ファイラそのものは
+標準のDiredの機能を使用しています。
+具体的には、e2wm-wfiler.elで下記の設定をしていますので注意してください。
 </p>
-</div>
-</div>
+
+
+<pre class="src src-sh">(setq dired-dwim-target t)
+</pre>
+
+
+<p>
+最後に積み残しの機能は以下になります。
+</p><ul>
+<li>history機能は未対応(標準のhistoryは通常のバッファのみが管理対象だったので)
+</li>
+<li>開いたディレクトリの履歴管理
+</li>
+<li>ファイラに切り替えるとき、初めての場合は最後のバッファのディレクトリ、  2回目以降のときは、最後の状態を復元。
+</li>
+<li>ファイルを開くときにパースペクティブを指定したい。
+</li>
+<li>開いたファイルはヒストリに入れないとかも。   
+</li>
+<li>ディクレトリのバッファを沢山開かない(2つまで)
+</li>
+</ul>
+
+
+<p>
+ちなみにelispでモノを作ったのは今回初めてですが、なんとか動いてます。
+まぁそれぐらい気楽に拡張を書けるということですかね。
+</p>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2012-04-06T13:53:00Z">
-      金曜日 4月, 06 2012 at 13:53:00
+    Posted on <time datetime="2012-04-11T22:46:00Z">
+      水曜日 4月, 11 2012 at 22:46:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/clojure.html">clojure</a></li><li><a href="../../../tags/dos.html">dos</a></li><li><a href="../../../tags/slime.html">slime</a></li>
+	<li><a href="../../../tags/e2wm.html">e2wm</a></li><li><a href="../../../tags/emacs.html">emacs</a></li>
       </ul>
     </nav>
   </footer>
