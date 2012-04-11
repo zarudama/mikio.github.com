@@ -3,7 +3,7 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-11T22:54:38Z</updated>
+  <updated>2012-04-11T23:02:47Z</updated>
   <id>http://mikio.github.com/index.xml</id>
   <entry><title type="html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/11_emacsdired2e2wm.html"/><updated>2012-04-11T22:46:00Z</updated><published>2012-04-11T22:46:00Z</published><id>article/2012/04/11_emacsdired2e2wm.html</id><category scheme="/tags/e2wm.html" term="e2wm" label="e2wm"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
 emacs&#12434;&#26412;&#26684;&#30340;&#12395;&#20351;&#12356;&#12399;&#12376;&#12417;&#12427;&#21069;&#12399;xyzzy&#12434;&#20351;&#12356;&#36796;&#12435;&#12391;&#12414;&#12375;&#12383;&#12290;
@@ -202,7 +202,7 @@ for&#12391;&#12501;&#12451;&#12523;&#12479;&#12375;&#12390;&#12471;&#12540;&#124
 &#33109;&#12395;&#33258;&#20449;&#12398;&#12354;&#12427;Clojurian&#12398;&#12363;&#12383;(&#12356;&#12420;&#12394;&#12367;&#12390;&#12418;)&#12289;&#35504;&#12363;&#28155;&#21066;&#12375;&#12390;&#12367;&#12428;&#12394;&#12356;&#12363;&#12394;&#12353;&#12290;
 &#12390;&#12363;&#12289;&#27161;&#28310;&#12521;&#12452;&#12502;&#12521;&#12522;&#12395;&#21516;&#12376;&#12371;&#12392;&#12377;&#12427;&#38306;&#25968;&#12364;&#12354;&#12426;&#12381;&#12358;&#12290;
 &lt;/p&gt;
-</content></entry><entry><title type="html">lessとは</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/10_less.html"/><updated>2012-04-10T12:16:00Z</updated><published>2012-04-10T12:16:00Z</published><id>article/2012/04/10_less.html</id><category scheme="/tags/css.html" term="css" label="css"/><category scheme="/tags/less.html" term="less" label="less"/><category scheme="/tags/notes.html" term="notes" label="notes"/><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">lessとは</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/10_less.html"/><updated>2012-04-10T08:16:00Z</updated><published>2012-04-10T08:16:00Z</published><id>article/2012/04/10_less.html</id><category scheme="/tags/css.html" term="css" label="css"/><category scheme="/tags/less.html" term="less" label="less"/><category scheme="/tags/notes.html" term="notes" label="notes"/><content type="html">&lt;p&gt;
 jekyll&#12420;o-blog&#12434;&#20351;&#12387;&#12390;&#12356;&#12383;&#12425;&#12289;less&#12392;&#12356;&#12358;&#12418;&#12398;&#12364;&#12391;&#12390;&#12365;&#12383;&#12290;&#12393;&#12358;&#12418;css&#12398;&#20195;&#12431;&#12426;&#12395;&#12394;&#12427;&#12418;&#12398;&#12398;&#12424;&#12358;&#12384;&#12364;&#12289;&#12394;&#12395;&#12418;&#12398;&#12363;&#12431;&#12363;&#12425;&#12394;&#12387;&#12383;&#12290;
 &lt;/p&gt;
 &lt;p&gt;
@@ -248,51 +248,7 @@ Emacs&#12391;&#26360;&#12356;&#12390;&#12467;&#12500;&#12506;&#12377;&#12427;&#2
 &#12392;&#12356;&#12358;&#12371;&#12392;&#12391;&#12289;SKK&#12399;&#12487;&#12473;&#12463;&#12488;&#12483;&#12503;&#29992;&#36884;&#12391;&#12418;&#12362;&#12377;&#12377;&#12417;&#12391;&#12377;&#12424;!
 &lt;/p&gt;
 
-</content></entry><entry><title type="html">ClojureのSLIMEのREPLバッファに色がつかない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/06_clojureslimerepl.html"/><updated>2012-04-06T14:00:00Z</updated><published>2012-04-06T14:00:00Z</published><id>article/2012/04/06_clojureslimerepl.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/slime.html" term="slime" label="slime"/><content type="html">&lt;p&gt;
-emacs24&#12395;&#12375;&#12383;&#12398;&#12364;&#21407;&#22240;&#12363;&#12431;&#12363;&#12425;&#12394;&#12356;&#12364;&#12289;&#12356;&#12388;&#12398;&#12414;&#12395;&#12363;SLIME&#12398;REPL&#12496;&#12483;&#12501;&#12449;&#12391;
-&#33394;&#20184;&#12369;&#12364;&#12373;&#12428;&#12394;&#12367;&#12394;&#12387;&#12390;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12371;&#12398;&#26178;&#12289;&#35373;&#23450;&#12375;&#12390;&#12356;&#12383;&#12398;&#12399;&#19979;&#35352;&#12398;&#12467;&#12540;&#12489;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-clojure"&gt;(add-hook 'slime-repl-mode-hook (lambda () (clojure-mode-font-lock-setup)))
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&lt;a href="https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk"&gt;https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&#19978;&#35352;&#12469;&#12452;&#12488;&#12395;&#12424;&#12427;&#12392;&#25163;&#21205;&#12391;font-lock&#12434;&#25351;&#23450;&#12377;&#12427;&#12392;&#12358;&#12414;&#12367;&#12356;&#12392;&#12371;&#12398;&#12371;&#12392;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-clojure"&gt;M-x clojure-mode-font-lock-setup
-M-x font-lock-mode
-M-x font-lock-mode
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#33258;&#20998;&#12418;&#35430;&#12375;&#12383;&#12425;&#12358;&#12414;&#12367;&#12356;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12391;&#12289;&#26368;&#32066;&#30340;&#12395;&#12469;&#12452;&#12488;&#12398;&#25351;&#21335;&#12395;&#12354;&#12427;&#12424;&#12358;&#12395;&#19979;&#35352;&#12434;&#35373;&#23450;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-clojure"&gt;(add-hook 'slime-repl-mode-hook
-               (lambda ()
-                 (clojure-mode-font-lock-setup)
-                 (font-lock-mode)
-                 (font-lock-mode)))
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12371;&#12428;&#12391;REPL&#12496;&#12483;&#12501;&#12449;&#12395;&#12418;&#32186;&#40599;&#12395;&#33394;&#20184;&#12369;&#12373;&#12428;&#12427;&#12424;&#12358;&#12395;&#12394;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-</content></entry><entry><title type="html">Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/06_windowsswank-clojureclojure-jack-in.html"/><updated>2012-04-06T13:53:00Z</updated><published>2012-04-06T13:53:00Z</published><id>article/2012/04/06_windowsswank-clojureclojure-jack-in.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/dos.html" term="dos" label="dos"/><category scheme="/tags/slime.html" term="slime" label="slime"/><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/06_windowsswank-clojureclojure-jack-in.html"/><updated>2012-04-06T22:53:00Z</updated><published>2012-04-06T22:53:00Z</published><id>article/2012/04/06_windowsswank-clojureclojure-jack-in.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/dos.html" term="dos" label="dos"/><category scheme="/tags/slime.html" term="slime" label="slime"/><content type="html">&lt;p&gt;
 &#26368;&#36817;&#12398;clojure-swank&#12395;&#12399;&#12289;emacs&#12363;&#12425;&#30452;&#25509;swank-server&#12434;&#36215;&#21205;&#12377;&#12427;&#12383;&#12417;&#12398;&#12300;clojure-jack-in&#12301;&#12392;emacs&#12467;&#12510;&#12531;&#12489;&#12364;&#12354;&#12427;&#12290;
 &#12371;&#12428;&#12434;&#20351;&#12358;&#12392;&#12289;&#12431;&#12374;&#12431;&#12374;&#21029;&#12398;&#31471;&#26411;&#12391;swank-server&#12434;&#36215;&#21205;&#12379;&#12378;&#12392;&#12418;&#12289;&#30452;&#25509;&#35023;&#12391;&#12469;&#12540;&#12496;&#12540;&#12364;&#36215;&#21205;&#12375;&#12390;&#12367;&#12428;&#12427;&#12398;&#12391;&#12392;&#12387;&#12390;&#12418;&#20415;&#21033;&#12391;&#12354;&#12427;&#12290;
 &#12398;&#12399;&#12378;&#12394;&#12398;&#12384;&#12364;&#12289;&#12289;&#12289;WindowsXP&#12384;&#12392;&#20363;&#12395;&#12424;&#12387;&#12390;&#12358;&#12414;&#12367;&#36215;&#21205;&#12391;&#12365;&#12394;&#12356;&#12398;&#12391;(Linux&#29256;&#12384;&#12392;&#21839;&#38988;&#12394;&#12375;)&#12289;&#12385;&#12423;&#12387;&#12392;&#20462;&#27491;&#12375;&#12394;&#12367;&#12385;&#12419;&#12356;&#12369;&#12394;&#12356;&#12290;
@@ -423,6 +379,50 @@ C:\Documents and Settings\mikio&amp;gt;
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+</content></entry><entry><title type="html">ClojureのSLIMEのREPLバッファに色がつかない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/06_clojureslimerepl.html"/><updated>2012-04-06T22:00:00Z</updated><published>2012-04-06T22:00:00Z</published><id>article/2012/04/06_clojureslimerepl.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/slime.html" term="slime" label="slime"/><content type="html">&lt;p&gt;
+emacs24&#12395;&#12375;&#12383;&#12398;&#12364;&#21407;&#22240;&#12363;&#12431;&#12363;&#12425;&#12394;&#12356;&#12364;&#12289;&#12356;&#12388;&#12398;&#12414;&#12395;&#12363;SLIME&#12398;REPL&#12496;&#12483;&#12501;&#12449;&#12391;
+&#33394;&#20184;&#12369;&#12364;&#12373;&#12428;&#12394;&#12367;&#12394;&#12387;&#12390;&#12356;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12371;&#12398;&#26178;&#12289;&#35373;&#23450;&#12375;&#12390;&#12356;&#12383;&#12398;&#12399;&#19979;&#35352;&#12398;&#12467;&#12540;&#12489;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;(add-hook 'slime-repl-mode-hook (lambda () (clojure-mode-font-lock-setup)))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&lt;a href="https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk"&gt;https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&#19978;&#35352;&#12469;&#12452;&#12488;&#12395;&#12424;&#12427;&#12392;&#25163;&#21205;&#12391;font-lock&#12434;&#25351;&#23450;&#12377;&#12427;&#12392;&#12358;&#12414;&#12367;&#12356;&#12392;&#12371;&#12398;&#12371;&#12392;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;M-x clojure-mode-font-lock-setup
+M-x font-lock-mode
+M-x font-lock-mode
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#33258;&#20998;&#12418;&#35430;&#12375;&#12383;&#12425;&#12358;&#12414;&#12367;&#12356;&#12387;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12391;&#12289;&#26368;&#32066;&#30340;&#12395;&#12469;&#12452;&#12488;&#12398;&#25351;&#21335;&#12395;&#12354;&#12427;&#12424;&#12358;&#12395;&#19979;&#35352;&#12434;&#35373;&#23450;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;(add-hook 'slime-repl-mode-hook
+               (lambda ()
+                 (clojure-mode-font-lock-setup)
+                 (font-lock-mode)
+                 (font-lock-mode)))
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12371;&#12428;&#12391;REPL&#12496;&#12483;&#12501;&#12449;&#12395;&#12418;&#32186;&#40599;&#12395;&#33394;&#20184;&#12369;&#12373;&#12428;&#12427;&#12424;&#12358;&#12395;&#12394;&#12387;&#12383;&#12290;
+&lt;/p&gt;
 </content></entry><entry><title type="html">emacsで辞書を引けるようにしたがうまくいかない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/04_emacs.html"/><updated>2012-04-04T21:45:00Z</updated><published>2012-04-04T21:45:00Z</published><id>article/2012/04/04_emacs.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/sdic.html" term="sdic" label="sdic"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
 &#26222;&#27573;&#12289;&#33521;&#35486;&#12398;&#36766;&#26360;&#12395;&#12399;&#12289;windows&#29256;&#12398;&#33521;&#36766;&#37070;(PDIC)&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12383;&#12364;
 &#12405;&#12392;&#12375;&#12383;&#12371;&#12392;&#12363;&#12425;emacs&#29256;&#12398;&#33521;&#21644;&#12539;&#21644;&#33521;&#36766;&#26360;&#12434;&#20351;&#12387;&#12390;&#12415;&#12383;&#12367;&#12394;&#12387;&#12383;&#12398;&#12391;
