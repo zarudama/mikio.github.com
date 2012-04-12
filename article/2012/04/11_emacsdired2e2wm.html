@@ -53,7 +53,7 @@
 </li>
 <li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a>
 </li>
-<li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</a>
+<li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a>
 
 </li>
 </ul>
@@ -138,7 +138,7 @@ SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの
 結局、e2wmの拡張パースペクティブとして自分でつくることにしました。
 </p>
 <p>
-といっても、書いたコードはほとんどなく、2画面UIの定義ぐらいです(中身はdiredなので)。
+といっても、自分で書いたコードはほとんどなく、2画面UIの定義ぐらいです(中身はdiredなので)。
 参考にしたのもtwoパースペクティブのパクリでほとんどコピペです。
 </p>
 
@@ -263,6 +263,45 @@ SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの
 まぁそれぐらい気楽に拡張を書けるということですかね。
 </p>
 
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">おまけ</h3>
+<div class="outline-text-3" id="text-1">
+
+<p>Windowsを使ってる人は下記を設定しておくと、zキーで関連づけアプリが起動できて便利です。
+</p>
+
+
+<pre class="src src-emacs-lisp"><span class="org-comment-delimiter">;;</span><span class="org-comment">-----------------------------------------------------------------</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">dired&#12391;Windows&#12395;&#38306;&#36899;&#20184;&#12369;&#12425;&#12428;&#12383;&#12450;&#12503;&#12522;&#12434;&#36215;&#21205;&#12377;&#12427;</span>
+<span class="org-comment-delimiter">;; </span><span class="org-comment">http://k4zmblog.dtiblog.com/blog-entry-153.html</span>
+<span class="org-comment-delimiter">;;</span><span class="org-comment">-----------------------------------------------------------------</span>
+(<span class="org-keyword">defun</span> <span class="org-function-name">uenox-dired-winstart</span> ()
+  <span class="org-doc">"Type '[uenox-dired-winstart]': win-start the current line's file."</span>
+  (interactive)
+  (<span class="org-keyword">if</span> (eq major-mode 'dired-mode)
+      (<span class="org-keyword">let</span> ((fname (dired-get-filename)))
+        (w32-shell-execute <span class="org-string">"open"</span> fname)
+        (message <span class="org-string">"win-started %s"</span> fname))))
+
+<span class="org-comment-delimiter">;; </span><span class="org-comment">dired &#12398;&#12461;&#12540;&#21106;&#12426;&#24403;&#12390;&#36861;&#21152;</span>
+(<span class="org-keyword">if</span> (eq window-system 'w32)
+    (add-hook 'dired-mode-hook
+               (<span class="org-keyword">lambda</span> ()
+                 (define-key dired-mode-map <span class="org-string">"z"</span> 'uenox-dired-winstart))))
+</pre>
+
+<p>
+下記を参考にしました。ありがとうございます。
+</p><ul>
+<li><a href="http://k4zmblog.dtiblog.com/blog-entry-153.html">http://k4zmblog.dtiblog.com/blog-entry-153.html</a>
+</li>
+</ul>
+
+
+
+</div>
+</div>
+
   </div>
   
   <footer class="well article-footer">
@@ -328,7 +367,7 @@ SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの
 	    <nav id="archives" class="span3">
 	      <h1>Archives</h1>
 	      <ul>
-		<li><a href="../../../article/2012/04/11_emacsdired2e2wm.html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a></li> <li><a href="../../../article/2012/04/10_clojure.html">Clojureで重複した要素を取り除く問題を解く</a></li> <li><a href="../../../article/2012/04/10_less.html">lessとは</a></li> <li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a></li> <li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行実行できない。</a></li> <li><a href="../../../article/2012/04/06_clojureslimerepl.html">ClojureのSLIMEのREPLバッファに色がつかない</a></li> <li><a href="../../../article/2012/04/04_emacs.html">emacsで辞書を引けるようにしたがうまくいかない</a></li> <li><a href="../../../article/2012/04/04_dropboxgit.html">DropboxでGit</a></li> <li><a href="../../../article/2012/03/10_sudo.html">sudoで環境変数を引き継ぎたい</a></li> <li><a href="../../../article/2012/03/09_skkwindowsxp.html">SKKを導入してみる(WindowsXP)</a></li> 
+		<li><a href="../../../article/2012/04/11_emacsdired2e2wm.html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a></li> <li><a href="../../../article/2012/04/10_clojure.html">Clojureで重複した要素を取り除く問題を解く</a></li> <li><a href="../../../article/2012/04/10_less.html">lessとは</a></li> <li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a></li> <li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a></li> <li><a href="../../../article/2012/04/05_clojureslimerepl.html">ClojureのSLIMEのREPLバッファに色がつかない</a></li> <li><a href="../../../article/2012/04/04_emacs.html">emacsで辞書を引けるようにしたがうまくいかない</a></li> <li><a href="../../../article/2012/03/10_sudo.html">sudoで環境変数を引き継ぎたい</a></li> <li><a href="../../../article/2012/03/09_skkwindowsxp.html">SKKを導入してみる(WindowsXP)</a></li> <li><a href="../../../article/2012/02/10_mew.html">mewでマスターキーがうまくいかない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>mewでマスターキーがうまくいかない</title>
+    <title>ざる魂</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -45,15 +45,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
-<li><a href="../../../article/2012/04/11_emacsdired2e2wm.html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a>
+<li><a href="../../../article/2011/04/03_dropboxgit.html">DropboxでGit</a>
 </li>
-<li><a href="../../../article/2012/04/10_clojure.html">Clojureで重複した要素を取り除く問題を解く</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
 </li>
-<li><a href="../../../article/2012/04/10_less.html">lessとは</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
 </li>
-<li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
 </li>
-<li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
 
 </li>
 </ul>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/02/index.html">02</a> <span class="divider">/</span></li><li>mewでマスターキーがうまくいかない</li>
+  <li><a href="../../../archives.html">Archives</a> <span class="divider">/</span></li><li><a href="../../index.html">article</a> <span class="divider">/</span></li><li><a href="../index.html">2011</a> <span class="divider">/</span></li><li>04</li>
   </ul>
 
       </div>
@@ -88,175 +88,16 @@
       
       
 
-  <header class="article-header">
-
-    <div class="well">
-      <div class="row">
-	<div class="date span2">
-	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
-	  </div>
-	  <div class=" date-m"><a href="../../../article/2012/02/index.html">2</a></div>
-	  <div class=" date-d">10</div>
-	</div>
-	<h1 class="offset1">mewでマスターキーがうまくいかない</h1>
-      </div>
-      <nav>
-	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2011/11/09_clojure1.html"><i class="icon-chevron-left"></i>&nbsp;Clojureでゲームプログラミングその1 実験編</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/03/09_skkwindowsxp.html">SKKを導入してみる(WindowsXP)&nbsp;<i class="icon-chevron-right"></i></a></li>
-	</ul>
-      </nav>
-    </div>
-
-  </header>
+<article>
   <div class="article-content">
-    <p>
-cygwin上でGPGがうまく動作しないのが原因。
-</p>
-
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">fackecygpty.exeをためす。(うまくいかなかった)</h3>
-<div class="outline-text-3" id="text-1">
-
-
-<p>
-どうやらcygwinで使うにはfakecygpty.exeなるものが必要らしい。
-</p><ul>
-<li><a href="http://d.hatena.ne.jp/kiwanami/20110221/1298293727">http://d.hatena.ne.jp/kiwanami/20110221/1298293727</a>
-</li>
+    <nav class="archives">
+      <ul class="month 2011 4">
+  <li>03 <a href="../../../article/2011/04/03_dropboxgit.html">DropboxでGit</a></li>
 </ul>
 
-
-<p>
-下記URLよりソースファイルをダウンロードしてcygwinのgccでコンパイルする
-</p><ul>
-<li><a href="http://www.meadowy.org/meadow/browser/trunk/nt/fakecygpty.c">http://www.meadowy.org/meadow/browser/trunk/nt/fakecygpty.c</a>
-</li>
-</ul>
-
-
-
-
-<pre class="src src-sh">$ gcc -o fakecygpty.exe fakecygpty.c
-$ cp fakecygpty.exe ~/bin
-</pre>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">gnupgにcygwin用のパッチをあてる(解決)</h3>
-<div class="outline-text-3" id="text-2">
-
-<p>下記からソースを取得する。
-</p><ul>
-<li><a href="http://www.gnupg.org/download/index.en.html">http://www.gnupg.org/download/index.en.html</a>
-</li>
-</ul>
-
-
-
-
-
-<pre class="src src-sh">~/src
-tar xvfz gnupg-1.4.11.tar.gz
-</pre>
-
-
-<p>
-パッチを取得する。
-</p><ul>
-<li><a href="http://u.hoso.net/2009/11/ntemacs-gnupg-patch.html">http://u.hoso.net/2009/11/ntemacs-gnupg-patch.html</a>
-</li>
-</ul>
-
-<p>パッチを適用する。
-</p>
-
-
-<pre class="src src-sh"><span class="org-builtin">cd</span> ~/src
-patch -p 0 &lt; gnupg-1.4.11_ttyio.patch
-</pre>
-
-
-
-<p>
-もともと入れていたgpgを削除した。
-</p>
-
-
-<pre class="src src-sh">$ apt-cyg remove gnupg
-Removing gnupg
-Package gnupg removed
-</pre>
-
-
-<p>
-ビルド
-</p>
-
-
-<pre class="src src-sh">$ cd ~/src
-$ cd gnupg-1.4.11
-$ ./configure
-$ make
-$ make install
-</pre>
-
-<p>
-/usr/local/binにできる。
-</p>
-
-<p>
-gnupack用のemacsだとパスが通ってないのでconfig.iniに下記を追加した。
-</p>
-
-
-<pre class="src src-sh">PATH           = %PATH%;%CYGWIN_DIR%\usr\local\bin
-</pre>
-
-
-<p>
-以上で解決した。
-</p>
-
-
-
-
-</div>
-</div>
-
-  </div>
-  
-  <footer class="well article-footer">
-    Posted on <time datetime="2012-02-10T08:14:00Z">
-      金曜日 2月, 10 2012 at 08:14:00
-    </time>.
-    <nav class="tag-cloud">
-      <h1><i class="icon-tags"></i> related tags</h1>
-      <ul>
-	<li><a href="../../../tags/emacs.html">emacs</a></li><li><a href="../../../tags/mew.html">mew</a></li>
-      </ul>
     </nav>
-  </footer>
-<!--  <div id="topsy-tweet-search-results"></div>
-  <script src="../../../js/search_tweet.js" type="text/javascript" charset="utf-8"></script> -->
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  var disqus_shortname = 'mikiokunblog'; // required: replace example with your forum shortname
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
+  </div>
+</article>
       </div>
       <div id="footer">
 	<div class="container">
@@ -292,7 +133,7 @@ gnupack用のemacsだとパスが通ってないのでconfig.iniに下記を追�
 	    <nav id="archives" class="span3">
 	      <h1>Archives</h1>
 	      <ul>
-		<li><a href="../../../article/2012/04/11_emacsdired2e2wm.html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a></li> <li><a href="../../../article/2012/04/10_clojure.html">Clojureで重複した要素を取り除く問題を解く</a></li> <li><a href="../../../article/2012/04/10_less.html">lessとは</a></li> <li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a></li> <li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a></li> <li><a href="../../../article/2012/04/05_clojureslimerepl.html">ClojureのSLIMEのREPLバッファに色がつかない</a></li> <li><a href="../../../article/2012/04/04_emacs.html">emacsで辞書を引けるようにしたがうまくいかない</a></li> <li><a href="../../../article/2012/03/10_sudo.html">sudoで環境変数を引き継ぎたい</a></li> <li><a href="../../../article/2012/03/09_skkwindowsxp.html">SKKを導入してみる(WindowsXP)</a></li> <li><a href="../../../article/2012/02/10_mew.html">mewでマスターキーがうまくいかない</a></li> 
+		<li><a href="../../../article/2011/04/03_dropboxgit.html">DropboxでGit</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
