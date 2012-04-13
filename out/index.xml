@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>title</title>
+  <link href="index.xml" rel="self" />
+  <link href=""/>
+  <updated>2012-04-12T22:07:07Z</updated>
+  <id>index.xml</id>
+  
+</feed>

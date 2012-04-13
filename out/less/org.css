@@ -1,0 +1,72 @@
+
+body {
+    font-family: Verdana,Osaka,sans-serif;
+    font-size: 80%;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+
+pre {
+    border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+    font-family: Verdana,Osaka,sans-serif;
+	/* font-family: courier, monospace; */
+    font-size: 90%;
+    overflow:auto;
+}
+
+
+.org-builtin {
+color: #0086b3
+}
+
+.org-comment {
+color: #998;
+font-style: italic
+}
+.org-comment-delimiter {
+                         color: #ff7f24;
+                         }
+.org-constant {
+color: #c00000;
+}
+
+.org-doc {
+color: #d14
+}
+.org-function-name {
+color: #458;
+font-weight: bold
+}
+
+.org-keyword {
+color: #7777Ff;
+font-weight: bold
+}
+.org-preprocessor {
+color: #999;
+font-weight: bold
+ }
+.org-regexp-grouping-backslash {
+color: #009926
+}
+.org-regexp-grouping-construct {
+color: #009926
+}
+.org-string {
+color: #d14
+}
+
+.org-type {
+color: blue;
+}
+.org-variable-name {
+color: #990073
+}
+.org-warning {
+color: #999;
+font-weight: bold
+}
+
