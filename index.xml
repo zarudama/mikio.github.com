@@ -3,9 +3,39 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-13T20:08:55Z</updated>
+  <updated>2012-04-17T08:29:53Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/11_emacsdired2e2wm.html"/><updated>2012-04-11T22:46:00Z</updated><published>2012-04-11T22:46:00Z</published><id>article/2012/04/11_emacsdired2e2wm.html</id><category scheme="/tags/e2wm.html" term="e2wm" label="e2wm"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
+  <entry><title type="html">playframeworkのModelにスーパークラスをつくる。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/17_playframeworkmodel.html"/><updated>2012-04-17T08:28:00Z</updated><published>2012-04-17T08:28:00Z</published><id>article/2012/04/17_playframeworkmodel.html</id><category scheme="/tags/playframework.html" term="playframework" label="playframework"/><content type="html">&lt;p&gt;
+Model&#12398;&#12473;&#12540;&#12497;&#12540;&#12463;&#12521;&#12473;&#12434;&#20316;&#12387;&#12390;&#12289;&#20316;&#25104;&#26085;&#12392;&#26356;&#26032;&#26085;&#12434;&#12487;&#12501;&#12457;&#12523;&#12488;&#12391;&#25345;&#12390;&#12427;&#12424;&#12358;&#12395;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-c"&gt;&lt;span class="org-type"&gt;import&lt;/span&gt; &lt;span class="org-variable-name"&gt;javax&lt;/span&gt;.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class BaseModel extends Model {
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(nullable = &lt;span class="org-constant"&gt;false&lt;/span&gt;)
+    public &lt;span class="org-type"&gt;Date&lt;/span&gt; &lt;span class="org-variable-name"&gt;createdAt&lt;/span&gt;;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    public &lt;span class="org-type"&gt;Date&lt;/span&gt; &lt;span class="org-variable-name"&gt;updatedAt&lt;/span&gt;;
+
+    @PrePersist
+    protected &lt;span class="org-type"&gt;void&lt;/span&gt; onCreate() {
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
+
+    @PreUpdate
+    protected &lt;span class="org-type"&gt;void&lt;/span&gt; onUpdate() {
+        this.updatedAt = new Date();
+    }
+}
+&lt;/pre&gt;
+
+</content></entry><entry><title type="html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/11_emacsdired2e2wm.html"/><updated>2012-04-11T22:46:00Z</updated><published>2012-04-11T22:46:00Z</published><id>article/2012/04/11_emacsdired2e2wm.html</id><category scheme="/tags/e2wm.html" term="e2wm" label="e2wm"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
 emacs&#12434;&#26412;&#26684;&#30340;&#12395;&#20351;&#12356;&#12399;&#12376;&#12417;&#12427;&#21069;&#12399;xyzzy&#12434;&#20351;&#12356;&#36796;&#12435;&#12391;&#12414;&#12375;&#12383;&#12290;
 xyzzy&#12399;&#38750;&#24120;&#12395;&#39640;&#27231;&#33021;&#12391;&#12289;&#29305;&#12395;&#24859;&#29992;&#12375;&#12390;&#12356;&#12383;&#12398;&#12364;2&#30011;&#38754;&#12501;&#12449;&#12452;&#12521;&#12391;&#12377;&#12290;
 &#12467;&#12500;&#12540;&#20803;&#12392;&#12467;&#12500;&#12540;&#20808;&#12364;&#34920;&#31034;&#12373;&#12428;&#12427;2&#30011;&#38754;&#12501;&#12449;&#12452;&#12521;&#12399;&#35222;&#35226;&#30340;&#12395;&#38750;&#24120;&#12395;&#12431;&#12363;&#12426;&#12420;&#12377;&#12367;&#20415;&#21033;&#12391;&#12375;&#12383;&#12290;
@@ -934,123 +964,6 @@ dos&amp;gt; gem install json
 &lt;/p&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</content></entry><entry><title type="html">mewでマスターキーがうまくいかない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/02/10_mew.html"/><updated>2012-02-10T08:14:00Z</updated><published>2012-02-10T08:14:00Z</published><id>article/2012/02/10_mew.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/mew.html" term="mew" label="mew"/><content type="html">&lt;p&gt;
-cygwin&#19978;&#12391;GPG&#12364;&#12358;&#12414;&#12367;&#21205;&#20316;&#12375;&#12394;&#12356;&#12398;&#12364;&#21407;&#22240;&#12290;
-&lt;/p&gt;
-
-&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;fackecygpty.exe&#12434;&#12383;&#12417;&#12377;&#12290;(&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12363;&#12387;&#12383;)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-
-&lt;p&gt;
-&#12393;&#12358;&#12420;&#12425;cygwin&#12391;&#20351;&#12358;&#12395;&#12399;fakecygpty.exe&#12394;&#12427;&#12418;&#12398;&#12364;&#24517;&#35201;&#12425;&#12375;&#12356;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/kiwanami/20110221/1298293727"&gt;http://d.hatena.ne.jp/kiwanami/20110221/1298293727&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#19979;&#35352;URL&#12424;&#12426;&#12477;&#12540;&#12473;&#12501;&#12449;&#12452;&#12523;&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12375;&#12390;cygwin&#12398;gcc&#12391;&#12467;&#12531;&#12497;&#12452;&#12523;&#12377;&#12427;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.meadowy.org/meadow/browser/trunk/nt/fakecygpty.c"&gt;http://www.meadowy.org/meadow/browser/trunk/nt/fakecygpty.c&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-&lt;pre class="src src-sh"&gt;$ gcc -o fakecygpty.exe fakecygpty.c
-$ cp fakecygpty.exe ~/bin
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-2" class="outline-3"&gt;
-&lt;h3 id="sec-2"&gt;gnupg&#12395;cygwin&#29992;&#12398;&#12497;&#12483;&#12481;&#12434;&#12354;&#12390;&#12427;(&#35299;&#27770;)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2"&gt;
-
-&lt;p&gt;&#19979;&#35352;&#12363;&#12425;&#12477;&#12540;&#12473;&#12434;&#21462;&#24471;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.gnupg.org/download/index.en.html"&gt;http://www.gnupg.org/download/index.en.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-
-&lt;pre class="src src-sh"&gt;~/src
-tar xvfz gnupg-1.4.11.tar.gz
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12497;&#12483;&#12481;&#12434;&#21462;&#24471;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://u.hoso.net/2009/11/ntemacs-gnupg-patch.html"&gt;http://u.hoso.net/2009/11/ntemacs-gnupg-patch.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#12497;&#12483;&#12481;&#12434;&#36969;&#29992;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/src
-patch -p 0 &amp;lt; gnupg-1.4.11_ttyio.patch
-&lt;/pre&gt;
-
-
-
-&lt;p&gt;
-&#12418;&#12392;&#12418;&#12392;&#20837;&#12428;&#12390;&#12356;&#12383;gpg&#12434;&#21066;&#38500;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ apt-cyg remove gnupg
-Removing gnupg
-Package gnupg removed
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12499;&#12523;&#12489;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cd ~/src
-$ cd gnupg-1.4.11
-$ ./configure
-$ make
-$ make install
-&lt;/pre&gt;
-
-&lt;p&gt;
-/usr/local/bin&#12395;&#12391;&#12365;&#12427;&#12290;
-&lt;/p&gt;
-
-&lt;p&gt;
-gnupack&#29992;&#12398;emacs&#12384;&#12392;&#12497;&#12473;&#12364;&#36890;&#12387;&#12390;&#12394;&#12356;&#12398;&#12391;config.ini&#12395;&#19979;&#35352;&#12434;&#36861;&#21152;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;PATH           = %PATH%;%CYGWIN_DIR%\usr\local\bin
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#20197;&#19978;&#12391;&#35299;&#27770;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-
-
 &lt;/div&gt;
 &lt;/div&gt;
 </content></entry>
