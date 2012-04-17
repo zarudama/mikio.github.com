@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>playframeworkのModelにスーパークラスをつくる。</title>
+    <title>GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.2.2.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -79,7 +79,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>playframeworkのModelにスーパークラスをつくる。</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</li>
   </ul>
 
       </div>
@@ -96,13 +96,13 @@
 	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
 	  <div class=" date-m"><a href="../../../article/2012/04/index.html">4</a></div>
-	  <div class=" date-d">17</div>
+	  <div class=" date-d">18</div>
 	</div>
-	<h1 class="offset1">playframeworkのModelにスーパークラスをつくる。</h1>
+	<h1 class="offset1">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/04/11_emacsdired2e2wm.html"><i class="icon-chevron-left"></i>&nbsp;emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/18_galaxynotewindows7usb.html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/04/17_playframeworkmodel.html"><i class="icon-chevron-left"></i>&nbsp;playframeworkのModelにスーパークラスをつくる。</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
@@ -110,69 +110,39 @@
   </header>
   <div class="article-content">
     <p>
-Modelのスーパークラスを作って、作成日と更新日をデフォルトで持てるようにした。
+今週の週刊アスキーに載ってたAndroidの音楽アプリ特集で
+iSncyrというアプリを試すことにしたのですが
+AndroidデバイスがUSBストレージとして認識してくれないため、
+音楽ファイルの転送ができなくてハマりました。
 </p>
-
-
-
-<pre class="src src-c"><span class="org-type">import</span> <span class="org-variable-name">javax</span>.persistence.MappedSuperclass;
-
-@MappedSuperclass
-public class BaseModel extends Model {
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = <span class="org-constant">false</span>)
-    public <span class="org-type">Date</span> <span class="org-variable-name">createdAt</span>;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    public <span class="org-type">Date</span> <span class="org-variable-name">updatedAt</span>;
-
-    @PrePersist
-    protected <span class="org-type">void</span> onCreate() {
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
-    }
-
-    @PreUpdate
-    protected <span class="org-type">void</span> onUpdate() {
-        this.updatedAt = new Date();
-    }
-}
-</pre>
-
-
 <p>
-使用するときはこんな感じ。
+具体的には、GalaxyNote国際版をWindowsにUSB接続しても
+USBデバイスとして認識してくれません。
+ただし、携帯電話デバイスとしては認識してくれます。
+</p>
+<p>
+これを回避するには、まず携帯側で
 </p>
 
 
-<pre class="src src-c"><span class="org-type">package</span> <span class="org-variable-name">models</span>;
- :
-
-@Entity
-public class Editrss extends BaseModel {
-
-    @Required
-    public String title;
-  :
-  :
-}
-
+<pre class="src src-sh">[&#35373;&#23450;] -&gt; [WirelessAndNetwork] -&gt; [USBUtilities] 
 </pre>
 
 <p>
-これにより自動的に、初めてレコードが作成されるときと更新したときにそれぞれ日時が挿入されるようになった。
+を選択してから待機状態にして、ケーブルをつなげば無事認識してくれます。
 </p>
+
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2012-04-17T08:28:00Z">
-      火曜日 4月, 17 2012 at 08:28:00
+    Posted on <time datetime="2012-04-18T01:27:00Z">
+      水曜日 4月, 18 2012 at 01:27:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/playframework.html">playframework</a></li>
+	<li><a href="../../../tags/android.html">android</a></li><li><a href="../../../tags/hamari.html">hamari</a></li>
       </ul>
     </nav>
   </footer>
