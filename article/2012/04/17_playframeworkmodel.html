@@ -140,6 +140,29 @@ public class BaseModel extends Model {
 </pre>
 
 
+<p>
+使用するときはこんな感じ。
+</p>
+
+
+<pre class="src src-c"><span class="org-type">package</span> <span class="org-variable-name">models</span>;
+ :
+
+@Entity
+public class Editrss extends BaseModel {
+
+    @Required
+    public String title;
+  :
+  :
+}
+
+</pre>
+
+<p>
+これにより自動的に、初めてレコードが作成されるときと更新したときにそれぞれ日時が挿入されるようになった。
+</p>
+
   </div>
   
   <footer class="well article-footer">

@@ -3,7 +3,7 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-17T08:29:53Z</updated>
+  <updated>2012-04-17T20:13:03Z</updated>
   <id>http://mikio.github.com/index.xml</id>
   <entry><title type="html">playframeworkのModelにスーパークラスをつくる。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/17_playframeworkmodel.html"/><updated>2012-04-17T08:28:00Z</updated><published>2012-04-17T08:28:00Z</published><id>article/2012/04/17_playframeworkmodel.html</id><category scheme="/tags/playframework.html" term="playframework" label="playframework"/><content type="html">&lt;p&gt;
 Model&#12398;&#12473;&#12540;&#12497;&#12540;&#12463;&#12521;&#12473;&#12434;&#20316;&#12387;&#12390;&#12289;&#20316;&#25104;&#26085;&#12392;&#26356;&#26032;&#26085;&#12434;&#12487;&#12501;&#12457;&#12523;&#12488;&#12391;&#25345;&#12390;&#12427;&#12424;&#12358;&#12395;&#12375;&#12383;&#12290;
@@ -35,6 +35,29 @@ public class BaseModel extends Model {
 }
 &lt;/pre&gt;
 
+
+&lt;p&gt;
+&#20351;&#29992;&#12377;&#12427;&#12392;&#12365;&#12399;&#12371;&#12435;&#12394;&#24863;&#12376;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-c"&gt;&lt;span class="org-type"&gt;package&lt;/span&gt; &lt;span class="org-variable-name"&gt;models&lt;/span&gt;;
+ :
+
+@Entity
+public class Editrss extends BaseModel {
+
+    @Required
+    public String title;
+  :
+  :
+}
+
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12371;&#12428;&#12395;&#12424;&#12426;&#33258;&#21205;&#30340;&#12395;&#12289;&#21021;&#12417;&#12390;&#12524;&#12467;&#12540;&#12489;&#12364;&#20316;&#25104;&#12373;&#12428;&#12427;&#12392;&#12365;&#12392;&#26356;&#26032;&#12375;&#12383;&#12392;&#12365;&#12395;&#12381;&#12428;&#12382;&#12428;&#26085;&#26178;&#12364;&#25407;&#20837;&#12373;&#12428;&#12427;&#12424;&#12358;&#12395;&#12394;&#12387;&#12383;&#12290;
+&lt;/p&gt;
 </content></entry><entry><title type="html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/11_emacsdired2e2wm.html"/><updated>2012-04-11T22:46:00Z</updated><published>2012-04-11T22:46:00Z</published><id>article/2012/04/11_emacsdired2e2wm.html</id><category scheme="/tags/e2wm.html" term="e2wm" label="e2wm"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
 emacs&#12434;&#26412;&#26684;&#30340;&#12395;&#20351;&#12356;&#12399;&#12376;&#12417;&#12427;&#21069;&#12399;xyzzy&#12434;&#20351;&#12356;&#36796;&#12435;&#12391;&#12414;&#12375;&#12383;&#12290;
 xyzzy&#12399;&#38750;&#24120;&#12395;&#39640;&#27231;&#33021;&#12391;&#12289;&#29305;&#12395;&#24859;&#29992;&#12375;&#12390;&#12356;&#12383;&#12398;&#12364;2&#30011;&#38754;&#12501;&#12449;&#12452;&#12521;&#12391;&#12377;&#12290;
