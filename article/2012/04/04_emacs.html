@@ -75,6 +75,7 @@
 	    </div>
       </div>
     </div>
+<!--
     <div class="subnav subnav-fixed">
       <div class="container">
 	    <ul class="breadcrumb">
@@ -84,6 +85,7 @@
 
       </div>
     </div>
+-->
     <div id="page" class="container">
       
       
@@ -95,7 +97,7 @@
 	<div class="date span2">
 	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
-	  <div class=" date-m"><a href="../../../article/2012/04/index.html">4</a></div>
+	  <div class=" date-m"><a href="../../../article/2012/04/index.html"> 4月</a></div>
 	  <div class=" date-d">04</div>
 	</div>
 	<h1 class="offset1">emacsで辞書を引けるようにしたがうまくいかない</h1>
@@ -159,7 +161,7 @@ no -S -e gene.txt | /usr/bin/perl contrib/gene.perl &gt; gene.sdic
 
 
 <pre class="src src-sh">gene.dic: contrib/gene.perl gene.txt
-    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &gt; $<span class="org-variable-name">@</span>
+    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &gt; $@
 </pre>
 
 <p>

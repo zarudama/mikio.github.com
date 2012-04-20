@@ -3,7 +3,7 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-18T02:31:23Z</updated>
+  <updated>2012-04-20T23:59:19Z</updated>
   <id>http://mikio.github.com/index.xml</id>
   <entry><title type="html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/18_galaxynotewindows7usb.html"/><updated>2012-04-18T01:27:00Z</updated><published>2012-04-18T01:27:00Z</published><id>article/2012/04/18_galaxynotewindows7usb.html</id><category scheme="/tags/android.html" term="android" label="android"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
 &#20170;&#36913;&#12398;&#36913;&#21002;&#12450;&#12473;&#12461;&#12540;&#12395;&#36617;&#12387;&#12390;&#12383;Android&#12398;&#38899;&#27005;&#12450;&#12503;&#12522;&#29305;&#38598;&#12391;
@@ -161,55 +161,43 @@ SunrizeCommander&#12391;&#12399;&#29420;&#33258;&#12395;&#12454;&#12451;&#12531;
 &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 &lt;/p&gt;
 &lt;p&gt;
-&#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12399;&#12289;&#20197;&#19979;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&#12487;&#12501;&#12457;&#12523;&#12488;&#12398;&#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12399;&#20197;&#19979;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
 &lt;/p&gt;&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
 &lt;caption&gt;&lt;/caption&gt;
 &lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
 &lt;/colgroup&gt;
 &lt;tbody&gt;
-&lt;tr&gt;&lt;td class="left"&gt;C-f&lt;/td&gt;&lt;td class="left"&gt;&#12454;&#12451;&#12531;&#12489;&#12454;&#31227;&#21205;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;C-b&lt;/td&gt;&lt;td class="left"&gt;&#12454;&#12451;&#12531;&#12489;&#12454;&#31227;&#21205;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;P&lt;/td&gt;&lt;td class="left"&gt;&#19968;&#26041;&#12398;&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#21516;&#12376;&#12395;&#12377;&#12427;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;S&lt;/td&gt;&lt;td class="left"&gt;&#12469;&#12502;&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#12488;&#12464;&#12523;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;C-t&lt;/td&gt;&lt;td class="left"&gt;&#12454;&#12451;&#12531;&#12489;&#12454;&#31227;&#21205;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;M-p&lt;/td&gt;&lt;td class="left"&gt;&#19968;&#26041;&#12398;&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#21516;&#12376;&#12395;&#12377;&#12427;&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+C-t&#12395;&#12454;&#12451;&#12531;&#12489;&#12454;&#31227;&#21205;&#12434;&#21106;&#12426;&#12354;&#12390;&#12390;&#12427;&#12398;&#12399;&#12289;&#12427;&#12403;&#12365;&#12385;&#12373;&#12435;&#12398;&#24433;&#38911;&#12391;&#12377;&#12290;
+M-p&#12395;&#12300;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#25539;&#12360;&#12427;&#12301;&#12434;&#21106;&#12426;&#24403;&#12390;&#12390;&#12356;&#12427;&#12398;&#12399;xyzzy&#12398;&#24433;&#38911;&#12391;&#12377;&#12290;&lt;sup&gt;&lt;a class="footref" name="fnr.1" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
+p&#12399;&#22810;&#20998;prink(&#25539;&#12360;&#12427;)&#12398;&#38957;&#25991;&#23383;&#12363;&#12425;&#12384;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;
 
 &lt;p&gt;
 &#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12434;&#22793;&#26356;&#12375;&#12383;&#12356;&#22580;&#21512;&#12399;&#12289;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#35373;&#23450;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 &lt;/p&gt;
 
 
-&lt;pre class="src src-emacs-lisp"&gt;(define-key e2wm:dp-wfiler-minor-mode-map (kbd &lt;span class="org-string"&gt;"C-f"&lt;/span&gt;) 'e2wm:dp-wfiler-move-buffers-command)
-(define-key e2wm:dp-wfiler-minor-mode-map (kbd &lt;span class="org-string"&gt;"C-b"&lt;/span&gt;) 'e2wm:dp-wfiler-move-buffers-command)
-(define-key e2wm:dp-wfiler-minor-mode-map (kbd &lt;span class="org-string"&gt;"P"&lt;/span&gt;) 'e2wm:dp-wfiler-sync-buffers-command)
+&lt;pre class="src src-emacs-lisp"&gt;(define-key e2wm:dp-wfiler-minor-mode-map (kbd &lt;span class="org-string"&gt;"C-t"&lt;/span&gt;) 'e2wm:dp-wfiler-move-buffers-command)
+(define-key e2wm:dp-wfiler-minor-mode-map (kbd &lt;span class="org-string"&gt;"M-p"&lt;/span&gt;) 'e2wm:dp-wfiler-sync-buffers-command)
 &lt;/pre&gt;
 
 
 &lt;p&gt;
-&#12385;&#12394;&#12415;&#12395;&#33258;&#20998;&#12398;&#22580;&#21512;&#12289;&lt;a href="https://github.com/myuhe/smartrep.el/pull/4"&gt;smartrepl.el&lt;/a&gt; &#12434;&#20351;&#29992;&#12375;&#12390;&#12497;&#12540;&#12473;&#12506;&#12463;&#12486;&#12451;&#12502;&#12398;&#20999;&#12426;&#26367;&#12360;&#12434;&#32032;&#26089;&#12367;&#12391;&#12365;&#12427;&#12424;&#12358;&#12395;&#12375;&#12390;&#12356;&#12414;&#12377;(C-c 4&#12391;&#36215;&#21205;)&#12290;
+&#12385;&#12394;&#12415;&#12395;&#33258;&#20998;&#12398;&#22580;&#21512;&#12289;&#12501;&#12449;&#12452;&#12521;&#12399;&#38971;&#32321;&#12395;&#20351;&#29992;&#12375;&#12383;&#12356;&#12398;&#12391;C-c 4&#12391;&#36215;&#21205;&#12391;&#12365;&#12427;&#12424;&#12358;&#12395;&#12375;&#12390;&#12354;&#12426;&#12414;&#12377;&#12290;
 &lt;/p&gt;
 
 
-&lt;pre class="src src-emacs-lisp"&gt;(&lt;span class="org-keyword"&gt;when&lt;/span&gt; (&lt;span class="org-keyword"&gt;require&lt;/span&gt; '&lt;span class="org-constant"&gt;smartrep&lt;/span&gt; nil t)
-  (smartrep-define-key e2wm:pst-minor-mode-keymap &lt;span class="org-string"&gt;"C-c"&lt;/span&gt;
-    '(
-      (&lt;span class="org-string"&gt;"m"&lt;/span&gt;   . 'e2wm:pst-window-select-main-command) &lt;span class="org-comment-delimiter"&gt;; &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12513;&amp;#12452;&amp;#12531;&amp;#12454;&amp;#12452;&amp;#12531;&amp;#12489;&amp;#12454;&amp;#12434;&amp;#36984;&amp;#25246;&amp;#12377;&amp;#12427;&lt;/span&gt;
-      (&lt;span class="org-string"&gt;"I"&lt;/span&gt;   . info)               &lt;span class="org-comment-delimiter"&gt;; &lt;/span&gt;&lt;span class="org-comment"&gt;info&amp;#12434;&amp;#36215;&amp;#21205;&amp;#12377;&amp;#12427;&lt;/span&gt;
-      (&lt;span class="org-string"&gt;"L"&lt;/span&gt;   . ielm)               &lt;span class="org-comment-delimiter"&gt;; &lt;/span&gt;&lt;span class="org-comment"&gt;ielm &amp;#12434;&amp;#36215;&amp;#21205;&amp;#12377;&amp;#12427;&amp;#65288;sub&amp;#12391;&amp;#36215;&amp;#21205;&amp;#12377;&amp;#12427;&amp;#65289;&lt;/span&gt;
-      (&lt;span class="org-string"&gt;"s"&lt;/span&gt;   . 'e2wm:my-toggle-sub)  &lt;span class="org-comment-delimiter"&gt;; &lt;/span&gt;&lt;span class="org-comment"&gt;sub&amp;#12398;&amp;#34920;&amp;#31034;&amp;#12434;&amp;#12488;&amp;#12464;&amp;#12523;&amp;#12377;&amp;#12427;&lt;/span&gt;
-
-      (&lt;span class="org-string"&gt;"1"&lt;/span&gt; . 'e2wm:dp-code) 
-      (&lt;span class="org-string"&gt;"2"&lt;/span&gt; . 'e2wm:dp-two)
-      (&lt;span class="org-string"&gt;"3"&lt;/span&gt; . 'e2wm:dp-doc)
-      (&lt;span class="org-string"&gt;"4"&lt;/span&gt; . 'e2wm:dp-wfiler)
-      (&lt;span class="org-string"&gt;"5"&lt;/span&gt; . 'e2wm:dp-magit)
-      (&lt;span class="org-string"&gt;"6"&lt;/span&gt; . 'e2wm:dp-dashboard)
-
-      (&lt;span class="org-string"&gt;"k"&lt;/span&gt; . 'e2wm:pst-history-forward-command)
-      (&lt;span class="org-string"&gt;"j"&lt;/span&gt; . 'e2wm:pst-history-back-command)
-      )
-    ))
+&lt;pre class="src src-emacs-lisp"&gt;(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 1"&lt;/span&gt;) 'e2wm:dp-code)
+(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 2"&lt;/span&gt;) 'e2wm:dp-two)
+(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 3"&lt;/span&gt;) 'e2wm:dp-doc)
+(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 4"&lt;/span&gt;) 'e2wm:dp-wfiler)
+(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 5"&lt;/span&gt;) 'e2wm:dp-magit)
+(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 6"&lt;/span&gt;) 'e2wm:dp-dashboard)
+(global-set-key (kbd &lt;span class="org-string"&gt;"C-c 7"&lt;/span&gt;) 'e2wm:dp-array)
 &lt;/pre&gt;
 
 
@@ -227,19 +215,16 @@ SunrizeCommander&#12391;&#12399;&#29420;&#33258;&#12395;&#12454;&#12451;&#12531;
 &lt;p&gt;
 &#26368;&#24460;&#12395;&#31309;&#12415;&#27531;&#12375;&#12398;&#27231;&#33021;&#12399;&#20197;&#19979;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
 &lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;history&#27231;&#33021;&#12399;&#26410;&#23550;&#24540;(&#27161;&#28310;&#12398;history&#12399;&#36890;&#24120;&#12398;&#12496;&#12483;&#12501;&#12449;&#12398;&#12415;&#12364;&#31649;&#29702;&#23550;&#35937;&#12384;&#12387;&#12383;&#12398;&#12391;)
-&lt;/li&gt;
-&lt;li&gt;&#38283;&#12356;&#12383;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12398;&#23653;&#27508;&#31649;&#29702;
-&lt;/li&gt;
-&lt;li&gt;&#12501;&#12449;&#12452;&#12521;&#12395;&#20999;&#12426;&#26367;&#12360;&#12427;&#12392;&#12365;&#12289;&#21021;&#12417;&#12390;&#12398;&#22580;&#21512;&#12399;&#26368;&#24460;&#12398;&#12496;&#12483;&#12501;&#12449;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12289;  2&#22238;&#30446;&#20197;&#38477;&#12398;&#12392;&#12365;&#12399;&#12289;&#26368;&#24460;&#12398;&#29366;&#24907;&#12434;&#24489;&#20803;&#12290;
+&lt;li&gt;e2wm&#27161;&#28310;&#12398;history&#27231;&#33021;&#12392;&#21516;&#27096;&#12398;&#12418;&#12398;&#12434;Dired&#12496;&#12483;&#12501;&#12449;&#23554;&#29992;&#12391;&#23455;&#35013;&#12377;&#12427;
 &lt;/li&gt;
 &lt;li&gt;&#12501;&#12449;&#12452;&#12523;&#12434;&#38283;&#12367;&#12392;&#12365;&#12395;&#12497;&#12540;&#12473;&#12506;&#12463;&#12486;&#12451;&#12502;&#12434;&#25351;&#23450;&#12375;&#12383;&#12356;&#12290;
 &lt;/li&gt;
-&lt;li&gt;&#38283;&#12356;&#12383;&#12501;&#12449;&#12452;&#12523;&#12399;&#12498;&#12473;&#12488;&#12522;&#12395;&#20837;&#12428;&#12394;&#12356;&#12392;&#12363;&#12418;&#12290;   
+&lt;li&gt;&#12501;&#12449;&#12452;&#12521;&#12395;&#20999;&#12426;&#26367;&#12360;&#12427;&#12392;&#12365;&#12289;&#21021;&#12417;&#12390;&#12398;&#22580;&#21512;&#12399;&#26368;&#24460;&#12398;&#12496;&#12483;&#12501;&#12449;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12289;  2&#22238;&#30446;&#20197;&#38477;&#12398;&#12392;&#12365;&#12399;&#12289;&#26368;&#24460;&#12398;&#29366;&#24907;&#12434;&#24489;&#20803;&#12290;
 &lt;/li&gt;
-&lt;li&gt;&#12487;&#12451;&#12463;&#12524;&#12488;&#12522;&#12398;&#12496;&#12483;&#12501;&#12449;&#12434;&#27810;&#23665;&#38283;&#12363;&#12394;&#12356;(2&#12388;&#12414;&#12391;)
+&lt;li&gt;2&#30011;&#38754;&#12501;&#12449;&#12452;&#12521;&#12497;&#12540;&#12473;&#12506;&#12463;&#12486;&#12451;&#12502;&#12398;&#12414;&#12414;&#12289;&#12501;&#12449;&#12452;&#12523;&#12434;&#38283;&#12367;(&#12469;&#12502;&#12395;&#34920;&#31034;&#12375;&#12289;&#12501;&#12457;&#12540;&#12459;&#12473;&#12399;&#31227;&#21205;&#12375;&#12394;&#12356;)&#12290;
 &lt;/li&gt;
 &lt;/ul&gt;
+
 
 
 &lt;p&gt;
@@ -282,6 +267,22 @@ SunrizeCommander&#12391;&#12399;&#29420;&#33258;&#12395;&#12454;&#12451;&#12531;
 &lt;/ul&gt;
 
 
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;nil: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.1" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; xyzzy&#12391;&#12399;S-p&#12384;&#12387;&#12383;&#12398;&#12391;&#12377;&#12364;&#12289;&#12371;&#12428;&#12384;&#12392;dired&#12514;&#12540;&#12489;&#20197;&#22806;&#12398;&#12496;&#12483;&#12501;&#12449;&#12394;&#12393;&#12391;&#12467;&#12531;&#12488;&#12540;&#12525;&#12540;&#12523;&#12434;&#22890;&#12431;&#12428;&#12390;&#12375;&#12414;&#12358;&#12383;&#12417;
+(&#12511;&#12491;&#12496;&#12483;&#12501;&#12449;&#12394;&#12393;&#12391;&#22823;&#25991;&#23383;P&#12364;&#20837;&#21147;&#12391;&#12365;&#12394;&#12367;&#12394;&#12427;)M-p&#12395;&#12375;&#12390;&#12354;&#12426;&#12414;&#12377;&#12290;&#21516;&#27096;&#12398;&#29702;&#30001;&#12391;C-f,C-b&#12418;&#20351;&#29992;&#12375;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -468,7 +469,7 @@ clean       Remove compiled class files and jars from project.
 compile     Compile Clojure source into .class files.
 deploy      Build jar and deploy to remote repository.
 deps        Download :dependencies and put them&lt;span class="org-keyword"&gt; in&lt;/span&gt; :library-path.
-help        Display a list of tasks or help for a given task.
+&lt;span class="org-builtin"&gt;help&lt;/span&gt;        Display a list of tasks or help for a given task.
 install     Install current project or download specified project.
 interactive Enter an interactive task shell. Aliased to &lt;span class="org-string"&gt;"int"&lt;/span&gt;.
 jack-in     Jack&lt;span class="org-keyword"&gt; in&lt;/span&gt; to a Clojure SLIME session from Emacs.
@@ -600,7 +601,7 @@ no -S -e gene.txt | /usr/bin/perl contrib/gene.perl &amp;gt; gene.sdic
 
 
 &lt;pre class="src src-sh"&gt;gene.dic: contrib/gene.perl gene.txt
-    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &amp;gt; $&lt;span class="org-variable-name"&gt;@&lt;/span&gt;
+    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &amp;gt; $@
 &lt;/pre&gt;
 
 &lt;p&gt;
