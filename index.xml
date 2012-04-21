@@ -3,9 +3,81 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-04-20T23:59:19Z</updated>
+  <updated>2012-04-21T10:19:18Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/18_galaxynotewindows7usb.html"/><updated>2012-04-18T01:27:00Z</updated><published>2012-04-18T01:27:00Z</published><id>article/2012/04/18_galaxynotewindows7usb.html</id><category scheme="/tags/android.html" term="android" label="android"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+  <entry><title type="html">ClojureScriptで書かれたGameEditerすげぇ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/21_clojurescriptgameediter.html"/><updated>2012-04-21T00:35:00Z</updated><published>2012-04-21T00:35:00Z</published><id>article/2012/04/21_clojurescriptgameediter.html</id><category scheme="/tags/clojurescript.html" term="clojurescript" label="clojurescript"/><content type="html">&lt;p&gt;
+&#26368;&#36817;clojure&#30028;&#38536;&#12391;&#35441;&#38988;&#12398;&lt;a href="http://www.chris-granger.com/2012/04/12/light-table---a-new-ide-concept/"&gt;LightTable&lt;/a&gt; &#12391;&#12377;&#12364;&#12381;&#12398;&#21069;&#36523;&#12392;&#12375;&#12390;
+ClojureScript&#12391;&#26360;&#12363;&#12428;&#12383;&#12466;&#12540;&#12512;&#12456;&#12487;&#12451;&#12479;&#12364;&#12354;&#12387;&#12383;&#12424;&#12358;&#12391;&#12377;&#12290;&lt;sup&gt;&lt;a class="footref" name="fnr.1" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.chris-granger.com/2012/02/26/connecting-to-your-creation/"&gt;http://www.chris-granger.com/2012/02/26/connecting-to-your-creation/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;p&gt;
+&#31777;&#21336;&#12395;&#36215;&#21205;&#12391;&#12365;&#12427;&#12398;&#12391;lein&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12427;&#12363;&#12383;&#12399;&#12380;&#12402;&#19968;&#24230;&#35430;&#12373;&#12428;&#12427;&#12371;&#12392;&#12434;&#12362;&#21223;&#12417;&#12375;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ git clone https://github.com/ibdknox/live-cljs.git
+$ cd live-cljs/
+$ lein run
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#22810;&#20998;&#27425;&#12398;&#12424;&#12358;&#12394;recur&#12364;&#12393;&#12358;&#12392;&#12363;&#12398;&#12456;&#12521;&#12540;&#12364;&#30330;&#29983;&#12377;&#12427;&#12398;&#12391;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;&lt;span class="org-string"&gt;"Elapsed time: 58.674804 msecs"&lt;/span&gt;
+Exception&lt;span class="org-keyword"&gt; in&lt;/span&gt; thread &lt;span class="org-string"&gt;"main"&lt;/span&gt; java.lang.RuntimeException: java.lang.AssertionError: Assert failed: Can&lt;span class="org-string"&gt;'t recur here&lt;/span&gt;
+&lt;span class="org-string"&gt;frame&lt;/span&gt;
+&lt;span class="org-string"&gt;        at clojure.lang.Util.runtimeException(Util.java:165)&lt;/span&gt;
+&lt;span class="org-string"&gt;        at clojure.lang.Compiler.eval(Compiler.java:6476)&lt;/span&gt;
+&lt;span class="org-string"&gt;        at clojure.lang.Compiler.eval(Compiler.java:6455)&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#19979;&#35352;&#12434;&#23455;&#34892;&#12375;&#12390;&#20877;&#12481;&#12515;&#12524;&#12531;&#12472;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ rm -rf classes/cljs/
+$ lein run
+ :
+ :
+2012-04-20 19:58:40.913:INFO::jetty-6.1.25
+2012-04-20 19:58:40.944:INFO::Started SocketConnector@0.0.0.0:8074
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#28961;&#20107;&#12525;&#12540;&#12459;&#12523;&#12469;&#12540;&#12496;&#12364;&#36215;&#21205;&#12375;&#12383;&#12425;&#19979;&#35352;&#12395;&#12450;&#12463;&#12475;&#12473;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://localhost:8074/"&gt;http://localhost:8074/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Clojurescript&#12391;&#26360;&#12363;&#12428;&#12383;&#12466;&#12540;&#12512;&#12456;&#12487;&#12451;&#12479;&#12364;&#36215;&#21205;&#12375;&#12414;&#12377;&#12290;
+&#24038;&#12398;&#12508;&#12483;&#12463;&#12473;&#12395;&#12456;&#12487;&#12451;&#12479;&#12289;&#21491;&#12398;&#12508;&#12483;&#12463;&#12473;&#12395;&#12466;&#12540;&#12512;&#30011;&#38754;&#12364;&#34920;&#31034;&#12373;&#12428;&#12414;&#12377;&#12290;
+&#12467;&#12540;&#12489;&#20013;&#12398;&#12497;&#12521;&#12513;&#12540;&#12479;&#12434;&#12356;&#12376;&#12427;&#12392;&#12377;&#12368;&#12395;&#21453;&#26144;&#12373;&#12428;&#12390;&#27005;&#12375;&#12356;&#12391;&#12377;&#12290;
+&#12371;&#12358;&#12356;&#12358;&#38283;&#30330;&#12434;Emacs+SLIME+Clojure&#12391;&#12375;&#12383;&#12363;&#12387;&#12383;&#65281;&#12390;&#12363;&#12420;&#12429;&#12358;!
+&lt;/p&gt;
+
+
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;nil: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.1" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &#12385;&#12394;&#12415;&#12395;&#12371;&#12398;&#20316;&#32773;&#12398;&#12300;chris granger&#12301;&#12387;&#12390;&#20154;&#12289;&lt;a href="http://webnoir.org/"&gt;Noir&lt;/a&gt; &#12398;&#20316;&#32773;&#12384;&#12387;&#12383;&#12426;
+VisualStudio&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12510;&#12493;&#12540;&#12472;&#12515;&#12384;&#12387;&#12383;&#12426;&#12377;&#12372;&#12356;&#20154;&#12391;&#12377;&#12290;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/18_galaxynotewindows7usb.html"/><updated>2012-04-18T01:27:00Z</updated><published>2012-04-18T01:27:00Z</published><id>article/2012/04/18_galaxynotewindows7usb.html</id><category scheme="/tags/android.html" term="android" label="android"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
 &#20170;&#36913;&#12398;&#36913;&#21002;&#12450;&#12473;&#12461;&#12540;&#12395;&#36617;&#12387;&#12390;&#12383;Android&#12398;&#38899;&#27005;&#12450;&#12503;&#12522;&#29305;&#38598;&#12391;
 iSncyr&#12392;&#12356;&#12358;&#12450;&#12503;&#12522;&#12434;&#35430;&#12377;&#12371;&#12392;&#12395;&#12375;&#12383;&#12398;&#12391;&#12377;&#12364;
 Android&#12487;&#12496;&#12452;&#12473;&#12364;USB&#12473;&#12488;&#12524;&#12540;&#12472;&#12392;&#12375;&#12390;&#35469;&#35672;&#12375;&#12390;&#12367;&#12428;&#12394;&#12356;&#12383;&#12417;&#12289;
@@ -772,59 +844,6 @@ grep: Unmatched [ or [^
  (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)
 &lt;/p&gt;
 
-
-&lt;/div&gt;
-&lt;/div&gt;
-</content></entry><entry><title type="html">sudoで環境変数を引き継ぎたい</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/03/10_sudo.html"/><updated>2012-03-10T22:09:00Z</updated><published>2012-03-10T22:09:00Z</published><id>article/2012/03/10_sudo.html</id><category scheme="/tags/sudo.html" term="sudo" label="sudo"/><category scheme="/tags/linux.html" term="linux" label="linux"/><content type="html">&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;&#26041;&#27861;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-&lt;p&gt;-E&#12458;&#12503;&#12471;&#12519;&#12531;&#12434;&#36861;&#21152;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo -E ls -la $&lt;span class="org-variable-name"&gt;HOME&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;
--E&#12399;&#23455;&#34892;&#12375;&#12383;&#12356;&#12467;&#12510;&#12531;&#12489;&#12398;&#30452;&#21069;&#12395;&#32622;&#12367;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-2" class="outline-3"&gt;
-&lt;h3 id="sec-2"&gt;&#32076;&#36942;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2"&gt;
-
-&lt;p&gt;sudo -u hoge&#12394;&#12393;&#12391;&#23455;&#34892;&#12377;&#12427;&#12392;&#12289;sudo&#12434;&#23455;&#34892;&#12375;&#12383;&#12518;&#12540;&#12470;&#12398;&#29872;&#22659;&#22793;&#25968;&#12364;&#24341;&#12365;&#32153;&#12364;&#12428;&#12394;&#12356;&#12290;
-&#26132;&#12399;&#12289;&#12371;&#12435;&#12394;&#12371;&#12392;&#32771;&#12360;&#12378;&#12395;&#24341;&#12365;&#32153;&#12364;&#12428;&#12390;&#12383;&#27671;&#12364;&#12377;&#12427;&#12364;&#12289;&#12393;&#12358;&#12420;&#12425;sudo&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#19978;&#12364;&#12387;&#12390;
-&#20181;&#27096;&#22793;&#26356;&#12373;&#12428;&#12383;&#12425;&#12375;&#12356;&#12290;
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://arika.org/2009/04/24/sudo-and-env"&gt;http://arika.org/2009/04/24/sudo-and-env&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#29872;&#22659;&#22793;&#25968;&#12434;&#24341;&#12365;&#32153;&#12368;&#12383;&#12417;&#12395;&#12399;visudo&#12434;&#20351;&#12387;&#12390;sudoers&#12501;&#12449;&#12452;&#12523;&#12395;&#29872;&#22659;&#22793;&#25968;&#12434;&#35352;&#36848;&#12377;&#12427;&#12398;&#12364;
-&#23450;&#30707;&#12398;&#12424;&#12358;&#12384;&#12364;&#12289;/etc&#37197;&#19979;&#12399;&#12391;&#12365;&#12427;&#12384;&#12369;&#35302;&#12426;&#12383;&#12367;&#12394;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12381;&#12371;&#12391;&#19979;&#35352;&#12398;&#26041;&#27861;&#12434;&#35211;&#12388;&#12369;&#12383;&#12290;-E&#12434;&#12388;&#12369;&#12427;&#12384;&#12369;&#12391;&#33391;&#12356;&#12425;&#12375;&#12356;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/Yudoufu/20110326/1301129885"&gt;http://d.hatena.ne.jp/Yudoufu/20110326/1301129885&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#12383;&#12384;&#12375;&#12289;man sudo &#12375;&#12390;&#12418;-E&#12458;&#12503;&#12471;&#12519;&#12531;&#12399;&#20309;&#25925;&#12363;&#36617;&#12387;&#12390;&#12356;&#12394;&#12363;&#12387;&#12383;&#12290;
-&#65288;man&#12395;&#12394;&#12356;&#12384;&#12369;&#12391;&#23455;&#38555;&#12395;&#12399;&#20351;&#29992;&#12391;&#12365;&#12427;&#12290;)
-&lt;/p&gt;
-&lt;p&gt;
-man&#12398;&#26368;&#24460;&#12395;ver1.6.6&#12392;&#12354;&#12427;&#12398;&#12391;&#12510;&#12491;&#12517;&#12450;&#12523;&#12364;&#21476;&#12356;&#12392;&#24605;&#12431;&#12428;&#12427;&#12290;
-sudo[Enter]&#12391;&#34920;&#31034;&#12373;&#12428;&#12427;Usage&#12395;&#12399;E&#12458;&#12503;&#12471;&#12519;&#12531;&#12399;&#23384;&#22312;&#12377;&#12427;&#12398;&#12391;&#12290;
-&lt;/p&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
