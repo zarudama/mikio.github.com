@@ -360,13 +360,24 @@ fc-cache -fv
 sudo apt-get install g++ libboost-regex-dev libboost-dev libudev-dev libusb-1.0-0-dev 
 
 <span class="org-comment-delimiter"># </span><span class="org-comment">&#12499;&#12523;&#12489;</span>
+./configure
 make
 sudo paco -D make install
 </pre>
 
 
+
 <p>
-設定ファイルの編集
+uinput がロードされている必要がある。
+</p>
+
+
+<pre class="src src-sh">sudo modprobe uinput
+</pre>
+
+
+<p>
+自動起動の設定。
 </p>
 
 
@@ -374,9 +385,10 @@ sudo paco -D make install
 <span class="org-comment-delimiter"># </span><span class="org-comment">&#19979;&#35352;&#12434;&#36861;&#21152;</span>
 uinput
 
-<span class="org-comment-delimiter"># </span><span class="org-comment">&#21453;&#26144;</span>
-sudo modprobe uinput
+<span class="org-comment-delimiter"># </span><span class="org-comment">&#32232;&#38598;&#24460;&#12289;&#19979;&#35352;&#12434;&#23455;&#34892;&#12377;&#12427;&#12290;</span>
+sudo update-modules
 </pre>
+
 
 
 <p>

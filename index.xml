@@ -3,7 +3,7 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-05-08T20:32:50Z</updated>
+  <updated>2012-05-09T00:22:34Z</updated>
   <id>http://mikio.github.com/index.xml</id>
   <entry><title type="html">束縛とは</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/08_.html"/><updated>2012-05-08T23:30:00Z</updated><published>2012-05-08T23:30:00Z</published><id>article/2012/05/08_.html</id><category scheme="/tags/lisp.html" term="lisp" label="lisp"/><content type="html">&lt;p&gt;
 &#12300;EmacsLisp&#12486;&#12463;&#12491;&#12483;&#12463;&#12496;&#12452;&#12502;&#12523;&#12301;&#12434;&#35501;&#12435;&#12391;&#12289;&#12420;&#12387;&#12392;&#29702;&#35299;&#12391;&#12365;&#12383;&#12290;
@@ -33,7 +33,11 @@ Lisp(&#12392;&#12356;&#12358;&#12363;&#38306;&#25968;&#22411;&#35328;&#35486;)&#
 
 &lt;p&gt;
 &#38263;&#24180;&#12398;&#30097;&#21839;&#12364;&#35299;&#12369;&#12390;&#12473;&#12483;&#12461;&#12522;&#12375;&#12383;&#30636;&#38291;&#12384;&#12387;&#12383;&#12290;
-&lt;/p&gt;</content></entry><entry><title type="html">(超個人的)Ubuntuインストール後にやることまとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/05_ubuntu.html"/><updated>2012-05-05T22:31:00Z</updated><published>2012-05-05T22:31:00Z</published><id>article/2012/05/05_ubuntu.html</id><content type="html">&lt;ul&gt;
+&lt;/p&gt;
+
+
+&lt;a href="http://www.amazon.co.jp/gp/product/4774148970/ref=as_li_tf_il?ie=UTF8&amp;tag=ocha04-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4774148970"&gt;&lt;img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;Format=_SL160_&amp;ASIN=4774148970&amp;MarketPlace=JP&amp;ID=AsinImage&amp;WS=1&amp;tag=ocha04-22&amp;ServiceVersion=20070822" &gt;&lt;/a&gt;&lt;img src="http://www.assoc-amazon.jp/e/ir?t=ocha04-22&amp;l=as2&amp;o=9&amp;a=4774148970" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;
+</content></entry><entry><title type="html">(超個人的)Ubuntuインストール後にやることまとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/05_ubuntu.html"/><updated>2012-05-05T22:31:00Z</updated><published>2012-05-05T22:31:00Z</published><id>article/2012/05/05_ubuntu.html</id><content type="html">&lt;ul&gt;
 &lt;li&gt;Ubuntu12.04LTS&#29256;&#12391;&#12377;&#12290;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -293,13 +297,24 @@ fc-cache -fv
 sudo apt-get install g++ libboost-regex-dev libboost-dev libudev-dev libusb-1.0-0-dev 
 
 &lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12499;&amp;#12523;&amp;#12489;&lt;/span&gt;
+./configure
 make
 sudo paco -D make install
 &lt;/pre&gt;
 
 
+
 &lt;p&gt;
-&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12398;&#32232;&#38598;
+uinput &#12364;&#12525;&#12540;&#12489;&#12373;&#12428;&#12390;&#12356;&#12427;&#24517;&#35201;&#12364;&#12354;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;sudo modprobe uinput
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#33258;&#21205;&#36215;&#21205;&#12398;&#35373;&#23450;&#12290;
 &lt;/p&gt;
 
 
@@ -307,9 +322,10 @@ sudo paco -D make install
 &lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#19979;&amp;#35352;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
 uinput
 
-&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#21453;&amp;#26144;&lt;/span&gt;
-sudo modprobe uinput
+&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#32232;&amp;#38598;&amp;#24460;&amp;#12289;&amp;#19979;&amp;#35352;&amp;#12434;&amp;#23455;&amp;#34892;&amp;#12377;&amp;#12427;&amp;#12290;&lt;/span&gt;
+sudo update-modules
 &lt;/pre&gt;
+
 
 
 &lt;p&gt;
