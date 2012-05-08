@@ -45,7 +45,7 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
-<li><a href="../../../article/2012/05/08_.html">束縛とは</a>
+<li><a href="../../../article/2012/05/08_.html">束縛とは?..そうか!名札なのか!</a>
 </li>
 <li><a href="../../../article/2012/05/05_ubuntu.html">(超個人的)Ubuntuインストール後にやることまとめ</a>
 </li>
@@ -93,7 +93,7 @@
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/04/21_clojurescriptgameediter.html"><i class="icon-chevron-left"></i>&nbsp;ClojureScriptで書かれたGameEditerすげぇ</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/05/08_.html">束縛とは&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/04/21_clojurescriptgameediter.html"><i class="icon-chevron-left"></i>&nbsp;ClojureScriptで書かれたGameEditerすげぇ</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/05/08_.html">束縛とは?..そうか!名札なのか!&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
@@ -270,14 +270,83 @@ sudo paco -D make install
 </div>
 
 <div id="outline-container-6" class="outline-3">
-<h3 id="sec-6">全体のキーボード操作をemacs系にする</h3>
+<h3 id="sec-6">cmigemo</h3>
 <div class="outline-text-3" id="text-6">
+
+<p>Kaoriaからソースを取得する。
+</p>
+
+
+<pre class="src src-sh">wget http://cmigemo.googlecode.com/files/cmigemo-default-src-20110227.zip
+unzip cmigemo-default-src-20110227.zip
+<span class="org-builtin">cd</span> cmigemo-default-src-20110227
+</pre>
+
+
+<p>
+そのままコンパイルするとエラーがでるので修正する。
+</p>
+
+
+<pre class="src src-sh">src/wordbuf.c:118: error: &#8216;INT_MAX&#8217; undeclared (first use<span class="org-keyword"> in</span> this <span class="org-keyword">function</span>)
+src/wordbuf.c:118: error: (Each undeclared identifier is reported only once
+src/wordbuf.c:118: error: for each <span class="org-keyword">function</span> <span class="org-function-name">it</span> appears in.)
+</pre>
+
+<p>
+wordbuf.cに下記を追加する。
+</p>
+
+
+<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">include &lt;limits.h&gt;</span>
+</pre>
+
+
+<p>
+あとは下記のとおり。
+</p>
+
+
+<pre class="src src-sh">sudo apt-get install curl
+sudo apt-get install nkf
+
+<span class="org-builtin">cd</span> ~/src/cmigemo-default-src/
+sh ./configure 
+make gcc
+<span class="org-builtin">cd</span> dict
+make utf-8
+<span class="org-builtin">cd</span> ..
+sudo paco -D make gcc-install
+</pre>
+
+
+<p>
+次のようにテストできる。
+</p>
+
+
+<pre class="src src-sh">$ cmigemo -d /usr/local/share/migemo/utf-8/migemo-dict
+<span class="org-function-name">migemo_open</span>(<span class="org-string">"/usr/local/share/migemo/utf-8/migemo-dict"</span>)=0xf54010
+<span class="org-function-name">clock</span>()=0.300000
+QUERY: kyassyu
+PATTERN: (&#65399;&#65388;&#65391;&#65404;&#65389;|&#12461;&#12515;&#12483;&#12471;&#12517;|&#12365;&#12419;&#12387;&#12375;&#12421;|&#65355;&#65369;&#65345;&#65363;&#65363;&#65369;&#65365;|kyassyu)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-3">
+<h3 id="sec-7">全体のキーボード操作をemacs系にする</h3>
+<div class="outline-text-3" id="text-7">
 
 <p>ターミナルで下記コマンドを実行する。
 </p>
 
 
-<pre class="src src-sh">gconf-editor
+<pre class="src src-sh">sudo apt-get install gconf-editor
+gconf-editor
 </pre>
 
 
@@ -297,9 +366,9 @@ sudo paco -D make install
 
 </div>
 
-<div id="outline-container-7" class="outline-3">
-<h3 id="sec-7">Mig 1M</h3>
-<div class="outline-text-3" id="text-7">
+<div id="outline-container-8" class="outline-3">
+<h3 id="sec-8">Mig 1M</h3>
+<div class="outline-text-3" id="text-8">
 
 <p>1MのMはMonoSpaceのM。つまり等幅フォントということ。
 下記から「Mig 1M」フォントをダウンロードする。
@@ -325,9 +394,9 @@ fc-cache -fv
 
 </div>
 
-<div id="outline-container-8" class="outline-3">
-<h3 id="sec-8">VLゴシック</h3>
-<div class="outline-text-3" id="text-8">
+<div id="outline-container-9" class="outline-3">
+<h3 id="sec-9">VLゴシック</h3>
+<div class="outline-text-3" id="text-9">
 
 <p>下記をfirefoxから開けばOK
 </p><ul>
@@ -341,14 +410,9 @@ fc-cache -fv
 
 </div>
 
-<div id="outline-container-9" class="outline-3">
-<h3 id="sec-9">窓使いの憂鬱</h3>
-<div class="outline-text-3" id="text-9">
-
-<ul>
-<li><a href="http://www42.tok2.com/home/negidakude/">http://www42.tok2.com/home/negidakude/</a>
-</li>
-</ul>
+<div id="outline-container-10" class="outline-3">
+<h3 id="sec-10">窓使いの憂鬱</h3>
+<div class="outline-text-3" id="text-10">
 
 
 <p>
@@ -360,19 +424,42 @@ fc-cache -fv
 sudo apt-get install g++ libboost-regex-dev libboost-dev libudev-dev libusb-1.0-0-dev 
 
 <span class="org-comment-delimiter"># </span><span class="org-comment">&#12499;&#12523;&#12489;</span>
+<span class="org-builtin">cd</span> ~/src/mayu-0.12.1/
 ./configure
 make
 sudo paco -D make install
 </pre>
 
 
-
 <p>
-uinput がロードされている必要がある。
+~/.mayuの作成
 </p>
 
 
-<pre class="src src-sh">sudo modprobe uinput
+<pre class="src src-sh">include <span class="org-string">"linux109.mayu"</span>
+
+keymap Global
+
+<span class="org-comment-delimiter">#</span><span class="org-comment">mod control += Muhenkan</span>
+<span class="org-comment-delimiter">#</span><span class="org-comment">key *Muhenkan = *LControl</span>
+
+mod Control += Henkan
+key *Henkan = *LeftControl
+
+mod Shift += Muhenkan
+key *Muhenkan = *LShift
+
+key *Hiragana = Enter
+</pre>
+
+
+<p>
+テスト起動。
+</p>
+
+
+<pre class="src src-sh"><span class="org-builtin">cd</span> ~/src/mayu-0.12.1/
+sudo mayu &amp;
 </pre>
 
 
@@ -384,11 +471,7 @@ uinput がロードされている必要がある。
 <pre class="src src-sh">sudo vi /etc/modules
 <span class="org-comment-delimiter"># </span><span class="org-comment">&#19979;&#35352;&#12434;&#36861;&#21152;</span>
 uinput
-
-<span class="org-comment-delimiter"># </span><span class="org-comment">&#32232;&#38598;&#24460;&#12289;&#19979;&#35352;&#12434;&#23455;&#34892;&#12377;&#12427;&#12290;</span>
-sudo update-modules
 </pre>
-
 
 
 <p>
@@ -396,19 +479,98 @@ sudo update-modules
 </p>
 
 
-<pre class="src src-sh">sudo mv mayu /etc/init.d/
-sudo chmod +x /etc/init.d/mayu 
+<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">! /bin/</span><span class="org-keyword">sh</span>
+
+<span class="org-variable-name">DAEMON</span>=/usr/local/bin/mayu
+<span class="org-variable-name">NAME</span>=mayu
+<span class="org-variable-name">USER</span>=anekos
+<span class="org-variable-name">DESC</span>=<span class="org-string">"Mayu at $USER"</span>
+<span class="org-variable-name">PIDFILE</span>=/var/run/$<span class="org-variable-name">NAME</span>.pid
+<span class="org-variable-name">SCRIPTNAME</span>=/etc/init.d/mayu
+
+<span class="org-function-name">do_start</span>()
+{
+    <span class="org-builtin">echo</span> -n <span class="org-string">"Starting $DESC: "</span>
+    <span class="org-keyword">if</span> start-stop-daemon --stop --quiet --pidfile $<span class="org-variable-name">PIDFILE</span> <span class="org-sh-escaped-newline">\</span>
+            --signal 0
+    <span class="org-keyword">then</span>
+        <span class="org-builtin">echo</span> <span class="org-string">"already running."</span>
+        <span class="org-keyword">exit</span>
+    <span class="org-keyword">fi</span>
+    env <span class="org-variable-name">HOME</span>=/home/$<span class="org-variable-name">USER</span> <span class="org-sh-escaped-newline">\</span>
+    start-stop-daemon --user $<span class="org-variable-name">USER</span> --start --quiet --background <span class="org-sh-escaped-newline">\</span>
+                      --make-pidfile --pidfile $<span class="org-variable-name">PIDFILE</span> <span class="org-sh-escaped-newline">\</span>
+                      --exec $<span class="org-variable-name">DAEMON</span>
+    <span class="org-builtin">echo</span> <span class="org-string">"$NAME was started"</span>
+}
+
+<span class="org-function-name">do_loadtest</span>()
+{
+    env <span class="org-variable-name">HOME</span>=/home/$<span class="org-variable-name">USER</span> <span class="org-sh-escaped-newline">\</span>
+    start-stop-daemon --user $<span class="org-variable-name">USER</span> --start --quiet --exec $<span class="org-variable-name">DAEMON</span>
+    <span class="org-builtin">echo</span> <span class="org-string">"$NAME was started"</span>
+}
+
+<span class="org-function-name">do_stop</span>()
+{
+    <span class="org-builtin">echo</span> <span class="org-string">"Stopping daemon: $NAME"</span>
+    start-stop-daemon --stop --pidfile $<span class="org-variable-name">PIDFILE</span>
+    rm -f $<span class="org-variable-name">PIDFILE</span>
+}
+
+
+<span class="org-keyword">case</span> <span class="org-string">"$1"</span><span class="org-keyword"> in</span>
+    start)
+        do_start
+    ;;
+    stop)
+        do_stop
+    ;;
+    restart)
+        do_stop
+        do_start
+    ;;
+    loadtest)
+        do_loadtest
+    ;;
+    *)
+        <span class="org-builtin">echo</span> <span class="org-string">"Usage: $0 (start|stop|restart)"</span>
+    ;;
+<span class="org-keyword">esac</span>
+</pre>
+
+
+
+<pre class="src src-sh">sudo chmod +x /etc/init.d/mayu 
 sudo update-rc.d mayu start 10 2 . stop 10 0 1 3 4 5 6 .
 </pre>
 
 
+
+
+</div>
+
+<div id="outline-container-10-1" class="outline-4">
+<h4 id="sec-10-1">参考</h4>
+<div class="outline-text-4" id="text-10-1">
+
+<ul>
+<li><a href="http://www42.tok2.com/home/negidakude/">http://www42.tok2.com/home/negidakude/</a>
+</li>
+<li><a href="http://d.hatena.ne.jp/nokturnalmortum/20090227/1235742723">http://d.hatena.ne.jp/nokturnalmortum/20090227/1235742723</a>
+</li>
+</ul>
+
+
+
+</div>
 </div>
 
 </div>
 
-<div id="outline-container-10" class="outline-3">
-<h3 id="sec-10">skk(uim)</h3>
-<div class="outline-text-3" id="text-10">
+<div id="outline-container-11" class="outline-3">
+<h3 id="sec-11">skk(uim)</h3>
+<div class="outline-text-3" id="text-11">
 
 <ul>
 <li><a href="http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1">http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1</a>
@@ -436,28 +598,37 @@ Input Method Switcherの起動
 </pre>
 
 <ul>
-<li>リストの中から、uim-systray を選択する。
+<li>リストの中から、uim-toolbar を選択する。
 </li>
 <li>ログインしなおす。
 </li>
 </ul>
 
 
+<p>
+emacsと重複するため、SKKの起動キーを変更する。
+</p><ul>
+<li>[設定] -&gt; [SKKキー設定1] 
+</li>
+<li>Zenkaku<sub>Hankakuだけにする</sub>
+</li>
+</ul>
+
 
 </div>
 
 </div>
 
-<div id="outline-container-11" class="outline-3">
-<h3 id="sec-11">その他</h3>
-<div class="outline-text-3" id="text-11">
+<div id="outline-container-12" class="outline-3">
+<h3 id="sec-12">その他</h3>
+<div class="outline-text-3" id="text-12">
 
 
 </div>
 
-<div id="outline-container-11-1" class="outline-4">
-<h4 id="sec-11-1">vmwareなどでインストールしたときにlocaleに日本語がない場合</h4>
-<div class="outline-text-4" id="text-11-1">
+<div id="outline-container-12-1" class="outline-4">
+<h4 id="sec-12-1">vmwareなどでインストールしたときにlocaleに日本語がない場合</h4>
+<div class="outline-text-4" id="text-12-1">
 
 
 
@@ -471,9 +642,9 @@ sudo dpkg-reconfigure locales
 
 </div>
 
-<div id="outline-container-11-2" class="outline-4">
-<h4 id="sec-11-2">クリップボード履歴</h4>
-<div class="outline-text-4" id="text-11-2">
+<div id="outline-container-12-2" class="outline-4">
+<h4 id="sec-12-2">クリップボード履歴</h4>
+<div class="outline-text-4" id="text-12-2">
 
 
 
@@ -486,9 +657,9 @@ sudo dpkg-reconfigure locales
 
 </div>
 
-<div id="outline-container-11-3" class="outline-4">
-<h4 id="sec-11-3">スクリーンショット</h4>
-<div class="outline-text-4" id="text-11-3">
+<div id="outline-container-12-3" class="outline-4">
+<h4 id="sec-12-3">スクリーンショット</h4>
+<div class="outline-text-4" id="text-12-3">
 
 <p>Ubuntuでは標準でスクリーンショットがあって、PrintScrキーを押下するだけでアクティブウィンドウが
 png形式でキャプチャされる。
@@ -510,9 +681,9 @@ png形式でキャプチャされる。
 
 </div>
 
-<div id="outline-container-12" class="outline-3">
-<h3 id="sec-12">日本語IMEについて</h3>
-<div class="outline-text-3" id="text-12">
+<div id="outline-container-13" class="outline-3">
+<h3 id="sec-13">日本語IMEについて</h3>
+<div class="outline-text-3" id="text-13">
 
 <p>Linuxは、日本語入力には３つのソフトウェアが必要。
 </p><ul>
@@ -633,7 +804,7 @@ png形式でキャプチャされる。
 	    <nav id="archives" class="span3">
 	      <h1>Archives</h1>
 	      <ul>
-		<li><a href="../../../article/2012/05/08_.html">束縛とは</a></li> <li><a href="../../../article/2012/05/05_ubuntu.html">(超個人的)Ubuntuインストール後にやることまとめ</a></li> <li><a href="../../../article/2012/04/21_clojurescriptgameediter.html">ClojureScriptで書かれたGameEditerすげぇ</a></li> <li><a href="../../../article/2012/04/18_galaxynotewindows7usb.html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</a></li> <li><a href="../../../article/2012/04/17_playframeworkmodel.html">playframeworkのModelにスーパークラスをつくる。</a></li> <li><a href="../../../article/2012/04/11_emacsdired2e2wm.html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a></li> <li><a href="../../../article/2012/04/10_clojure.html">Clojureで重複した要素を取り除く問題を解く</a></li> <li><a href="../../../article/2012/04/10_less.html">lessとは</a></li> <li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a></li> <li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a></li> 
+		<li><a href="../../../article/2012/05/08_.html">束縛とは?..そうか!名札なのか!</a></li> <li><a href="../../../article/2012/05/05_ubuntu.html">(超個人的)Ubuntuインストール後にやることまとめ</a></li> <li><a href="../../../article/2012/04/21_clojurescriptgameediter.html">ClojureScriptで書かれたGameEditerすげぇ</a></li> <li><a href="../../../article/2012/04/18_galaxynotewindows7usb.html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</a></li> <li><a href="../../../article/2012/04/17_playframeworkmodel.html">playframeworkのModelにスーパークラスをつくる。</a></li> <li><a href="../../../article/2012/04/11_emacsdired2e2wm.html">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</a></li> <li><a href="../../../article/2012/04/10_clojure.html">Clojureで重複した要素を取り除く問題を解く</a></li> <li><a href="../../../article/2012/04/10_less.html">lessとは</a></li> <li><a href="../../../article/2012/04/09_skk.html">SKKはサジェストと相性がいい!</a></li> <li><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
