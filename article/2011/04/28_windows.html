@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>emacsで辞書を引けるようにしたがうまくいかない</title>
+    <title>(超個人的)Windowsインストール後にやることまとめ</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -84,242 +84,461 @@
     <div class="well">
       <div class="row">
 	<div class="date span2">
-	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
+	  <div class=" date-y"><a href="../../../article/2011/index.html">2011</a>
 	  </div>
-	  <div class=" date-m"><a href="../../../article/2012/04/index.html"> 4月</a></div>
-	  <div class=" date-d">04</div>
+	  <div class=" date-m"><a href="../../../article/2011/04/index.html"> 4月</a></div>
+	  <div class=" date-d">28</div>
 	</div>
-	<h1 class="offset1">emacsで辞書を引けるようにしたがうまくいかない</h1>
+	<h1 class="offset1">(超個人的)Windowsインストール後にやることまとめ</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/03/10_sudo.html"><i class="icon-chevron-left"></i>&nbsp;sudoで環境変数を引き継ぎたい</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/05_clojureslimerepl.html">ClojureのSLIMEのREPLバッファに色がつかない&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2011/04/03_dropboxgit.html"><i class="icon-chevron-left"></i>&nbsp;DropboxでGit</a></li><li class="next" style="text-align: right;"><a href="../../../article/2011/06/23_emacsslimeleiningenclojure.html">Emacs+SLIME+Leiningen+Clojureで開発環境のインストール&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
 
   </header>
   <div class="article-content">
-    <p>
-普段、英語の辞書には、windows版の英辞郎(PDIC)を使用していたが
-ふとしたことからemacs版の英和・和英辞書を使ってみたくなったので
-チャレンジしてみた。環境はcygwinです。
-</p>
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">sdic導入</h3>
+    <div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">ソフトのインストールポリシー</h3>
 <div class="outline-text-3" id="text-1">
 
-<p>elisp, info, 辞書の場所はユーザーローカルのDropboxに格納する。
-</p>
+<ul>
+<li>インストーラのないツールは基本的に%HOME%/apps下に展開する。
+</li>
+<li>インストーラものはデフォルト値でインストール
+</li>
+<li>%HOME%/shortcutsにショートカットをおいてlauncyで管理
+</li>
+<li>UNIX系(コマンドライン系)のミドルウェアでインストーラーがない場合は%HOME&amp;/opt/下に展開する。
+</li>
+</ul>
 
-
-<pre class="src src-sh">sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
-make
-make install
-make install-info
-make dict
-make install-dict
-</pre>
 
 </div>
 
 </div>
 
 <div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">検索に失敗する</h3>
+<h3 id="sec-2">コントロールキーの設定</h3>
 <div class="outline-text-3" id="text-2">
 
 
-<p>
-検索しても、失敗するなと思っていたら辞書の作成に失敗していた。
-</p>
+</div>
+
+<div id="outline-container-2-1" class="outline-5">
+<h5 id="sec-2-1">xp</h5>
+<div class="outline-text-5" id="text-2-1">
+
+<ul>
+<li>xkeyemacsをつかってcapsキーをctrsキーにする。
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-5">
+<h5 id="sec-2-2">win7</h5>
+<div class="outline-text-5" id="text-2-2">
+
+<ul>
+<li>Changekeyを使用する。
+<ul>
+<li>chgkey.exe
+</li>
+<li>Dropboxに保存してある。
+</li>
+</ul>
+
+</li>
+<li>GUIのキーボードが表示されるので変更する
+<ul>
+<li>Caps -&gt; ctrl
+</li>
+<li>無変換 ー&gt; Shift
+</li>
+<li>変換 -&gt; Ctrl
+</li>
+<li>ひらがな -&gt; Return
+</li>
+</ul>
+
+</li>
+<li>再起動
+</li>
+</ul>
 
 
-<pre class="src src-sh">$ make dict
-no -S -e gene.txt | /usr/bin/perl contrib/gene.perl &gt; gene.sdic
-/bin/sh: no: command not found
-/usr/bin/perl contrib/edict.perl edict &gt; jedict.sdic
-</pre>
-
-<p>
-「no」コマンドとはなんぞや？
-</p>
-<p>
-ということで、Makefileの雛形のMakefile.inを見てみたら、nkfのことのようだ。
-</p>
-
-
-<pre class="src src-sh">gene.dic: contrib/gene.perl gene.txt
-    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &gt; $<span class="org-variable-name">@</span>
-</pre>
-
-<p>
-さらにもう一度configureを実行してみたところ下記のように
-ワーニングがでていた。
-</p>
-
-
-<pre class="src src-sh">onfigure: warning: nkf not found
-</pre>
-
-<p>
-なにわともあれ、nkfをいれないとだな。apt-cygで探したけど無かったので手動でインストールした。
-</p>
-
-
-<pre class="src src-sh">tar xvfz nkf-2.1.2.tar.gz
-<span class="org-builtin">cd</span> nkf-2.1.2/
-make
-make install
-</pre>
-
-<p>
-その後、./configreからやり直し。&hellip;だがnkfが今だに見つからないとでる。
-</p>
-
-
-<pre class="src src-sh">$ sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
-loading cache ./config.cache
-checking for a BSD compatible install... (cached) /usr/bin/install -c
-checking whether build environment is sane... yes
-checking whether make sets ${<span class="org-variable-name">MAKE</span>}... (cached) yes
-checking for working aclocal... found
-checking for working autoconf... found
-checking for working automake... found
-checking for working autoheader... found
-checking for working makeinfo... found
-checking for emacs... (cached) /usr/bin/emacs
-</pre>
-
-<p>
-よく見ると、cacheを使っているようである。なので削除してリトライ。
-</p>
-
-
-<pre class="src src-sh">$ sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
-creating cache ./config.cache
-checking for a BSD compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking whether make sets ${<span class="org-variable-name">MAKE</span>}... yes
-checking for working aclocal... found
-checking for working autoconf... found
-checking for working automake... found
-checking for working autoheader... found
-checking for working makeinfo... found
-checking for emacs... /usr/bin/emacs
-checking where emacs files are in... /usr/local/share/emacs
-checking where .elc files should go... ~/Dropbox/dotfiles/emacs/site-lisp/sdic
-checking for nkf... /usr/local/bin/nkf
-checking for perl... /usr/bin/perl
-checking for gzip... /usr/bin/gzip
-checking for bzip2... /usr/bin/bzip2
-checking for cp... /usr/bin/cp
-checking for sort... /usr/local/bin/sort
-checking for EIWA Dictionary...         gene.sdic
-checking for WAEI Dictionary...         jedict.sdic
-updating cache ./config.cache
-creating ./config.status
-creating Makefile
-creating lisp/Makefile
-creating lisp/sdic.el
-creating lisp/sample.emacs
-creating install.el
-</pre>
-
-<p>
-やっと成功。。。あとはお決まりのコマンド。
-</p>
-
-
-<pre class="src src-sh">make clean
-make
-make install
-make install-info
-make dict
-make install-dict
-</pre>
-
-<p>
-と思ったら「make dict」がうまくいかない。
-</p>
-
-
-<pre class="src src-sh">$ make dict
-make: Nothing to be done for <span class="org-sh-quoted-exec">`dict'.</span>
-</pre>
-
-<p>
-どうも、*.sdicは、「make clean」で削除されないようだ。
-なので手動で削除してやり直し。
-</p>
-
-
-<pre class="src src-sh">$ rm *.sdic
-$ make dict
-/usr/local/bin/nkf -S -e gene.txt | /usr/bin/perl contrib/gene.perl &gt; gene.sdic
-/usr/bin/perl contrib/edict.perl edict &gt; jedict.sdic
-$ make install-dict
-/bin/sh ./mkinstalldirs ~/Dropbox/dict/sdic
-/usr/bin/install -c -m 644      gene.sdic ~/Dropbox/dict/sdic
-/usr/bin/install -c -m 644      jedict.sdic ~/Dropbox/dict/sdic
-</pre>
-
-<p>
-M-x sdicで試したところ、英和の変換はうまくいった。
-e2wmを使っているが、表示される場所がよろしくないので
-なんとか設定を調整して、e2wmのサブウィンドウにしたいところ。
-<img src="img/sdic/01.png"  alt="img/sdic/01.png" />
-</p>
-
+</div>
 </div>
 
 </div>
 
 <div id="outline-container-3" class="outline-3">
-<h3 id="sec-3">和英がうまくいかない</h3>
+<h3 id="sec-3">Usersディレクトリの作成(XPのみ)</h3>
 <div class="outline-text-3" id="text-3">
 
-<p>英和はうまくいったが、和英がうまくいかない。
-多分原因は、cygwinのgrepが日本語を検索できなからだと思う。
-試しに下記のコマンドを試したところ
+<p>「Link Shell Extension」をインストールして
+「c:\」に「C:\Documents and Settings」のディレクトリジャンクションを作り名前を「Users」とする。
+これにより
+c:\Users\というディレクトリができ、Windows7/Vistaと同じような構成になる。
 </p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">一番最初にインストール</h3>
+<div class="outline-text-3" id="text-4">
+
+<ul>
+<li>Launcy
+</li>
+<li>Firefox
+</li>
+<li>Emacs
+</li>
+<li>ExpLzh
+</li>
+</ul>
 
 
-<pre class="src src-sh">grep <span class="org-string">'&#12461;&#12473;&#12510;&#12540;&#12463;'</span> jedict.sdic
-&#65306;
-&lt;K&gt;&#12541;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;repetition mark<span class="org-keyword"> in</span> katakana
-&lt;K&gt;&#12542;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;voiced repetition mark<span class="org-keyword"> in</span> katakana
-&lt;K&gt;&#12445;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;repetition mark<span class="org-keyword"> in</span> hiragana
-&lt;K&gt;&#12446;&lt;/K&gt;&lt;K&gt;&#12367;&#12426;&#12363;&#12360;&#12375;&lt;/K&gt;voiced repetition mark<span class="org-keyword"> in</span> hiragana
-&lt;K&gt;&#12291;&lt;/K&gt;&lt;K&gt;&#12362;&#12394;&#12376;&#12367;&lt;/K&gt;ditto mark
-&lt;K&gt;&#20189;&lt;/K&gt;&lt;K&gt;&#12393;&#12358;&#12376;&#12423;&#12358;&lt;/K&gt;<span class="org-string">"as above"</span> mark
-&lt;K&gt;&#12293;&lt;/K&gt;repetition of kanji (sometimes voiced)
-&lt;K&gt;&#12294;&lt;/K&gt;&lt;K&gt;&#12375;&#12417;&lt;/K&gt;end or closure mark
-&#65306;
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-3">
+<h3 id="sec-5">環境変数の設定</h3>
+<div class="outline-text-3" id="text-5">
+
+<ul>
+<li>HOME
+<ul>
+<li>XPの場合:HOME=c:\Users\m-oono
+</li>
+<li>Windows7の場合:HOME=%USERPROFILE%
+
+</li>
+<li>HOMEはダブルクォーテーションで囲んではいけない。emacsが起動しなくなる。
+</li>
+<li>HOMEはcygwin,Emacs用、XYZZYHOMEはxyzzy用の環境変数。
+</li>
+<li>※cygwinでは、HOMEを設定すると、自動的に/home/mikiがc:\mikiにマウントされる。
+
+</li>
+</ul>
+
+</li>
+<li>MAVEN<sub>HOME</sub>
+ %HOME%\opt\
+</li>
+<li>XYZZYHOME
+<ul>
+<li>XYZZYHOME=%HOME%\aps\xyzzy
+</li>
+<li>PATH
+    c:\cygwin\bin;
+
+</li>
+</ul>
+
+</li>
+<li>下記は.bashrc側に置くので設定しなくて良い。
+  JAVA<sub>HOME</sub>=%HOME%\opt\
+  ANT<sub>HOME</sub>=
+
+</li>
+<li>PATH
+</li>
+</ul>
+
+<p>%PATH%;%HOME%\bin;%MAVEN<sub>HOME</sub>%\bin;%HOME%\opt\php-5.3.8-Win32-VC9-x86
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-3">
+<h3 id="sec-6">キーボードの入力速度を早める</h3>
+<div class="outline-text-3" id="text-6">
+
+<ul>
+<li>(Win7) [コンパネ] -&gt; [コンピュータの簡単操作] -&gt; [キーボード動作の変更] -&gt; [キーボードの設定]
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-3">
+<h3 id="sec-7">アンチエイリアスの設定</h3>
+<div class="outline-text-3" id="text-7">
+
+<ul>
+<li>MacTypeをインストールする。
+</li>
+<li>fontは「Mig 1M」を使用する。MigMix1M 行間が広いので注意。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-3">
+<h3 id="sec-8">入れるソフト</h3>
+<div class="outline-text-3" id="text-8">
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-4">
+<h4 id="sec-8-1">インストーラ系ソフトのインストール</h4>
+<div class="outline-text-4" id="text-8-1">
+
+<ul>
+<li>Spybot Searcy &amp; Directory
+</li>
+<li>Link Shell Extension
+<ul>
+<li><a href="http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html">http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html</a>
+</li>
+</ul>
+
+</li>
+<li>AdujustClock
+</li>
+<li>WinSCP
+</li>
+<li>Jing
+</li>
+<li>Chrome
+</li>
+<li>Bullzip PDF Printer
+</li>
+<li>Java JRE
+</li>
+<li>MediaMonkey(音楽管理ソフト)
+</li>
+<li>Switcher(MacのExpose)
+</li>
+<li>JDK, JRE
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-4">
+<h4 id="sec-8-2">解凍系</h4>
+<div class="outline-text-4" id="text-8-2">
+
+<ul>
+<li>cygwinのインストール
+
+</li>
+<li>putty、ごった煮にさらに機能追加版
+<ul>
+<li><a href="http://ice.hotmint.com/putty/">http://ice.hotmint.com/putty/</a>
+</li>
+</ul>
+
+<p> ※オリジナルのごった煮版は、コマンドラインからのplinkがうまく使えなかったので使用しない。
+</p>
+</li>
+<li>Jane sytle
+</li>
+<li>eclip
+</li>
+<li>Eclipse
+</li>
+<li>WinDeskWide(仮想デスクトップ)
+</li>
+<li>TClock Light (for Windows XP)
+</li>
+<li>tclocklight-kt100204(for WIndows7)
+  タスクバーを左たてに表示する場合、tclock.iniを書きに書きかえる。
+  Format="yy/mm/dd\nddd\nhh:nn:ss"
+</li>
+<li>AdjustClock
+ windows7の場合、OSに自動同期機能があるのでいらない。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8-3" class="outline-4">
+<h4 id="sec-8-3">スタートアップの設定</h4>
+<div class="outline-text-4" id="text-8-3">
+
+<ul>
+<li>タートアップフォルダの開き方
+<ul>
+<li>[スタート] -&gt; [すべてのプログラム] -&gt; []
+</li>
+<li>スタートアップを右クリック - 開く
+</li>
+</ul>
+
+</li>
+</ul>
+
+<p>下記を登録する。
+</p><ul>
+<li>tclock
+</li>
+<li>eclip
+</li>
+<li>pagent
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-3">
+<h3 id="sec-9">MySQL</h3>
+<div class="outline-text-3" id="text-9">
+
+<p>MySQLのHPにてCommunityServerをインストールする。
+HPの上の方にある大きなバナーのやつだと余計な製品がたくさん入って
+わけわからんので注意。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-3">
+<h3 id="sec-10">php</h3>
+<div class="outline-text-3" id="text-10">
+
+<ul>
+<li><a href="http://windows.php.net/download/#php-5.3-ts-VC9-x86">http://windows.php.net/download/#php-5.3-ts-VC9-x86</a>
+</li>
+</ul>
+
+<p>windows版のバイナリ(*.zip)をダウンロードして展開する。
+</p><ul>
+<li>展開場所の例
+</li>
+</ul>
+
+
+
+
+<pre class="src src-sh">$<span class="org-variable-name">HOME</span>/opt/php
 </pre>
 
-<p>
-おおお全部ヒットしてしまっているよ。。。。
-cygwinのコンソールからgrepしたときはヒットするのだが、
-自分がメインで使用しているemacsはGUI版なので
-裏でうごくものが、dosになっている。多分これが原因だろう。
-てことで、shellをdosじゃなくてbashにしてみる。
-と思ったが、eshellじゃなくて、shellはcygwinが動くように設定してあった。
-で、shell-modeでgrepしてみると、
-</p>
 
 
-<pre class="src src-sh">$ grep <span class="org-string">'&#12461;&#12473;&#12510;&#12540;&#12463;'</span> jedict.sdic
-grep <span class="org-string">'&#7;L&#7;X&#7;}&#7;[&#7;N'</span> jedict.sdic
-grep: Unmatched [ or [^
-</pre>
+</div>
 
-<p>
-こんな感じで化けてしまう。
-</p>
-<p>
- (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)
-</p>
+</div>
+
+<div id="outline-container-11" class="outline-3">
+<h3 id="sec-11">別PCに移行する場合</h3>
+<div class="outline-text-3" id="text-11">
+
+
+</div>
+
+<div id="outline-container-11-1" class="outline-4">
+<h4 id="sec-11-1">ファイル共有の設定</h4>
+<div class="outline-text-4" id="text-11-1">
+
+<ul>
+<li>コンパネ　-　Windowsファイアウォール - 例外
+</li>
+<li>「ファイルとプリンタの共有」をチェックする。
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-2" class="outline-4">
+<h4 id="sec-11-2">ローカルPCのAdminユーザのパスワードを設定</h4>
+<div class="outline-text-4" id="text-11-2">
+
+<ul>
+<li>コントロールパネル - ユーザアカウント
+</li>
+<li>Administratorを選択し、[パスワードのリセット]をクリックし、新しいパスワードを入力する。
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-3" class="outline-4">
+<h4 id="sec-11-3">設定ファイルのコピー</h4>
+<div class="outline-text-4" id="text-11-3">
+
+<ul>
+<li>エクスプローラを立ち上げ、旧端末のCドライブに接続する。
+ &ndash; \\旧端末のコンピュータ名\C$
+</li>
+<li>旧端末の必要な情報をコピーする(FireCopyを使用する。)。
+ &ndash; c:\miki
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-4" class="outline-4">
+<h4 id="sec-11-4">移行用ソフト</h4>
+<div class="outline-text-4" id="text-11-4">
+
+<ul>
+<li>FireFile Copy :高速ファイルツール。上書き確認とかいろいろ。エクスプローラだときつい。
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-3">
+<h3 id="sec-12">Faithの自作マシンでのドライバインストール</h3>
+<div class="outline-text-3" id="text-12">
+
+<p>windows7を入れた最初の状態では、ネットワークアダプタのドライバがないため
+ネットにつながらない。
+そこで、ドライバをインストールする。ネットワークアダプター以外にも
+いくつかドライバがないものがあるのでついでにインストールしておく
+</p><ul>
+<li>ユニバーサルシリアルバスや
+
+</li>
+<li>マザーボードのCD-ROMを用意する(P8Z68V-PRO)。
+</li>
+<li>[コントロールパネル] - [ハードウェアとサウンド]-[デバイスマネージャ]
+</li>
+<li>ほかのデバイスを選択し、びっくりマークのついている機器を右クリック
+</li>
+<li>[ドライバーソフトウェアの更新]－[コンピュータを参照してドライバーソフトウェアを検索します]
+</li>
+</ul>
 
 
 </div>
@@ -328,13 +547,13 @@ grep: Unmatched [ or [^
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2012-04-04T21:45:00Z">
-      水曜日 4月, 04 2012 at 21:45:00
+    Posted on <time datetime="2011-04-28T22:50:00Z">
+      木曜日 4月, 28 2011 at 22:50:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/emacs.html">emacs</a></li><li><a href="../../../tags/sdic.html">sdic</a></li><li><a href="../../../tags/hamari.html">hamari</a></li>
+	
       </ul>
     </nav>
   </footer>

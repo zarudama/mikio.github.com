@@ -3,9 +3,494 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-05-08T02:18:52Z</updated>
+  <updated>2012-05-08T20:32:50Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">ClojureScriptで書かれたGameEditerすげぇ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/21_clojurescriptgameediter.html"/><updated>2012-04-21T00:35:00Z</updated><published>2012-04-21T00:35:00Z</published><id>article/2012/04/21_clojurescriptgameediter.html</id><category scheme="/tags/clojurescript.html" term="clojurescript" label="clojurescript"/><content type="html">&lt;p&gt;
+  <entry><title type="html">束縛とは</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/08_.html"/><updated>2012-05-08T23:30:00Z</updated><published>2012-05-08T23:30:00Z</published><id>article/2012/05/08_.html</id><category scheme="/tags/lisp.html" term="lisp" label="lisp"/><content type="html">&lt;p&gt;
+&#12300;EmacsLisp&#12486;&#12463;&#12491;&#12483;&#12463;&#12496;&#12452;&#12502;&#12523;&#12301;&#12434;&#35501;&#12435;&#12391;&#12289;&#12420;&#12387;&#12392;&#29702;&#35299;&#12391;&#12365;&#12383;&#12290;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&#26463;&#32283;&#12392;&#12399;&#12289;&#20516;&#12395;&#21517;&#26413;&#12434;&#12388;&#12369;&#12427;&#12371;&#12392;&#12290;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+Lisp(&#12392;&#12356;&#12358;&#12363;&#38306;&#25968;&#22411;&#35328;&#35486;)&#12434;&#32722;&#12358;&#19978;&#12391;&#38556;&#23475;&#12392;&#12394;&#12427;&#12418;&#12398;&#12395;&#29992;&#35486;&#12364;&#12354;&#12427;&#12392;&#24605;&#12358;&#12435;&#12384;&#12369;&#12393;&#12289;&#12381;&#12398;&#12402;&#12392;&#12388;&#12395;&#12300;&#26463;&#32283;&#12301;&#12364;&#12354;&#12427;&#12290;
+&#26463;&#32283;&#65311;&#12394;&#12435;&#12384;&#12381;&#12428;&#65311;&#20195;&#20837;&#12415;&#12383;&#12356;&#12394;&#12418;&#12435;&#65311;&#12394;&#12380;&#20195;&#20837;&#12376;&#12419;&#12394;&#12367;&#12390;&#26463;&#32283;&#12394;&#12435;&#12384;&#65311;&#12392;&#24605;&#12356;&#12394;&#12364;&#12425;&#35500;&#26126;&#12434;&#35501;&#12415;&#36914;&#12417;&#12427;&#12369;&#12393;&#12289;
+&#26463;&#32283;&#12392;&#12356;&#12358;&#35328;&#33865;&#12364;&#20986;&#12390;&#12367;&#12427;&#12383;&#12403;&#12395;&#12289;&#12381;&#12428;&#12364;&#24341;&#12387;&#12363;&#12363;&#12387;&#12390;&#29702;&#35299;&#12434;&#22952;&#12370;&#12390;&#12356;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#24467;&#26469;&#12398;&#25163;&#32154;&#12365;&#22411;&#35328;&#35486;&#12384;&#12392;&#12289;&#22793;&#25968;&#12398;&#35500;&#26126;&#12398;&#12392;&#12365;&#12395;&#31665;&#12434;&#12452;&#12513;&#12540;&#12472;&#12375;&#12390;&#12381;&#12398;&#20013;&#12395;&#20516;&#12434;&#12356;&#12428;&#12427;&#22259;&#12364;&#12391;&#12390;&#12367;&#12427;&#12290;
+&#12384;&#12369;&#12428;&#12393;&#12418;&#26463;&#32283;&#12398;&#22580;&#21512;&#12399;&#21517;&#26413;&#12434;&#29992;&#24847;&#12375;&#12390;&#20516;&#12395;&#12381;&#12428;&#12434;&#12388;&#12369;&#12427;&#12452;&#12513;&#12540;&#12472;&#12384;&#12392;&#12356;&#12358;&#12371;&#12392;&#12290;
+&#25163;&#32154;&#12365;&#35328;&#35486;&#12384;&#12392;&#22793;&#25968;&#12364;&#20027;&#24441;&#12391;&#38306;&#25968;&#35328;&#35486;&#12384;&#12392;&#20516;&#12364;&#20027;&#24441;&#12392;&#12356;&#12358;&#12371;&#12392;&#12363;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;&amp;#12300;&amp;#12381;&amp;#12358;&amp;#12363;!&amp;#21517;&amp;#26413;&amp;#12394;&amp;#12398;&amp;#12363;!&amp;#12301;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#38263;&#24180;&#12398;&#30097;&#21839;&#12364;&#35299;&#12369;&#12390;&#12473;&#12483;&#12461;&#12522;&#12375;&#12383;&#30636;&#38291;&#12384;&#12387;&#12383;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">(超個人的)Ubuntuインストール後にやることまとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/05_ubuntu.html"/><updated>2012-05-05T22:31:00Z</updated><published>2012-05-05T22:31:00Z</published><id>article/2012/05/05_ubuntu.html</id><content type="html">&lt;ul&gt;
+&lt;li&gt;Ubuntu12.04LTS&#29256;&#12391;&#12377;&#12290;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;&#26368;&#21021;&#12395;&#12420;&#12427;&#12371;&#12392;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-1-1" class="outline-4"&gt;
+&lt;h4 id="sec-1-1"&gt;&#12507;&#12540;&#12512;&#37197;&#19979;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12522;&#12493;&#12540;&#12512;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-1"&gt;
+
+&lt;p&gt;&#12507;&#12540;&#12512;&#37197;&#19979;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12364;&#26085;&#26412;&#35486;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12398;&#12391;&#26089;&#12293;&#12395;&#33521;&#35486;&#21270;&#12377;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;&lt;span class="org-variable-name"&gt;LANG&lt;/span&gt;=C xdg-user-dirs-gtk-update
+&lt;/pre&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-1-2" class="outline-4"&gt;
+&lt;h4 id="sec-1-2"&gt;update&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-2"&gt;
+
+&lt;p&gt;&#26368;&#21021;&#12399;&#12289;&#12513;&#12491;&#12517;&#12540;&#12364;&#12392;&#12371;&#12429;&#12393;&#12371;&#12429;&#26085;&#26412;&#35486;&#12395;&#12394;&#12387;&#12390;&#12356;&#12394;&#12363;&#12387;&#12383;&#12426;&#12377;&#12427;&#12290;
+&#12394;&#12395;&#12399;&#12392;&#12418;&#12354;&#12428;&#12450;&#12483;&#12503;&#12487;&#12540;&#12488;&#12510;&#12493;&#12540;&#12472;&#12515;&#12391;&#26368;&#26032;&#12395;&#12450;&#12483;&#12503;&#12487;&#12540;&#12488;&#12377;&#12427;&#12290;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-1-3" class="outline-4"&gt;
+&lt;h4 id="sec-1-3"&gt;Ctrl&#12461;&#12540;&#12398;&#22793;&#26356;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-3"&gt;
+
+&lt;p&gt;CapsLock&#12434;&#20837;&#12428;&#26367;&#12360;&#12378;&#12395;Ctrl&#12461;&#12540;&#12395;&#12377;&#12427;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;[&#12471;&#12473;&#12486;&#12512;&#35373;&#23450;] -&amp;gt; [&#12461;&#12540;&#12508;&#12540;&#12489;&#12524;&#12452;&#12450;&#12454;&#12488;] -&amp;gt; [&#12458;&#12503;&#12471;&#12519;&#12531;]&#12508;&#12479;&#12531; -&amp;gt; [Ctrl&#12461;&#12540;&#12398;&#20301;&#32622;]
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-1-4" class="outline-4"&gt;
+&lt;h4 id="sec-1-4"&gt;&#31471;&#26411;&#12398;&#35373;&#23450;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-4"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[Windwosk&#12461;&#12540;] -&amp;gt; [gnome-terminal]
+&lt;/li&gt;
+&lt;li&gt;[&#12513;&#12491;&#12517;&#12540;] -&amp;gt; [&#32232;&#38598;] -&amp;gt; [&#12461;&#12540;&#12508;&#12540;&#12489;&#12471;&#12519;&#12540;&#12488;&#12459;&#12483;&#12488;] 
+&lt;/li&gt;
+&lt;li&gt;&#12377;&#12409;&#12390;&#12481;&#12455;&#12483;&#12463;&#12434;&#22806;&#12375;&#12390;&#12362;&#12367;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-1-5" class="outline-4"&gt;
+&lt;h4 id="sec-1-5"&gt;IME&#36215;&#21205;&#12471;&#12519;&#12540;&#12488;&#12459;&#12483;&#12488;&#12398;&#22793;&#26356;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-1-5"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[&#21491;&#19978;&#12398;&#12497;&#12493;&#12523;&#65288;&#12461;&#12540;&#12508;&#12540;&#12489;&#65289;] -&amp;gt; [&#35373;&#23450;] -&amp;gt; [&#19968;&#33324;] &#12479;&#12502;
+&lt;/li&gt;
+&lt;li&gt;[&#12461;&#12540;&#12508;&#12540;&#12489;&#12471;&#12519;&#12483;&#12488;&#12459;&#12483;&#12488;] -&amp;gt; [&#20999;&#12426;&#26367;&#12360;] 
+&lt;/li&gt;
+&lt;li&gt;[Zenkaku&lt;sub&gt;Hankaku]&#12384;&#12369;&#12395;&#12377;&#12427;&lt;/sub&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;Dropbox&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+&lt;p&gt;&#12371;&#12428;&#12364;&#12394;&#12356;&#12392;&#12399;&#12376;&#12414;&#12425;&#12394;&#12356;&#12290;dropbox&#12398;&#12469;&#12452;&#12488;&#12408;&#12356;&#12365;&#12289;.deb&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12375;&#12390;
+&#12497;&#12483;&#12465;&#12540;&#12472;&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12290;
+&lt;/p&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-3" class="outline-3"&gt;
+&lt;h3 id="sec-3"&gt;firefox&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3"&gt;
+
+&lt;p&gt;sync&#12398;&#35373;&#23450;&#12375;&#12390;&#12289;keysnail&#12434;&#20837;&#12428;&#12427;&#12290;
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-4" class="outline-3"&gt;
+&lt;h3 id="sec-4"&gt;paco&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-4"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/rx7/20081011/p2"&gt;http://d.hatena.ne.jp/rx7/20081011/p2&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+paco&#12399;&#12289;make install &#12395;&#12424;&#12387;&#12390;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12373;&#12428;&#12383;&#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#12398;&#12497;&#12483;
+&#12465;&#12540;&#12472;&#31649;&#29702;&#12434;&#12375;&#12390;&#12367;&#12428;&#12427;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12477;&amp;#12540;&amp;#12473;&amp;#12399;&amp;#36969;&amp;#24403;&amp;#12395;Web&amp;#12363;&amp;#12425;&amp;#12480;&amp;#12454;&amp;#12531;&amp;#12525;&amp;#12540;&amp;#12489;&lt;/span&gt;
+sudo apt-get install libgtkmm-2.4-dev
+&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/src/paco-2.0.8/
+./configure
+make
+sudo make install
+sudo make logme
+&lt;/pre&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-5" class="outline-3"&gt;
+&lt;h3 id="sec-5"&gt;emacs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-5"&gt;
+
+&lt;p&gt;&#12477;&#12540;&#12473;&#12399;&#26368;&#26032;&#29256;(ver24)&#12434;&#21462;&#12387;&#12390;&#12367;&#12427;&#12290;build-dep&#12399;&#22810;&#20998;emacs23&#12391;OK&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12477;&amp;#12540;&amp;#12473;&amp;#12399;&amp;#36969;&amp;#24403;&amp;#12395;Web&amp;#12363;&amp;#12425;&amp;#12480;&amp;#12454;&amp;#12531;&amp;#12525;&amp;#12540;&amp;#12489;&amp;#12290;&amp;#12300;emacs24&amp;#12301;&amp;#12392;&amp;#12363;&amp;#12391;&amp;#26908;&amp;#32034;&amp;#12290;&lt;/span&gt;
+sudo apt-get build-dep emacs23
+&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/src/emacs-24/
+
+&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;configure&amp;#12391;&amp;#30011;&amp;#20687;&amp;#38306;&amp;#36899;&amp;#12391;&amp;#12456;&amp;#12521;&amp;#12540;&amp;#12395;&amp;#12394;&amp;#12427;&amp;#12363;&amp;#12418;&amp;#12290;&amp;#12381;&amp;#12398;&amp;#12392;&amp;#12365;&amp;#12399;&lt;/span&gt;
+&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;sudo apt-get install libgif-dev ligtiff-dev libxpm-dev&lt;/span&gt;
+
+./configure
+make
+sudo paco -D make install
+&lt;/pre&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-6" class="outline-3"&gt;
+&lt;h3 id="sec-6"&gt;&#20840;&#20307;&#12398;&#12461;&#12540;&#12508;&#12540;&#12489;&#25805;&#20316;&#12434;emacs&#31995;&#12395;&#12377;&#12427;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-6"&gt;
+
+&lt;p&gt;&#12479;&#12540;&#12511;&#12490;&#12523;&#12391;&#19979;&#35352;&#12467;&#12510;&#12531;&#12489;&#12434;&#23455;&#34892;&#12377;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;gconf-editor
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#20197;&#19979;&#12398;&#12497;&#12473;&#12391;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;/desktop/gnome/interface/gtk_key_theme
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#20516;&#12434;Emacs&#12395;&#12377;&#12427;&#12290;E&#12399;&#22823;&#25991;&#23383;&#12394;&#12398;&#12391;&#27880;&#24847;&#12377;&#12427;&#12371;&#12392;&#12290;&#12418;&#12393;&#12377;&#12392;&#12365;&#12399;Default&#12395;&#12377;&#12427;&#12290;
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-7" class="outline-3"&gt;
+&lt;h3 id="sec-7"&gt;Mig 1M&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-7"&gt;
+
+&lt;p&gt;1M&#12398;M&#12399;MonoSpace&#12398;M&#12290;&#12388;&#12414;&#12426;&#31561;&#24133;&#12501;&#12457;&#12531;&#12488;&#12392;&#12356;&#12358;&#12371;&#12392;&#12290;
+&#19979;&#35352;&#12363;&#12425;&#12300;Mig 1M&#12301;&#12501;&#12457;&#12531;&#12488;&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12377;&#12427;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://mix-mplus-ipa.sourceforge.jp/download.html"&gt;http://mix-mplus-ipa.sourceforge.jp/download.html&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#12354;&#12392;&#12399;&#19979;&#35352;&#12398;&#12467;&#12510;&#12531;&#12489;&#12391;&#20351;&#12360;&#12427;&#12424;&#12358;&#12395;&#12394;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;mkdir ~/.fonts 
+cp migu-1m-20120411.zip ~/.fonts
+&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/.fonts 
+unzip migu-1m-20120411.zip
+fc-cache -fv
+&lt;/pre&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-8" class="outline-3"&gt;
+&lt;h3 id="sec-8"&gt;VL&#12468;&#12471;&#12483;&#12463;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-8"&gt;
+
+&lt;p&gt;&#19979;&#35352;&#12434;firefox&#12363;&#12425;&#38283;&#12369;&#12400;OK
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://apt.ubuntu.com/p/ttf-vlgothic"&gt;http://apt.ubuntu.com/p/ttf-vlgothic&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-9" class="outline-3"&gt;
+&lt;h3 id="sec-9"&gt;&#31379;&#20351;&#12356;&#12398;&#24962;&#39729;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-9"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www42.tok2.com/home/negidakude/"&gt;http://www42.tok2.com/home/negidakude/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#20381;&amp;#23384;&amp;#12521;&amp;#12452;&amp;#12502;&amp;#12521;&amp;#12522;&amp;#12398;&amp;#36861;&amp;#21152;&lt;/span&gt;
+sudo apt-get install g++ libboost-regex-dev libboost-dev libudev-dev libusb-1.0-0-dev 
+
+&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12499;&amp;#12523;&amp;#12489;&lt;/span&gt;
+make
+sudo paco -D make install
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12398;&#32232;&#38598;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;sudo vi /etc/modules
+&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#19979;&amp;#35352;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
+uinput
+
+&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#21453;&amp;#26144;&lt;/span&gt;
+sudo modprobe uinput
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#36215;&#21205;&#12473;&#12463;&#12522;&#12503;&#12488;(/etc/init.d/mayu)&#12434;&#20316;&#25104;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;sudo mv mayu /etc/init.d/
+sudo chmod +x /etc/init.d/mayu 
+sudo update-rc.d mayu start 10 2 . stop 10 0 1 3 4 5 6 .
+&lt;/pre&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-10" class="outline-3"&gt;
+&lt;h3 id="sec-10"&gt;skk(uim)&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-10"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1"&gt;http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+ibus-skk&#12399;&#22793;&#25563;&#26178;&#12395;emacs&#12398;&#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12364;&#20351;&#12360;&#12394;&#12356;&#12398;&#12391;&#12289;
+&#22793;&#12431;&#12426;&#12395;uim&#12392;&#12356;&#12358;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;&#12364;&#12354;&#12427;&#12398;&#12391;&#20837;&#12428;&#12390;&#12415;&#12427;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;sudo apt-get install uim uim-skk
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+Input Method Switcher&#12398;&#36215;&#21205;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;im-switch -c
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&#12522;&#12473;&#12488;&#12398;&#20013;&#12363;&#12425;&#12289;uim-systray &#12434;&#36984;&#25246;&#12377;&#12427;&#12290;
+&lt;/li&gt;
+&lt;li&gt;&#12525;&#12464;&#12452;&#12531;&#12375;&#12394;&#12362;&#12377;&#12290;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-11" class="outline-3"&gt;
+&lt;h3 id="sec-11"&gt;&#12381;&#12398;&#20182;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-11"&gt;
+
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-11-1" class="outline-4"&gt;
+&lt;h4 id="sec-11-1"&gt;vmware&#12394;&#12393;&#12391;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12383;&#12392;&#12365;&#12395;locale&#12395;&#26085;&#26412;&#35486;&#12364;&#12394;&#12356;&#22580;&#21512;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-11-1"&gt;
+
+
+
+
+&lt;pre class="src src-sh"&gt;sudo apt-get install language-pack-ja
+sudo dpkg-reconfigure locales
+&lt;/pre&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-11-2" class="outline-4"&gt;
+&lt;h4 id="sec-11-2"&gt;&#12463;&#12522;&#12483;&#12503;&#12508;&#12540;&#12489;&#23653;&#27508;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-11-2"&gt;
+
+
+
+
+&lt;pre class="src src-sh"&gt;sudo apt-get install parcellite
+&lt;/pre&gt;
+
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-11-3" class="outline-4"&gt;
+&lt;h4 id="sec-11-3"&gt;&#12473;&#12463;&#12522;&#12540;&#12531;&#12471;&#12519;&#12483;&#12488;&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-11-3"&gt;
+
+&lt;p&gt;Ubuntu&#12391;&#12399;&#27161;&#28310;&#12391;&#12473;&#12463;&#12522;&#12540;&#12531;&#12471;&#12519;&#12483;&#12488;&#12364;&#12354;&#12387;&#12390;&#12289;PrintScr&#12461;&#12540;&#12434;&#25276;&#19979;&#12377;&#12427;&#12384;&#12369;&#12391;&#12450;&#12463;&#12486;&#12451;&#12502;&#12454;&#12451;&#12531;&#12489;&#12454;&#12364;
+png&#24418;&#24335;&#12391;&#12461;&#12515;&#12503;&#12481;&#12515;&#12373;&#12428;&#12427;&#12290;
+&#12369;&#12428;&#12393;&#12418;&#12289;&#12371;&#12398;&#22580;&#21512;&#12289;&#12463;&#12521;&#12452;&#12450;&#12531;&#12488;&#38936;&#22495;&#12384;&#12369;&#12398;&#12461;&#12515;&#12503;&#12481;&#12515;&#12395;&#12394;&#12427;&#12398;&#12391;&#29992;&#36884;&#12395;&#12424;&#12387;&#12390;&#12399;&#19981;&#20415;&#12391;&#12354;&#12427;&#12290;
+&#12381;&#12398;&#32232;&#12398;&#21839;&#38988;&#12434;&#35299;&#27770;&#12375;&#12390;&#12367;&#12428;&#12427;&#12477;&#12501;&#12488;&#12364;Shutter&#12391;&#12354;&#12427;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;sudo apt-get install shutter
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&lt;a href="http://ankyo.blog.so-net.ne.jp/2011-04-07"&gt;http://ankyo.blog.so-net.ne.jp/2011-04-07&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-12" class="outline-3"&gt;
+&lt;h3 id="sec-12"&gt;&#26085;&#26412;&#35486;IME&#12395;&#12388;&#12356;&#12390;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-12"&gt;
+
+&lt;p&gt;Linux&#12399;&#12289;&#26085;&#26412;&#35486;&#20837;&#21147;&#12395;&#12399;&#65299;&#12388;&#12398;&#12477;&#12501;&#12488;&#12454;&#12455;&#12450;&#12364;&#24517;&#35201;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&#26085;&#26412;&#12398;&#25991;&#23383;&#12434;&#20837;&#21147;&#12377;&#12427;&#12383;&#12417;&#12398;&#12471;&#12473;&#12486;&#12512;&#12391;&#12354;&#12427;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;
+&lt;/li&gt;
+&lt;li&gt;&#12363;&#12394;&#28450;&#23383;&#12398;&#22793;&#25563;&#12434;&#12377;&#12427;&#12471;&#12473;&#12486;&#12512;
+&lt;/li&gt;
+&lt;li&gt;&#20001;&#32773;&#12434;&#12388;&#12394;&#12368;&#26085;&#26412;&#35486;&#12502;&#12522;&#12483;&#12472;
+
+&lt;/li&gt;
+&lt;li&gt;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;&#12398;&#20363;
+&lt;ul&gt;
+&lt;li&gt;SCIM
+&lt;/li&gt;
+&lt;li&gt;iBus
+&lt;/li&gt;
+&lt;li&gt;uim
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;&#12363;&#12394;&#28450;&#23383;&#22793;&#25563;&#12471;&#12473;&#12486;&#12512;&#12398;&#20363;
+&lt;ul&gt;
+&lt;li&gt;Anthy
+&lt;/li&gt;
+&lt;li&gt;MOZC
+&lt;/li&gt;
+&lt;li&gt;SKK
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;&#26085;&#26412;&#35486;&#12502;&#12522;&#12483;&#12472;&#12398;&#20363;
+&lt;ul&gt;
+&lt;li&gt;ibus-mozc
+&lt;/li&gt;
+&lt;li&gt;uim-skk
+&lt;/li&gt;
+&lt;li&gt;scim-anthy
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&#26368;&#36817;&#12398;Ubuntu&#12391;&#12399;&#12289;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;&#12395;&#12289;iBus,
+&#12363;&#12394;&#28450;&#23383;&#22793;&#25563;&#12471;&#12473;&#12486;&#12512;&#12395;&#12399;&#12289;Anthy&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">ClojureScriptで書かれたGameEditerすげぇ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/21_clojurescriptgameediter.html"/><updated>2012-04-21T00:35:00Z</updated><published>2012-04-21T00:35:00Z</published><id>article/2012/04/21_clojurescriptgameediter.html</id><category scheme="/tags/clojurescript.html" term="clojurescript" label="clojurescript"/><content type="html">&lt;p&gt;
 &#26368;&#36817;clojure&#30028;&#38536;&#12391;&#35441;&#38988;&#12398;&lt;a href="http://www.chris-granger.com/2012/04/12/light-table---a-new-ide-concept/"&gt;LightTable&lt;/a&gt; &#12391;&#12377;&#12364;&#12381;&#12398;&#21069;&#36523;&#12392;&#12375;&#12390;
 ClojureScript&#12391;&#26360;&#12363;&#12428;&#12383;&#12466;&#12540;&#12512;&#12456;&#12487;&#12451;&#12479;&#12364;&#12354;&#12387;&#12383;&#12424;&#12358;&#12391;&#12377;&#12290;&lt;sup&gt;&lt;a class="footref" name="fnr.1" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
 &lt;/p&gt;&lt;ul&gt;
@@ -577,274 +1062,6 @@ C:\Documents and Settings\mikio&amp;gt;
 &lt;p&gt;
 &#12431;&#12374;&#12431;&#12374;&#21029;&#31379;&#12434;&#38283;&#12356;&#12390;swank-server&#12434;&#36215;&#21205;&#12375;&#12394;&#12367;&#12390;&#28168;&#12416;&#12398;&#12391;&#12363;&#12394;&#12426;&#24555;&#36969;&#12395;&#12394;&#12387;&#12383;&#12424;!
 &lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</content></entry><entry><title type="html">ClojureのSLIMEのREPLバッファに色がつかない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/05_clojureslimerepl.html"/><updated>2012-04-05T22:00:00Z</updated><published>2012-04-05T22:00:00Z</published><id>article/2012/04/05_clojureslimerepl.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/slime.html" term="slime" label="slime"/><content type="html">&lt;p&gt;
-emacs24&#12395;&#12375;&#12383;&#12398;&#12364;&#21407;&#22240;&#12363;&#12431;&#12363;&#12425;&#12394;&#12356;&#12364;&#12289;&#12356;&#12388;&#12398;&#12414;&#12395;&#12363;SLIME&#12398;REPL&#12496;&#12483;&#12501;&#12449;&#12391;
-&#33394;&#20184;&#12369;&#12364;&#12373;&#12428;&#12394;&#12367;&#12394;&#12387;&#12390;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12371;&#12398;&#26178;&#12289;&#35373;&#23450;&#12375;&#12390;&#12356;&#12383;&#12398;&#12399;&#19979;&#35352;&#12398;&#12467;&#12540;&#12489;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-clojure"&gt;(add-hook 'slime-repl-mode-hook (lambda () (clojure-mode-font-lock-setup)))
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&lt;a href="https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk"&gt;https://groups.google.com/forum/?fromgroups#!topic/clojure/jYShTPC_ppk&lt;/a&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&#19978;&#35352;&#12469;&#12452;&#12488;&#12395;&#12424;&#12427;&#12392;&#25163;&#21205;&#12391;font-lock&#12434;&#25351;&#23450;&#12377;&#12427;&#12392;&#12358;&#12414;&#12367;&#12356;&#12392;&#12371;&#12398;&#12371;&#12392;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-clojure"&gt;M-x clojure-mode-font-lock-setup
-M-x font-lock-mode
-M-x font-lock-mode
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#33258;&#20998;&#12418;&#35430;&#12375;&#12383;&#12425;&#12358;&#12414;&#12367;&#12356;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12391;&#12289;&#26368;&#32066;&#30340;&#12395;&#12469;&#12452;&#12488;&#12398;&#25351;&#21335;&#12395;&#12354;&#12427;&#12424;&#12358;&#12395;&#19979;&#35352;&#12434;&#35373;&#23450;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-clojure"&gt;(add-hook 'slime-repl-mode-hook
-               (lambda ()
-                 (clojure-mode-font-lock-setup)
-                 (font-lock-mode)
-                 (font-lock-mode)))
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12371;&#12428;&#12391;REPL&#12496;&#12483;&#12501;&#12449;&#12395;&#12418;&#32186;&#40599;&#12395;&#33394;&#20184;&#12369;&#12373;&#12428;&#12427;&#12424;&#12358;&#12395;&#12394;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-</content></entry><entry><title type="html">emacsで辞書を引けるようにしたがうまくいかない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/04/04_emacs.html"/><updated>2012-04-04T21:45:00Z</updated><published>2012-04-04T21:45:00Z</published><id>article/2012/04/04_emacs.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/sdic.html" term="sdic" label="sdic"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
-&#26222;&#27573;&#12289;&#33521;&#35486;&#12398;&#36766;&#26360;&#12395;&#12399;&#12289;windows&#29256;&#12398;&#33521;&#36766;&#37070;(PDIC)&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12383;&#12364;
-&#12405;&#12392;&#12375;&#12383;&#12371;&#12392;&#12363;&#12425;emacs&#29256;&#12398;&#33521;&#21644;&#12539;&#21644;&#33521;&#36766;&#26360;&#12434;&#20351;&#12387;&#12390;&#12415;&#12383;&#12367;&#12394;&#12387;&#12383;&#12398;&#12391;
-&#12481;&#12515;&#12524;&#12531;&#12472;&#12375;&#12390;&#12415;&#12383;&#12290;&#29872;&#22659;&#12399;cygwin&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;sdic&#23566;&#20837;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-&lt;p&gt;elisp, info, &#36766;&#26360;&#12398;&#22580;&#25152;&#12399;&#12518;&#12540;&#12470;&#12540;&#12525;&#12540;&#12459;&#12523;&#12398;Dropbox&#12395;&#26684;&#32013;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
-make
-make install
-make install-info
-make dict
-make install-dict
-&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-2" class="outline-3"&gt;
-&lt;h3 id="sec-2"&gt;&#26908;&#32034;&#12395;&#22833;&#25943;&#12377;&#12427;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2"&gt;
-
-
-&lt;p&gt;
-&#26908;&#32034;&#12375;&#12390;&#12418;&#12289;&#22833;&#25943;&#12377;&#12427;&#12394;&#12392;&#24605;&#12387;&#12390;&#12356;&#12383;&#12425;&#36766;&#26360;&#12398;&#20316;&#25104;&#12395;&#22833;&#25943;&#12375;&#12390;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ make dict
-no -S -e gene.txt | /usr/bin/perl contrib/gene.perl &amp;gt; gene.sdic
-/bin/sh: no: command not found
-/usr/bin/perl contrib/edict.perl edict &amp;gt; jedict.sdic
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12300;no&#12301;&#12467;&#12510;&#12531;&#12489;&#12392;&#12399;&#12394;&#12435;&#12382;&#12420;&#65311;
-&lt;/p&gt;
-&lt;p&gt;
-&#12392;&#12356;&#12358;&#12371;&#12392;&#12391;&#12289;Makefile&#12398;&#38619;&#24418;&#12398;Makefile.in&#12434;&#35211;&#12390;&#12415;&#12383;&#12425;&#12289;nkf&#12398;&#12371;&#12392;&#12398;&#12424;&#12358;&#12384;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;gene.dic: contrib/gene.perl gene.txt
-    @NKF@ -S -e gene.txt | @PERL@ contrib/gene.perl --compat &amp;gt; $&lt;span class="org-variable-name"&gt;@&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12373;&#12425;&#12395;&#12418;&#12358;&#19968;&#24230;configure&#12434;&#23455;&#34892;&#12375;&#12390;&#12415;&#12383;&#12392;&#12371;&#12429;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;
-&#12527;&#12540;&#12491;&#12531;&#12464;&#12364;&#12391;&#12390;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;onfigure: warning: nkf not found
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12394;&#12395;&#12431;&#12392;&#12418;&#12354;&#12428;&#12289;nkf&#12434;&#12356;&#12428;&#12394;&#12356;&#12392;&#12384;&#12394;&#12290;apt-cyg&#12391;&#25506;&#12375;&#12383;&#12369;&#12393;&#28961;&#12363;&#12387;&#12383;&#12398;&#12391;&#25163;&#21205;&#12391;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;tar xvfz nkf-2.1.2.tar.gz
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; nkf-2.1.2/
-make
-make install
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12381;&#12398;&#24460;&#12289;./configre&#12363;&#12425;&#12420;&#12426;&#30452;&#12375;&#12290;&amp;hellip;&#12384;&#12364;nkf&#12364;&#20170;&#12384;&#12395;&#35211;&#12388;&#12363;&#12425;&#12394;&#12356;&#12392;&#12391;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
-loading cache ./config.cache
-checking for a BSD compatible install... (cached) /usr/bin/install -c
-checking whether build environment is sane... yes
-checking whether make sets ${&lt;span class="org-variable-name"&gt;MAKE&lt;/span&gt;}... (cached) yes
-checking for working aclocal... found
-checking for working autoconf... found
-checking for working automake... found
-checking for working autoheader... found
-checking for working makeinfo... found
-checking for emacs... (cached) /usr/bin/emacs
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12424;&#12367;&#35211;&#12427;&#12392;&#12289;cache&#12434;&#20351;&#12387;&#12390;&#12356;&#12427;&#12424;&#12358;&#12391;&#12354;&#12427;&#12290;&#12394;&#12398;&#12391;&#21066;&#38500;&#12375;&#12390;&#12522;&#12488;&#12521;&#12452;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ sh ./configure --with-lispdir=~/Dropbox/dotfiles/emacs/site-lisp/sdic --infodir=~/Dropbox/dotfiles/emacs/info/sdic --with-dictdir=~/Dropbox/dict/sdic
-creating cache ./config.cache
-checking for a BSD compatible install... /usr/bin/install -c
-checking whether build environment is sane... yes
-checking whether make sets ${&lt;span class="org-variable-name"&gt;MAKE&lt;/span&gt;}... yes
-checking for working aclocal... found
-checking for working autoconf... found
-checking for working automake... found
-checking for working autoheader... found
-checking for working makeinfo... found
-checking for emacs... /usr/bin/emacs
-checking where emacs files are in... /usr/local/share/emacs
-checking where .elc files should go... ~/Dropbox/dotfiles/emacs/site-lisp/sdic
-checking for nkf... /usr/local/bin/nkf
-checking for perl... /usr/bin/perl
-checking for gzip... /usr/bin/gzip
-checking for bzip2... /usr/bin/bzip2
-checking for cp... /usr/bin/cp
-checking for sort... /usr/local/bin/sort
-checking for EIWA Dictionary...         gene.sdic
-checking for WAEI Dictionary...         jedict.sdic
-updating cache ./config.cache
-creating ./config.status
-creating Makefile
-creating lisp/Makefile
-creating lisp/sdic.el
-creating lisp/sample.emacs
-creating install.el
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12420;&#12387;&#12392;&#25104;&#21151;&#12290;&#12290;&#12290;&#12354;&#12392;&#12399;&#12362;&#27770;&#12414;&#12426;&#12398;&#12467;&#12510;&#12531;&#12489;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;make clean
-make
-make install
-make install-info
-make dict
-make install-dict
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12392;&#24605;&#12387;&#12383;&#12425;&#12300;make dict&#12301;&#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ make dict
-make: Nothing to be done for &lt;span class="org-sh-quoted-exec"&gt;`dict'.&lt;/span&gt;
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12393;&#12358;&#12418;&#12289;*.sdic&#12399;&#12289;&#12300;make clean&#12301;&#12391;&#21066;&#38500;&#12373;&#12428;&#12394;&#12356;&#12424;&#12358;&#12384;&#12290;
-&#12394;&#12398;&#12391;&#25163;&#21205;&#12391;&#21066;&#38500;&#12375;&#12390;&#12420;&#12426;&#30452;&#12375;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ rm *.sdic
-$ make dict
-/usr/local/bin/nkf -S -e gene.txt | /usr/bin/perl contrib/gene.perl &amp;gt; gene.sdic
-/usr/bin/perl contrib/edict.perl edict &amp;gt; jedict.sdic
-$ make install-dict
-/bin/sh ./mkinstalldirs ~/Dropbox/dict/sdic
-/usr/bin/install -c -m 644      gene.sdic ~/Dropbox/dict/sdic
-/usr/bin/install -c -m 644      jedict.sdic ~/Dropbox/dict/sdic
-&lt;/pre&gt;
-
-&lt;p&gt;
-M-x sdic&#12391;&#35430;&#12375;&#12383;&#12392;&#12371;&#12429;&#12289;&#33521;&#21644;&#12398;&#22793;&#25563;&#12399;&#12358;&#12414;&#12367;&#12356;&#12387;&#12383;&#12290;
-e2wm&#12434;&#20351;&#12387;&#12390;&#12356;&#12427;&#12364;&#12289;&#34920;&#31034;&#12373;&#12428;&#12427;&#22580;&#25152;&#12364;&#12424;&#12429;&#12375;&#12367;&#12394;&#12356;&#12398;&#12391;
-&#12394;&#12435;&#12392;&#12363;&#35373;&#23450;&#12434;&#35519;&#25972;&#12375;&#12390;&#12289;e2wm&#12398;&#12469;&#12502;&#12454;&#12451;&#12531;&#12489;&#12454;&#12395;&#12375;&#12383;&#12356;&#12392;&#12371;&#12429;&#12290;
-&lt;img src="img/sdic/01.png"  alt="img/sdic/01.png" /&gt;
-&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-3" class="outline-3"&gt;
-&lt;h3 id="sec-3"&gt;&#21644;&#33521;&#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3"&gt;
-
-&lt;p&gt;&#33521;&#21644;&#12399;&#12358;&#12414;&#12367;&#12356;&#12387;&#12383;&#12364;&#12289;&#21644;&#33521;&#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12290;
-&#22810;&#20998;&#21407;&#22240;&#12399;&#12289;cygwin&#12398;grep&#12364;&#26085;&#26412;&#35486;&#12434;&#26908;&#32034;&#12391;&#12365;&#12394;&#12363;&#12425;&#12384;&#12392;&#24605;&#12358;&#12290;
-&#35430;&#12375;&#12395;&#19979;&#35352;&#12398;&#12467;&#12510;&#12531;&#12489;&#12434;&#35430;&#12375;&#12383;&#12392;&#12371;&#12429;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;grep &lt;span class="org-string"&gt;'&amp;#12461;&amp;#12473;&amp;#12510;&amp;#12540;&amp;#12463;'&lt;/span&gt; jedict.sdic
-&amp;#65306;
-&amp;lt;K&amp;gt;&amp;#12541;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12367;&amp;#12426;&amp;#12363;&amp;#12360;&amp;#12375;&amp;lt;/K&amp;gt;repetition mark&lt;span class="org-keyword"&gt; in&lt;/span&gt; katakana
-&amp;lt;K&amp;gt;&amp;#12542;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12367;&amp;#12426;&amp;#12363;&amp;#12360;&amp;#12375;&amp;lt;/K&amp;gt;voiced repetition mark&lt;span class="org-keyword"&gt; in&lt;/span&gt; katakana
-&amp;lt;K&amp;gt;&amp;#12445;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12367;&amp;#12426;&amp;#12363;&amp;#12360;&amp;#12375;&amp;lt;/K&amp;gt;repetition mark&lt;span class="org-keyword"&gt; in&lt;/span&gt; hiragana
-&amp;lt;K&amp;gt;&amp;#12446;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12367;&amp;#12426;&amp;#12363;&amp;#12360;&amp;#12375;&amp;lt;/K&amp;gt;voiced repetition mark&lt;span class="org-keyword"&gt; in&lt;/span&gt; hiragana
-&amp;lt;K&amp;gt;&amp;#12291;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12362;&amp;#12394;&amp;#12376;&amp;#12367;&amp;lt;/K&amp;gt;ditto mark
-&amp;lt;K&amp;gt;&amp;#20189;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12393;&amp;#12358;&amp;#12376;&amp;#12423;&amp;#12358;&amp;lt;/K&amp;gt;&lt;span class="org-string"&gt;"as above"&lt;/span&gt; mark
-&amp;lt;K&amp;gt;&amp;#12293;&amp;lt;/K&amp;gt;repetition of kanji (sometimes voiced)
-&amp;lt;K&amp;gt;&amp;#12294;&amp;lt;/K&amp;gt;&amp;lt;K&amp;gt;&amp;#12375;&amp;#12417;&amp;lt;/K&amp;gt;end or closure mark
-&amp;#65306;
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12362;&#12362;&#12362;&#20840;&#37096;&#12498;&#12483;&#12488;&#12375;&#12390;&#12375;&#12414;&#12387;&#12390;&#12356;&#12427;&#12424;&#12290;&#12290;&#12290;&#12290;
-cygwin&#12398;&#12467;&#12531;&#12477;&#12540;&#12523;&#12363;&#12425;grep&#12375;&#12383;&#12392;&#12365;&#12399;&#12498;&#12483;&#12488;&#12377;&#12427;&#12398;&#12384;&#12364;&#12289;
-&#33258;&#20998;&#12364;&#12513;&#12452;&#12531;&#12391;&#20351;&#29992;&#12375;&#12390;&#12356;&#12427;emacs&#12399;GUI&#29256;&#12394;&#12398;&#12391;
-&#35023;&#12391;&#12358;&#12372;&#12367;&#12418;&#12398;&#12364;&#12289;dos&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12290;&#22810;&#20998;&#12371;&#12428;&#12364;&#21407;&#22240;&#12384;&#12429;&#12358;&#12290;
-&#12390;&#12371;&#12392;&#12391;&#12289;shell&#12434;dos&#12376;&#12419;&#12394;&#12367;&#12390;bash&#12395;&#12375;&#12390;&#12415;&#12427;&#12290;
-&#12392;&#24605;&#12387;&#12383;&#12364;&#12289;eshell&#12376;&#12419;&#12394;&#12367;&#12390;&#12289;shell&#12399;cygwin&#12364;&#21205;&#12367;&#12424;&#12358;&#12395;&#35373;&#23450;&#12375;&#12390;&#12354;&#12387;&#12383;&#12290;
-&#12391;&#12289;shell-mode&#12391;grep&#12375;&#12390;&#12415;&#12427;&#12392;&#12289;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ grep &lt;span class="org-string"&gt;'&amp;#12461;&amp;#12473;&amp;#12510;&amp;#12540;&amp;#12463;'&lt;/span&gt; jedict.sdic
-grep &lt;span class="org-string"&gt;'&amp;#7;L&amp;#7;X&amp;#7;}&amp;#7;[&amp;#7;N'&lt;/span&gt; jedict.sdic
-grep: Unmatched [ or [^
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12371;&#12435;&#12394;&#24863;&#12376;&#12391;&#21270;&#12369;&#12390;&#12375;&#12414;&#12358;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
- (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)
-&lt;/p&gt;
-
-
 &lt;/div&gt;
 &lt;/div&gt;
 </content></entry>
