@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>(超個人的)Windowsインストール後にやることまとめ</title>
+    <title>node.jsのnpmでエラーが発生してインストールできない          :node.js:</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
@@ -84,476 +84,291 @@
     <div class="well">
       <div class="row">
 	<div class="date span2">
-	  <div class=" date-y"><a href="../../../article/2011/index.html">2011</a>
+	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
-	  <div class=" date-m"><a href="../../../article/2011/04/index.html"> 4月</a></div>
-	  <div class=" date-d">28</div>
+	  <div class=" date-m"><a href="../../../article/2012/05/index.html"> 5月</a></div>
+	  <div class=" date-d">11</div>
 	</div>
-	<h1 class="offset1">(超個人的)Windowsインストール後にやることまとめ</h1>
+	<h1 class="offset1">node.jsのnpmでエラーが発生してインストールできない          :node.js:</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2011/04/03_dropboxgit.html"><i class="icon-chevron-left"></i>&nbsp;DropboxでGit</a></li><li class="next" style="text-align: right;"><a href="../../../article/2011/06/23_emacsslimeleiningenclojure.html">Emacs+SLIME+Leiningen+Clojureで開発環境のインストール&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html"><i class="icon-chevron-left"></i>&nbsp;emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/05/12_apacheorder.html">apacheのOrderディレクティブ&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
 
   </header>
   <div class="article-content">
-    <div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">ソフトのインストールポリシー</h3>
-<div class="outline-text-3" id="text-1">
-
-<ul>
-<li>インストーラのないツールは基本的に%HOME%/apps下に展開する。
-</li>
-<li>インストーラものはデフォルト値でインストール
-</li>
-<li>%HOME%/shortcutsにショートカットをおいてlauncyで管理
-</li>
-<li>UNIX系(コマンドライン系)のミドルウェアでインストーラーがない場合は%HOME&amp;/opt/下に展開する。
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">コントロールキーの設定</h3>
-<div class="outline-text-3" id="text-2">
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-5">
-<h5 id="sec-2-1">xp</h5>
-<div class="outline-text-5" id="text-2-1">
-
-<ul>
-<li>xkeyemacsをつかってcapsキーをctrsキーにする。
-</li>
-</ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-2-2" class="outline-5">
-<h5 id="sec-2-2">win7</h5>
-<div class="outline-text-5" id="text-2-2">
-
-<ul>
-<li>Changekeyを使用する。
-<ul>
-<li>chgkey.exe
-</li>
-<li>Dropboxに保存してある。
-</li>
-</ul>
-
-</li>
-<li>GUIのキーボードが表示されるので変更する
-<ul>
-<li>Caps -&gt; ctrl
-</li>
-<li>無変換 ー&gt; Shift
-</li>
-<li>変換 -&gt; Ctrl
-</li>
-<li>ひらがな -&gt; Return
-</li>
-</ul>
-
-</li>
-<li>再起動
-</li>
-</ul>
-
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-3" class="outline-3">
-<h3 id="sec-3">Usersディレクトリの作成(XPのみ)</h3>
-<div class="outline-text-3" id="text-3">
-
-<p>「Link Shell Extension」をインストールして
-「c:\」に「C:\Documents and Settings」のディレクトリジャンクションを作り名前を「Users」とする。
-これにより
-c:\Users\というディレクトリができ、Windows7/Vistaと同じような構成になる。
+    <p>
+WindowsXPでnpm経由でのモジュールのインストールができない。
 </p>
-</div>
-
-</div>
-
-<div id="outline-container-4" class="outline-3">
-<h3 id="sec-4">一番最初にインストール</h3>
-<div class="outline-text-3" id="text-4">
-
-<ul>
-<li>Launcy
-</li>
-<li>Firefox
-</li>
-<li>Emacs
-</li>
-<li>ExpLzh
-</li>
-</ul>
 
 
-</div>
+<pre class="src src-sh">dos&gt;npm install socket.io
+npm http GET https://registry.npmjs.org/socket.io
+npm http 304 https://registry.npmjs.org/socket.io
+npm http GET https://registry.npmjs.org/policyfile/0.0.4
+npm http GET https://registry.npmjs.org/socket.io-client/0.9.6
+npm http GET https://registry.npmjs.org/redis/0.6.7
+npm http 304 https://registry.npmjs.org/redis/0.6.7
+npm http 304 https://registry.npmjs.org/policyfile/0.0.4
+npm http 304 https://registry.npmjs.org/socket.io-client/0.9.6
+npm http GET https://registry.npmjs.org/ws
+npm http GET https://registry.npmjs.org/xmlhttprequest/1.2.2
+npm http GET https://registry.npmjs.org/uglify-js/1.2.5
+npm http GET https://registry.npmjs.org/active-x-obfuscator/0.0.1
+npm http 304 https://registry.npmjs.org/ws
+npm http 304 https://registry.npmjs.org/active-x-obfuscator/0.0.1
+npm http 304 https://registry.npmjs.org/xmlhttprequest/1.2.2
+npm http 304 https://registry.npmjs.org/uglify-js/1.2.5
+npm http GET https://registry.npmjs.org/zeparser/0.0.5
+npm http 304 https://registry.npmjs.org/zeparser/0.0.5
+npm http GET https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
+npm http 200 https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
+npm http GET https://registry.npmjs.org/options
+npm http GET https://registry.npmjs.org/commander
+npm http 304 https://registry.npmjs.org/options
+npm http 304 https://registry.npmjs.org/commander
 
-</div>
+&gt; ws@0.4.14 install C:\Documents and Settings\mikio\node_modules\socket.io\node
+_modules\socket.io-client\node_modules\ws
+&gt; node install.js
 
-<div id="outline-container-5" class="outline-3">
-<h3 id="sec-5">環境変数の設定</h3>
-<div class="outline-text-3" id="text-5">
 
-<ul>
-<li>HOME
-<ul>
-<li>XPの場合:HOME=c:\Users\m-oono
-</li>
-<li>Windows7の場合:HOME=%USERPROFILE%
+node.js:195
+        throw e; // process.nextTick error, or <span class="org-string">'error'</span> event on first tick
+              ^
+Error: No such module
+    at net_legacy.js:38:23
+    at NativeModule.compile (node.js:469:5)
+    at node.js:434:18
+    at child_process.js:24:14
+    at NativeModule.compile (node.js:469:5)
+    at Function.require (node.js:434:18)
+    at Function._load (module.js:282:25)
+    at Module.require (module.js:341:17)
+    at require (module.js:352:17)
+    at Object.&lt;anonymous&gt; (C:\Documents and Settings\mikio\node_modules\socket.
+io\node_modules\socket.io-client\node_modules\ws\install.js:1:83)
 
-</li>
-<li>HOMEはダブルクォーテーションで囲んではいけない。emacsが起動しなくなる。
-</li>
-<li>HOMEはcygwin,Emacs用、XYZZYHOMEはxyzzy用の環境変数。
-</li>
-<li>※cygwinでは、HOMEを設定すると、自動的に/home/mikiがc:\mikiにマウントされる。
+npm ERR! ws@0.4.14 install: <span class="org-sh-quoted-exec">`node install.js`</span>
+npm ERR! <span class="org-sh-quoted-exec">`cmd "/c" "node install.js"`</span> failed with 1
+npm ERR!
+npm ERR! Failed at the ws@0.4.14 install script.
+npm ERR! This is most likely a problem with the ws package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node install.js
+npm ERR! You can get their info via:
+npm ERR!     npm owner ls ws
+npm ERR! There is likely additional logging output above.
+npm ERR!
+npm ERR! System Windows_NT 5.1.2600
+npm ERR! command <span class="org-string">"C:\\Program Files\\nodejs\\\\node.exe"</span> <span class="org-string">"C:\\Program Files\\nod</span>
+<span class="org-string">ejs\\node_modules\\npm\\bin\\npm-cli.js"</span> <span class="org-string">"install"</span> <span class="org-string">"socket.io"</span>
+npm ERR! cwd C:\Documents and Settings\mikio\dev\swank-js
+npm ERR! node -v v0.6.17
+npm ERR! npm -v 1.1.21
+npm ERR! code ELIFECYCLE
+npm ERR! message ws@0.4.14 install: <span class="org-sh-quoted-exec">`node install.js`</span>
+npm ERR! message <span class="org-sh-quoted-exec">`cmd "/c" "node install.js"`</span> failed with 1
+npm ERR! errno {}
+npm ERR!
+npm ERR! Additional logging details can be found<span class="org-keyword"> in</span>:
+npm ERR!     C:\Documents and Settings\mikio\dev\swank-js\npm-debug.log
+npm not ok
+</pre>
 
-</li>
-</ul>
 
-</li>
-<li>MAVEN<sub>HOME</sub>
- %HOME%\opt\
-</li>
-<li>XYZZYHOME
-<ul>
-<li>XYZZYHOME=%HOME%\aps\xyzzy
-</li>
-<li>PATH
-    c:\cygwin\bin;
-
-</li>
-</ul>
-
-</li>
-<li>下記は.bashrc側に置くので設定しなくて良い。
-  JAVA<sub>HOME</sub>=%HOME%\opt\
-  ANT<sub>HOME</sub>=
-
-</li>
-<li>PATH
-</li>
-</ul>
-
-<p>%PATH%;%HOME%\bin;%MAVEN<sub>HOME</sub>%\bin;%HOME%\opt\php-5.3.8-Win32-VC9-x86
+<p>
+本家のバージョンを確認してみると、バージョンは0.5.2。
+どうやらWindows版のインストーラーができる前に手動でいれたnode.exeが
+優先されて実行されていたらしい。
 </p>
-</div>
-
-</div>
-
-<div id="outline-container-6" class="outline-3">
-<h3 id="sec-6">キーボードの入力速度を早める</h3>
-<div class="outline-text-3" id="text-6">
-
-<ul>
-<li>(Win7) [コンパネ] -&gt; [コンピュータの簡単操作] -&gt; [キーボード動作の変更] -&gt; [キーボードの設定]
-</li>
-</ul>
 
 
-</div>
 
-</div>
+<pre class="src src-sh">Microsoft Windows XP [Version 5.1.2600]
+(C) Copyright 1985-2001 Microsoft Corp.
 
-<div id="outline-container-7" class="outline-3">
-<h3 id="sec-7">アンチエイリアスの設定</h3>
-<div class="outline-text-3" id="text-7">
+C:\Documents and Settings\mikio&gt;node -v
+v0.5.2
 
-<ul>
-<li>MacTypeをインストールする。
-</li>
-<li>fontは「Mig 1M」を使用する。MigMix1M 行間が広いので注意。
-</li>
-</ul>
+C:\Documents and Settings\mikio&gt;where node
+<span class="org-string">'where'</span> &#12399;&#12289;&#20869;&#37096;&#12467;&#12510;&#12531;&#12489;&#12414;&#12383;&#12399;&#22806;&#37096;&#12467;&#12510;&#12531;&#12489;&#12289;
+&#25805;&#20316;&#21487;&#33021;&#12394;&#12503;&#12525;&#12464;&#12521;&#12512;&#12414;&#12383;&#12399;&#12496;&#12483;&#12481; &#12501;&#12449;&#12452;&#12523;&#12392;&#12375;&#12390;&#35469;&#35672;&#12373;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
 
+C:\Documents and Settings\mikio&gt;whereis node
+node: /cygdrive/c/WINDOWS/system32/node.exe /cygdrive/c/WINDOWS/system32/node.ex
+e
 
-</div>
+C:\Documents and Settings\mikio&gt;rm c:\WINDOWS\system32\node.exe
 
-</div>
+C:\Documents and Settings\mikio&gt;node -v
+<span class="org-string">'node'</span> &#12399;&#12289;&#20869;&#37096;&#12467;&#12510;&#12531;&#12489;&#12414;&#12383;&#12399;&#22806;&#37096;&#12467;&#12510;&#12531;&#12489;&#12289;
+&#25805;&#20316;&#21487;&#33021;&#12394;&#12503;&#12525;&#12464;&#12521;&#12512;&#12414;&#12383;&#12399;&#12496;&#12483;&#12481; &#12501;&#12449;&#12452;&#12523;&#12392;&#12375;&#12390;&#35469;&#35672;&#12373;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
 
-<div id="outline-container-8" class="outline-3">
-<h3 id="sec-8">入れるソフト</h3>
-<div class="outline-text-3" id="text-8">
+</pre>
 
-
-</div>
-
-<div id="outline-container-8-1" class="outline-4">
-<h4 id="sec-8-1">インストーラ系ソフトのインストール</h4>
-<div class="outline-text-4" id="text-8-1">
-
-<ul>
-<li>Spybot Searcy &amp; Directory
-</li>
-<li>Link Shell Extension
-<ul>
-<li><a href="http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html">http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html</a>
-</li>
-</ul>
-
-</li>
-<li>AdujustClock
-</li>
-<li>WinSCP
-</li>
-<li>Jing
-</li>
-<li>Chrome
-</li>
-<li>Bullzip PDF Printer
-</li>
-<li>Java JRE
-</li>
-<li>MediaMonkey(音楽管理ソフト)
-</li>
-<li>Switcher(MacのExpose)
-</li>
-<li>JDK, JRE
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-8-2" class="outline-4">
-<h4 id="sec-8-2">解凍系</h4>
-<div class="outline-text-4" id="text-8-2">
-
-<ul>
-<li>cygwinのインストール
-
-</li>
-<li>putty、ごった煮にさらに機能追加版
-<ul>
-<li><a href="http://ice.hotmint.com/putty/">http://ice.hotmint.com/putty/</a>
-</li>
-</ul>
-
-<p> ※オリジナルのごった煮版は、コマンドラインからのplinkがうまく使えなかったので使用しない。
+<p>
+削除したら動いた。
 </p>
-</li>
-<li>Jane sytle
-</li>
-<li>eclip
-</li>
-<li>Eclipse
-</li>
-<li>WinDeskWide(仮想デスクトップ)
-</li>
-<li>TClock Light (for Windows XP)
-</li>
-<li>tclocklight-kt100204(for WIndows7)
-  タスクバーを左たてに表示する場合、tclock.iniを書きに書きかえる。
-  Format="yy/mm/dd\nddd\nhh:nn:ss"
-</li>
-<li>AdjustClock
- windows7の場合、OSに自動同期機能があるのでいらない。
-</li>
-</ul>
 
 
-</div>
+<pre class="src src-sh">C:\Documents and Settings\mikio&gt;npm install socket.io
+npm http GET https://registry.npmjs.org/socket.io
+npm http 304 https://registry.npmjs.org/socket.io
+npm http GET https://registry.npmjs.org/socket.io-client/0.9.6
+npm http GET https://registry.npmjs.org/policyfile/0.0.4
+npm http GET https://registry.npmjs.org/redis/0.6.7
+npm http 304 https://registry.npmjs.org/redis/0.6.7
+npm http 304 https://registry.npmjs.org/socket.io-client/0.9.6
+npm http 304 https://registry.npmjs.org/policyfile/0.0.4
+npm http GET https://registry.npmjs.org/ws
+npm http GET https://registry.npmjs.org/uglify-js/1.2.5
+npm http GET https://registry.npmjs.org/xmlhttprequest/1.2.2
+npm http GET https://registry.npmjs.org/active-x-obfuscator/0.0.1
+npm http 304 https://registry.npmjs.org/xmlhttprequest/1.2.2
+npm http 304 https://registry.npmjs.org/active-x-obfuscator/0.0.1
+npm http 304 https://registry.npmjs.org/ws
+npm http 304 https://registry.npmjs.org/uglify-js/1.2.5
+npm http GET https://registry.npmjs.org/zeparser/0.0.5
+npm http 304 https://registry.npmjs.org/zeparser/0.0.5
+npm http GET https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
+npm http 200 https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
+npm http GET https://registry.npmjs.org/options
+npm http GET https://registry.npmjs.org/commander
+npm http 304 https://registry.npmjs.org/commander
+npm http 304 https://registry.npmjs.org/options
 
-</div>
+&gt; ws@0.4.14 install C:\Documents and Settings\mikio\node_modules\socket.io\node
+_modules\socket.io-client\node_modules\ws
+&gt; node install.js
 
-<div id="outline-container-8-3" class="outline-4">
-<h4 id="sec-8-3">スタートアップの設定</h4>
-<div class="outline-text-4" id="text-8-3">
+================================================================================
 
-<ul>
-<li>タートアップフォルダの開き方
-<ul>
-<li>[スタート] -&gt; [すべてのプログラム] -&gt; []
-</li>
-<li>スタートアップを右クリック - 開く
-</li>
-</ul>
+=                                                                              =
 
-</li>
-</ul>
+=  To install WS with blazing fast native extensions, use                      =
 
-<p>下記を登録する。
-</p><ul>
-<li>tclock
-</li>
-<li>eclip
-</li>
-<li>pagent
-</li>
-</ul>
+=       &lt;npm install ws --ws:native&gt;                                           =
 
+=                                                                              =
 
-</div>
-</div>
+================================================================================
 
-</div>
+socket.io@0.9.6 ./node_modules/socket.io
+&#9500;&#9472;&#9472; policyfile@0.0.4
+&#9500;&#9472;&#9472; redis@0.6.7
+&#9492;&#9472;&#9472; socket.io-client@0.9.6 (xmlhttprequest@1.2.2, uglify-js@1.2.5, ws@0.4.14,
+ active-x-obfuscator@0.0.1)
 
-<div id="outline-container-9" class="outline-3">
-<h3 id="sec-9">MySQL</h3>
-<div class="outline-text-3" id="text-9">
-
-<p>MySQLのHPにてCommunityServerをインストールする。
-HPの上の方にある大きなバナーのやつだと余計な製品がたくさん入って
-わけわからんので注意。
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-10" class="outline-3">
-<h3 id="sec-10">php</h3>
-<div class="outline-text-3" id="text-10">
-
-<ul>
-<li><a href="http://windows.php.net/download/#php-5.3-ts-VC9-x86">http://windows.php.net/download/#php-5.3-ts-VC9-x86</a>
-</li>
-</ul>
-
-<p>windows版のバイナリ(*.zip)をダウンロードして展開する。
-</p><ul>
-<li>展開場所の例
-</li>
-</ul>
-
-
-
-
-<pre class="src src-sh">$<span class="org-variable-name">HOME</span>/opt/php
+C:\Documents and Settings\mikio&gt;
 </pre>
 
 
 
-</div>
-
-</div>
-
-<div id="outline-container-11" class="outline-3">
-<h3 id="sec-11">別PCに移行する場合</h3>
-<div class="outline-text-3" id="text-11">
 
 
-</div>
-
-<div id="outline-container-11-1" class="outline-4">
-<h4 id="sec-11-1">ファイル共有の設定</h4>
-<div class="outline-text-4" id="text-11-1">
-
-<ul>
-<li>コンパネ　-　Windowsファイアウォール - 例外
-</li>
-<li>「ファイルとプリンタの共有」をチェックする。
-</li>
-</ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-11-2" class="outline-4">
-<h4 id="sec-11-2">ローカルPCのAdminユーザのパスワードを設定</h4>
-<div class="outline-text-4" id="text-11-2">
-
-<ul>
-<li>コントロールパネル - ユーザアカウント
-</li>
-<li>Administratorを選択し、[パスワードのリセット]をクリックし、新しいパスワードを入力する。
-</li>
-</ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-11-3" class="outline-4">
-<h4 id="sec-11-3">設定ファイルのコピー</h4>
-<div class="outline-text-4" id="text-11-3">
-
-<ul>
-<li>エクスプローラを立ち上げ、旧端末のCドライブに接続する。
- &ndash; \\旧端末のコンピュータ名\C$
-</li>
-<li>旧端末の必要な情報をコピーする(FireCopyを使用する。)。
- &ndash; c:\miki
-</li>
-</ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-11-4" class="outline-4">
-<h4 id="sec-11-4">移行用ソフト</h4>
-<div class="outline-text-4" id="text-11-4">
-
-<ul>
-<li>FireFile Copy :高速ファイルツール。上書き確認とかいろいろ。エクスプローラだときつい。
-</li>
-</ul>
 
 
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-12" class="outline-3">
-<h3 id="sec-12">Faithの自作マシンでのドライバインストール</h3>
-<div class="outline-text-3" id="text-12">
-
-<p>windows7を入れた最初の状態では、ネットワークアダプタのドライバがないため
-ネットにつながらない。
-そこで、ドライバをインストールする。ネットワークアダプター以外にも
-いくつかドライバがないものがあるのでついでにインストールしておく
-</p><ul>
-<li>ユニバーサルシリアルバスや
-
-</li>
-<li>マザーボードのCD-ROMを用意する(P8Z68V-PRO)。
-</li>
-<li>[コントロールパネル] - [ハードウェアとサウンド]-[デバイスマネージャ]
-</li>
-<li>ほかのデバイスを選択し、びっくりマークのついている機器を右クリック
-</li>
-<li>[ドライバーソフトウェアの更新]－[コンピュータを参照してドライバーソフトウェアを検索します]
-</li>
-</ul>
 
 
-</div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2011-04-28T22:50:00Z">
-      木曜日 4月, 28 2011 at 22:50:00
+    Posted on <time datetime="2012-05-11T23:24:00Z">
+      金曜日 5月, 11 2012 at 23:24:00
     </time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/windows.html">windows</a></li>
+	
       </ul>
     </nav>
   </footer>

@@ -3,9 +3,9 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-05-12T09:26:03Z</updated>
+  <updated>2012-05-12T09:47:16Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">apacheのOrderディレクティブ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/12_apacheorder.html"/><updated>2012-05-12T09:25:00Z</updated><published>2012-05-12T09:25:00Z</published><id>article/2012/05/12_apacheorder.html</id><content type="html">&lt;p&gt;
+  <entry><title type="html">apacheのOrderディレクティブ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/12_apacheorder.html"/><updated>2012-05-12T09:25:00Z</updated><published>2012-05-12T09:25:00Z</published><id>article/2012/05/12_apacheorder.html</id><category scheme="/tags/apache.html" term="apache" label="apache"/><content type="html">&lt;p&gt;
 &#20037;&#12375;&#25391;&#12426;&#12395;&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12434;&#12356;&#12376;&#12387;&#12383;&#12425;&#12377;&#12387;&#12363;&#12426;&#24536;&#12428;&#12390;&#12356;&#12383;&#12290;
 &lt;/p&gt;
 
@@ -23,7 +23,7 @@
 &lt;/ul&gt;
 
 
-</content></entry><entry><title type="html">node.jsのnpmでエラーが発生してインストールできない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/11_nodejsnpm.html"/><updated>2012-05-11T23:24:00Z</updated><published>2012-05-11T23:24:00Z</published><id>article/2012/05/11_nodejsnpm.html</id><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">node.jsのnpmでエラーが発生してインストールできない          :node.js:</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/11_nodejsnpm-nodejs.html"/><updated>2012-05-11T23:24:00Z</updated><published>2012-05-11T23:24:00Z</published><id>article/2012/05/11_nodejsnpm-nodejs.html</id><content type="html">&lt;p&gt;
 WindowsXP&#12391;npm&#32076;&#30001;&#12391;&#12398;&#12514;&#12472;&#12517;&#12540;&#12523;&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12364;&#12391;&#12365;&#12394;&#12356;&#12290;
 &lt;/p&gt;
 
@@ -105,10 +105,11 @@ npm not ok
 
 
 &lt;p&gt;
-&#26412;&#23478;&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#30906;&#35469;&#12375;&#12390;&#12415;&#12427;&#12392;&#12289;&#12394;&#12398;&#12395;&#12503;&#12525;&#12531;&#12503;&#12488;&#12391;&#30906;&#35469;&#12375;&#12390;&#12415;&#12427;&#12392;
-&#12496;&#12540;&#12472;&#12519;&#12531;&#12399;0.5.2&#12290;&#12393;&#12358;&#12420;&#12425;Windows&#29256;&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12521;&#12540;&#12364;&#12391;&#12365;&#12427;&#21069;&#12395;&#25163;&#21205;&#12391;
-&#12356;&#12428;&#12383;node.exe&#12364;&#20778;&#20808;&#12373;&#12428;&#12390;&#23455;&#34892;&#12373;&#12428;&#12390;&#12356;&#12383;&#12425;&#12375;&#12356;&#12290;
+&#26412;&#23478;&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#30906;&#35469;&#12375;&#12390;&#12415;&#12427;&#12392;&#12289;&#12496;&#12540;&#12472;&#12519;&#12531;&#12399;0.5.2&#12290;
+&#12393;&#12358;&#12420;&#12425;Windows&#29256;&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12521;&#12540;&#12364;&#12391;&#12365;&#12427;&#21069;&#12395;&#25163;&#21205;&#12391;&#12356;&#12428;&#12383;node.exe&#12364;
+&#20778;&#20808;&#12373;&#12428;&#12390;&#23455;&#34892;&#12373;&#12428;&#12390;&#12356;&#12383;&#12425;&#12375;&#12356;&#12290;
 &lt;/p&gt;
+
 
 
 &lt;pre class="src src-sh"&gt;Microsoft Windows XP [Version 5.1.2600]
@@ -280,7 +281,7 @@ C:\Documents and Settings\mikio&amp;gt;
 
 
 
-</content></entry><entry><title type="html">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html"/><updated>2012-05-10T23:24:00Z</updated><published>2012-05-10T23:24:00Z</published><id>article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html</id><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html"/><updated>2012-05-10T23:24:00Z</updated><published>2012-05-10T23:24:00Z</published><id>article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/slime.html" term="slime" label="slime"/><category scheme="/tags/javascript.html" term="javascript" label="javascript"/><content type="html">&lt;p&gt;
 &#12414;&#12378;&#12289;Windows&#29256;&#12398;node.js&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12362;&#12367;&#12290;&#12452;&#12531;&#12473;&#12488;&#12540;&#12521;&#12394;&#12398;&#12391;&#31777;&#21336;&#12290;
 &#12381;&#12398;&#24460;&#12289;npm&#12391;socket.io&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12290;
 &lt;/p&gt;
@@ -405,7 +406,7 @@ Lisp(&#12392;&#12356;&#12358;&#12363;&#38306;&#25968;&#22411;&#35328;&#35486;)&#
 
 
 &lt;a href="http://www.amazon.co.jp/gp/product/4774148970/ref=as_li_tf_il?ie=UTF8&amp;tag=ocha04-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4774148970"&gt;&lt;img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;Format=_SL160_&amp;ASIN=4774148970&amp;MarketPlace=JP&amp;ID=AsinImage&amp;WS=1&amp;tag=ocha04-22&amp;ServiceVersion=20070822" &gt;&lt;/a&gt;&lt;img src="http://www.assoc-amazon.jp/e/ir?t=ocha04-22&amp;l=as2&amp;o=9&amp;a=4774148970" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;
-</content></entry><entry><title type="html">(超個人的)Ubuntuインストール後にやることまとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/05_ubuntu.html"/><updated>2012-05-05T22:31:00Z</updated><published>2012-05-05T22:31:00Z</published><id>article/2012/05/05_ubuntu.html</id><content type="html">&lt;ul&gt;
+</content></entry><entry><title type="html">(超個人的)Ubuntuインストール後にやることまとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/05_ubuntu.html"/><updated>2012-05-05T22:31:00Z</updated><published>2012-05-05T22:31:00Z</published><id>article/2012/05/05_ubuntu.html</id><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/><content type="html">&lt;ul&gt;
 &lt;li&gt;Ubuntu12.04LTS&#29256;&#12391;&#12377;&#12290;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -721,7 +722,7 @@ fc-cache -fv
 
 
 &lt;p&gt;
-~/.xmodemaprc&#12434;&#20316;&#25104;&#12377;&#12427;&#12290;
+~/.Xmodmap&#12434;&#20316;&#25104;&#12377;&#12427;&#12290;
 &lt;/p&gt;
 
 
@@ -738,7 +739,7 @@ add Control = Control_L
 &lt;/p&gt;
 
 
-&lt;pre class="src src-sh"&gt;xmodmap ~/.xmodemaprc
+&lt;pre class="src src-sh"&gt;xmodmap ~/.Xmodmap
 &lt;/pre&gt;
 
 
