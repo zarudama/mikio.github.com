@@ -45,15 +45,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
+<li><a href="../../../article/2012/05/23_android.html">Android開発環境の準備</a>
+</li>
+<li><a href="../../../article/2012/05/21_java.html">Javaでカンマ区切りの数字を出力する。</a>
+</li>
+<li><a href="../../../article/2012/05/18_galaxynoteroot.html">GalaxyNote(国際版)をroot化</a>
+</li>
 <li><a href="../../../article/2012/05/12_gimp.html">gimpで画像サイズを変更する</a>
 </li>
 <li><a href="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e.html">Ubuntu 12.04 LTS On ZENBOOK UX21E</a>
-</li>
-<li><a href="../../../article/2012/05/12_apacheorder.html">apacheのOrderディレクティブ</a>
-</li>
-<li><a href="../../../article/2012/05/11_nodejsnpm-nodejs.html">node.jsのnpmでエラーが発生してインストールできない          :node.js:</a>
-</li>
-<li><a href="../../../article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a>
 
 </li>
 </ul>
@@ -618,20 +618,49 @@ chmod +x lein
 </pre>
 
 
+
 </div>
 
 </div>
 
 <div id="outline-container-14" class="outline-3">
-<h3 id="sec-14">その他</h3>
+<h3 id="sec-14">eclipse</h3>
 <div class="outline-text-3" id="text-14">
+
+<ul>
+<li><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0167">http://gihyo.jp/admin/serial/01/ubuntu-recipe/0167</a>
+</li>
+</ul>
+
+
+<p>
+ソフトウェアセンターから「eclipse」」とpleiadesをインストールする。
+その後、/etc/eclipse.iniを編集する。
+</p>
+
+
+<pre class="src src-sh">-javaagent:/usr/lib/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
+</pre>
+
+<p>
+この時、eclipse.iniのそれぞれのパラメータの改行位置がおかしいことがあるので、その時は適切に編集する。
+編集が終ったら、Dashメニューより起動して日本語化されていることを確認す
+る。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-3">
+<h3 id="sec-15">その他</h3>
+<div class="outline-text-3" id="text-15">
 
 
 </div>
 
-<div id="outline-container-14-1" class="outline-4">
-<h4 id="sec-14-1">vmwareなどでインストールしたときにlocaleに日本語がない場合</h4>
-<div class="outline-text-4" id="text-14-1">
+<div id="outline-container-15-1" class="outline-4">
+<h4 id="sec-15-1">vmwareなどでインストールしたときにlocaleに日本語がない場合</h4>
+<div class="outline-text-4" id="text-15-1">
 
 
 
@@ -645,9 +674,9 @@ sudo dpkg-reconfigure locales
 
 </div>
 
-<div id="outline-container-14-2" class="outline-4">
-<h4 id="sec-14-2">クリップボード履歴</h4>
-<div class="outline-text-4" id="text-14-2">
+<div id="outline-container-15-2" class="outline-4">
+<h4 id="sec-15-2">クリップボード履歴</h4>
+<div class="outline-text-4" id="text-15-2">
 
 
 
@@ -660,9 +689,9 @@ sudo dpkg-reconfigure locales
 
 </div>
 
-<div id="outline-container-14-3" class="outline-4">
-<h4 id="sec-14-3">スクリーンショット</h4>
-<div class="outline-text-4" id="text-14-3">
+<div id="outline-container-15-3" class="outline-4">
+<h4 id="sec-15-3">スクリーンショット</h4>
+<div class="outline-text-4" id="text-15-3">
 
 <p>Ubuntuでは標準でスクリーンショットがあって、PrintScrキーを押下するだけでアクティブウィンドウが
 png形式でキャプチャされる。
@@ -684,9 +713,9 @@ png形式でキャプチャされる。
 
 </div>
 
-<div id="outline-container-15" class="outline-3">
-<h3 id="sec-15">日本語IMEについて</h3>
-<div class="outline-text-3" id="text-15">
+<div id="outline-container-16" class="outline-3">
+<h3 id="sec-16">日本語IMEについて</h3>
+<div class="outline-text-3" id="text-16">
 
 <p>Linuxは、日本語入力には３つのソフトウェアが必要。
 </p><ul>
@@ -739,6 +768,7 @@ png形式でキャプチャされる。
 最近のUbuntuでは、インプットメソッドに、iBus,
 かな漢字変換システムには、Anthyを使用している。
 </p>
+
 
 
 </div>
@@ -807,13 +837,13 @@ png形式でキャプチャされる。
 	    <nav id="archives" class="span3">
 	      <h1>Archives</h1>
 	      <ul>
-		<li><a href="../../../article/2012/05/12_gimp.html">gimpで画像サイズを変更する</a></li> <li><a href="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e.html">Ubuntu 12.04 LTS On ZENBOOK UX21E</a></li> <li><a href="../../../article/2012/05/12_apacheorder.html">apacheのOrderディレクティブ</a></li> <li><a href="../../../article/2012/05/11_nodejsnpm-nodejs.html">node.jsのnpmでエラーが発生してインストールできない          :node.js:</a></li> <li><a href="../../../article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></li> <li><a href="../../../article/2012/05/08_.html">束縛とは?..そうか!名札なのか!</a></li> <li><a href="../../../article/2012/05/05_ubuntu.html">(超個人的)Ubuntuインストール後にやることまとめ</a></li> <li><a href="../../../article/2012/04/21_clojurescriptgameediter.html">ClojureScriptで書かれたGameEditerすげぇ</a></li> <li><a href="../../../article/2012/04/18_galaxynotewindows7usb.html">GalaxyNoteをWindows7に接続してもUSBストレージデバイスとして認識しない</a></li> <li><a href="../../../article/2012/04/17_playframeworkmodel.html">playframeworkのModelにスーパークラスをつくる。</a></li> 
+		<li><a href="../../../article/2012/05/23_android.html">Android開発環境の準備</a></li> <li><a href="../../../article/2012/05/21_java.html">Javaでカンマ区切りの数字を出力する。</a></li> <li><a href="../../../article/2012/05/18_galaxynoteroot.html">GalaxyNote(国際版)をroot化</a></li> <li><a href="../../../article/2012/05/12_gimp.html">gimpで画像サイズを変更する</a></li> <li><a href="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e.html">Ubuntu 12.04 LTS On ZENBOOK UX21E</a></li> <li><a href="../../../article/2012/05/12_apacheorder.html">apacheのOrderディレクティブ</a></li> <li><a href="../../../article/2012/05/11_nodejsnpm-nodejs.html">node.jsのnpmでエラーが発生してインストールできない          :node.js:</a></li> <li><a href="../../../article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></li> <li><a href="../../../article/2012/05/08_.html">束縛とは?..そうか!名札なのか!</a></li> <li><a href="../../../article/2012/05/05_ubuntu.html">(超個人的)Ubuntuインストール後にやることまとめ</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1>Tags</h1>
 	      <ul>
-  <li style="font-size: 80.00%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 97.50%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 185.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 132.50%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 132.50%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 97.50%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 132.50%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 97.50%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/zenbook.html">zenbook</a></li> 
+  <li style="font-size: 97.50%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 97.50%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 185.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 132.50%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 132.50%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 97.50%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 132.50%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 97.50%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/zenbook.html">zenbook</a></li> 
 </ul>
 
 	    </nav>
