@@ -1,10 +1,9 @@
 @import "../bootstrap/less/bootstrap.less";
+@import "../bootstrap/less/responsive.less";
+@import "o-blog-default.less";
 
-
-/*@ob-background: #2e3436;
-@ob-foreground: #eeeeec;*/
-@ob-background: #eeeeec;
-@ob-foreground: #2e3436;
+@ob-background: #2e3436;
+@ob-foreground: #eeeeec;
 
 
 .text-left()   {text-align: left;}
@@ -19,8 +18,8 @@
 
 
 .buffer() {
-    .resizable();
-    .box-shadow();
+    .resizable(both);
+    .box-shadow(0 3px 7px rgba(0,0,0,0.3));
     border: 1px solid @grayLighter;
     .buffer-color();
 }
@@ -57,7 +56,7 @@ html {
 
 .subnav-fixed {
     position: fixed;
-    top: 40px;
+    top: @navbarHeight;
     left: 0;
     right: 0;
     z-index: 999;
@@ -71,7 +70,7 @@ html {
 
 .subnav {
     width: 100%;
-    height: 36px;
+    height: @navbarHeight - 9;
 
     background-color: #EEE;
     #gradient > .vertical(#f5f5f5, #eeeeee);
@@ -81,9 +80,8 @@ html {
 
 
 #page {
-/* miki    padding-top: 3 * @navbarHeight; */
-/*    padding-top: 0 * @navbarHeight; */
-    padding-top: 0;
+
+    padding-top: 3 * @navbarHeight;
     marging-top: @navbarHeight;
 
 
@@ -92,7 +90,7 @@ html {
 	.date {
 	    border: 1px solid @grayLight;
 	    display: inline-block;
-	    width: 3.5em;
+	    width: 2.3em;
 	    .text-center();
 	    a {
 		display: block;
@@ -123,22 +121,18 @@ html {
     .article-content {
 	@outlineShift: 1em;
 	.outline-1 { margin-left: 1 * @outlineShift; }
-	.outline-2 { margin-left: 1 * @outlineShift; }
-	.outline-3 { margin-left: 1 * @outlineShift; }
-	.outline-4 { margin-left: 1 * @outlineShift; }
-	.outline-5 { margin-left: 1 * @outlineShift; }
-	.outline-6 { margin-left: 1 * @outlineShift; }
+	.outline-2 { margin-left: 2 * @outlineShift; }
+	.outline-3 { margin-left: 3 * @outlineShift; }
+	.outline-4 { margin-left: 4 * @outlineShift; }
+	.outline-5 { margin-left: 5 * @outlineShift; }
+	.outline-6 { margin-left: 6 * @outlineShift; }
 
 
 	.alert-heading {
 	    font-weight: bolder;
 	}
 
-	img {
-      display: block;
-      margin-right: auto;
-/*    .center-block() */
-    }
+	img {.center-block()}
 
 	.show-grid [class*="span"] {
 	    background-color: @grayLighter;
@@ -194,26 +188,26 @@ html {
     }
 
     .modal {
-	.resizable();
+	.resizable(both)
+    }
+
+    .modal-body {
+	ol.linenums {
+	    margin-left: 4 * @baseFontSize;
+	}
     }
 
     pre.src, pre.example, .modal-body > pre {
-	    .buffer();
-	    span {
-	        &.coderef-off { }
-	        &.linenr {
-		        font-style: italic;
-		        font-weight: bold;
-	        }
-	        &.code-highlighted {background: darkolivegreen;}
-
+	.buffer();
+	span {
+	    &.coderef-off { }
+	    &.linenr {
+		font-style: italic;
+		font-weight: bold;
 	    }
-        border: 1pt solid #AEBDCC;
-	    background-color: #F3F5F7;
-	    padding: 5pt;
-        font-family: Verdana,Osaka,sans-serif;
-        font-size: 90%;
-        overflow:auto;
+	    &.code-highlighted {background: darkolivegreen;}
+
+	}
     }
 
 
@@ -241,56 +235,49 @@ html {
 
 }
 
+.footer-font-size() {
+    font-size: 0.85 * @baseFontSize / (18/13);
+    line-height: 0.95 * @baseLineHeight / (18/13);
+}
+
 #footer {
     #gradient > .vertical(@navbarBackgroundHighlight, @black);
     color: darken(@gray, 2%);
-    font-size: 85%;
 
-    padding-top: @baseLineHeight * 3;
+    .footer-font-size();
+
+    padding-top: @baseLineHeight * 3 / (18/13);
 
     a {
-        color: lighten(@gray, 15%);
+	color: lighten(@gray, 15%);
     }
 
     h1 {
-	    color: darken(@blue, 20%);
+	color: darken(@blue, 20%);
     }
 
     .copyright {
-	    margin-top: 3em;
-	    p {
-	        font-size: 80%;
-            color: lighten(@gray, 15%);
-	    }
+	opacity:  0.35;
+	margin-top: 3em;
+	p {
+	    font-size: 80%;
+	}
     }
 
     ul {
-	    list-style-type: none;
-	    margin: 0;
+	list-style-type: none;
+	margin: 0;
+	li {
+	    .footer-font-size();
+	}
     }
 
-    .navtags(85%);
+    .navtags(100%);
 
 }
 
-
-body {
-    font-family: "メイリオ",Arial,Helvetica,sans-serif;
-    /* font-family: Verdana,Osaka,sans-serif; */
-    font-size: 80%;
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
-
-.article-content p {
-    font-family: "メイリオ",Arial,Helvetica,sans-serif;
-    /* font-family: Verdana,Osaka,sans-serif; */
-    font-size: 100%;
-    letter-spacing: 1px;
-    line-height: 1.5;
-}
-
+/* for code */
+/*
 pre {
     border: 1pt solid #AEBDCC;
 	background-color: #F3F5F7;
@@ -302,119 +289,57 @@ pre {
 
 
 .org-builtin {
-color: #0086b3
+    color: #0086b3
 }
 
 .org-comment {
-color: #998;
-font-style: italic
+    color: #998;
+    font-style: italic
 }
+
 .org-comment-delimiter {
-                         color: #ff7f24;
-                         }
+    color: #ff7f24;
+}
+
 .org-constant {
-color: #c00000;
+    color: #c00000;
 }
 
 .org-doc {
-color: #d14
+    color: #d14
 }
 .org-function-name {
-color: #458;
-font-weight: bold
+    color: #458;
+    font-weight: bold
 }
 
 .org-keyword {
-color: #7777Ff;
-font-weight: bold
+    color: #7777Ff;
+    font-weight: bold
 }
 .org-preprocessor {
-color: #999;
-font-weight: bold
+    color: #999;
+    font-weight: bold
  }
 .org-regexp-grouping-backslash {
-color: #009926
+    color: #009926
 }
 .org-regexp-grouping-construct {
-color: #009926
+    color: #009926
 }
 .org-string {
-color: #d14
+    color: #d14
 }
 
 .org-type {
-color: blue;
+    color: blue;
 }
 .org-variable-name {
-color: #990073
+    color: #990073
 }
 .org-warning {
-color: #999;
-font-weight: bold
+    color: #999;
+    font-weight: bold
 }
-
-
-
-/* 表示領域の大枠 */
-#topsy-tweet-search-results {
-    font-size:12px;
-    border-top:2px solid #ddf6ff;
-    border-bottom:2px solid #ddf6ff;
-    background:#eefbff;
-    margin-top:8px;
-    padding-left:6px;
-}
-/* 表示領域の見出し */
-#topsy-tweet-search-results .topsy-tweet-search-results-header {
-    color:#11c4ff;
-    font-weight:bold;
-}
-/* 個々のツイート領域 */
-#topsy-tweet-search-results .topsy-tweet-search-result {
-    clear:both;
-    padding:6px 0;
-    border-bottom:2px solid #fff;
-    overflow:hidden;
-}
-/* ユーザー名 */
-#topsy-tweet-search-results .topsy-tweet-name {
-    font-weight:bold;
-}
-/* アイコン領域 */
-#topsy-tweet-search-results .topsy-tweet-image {
-    float:left;
-    width:36px;
-    height:36px;
-    margin-right:12px;
-}
-/* アイコン画像 */
-#topsy-tweet-search-results .topsy-tweet-image img {
-    width:36px;
-    height:36px;
-}
-/* ツイート */
-#topsy-tweet-search-results .topsy-tweet-text {
-    float:left;
-    width:430px;
-    background:#fff;
-    padding:4px;
-}
-/* 日付 */
-#topsy-tweet-search-results .topsy-tweet-date a {
-    color:#999;
-}
-/* 「すべて表示」の操作テキスト */
-#topsy-tweet-search-results #topsy-show-more-tweets {
-    color:#1d3994;
-    cursor:pointer;
-    text-align:right;
-    font-weight:bold;
-    padding-right:4px;
-}
-/* アイコン形式の表示でのアイコンサイズ */
-#topsy-tweet-search-results img.topsy-profile-image-small {
-    width:24px;
-    height:24px;
-    margin:4px;
-}
-
+*/
+/* end of for code */

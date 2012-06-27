@@ -3,9 +3,57 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-05-23T08:32:41Z</updated>
+  <updated>2012-06-27T22:51:25Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">Android開発環境の準備</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/23_android.html"/><updated>2012-05-23T08:27:00Z</updated><published>2012-05-23T08:27:00Z</published><id>article/2012/05/23_android.html</id><category scheme="/tags/eclipse.html" term="eclipse" label="eclipse"/><category scheme="/tags/android.html" term="android" label="android"/><content type="html">&lt;p&gt;
+  <entry><title type="html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html"/><updated>2012-06-26T23:21:00Z</updated><published>2012-06-26T23:21:00Z</published><id>article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+&#12393;&#12428;&#12364;&#21407;&#22240;&#12363;&#12431;&#12363;&#12425;&#12394;&#12356;&#12364;&#12289;jdee&#12420;e2wm&#12434;&#36215;&#21205;&#12377;&#12427;&#12392;&#12414;&#12428;&#12395; &lt;code&gt;Variable binding depth exceeds max-specpdl-size&lt;/code&gt; &#12392;&#34920;&#31034;&#12373;&#12428;&#12289;
+&#20309;&#12418;&#25805;&#20316;&#12391;&#12365;&#12394;&#12367;&#12394;&#12427;&#12371;&#12392;&#12364;&#12354;&#12427;(M-x&#12434;anything&#12395;&#12375;&#12390;&#12356;&#12427;&#12383;&#12417;&#12289;emacs&#12434;&#32066;&#20102;&#12377;&#12427;&#12371;&#12392;&#12377;&#12425;&#12391;&#12365;&#12394;&#12356;!)&#12290;
+&#12371;&#12398;&#22580;&#21512;&#12399;&#19979;&#35352;&#12434;.emacs&#12395;&#36861;&#21152;&#12377;&#12427;&#12392;&#12381;&#12398;&#22580;&#12434;&#12375;&#12398;&#12370;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-emacs-lisp"&gt;(setq max-lisp-eval-depth 5000)
+(setq max-specpdl-size 6000)
+&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/a666666/20100221/1266695355"&gt;http://d.hatena.ne.jp/a666666/20100221/1266695355&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+</content></entry><entry><title type="html">o-blogのfork元から最新を取り込む</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/11_o-blogfork.html"/><updated>2012-06-11T22:07:00Z</updated><published>2012-06-11T22:07:00Z</published><id>article/2012/06/11_o-blogfork.html</id><content type="html">&lt;p&gt;
+fork&lt;sub&gt;master&lt;/sub&gt; &#12392;&#12356;&#12358;&#21517;&#21069;&#12434;&#20316;&#12426;&#12510;&#12540;&#12472;&#12377;&#12427;&#12290;pull&#12391;&#12418;&#33391;&#12356;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;git remote add fork_master https://github.com/renard/o-blog.git
+git fetch fork_master
+git merge remotes/fork_master/master
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#21442;&#32771;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://qiita.com/items/6493eec3ce156b83fb9c"&gt;http://qiita.com/items/6493eec3ce156b83fb9c&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+</content></entry><entry><title type="html">javapコマンドを使ってみた。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/02_javap.html"/><updated>2012-06-02T12:08:00Z</updated><published>2012-06-02T12:08:00Z</published><id>article/2012/06/02_javap.html</id><content type="html">&lt;p&gt;
+java&#12399;.java&#12363;&#12425;.class&#12434;&#29983;&#25104;&#12377;&#12427;&#12364;&#12289;&#12371;&#12428;&#12399;&#12486;&#12461;&#12473;&#12488;&#12456;&#12487;&#12451;&#12479;&#12391;&#38322;&#35239;&#12391;&#12365;&#12394;&#12356;&#12496;&#12452;&#12490;&#12522;&#12501;&#12449;&#12452;&#12523;&#12384;&#12290;
+&#12371;&#12428;&#12434;&#12456;&#12487;&#12451;&#12479;&#12391;&#38322;&#35239;&#12391;&#12365;&#12427;&#29366;&#24907;&#12398;&#12496;&#12452;&#12488;&#12467;&#12540;&#12489;&#12395;&#22793;&#25563;&#12377;&#12427;&#12484;&#12540;&#12523;jdk&#12395;&#27161;&#28310;&#25645;&#36617;&#12373;&#12428;&#12390;&#12356;&#12427;javap&#12467;&#12510;&#12531;&#12489;&#12290;
+hoge&#12392;&#12356;&#12358;&#12497;&#12483;&#12465;&#12540;&#12472;&#12395;&#12354;&#12427;Fuga.java&#12434;&#12467;&#12531;&#12497;&#12452;&#12523;&#12375;&#12383;&#32080;&#26524;&#12434;javap&#12391;&#35211;&#12383;&#12356;&#26178;&#12399;&#20197;&#19979;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;javap -c hoge.Fuga &amp;gt; Fuga.code
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12371;&#12398;&#12392;&#12365;hoge.Fuga&#12463;&#12521;&#12473;&#12399;hoge/Fuga.lcass&#12392;&#12356;&#12358;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#27083;&#36896;&#12395;&#12394;&#12369;&#12428;&#12400;&#12394;&#12425;&#12394;&#12356;&#12290;
+&lt;/p&gt;
+</content></entry><entry><title type="html">Android開発環境の準備</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/23_android.html"/><updated>2012-05-23T08:27:00Z</updated><published>2012-05-23T08:27:00Z</published><id>article/2012/05/23_android.html</id><category scheme="/tags/eclipse.html" term="eclipse" label="eclipse"/><category scheme="/tags/android.html" term="android" label="android"/><content type="html">&lt;p&gt;
 &#20104;&#12417;jdk&#12392;eclipse&#12434;&#20837;&#12428;&#12390;&#12362;&#12367;&#12290;
 &lt;/p&gt;
 
@@ -46,7 +94,7 @@ Linux&#29256;&#12398;&#22580;&#21512;&#12399;&#12289;&#19979;&#35352;&#12391;&#3
 &lt;/p&gt;
 
 
-&lt;pre class="src src-sh"&gt;sudo android &amp;amp;
+&lt;pre class="src src-sh"&gt;tools/android &amp;amp;
 &lt;/pre&gt;
 
 &lt;ul&gt;
@@ -92,8 +140,8 @@ SDK&#12434;&#23637;&#38283;&#12375;&#12383;&#12487;&#12451;&#12524;&#12463;&#124
 &lt;/p&gt;
 
 
-&lt;pre class="src src-sh"&gt;$&lt;span class="org-variable-name"&gt;ANDROID_SDK&lt;/span&gt;\tools
-$&lt;span class="org-variable-name"&gt;ANDROID_SDK&lt;/span&gt;\platform-tools
+&lt;pre class="src src-sh"&gt;$&lt;span style="color: #eedd82;"&gt;ANDROID_SDK&lt;/span&gt;\tools
+$&lt;span style="color: #eedd82;"&gt;ANDROID_SDK&lt;/span&gt;\platform-tools
 &lt;/pre&gt;
 
 
@@ -161,7 +209,7 @@ $&lt;span class="org-variable-name"&gt;ANDROID_SDK&lt;/span&gt;\platform-tools
 &lt;/div&gt;
 &lt;/div&gt;
 </content></entry><entry><title type="html">Javaでカンマ区切りの数字を出力する。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/21_java.html"/><updated>2012-05-21T08:27:00Z</updated><published>2012-05-21T08:27:00Z</published><id>article/2012/05/21_java.html</id><category scheme="/tags/java.html" term="java" label="java"/><content type="html">&lt;pre class="src src-sh"&gt;int value = 99999999;
-&lt;span class="org-function-name"&gt;String.format&lt;/span&gt;(&lt;span class="org-string"&gt;"%1$,3d&amp;#20870;"&lt;/span&gt;, value); // =&amp;gt; 99,999,999&amp;#20870;;
+&lt;span style="color: #87cefa;"&gt;String.format&lt;/span&gt;(&lt;span style="color: #ffa07a;"&gt;"%1$,3d&amp;#20870;"&lt;/span&gt;, value); // =&amp;gt; 99,999,999&amp;#20870;;
 &lt;/pre&gt;
 
 &lt;p&gt;
@@ -373,7 +421,7 @@ dpi-changer&#12391;&#12501;&#12457;&#12531;&#12488;&#12434;&#22793;&#26356;&#123
 ubuntu&#12418;&#12411;&#12392;&#12435;&#12393;&#12381;&#12398;&#12414;&#12414;&#12398;&#29366;&#24907;&#12391;&#22823;&#20307;&#12398;&#27231;&#33021;&#12364;&#20351;&#12360;&#12390;&#12356;&#12427;&#12290;
 &lt;/p&gt;
 &lt;p&gt;
-&lt;img src="img/ubuntu-ux21e-640-480.jpg"  alt="img/ubuntu-ux21e-640-480.jpg" /&gt;
+&lt;img src="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg"  alt="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg" /&gt;
 &lt;/p&gt;
 &lt;p&gt;
 &#20197;&#19979;&#12434;&#21442;&#32771;&#12395;&#12375;&#12383;&#12290;
@@ -475,7 +523,7 @@ _modules\socket.io-client\node_modules\ws
 
 
 node.js:195
-        throw e; // process.nextTick error, or &lt;span class="org-string"&gt;'error'&lt;/span&gt; event on first tick
+        throw e; // process.nextTick error, or &lt;span style="color: #ffa07a;"&gt;'error'&lt;/span&gt; event on first tick
               ^
 Error: No such module
     at net_legacy.js:38:23
@@ -490,8 +538,8 @@ Error: No such module
     at Object.&amp;lt;anonymous&amp;gt; (C:\Documents and Settings\mikio\node_modules\socket.
 io\node_modules\socket.io-client\node_modules\ws\install.js:1:83)
 
-npm ERR! ws@0.4.14 install: &lt;span class="org-sh-quoted-exec"&gt;`node install.js`&lt;/span&gt;
-npm ERR! &lt;span class="org-sh-quoted-exec"&gt;`cmd "/c" "node install.js"`&lt;/span&gt; failed with 1
+npm ERR! ws@0.4.14 install: &lt;span style="color: #fa8072;"&gt;`node install.js`&lt;/span&gt;
+npm ERR! &lt;span style="color: #fa8072;"&gt;`cmd "/c" "node install.js"`&lt;/span&gt; failed with 1
 npm ERR!
 npm ERR! Failed at the ws@0.4.14 install script.
 npm ERR! This is most likely a problem with the ws package,
@@ -503,17 +551,17 @@ npm ERR!     npm owner ls ws
 npm ERR! There is likely additional logging output above.
 npm ERR!
 npm ERR! System Windows_NT 5.1.2600
-npm ERR! command &lt;span class="org-string"&gt;"C:\\Program Files\\nodejs\\\\node.exe"&lt;/span&gt; &lt;span class="org-string"&gt;"C:\\Program Files\\nod&lt;/span&gt;
-&lt;span class="org-string"&gt;ejs\\node_modules\\npm\\bin\\npm-cli.js"&lt;/span&gt; &lt;span class="org-string"&gt;"install"&lt;/span&gt; &lt;span class="org-string"&gt;"socket.io"&lt;/span&gt;
+npm ERR! command &lt;span style="color: #ffa07a;"&gt;"C:\\Program Files\\nodejs\\\\node.exe"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"C:\\Program Files\\nod&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;ejs\\node_modules\\npm\\bin\\npm-cli.js"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"install"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"socket.io"&lt;/span&gt;
 npm ERR! cwd C:\Documents and Settings\mikio\dev\swank-js
 npm ERR! node -v v0.6.17
 npm ERR! npm -v 1.1.21
 npm ERR! code ELIFECYCLE
-npm ERR! message ws@0.4.14 install: &lt;span class="org-sh-quoted-exec"&gt;`node install.js`&lt;/span&gt;
-npm ERR! message &lt;span class="org-sh-quoted-exec"&gt;`cmd "/c" "node install.js"`&lt;/span&gt; failed with 1
+npm ERR! message ws@0.4.14 install: &lt;span style="color: #fa8072;"&gt;`node install.js`&lt;/span&gt;
+npm ERR! message &lt;span style="color: #fa8072;"&gt;`cmd "/c" "node install.js"`&lt;/span&gt; failed with 1
 npm ERR! errno {}
 npm ERR!
-npm ERR! Additional logging details can be found&lt;span class="org-keyword"&gt; in&lt;/span&gt;:
+npm ERR! Additional logging details can be found&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt;:
 npm ERR!     C:\Documents and Settings\mikio\dev\swank-js\npm-debug.log
 npm not ok
 &lt;/pre&gt;
@@ -534,7 +582,7 @@ C:\Documents and Settings\mikio&amp;gt;node -v
 v0.5.2
 
 C:\Documents and Settings\mikio&amp;gt;where node
-&lt;span class="org-string"&gt;'where'&lt;/span&gt; &amp;#12399;&amp;#12289;&amp;#20869;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#22806;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12289;
+&lt;span style="color: #ffa07a;"&gt;'where'&lt;/span&gt; &amp;#12399;&amp;#12289;&amp;#20869;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#22806;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12289;
 &amp;#25805;&amp;#20316;&amp;#21487;&amp;#33021;&amp;#12394;&amp;#12503;&amp;#12525;&amp;#12464;&amp;#12521;&amp;#12512;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#12496;&amp;#12483;&amp;#12481; &amp;#12501;&amp;#12449;&amp;#12452;&amp;#12523;&amp;#12392;&amp;#12375;&amp;#12390;&amp;#35469;&amp;#35672;&amp;#12373;&amp;#12428;&amp;#12390;&amp;#12356;&amp;#12414;&amp;#12379;&amp;#12435;&amp;#12290;
 
 C:\Documents and Settings\mikio&amp;gt;whereis node
@@ -544,7 +592,7 @@ e
 C:\Documents and Settings\mikio&amp;gt;rm c:\WINDOWS\system32\node.exe
 
 C:\Documents and Settings\mikio&amp;gt;node -v
-&lt;span class="org-string"&gt;'node'&lt;/span&gt; &amp;#12399;&amp;#12289;&amp;#20869;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#22806;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12289;
+&lt;span style="color: #ffa07a;"&gt;'node'&lt;/span&gt; &amp;#12399;&amp;#12289;&amp;#20869;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#22806;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12289;
 &amp;#25805;&amp;#20316;&amp;#21487;&amp;#33021;&amp;#12394;&amp;#12503;&amp;#12525;&amp;#12464;&amp;#12521;&amp;#12512;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#12496;&amp;#12483;&amp;#12481; &amp;#12501;&amp;#12449;&amp;#12452;&amp;#12523;&amp;#12392;&amp;#12375;&amp;#12390;&amp;#35469;&amp;#35672;&amp;#12373;&amp;#12428;&amp;#12390;&amp;#12356;&amp;#12414;&amp;#12379;&amp;#12435;&amp;#12290;
 
 &lt;/pre&gt;
@@ -695,804 +743,5 @@ C:\Documents and Settings\mikio&amp;gt;
 
 
 
-
-</content></entry><entry><title type="html">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html"/><updated>2012-05-10T23:24:00Z</updated><published>2012-05-10T23:24:00Z</published><id>article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/slime.html" term="slime" label="slime"/><category scheme="/tags/javascript.html" term="javascript" label="javascript"/><content type="html">&lt;p&gt;
-&#12414;&#12378;&#12289;Windows&#29256;&#12398;node.js&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12362;&#12367;&#12290;&#12452;&#12531;&#12473;&#12488;&#12540;&#12521;&#12394;&#12398;&#12391;&#31777;&#21336;&#12290;
-&#12381;&#12398;&#24460;&#12289;npm&#12391;socket.io&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;dos&amp;gt; npm install socket.io
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12354;&#12392;&#12399;&#12289;swank-js&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#19979;&#35352;&#12434;&#21442;&#32771;&#12395;WindowsXP&#29872;&#22659;&#12395;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12383;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://e-arrows.sakura.ne.jp/2011/06/connect-to-nodejs-and-chrome-from-emacs.html"&gt;http://e-arrows.sakura.ne.jp/2011/06/connect-to-nodejs-and-chrome-from-emacs.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#19978;&#35352;&#35352;&#20107;&#12391;&#12399;&#12289;&#26412;&#23478;&#12399;&#26356;&#26032;&#12364;&#27490;&#12387;&#12390;&#12356;&#12427;&#12392;&#12354;&#12427;&#12364;&#12289;&#26368;&#36817;&#12399;&#26356;&#26032;&#12434;&#20877;&#38283;&#12375;&#12383;&#12387;&#12413;&#12356;&#12290;
-&#12418;&#12429;&#12418;&#12429;&#12496;&#12464;&#12501;&#12451;&#12483;&#12463;&#12473;&#12364;&#12373;&#12428;&#12390;&#12356;&#12427;&#12424;&#12358;&#12394;&#12398;&#12391;&#12458;&#12522;&#12472;&#12490;&#12523;&#12363;&#12425;swank-js&#12434;&#21462;&#24471;&#12375;&#12383;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/swank-js/swank-js"&gt;https://github.com/swank-js/swank-js&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#26041;&#27861;&#12394;&#12393;&#12399;&#34920;&#35352;&#12398;&#12392;&#12362;&#12426;&#12377;&#12428;&#12400;OK&#12384;&#12364;&#12289;windows&#12394;&#12398;&#12391;&#12358;&#12414;&#12367;ln&#12467;&#12510;&#12531;&#12489;&#12398;&#37096;&#20998;&#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12290;
-&#22238;&#36991;&#26041;&#27861;&#12392;&#12375;&#12390;swank-js.el&#12399;Marmalade&#12363;&#12425;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;M-x package-list-packages
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#19979;&#35352;&#12434;&#36984;&#25246;&#12375;&#12390;ix&#12391;&#12452;&#12531;&#12473;&#12540;&#12523;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;slime-js          0.0.1       installed  Slime extension for swank-js.
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12354;&#12392;&#12399;&#35023;&#12391;node swank.js&#12434;&#36208;&#12425;&#12379;&#12390;&#12289;SLIME&#12395;&#25509;&#32154;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;M-x slime-connect 127.0.0.1 4005
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12381;&#12398;&#24460;&#12289;repl&#19978;&#12391;&#25509;&#32154;&#12375;&#12383;&#12356;URL&#12434;&#25351;&#23450;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;,target-url
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#27425;&#12395;&#12502;&#12521;&#12454;&#12470;&#19978;&#12391;&#19979;&#35352;&#12395;&#12450;&#12463;&#12475;&#12473;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://localhost:8009/"&gt;http://localhost:8009/&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#12381;&#12398;&#24460;&#12289;repl&#19978;&#12391;&#25509;&#32154;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;,select-remote
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12354;&#12392;&#12399;repl&#19978;&#12391;&#19979;&#35352;&#12434;&#23455;&#34892;&#12377;&#12427;&#12392;localhost:8009&#19978;&#12391;js&#12364;&#23455;&#34892;&#12373;&#12428;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-function-name"&gt;alert&lt;/span&gt; (&lt;span class="org-string"&gt;"hoge"&lt;/span&gt;)
-&lt;/pre&gt;
-
-
-
-</content></entry><entry><title type="html">束縛とは?..そうか!名札なのか!</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/08_.html"/><updated>2012-05-08T23:30:00Z</updated><published>2012-05-08T23:30:00Z</published><id>article/2012/05/08_.html</id><category scheme="/tags/lisp.html" term="lisp" label="lisp"/><content type="html">&lt;p&gt;
-&#12300;EmacsLisp&#12486;&#12463;&#12491;&#12483;&#12463;&#12496;&#12452;&#12502;&#12523;&#12301;&#12434;&#35501;&#12435;&#12391;&#12289;&#12420;&#12387;&#12392;&#29702;&#35299;&#12391;&#12365;&#12383;&#12290;
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&#26463;&#32283;&#12392;&#12399;&#12289;&#20516;&#12395;&#21517;&#26413;&#12434;&#12388;&#12369;&#12427;&#12371;&#12392;&#12290;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-Lisp(&#12392;&#12356;&#12358;&#12363;&#38306;&#25968;&#22411;&#35328;&#35486;)&#12434;&#32722;&#12358;&#19978;&#12391;&#38556;&#23475;&#12392;&#12394;&#12427;&#12418;&#12398;&#12395;&#29992;&#35486;&#12364;&#12354;&#12427;&#12392;&#24605;&#12358;&#12435;&#12384;&#12369;&#12393;&#12289;&#12381;&#12398;&#12402;&#12392;&#12388;&#12395;&#12300;&#26463;&#32283;&#12301;&#12364;&#12354;&#12427;&#12290;
-&#26463;&#32283;&#65311;&#12394;&#12435;&#12384;&#12381;&#12428;&#65311;&#20195;&#20837;&#12415;&#12383;&#12356;&#12394;&#12418;&#12435;&#65311;&#12394;&#12380;&#20195;&#20837;&#12376;&#12419;&#12394;&#12367;&#12390;&#26463;&#32283;&#12394;&#12435;&#12384;&#65311;&#12392;&#24605;&#12356;&#12394;&#12364;&#12425;&#35500;&#26126;&#12434;&#35501;&#12415;&#36914;&#12417;&#12427;&#12369;&#12393;&#12289;
-&#26463;&#32283;&#12392;&#12356;&#12358;&#35328;&#33865;&#12364;&#20986;&#12390;&#12367;&#12427;&#12383;&#12403;&#12395;&#12289;&#12381;&#12428;&#12364;&#24341;&#12387;&#12363;&#12363;&#12387;&#12390;&#29702;&#35299;&#12434;&#22952;&#12370;&#12390;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#24467;&#26469;&#12398;&#25163;&#32154;&#12365;&#22411;&#35328;&#35486;&#12384;&#12392;&#12289;&#22793;&#25968;&#12398;&#35500;&#26126;&#12398;&#12392;&#12365;&#12395;&#31665;&#12434;&#12452;&#12513;&#12540;&#12472;&#12375;&#12390;&#12381;&#12398;&#20013;&#12395;&#20516;&#12434;&#12356;&#12428;&#12427;&#22259;&#12364;&#12391;&#12390;&#12367;&#12427;&#12290;
-&#12384;&#12369;&#12428;&#12393;&#12418;&#26463;&#32283;&#12398;&#22580;&#21512;&#12399;&#21517;&#26413;&#12434;&#29992;&#24847;&#12375;&#12390;&#20516;&#12395;&#12381;&#12428;&#12434;&#12388;&#12369;&#12427;&#12452;&#12513;&#12540;&#12472;&#12384;&#12392;&#12356;&#12358;&#12371;&#12392;&#12290;
-&#25163;&#32154;&#12365;&#35328;&#35486;&#12384;&#12392;&#22793;&#25968;&#12364;&#20027;&#24441;&#12391;&#38306;&#25968;&#35328;&#35486;&#12384;&#12392;&#20516;&#12364;&#20027;&#24441;&#12392;&#12356;&#12358;&#12371;&#12392;&#12363;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;&amp;#12300;&amp;#12381;&amp;#12358;&amp;#12363;!&amp;#21517;&amp;#26413;&amp;#12394;&amp;#12398;&amp;#12363;!&amp;#12301;
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#38263;&#24180;&#12398;&#30097;&#21839;&#12364;&#35299;&#12369;&#12390;&#12473;&#12483;&#12461;&#12522;&#12375;&#12383;&#30636;&#38291;&#12384;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;a href="http://www.amazon.co.jp/gp/product/4774148970/ref=as_li_tf_il?ie=UTF8&amp;tag=ocha04-22&amp;linkCode=as2&amp;camp=247&amp;creative=1211&amp;creativeASIN=4774148970"&gt;&lt;img border="0" src="http://ws.assoc-amazon.jp/widgets/q?_encoding=UTF8&amp;Format=_SL160_&amp;ASIN=4774148970&amp;MarketPlace=JP&amp;ID=AsinImage&amp;WS=1&amp;tag=ocha04-22&amp;ServiceVersion=20070822" &gt;&lt;/a&gt;&lt;img src="http://www.assoc-amazon.jp/e/ir?t=ocha04-22&amp;l=as2&amp;o=9&amp;a=4774148970" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /&gt;
-</content></entry><entry><title type="html">(超個人的)Ubuntuインストール後にやることまとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/05_ubuntu.html"/><updated>2012-05-05T22:31:00Z</updated><published>2012-05-05T22:31:00Z</published><id>article/2012/05/05_ubuntu.html</id><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/><content type="html">&lt;ul&gt;
-&lt;li&gt;Ubuntu12.04LTS&#29256;&#12391;&#12377;&#12290;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;&#26368;&#21021;&#12395;&#12420;&#12427;&#12371;&#12392;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-1-1" class="outline-4"&gt;
-&lt;h4 id="sec-1-1"&gt;&#12507;&#12540;&#12512;&#37197;&#19979;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12522;&#12493;&#12540;&#12512;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-1-1"&gt;
-
-&lt;p&gt;&#12507;&#12540;&#12512;&#37197;&#19979;&#12398;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12364;&#26085;&#26412;&#35486;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12398;&#12391;&#26089;&#12293;&#12395;&#33521;&#35486;&#21270;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-variable-name"&gt;LANG&lt;/span&gt;=C xdg-user-dirs-gtk-update
-&lt;/pre&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-1-2" class="outline-4"&gt;
-&lt;h4 id="sec-1-2"&gt;update&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-1-2"&gt;
-
-&lt;p&gt;&#26368;&#21021;&#12399;&#12289;&#12513;&#12491;&#12517;&#12540;&#12364;&#12392;&#12371;&#12429;&#12393;&#12371;&#12429;&#26085;&#26412;&#35486;&#12395;&#12394;&#12387;&#12390;&#12356;&#12394;&#12363;&#12387;&#12383;&#12426;&#12377;&#12427;&#12290;
-&#12394;&#12395;&#12399;&#12392;&#12418;&#12354;&#12428;&#12450;&#12483;&#12503;&#12487;&#12540;&#12488;&#12510;&#12493;&#12540;&#12472;&#12515;&#12391;&#26368;&#26032;&#12395;&#12450;&#12483;&#12503;&#12487;&#12540;&#12488;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-1-3" class="outline-4"&gt;
-&lt;h4 id="sec-1-3"&gt;Ctrl&#12461;&#12540;&#12398;&#22793;&#26356;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-1-3"&gt;
-
-&lt;p&gt;CapsLock&#12434;&#20837;&#12428;&#26367;&#12360;&#12378;&#12395;Ctrl&#12461;&#12540;&#12395;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;[&#12471;&#12473;&#12486;&#12512;&#35373;&#23450;] -&amp;gt; [&#12461;&#12540;&#12508;&#12540;&#12489;&#12524;&#12452;&#12450;&#12454;&#12488;] -&amp;gt; [&#12458;&#12503;&#12471;&#12519;&#12531;]&#12508;&#12479;&#12531; -&amp;gt; [Ctrl&#12461;&#12540;&#12398;&#20301;&#32622;]
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-1-4" class="outline-4"&gt;
-&lt;h4 id="sec-1-4"&gt;&#31471;&#26411;&#12398;&#35373;&#23450;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-1-4"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[Windwosk&#12461;&#12540;] -&amp;gt; [gnome-terminal]
-&lt;/li&gt;
-&lt;li&gt;[&#12513;&#12491;&#12517;&#12540;] -&amp;gt; [&#32232;&#38598;] -&amp;gt; [&#12461;&#12540;&#12508;&#12540;&#12489;&#12471;&#12519;&#12540;&#12488;&#12459;&#12483;&#12488;] 
-&lt;/li&gt;
-&lt;li&gt;&#12377;&#12409;&#12390;&#12481;&#12455;&#12483;&#12463;&#12434;&#22806;&#12375;&#12390;&#12362;&#12367;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-1-5" class="outline-4"&gt;
-&lt;h4 id="sec-1-5"&gt;IME&#36215;&#21205;&#12471;&#12519;&#12540;&#12488;&#12459;&#12483;&#12488;&#12398;&#22793;&#26356;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-1-5"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;[&#21491;&#19978;&#12398;&#12497;&#12493;&#12523;&#65288;&#12461;&#12540;&#12508;&#12540;&#12489;&#65289;] -&amp;gt; [&#35373;&#23450;] -&amp;gt; [&#19968;&#33324;] &#12479;&#12502;
-&lt;/li&gt;
-&lt;li&gt;[&#12461;&#12540;&#12508;&#12540;&#12489;&#12471;&#12519;&#12483;&#12488;&#12459;&#12483;&#12488;] -&amp;gt; [&#20999;&#12426;&#26367;&#12360;] 
-&lt;/li&gt;
-&lt;li&gt;[Zenkaku&lt;sub&gt;Hankaku]&#12384;&#12369;&#12395;&#12377;&#12427;&lt;/sub&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-2" class="outline-3"&gt;
-&lt;h3 id="sec-2"&gt;Dropbox&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2"&gt;
-
-&lt;p&gt;&#12371;&#12428;&#12364;&#12394;&#12356;&#12392;&#12399;&#12376;&#12414;&#12425;&#12394;&#12356;&#12290;dropbox&#12398;&#12469;&#12452;&#12488;&#12408;&#12356;&#12365;&#12289;.deb&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12375;&#12390;
-&#12497;&#12483;&#12465;&#12540;&#12472;&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-3" class="outline-3"&gt;
-&lt;h3 id="sec-3"&gt;firefox&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3"&gt;
-
-&lt;p&gt;sync&#12398;&#35373;&#23450;&#12375;&#12390;&#12289;keysnail&#12434;&#20837;&#12428;&#12427;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-4" class="outline-3"&gt;
-&lt;h3 id="sec-4"&gt;paco&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/rx7/20081011/p2"&gt;http://d.hatena.ne.jp/rx7/20081011/p2&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-paco&#12399;&#12289;make install &#12395;&#12424;&#12387;&#12390;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12373;&#12428;&#12383;&#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#12398;&#12497;&#12483;
-&#12465;&#12540;&#12472;&#31649;&#29702;&#12434;&#12375;&#12390;&#12367;&#12428;&#12427;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12477;&amp;#12540;&amp;#12473;&amp;#12399;&amp;#36969;&amp;#24403;&amp;#12395;Web&amp;#12363;&amp;#12425;&amp;#12480;&amp;#12454;&amp;#12531;&amp;#12525;&amp;#12540;&amp;#12489;&lt;/span&gt;
-sudo apt-get install libgtkmm-2.4-dev
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/src/paco-2.0.8/
-./configure
-make
-sudo make install
-sudo make logme
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-5" class="outline-3"&gt;
-&lt;h3 id="sec-5"&gt;emacs&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5"&gt;
-
-&lt;p&gt;&#12477;&#12540;&#12473;&#12399;&#26368;&#26032;&#29256;(ver24)&#12434;&#21462;&#12387;&#12390;&#12367;&#12427;&#12290;build-dep&#12399;&#22810;&#20998;emacs23&#12391;OK&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12477;&amp;#12540;&amp;#12473;&amp;#12399;&amp;#36969;&amp;#24403;&amp;#12395;Web&amp;#12363;&amp;#12425;&amp;#12480;&amp;#12454;&amp;#12531;&amp;#12525;&amp;#12540;&amp;#12489;&amp;#12290;&amp;#12300;emacs24&amp;#12301;&amp;#12392;&amp;#12363;&amp;#12391;&amp;#26908;&amp;#32034;&amp;#12290;&lt;/span&gt;
-sudo apt-get build-dep emacs23
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/src/emacs-24/
-
-&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;configure&amp;#12391;&amp;#30011;&amp;#20687;&amp;#38306;&amp;#36899;&amp;#12391;&amp;#12456;&amp;#12521;&amp;#12540;&amp;#12395;&amp;#12394;&amp;#12427;&amp;#12363;&amp;#12418;&amp;#12290;&amp;#12381;&amp;#12398;&amp;#12392;&amp;#12365;&amp;#12399;&lt;/span&gt;
-&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;sudo apt-get install libgif-dev ligtiff-dev libxpm-dev&lt;/span&gt;
-
-./configure
-make
-sudo paco -D make install
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12388;&#12356;&#12391;&#12395;w3m&#12418;&#20837;&#12428;&#12392;&#12367;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install w3m
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-6" class="outline-3"&gt;
-&lt;h3 id="sec-6"&gt;cmigemo&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6"&gt;
-
-&lt;p&gt;Kaoria&#12363;&#12425;&#12477;&#12540;&#12473;&#12434;&#21462;&#24471;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;wget http://cmigemo.googlecode.com/files/cmigemo-default-src-20110227.zip
-unzip cmigemo-default-src-20110227.zip
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; cmigemo-default-src-20110227
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12381;&#12398;&#12414;&#12414;&#12467;&#12531;&#12497;&#12452;&#12523;&#12377;&#12427;&#12392;&#12456;&#12521;&#12540;&#12364;&#12391;&#12427;&#12398;&#12391;&#20462;&#27491;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;src/wordbuf.c:118: error: &amp;#8216;INT_MAX&amp;#8217; undeclared (first use&lt;span class="org-keyword"&gt; in&lt;/span&gt; this &lt;span class="org-keyword"&gt;function&lt;/span&gt;)
-src/wordbuf.c:118: error: (Each undeclared identifier is reported only once
-src/wordbuf.c:118: error: for each &lt;span class="org-keyword"&gt;function&lt;/span&gt; &lt;span class="org-function-name"&gt;it&lt;/span&gt; appears in.)
-&lt;/pre&gt;
-
-&lt;p&gt;
-wordbuf.c&#12395;&#19979;&#35352;&#12434;&#36861;&#21152;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-comment-delimiter"&gt;#&lt;/span&gt;&lt;span class="org-comment"&gt;include &amp;lt;limits.h&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12354;&#12392;&#12399;&#19979;&#35352;&#12398;&#12392;&#12362;&#12426;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install curl
-sudo apt-get install nkf
-
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/src/cmigemo-default-src/
-sh ./configure 
-make gcc
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; dict
-make utf-8
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ..
-sudo paco -D make gcc-install
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#27425;&#12398;&#12424;&#12358;&#12395;&#12486;&#12473;&#12488;&#12391;&#12365;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cmigemo -d /usr/local/share/migemo/utf-8/migemo-dict
-&lt;span class="org-function-name"&gt;migemo_open&lt;/span&gt;(&lt;span class="org-string"&gt;"/usr/local/share/migemo/utf-8/migemo-dict"&lt;/span&gt;)=0xf54010
-&lt;span class="org-function-name"&gt;clock&lt;/span&gt;()=0.300000
-QUERY: kyassyu
-PATTERN: (&amp;#65399;&amp;#65388;&amp;#65391;&amp;#65404;&amp;#65389;|&amp;#12461;&amp;#12515;&amp;#12483;&amp;#12471;&amp;#12517;|&amp;#12365;&amp;#12419;&amp;#12387;&amp;#12375;&amp;#12421;|&amp;#65355;&amp;#65369;&amp;#65345;&amp;#65363;&amp;#65363;&amp;#65369;&amp;#65365;|kyassyu)
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7" class="outline-3"&gt;
-&lt;h3 id="sec-7"&gt;&#20840;&#20307;&#12398;&#12461;&#12540;&#12508;&#12540;&#12489;&#25805;&#20316;&#12434;emacs&#31995;&#12395;&#12377;&#12427;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7"&gt;
-
-&lt;p&gt;&#12479;&#12540;&#12511;&#12490;&#12523;&#12391;&#19979;&#35352;&#12467;&#12510;&#12531;&#12489;&#12434;&#23455;&#34892;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install dconf-tools
-gsettings get org.gnome.desktop.interface gtk-key-theme Emacs
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#25163;&#21205;&#12398;&#22580;&#21512;&#12399;&#20197;&#19979;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;dconf-editor
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#20197;&#19979;&#12398;&#12497;&#12473;&#12391;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;/org/gnome/desktop/interface/gtk-key-theme
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#20516;&#12434;Emacs&#12395;&#12377;&#12427;&#12290;E&#12399;&#22823;&#25991;&#23383;&#12394;&#12398;&#12391;&#27880;&#24847;&#12377;&#12427;&#12371;&#12392;&#12290;&#12418;&#12393;&#12377;&#12392;&#12365;&#12399;Default&#12395;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-8" class="outline-3"&gt;
-&lt;h3 id="sec-8"&gt;Mig 1M&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8"&gt;
-
-&lt;p&gt;1M&#12398;M&#12399;MonoSpace&#12398;M&#12290;&#12388;&#12414;&#12426;&#31561;&#24133;&#12501;&#12457;&#12531;&#12488;&#12392;&#12356;&#12358;&#12371;&#12392;&#12290;
-&#19979;&#35352;&#12363;&#12425;&#12300;Mig 1M&#12301;&#12501;&#12457;&#12531;&#12488;&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://mix-mplus-ipa.sourceforge.jp/download.html"&gt;http://mix-mplus-ipa.sourceforge.jp/download.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#12354;&#12392;&#12399;&#19979;&#35352;&#12398;&#12467;&#12510;&#12531;&#12489;&#12391;&#20351;&#12360;&#12427;&#12424;&#12358;&#12395;&#12394;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;mkdir ~/.fonts 
-cp migu-1m-20120411.zip ~/.fonts
-&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/.fonts 
-unzip migu-1m-20120411.zip
-fc-cache -fv
-&lt;/pre&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-9" class="outline-3"&gt;
-&lt;h3 id="sec-9"&gt;VL&#12468;&#12471;&#12483;&#12463;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9"&gt;
-
-&lt;p&gt;&#19979;&#35352;&#12434;firefox&#12363;&#12425;&#38283;&#12369;&#12400;OK
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://apt.ubuntu.com/p/ttf-vlgothic"&gt;http://apt.ubuntu.com/p/ttf-vlgothic&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-10" class="outline-3"&gt;
-&lt;h3 id="sec-10"&gt;xmodmap&#12395;&#12424;&#12427;&#12461;&#12540;&#12510;&#12483;&#12500;&#12531;&#12464;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10"&gt;
-
-
-&lt;p&gt;
-~/.Xmodmap&#12434;&#20316;&#25104;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;keycode 102 = Shift_L
-keycode 101 = Return
-
-keycode 100 = Control_L
-add Control = Control_L
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#21453;&#26144;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;xmodmap ~/.Xmodmap
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12371;&#12428;&#12395;&#12424;&#12426;&#19979;&#35352;&#12398;&#21106;&#12426;&#24403;&#12390;&#12395;&#12394;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&amp;#28961;&amp;#22793;&amp;#25563;&amp;#8594;shift
-&amp;#22793;&amp;#25563;&amp;#8594;ctrl
-&amp;#12459;&amp;#12479;&amp;#12459;&amp;#12490;&amp;#12402;&amp;#12425;&amp;#12364;&amp;#12394;&amp;#8594;return
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-11" class="outline-3"&gt;
-&lt;h3 id="sec-11"&gt;skk(uim)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1"&gt;http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-ibus-skk&#12399;&#22793;&#25563;&#26178;&#12395;emacs&#12398;&#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12364;&#20351;&#12360;&#12394;&#12356;&#12398;&#12391;&#12289;
-&#22793;&#12431;&#12426;&#12395;uim&#12392;&#12356;&#12358;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;&#12364;&#12354;&#12427;&#12398;&#12391;&#20837;&#12428;&#12390;&#12415;&#12427;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install uim uim-skk
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-Input Method Switcher&#12398;&#36215;&#21205;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;im-switch -c
-&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&#12522;&#12473;&#12488;&#12398;&#20013;&#12363;&#12425;&#12289;uim-toolbar &#12434;&#36984;&#25246;&#12377;&#12427;&#12290;
-&lt;/li&gt;
-&lt;li&gt;&#12525;&#12464;&#12452;&#12531;&#12375;&#12394;&#12362;&#12377;&#12290;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-emacs&#12392;&#37325;&#35079;&#12377;&#12427;&#12383;&#12417;&#12289;SKK&#12398;&#36215;&#21205;&#12461;&#12540;&#12434;&#22793;&#26356;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;[&#35373;&#23450;] -&amp;gt; [SKK&#12461;&#12540;&#35373;&#23450;1] 
-&lt;/li&gt;
-&lt;li&gt;Zenkaku&lt;sub&gt;Hankaku&#12384;&#12369;&#12395;&#12377;&#12427;&lt;/sub&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-12" class="outline-3"&gt;
-&lt;h3 id="sec-12"&gt;jdk&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-12"&gt;
-
-&lt;p&gt;&#19979;&#35352;&#12424;&#12426;jdk&#26368;&#26032;&#29256;&#12434;&#21462;&#24471;&#12377;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#35299;&#20941;&#12375;&#12383;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#31227;&#21205;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo mkdir /usr/lib/jvm/
-sudo mv ./jdk1.7.0_04/ /usr/lib/jvm/jdk1.7.0
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#19979;&#35352;&#12391;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo update-alternatives --install &lt;span class="org-string"&gt;"/usr/bin/java"&lt;/span&gt; &lt;span class="org-string"&gt;"java"&lt;/span&gt; &lt;span class="org-string"&gt;"/usr/lib/jvm/jdk1.7.0/bin/java"&lt;/span&gt; 1
-sudo update-alternatives --install &lt;span class="org-string"&gt;"/usr/bin/javac"&lt;/span&gt; &lt;span class="org-string"&gt;"javac"&lt;/span&gt; &lt;span class="org-string"&gt;"/usr/lib/jvm/jdk1.7.0/bin/javac"&lt;/span&gt; 1
-sudo update-alternatives --install &lt;span class="org-string"&gt;"/usr/bin/javaws"&lt;/span&gt; &lt;span class="org-string"&gt;"javaws"&lt;/span&gt; &lt;span class="org-string"&gt;"/usr/lib/jvm/jdk1.7.0/bin/javaws"&lt;/span&gt; 1
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#35079;&#25968;&#12398;java&#12364;&#12354;&#12428;&#12400;&#12289;&#19979;&#35352;&#12391;&#12487;&#12501;&#12457;&#12523;&#12488;&#12395;&#12377;&#12427;&#12467;&#12510;&#12531;&#12489;&#12434;&#36984;&#25246;&#12377;&#12427;&#12290;
-&#20170;&#22238;&#12399;oracleJava&#12398;&#12415;&#12394;&#12398;&#12391;&#24517;&#35201;&#12394;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo update-alternatives --config java
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#19979;&#35352;&#12391;&#30906;&#35469;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;java -version
-javac
-javaws
-&lt;/pre&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-12-1" class="outline-4"&gt;
-&lt;h4 id="sec-12-1"&gt;&#21442;&#32771;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-12-1"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://radi0ant.hatenablog.com/entry/2011/12/29/015013"&gt;http://radi0ant.hatenablog.com/entry/2011/12/29/015013&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://askubuntu.com/questions/55848/how-do-i-install-oracle-java-jdk-7"&gt;http://askubuntu.com/questions/55848/how-do-i-install-oracle-java-jdk-7&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-13" class="outline-3"&gt;
-&lt;h3 id="sec-13"&gt;lein(clojure)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-13"&gt;
-
-&lt;p&gt;bin&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#20316;&#25104;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cd ~
-$ mkdir bin
-$ vi .bashrch
-&lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#19979;&amp;#35352;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
-&lt;span class="org-builtin"&gt;export&lt;/span&gt; &lt;span class="org-variable-name"&gt;PATH&lt;/span&gt;=~/bin
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-lein&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span class="org-builtin"&gt;cd&lt;/span&gt; ~/bin
-wget https://raw.github.com/technomancy/leiningen/stable/bin/lein
-chmod +x lein
-./relin repl &lt;span class="org-comment-delimiter"&gt;# &lt;/span&gt;&lt;span class="org-comment"&gt;&amp;#12480;&amp;#12454;&amp;#12531;&amp;#12525;&amp;#12540;&amp;#12489;&amp;#24460;&amp;#12289;repl&amp;#38283;&amp;#22987;&lt;/span&gt;
-&lt;/pre&gt;
-
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-14" class="outline-3"&gt;
-&lt;h3 id="sec-14"&gt;eclipse&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-14"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0167"&gt;http://gihyo.jp/admin/serial/01/ubuntu-recipe/0167&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#12477;&#12501;&#12488;&#12454;&#12455;&#12450;&#12475;&#12531;&#12479;&#12540;&#12363;&#12425;&#12300;eclipse&#12301;&#12301;&#12392;pleiades&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12290;
-&#12381;&#12398;&#24460;&#12289;/etc/eclipse.ini&#12434;&#32232;&#38598;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;-javaagent:/usr/lib/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12371;&#12398;&#26178;&#12289;eclipse.ini&#12398;&#12381;&#12428;&#12382;&#12428;&#12398;&#12497;&#12521;&#12513;&#12540;&#12479;&#12398;&#25913;&#34892;&#20301;&#32622;&#12364;&#12362;&#12363;&#12375;&#12356;&#12371;&#12392;&#12364;&#12354;&#12427;&#12398;&#12391;&#12289;&#12381;&#12398;&#26178;&#12399;&#36969;&#20999;&#12395;&#32232;&#38598;&#12377;&#12427;&#12290;
-&#32232;&#38598;&#12364;&#32066;&#12387;&#12383;&#12425;&#12289;Dash&#12513;&#12491;&#12517;&#12540;&#12424;&#12426;&#36215;&#21205;&#12375;&#12390;&#26085;&#26412;&#35486;&#21270;&#12373;&#12428;&#12390;&#12356;&#12427;&#12371;&#12392;&#12434;&#30906;&#35469;&#12377;
-&#12427;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-15" class="outline-3"&gt;
-&lt;h3 id="sec-15"&gt;&#12381;&#12398;&#20182;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-15"&gt;
-
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-15-1" class="outline-4"&gt;
-&lt;h4 id="sec-15-1"&gt;vmware&#12394;&#12393;&#12391;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12383;&#12392;&#12365;&#12395;locale&#12395;&#26085;&#26412;&#35486;&#12364;&#12394;&#12356;&#22580;&#21512;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-15-1"&gt;
-
-
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install language-pack-ja
-sudo dpkg-reconfigure locales
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-15-2" class="outline-4"&gt;
-&lt;h4 id="sec-15-2"&gt;&#12463;&#12522;&#12483;&#12503;&#12508;&#12540;&#12489;&#23653;&#27508;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-15-2"&gt;
-
-
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install parcellite
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-15-3" class="outline-4"&gt;
-&lt;h4 id="sec-15-3"&gt;&#12473;&#12463;&#12522;&#12540;&#12531;&#12471;&#12519;&#12483;&#12488;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-15-3"&gt;
-
-&lt;p&gt;Ubuntu&#12391;&#12399;&#27161;&#28310;&#12391;&#12473;&#12463;&#12522;&#12540;&#12531;&#12471;&#12519;&#12483;&#12488;&#12364;&#12354;&#12387;&#12390;&#12289;PrintScr&#12461;&#12540;&#12434;&#25276;&#19979;&#12377;&#12427;&#12384;&#12369;&#12391;&#12450;&#12463;&#12486;&#12451;&#12502;&#12454;&#12451;&#12531;&#12489;&#12454;&#12364;
-png&#24418;&#24335;&#12391;&#12461;&#12515;&#12503;&#12481;&#12515;&#12373;&#12428;&#12427;&#12290;
-&#12369;&#12428;&#12393;&#12418;&#12289;&#12371;&#12398;&#22580;&#21512;&#12289;&#12463;&#12521;&#12452;&#12450;&#12531;&#12488;&#38936;&#22495;&#12384;&#12369;&#12398;&#12461;&#12515;&#12503;&#12481;&#12515;&#12395;&#12394;&#12427;&#12398;&#12391;&#29992;&#36884;&#12395;&#12424;&#12387;&#12390;&#12399;&#19981;&#20415;&#12391;&#12354;&#12427;&#12290;
-&#12381;&#12398;&#32232;&#12398;&#21839;&#38988;&#12434;&#35299;&#27770;&#12375;&#12390;&#12367;&#12428;&#12427;&#12477;&#12501;&#12488;&#12364;Shutter&#12391;&#12354;&#12427;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;sudo apt-get install shutter
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&lt;a href="http://ankyo.blog.so-net.ne.jp/2011-04-07"&gt;http://ankyo.blog.so-net.ne.jp/2011-04-07&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-16" class="outline-3"&gt;
-&lt;h3 id="sec-16"&gt;&#26085;&#26412;&#35486;IME&#12395;&#12388;&#12356;&#12390;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-16"&gt;
-
-&lt;p&gt;Linux&#12399;&#12289;&#26085;&#26412;&#35486;&#20837;&#21147;&#12395;&#12399;&#65299;&#12388;&#12398;&#12477;&#12501;&#12488;&#12454;&#12455;&#12450;&#12364;&#24517;&#35201;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&#26085;&#26412;&#12398;&#25991;&#23383;&#12434;&#20837;&#21147;&#12377;&#12427;&#12383;&#12417;&#12398;&#12471;&#12473;&#12486;&#12512;&#12391;&#12354;&#12427;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;
-&lt;/li&gt;
-&lt;li&gt;&#12363;&#12394;&#28450;&#23383;&#12398;&#22793;&#25563;&#12434;&#12377;&#12427;&#12471;&#12473;&#12486;&#12512;
-&lt;/li&gt;
-&lt;li&gt;&#20001;&#32773;&#12434;&#12388;&#12394;&#12368;&#26085;&#26412;&#35486;&#12502;&#12522;&#12483;&#12472;
-
-&lt;/li&gt;
-&lt;li&gt;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;&#12398;&#20363;
-&lt;ul&gt;
-&lt;li&gt;SCIM
-&lt;/li&gt;
-&lt;li&gt;iBus
-&lt;/li&gt;
-&lt;li&gt;uim
-
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;li&gt;&#12363;&#12394;&#28450;&#23383;&#22793;&#25563;&#12471;&#12473;&#12486;&#12512;&#12398;&#20363;
-&lt;ul&gt;
-&lt;li&gt;Anthy
-&lt;/li&gt;
-&lt;li&gt;MOZC
-&lt;/li&gt;
-&lt;li&gt;SKK
-
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;li&gt;&#26085;&#26412;&#35486;&#12502;&#12522;&#12483;&#12472;&#12398;&#20363;
-&lt;ul&gt;
-&lt;li&gt;ibus-mozc
-&lt;/li&gt;
-&lt;li&gt;uim-skk
-&lt;/li&gt;
-&lt;li&gt;scim-anthy
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#26368;&#36817;&#12398;Ubuntu&#12391;&#12399;&#12289;&#12452;&#12531;&#12503;&#12483;&#12488;&#12513;&#12477;&#12483;&#12489;&#12395;&#12289;iBus,
-&#12363;&#12394;&#28450;&#23383;&#22793;&#25563;&#12471;&#12473;&#12486;&#12512;&#12395;&#12399;&#12289;Anthy&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12427;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;/div&gt;
-&lt;/div&gt;
 </content></entry>
 </feed>
