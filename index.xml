@@ -3,12 +3,61 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-06-27T22:51:25Z</updated>
+  <updated>2012-06-28T23:31:43Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html"/><updated>2012-06-26T23:21:00Z</updated><published>2012-06-26T23:21:00Z</published><id>article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+  <entry><title type="html">デジジョンテーブルの作成</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/28_.html"/><updated>2012-06-28T20:04:00Z</updated><published>2012-06-28T20:04:00Z</published><id>article/2012/06/28_.html</id><content type="html">&lt;p&gt;
+&#20181;&#27096;&#26360;&#12420;&#12486;&#12473;&#12488;&#38917;&#30446;&#26360;&#12434;&#20316;&#25104;&#12377;&#12427;&#12392;&#12365;&#12395;&#26465;&#20214;&#12434;&#25972;&#29702;&#12377;&#12427;&#12392;&#12365;&#12395;&#24441;&#12384;&#12388;&#12487;&#12471;&#12472;&#12519;&#12531;&#12486;&#12540;&#12502;&#12523;&#12290;
+   &#26360;&#12365;&#26041;&#12434;&#25972;&#29702;&#12375;&#12390;&#12362;&#12367;&#12290;&#12414;&#12378;&#26465;&#20214;&#12434;&#25277;&#20986;&#12290;
+   &#12381;&#12398;&#26465;&#20214;&#12434;1&#34892;1&#26465;&#20214;&#12392;&#12375;&#12390;&#34920;&#12398;&#24038;&#20596;&#12395;&#21508;&#12290;
+   &#12371;&#12398;&#26178;&#12289;&#26465;&#20214;&#12398;&#12497;&#12479;&#12540;&#12531;&#25968;&#12399;&#12289;&#26465;&#20214;&#25968;=n&#12392;&#12375;&#12383;&#12392;&#12365;2&lt;sup&gt;n&#12392;&#12394;&#12427;&#12290;&lt;/sup&gt;
+   &#12383;&#12392;&#12360;&#12400;&#26465;&#20214;&#25968;&#12364;3&#12388;&#12384;&#12387;&#12383;&#22580;&#21512;&#12289;&#26465;&#20214;&#25968;=3&#12392;&#12375;&#12383;&#12392;&#12365;2&lt;sup&gt;3&lt;/sup&gt;=8&#12392;&#12394;&#12427;&#12290;
+&#12497;&#12479;&#12540;&#12531;&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12399;&#12289;2&#36914;&#25968;&#12398;&#12394;&#12425;&#12403;&#12392;&#12375;&#12390;&#26360;&#12365;&#20986;&#12379;&#12400;&#31777;&#21336;&#12391;&#12354;&#12427;&#12290;
+&lt;/p&gt;&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+&lt;caption&gt;&lt;/caption&gt;
+&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;&lt;col class="right" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&lt;/td&gt;&lt;td class="right"&gt;#1&lt;/td&gt;&lt;td class="right"&gt;#2&lt;/td&gt;&lt;td class="right"&gt;#3&lt;/td&gt;&lt;td class="right"&gt;#4&lt;/td&gt;&lt;td class="right"&gt;#5&lt;/td&gt;&lt;td class="right"&gt;#6&lt;/td&gt;&lt;td class="right"&gt;#7&lt;/td&gt;&lt;td class="right"&gt;#8&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;1&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;2&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;3&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;0&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;td class="right"&gt;1&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+1=N,0=Y&#12392;&#12375;&#12390;&#32622;&#12365;&#12363;&#12360;&#12427;&#12290;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+&lt;caption&gt;&lt;/caption&gt;
+&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&lt;/td&gt;&lt;td class="left"&gt;#1&lt;/td&gt;&lt;td class="left"&gt;#2&lt;/td&gt;&lt;td class="left"&gt;#3&lt;/td&gt;&lt;td class="left"&gt;#4&lt;/td&gt;&lt;td class="left"&gt;#5&lt;/td&gt;&lt;td class="left"&gt;#6&lt;/td&gt;&lt;td class="left"&gt;#7&lt;/td&gt;&lt;td class="left"&gt;#8&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;1&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;2&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;3&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&#27425;&#12395;&#21508;&#12497;&#12479;&#12540;&#12531;&#12395;&#23550;&#24540;&#12377;&#12427;&#21205;&#20316;&#12434;&#35352;&#36848;&#12377;&#12427;&#12290;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+&lt;caption&gt;&lt;/caption&gt;
+&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&lt;/td&gt;&lt;td class="left"&gt;#1&lt;/td&gt;&lt;td class="left"&gt;#2&lt;/td&gt;&lt;td class="left"&gt;#3&lt;/td&gt;&lt;td class="left"&gt;#4&lt;/td&gt;&lt;td class="left"&gt;#5&lt;/td&gt;&lt;td class="left"&gt;#6&lt;/td&gt;&lt;td class="left"&gt;#7&lt;/td&gt;&lt;td class="left"&gt;#8&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;1&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;2&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#26465;&#20214;3&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;Y&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;td class="left"&gt;N&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#21205;&#20316;1&lt;/td&gt;&lt;td class="left"&gt;X&lt;/td&gt;&lt;td class="left"&gt;X&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;X&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;x&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#21205;&#20316;2&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;X&lt;/td&gt;&lt;td class="left"&gt;X&lt;/td&gt;&lt;td class="left"&gt;X&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;-&lt;/td&gt;&lt;td class="left"&gt;x&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&#12371;&#12428;&#12391;&#23436;&#25104;&#12290;
+</content></entry><entry><title type="html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html"/><updated>2012-06-26T23:21:00Z</updated><published>2012-06-26T23:21:00Z</published><id>article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
 &#12393;&#12428;&#12364;&#21407;&#22240;&#12363;&#12431;&#12363;&#12425;&#12394;&#12356;&#12364;&#12289;jdee&#12420;e2wm&#12434;&#36215;&#21205;&#12377;&#12427;&#12392;&#12414;&#12428;&#12395; &lt;code&gt;Variable binding depth exceeds max-specpdl-size&lt;/code&gt; &#12392;&#34920;&#31034;&#12373;&#12428;&#12289;
 &#20309;&#12418;&#25805;&#20316;&#12391;&#12365;&#12394;&#12367;&#12394;&#12427;&#12371;&#12392;&#12364;&#12354;&#12427;(M-x&#12434;anything&#12395;&#12375;&#12390;&#12356;&#12427;&#12383;&#12417;&#12289;emacs&#12434;&#32066;&#20102;&#12377;&#12427;&#12371;&#12392;&#12377;&#12425;&#12391;&#12365;&#12394;&#12356;!)&#12290;
-&#12371;&#12398;&#22580;&#21512;&#12399;&#19979;&#35352;&#12434;.emacs&#12395;&#36861;&#21152;&#12377;&#12427;&#12392;&#12381;&#12398;&#22580;&#12434;&#12375;&#12398;&#12370;&#12427;&#12290;
+&#12371;&#12358;&#12394;&#12427;&#12392;&#12392;&#12426;&#12354;&#12360;&#12378;&#24375;&#21046;&#32066;&#20102;&#12377;&#12427;&#12375;&#12363;&#12394;&#12356;&#12290;
+&#20877;&#30330;&#38450;&#27490;&#12392;&#12375;&#12390;&#12399;&#12289;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#19978;&#38480;&#12434;&#22679;&#12420;&#12375;&#12390;&#12362;&#12367;&#12290;
 &lt;/p&gt;
 
 
@@ -421,7 +470,7 @@ dpi-changer&#12391;&#12501;&#12457;&#12531;&#12488;&#12434;&#22793;&#26356;&#123
 ubuntu&#12418;&#12411;&#12392;&#12435;&#12393;&#12381;&#12398;&#12414;&#12414;&#12398;&#29366;&#24907;&#12391;&#22823;&#20307;&#12398;&#27231;&#33021;&#12364;&#20351;&#12360;&#12390;&#12356;&#12427;&#12290;
 &lt;/p&gt;
 &lt;p&gt;
-&lt;img src="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg"  alt="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg" /&gt;
+&lt;img src="img/ubuntu-ux21e-640-480.jpg"  alt="img/ubuntu-ux21e-640-480.jpg" /&gt;
 &lt;/p&gt;
 &lt;p&gt;
 &#20197;&#19979;&#12434;&#21442;&#32771;&#12395;&#12375;&#12383;&#12290;
@@ -484,263 +533,6 @@ ubuntu&#12418;&#12411;&#12392;&#12435;&#12393;&#12381;&#12398;&#12414;&#12414;&#
 &lt;li&gt;allow,deny &#12399;&#35377;&#21487;&#12375;&#12390;&#25298;&#21542;&#12377;&#12427;&#12290;&#24847;&#21619;&#12392;&#12375;&#12390;&#12399;&#12289;&#12487;&#12501;&#12457;&#12523;&#12488;&#25298;&#21542;&#12391;&#12289;&#24517;&#35201;&#12394;&#12418;&#12384;&#12369;&#35377;&#21487;&#12290;
 &lt;/li&gt;
 &lt;/ul&gt;
-
-
-</content></entry><entry><title type="html">node.jsのnpmでエラーが発生してインストールできない          :node.js:</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/11_nodejsnpm-nodejs.html"/><updated>2012-05-11T23:24:00Z</updated><published>2012-05-11T23:24:00Z</published><id>article/2012/05/11_nodejsnpm-nodejs.html</id><content type="html">&lt;p&gt;
-WindowsXP&#12391;npm&#32076;&#30001;&#12391;&#12398;&#12514;&#12472;&#12517;&#12540;&#12523;&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12364;&#12391;&#12365;&#12394;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;dos&amp;gt;npm install socket.io
-npm http GET https://registry.npmjs.org/socket.io
-npm http 304 https://registry.npmjs.org/socket.io
-npm http GET https://registry.npmjs.org/policyfile/0.0.4
-npm http GET https://registry.npmjs.org/socket.io-client/0.9.6
-npm http GET https://registry.npmjs.org/redis/0.6.7
-npm http 304 https://registry.npmjs.org/redis/0.6.7
-npm http 304 https://registry.npmjs.org/policyfile/0.0.4
-npm http 304 https://registry.npmjs.org/socket.io-client/0.9.6
-npm http GET https://registry.npmjs.org/ws
-npm http GET https://registry.npmjs.org/xmlhttprequest/1.2.2
-npm http GET https://registry.npmjs.org/uglify-js/1.2.5
-npm http GET https://registry.npmjs.org/active-x-obfuscator/0.0.1
-npm http 304 https://registry.npmjs.org/ws
-npm http 304 https://registry.npmjs.org/active-x-obfuscator/0.0.1
-npm http 304 https://registry.npmjs.org/xmlhttprequest/1.2.2
-npm http 304 https://registry.npmjs.org/uglify-js/1.2.5
-npm http GET https://registry.npmjs.org/zeparser/0.0.5
-npm http 304 https://registry.npmjs.org/zeparser/0.0.5
-npm http GET https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
-npm http 200 https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
-npm http GET https://registry.npmjs.org/options
-npm http GET https://registry.npmjs.org/commander
-npm http 304 https://registry.npmjs.org/options
-npm http 304 https://registry.npmjs.org/commander
-
-&amp;gt; ws@0.4.14 install C:\Documents and Settings\mikio\node_modules\socket.io\node
-_modules\socket.io-client\node_modules\ws
-&amp;gt; node install.js
-
-
-node.js:195
-        throw e; // process.nextTick error, or &lt;span style="color: #ffa07a;"&gt;'error'&lt;/span&gt; event on first tick
-              ^
-Error: No such module
-    at net_legacy.js:38:23
-    at NativeModule.compile (node.js:469:5)
-    at node.js:434:18
-    at child_process.js:24:14
-    at NativeModule.compile (node.js:469:5)
-    at Function.require (node.js:434:18)
-    at Function._load (module.js:282:25)
-    at Module.require (module.js:341:17)
-    at require (module.js:352:17)
-    at Object.&amp;lt;anonymous&amp;gt; (C:\Documents and Settings\mikio\node_modules\socket.
-io\node_modules\socket.io-client\node_modules\ws\install.js:1:83)
-
-npm ERR! ws@0.4.14 install: &lt;span style="color: #fa8072;"&gt;`node install.js`&lt;/span&gt;
-npm ERR! &lt;span style="color: #fa8072;"&gt;`cmd "/c" "node install.js"`&lt;/span&gt; failed with 1
-npm ERR!
-npm ERR! Failed at the ws@0.4.14 install script.
-npm ERR! This is most likely a problem with the ws package,
-npm ERR! not with npm itself.
-npm ERR! Tell the author that this fails on your system:
-npm ERR!     node install.js
-npm ERR! You can get their info via:
-npm ERR!     npm owner ls ws
-npm ERR! There is likely additional logging output above.
-npm ERR!
-npm ERR! System Windows_NT 5.1.2600
-npm ERR! command &lt;span style="color: #ffa07a;"&gt;"C:\\Program Files\\nodejs\\\\node.exe"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"C:\\Program Files\\nod&lt;/span&gt;
-&lt;span style="color: #ffa07a;"&gt;ejs\\node_modules\\npm\\bin\\npm-cli.js"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"install"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"socket.io"&lt;/span&gt;
-npm ERR! cwd C:\Documents and Settings\mikio\dev\swank-js
-npm ERR! node -v v0.6.17
-npm ERR! npm -v 1.1.21
-npm ERR! code ELIFECYCLE
-npm ERR! message ws@0.4.14 install: &lt;span style="color: #fa8072;"&gt;`node install.js`&lt;/span&gt;
-npm ERR! message &lt;span style="color: #fa8072;"&gt;`cmd "/c" "node install.js"`&lt;/span&gt; failed with 1
-npm ERR! errno {}
-npm ERR!
-npm ERR! Additional logging details can be found&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt;:
-npm ERR!     C:\Documents and Settings\mikio\dev\swank-js\npm-debug.log
-npm not ok
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#26412;&#23478;&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#30906;&#35469;&#12375;&#12390;&#12415;&#12427;&#12392;&#12289;&#12496;&#12540;&#12472;&#12519;&#12531;&#12399;0.5.2&#12290;
-&#12393;&#12358;&#12420;&#12425;Windows&#29256;&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12521;&#12540;&#12364;&#12391;&#12365;&#12427;&#21069;&#12395;&#25163;&#21205;&#12391;&#12356;&#12428;&#12383;node.exe&#12364;
-&#20778;&#20808;&#12373;&#12428;&#12390;&#23455;&#34892;&#12373;&#12428;&#12390;&#12356;&#12383;&#12425;&#12375;&#12356;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;Microsoft Windows XP [Version 5.1.2600]
-(C) Copyright 1985-2001 Microsoft Corp.
-
-C:\Documents and Settings\mikio&amp;gt;node -v
-v0.5.2
-
-C:\Documents and Settings\mikio&amp;gt;where node
-&lt;span style="color: #ffa07a;"&gt;'where'&lt;/span&gt; &amp;#12399;&amp;#12289;&amp;#20869;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#22806;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12289;
-&amp;#25805;&amp;#20316;&amp;#21487;&amp;#33021;&amp;#12394;&amp;#12503;&amp;#12525;&amp;#12464;&amp;#12521;&amp;#12512;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#12496;&amp;#12483;&amp;#12481; &amp;#12501;&amp;#12449;&amp;#12452;&amp;#12523;&amp;#12392;&amp;#12375;&amp;#12390;&amp;#35469;&amp;#35672;&amp;#12373;&amp;#12428;&amp;#12390;&amp;#12356;&amp;#12414;&amp;#12379;&amp;#12435;&amp;#12290;
-
-C:\Documents and Settings\mikio&amp;gt;whereis node
-node: /cygdrive/c/WINDOWS/system32/node.exe /cygdrive/c/WINDOWS/system32/node.ex
-e
-
-C:\Documents and Settings\mikio&amp;gt;rm c:\WINDOWS\system32\node.exe
-
-C:\Documents and Settings\mikio&amp;gt;node -v
-&lt;span style="color: #ffa07a;"&gt;'node'&lt;/span&gt; &amp;#12399;&amp;#12289;&amp;#20869;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#22806;&amp;#37096;&amp;#12467;&amp;#12510;&amp;#12531;&amp;#12489;&amp;#12289;
-&amp;#25805;&amp;#20316;&amp;#21487;&amp;#33021;&amp;#12394;&amp;#12503;&amp;#12525;&amp;#12464;&amp;#12521;&amp;#12512;&amp;#12414;&amp;#12383;&amp;#12399;&amp;#12496;&amp;#12483;&amp;#12481; &amp;#12501;&amp;#12449;&amp;#12452;&amp;#12523;&amp;#12392;&amp;#12375;&amp;#12390;&amp;#35469;&amp;#35672;&amp;#12373;&amp;#12428;&amp;#12390;&amp;#12356;&amp;#12414;&amp;#12379;&amp;#12435;&amp;#12290;
-
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#21066;&#38500;&#12375;&#12383;&#12425;&#21205;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;C:\Documents and Settings\mikio&amp;gt;npm install socket.io
-npm http GET https://registry.npmjs.org/socket.io
-npm http 304 https://registry.npmjs.org/socket.io
-npm http GET https://registry.npmjs.org/socket.io-client/0.9.6
-npm http GET https://registry.npmjs.org/policyfile/0.0.4
-npm http GET https://registry.npmjs.org/redis/0.6.7
-npm http 304 https://registry.npmjs.org/redis/0.6.7
-npm http 304 https://registry.npmjs.org/socket.io-client/0.9.6
-npm http 304 https://registry.npmjs.org/policyfile/0.0.4
-npm http GET https://registry.npmjs.org/ws
-npm http GET https://registry.npmjs.org/uglify-js/1.2.5
-npm http GET https://registry.npmjs.org/xmlhttprequest/1.2.2
-npm http GET https://registry.npmjs.org/active-x-obfuscator/0.0.1
-npm http 304 https://registry.npmjs.org/xmlhttprequest/1.2.2
-npm http 304 https://registry.npmjs.org/active-x-obfuscator/0.0.1
-npm http 304 https://registry.npmjs.org/ws
-npm http 304 https://registry.npmjs.org/uglify-js/1.2.5
-npm http GET https://registry.npmjs.org/zeparser/0.0.5
-npm http 304 https://registry.npmjs.org/zeparser/0.0.5
-npm http GET https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
-npm http 200 https://registry.npmjs.org/zeparser/-/zeparser-0.0.5.tgz
-npm http GET https://registry.npmjs.org/options
-npm http GET https://registry.npmjs.org/commander
-npm http 304 https://registry.npmjs.org/commander
-npm http 304 https://registry.npmjs.org/options
-
-&amp;gt; ws@0.4.14 install C:\Documents and Settings\mikio\node_modules\socket.io\node
-_modules\socket.io-client\node_modules\ws
-&amp;gt; node install.js
-
-================================================================================
-
-=                                                                              =
-
-=  To install WS with blazing fast native extensions, use                      =
-
-=       &amp;lt;npm install ws --ws:native&amp;gt;                                           =
-
-=                                                                              =
-
-================================================================================
-
-socket.io@0.9.6 ./node_modules/socket.io
-&amp;#9500;&amp;#9472;&amp;#9472; policyfile@0.0.4
-&amp;#9500;&amp;#9472;&amp;#9472; redis@0.6.7
-&amp;#9492;&amp;#9472;&amp;#9472; socket.io-client@0.9.6 (xmlhttprequest@1.2.2, uglify-js@1.2.5, ws@0.4.14,
- active-x-obfuscator@0.0.1)
-
-C:\Documents and Settings\mikio&amp;gt;
-&lt;/pre&gt;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </content></entry>
