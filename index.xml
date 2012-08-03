@@ -3,14 +3,271 @@
   <title>ざる魂</title>
   <link href="http://mikio.github.com/index.xml" rel="self" />
   <link href="http://mikio.github.com/"/>
-  <updated>2012-06-28T23:31:43Z</updated>
+  <updated>2012-08-04T00:36:01Z</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">デジジョンテーブルの作成</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/28_.html"/><updated>2012-06-28T20:04:00Z</updated><published>2012-06-28T20:04:00Z</published><id>article/2012/06/28_.html</id><content type="html">&lt;p&gt;
+  <entry><title type="html">compojureを試す</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/08/03_compojure.html"/><updated>2012-08-03T23:44:00Z</updated><published>2012-08-03T23:44:00Z</published><id>article/2012/08/03_compojure.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/slime.html" term="slime" label="slime"/><category scheme="/tags/compojure.html" term="compojure" label="compojure"/><category scheme="/tags/hiccup.html" term="hiccup" label="hiccup"/><category scheme="/tags/ring.html" term="ring" label="ring"/><content type="html">&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;&#12495;&#12525;&#12540;&#12527;&#12540;&#12523;&#12489;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+&lt;p&gt;&#20170;&#26356;&#12394;&#12364;&#12425;compojure&#12391;&#31777;&#21336;&#12394;&#12454;&#12455;&#12502;&#12450;&#12503;&#12522;&#35430;&#12377;&#12371;&#12392;&#12395;&#12375;&#12383;&#12290;&#32032;&#25391;&#12426;&#22823;&#20999;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#26368;&#21021;&#12398;&#12392;&#12387;&#12363;&#12363;&#12426;&#12399;&#20844;&#24335;&#12506;&#12540;&#12472;&#12398;&#12392;&#12362;&#12426;&#12395;&#12420;&#12427;&#12392;&#31777;&#21336;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/weavejester/compojure/wiki/Getting-Started"&gt;https://github.com/weavejester/compojure/wiki/Getting-Started&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;lein1&#12384;&#12392;plugin&#12479;&#12473;&#12463;(&#12467;&#12510;&#12531;&#12489;&#12415;&#12383;&#12356;&#12394;&#12418;&#12398;)&#12391;&#24517;&#35201;&#12394;&#12514;&#12472;&#12517;&#12540;&#12523;&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;
+&#12523;&#12375;&#12394;&#12369;&#12428;&#12400;&#12394;&#12425;&#12394;&#12363;&#12387;&#12383;&#12364;&#12289;lein2&#12384;&#12392;&#19979;&#35352;&#12467;&#12510;&#12531;&#12489;&#12391;&#24517;&#35201;&#12394;&#12418;&#12398;&#12434;&#20840;&#37096;&#12392;&#12387;
+&#12390;&#12365;&#12388;&#12388;&#12289;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12418;&#29992;&#24847;&#12375;&#12390;&#12367;&#12428;&#12427;&#12290;
+&#8251;plugin&#12479;&#12473;&#12463;&#12399;lein2&#12363;&#12425;&#24259;&#27490;&#12373;&#12428;&#12383;&#12425;&#12375;&#12356;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ lein new compojure hello-world
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12354;&#12392;&#12399;&#12469;&#12540;&#12496;&#12540;&#12434;&#31435;&#12385;&#12354;&#12370;&#12428;&#12400;&#12289;ring&#12364;&#21213;&#25163;&#12395;&#31354;&#12356;&#12390;&#12427;&#12509;&#12540;&#12488;&#12434;&#36984;&#25246;&#12375;&#12390;&#12502;&#12521;
+&#12454;&#12470;&#12434;&#38283;&#12356;&#12390;&#12367;&#12428;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ cd hello-world
+$ lein ring server
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#33258;&#20998;&#12398;&#22580;&#21512;&#12399;3000&#12509;&#12540;&#12488;&#12391;&#12375;&#12383;&#12290;
+&lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&#35430;&#12375;&#12395;&#19979;&#35352;&#12398;&#12467;&#12540;&#12489;&#12434;&#12356;&#12376;&#12387;&#12390;&#12415;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;&lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;src/hello_world/handler.clj&lt;/span&gt;
+(defroutes app-routes
+  (GET &lt;span style="color: #ffa07a;"&gt;"/"&lt;/span&gt; [] &lt;span style="color: #ffa07a;"&gt;"hoge?"&lt;/span&gt;) &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#8592;&amp;#12371;&amp;#12371;&amp;#12434;&amp;#26360;&amp;#12365;&amp;#25563;&amp;#12360;&amp;#12427;&lt;/span&gt;
+  (route/not-found &lt;span style="color: #ffa07a;"&gt;"Not Found"&lt;/span&gt;))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12391;&#12450;&#12463;&#12475;&#12473;&#12377;&#12427;&#12392;&#21363;&#21453;&#26144;&#12373;&#12428;&#12427;!&#12371;&#12428;&#12399;&#20415;&#21033;!
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;hiccup&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+&lt;p&gt;&#19979;&#22320;&#12399;&#12391;&#12365;&#12383;!&#12391;&#12418;&#20170;&#12398;&#12414;&#12414;&#12384;&#12392;&#12499;&#12517;&#12540;&#12434;&#33258;&#21147;&#12391;&#25991;&#23383;&#21015;&#20986;&#21147;&#12375;&#12394;&#12367;&#12390;&#12399;&#12435;&#12425;&#12394;&#12356;
+&#12398;&#12391;&#12486;&#12531;&#12503;&#12524;&#12540;&#12488;&#12434;&#20351;&#12356;&#12383;&#12356;&#12392;&#12371;&#12429;&#12290;&#33258;&#20998;&#12398;&#22580;&#21512;&#12399;&#20840;&#37096;clojure&#12391;&#26360;&#12369;&#12427;&#12486;&#12531;&#12503;
+&#12524;&#12540;&#12488;&#12521;&#12452;&#12502;&#12521;&#12522;&#12398;hiccup&#12364;&#12378;&#12387;&#12392;&#27671;&#12395;&#12394;&#12387;&#12390;&#12383;&#12398;&#12391;&#26089;&#36895;&#23566;&#20837;&#12375;&#12390;&#12415;&#12427;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/weavejester/hiccup/"&gt;https://github.com/weavejester/hiccup/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#23566;&#20837;&#12399;leinningen&#12398;&#12362;&#12363;&#12370;&#12391;&#24656;&#12375;&#12367;&#31777;&#21336;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;&lt;span style="color: #7fffd4;"&gt;:dependencies&lt;/span&gt; [[org.clojure/clojure &lt;span style="color: #ffa07a;"&gt;"1.4.0"&lt;/span&gt;]
+               [compojure &lt;span style="color: #ffa07a;"&gt;"1.1.1"&lt;/span&gt;]
+               [hiccup &lt;span style="color: #ffa07a;"&gt;"1.0.0"&lt;/span&gt;] &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#8592;&amp;#12371;&amp;#12428;&amp;#12434;&amp;#36861;&amp;#21152;&amp;#12377;&amp;#12427;&lt;/span&gt;
+               ]
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12354;&#12392;&#12399;&#12373;&#12387;&#12365;&#12398;handler.clj&#12434;&#20462;&#27491;&#12375;&#12390;&#12502;&#12521;&#12454;&#12470;&#12450;&#12463;&#12475;&#12473;&#12377;&#12427;&#12384;&#12369;&#12391;&#12458;&#12483;&#12465;&#12540;&#12384;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;(&lt;span style="color: #7fffd4;"&gt;:use&lt;/span&gt; compojure.core
+      hiccup.core)  &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;hiccup.core&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
+(defroutes app-routes
+  (GET &lt;span style="color: #ffa07a;"&gt;"/"&lt;/span&gt; [] (html [&lt;span style="color: #7fffd4;"&gt;:ul&lt;/span&gt;                   &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;html&amp;#38306;&amp;#25968;&amp;#12434;&amp;#20351;&amp;#12387;&amp;#12390;&amp;#12415;&amp;#12427;&amp;#12290;&lt;/span&gt;
+                   (&lt;span style="color: #b0c4de;"&gt;for&lt;/span&gt; [x (&lt;span style="color: #eedd82;"&gt;range&lt;/span&gt; 1 4)]
+                    [&lt;span style="color: #7fffd4;"&gt;:li&lt;/span&gt; x])])))
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12377;&#12400;&#12425;&#12375;&#12377;!
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-3" class="outline-3"&gt;
+&lt;h3 id="sec-3"&gt;compjure + slime&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3"&gt;
+
+&lt;p&gt;&#12391;&#12418;emacser&#12392;&#12375;&#12390;&#12399;&#12420;&#12387;&#12401;&#12426;slime&#12363;&#12425;&#20351;&#12356;&#12383;&#12356;!&#12387;&#12390;&#12371;&#12392;&#12391;&#26041;&#27861;&#12434;&#12368;&#12368;&#12427;&#12290;&#12377;
+&#12427;&#12392;&#20197;&#19979;&#12398;&#32032;&#25973;&#12394;&#12506;&#12540;&#12472;&#12364;!
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://tech-pon.tumblr.com/post/19624611690/hello-compojure-2-emacs-slime"&gt;http://tech-pon.tumblr.com/post/19624611690/hello-compojure-2-emacs-slime&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&#12371;&#12371;&#12395;&#12424;&#12427;&#12392;&#12289;project.clj&#12395;&#12503;&#12521;&#12464;&#12452;&#12531;&#12434;&#36861;&#21152;&#12377;&#12428;&#12400;&#33391;&#12356;&#12425;&#12375;&#12356;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/technomancy/swank-clojure/"&gt;https://github.com/technomancy/swank-clojure/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#20844;&#24335;&#12469;&#12452;&#12488;&#12434;&#12481;&#12455;&#12483;&#12463;&#12375;&#12390;&#26368;&#26032;&#12398;&#12418;&#12398;&#12434;&#36861;&#21152;&#12375;&#12390;&#12415;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;&lt;span style="color: #7fffd4;"&gt;:plugins&lt;/span&gt; [[lein-ring &lt;span style="color: #ffa07a;"&gt;"0.7.1"&lt;/span&gt;]
+          [lein-swank &lt;span style="color: #ffa07a;"&gt;"1.4.4"&lt;/span&gt;]  &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#12371;&amp;#12428;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
+          ]
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12381;&#12375;&#12390;&#12289;M-x clojure-jack-in&#12375;&#12390;&#12415;&#12427;&#12290;&#12354;&#12392;&#12399;shell&#19978;&#12363;&#12425;&#23455;&#34892;&#12375;&#12390;&#12356;&#12383;
+&#12300;lein ring server&#12301;&#12395;&#30456;&#24403;&#12377;&#12427;&#12467;&#12510;&#12531;&#12489;&#12434;slime&#12398;repl&#12496;&#12483;&#12501;&#12449;&#12363;&#12425;&#23455;&#34892;&#12377;&#12428;
+&#12400;&#33391;&#12356;&#12398;&#12384;&#12364;&#26041;&#27861;&#12399;&#12431;&#12363;&#12425;&#12394;&#12356;&#12398;&#12391;&#12464;&#12464;&#12427;&#12290;&#12381;&#12375;&#12383;&#12425;&#19979;&#35352;&#12395;&#12354;&#12387;&#12383;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/mmcgrana/ring/wiki/Interactive-Development"&gt;https://github.com/mmcgrana/ring/wiki/Interactive-Development&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&#12393;&#12358;&#12420;&#12425;ring-serve&#12392;&#12356;&#12358;&#12418;&#12398;&#12364;&#24517;&#35201;&#12425;&#12375;&#12356;&#12398;&#12391;&#38283;&#30330;&#29872;&#22659;&#12424;&#12358;&#12398;&#12392;&#12371;&#12429;&#12395;&#36861;&#21152;&#12377;&#12427;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;{&lt;span style="color: #7fffd4;"&gt;:dev&lt;/span&gt;
+ {&lt;span style="color: #7fffd4;"&gt;:dependencies&lt;/span&gt; [
+                 [ring-mock &lt;span style="color: #ffa07a;"&gt;"0.1.2"&lt;/span&gt;]
+                 [ring-serve &lt;span style="color: #ffa07a;"&gt;"0.1.1"&lt;/span&gt;] &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#8592;&amp;#12371;&amp;#12428;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
+                 ]}}
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#19968;&#26086;slime&#12434;&#32066;&#20102;&#12373;&#12379;&#12390;&#12363;&#12425;&#12300;M-x slime-list-connections&#12301;&#20877;&#24230;&#12300;M-x
+clojure-jack-in&#12301;&#12377;&#12427;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;user&amp;gt; (use &lt;span style="color: #ffa07a;"&gt;'hello-world.handler)&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;nil&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;user&amp;gt; (use '&lt;/span&gt;ring.util.serve)
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12371;&#12428;&#12391;&#12356;&#12369;&#12427;&#12392;&#24605;&#12387;&#12383;&#12425;&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12290;hiccup/page&#12394;&#12387;&#12390;&#20351;&#12387;&#12390;&#12394;&#12356;&#12392;&#24605;&#12387;&#12383;
+&#12398;&#12395;&#12394;&#12380;&#12384;&#12429;&#12358;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;Could not locate hiccup/page_helpers__init.class or hiccup/page_helpers.clj on classpath: 
+  [Thrown class java.io.FileNotFoundException]
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#35519;&#12409;&#12390;&#12415;&#12427;&#12392;&#21839;&#38988;&#12392;&#12375;&#12390;&#25369;&#12364;&#12387;&#12390;&#12383;&#12290;
+&lt;a href="https://github.com/weavejester/hiccup/issues/41"&gt;https://github.com/weavejester/hiccup/issues/41&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&#20869;&#23481;&#12434;&#12414;&#12392;&#12417;&#12427;&#12392;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;lein-ring 0.7.0
+Ring 1.1.0. (&amp;#38283;&amp;#30330;&amp;#29992;)
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12364;&#24517;&#35201;&#12425;&#12375;&#12356;&#12290;project.clj&#12395;&#12399;&#26082;&#12395;&#12300;lein-ring 0.7.1&#12301;&#12364;&#35352;&#36848;&#12375;&#12390;&#12354;&#12387;&#12383;&#12398;&#12391;
+[ring/ring-devel 1.1.0]&#12434;&#36861;&#21152;&#12375;&#12390;&#12415;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;{&lt;span style="color: #7fffd4;"&gt;:dev&lt;/span&gt;
+ {&lt;span style="color: #7fffd4;"&gt;:dependencies&lt;/span&gt; [
+                 [ring/ring-devel &lt;span style="color: #ffa07a;"&gt;"1.1.0"&lt;/span&gt;]  &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#8592;&amp;#12371;&amp;#12428;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
+                 [ring-mock &lt;span style="color: #ffa07a;"&gt;"0.1.2"&lt;/span&gt;]
+                 [ring-serve &lt;span style="color: #ffa07a;"&gt;"0.1.1"&lt;/span&gt;]
+                 ]}}
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12391;&#12289;&#24565;&#12398;&#12383;&#12417;lein deps&#12375;&#12390;swank&#12434;&#20877;&#36215;&#21205;&#12290;
+&#12381;&#12375;&#12390;&#19979;&#35352;&#12434;&#23455;&#34892;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;user&amp;gt; (require &lt;span style="color: #ffa07a;"&gt;'hello-world.handler)&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;nil&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;user&amp;gt; (use '&lt;/span&gt;ring.util.serve)
+nil
+user&amp;gt; (serve &lt;span style="color: #ffa07a;"&gt;'hello-world.handler)&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;Started web server on port 3000&lt;/span&gt;
+&lt;span style="color: #ffa07a;"&gt;nil&lt;/span&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12377;&#12427;&#12392;&#12289;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://0.0.0.0:3000/"&gt;http://0.0.0.0:3000/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#12394;&#12380;&#12363;0.0.0.0&#12398;IP&#12395;&#39131;&#12400;&#12373;&#12428;&#12383;&#12290;&#12290;&#12290;
+&#12502;&#12521;&#12454;&#12470;&#12395;&#12399;&#20309;&#12418;&#34920;&#31034;&#12373;&#12428;&#12378;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://localhost:3000/"&gt;http://localhost:3000/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#12395;&#12450;&#12463;&#12475;&#12473;&#12377;&#12427;&#12392;404&#12456;&#12521;&#12540;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12290;&#12394;&#12380;&#12384;&#12290;&#12290;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12375;&#12400;&#12425;&#12367;&#22894;&#38360;&#12375;&#12383;&#12364;&#12371;&#12428;&#12363;&#12425;&#20808;&#12395;&#36914;&#12417;&#12394;&#12356;&#12290;&#12290;
+&#20170;&#26085;&#12399;&#12371;&#12371;&#12414;&#12391;&#12290;
+&lt;/p&gt;
+
+&lt;p&gt;
+&#12385;&#12394;&#12415;&#12395;&#20877;&#36215;&#21205;&#12399;&#12418;&#12358;&#19968;&#24230;serve&#38306;&#25968;&#12434;&#21628;&#12403;&#20986;&#12379;&#12400;&#33391;&#12356;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;user&amp;gt; (serve 'hello-world.handler)
+&lt;span style="color: #b0c4de;"&gt;Stopped&lt;/span&gt; web server
+&lt;span style="color: #b0c4de;"&gt;Started&lt;/span&gt; web server on port 3000
+nil
+user&amp;gt; 
+&lt;/pre&gt;
+
+
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">デジジョンテーブルの作成</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/28_.html"/><updated>2012-06-28T20:04:00Z</updated><published>2012-06-28T20:04:00Z</published><id>article/2012/06/28_.html</id><category scheme="/tags/test.html" term="test" label="test"/><content type="html">&lt;p&gt;
 &#20181;&#27096;&#26360;&#12420;&#12486;&#12473;&#12488;&#38917;&#30446;&#26360;&#12434;&#20316;&#25104;&#12377;&#12427;&#12392;&#12365;&#12395;&#26465;&#20214;&#12434;&#25972;&#29702;&#12377;&#12427;&#12392;&#12365;&#12395;&#24441;&#12384;&#12388;&#12487;&#12471;&#12472;&#12519;&#12531;&#12486;&#12540;&#12502;&#12523;&#12290;
    &#26360;&#12365;&#26041;&#12434;&#25972;&#29702;&#12375;&#12390;&#12362;&#12367;&#12290;&#12414;&#12378;&#26465;&#20214;&#12434;&#25277;&#20986;&#12290;
    &#12381;&#12398;&#26465;&#20214;&#12434;1&#34892;1&#26465;&#20214;&#12392;&#12375;&#12390;&#34920;&#12398;&#24038;&#20596;&#12395;&#21508;&#12290;
-   &#12371;&#12398;&#26178;&#12289;&#26465;&#20214;&#12398;&#12497;&#12479;&#12540;&#12531;&#25968;&#12399;&#12289;&#26465;&#20214;&#25968;=n&#12392;&#12375;&#12383;&#12392;&#12365;2&lt;sup&gt;n&#12392;&#12394;&#12427;&#12290;&lt;/sup&gt;
-   &#12383;&#12392;&#12360;&#12400;&#26465;&#20214;&#25968;&#12364;3&#12388;&#12384;&#12387;&#12383;&#22580;&#21512;&#12289;&#26465;&#20214;&#25968;=3&#12392;&#12375;&#12383;&#12392;&#12365;2&lt;sup&gt;3&lt;/sup&gt;=8&#12392;&#12394;&#12427;&#12290;
+   &#12371;&#12398;&#26178;&#12289;&#26465;&#20214;&#12398;&#12497;&#12479;&#12540;&#12531;&#25968;&#12399;&#12289;&#26465;&#20214;&#25968;=n&#12392;&#12375;&#12383;&#12392;&#12365;2^n&#12392;&#12394;&#12427;&#12290;
+   &#12383;&#12392;&#12360;&#12400;&#26465;&#20214;&#25968;&#12364;3&#12388;&#12384;&#12387;&#12383;&#22580;&#21512;&#12289;&#26465;&#20214;&#25968;=3&#12392;&#12375;&#12383;&#12392;&#12365;2^3=8&#12392;&#12394;&#12427;&#12290;
 &#12497;&#12479;&#12540;&#12531;&#12398;&#32068;&#12415;&#21512;&#12431;&#12379;&#12399;&#12289;2&#36914;&#25968;&#12398;&#12394;&#12425;&#12403;&#12392;&#12375;&#12390;&#26360;&#12365;&#20986;&#12379;&#12400;&#31777;&#21336;&#12391;&#12354;&#12427;&#12290;
 &lt;/p&gt;&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
 &lt;caption&gt;&lt;/caption&gt;
@@ -70,8 +327,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 
-</content></entry><entry><title type="html">o-blogのfork元から最新を取り込む</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/11_o-blogfork.html"/><updated>2012-06-11T22:07:00Z</updated><published>2012-06-11T22:07:00Z</published><id>article/2012/06/11_o-blogfork.html</id><content type="html">&lt;p&gt;
-fork&lt;sub&gt;master&lt;/sub&gt; &#12392;&#12356;&#12358;&#21517;&#21069;&#12434;&#20316;&#12426;&#12510;&#12540;&#12472;&#12377;&#12427;&#12290;pull&#12391;&#12418;&#33391;&#12356;&#12290;
+</content></entry><entry><title type="html">o-blogのfork元から最新を取り込む</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/11_o-blogfork.html"/><updated>2012-06-11T22:07:00Z</updated><published>2012-06-11T22:07:00Z</published><id>article/2012/06/11_o-blogfork.html</id><category scheme="/tags/github.html" term="github" label="github"/><category scheme="/tags/o.html" term="o" label="o"/><category scheme="/tags/blog.html" term="blog" label="blog"/><content type="html">&lt;p&gt;
+fork_master &#12392;&#12356;&#12358;&#21517;&#21069;&#12434;&#20316;&#12426;&#12510;&#12540;&#12472;&#12377;&#12427;&#12290;pull&#12391;&#12418;&#33391;&#12356;&#12290;
 &lt;/p&gt;
 
 
@@ -89,7 +346,7 @@ git merge remotes/fork_master/master
 &lt;/ul&gt;
 
 
-</content></entry><entry><title type="html">javapコマンドを使ってみた。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/02_javap.html"/><updated>2012-06-02T12:08:00Z</updated><published>2012-06-02T12:08:00Z</published><id>article/2012/06/02_javap.html</id><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">javapコマンドを使ってみた。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/06/02_javap.html"/><updated>2012-06-02T12:08:00Z</updated><published>2012-06-02T12:08:00Z</published><id>article/2012/06/02_javap.html</id><category scheme="/tags/java.html" term="java" label="java"/><content type="html">&lt;p&gt;
 java&#12399;.java&#12363;&#12425;.class&#12434;&#29983;&#25104;&#12377;&#12427;&#12364;&#12289;&#12371;&#12428;&#12399;&#12486;&#12461;&#12473;&#12488;&#12456;&#12487;&#12451;&#12479;&#12391;&#38322;&#35239;&#12391;&#12365;&#12394;&#12356;&#12496;&#12452;&#12490;&#12522;&#12501;&#12449;&#12452;&#12523;&#12384;&#12290;
 &#12371;&#12428;&#12434;&#12456;&#12487;&#12451;&#12479;&#12391;&#38322;&#35239;&#12391;&#12365;&#12427;&#29366;&#24907;&#12398;&#12496;&#12452;&#12488;&#12467;&#12540;&#12489;&#12395;&#22793;&#25563;&#12377;&#12427;&#12484;&#12540;&#12523;jdk&#12395;&#27161;&#28310;&#25645;&#36617;&#12373;&#12428;&#12390;&#12356;&#12427;javap&#12467;&#12510;&#12531;&#12489;&#12290;
 hoge&#12392;&#12356;&#12358;&#12497;&#12483;&#12465;&#12540;&#12472;&#12395;&#12354;&#12427;Fuga.java&#12434;&#12467;&#12531;&#12497;&#12452;&#12523;&#12375;&#12383;&#32080;&#26524;&#12434;javap&#12391;&#35211;&#12383;&#12356;&#26178;&#12399;&#20197;&#19979;&#12290;
@@ -185,7 +442,7 @@ Android SDK Managaer&#12399;Eclipse&#12392;&#12399;&#29420;&#31435;&#12375;&#123
 
 &lt;p&gt;SDK&#12434;&#23637;&#38283;&#12375;&#12383;&#12501;&#12457;&#12523;&#12480;&#12395;&#12354;&#12427;tools&#12434;PATH&#12395;&#36890;&#12377;&#12290;
 &#20808;&#12395;SDKManager&#12391;platform-tools&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12362;&#12367;&#12290;
-SDK&#12434;&#23637;&#38283;&#12375;&#12383;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;$ANDOROID&lt;sub&gt;SDK&#12392;&#12375;&#12390;&#19979;&#35352;&#12398;2&#12487;&#12451;&#12524;&#12463;&#12488;&#12395;&#12497;&#12473;&#12434;&#36890;&#12377;&#12290;&lt;/sub&gt;
+SDK&#12434;&#23637;&#38283;&#12375;&#12383;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;$ANDOROID_SDK&#12392;&#12375;&#12390;&#19979;&#35352;&#12398;2&#12487;&#12451;&#12524;&#12463;&#12488;&#12395;&#12497;&#12473;&#12434;&#36890;&#12377;&#12290;
 &lt;/p&gt;
 
 
@@ -276,7 +533,7 @@ $&lt;span style="color: #eedd82;"&gt;ANDROID_SDK&lt;/span&gt;\platform-tools
 &lt;/li&gt;
 &lt;/ul&gt;
 
-</content></entry><entry><title type="html">GalaxyNote(国際版)をroot化</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/18_galaxynoteroot.html"/><updated>2012-05-18T08:27:00Z</updated><published>2012-05-18T08:27:00Z</published><id>article/2012/05/18_galaxynoteroot.html</id><content type="html">&lt;div id="outline-container-1" class="outline-3"&gt;
+</content></entry><entry><title type="html">GalaxyNote(国際版)をroot化</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/18_galaxynoteroot.html"/><updated>2012-05-18T08:27:00Z</updated><published>2012-05-18T08:27:00Z</published><id>article/2012/05/18_galaxynoteroot.html</id><category scheme="/tags/android.html" term="android" label="android"/><category scheme="/tags/rooted.html" term="rooted" label="rooted"/><content type="html">&lt;div id="outline-container-1" class="outline-3"&gt;
 &lt;h3 id="sec-1"&gt;&#21442;&#32771;&lt;/h3&gt;
 &lt;div class="outline-text-3" id="text-1"&gt;
 
@@ -454,7 +711,7 @@ dpi-changer&#12391;&#12501;&#12457;&#12531;&#12488;&#12434;&#22793;&#26356;&#123
 &lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title type="html">gimpで画像サイズを変更する</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/12_gimp.html"/><updated>2012-05-12T20:42:00Z</updated><published>2012-05-12T20:42:00Z</published><id>article/2012/05/12_gimp.html</id><content type="html">&lt;ul&gt;
+</content></entry><entry><title type="html">gimpで画像サイズを変更する</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/12_gimp.html"/><updated>2012-05-12T20:42:00Z</updated><published>2012-05-12T20:42:00Z</published><id>article/2012/05/12_gimp.html</id><category scheme="/tags/gimp.html" term="gimp" label="gimp"/><content type="html">&lt;ul&gt;
 &lt;li&gt;[&#12513;&#12491;&#12517;&#12540;] -&amp;gt; [&#30011;&#20687;] -&amp;gt; [&#30011;&#20687;&#12539;&#25313;&#22823;&#32302;&#23567;] 
 &lt;/li&gt;
 &lt;li&gt;&#12480;&#12452;&#12450;&#12525;&#12464;&#12364;&#34920;&#31034;&#12373;&#12428;&#12427;&#12398;&#12391;&#12289;&#36969;&#20999;&#12394;&#12469;&#12452;&#12474;&#12434;&#25351;&#23450;&#12375;&#12390;&#20445;&#23384;&#12377;&#12428;&#12400;OK
@@ -517,23 +774,5 @@ ubuntu&#12418;&#12411;&#12392;&#12435;&#12393;&#12381;&#12398;&#12414;&#12414;&#
 &#27425;&#26399;&#12514;&#12487;&#12523;&#12399;&#12289;&#12458;&#12503;&#12471;&#12519;&#12531;&#12392;&#12375;&#12390;IPS&#12392;&#39640;&#35299;&#20687;&#24230;&#21270;&#12364;&#22259;&#12425;&#12428;&#12427;&#12392;&#12398;&#12371;&#12392;&#12384;&#12364;
 &#12381;&#12428;&#12395;&#21152;&#12360;&#12390;&#12461;&#12540;&#12508;&#12540;&#12489;&#12392;&#12498;&#12531;&#12472;&#12398;&#21839;&#38988;&#12364;&#25913;&#21892;&#12373;&#12428;&#12428;&#12400;&#12363;&#12394;&#12426;&#20351;&#12356;&#12420;&#12377;&#12367;&#12394;&#12427;&#12392;&#24605;&#12358;&#12290;
 &lt;/p&gt;
-</content></entry><entry><title type="html">apacheのOrderディレクティブ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/05/12_apacheorder.html"/><updated>2012-05-12T09:25:00Z</updated><published>2012-05-12T09:25:00Z</published><id>article/2012/05/12_apacheorder.html</id><category scheme="/tags/apache.html" term="apache" label="apache"/><content type="html">&lt;p&gt;
-&#20037;&#12375;&#25391;&#12426;&#12395;&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12434;&#12356;&#12376;&#12387;&#12383;&#12425;&#12377;&#12387;&#12363;&#12426;&#24536;&#12428;&#12390;&#12356;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;Order deny,allow          
-&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Order&#12487;&#12451;&#12524;&#12463;&#12486;&#12451;&#12502;&#12399;&#12289;&#12450;&#12463;&#12475;&#12473;&#21046;&#38480;&#12398;&#35413;&#20385;&#12377;&#12427;&#38918;&#30058;&#12434;&#27770;&#12417;&#12427;&#12290;
-&lt;/li&gt;
-&lt;li&gt;deny,allow &#12399;&#25298;&#21542;&#12375;&#12390;&#35377;&#21487;&#12377;&#12427;&#12290;&#24847;&#21619;&#12392;&#12375;&#12390;&#12399;&#12289;&#12487;&#12501;&#12457;&#12523;&#12488;&#35377;&#21487;&#12391;&#12289;&#24517;&#35201;&#12394;&#12418;&#12384;&#12369;&#25298;&#21542;&#12290;
-&lt;/li&gt;
-&lt;li&gt;allow,deny &#12399;&#35377;&#21487;&#12375;&#12390;&#25298;&#21542;&#12377;&#12427;&#12290;&#24847;&#21619;&#12392;&#12375;&#12390;&#12399;&#12289;&#12487;&#12501;&#12457;&#12523;&#12488;&#25298;&#21542;&#12391;&#12289;&#24517;&#35201;&#12394;&#12418;&#12384;&#12369;&#35377;&#21487;&#12290;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
 </content></entry>
 </feed>
