@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>SKKはサジェストと相性がいい!</title>
+    <title>Compjure + SLIMEを試す その1</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
@@ -86,7 +86,7 @@
       <div class="container">
 	<ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>SKKはサジェストと相性がいい!</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/08/index.html">08</a> <span class="divider">/</span></li><li>Compjure + SLIMEを試す その1</li>
   </ul>
 
       </div>
@@ -98,69 +98,301 @@
     <div class="well">
       <div class="row">
 	<div class="date span1">
-	  <div class=" date-d">09</div>
-	  <div class=" date-m"><a href="../../../article/2012/04/index.html">4</a></div>
+	  <div class=" date-d">03</div>
+	  <div class=" date-m"><a href="../../../article/2012/08/index.html">8</a></div>
 	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
 	  </div>
 	</div>
 	<div class="span1">
 	  <div class="qr-code">
-  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3A%2F%2Fmikio.github.com%2F%2Farticle%2F2012%2F04%2F09_skk.html"
+  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3A%2F%2Fmikio.github.com%2F%2Farticle%2F2012%2F08%2F03_compjure-slime-1.html"
        alt="qr-code" />
 </div>
 
 	</div>
-	<h1 class="offset2" style="font-size: 250%">SKKはサジェストと相性がいい!</h1>
+	<h1 class="offset2" style="font-size: 250%">Compjure + SLIMEを試す その1</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/04/06_windowsswank-clojureclojure-jack-in.html"><i class="icon-chevron-left"></i>&nbsp;Windows版のSwank-Clojureでclojure-jack-inが実行できない。</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/10_less.html">lessとは&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/06/28_.html"><i class="icon-chevron-left"></i>&nbsp;デジジョンテーブルの作成</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
 
   </header>
   <div class="article-content">
-    <p>
-emacs以外でもSKKを導入してみて気づいたのですが、SKKはウェブアプリのサジェスト機能と非常に相性が良いです。
-現在のウェブアプリでは、入力にフォーカスが当たると大抵自動的にIMEがONになって、日本語入力ができるようになります。
-これはこれで便利なのですが、ウェブアプリ自身のサジェストと、IMEのサジェストが同時に表示されてしまうため、
-非常に見にくくなります。
+    <div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">まずはハローワールド</h3>
+<div class="outline-text-3" id="text-1">
+
+<p>今更ながらcompojureで簡単なウェブアプリ試すことにした。素振り大切。
 </p>
 <p>
-<img src="img/skk/skk01.png"  alt="img/skk/skk01.png" />
-</p>
-<p>
-一方、SKKの場合、デフォルトでは「かな」確定モードであるため
-余計な表示がありません。直接ひらがなのみが入力されるのでシンプルです。
-</p>
-<p>
-<img src="img/skk/skk02.png"  alt="img/skk/skk02.png" />
-</p>
-<p>
-大抵のサジェストでは、漢字に変換しなくても、アルファベットや「ひらがな」のみで
-サジェストワードを表示してくれるので、SKKのようにデフォルトで「ひらがな」確定だと
-余計なものが表示されずに、非常に見やすくなります。
-</p>
-<p>
-ウェブアプリ以外の普通のアプリ(例えばエクセルとか)などでは、サジェストが無いぶん
-使い勝手がGoogleIMEが劣るかも知れませんが、自分は普段ほとんど
-Firefoxとemacsしか使いませんし、がっつり文章を書くときは
-Emacsで書いてコピペする方法をとるので問題なしです。
-</p>
-<p>
-ということで、SKKはデスクトップ用途でもおすすめですよ!
+最初のとっかかりは公式ページのとおりにやると簡単。
+</p><ul>
+<li><a href="https://github.com/weavejester/compojure/wiki/Getting-Started">https://github.com/weavejester/compojure/wiki/Getting-Started</a>
+</li>
+</ul>
+
+<p>lein1だとpluginタスク(コマンドみたいなもの)で必要なモジュールをインストー
+ルしなければならなかったが、lein2だと下記コマンドで必要なものを全部とっ
+てきつつ、プロジェクトディレクトリも用意してくれる。
+※pluginタスクはlein2から廃止されたらしい。
 </p>
 
+
+<pre class="src src-sh">$ lein new compojure hello-world
+</pre>
+
+
+<p>
+あとはサーバーを立ちあげれば、ringが勝手に空いてるポートを選択してブラ
+ウザを開いてくれる。
+</p>
+
+
+<pre class="src src-sh">$ cd hello-world
+$ lein ring server
+</pre>
+
+
+<p>
+自分の場合は3000ポートでした。
+</p><ul>
+<li><a href="http://localhost:3000/">http://localhost:3000/</a>
+</li>
+</ul>
+
+
+<p>
+試しに下記のコードをいじってみる。
+</p>
+
+
+<pre class="src src-clojure"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">src/hello_world/handler.clj</span>
+(defroutes app-routes
+  (GET <span style="color: #ffa07a;">"/"</span> [] <span style="color: #ffa07a;">"hoge?"</span>) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8592;&#12371;&#12371;&#12434;&#26360;&#12365;&#25563;&#12360;&#12427;</span>
+  (route/not-found <span style="color: #ffa07a;">"Not Found"</span>))
+</pre>
+
+
+<p>
+でアクセスすると即反映される!これは便利!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">hiccup導入</h3>
+<div class="outline-text-3" id="text-2">
+
+<p>下地はできた!でも今のままだとビューを自力で文字列出力しなくてはんらない
+のでテンプレートを使いたいところ。自分の場合は全部clojureで書けるテンプ
+レートライブラリのhiccupがずっと気になってたので早速導入してみる。
+</p><ul>
+<li><a href="https://github.com/weavejester/hiccup/">https://github.com/weavejester/hiccup/</a>
+</li>
+</ul>
+
+<p>導入はleinningenのおかげで恐しく簡単。
+</p>
+
+
+<pre class="src src-clojure"><span style="color: #7fffd4;">:dependencies</span> [[org.clojure/clojure <span style="color: #ffa07a;">"1.4.0"</span>]
+               [compojure <span style="color: #ffa07a;">"1.1.1"</span>]
+               [hiccup <span style="color: #ffa07a;">"1.0.0"</span>] <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8592;&#12371;&#12428;&#12434;&#36861;&#21152;&#12377;&#12427;</span>
+               ]
+</pre>
+
+
+<p>
+あとはさっきのhandler.cljを修正してブラウザアクセスするだけでオッケーだ。
+</p>
+
+
+<pre class="src src-clojure">(<span style="color: #7fffd4;">:use</span> compojure.core
+      hiccup.core)  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">hiccup.core&#12434;&#36861;&#21152;</span>
+(defroutes app-routes
+  (GET <span style="color: #ffa07a;">"/"</span> [] (html [<span style="color: #7fffd4;">:ul</span>                   <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">html&#38306;&#25968;&#12434;&#20351;&#12387;&#12390;&#12415;&#12427;&#12290;</span>
+                   (<span style="color: #b0c4de;">for</span> [x (<span style="color: #eedd82;">range</span> 1 4)]
+                    [<span style="color: #7fffd4;">:li</span> x])])))
+</pre>
+
+
+<p>
+すばらしす!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">compjure + slime</h3>
+<div class="outline-text-3" id="text-3">
+
+<p>でもemacserとしてはやっぱりslimeから使いたい!ってことで方法をぐぐる。す
+ると以下の素敵なページが!
+</p><ul>
+<li><a href="http://tech-pon.tumblr.com/post/19624611690/hello-compojure-2-emacs-slime">http://tech-pon.tumblr.com/post/19624611690/hello-compojure-2-emacs-slime</a>
+</li>
+</ul>
+
+<p>このサイトの内容を参考にしつつ、公式サイトで方法を調べてみた。
+</p><ul>
+<li><a href="https://github.com/technomancy/swank-clojure/">https://github.com/technomancy/swank-clojure/</a>
+</li>
+</ul>
+
+<p>どうやらproject.cljにプラグインを追加すれば良いらしい。
+</p>
+
+
+<pre class="src src-clojure"><span style="color: #7fffd4;">:plugins</span> [[lein-ring <span style="color: #ffa07a;">"0.7.1"</span>]
+          [lein-swank <span style="color: #ffa07a;">"1.4.4"</span>]  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+          ]
+</pre>
+
+<p>
+そして、M-x clojure-jack-inしてみる。あとはshell上から実行していた
+「lein ring server」に相当するコマンドをslimeのreplバッファから実行すれ
+ば良いのだが方法はわからないのでググる。そしたら下記にあった。
+</p><ul>
+<li><a href="https://github.com/mmcgrana/ring/wiki/Interactive-Development">https://github.com/mmcgrana/ring/wiki/Interactive-Development</a>
+</li>
+</ul>
+
+
+<p>
+どうやらring-serveというものが必要らしいので開発環境用のところに追加する。
+</p>
+
+
+<pre class="src src-clojure">{<span style="color: #7fffd4;">:dev</span>
+ {<span style="color: #7fffd4;">:dependencies</span> [
+                 [ring-mock <span style="color: #ffa07a;">"0.1.2"</span>]
+                 [ring-serve <span style="color: #ffa07a;">"0.1.1"</span>] <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8592;&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+                 ]}}
+</pre>
+
+
+<p>
+一旦slimeを終了させてから「M-x slime-list-connections」再度「M-x
+clojure-jack-in」する。
+</p>
+
+
+
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">use</span> 'hello-world.handler)
+nil
+user&gt; (<span style="color: #eedd82;">use</span> 'ring.util.serve)
+</pre>
+
+
+<p>
+これでいけると思ったら下記のエラー。hiccup/pageなって使ってないと思った
+のになぜだろう。
+</p>
+
+
+<pre class="src src-sh">Could not locate hiccup/page_helpers__init.class or hiccup/page_helpers.clj on classpath: 
+  [Thrown class java.io.FileNotFoundException]
+</pre>
+
+
+<p>
+調べてみると問題として挙がってた。
+</p><ul>
+<li><a href="https://github.com/weavejester/hiccup/issues/41">https://github.com/weavejester/hiccup/issues/41</a>
+</li>
+</ul>
+
+
+<p>
+内容をまとめると
+</p>
+
+
+<pre class="src src-sh">lein-ring 0.7.0
+Ring 1.1.0. (&#38283;&#30330;&#29992;)
+</pre>
+
+<p>
+が必要らしい。project.cljには既に「lein-ring 0.7.1」が記述してあったので
+[ring/ring-devel 1.1.0]を追加してみた。
+</p>
+
+
+<pre class="src src-clojure">{<span style="color: #7fffd4;">:dev</span>
+ {<span style="color: #7fffd4;">:dependencies</span> [
+                 [ring/ring-devel <span style="color: #ffa07a;">"1.1.0"</span>]  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8592;&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+                 [ring-mock <span style="color: #ffa07a;">"0.1.2"</span>]
+                 [ring-serve <span style="color: #ffa07a;">"0.1.1"</span>]
+                 ]}}
+</pre>
+
+<p>
+で、念のためlein depsしてswankを再起動。
+そして下記を実行
+</p>
+
+
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">require</span> 'hello-world.handler)
+nil
+user&gt; (<span style="color: #eedd82;">use</span> 'ring.util.serve)
+nil
+user&gt; (serve 'hello-world.handler)
+<span style="color: #b0c4de;">Started</span> web server on port 3000
+nil
+</pre>
+
+<p>
+すると、
+</p><ul>
+<li><a href="http://0.0.0.0:3000/">http://0.0.0.0:3000/</a>
+</li>
+</ul>
+
+<p>なぜか0.0.0.0のIPに飛ばされた。。。
+ブラウザには何も表示されず。
+</p><ul>
+<li><a href="http://localhost:3000/">http://localhost:3000/</a>
+</li>
+</ul>
+
+<p>にアクセスすると404エラーになっている。なぜだ。。。
+</p>
+<p>
+しばらく奮闘したがこれから先に進めない。。
+今日はここまで。
+</p>
+
+<p>
+ちなみに再起動はもう一度serve関数を呼び出せば良い。
+</p>
+
+
+<pre class="src src-clojure">user&gt; (serve 'hello-world.handler)
+<span style="color: #b0c4de;">Stopped</span> web server
+<span style="color: #b0c4de;">Started</span> web server on port 3000
+nil
+user&gt; 
+</pre>
+
+
+
+
+</div>
+</div>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime=\"2012-04-09T18:01:00Z\"> 月曜日 4月, 09 2012 at 18:01:00</time>.
+    Posted on <time datetime=\"2012-08-03T23:44:00Z\"> 金曜日 8月, 03 2012 at 23:44:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/skk.html">skk</a></li><li><a href="../../../tags/emacs.html">emacs</a></li>
+	<li><a href="../../../tags/clojure.html">clojure</a></li><li><a href="../../../tags/slime.html">slime</a></li><li><a href="../../../tags/compojure.html">compojure</a></li><li><a href="../../../tags/hiccup.html">hiccup</a></li><li><a href="../../../tags/ring.html">ring</a></li>
       </ul>
     </nav>
   </footer>

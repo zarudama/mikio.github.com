@@ -158,8 +158,12 @@ $ lein ring server
 
 <p>
 自分の場合は3000ポートでした。
-<a href="http://localhost:3000/">http://localhost:3000/</a>
-</p>
+</p><ul>
+<li><a href="http://localhost:3000/">http://localhost:3000/</a>
+</li>
+</ul>
+
+
 <p>
 試しに下記のコードをいじってみる。
 </p>
@@ -180,7 +184,7 @@ $ lein ring server
 </div>
 
 <div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">hiccup</h3>
+<h3 id="sec-2">hiccup導入</h3>
 <div class="outline-text-3" id="text-2">
 
 <p>下地はできた!でも今のままだとビューを自力で文字列出力しなくてはんらない
@@ -234,15 +238,13 @@ $ lein ring server
 </li>
 </ul>
 
-
-<p>
-ここによると、project.cljにプラグインを追加すれば良いらしい。
+<p>このサイトの内容を参考にしつつ、公式サイトで方法を調べてみた。
 </p><ul>
 <li><a href="https://github.com/technomancy/swank-clojure/">https://github.com/technomancy/swank-clojure/</a>
 </li>
 </ul>
 
-<p>公式サイトをチェックして最新のものを追加してみた。
+<p>どうやらproject.cljにプラグインを追加すれば良いらしい。
 </p>
 
 
@@ -262,7 +264,7 @@ $ lein ring server
 
 
 <p>
-どうやらring-serveというものが必要らしいので開発環境ようのところに追加する。
+どうやらring-serveというものが必要らしいので開発環境用のところに追加する。
 </p>
 
 
@@ -281,9 +283,9 @@ clojure-jack-in」する。
 
 
 
-<pre class="src src-sh">user&gt; (use <span style="color: #ffa07a;">'hello-world.handler)</span>
-<span style="color: #ffa07a;">nil</span>
-<span style="color: #ffa07a;">user&gt; (use '</span>ring.util.serve)
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">use</span> 'hello-world.handler)
+nil
+user&gt; (<span style="color: #eedd82;">use</span> 'ring.util.serve)
 </pre>
 
 
@@ -300,8 +302,12 @@ clojure-jack-in」する。
 
 <p>
 調べてみると問題として挙がってた。
-<a href="https://github.com/weavejester/hiccup/issues/41">https://github.com/weavejester/hiccup/issues/41</a>
-</p>
+</p><ul>
+<li><a href="https://github.com/weavejester/hiccup/issues/41">https://github.com/weavejester/hiccup/issues/41</a>
+</li>
+</ul>
+
+
 <p>
 内容をまとめると
 </p>
@@ -331,13 +337,13 @@ Ring 1.1.0. (&#38283;&#30330;&#29992;)
 </p>
 
 
-<pre class="src src-sh">user&gt; (require <span style="color: #ffa07a;">'hello-world.handler)</span>
-<span style="color: #ffa07a;">nil</span>
-<span style="color: #ffa07a;">user&gt; (use '</span>ring.util.serve)
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">require</span> 'hello-world.handler)
 nil
-user&gt; (serve <span style="color: #ffa07a;">'hello-world.handler)</span>
-<span style="color: #ffa07a;">Started web server on port 3000</span>
-<span style="color: #ffa07a;">nil</span>
+user&gt; (<span style="color: #eedd82;">use</span> 'ring.util.serve)
+nil
+user&gt; (serve 'hello-world.handler)
+<span style="color: #b0c4de;">Started</span> web server on port 3000
+nil
 </pre>
 
 <p>
