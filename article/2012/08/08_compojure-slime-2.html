@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>ざる魂</title>
+    <title>Compojure + SLIMEを試す その2</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
@@ -52,15 +52,15 @@
 	    <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
-<li><a href="../../../article/2011/10/04_clojure.html">一瞬だけclojureやめようかと思った理由</a>
+<li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2012/06/28_.html">デジジョンテーブルの作成</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="../../../article/2012/06/11_o-blogfork.html">o-blogのfork元から最新を取り込む</a>
 
 </li>
 </ul>
@@ -86,23 +86,165 @@
       <div class="container">
 	<ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../archives.html">Archives</a> <span class="divider">/</span></li><li><a href="../../index.html">article</a> <span class="divider">/</span></li><li><a href="../index.html">2011</a> <span class="divider">/</span></li><li>10</li>
+  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/08/index.html">08</a> <span class="divider">/</span></li><li>Compojure + SLIMEを試す その2</li>
   </ul>
 
       </div>
     </div>
     <div id="page" class="container">
 
-<article>
+  <header class="article-header">
+
+    <div class="well">
+      <div class="row">
+	<div class="date span1">
+	  <div class=" date-d">08</div>
+	  <div class=" date-m"><a href="../../../article/2012/08/index.html">8</a></div>
+	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
+	  </div>
+	</div>
+	<div class="span1">
+	  <div class="qr-code">
+  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3A%2F%2Fmikio.github.com%2F%2Farticle%2F2012%2F08%2F08_compojure-slime-2.html"
+       alt="qr-code" />
+</div>
+
+	</div>
+	<h1 class="offset2" style="font-size: 250%">Compojure + SLIMEを試す その2</h1>
+      </div>
+      <nav>
+	<ul class="pager">
+	  <li class="previous"><a href="../../../article/2012/08/03_compojure-slime-1.html"><i class="icon-chevron-left"></i>&nbsp;Compojure + SLIMEを試す その1</a></li><li class="next">&nbsp;</li>
+	</ul>
+      </nav>
+    </div>
+
+  </header>
   <div class="article-content">
-    <nav class="archives">
-      <ul class="month 2011 10">
-  <li>04 <a href="../../../article/2011/10/04_clojure.html">一瞬だけclojureやめようかと思った理由</a></li>
+    <div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">前回でSLIMEから起動できなかった問題</h3>
+<div class="outline-text-3" id="text-1">
+
+<p>下記で実行できた!ふぅ。
+</p>
+
+
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">use</span> 'hello-world.handler)
+nil
+user&gt; (<span style="color: #eedd82;">use</span> 'ring.util.serve)
+nil
+user&gt; (serve app)
+<span style="color: #b0c4de;">Started</span> web server on port 3000
+nil
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">compojureでcssを定義する方法</h3>
+<div class="outline-text-3" id="text-2">
+
+<p>以下のサイトを参考にした。
+</p><ul>
+<li><a href="http://k2nr.me/blog/2012/03/22/deploy-clojure-app-on-heroku-with-clojure-1.html">http://k2nr.me/blog/2012/03/22/deploy-clojure-app-on-heroku-with-clojure-1.html</a>
+</li>
 </ul>
 
-    </nav>
+<p>まず、下記のようにroutesを定義する。
+</p>
+
+
+<pre class="src src-clojure"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">src/hello_world/handler.clj</span>
+(defroutes app-routes
+  &#65306;
+  (route/resources <span style="color: #ffa07a;">"/"</span>) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8592;&#12371;&#12371;&#12434;&#36861;&#21152;</span>
+  &#65306;
+  )
+</pre>
+
+<p>
+続いて、cssファイルを特定のパスに定義。
+</p>
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> {&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12523;&#12540;&#12488;}
+mkdir -p resources/public/css
+touch resources/public/css/style.css ;; &#20013;&#36523;&#12399;&#36969;&#24403;&#12395;&#32232;&#38598;
+</pre>
+
+<p>
+呼び出し側では以下のようにinclude-css関数を呼び出す。
+</p>
+
+
+<pre class="src src-clojure">[<span style="color: #7fffd4;">:head</span>
+  [<span style="color: #7fffd4;">:title</span> <span style="color: #ffa07a;">"hello-world"</span>]
+  (include-css <span style="color: #ffa07a;">"/css/style.css"</span>)]
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">compojureでtestコードを実行する方法</h3>
+<div class="outline-text-3" id="text-3">
+
+<p>leinについているプラグインでプロジェクトをつくると自動的にテストの雛形
+もついてくる。replからこのテストを起動する方法は以下のとおり。
+</p>
+
+
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">use</span> 'hello-world.test.handler)
+nil
+user&gt; (<span style="color: #eedd82;">use</span> 'clojure.test)
+nil
+user&gt; (<span style="color: #98fb98;">run-tests</span> 'hello-world.test.handler)
+
+<span style="color: #b0c4de;">Testing</span> hello-world.test.handler
+
+<span style="color: #b0c4de;">Ran</span> 1 tests containing 3 assertions.
+0 failures, 0 errors.
+{<span style="color: #7fffd4;">:type</span> <span style="color: #7fffd4;">:summary</span>, <span style="color: #7fffd4;">:pass</span> 3, <span style="color: #7fffd4;">:test</span> 1, <span style="color: #7fffd4;">:error</span> 0, <span style="color: #7fffd4;">:fail</span> 0}
+</pre>
+
+<p>
+これでやっと本格的に書き始める準備ができた。
+なにやろう。とりあえずTwitterの連携部分をつくるか。
+</p>
+</div>
+</div>
+
   </div>
-</article>
+  
+  <footer class="well article-footer">
+    Posted on <time datetime=\"2012-08-08T21:33:00Z\"> 水曜日 8月, 08 2012 at 21:33:00</time>.
+    <nav class="tag-cloud">
+      <h1><i class="icon-tags"></i> related tags</h1>
+      <ul>
+	<li><a href="../../../tags/clojure.html">clojure</a></li><li><a href="../../../tags/slime.html">slime</a></li><li><a href="../../../tags/compojure.html">compojure</a></li><li><a href="../../../tags/hiccup.html">hiccup</a></li><li><a href="../../../tags/ring.html">ring</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'mikiokunblog'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
       </div>
       <div id="footer">
 	<div class="container">
@@ -150,7 +292,7 @@
 	    <nav id="archives" class="span3">
 	      <h1>Archives</h1>
 	      <ul>
-		<li><a href="../../../article/2011/10/04_clojure.html">一瞬だけclojureやめようかと思った理由</a></li> 
+		<li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a></li> <li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a></li> <li><a href="../../../article/2012/06/28_.html">デジジョンテーブルの作成</a></li> <li><a href="../../../article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</a></li> <li><a href="../../../article/2012/06/11_o-blogfork.html">o-blogのfork元から最新を取り込む</a></li> <li><a href="../../../article/2012/06/02_javap.html">javapコマンドを使ってみた。</a></li> <li><a href="../../../article/2012/05/23_android.html">Android開発環境の準備</a></li> <li><a href="../../../article/2012/05/21_java.html">Javaでカンマ区切りの数字を出力する。</a></li> <li><a href="../../../article/2012/05/18_galaxynoteroot.html">GalaxyNote(国際版)をroot化</a></li> <li><a href="../../../article/2012/05/12_gimp.html">gimpで画像サイズを変更する</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
