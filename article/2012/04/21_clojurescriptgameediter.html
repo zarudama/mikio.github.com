@@ -5,6 +5,7 @@
     <title>ClojureScriptで書かれたGameEditerすげぇ</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="o-blog version 1.2-109-gb686791">
     <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="../../../style/bootstrap/js/bootstrap-modal.js" type="text/javascript"></script>
@@ -14,28 +15,7 @@
     <script src="../../../style/js/prettify.js" type="text/javascript"></script>
     <script src="../../../style/js/o-blog.linenumber.js" type="text/javascript"></script>
     <script src="../../../style/js/o-blog-fix.js" type="text/javascript"></script>
-    <script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
+    
   </head>
   <body>
 
@@ -52,15 +32,15 @@
 	    <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
-<li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/06/28_.html">デジジョンテーブルの作成</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/06/11_o-blogfork.html">o-blogのfork元から最新を取り込む</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 
 </li>
 </ul>
@@ -86,7 +66,7 @@
       <div class="container">
 	<ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>ClojureScriptで書かれたGameEditerすげぇ</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>ClojureScriptで書かれたGameEditerすげぇ</li>
   </ul>
 
       </div>
@@ -136,7 +116,7 @@ ClojureScriptで書かれたゲームエディタがあったようです。<sup
 </p>
 
 
-<pre class="src src-sh">$ git clone https://github.com/ibdknox/live-cljs.git
+<pre class="example">$ git clone https://github.com/ibdknox/live-cljs.git
 $ cd live-cljs/
 $ lein run
 </pre>
@@ -147,12 +127,12 @@ $ lein run
 </p>
 
 
-<pre class="src src-sh"><span style="color: #ffa07a;">"Elapsed time: 58.674804 msecs"</span>
-Exception<span style="color: #ffff00;"> in</span> thread <span style="color: #ffa07a;">"main"</span> java.lang.RuntimeException: java.lang.AssertionError: Assert failed: Can<span style="color: #ffa07a;">'t recur here</span>
-<span style="color: #ffa07a;">frame</span>
-<span style="color: #ffa07a;">        at clojure.lang.Util.runtimeException(Util.java:165)</span>
-<span style="color: #ffa07a;">        at clojure.lang.Compiler.eval(Compiler.java:6476)</span>
-<span style="color: #ffa07a;">        at clojure.lang.Compiler.eval(Compiler.java:6455)</span>
+<pre class="example">"Elapsed time: 58.674804 msecs"
+Exception in thread "main" java.lang.RuntimeException: java.lang.AssertionError: Assert failed: Can't recur here
+frame
+        at clojure.lang.Util.runtimeException(Util.java:165)
+        at clojure.lang.Compiler.eval(Compiler.java:6476)
+        at clojure.lang.Compiler.eval(Compiler.java:6455)
 </pre>
 
 
@@ -161,7 +141,7 @@ Exception<span style="color: #ffff00;"> in</span> thread <span style="color: #ff
 </p>
 
 
-<pre class="src src-sh">$ rm -rf classes/cljs/
+<pre class="example">$ rm -rf classes/cljs/
 $ lein run
  :
  :
@@ -201,7 +181,7 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/clojurescript.html">clojurescript</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/clojurescript.html">clojurescript</a></li>
       </ul>
     </nav>
   </footer>
@@ -232,9 +212,9 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
 
 
 
-<pre class="src src-clojure">(mikio_kun
- {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+<pre class="example">(mikio_kun
+ {:興味 "ubuntu/emacs/clojure"
+  :一言 "Clojurianになりたい"})
 </pre>
 
 
@@ -247,7 +227,7 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
 <li><a href="../../../index.html"><i>icon-home icon-white</i> Home</a>
 
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)"><i>icon-file icon-white</i> Tips</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)"><i>icon-file icon-white</i> Tips</a>
 
 </li>
 <li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
@@ -265,15 +245,15 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
 	      </ul>
 	    </nav>
 	    <nav id="archives" class="span3">
-	      <h1>Archives</h1>
+	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a></li> <li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a></li> <li><a href="../../../article/2012/06/28_.html">デジジョンテーブルの作成</a></li> <li><a href="../../../article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</a></li> <li><a href="../../../article/2012/06/11_o-blogfork.html">o-blogのfork元から最新を取り込む</a></li> <li><a href="../../../article/2012/06/02_javap.html">javapコマンドを使ってみた。</a></li> <li><a href="../../../article/2012/05/23_android.html">Android開発環境の準備</a></li> <li><a href="../../../article/2012/05/21_java.html">Javaでカンマ区切りの数字を出力する。</a></li> <li><a href="../../../article/2012/05/18_galaxynoteroot.html">GalaxyNote(国際版)をroot化</a></li> <li><a href="../../../article/2012/05/12_gimp.html">gimpで画像サイズを変更する</a></li> 
+		<li><a href="../../../article/2012/09/07_swank-clojurenrepl.html">swank-clojureの後継モジュールのnREPLを試してみた</a></li> <li><a href="../../../article/2012/09/06_firefox.html">Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</a></li> <li><a href="../../../article/2012/08/29_push.html">pushマクロ</a></li> <li><a href="../../../article/2012/08/29_.html">削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a></li> <li><a href="../../../article/2012/08/28_cygwinsvn-upgrade.html">cygwinでsvn upgradeに失敗する。</a></li> <li><a href="../../../article/2012/08/28_cygwingit-cygcrypto-098dll.html">cygwinでgitを使おうとしたら、 cygcrypto-0.9.8.dllがないと怒られる。</a></li> <li><a href="../../../article/2012/08/27_puttycygwin-terminal.html">puttyをやめて、cygwin Terminalにする</a></li> <li><a href="../../../article/2012/08/27_windows.html">Windowsでプロセスツリーや実行ファイルのパスを表示したい</a></li> <li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a></li> <li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
-	      <h1>Tags</h1>
+	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 108.00%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 178.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 136.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 150.00%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/zenbook.html">zenbook</a></li> 
+  <li style="font-size: 108.00%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 178.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/greasemonkey.html">greasemonkey</a></li> <li style="font-size: 164.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 150.00%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

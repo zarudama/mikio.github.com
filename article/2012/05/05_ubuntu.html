@@ -5,6 +5,7 @@
     <title>(超個人的)Ubuntuインストール後にやることまとめ</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="o-blog version 1.2-109-gb686791">
     <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
     <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="../../../style/bootstrap/js/bootstrap-modal.js" type="text/javascript"></script>
@@ -14,28 +15,7 @@
     <script src="../../../style/js/prettify.js" type="text/javascript"></script>
     <script src="../../../style/js/o-blog.linenumber.js" type="text/javascript"></script>
     <script src="../../../style/js/o-blog-fix.js" type="text/javascript"></script>
-    <script type="text/javascript">
-<!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
-</script>
+    
   </head>
   <body>
 
@@ -52,15 +32,15 @@
 	    <ul>
 <li><a href="#"><i>icon-file icon-white</i> article</a>
 <ul>
-<li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/06/28_.html">デジジョンテーブルの作成</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 </li>
-<li><a href="../../../article/2012/06/11_o-blogfork.html">o-blogのfork元から最新を取り込む</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
 
 </li>
 </ul>
@@ -86,7 +66,7 @@
       <div class="container">
 	<ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/05/index.html">05</a> <span class="divider">/</span></li><li>(超個人的)Ubuntuインストール後にやることまとめ</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/05/index.html">05</a> <span class="divider">/</span></li><li>(超個人的)Ubuntuインストール後にやることまとめ</li>
   </ul>
 
       </div>
@@ -143,7 +123,7 @@
 </p>
 
 
-<pre class="src src-sh"><span style="color: #eedd82;">LANG</span>=C xdg-user-dirs-gtk-update
+<pre class="example">LANG=C xdg-user-dirs-gtk-update
 </pre>
 
 </div>
@@ -203,7 +183,7 @@
 </li>
 <li>[キーボードショットカット] -&gt; [切り替え] 
 </li>
-<li>[Zenkaku_Hankaku]だけにする
+<li>[Zenkaku<sub>Hankaku]だけにする</sub>
 </li>
 </ul>
 
@@ -250,9 +230,9 @@ pacoは、make install によってインストールされたアプリケーシ
 
 
 
-<pre class="src src-sh"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#12477;&#12540;&#12473;&#12399;&#36969;&#24403;&#12395;Web&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;</span>
+<pre class="example"># ソースは適当にWebからダウンロード
 sudo apt-get install libgtkmm-2.4-dev
-<span style="color: #b0c4de;">cd</span> ~/src/paco-2.0.8/
+cd ~/src/paco-2.0.8/
 ./configure
 make
 sudo make install
@@ -272,12 +252,12 @@ sudo make logme
 </p>
 
 
-<pre class="src src-sh"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#12477;&#12540;&#12473;&#12399;&#36969;&#24403;&#12395;Web&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12290;&#12300;emacs24&#12301;&#12392;&#12363;&#12391;&#26908;&#32034;&#12290;</span>
+<pre class="example"># ソースは適当にWebからダウンロード。「emacs24」とかで検索。
 sudo apt-get build-dep emacs23
-<span style="color: #b0c4de;">cd</span> ~/src/emacs-24/
+cd ~/src/emacs-24/
 
-<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">configure&#12391;&#30011;&#20687;&#38306;&#36899;&#12391;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;&#12363;&#12418;&#12290;&#12381;&#12398;&#12392;&#12365;&#12399;</span>
-<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">sudo apt-get install libgif-dev ligtiff-dev libxpm-dev</span>
+# configureで画像関連でエラーになるかも。そのときは
+# sudo apt-get install libgif-dev ligtiff-dev libxpm-dev
 
 ./configure
 make
@@ -289,7 +269,7 @@ sudo paco -D make install
 </p>
 
 
-<pre class="src src-sh">sudo apt-get install w3m
+<pre class="example">sudo apt-get install w3m
 </pre>
 
 
@@ -305,9 +285,9 @@ sudo paco -D make install
 </p>
 
 
-<pre class="src src-sh">wget http://cmigemo.googlecode.com/files/cmigemo-default-src-20110227.zip
+<pre class="example">wget http://cmigemo.googlecode.com/files/cmigemo-default-src-20110227.zip
 unzip cmigemo-default-src-20110227.zip
-<span style="color: #b0c4de;">cd</span> cmigemo-default-src-20110227
+cd cmigemo-default-src-20110227
 </pre>
 
 
@@ -316,9 +296,9 @@ unzip cmigemo-default-src-20110227.zip
 </p>
 
 
-<pre class="src src-sh">src/wordbuf.c:118: error: &#8216;INT_MAX&#8217; undeclared (first use<span style="color: #ffff00;"> in</span> this <span style="color: #ffff00;">function</span>)
+<pre class="example">src/wordbuf.c:118: error: ‘INT_MAX’ undeclared (first use in this function)
 src/wordbuf.c:118: error: (Each undeclared identifier is reported only once
-src/wordbuf.c:118: error: for each <span style="color: #ffff00;">function</span> <span style="color: #87cefa;">it</span> appears in.)
+src/wordbuf.c:118: error: for each function it appears in.)
 </pre>
 
 <p>
@@ -326,7 +306,7 @@ wordbuf.cに下記を追加する。
 </p>
 
 
-<pre class="src src-sh"><span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">include &lt;limits.h&gt;</span>
+<pre class="example">#include &lt;limits.h&gt;
 </pre>
 
 
@@ -335,15 +315,15 @@ wordbuf.cに下記を追加する。
 </p>
 
 
-<pre class="src src-sh">sudo apt-get install curl
+<pre class="example">sudo apt-get install curl
 sudo apt-get install nkf
 
-<span style="color: #b0c4de;">cd</span> ~/src/cmigemo-default-src/
+cd ~/src/cmigemo-default-src/
 sh ./configure 
 make gcc
-<span style="color: #b0c4de;">cd</span> dict
+cd dict
 make utf-8
-<span style="color: #b0c4de;">cd</span> ..
+cd ..
 sudo paco -D make gcc-install
 </pre>
 
@@ -353,11 +333,11 @@ sudo paco -D make gcc-install
 </p>
 
 
-<pre class="src src-sh">$ cmigemo -d /usr/local/share/migemo/utf-8/migemo-dict
-<span style="color: #87cefa;">migemo_open</span>(<span style="color: #ffa07a;">"/usr/local/share/migemo/utf-8/migemo-dict"</span>)=0xf54010
-<span style="color: #87cefa;">clock</span>()=0.300000
+<pre class="example">$ cmigemo -d /usr/local/share/migemo/utf-8/migemo-dict
+migemo_open("/usr/local/share/migemo/utf-8/migemo-dict")=0xf54010
+clock()=0.300000
 QUERY: kyassyu
-PATTERN: (&#65399;&#65388;&#65391;&#65404;&#65389;|&#12461;&#12515;&#12483;&#12471;&#12517;|&#12365;&#12419;&#12387;&#12375;&#12421;|&#65355;&#65369;&#65345;&#65363;&#65363;&#65369;&#65365;|kyassyu)
+PATTERN: (ｷｬｯｼｭ|キャッシュ|きゃっしゅ|ｋｙａｓｓｙｕ|kyassyu)
 </pre>
 
 
@@ -373,7 +353,7 @@ PATTERN: (&#65399;&#65388;&#65391;&#65404;&#65389;|&#12461;&#12515;&#12483;&#124
 </p>
 
 
-<pre class="src src-sh">sudo apt-get install dconf-tools
+<pre class="example">sudo apt-get install dconf-tools
 gsettings get org.gnome.desktop.interface gtk-key-theme Emacs
 </pre>
 
@@ -383,7 +363,7 @@ gsettings get org.gnome.desktop.interface gtk-key-theme Emacs
 </p>
 
 
-<pre class="src src-sh">dconf-editor
+<pre class="example">dconf-editor
 </pre>
 
 
@@ -392,7 +372,7 @@ gsettings get org.gnome.desktop.interface gtk-key-theme Emacs
 </p>
 
 
-<pre class="src src-sh">/org/gnome/desktop/interface/gtk-key-theme
+<pre class="example">/org/gnome/desktop/interface/gtk-key-theme
 </pre>
 
 <p>
@@ -418,9 +398,9 @@ gsettings get org.gnome.desktop.interface gtk-key-theme Emacs
 </p>
 
 
-<pre class="src src-sh">mkdir ~/.fonts 
+<pre class="example">mkdir ~/.fonts 
 cp migu-1m-20120411.zip ~/.fonts
-<span style="color: #b0c4de;">cd</span> ~/.fonts 
+cd ~/.fonts 
 unzip migu-1m-20120411.zip
 fc-cache -fv
 </pre>
@@ -457,7 +437,7 @@ fc-cache -fv
 </p>
 
 
-<pre class="src src-sh">keycode 102 = Shift_L
+<pre class="example">keycode 102 = Shift_L
 keycode 101 = Return
 
 keycode 100 = Control_L
@@ -470,7 +450,7 @@ add Control = Control_L
 </p>
 
 
-<pre class="src src-sh">xmodmap ~/.Xmodmap
+<pre class="example">xmodmap ~/.Xmodmap
 </pre>
 
 
@@ -479,9 +459,9 @@ add Control = Control_L
 </p>
 
 
-<pre class="src src-sh">&#28961;&#22793;&#25563;&#8594;shift
-&#22793;&#25563;&#8594;ctrl
-&#12459;&#12479;&#12459;&#12490;&#12402;&#12425;&#12364;&#12394;&#8594;return
+<pre class="example">無変換→shift
+変換→ctrl
+カタカナひらがな→return
 </pre>
 
 
@@ -506,7 +486,7 @@ ibus-skkは変換時にemacsのキーバインドが使えないので、
 
 
 
-<pre class="src src-sh">sudo apt-get install uim uim-skk
+<pre class="example">sudo apt-get install uim uim-skk
 </pre>
 
 
@@ -515,7 +495,7 @@ Input Method Switcherの起動
 </p>
 
 
-<pre class="src src-sh">im-switch -c
+<pre class="example">im-switch -c
 </pre>
 
 <ul>
@@ -531,7 +511,7 @@ emacsと重複するため、SKKの起動キーを変更する。
 </p><ul>
 <li>[設定] -&gt; [SKKキー設定1] 
 </li>
-<li>Zenkaku_Hankakuだけにする
+<li>Zenkaku<sub>Hankakuだけにする</sub>
 </li>
 </ul>
 
@@ -554,7 +534,7 @@ emacsと重複するため、SKKの起動キーを変更する。
 </p>
 
 
-<pre class="src src-sh">sudo mkdir /usr/lib/jvm/
+<pre class="example">sudo mkdir /usr/lib/jvm/
 sudo mv ./jdk1.7.0_04/ /usr/lib/jvm/jdk1.7.0
 </pre>
 
@@ -564,9 +544,9 @@ sudo mv ./jdk1.7.0_04/ /usr/lib/jvm/jdk1.7.0
 </p>
 
 
-<pre class="src src-sh">sudo update-alternatives --install <span style="color: #ffa07a;">"/usr/bin/java"</span> <span style="color: #ffa07a;">"java"</span> <span style="color: #ffa07a;">"/usr/lib/jvm/jdk1.7.0/bin/java"</span> 1
-sudo update-alternatives --install <span style="color: #ffa07a;">"/usr/bin/javac"</span> <span style="color: #ffa07a;">"javac"</span> <span style="color: #ffa07a;">"/usr/lib/jvm/jdk1.7.0/bin/javac"</span> 1
-sudo update-alternatives --install <span style="color: #ffa07a;">"/usr/bin/javaws"</span> <span style="color: #ffa07a;">"javaws"</span> <span style="color: #ffa07a;">"/usr/lib/jvm/jdk1.7.0/bin/javaws"</span> 1
+<pre class="example">sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk1.7.0/bin/java" 1
+sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk1.7.0/bin/javac" 1
+sudo update-alternatives --install "/usr/bin/javaws" "javaws" "/usr/lib/jvm/jdk1.7.0/bin/javaws" 1
 </pre>
 
 
@@ -576,7 +556,7 @@ sudo update-alternatives --install <span style="color: #ffa07a;">"/usr/bin/javaw
 </p>
 
 
-<pre class="src src-sh">sudo update-alternatives --config java
+<pre class="example">sudo update-alternatives --config java
 </pre>
 
 
@@ -585,7 +565,7 @@ sudo update-alternatives --install <span style="color: #ffa07a;">"/usr/bin/javaw
 </p>
 
 
-<pre class="src src-sh">java -version
+<pre class="example">java -version
 javac
 javaws
 </pre>
@@ -619,11 +599,11 @@ javaws
 </p>
 
 
-<pre class="src src-sh">$ cd ~
+<pre class="example">$ cd ~
 $ mkdir bin
 $ vi .bashrch
-<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#19979;&#35352;&#12434;&#36861;&#21152;</span>
-<span style="color: #b0c4de;">export</span> <span style="color: #eedd82;">PATH</span>=~/bin
+# 下記を追加
+export PATH=~/bin
 </pre>
 
 
@@ -632,10 +612,10 @@ leinをインストールする。
 </p>
 
 
-<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> ~/bin
+<pre class="example">cd ~/bin
 wget https://raw.github.com/technomancy/leiningen/stable/bin/lein
 chmod +x lein
-./elin repl <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#24460;&#12289;repl&#38283;&#22987;</span>
+./elin repl # ダウンロード後、repl開始
 </pre>
 
 
@@ -660,7 +640,7 @@ chmod +x lein
 </p>
 
 
-<pre class="src src-sh">-javaagent:/usr/lib/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
+<pre class="example">-javaagent:/usr/lib/eclipse/plugins/jp.sourceforge.mergedoc.pleiades/pleiades.jar
 </pre>
 
 <p>
@@ -686,7 +666,7 @@ chmod +x lein
 
 
 
-<pre class="src src-sh">sudo apt-get install language-pack-ja
+<pre class="example">sudo apt-get install language-pack-ja
 sudo dpkg-reconfigure locales
 </pre>
 
@@ -702,7 +682,7 @@ sudo dpkg-reconfigure locales
 
 
 
-<pre class="src src-sh">sudo apt-get install parcellite
+<pre class="example">sudo apt-get install parcellite
 </pre>
 
 
@@ -721,7 +701,7 @@ png形式でキャプチャされる。
 </p>
 
 
-<pre class="src src-sh">sudo apt-get install shutter
+<pre class="example">sudo apt-get install shutter
 </pre>
 
 
@@ -802,7 +782,7 @@ png形式でキャプチャされる。
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li><a href="../../../tags/ubuntu.html">ubuntu</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/ubuntu.html">ubuntu</a></li>
       </ul>
     </nav>
   </footer>
@@ -833,9 +813,9 @@ png形式でキャプチャされる。
 
 
 
-<pre class="src src-clojure">(mikio_kun
- {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+<pre class="example">(mikio_kun
+ {:興味 "ubuntu/emacs/clojure"
+  :一言 "Clojurianになりたい"})
 </pre>
 
 
@@ -848,7 +828,7 @@ png形式でキャプチャされる。
 <li><a href="../../../index.html"><i>icon-home icon-white</i> Home</a>
 
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)"><i>icon-file icon-white</i> Tips</a>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)"><i>icon-file icon-white</i> Tips</a>
 
 </li>
 <li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
@@ -866,15 +846,15 @@ png形式でキャプチャされる。
 	      </ul>
 	    </nav>
 	    <nav id="archives" class="span3">
-	      <h1>Archives</h1>
+	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a></li> <li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a></li> <li><a href="../../../article/2012/06/28_.html">デジジョンテーブルの作成</a></li> <li><a href="../../../article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html">「Variable binding depth exceeds max-specpdl-size」というメッセージがでて何も操作できなくなった。</a></li> <li><a href="../../../article/2012/06/11_o-blogfork.html">o-blogのfork元から最新を取り込む</a></li> <li><a href="../../../article/2012/06/02_javap.html">javapコマンドを使ってみた。</a></li> <li><a href="../../../article/2012/05/23_android.html">Android開発環境の準備</a></li> <li><a href="../../../article/2012/05/21_java.html">Javaでカンマ区切りの数字を出力する。</a></li> <li><a href="../../../article/2012/05/18_galaxynoteroot.html">GalaxyNote(国際版)をroot化</a></li> <li><a href="../../../article/2012/05/12_gimp.html">gimpで画像サイズを変更する</a></li> 
+		<li><a href="../../../article/2012/09/07_swank-clojurenrepl.html">swank-clojureの後継モジュールのnREPLを試してみた</a></li> <li><a href="../../../article/2012/09/06_firefox.html">Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</a></li> <li><a href="../../../article/2012/08/29_push.html">pushマクロ</a></li> <li><a href="../../../article/2012/08/29_.html">削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a></li> <li><a href="../../../article/2012/08/28_cygwinsvn-upgrade.html">cygwinでsvn upgradeに失敗する。</a></li> <li><a href="../../../article/2012/08/28_cygwingit-cygcrypto-098dll.html">cygwinでgitを使おうとしたら、 cygcrypto-0.9.8.dllがないと怒られる。</a></li> <li><a href="../../../article/2012/08/27_puttycygwin-terminal.html">puttyをやめて、cygwin Terminalにする</a></li> <li><a href="../../../article/2012/08/27_windows.html">Windowsでプロセスツリーや実行ファイルのパスを表示したい</a></li> <li><a href="../../../article/2012/08/08_compojure-slime-2.html">Compojure + SLIMEを試す その2</a></li> <li><a href="../../../article/2012/08/03_compojure-slime-1.html">Compojure + SLIMEを試す その1</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
-	      <h1>Tags</h1>
+	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 108.00%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 178.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 136.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 150.00%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/zenbook.html">zenbook</a></li> 
+  <li style="font-size: 108.00%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 178.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/greasemonkey.html">greasemonkey</a></li> <li style="font-size: 164.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 150.00%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>http://mikio.github.com//</loc>
+    <lastmod>Lisp error in nil: (wrong-type-argument integerp nil)</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://mikio.github.com//index.html</loc>
+    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>http://mikio.github.com//article/2012/08/27_windows/index.html</loc>
+    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
+    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
+    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
+    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+
+  <url>
+    <loc>http://mikio.github.com//article/2012/09/07_swank-clojurenrepl.html</loc>
+    <lastmod>2012-09-07T22:01:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/06_firefox.html</loc>
+    <lastmod>2012-09-06T22:26:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/29_push.html</loc>
+    <lastmod>2012-08-29T14:19:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/29_.html</loc>
+    <lastmod>2012-08-29T11:46:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/28_cygwinsvn-upgrade.html</loc>
+    <lastmod>2012-08-28T23:46:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/28_cygwingit-cygcrypto-098dll.html</loc>
+    <lastmod>2012-08-28T23:46:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/27_puttycygwin-terminal.html</loc>
+    <lastmod>2012-08-27T23:46:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/27_windows.html</loc>
+    <lastmod>2012-08-27T11:46:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/08_compojure-slime-2.html</loc>
+    <lastmod>2012-08-08T21:33:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/08/03_compojure-slime-1.html</loc>
+    <lastmod>2012-08-03T23:44:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/06/28_.html</loc>
+    <lastmod>2012-06-28T20:04:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/06/26_variable-binding-depth-exceeds-max-specpdl-size.html</loc>
+    <lastmod>2012-06-26T23:21:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/06/11_o-blogfork.html</loc>
+    <lastmod>2012-06-11T22:07:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//jdee/2012/06/06_flymake.html</loc>
+    <lastmod>2012-06-06T19:26:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//jdee/2012/06/06_flymake.html</loc>
+    <lastmod>2012-06-06T19:26:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//jdee/2012/06/06_ant.html</loc>
+    <lastmod>2012-06-06T19:25:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//jdee/2012/06/06_.html</loc>
+    <lastmod>2012-06-06T19:01:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/06/02_javap.html</loc>
+    <lastmod>2012-06-02T12:08:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/23_android.html</loc>
+    <lastmod>2012-05-23T08:27:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/21_java.html</loc>
+    <lastmod>2012-05-21T08:27:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/18_galaxynoteroot.html</loc>
+    <lastmod>2012-05-18T08:27:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/12_gimp.html</loc>
+    <lastmod>2012-05-12T20:42:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/12_apacheorder.html</loc>
+    <lastmod>2012-05-12T09:25:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/11_nodejsnpm-nodejs.html</loc>
+    <lastmod>2012-05-11T23:24:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html</loc>
+    <lastmod>2012-05-10T23:24:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/08_.html</loc>
+    <lastmod>2012-05-08T23:30:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/05/05_ubuntu.html</loc>
+    <lastmod>2012-05-05T22:31:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/21_clojurescriptgameediter.html</loc>
+    <lastmod>2012-04-21T00:35:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/18_galaxynotewindows7usb.html</loc>
+    <lastmod>2012-04-18T01:27:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/17_playframeworkmodel.html</loc>
+    <lastmod>2012-04-17T08:28:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/11_emacsdired2e2wm.html</loc>
+    <lastmod>2012-04-11T22:46:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/10_clojure.html</loc>
+    <lastmod>2012-04-10T22:06:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/10_less.html</loc>
+    <lastmod>2012-04-10T08:16:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/09_skk.html</loc>
+    <lastmod>2012-04-09T18:01:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/06_windowsswank-clojureclojure-jack-in.html</loc>
+    <lastmod>2012-04-06T22:53:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/05_clojureslimerepl.html</loc>
+    <lastmod>2012-04-05T22:00:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/04/04_emacs.html</loc>
+    <lastmod>2012-04-04T21:45:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/03/10_sudo.html</loc>
+    <lastmod>2012-03-10T22:09:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/03/09_skkwindowsxp.html</loc>
+    <lastmod>2012-03-09T18:23:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/02/10_mew.html</loc>
+    <lastmod>2012-02-10T08:14:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/11/09_clojure1.html</loc>
+    <lastmod>2011-11-09T19:29:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/10/04_clojure.html</loc>
+    <lastmod>2011-10-04T19:28:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/09/09_clojurecoommonlisp.html</loc>
+    <lastmod>2011-09-09T18:57:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/09/04_schemecommonlispclojure.html</loc>
+    <lastmod>2011-09-04T19:28:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/08/30_commonlispsbcl.html</loc>
+    <lastmod>2011-08-30T19:28:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/06/23_emacs-slime-leiningen-clojure.html</loc>
+    <lastmod>2011-06-23T21:45:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/04/28_windows.html</loc>
+    <lastmod>2011-04-28T22:50:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2011/04/03_dropboxgit.html</loc>
+    <lastmod>2011-04-03T20:09:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2010/07/26_lvm.html</loc>
+    <lastmod>2010-07-26T19:25:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
+
