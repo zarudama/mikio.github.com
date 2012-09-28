@@ -93,31 +93,7 @@
     <priority>0.6</priority>
   </url>
 <url>
-    <loc>http://mikio.github.com//article/2012/09/28_ubuntu-server.html</loc>
-    <lastmod>2012-09-28T10:02:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//article/2012/09/28_openssh-servercd.html</loc>
-    <lastmod>2012-09-28T10:02:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//article/2012/09/28_ubuntu-server-lvm.html</loc>
-    <lastmod>2012-09-28T10:02:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
     <loc>http://mikio.github.com//article/2012/09/28_gnusinbox.html</loc>
-    <lastmod>2012-09-28T10:02:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//article/2012/09/28_swank-clojurenrepl.html</loc>
     <lastmod>2012-09-28T10:02:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -125,6 +101,12 @@
 <url>
     <loc>http://mikio.github.com//article/2012/09/28_nexus7root.html</loc>
     <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/07_swank-clojurenrepl.html</loc>
+    <lastmod>2012-09-07T22:02:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
