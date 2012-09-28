@@ -9,35 +9,35 @@
   
   <url>
     <loc>http://mikio.github.com//index.html</loc>
-    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <lastmod>2012-09-28T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/08/27_windows/index.html</loc>
-    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <lastmod>2012-09-28T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
-    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <lastmod>2012-09-28T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
-    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <lastmod>2012-09-28T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
-    <lastmod>2012-09-11T00:00:00Z</lastmod>
+    <lastmod>2012-09-28T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -45,8 +45,86 @@
 
 
   <url>
-    <loc>http://mikio.github.com//article/2012/09/07_swank-clojurenrepl.html</loc>
-    <lastmod>2012-09-07T22:01:00Z</lastmod>
+    <loc>http://mikio.github.com//article/2012/09/28_xmonad.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_misaki.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_howm-modeorg-mode.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_w3m-emacs.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_googleimeemacs.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_elispinfo.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_awk.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_twittering-mode.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_ubuntu-server.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_openssh-servercd.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_ubuntu-server-lvm.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_gnusinbox.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_swank-clojurenrepl.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/09/28_nexus7root.html</loc>
+    <lastmod>2012-09-28T10:02:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,30 +197,6 @@
 <url>
     <loc>http://mikio.github.com//article/2012/06/11_o-blogfork.html</loc>
     <lastmod>2012-06-11T22:07:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//jdee/2012/06/06_flymake.html</loc>
-    <lastmod>2012-06-06T19:26:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//jdee/2012/06/06_flymake.html</loc>
-    <lastmod>2012-06-06T19:26:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//jdee/2012/06/06_ant.html</loc>
-    <lastmod>2012-06-06T19:25:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//jdee/2012/06/06_.html</loc>
-    <lastmod>2012-06-06T19:01:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
