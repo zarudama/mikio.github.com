@@ -5,5 +5,5 @@
   <link href="http://mikio.github.com/"/>
   <updated>Lisp error in nil: (wrong-type-argument integerp nil)</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">xmonadを試す</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/09/28_xmonad.html"/><updated>2012-09-28T10:02:00Z</updated><published>2012-09-28T10:02:00Z</published><id>article/2012/09/28_xmonad.html</id><category scheme="/tags/xmonad.html" term="xmonad" label="xmonad"/><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/>Lisp error in nil: (void-function htmlize-protect-string)
+  <entry><title type="html">今更ながらackいれた。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/22_ack.html"/><updated>2012-12-22T22:30:00Z</updated><published>2012-12-22T22:30:00Z</published><id>article/2012/12/22_ack.html</id>Lisp error in nil: (void-function htmlize-protect-string)
 </feed>

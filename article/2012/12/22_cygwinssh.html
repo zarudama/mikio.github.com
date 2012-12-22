@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>cygwinでssh接続できない</title>
+    <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="o-blog version 1.2"/>
+    <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
+    <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-transition.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-collapse.js" type="text/javascript"></script>
+    <script src="../../../style/js/prettify.js" type="text/javascript"></script>
+    <script src="../../../style/js/o-blog.linenumber.js" type="text/javascript"></script>
+    <script src="../../../style/js/o-blog-fix.js" type="text/javascript"></script>
+    
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+	<div class="container">
+	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+	  <a class="brand" href="../../../index.html">ざる魂</a>
+	  <div class="nav-collapse collapse">
+	    <ul>
+<li><a href="#"><i>icon-file icon-white</i> article</a>
+<ul>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
+</li>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
+</li>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
+</li>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
+</li>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)">Lisp error in nil: (wrong-type-argument arrayp nil)</a>
+
+</li>
+</ul>
+
+</li>
+<li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
+
+</li>
+<li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
+
+</li>
+<li><a href="../../../index.xml">RSS</a>
+</li>
+</ul>
+
+
+
+
+	  </div>
+	</div>
+      </div>
+    </div>
+    <div class="subnav subnav-fixed visible-desktop">
+      <div class="container">
+	<ul class="breadcrumb">
+  <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/12/index.html">12</a> <span class="divider">/</span></li><li>cygwinでssh接続できない</li>
+  </ul>
+
+      </div>
+    </div>
+    <div id="page" class="container">
+
+  <header class="article-header">
+
+    <div class="well">
+      <div class="row">
+	<div class="date span1">
+	  <div class=" date-d">22</div>
+	  <div class=" date-m"><a href="../../../article/2012/12/index.html">12月</a></div>
+	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
+	  </div>
+	</div>
+	<div class="span1">
+	  <div class="qr-code">
+  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3a%2f%2fmikio.github.com%2f%2farticle%2f2012%2f12%2f22_cygwinssh.html"
+       alt="qr-code" />
+</div>
+
+	</div>
+	<h1 class="offset2" style="font-size: 250%">cygwinでssh接続できない</h1>
+      </div>
+      <nav>
+	<ul class="pager">
+	  <li class="previous"><a href="../../../article/2012/12/22_git-remote-origin.html"><i class="icon-chevron-left"></i>&nbsp;=git remote= でoriginが表示されなくなった。</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/12/22_rootneuxs7.html">root化したneuxs7をアップデート&nbsp;<i class="icon-chevron-right"></i></a></li>
+	</ul>
+      </nav>
+    </div>
+
+  </header>
+  <div class="article-content">
+    <p>
+/home/mikioにホームを設定してるのではなく、c:/Users/mikioにHOMEを設定し
+てる場合でssh接続すると、下記のように/home/mikioディレクトリが作成でき
+ないと怒られてしまう。
+</p>
+
+
+<pre class="example">$ ssh -v 192.168.10.2 -p 30890 -i ~/.ssh/id_rsa.whitebase
+OpenSSH_6.1p1, OpenSSL 1.0.1c 10 May 2012
+debug1: Connecting to 192.168.10.2 [192.168.10.2] port 30890.
+debug1: Connection established.
+Could not create directory '/home/miki/.ssh'.
+</pre>
+
+<p>
+この場合は、/etc/passwdの/home/mikioとなってるところを、
+/cygdrive/c/Users/mikioに書き換えれば良い。
+</p><ul>
+<li><a href="http://ekawas.blogspot.jp/2007/03/solving-pesky-ssh-issues-in-cygwin.html">http://ekawas.blogspot.jp/2007/03/solving-pesky-ssh-issues-in-cygwin.html</a>
+</li>
+</ul>
+
+
+<p>
+しかし今度はpublickeyがパーミッションエラー。
+</p>
+
+
+<pre class="example">debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
+debug1: No more authentication methods to try.
+Permission denied (publickey).
+</pre>
+
+<p>
+下記よるとホスト側で/etc/ssh/sshd<sub>configの設定でユーザを許可してないの</sub>
+が原因とあったので調べたところドンピシャでした。
+</p>
+<ul>
+<li><a href="http://lunatear.net/archives/000300.html">http://lunatear.net/archives/000300.html</a>
+</li>
+</ul>
+
+
+<p>
+早速編集して再起動したところ、まだ駄目。
+</p>
+
+
+<pre class="example"># AllowUsersにユーザを追加
+$ sudo vi /etc/ssh/sshd_config
+
+# 再起動 
+$ sudo /etc/init.d/ssh restart
+ ：
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
+debug1: No more authentication methods to try.
+Permission denied (publickey).
+</pre>
+
+
+<p>
+接続ホスト側でログを確認してみる。
+</p>
+<p>
+/etc/ssh/sshd<sub>configを編集</sub>
+</p>
+
+
+<pre class="example">SyslogFacility AUTH
+LogLevel VERBOSE
+</pre>
+
+
+
+<pre class="example">$ sudo tail -f /var/log/auth.log
+ :
+Dec  1 21:54:00 whitebase sshd[20701]: Set /proc/self/oom_score_adj to 0
+Dec  1 21:54:00 whitebase sshd[20701]: Connection from 192.168.10.229 port 64522
+Dec  1 21:54:01 whitebase sshd[20701]: Connection closed by 192.168.10.229 [preauth]
+ :
+</pre>
+
+<p>
+...ログをみてもよくわからなかった。
+</p>
+<p>
+今度は、サーバー側でもデバッグモードにして接続してみる。
+</p>
+
+
+<pre class="example">mikio@whitebase:~/.ssh$ whereis sshd
+sshd: /usr/sbin/sshd /usr/share/man/man8/sshd.8.gz
+mikio@whitebase:~/.ssh$ sudo /usr/sbin/sshd -d
+debug1: sshd version OpenSSH_5.9p1 Debian-5ubuntu1
+debug1: read PEM private key done: type RSA
+debug1: Checking blacklist file /usr/share/ssh/blacklist.RSA-2048
+debug1: Checking blacklist file /etc/ssh/blacklist.RSA-2048
+debug1: private host key: #0 type 1 RSA
+debug1: read PEM private key done: type DSA
+debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
+debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
+debug1: private host key: #1 type 2 DSA
+debug1: read PEM private key done: type ECDSA
+debug1: Checking blacklist file /usr/share/ssh/blacklist.ECDSA-256
+debug1: Checking blacklist file /etc/ssh/blacklist.ECDSA-256
+debug1: private host key: #2 type 3 ECDSA
+debug1: rexec_argv[0]='/usr/sbin/sshd'
+debug1: rexec_argv[1]='-d'
+Set /proc/self/oom_score_adj from 0 to -1000
+debug1: Bind to port 30890 on 0.0.0.0.
+Server listening on 0.0.0.0 port 30890.
+debug1: Bind to port 30890 on ::.
+Server listening on :: port 30890.
+debug1: Server will not fork when running in debugging mode.
+debug1: rexec start in 5 out 5 newsock 5 pipe -1 sock 8
+debug1: inetd sockets after dupping: 3, 3
+Connection from 192.168.10.229 port 64488
+debug1: Client protocol version 2.0; client software version OpenSSH_6.1
+debug1: match: OpenSSH_6.1 pat OpenSSH*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_5.9p1 Debian-5ubuntu1
+debug1: permanently_set_uid: 105/65534 [preauth]
+debug1: list_hostkey_types: ssh-rsa,ssh-dss,ecdsa-sha2-nistp256 [preauth]
+debug1: SSH2_MSG_KEXINIT sent [preauth]
+debug1: SSH2_MSG_KEXINIT received [preauth]
+debug1: kex: client-&gt;server aes128-ctr hmac-md5 none [preauth]
+debug1: kex: server-&gt;client aes128-ctr hmac-md5 none [preauth]
+debug1: expecting SSH2_MSG_KEX_ECDH_INIT [preauth]
+debug1: SSH2_MSG_NEWKEYS sent [preauth]
+debug1: expecting SSH2_MSG_NEWKEYS [preauth]
+debug1: SSH2_MSG_NEWKEYS received [preauth]
+debug1: KEX done [preauth]
+debug1: userauth-request for user mikio service ssh-connection method none [preauth]
+debug1: attempt 0 failures 0 [preauth]
+debug1: PAM: initializing for "mikio"
+debug1: PAM: setting PAM_RHOST to "miki-pc.lan"
+debug1: PAM: setting PAM_TTY to "ssh"
+Connection closed by 192.168.10.229 [preauth]
+debug1: do_cleanup [preauth]
+debug1: monitor_read_log: child log fd closed
+debug1: do_cleanup
+debug1: PAM: cleanup
+</pre>
+
+<p>
+うーん、よくわからん。
+</p>
+<p>
+今度は、クライアント側のデバッグログの出力レベルをあげて試す。
+(vの数がレベルになる。知らなかった。)
+</p>
+
+
+<pre class="example">$ ssh -vvv whitebase
+  :
+  :
+debug1: Next authentication method: publickey
+debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
+debug3: no such identity: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
+debug2: we did not send a packet, disable method
+debug1: No more authentication methods to try.
+Permission denied (publickey).
+</pre>
+
+<p>
+おおおお!、なんという初歩的ミス!。.ssh/configの秘密鍵の名前をタイポ。
+</p>
+
+
+<pre class="example">- IdentityFile ~/.ssh/id_rsa.whitabase
++ IdentityFile ~/.ssh/id_rsa.whitebase
+</pre>
+
+<p>
+これで無事接続できました。
+</p>
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">まとめ</h3>
+<div class="outline-text-3" id="text-1">
+
+<ul>
+<li>パーミッションを疑え!
+<ul>
+<li>$HOME -&gt; 700
+</li>
+<li>$HOME/.ssh -&gt; 700
+</li>
+<li>$HOME/.ssh/id<sub>rsa</sub> -&gt; 644
+</li>
+<li>サーバ側の$HOME/.ssh/authorized<sub>keys</sub> -&gt; 644
+</li>
+</ul>
+
+</li>
+<li>ログイン許可してるユーザを確認しろ!
+<ul>
+<li>サーバ側の/etc/ssh/sshd<sub>configの</sub> = AllowUsers= 
+</li>
+</ul>
+
+</li>
+<li>クライアント側のログを確認しろ!
+<ul>
+<li>ssh -v HOSTNAME
+</li>
+<li>vオプションの数でデバッグレベルを調節できる!
+<ul>
+<li>ssh -v HOSTNAME
+</li>
+<li>ssh -vv HOSTNAME
+</li>
+<li>ssh -vvv HOSTNAME
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>サーバ側のログを確認しろ!
+<ul>
+<li>サーバ側の/etc/ssh/sshd<sub>config</sub>
+<ul>
+<li>SyslogFacility AUTH
+</li>
+<li>LogLevel VERBOSE
+</li>
+</ul>
+
+</li>
+<li>sudo tail -f /var/log/auth.log
+</li>
+<li>/usr/sbin/sshd -d
+</li>
+</ul>
+
+</li>
+<li><code>$HOME/.ssh/config</code> のタイポを確認しろ!
+</li>
+</ul>
+
+
+<p>
+以上で大体解決すると思います。
+</p>
+
+</div>
+</div>
+
+  </div>
+  
+  <footer class="well article-footer">
+    Posted on <time datetime="2012-12-22T22:27:00Z"> 土曜日 12月, 22 2012 at 22:27:00</time>.
+    <nav class="tag-cloud">
+      <h1><i class="icon-tags"></i> related tags</h1>
+      <ul>
+	
+      </ul>
+    </nav>
+  </footer>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'mikiokunblog'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+      <div id="footer">
+	<div class="container">
+	  <div class="row">
+	    <section class="span3">
+	      <h1>About</h1>
+	      <p>
+<img src="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg"  alt="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg" />
+</p>
+
+
+
+<pre class="example">(mikio_kun
+ {:興味 "ubuntu/emacs/clojure"
+  :一言 "Clojurianになりたい"})
+</pre>
+
+
+	    </section>
+	    <nav id="links" class="span3">
+	      <h1>Links</h1>
+	      <ul>
+		<ul>
+<li><a href="../../../index.html"><i>icon-home icon-white</i> Home</a>
+
+</li>
+<li><a href="Lisp error in nil: (wrong-type-argument arrayp nil)"><i>icon-file icon-white</i> Tips</a>
+
+</li>
+<li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
+
+</li>
+<li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
+
+</li>
+<li><a href="../../../index.xml">RSS</a>
+</li>
+</ul>
+
+
+
+	      </ul>
+	    </nav>
+	    <nav id="archives" class="span3">
+	      <h1><a href="../../../archives.html">Archives</a></h1>
+	      <ul>
+		<li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> <li><a href="../../../article/2012/12/22_nuxus7ubuntu.html">nuxus7にubuntuをインストール</a></li> <li><a href="../../../article/2012/12/22_nexus7root.html">nexus7をroot化した後にやること</a></li> <li><a href="../../../article/2012/12/22_rootneuxs7.html">root化したneuxs7をアップデート</a></li> <li><a href="../../../article/2012/12/22_cygwinssh.html">cygwinでssh接続できない</a></li> <li><a href="../../../article/2012/12/22_git-remote-origin.html">=git remote= でoriginが表示されなくなった。</a></li> <li><a href="../../../article/2012/12/22_xargs.html">空白を含むファイルをxargsで削除する</a></li> <li><a href="../../../article/2012/12/22_org-online.html">org-onlineをタメス。</a></li> <li><a href="../../../article/2012/12/22_stumpwm.html">stumpwmを試す</a></li> <li><a href="../../../article/2012/12/22_githubclone.html">githubでclone時に怒られる。</a></li> 
+	      </ul>
+	    </nav>
+	    <nav class="tags span3">
+	      <h1><a href="../../../tags/index.html">Tags</a></h1>
+	      <ul>
+  <li style="font-size: 103.33%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/awk.html">awk</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 208.33%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/greasemonkey.html">greasemonkey</a></li> <li style="font-size: 185.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/howm.html">howm</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 138.33%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+</ul>
+
+	    </nav>
+	  </div>
+	</div>
+	<div class="copyright" style="text-align: center;">
+	  <p>
+Copyright © 2008-2012 <a href="http://twitter.com/mikio_kun">mikio</a>
+</p>
+	  <p>Powered by <a href="https://github.com/renard/o-blog">o-blog</a>.</p>
+	</div>
+      </div>
+</body>
+</html>
+
