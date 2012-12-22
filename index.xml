@@ -5,5 +5,5 @@
   <link href="http://mikio.github.com/"/>
   <updated>Lisp error in nil: (wrong-type-argument integerp nil)</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">Emacs中毒者に送るJDEEによるJava開発環境の構築</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/22_emacsjdeejava.html"/><updated>2012-12-22T23:24:00Z</updated><published>2012-12-22T23:24:00Z</published><id>article/2012/12/22_emacsjdeejava.html</id><category scheme="/tags/jdee.html" term="jdee" label="jdee"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/>Lisp error in nil: (void-function htmlize-protect-string)
+  <entry><title type="html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/23_emacsjdeejava.html"/><updated>2012-12-23T08:20:00Z</updated><published>2012-12-23T08:20:00Z</published><id>article/2012/12/23_emacsjdeejava.html</id><category scheme="/tags/jdee.html" term="jdee" label="jdee"/><category scheme="/tags/emacs.html" term="emacs" label="emacs"/>Lisp error in nil: (void-function htmlize-protect-string)
 </feed>
