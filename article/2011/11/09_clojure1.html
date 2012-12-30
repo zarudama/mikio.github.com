@@ -19,28 +19,28 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-static-top">
       <div class="navbar-inner">
-	<div class="container">
-	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-	  <a class="brand" href="../../../index.html">ざる魂</a>
-	  <div class="nav-collapse collapse">
-	    <ul>
-<li><a href="#"><i>icon-file icon-white</i> article</a>
+	      <a class="brand" href="../../../index.html">ざる魂</a>
+	      <div class="nav-collapse collapse">
+	        <ul>
+<li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">openssh-serverをインストールしようとしたら、CDをいれろと。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">firefoxで常にIMEをOFFにする方法</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">git merge でrenmae関係のエラーがでた</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">o-blogをcloneする。</a>
 
 </li>
 </ul>
@@ -59,13 +59,13 @@
 
 
 
-	  </div>
-	</div>
+	      </div>
+	    </div>
       </div>
     </div>
-    <div class="subnav subnav-fixed visible-desktop">
+    <div class="subnav visible-desktop">
       <div class="container">
-	<ul class="breadcrumb">
+	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
   <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2011/index.html">2011</a> <span class="divider">/</span></li><li><a href="../../../article/2011/11/index.html">11</a> <span class="divider">/</span></li><li>Clojureでゲームプログラミングその1 実験編</li>
   </ul>
@@ -77,21 +77,14 @@
   <header class="article-header">
 
     <div class="well">
+      <time data-updated="true" pubdate="" datetime="">
+        <a href="../../../article/2011/index.html">2011</a>
+          年
+          <a href="../../../article/2011/11/index.html">11月</a>
+          09日
+      </time>
       <div class="row">
-	<div class="date span1">
-	  <div class=" date-d">09</div>
-	  <div class=" date-m"><a href="../../../article/2011/11/index.html">11月</a></div>
-	  <div class=" date-y"><a href="../../../article/2011/index.html">2011</a>
-	  </div>
-	</div>
-	<div class="span1">
-	  <div class="qr-code">
-  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3a%2f%2fmikio.github.com%2f%2farticle%2f2011%2f11%2f09_clojure1.html"
-       alt="qr-code" />
-</div>
-
-	</div>
-	<h1 class="offset2" style="font-size: 250%">Clojureでゲームプログラミングその1 実験編</h1>
+	    <h1 class="span11" style="font-size: 250%">Clojureでゲームプログラミングその1 実験編</h1>
       </div>
       <nav>
 	<ul class="pager">
@@ -143,8 +136,8 @@ LispでGAMEつくろうかなと。
 </p>
 
 
-<pre class="example">(import (javax.swing JFrame))
-(def frame (JFrame. "Clojure SampleGame")) 
+<pre class="src src-Clojure">(import (javax.swing JFrame))
+(def frame (JFrame. <span style="color: #ffa07a;">"Clojure SampleGame"</span>)) 
 (doto frame
 (.setSize 640 480)
   (.setVisible true))
@@ -171,8 +164,8 @@ LispでGAMEつくろうかなと。
 </p>
 
 
-<pre class="example">java.awt.image.BufferedImage bimage;
-image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
+<pre class="src src-clojure"><span style="color: #b0c4de;">java.awt.image.BufferedImage</span> bimage<span style="color: #ff7f24;">;</span>
+image = <span style="color: #b0c4de;">javax.imageio.ImageIO.read</span>(new <span style="color: #b0c4de;">java.io.File</span>(<span style="color: #ffa07a;">"hoge.png"</span>))<span style="color: #ff7f24;">;</span>
 </pre>
 
 <p>
@@ -185,10 +178,10 @@ image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </p>
 
 
-<pre class="example">(import (java.awt.image BufferedImage))
-(import (javax.imageio ImageIO))
-(import (java.io File))
-(def image (ImageIO/read (File. "gai.png"))) 
+<pre class="src src-clojure">(<span style="color: #b0c4de;">import</span> (java.awt.image <span style="color: #b0c4de;">BufferedImage</span>))
+(<span style="color: #b0c4de;">import</span> (javax.imageio <span style="color: #b0c4de;">ImageIO</span>))
+(<span style="color: #b0c4de;">import</span> (java.io <span style="color: #b0c4de;">File</span>))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">image</span> (<span style="color: #b0c4de;">ImageIO/read</span> (<span style="color: #b0c4de;">File.</span> <span style="color: #ffa07a;">"gai.png"</span>))) 
 </pre>
 
 <p>
@@ -196,10 +189,10 @@ image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </p>
 
 
-<pre class="example">(import (java.awt Graphics))
-(def graphics (.. frame (getGraphics)))
-(doto graphics
-  (.drawImage image 0 0 frame))
+<pre class="src src-clojure">(<span style="color: #b0c4de;">import</span> (java.awt <span style="color: #b0c4de;">Graphics</span>))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">graphics</span> (<span style="color: #b0c4de;">..</span> frame (<span style="color: #b0c4de;">getGraphics</span>)))
+(<span style="color: #b0c4de;">doto</span> graphics
+  (<span style="color: #b0c4de;">.drawImage</span> image 0 0 frame))
 </pre>
 
 <p>
@@ -211,7 +204,7 @@ image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </p>
 
 
-<pre class="example">(.. graphics (drawLine 0 0 640 480))
+<pre class="src src-clojure">(<span style="color: #b0c4de;">..</span> graphics (<span style="color: #b0c4de;">drawLine</span> 0 0 640 480))
 </pre>
 
 
@@ -236,7 +229,7 @@ image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </p>
 
 
-<pre class="example">(def insets (.. frame getInsets)) 
+<pre class="src src-clojure">(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">insets</span> (<span style="color: #b0c4de;">..</span> frame <span style="color: #b0c4de;">getInsets</span>)) 
 </pre>
 
 
@@ -245,8 +238,8 @@ image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </p>
 
 
-<pre class="example">user&gt; insets
-#&lt;Insets java.awt.Insets[top=24,left=1,bottom=5,right=1]&gt;
+<pre class="src src-clojure">user&gt; insets
+#&lt;<span style="color: #b0c4de;">Insets</span> <span style="color: #b0c4de;">java.awt.Insets</span>[top=24,left=1,bottom=5,right=1]&gt;
 </pre>
 
 
@@ -255,10 +248,10 @@ image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </p>
 
 
-<pre class="example">(.. frame (setVisible true))
-(.. graphics (translate (.. insets left) (.. insets top)))
-(.. graphics (clearRect 0 0 640 480))
-(.. graphics (drawImage image 0 0 frame))
+<pre class="src src-clojure">(<span style="color: #b0c4de;">..</span> frame (<span style="color: #b0c4de;">setVisible</span> true))
+(<span style="color: #b0c4de;">..</span> graphics (translate (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets top)))
+(<span style="color: #b0c4de;">..</span> graphics (<span style="color: #b0c4de;">clearRect</span> 0 0 640 480))
+(<span style="color: #b0c4de;">..</span> graphics (<span style="color: #b0c4de;">drawImage</span> image 0 0 frame))
 </pre>
 
 <p>
@@ -276,9 +269,9 @@ insentsを利用したついでに説明。
 </p>
 
 
-<pre class="example">(doto frame
-    (.setSize (+ 640 (.. insets left) (.. insets right)) (+ 480 (.. insets top) (.. insets bottom)))
-    (.setVisible true))
+<pre class="src src-clojure">(<span style="color: #b0c4de;">doto</span> frame
+    (<span style="color: #b0c4de;">.setSize</span> (<span style="color: #eedd82;">+</span> 640 (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets right)) (<span style="color: #eedd82;">+</span> 480 (<span style="color: #b0c4de;">..</span> insets top) (<span style="color: #b0c4de;">..</span> insets bottom)))
+    (<span style="color: #b0c4de;">.setVisible</span> true))
 </pre>
 
 <p>
@@ -298,18 +291,18 @@ insentsを利用したついでに説明。
 </p>
 
 
-<pre class="example">(.drawImage
-    image   ;; 描画画像
-    0 0     ;; 転送先の左上座標
-    32 32   ;; 転送先の右下座標
-    0 0     ;; 画像元の左上座標
-    32 32   ;; 画像元の右下座標
-    frame)  ;; 描画対象
+<pre class="src src-clojure">(<span style="color: #b0c4de;">.drawImage</span>
+    image   <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#25551;&#30011;&#30011;&#20687;</span>
+    0 0     <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#36578;&#36865;&#20808;&#12398;&#24038;&#19978;&#24231;&#27161;</span>
+    32 32   <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#36578;&#36865;&#20808;&#12398;&#21491;&#19979;&#24231;&#27161;</span>
+    0 0     <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#30011;&#20687;&#20803;&#12398;&#24038;&#19978;&#24231;&#27161;</span>
+    32 32   <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#30011;&#20687;&#20803;&#12398;&#21491;&#19979;&#24231;&#27161;</span>
+    frame)  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#25551;&#30011;&#23550;&#35937;</span>
 </pre>
 
 
 
-<pre class="example">(import java.awt.Color)
+<pre class="src src-cojure">(import java.awt.Color)
 (def clear-color (Color. 0 0 127))
 
 (let [g (.. frame (getGraphics))]
@@ -354,12 +347,12 @@ Clojureで継承が必要なJavaクラスを使うには、proxyを使う。
 </p>
 
 
-<pre class="example">(import (java.util Timer TimerTask))
-(import (java.util TimerTask))
-(def mainloop
-  (proxy [TimerTask] []
+<pre class="src src-clojure">(<span style="color: #b0c4de;">import</span> (java.util <span style="color: #b0c4de;">Timer</span> <span style="color: #b0c4de;">TimerTask</span>))
+(<span style="color: #b0c4de;">import</span> (java.util <span style="color: #b0c4de;">TimerTask</span>))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">mainloop</span>
+  (<span style="color: #eedd82;">proxy</span> [<span style="color: #b0c4de;">TimerTask</span>] []
     (run []
-      (println "呼びだされた"))
+      (<span style="color: #eedd82;">println</span> <span style="color: #ffa07a;">"&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;"</span>))
     )) 
 </pre>
 
@@ -369,8 +362,8 @@ Clojureで継承が必要なJavaクラスを使うには、proxyを使う。
 </p>
 
 
-<pre class="example">user&gt; (.. mainloop run) 
-呼びだされた
+<pre class="src src-clojure">user&gt; (<span style="color: #b0c4de;">..</span> mainloop run) 
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
 nil
 </pre>
 
@@ -382,17 +375,17 @@ nil
 </p>
 
 
-<pre class="example">user&gt; (.. (Timer.) schedule mainloop 0 500)
+<pre class="src src-clojure">user&gt; (<span style="color: #b0c4de;">..</span> (<span style="color: #b0c4de;">Timer.</span>) schedule mainloop 0 500)
 
-Malformed member expression
-  [Thrown class java.lang.IllegalArgumentException]
+<span style="color: #b0c4de;">Malformed</span> member expression
+  [<span style="color: #b0c4de;">Thrown</span> class <span style="color: #b0c4de;">java.lang.IllegalArgumentException</span>]
 
 Restarts:
- 0: [QUIT] Quit to the SLIME top level
+ 0: [<span style="color: #b0c4de;">QUIT</span>] <span style="color: #b0c4de;">Quit</span> to the <span style="color: #b0c4de;">SLIME</span> top level
 
 Backtrace:
-  0: clojure.lang.Compiler$HostExpr$Parser.parse(Compiler.java:825)
-  1: clojure.lang.Compiler.analyzeSeq(Compiler.java:5369)
+  0: <span style="color: #b0c4de;">clojure.lang.Compiler$HostExpr$Parser.parse</span>(Compiler.java:825)
+  1: <span style="color: #b0c4de;">clojure.lang.Compiler.analyzeSeq</span>(Compiler.java:5369)
 
 </pre>
 
@@ -402,16 +395,16 @@ Backtrace:
 </p>
 
 
-<pre class="example">user&gt; (.. (Timer.) schedule mainloop (long 0) (long 500))
-No matching field found: schedule for class java.util.Timer
-  [Thrown class java.lang.IllegalArgumentException]
+<pre class="src src-clojure">user&gt; (<span style="color: #b0c4de;">..</span> (<span style="color: #b0c4de;">Timer.</span>) schedule mainloop (<span style="color: #eedd82;">long</span> 0) (<span style="color: #eedd82;">long</span> 500))
+<span style="color: #b0c4de;">No</span> matching field found: schedule for class <span style="color: #b0c4de;">java.util.Timer</span>
+  [<span style="color: #b0c4de;">Thrown</span> class <span style="color: #b0c4de;">java.lang.IllegalArgumentException</span>]
 
 Restarts:
- 0: [QUIT] Quit to the SLIME top level
+ 0: [<span style="color: #b0c4de;">QUIT</span>] <span style="color: #b0c4de;">Quit</span> to the <span style="color: #b0c4de;">SLIME</span> top level
 
 Backtrace:
-  0: clojure.lang.Reflector.getInstanceField(Reflector.java:245)
-  1: clojure.lang.Reflector.invokeNoArgInstanceMember(Reflector.java:267)
+  0: <span style="color: #b0c4de;">clojure.lang.Reflector.getInstanceField</span>(Reflector.java:245)
+  1: <span style="color: #b0c4de;">clojure.lang.Reflector.invokeNoArgInstanceMember</span>(Reflector.java:267)
 </pre>
 
 <p>
@@ -420,22 +413,22 @@ scheduleをカッコでくくらないと駄目らしい。
 </p>
 
 
-<pre class="example">user&gt; (.. (Timer.) (schedule mainloop (long 0) (long 500)))
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
-呼びだされた
+<pre class="src src-clojure">user&gt; (<span style="color: #b0c4de;">..</span> (<span style="color: #b0c4de;">Timer.</span>) (schedule mainloop (<span style="color: #eedd82;">long</span> 0) (<span style="color: #eedd82;">long</span> 500)))
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
 nil
 </pre>
 
@@ -457,8 +450,8 @@ Clojureはデフォルトでは値を更新できない。これを変更する�
 </p>
 
 
-<pre class="example">;; プレイヤー定義
-(def player (atom {:pos [0 0]}))
+<pre class="src src-clojure"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12503;&#12524;&#12452;&#12516;&#12540;&#23450;&#32681;</span>
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">player</span> (<span style="color: #eedd82;">atom</span> {<span style="color: #7fffd4;">:pos</span> [0 0]}))
 </pre>
 
 
@@ -467,7 +460,7 @@ Clojureはデフォルトでは値を更新できない。これを変更する�
 </p>
 
 
-<pre class="example">user&gt; (@player :pos)
+<pre class="src src-clojure">user&gt; (@player <span style="color: #7fffd4;">:pos</span>)
 [0 0]
 user&gt; 
 </pre>
@@ -478,7 +471,7 @@ x座標は配列の0番目
 </p>
 
 
-<pre class="example">user&gt; (nth (@player :pos) 0) 
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0) 
 0
 </pre>
 
@@ -488,7 +481,7 @@ y座標は配列の1番目
 </p>
 
 
-<pre class="example">user&gt; (nth (@player :pos) 1) 
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 1) 
 0
 </pre>
 
@@ -498,16 +491,16 @@ playerの座標を更新してみる。
 </p>
 
 
-<pre class="example">user&gt; player
-#&lt;Atom@2a134eca: {:pos [0 0]}&gt;
+<pre class="src src-clojure">user&gt; player
+#&lt;Atom@2a134eca: {<span style="color: #7fffd4;">:pos</span> [0 0]}&gt;
 
-;; 変更
-user&gt; (swap! player assoc :pos [0 1])
-{:pos [0 1]}
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#22793;&#26356;</span>
+user&gt; (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [0 1])
+{<span style="color: #7fffd4;">:pos</span> [0 1]}
 
-;; たしかに更新された
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12383;&#12375;&#12363;&#12395;&#26356;&#26032;&#12373;&#12428;&#12383;</span>
 user&gt; player
-#&lt;Atom@2a134eca: {:pos [0 1]}&gt;
+#&lt;Atom@2a134eca: {<span style="color: #7fffd4;">:pos</span> [0 1]}&gt;
 </pre>
 
 
@@ -516,14 +509,14 @@ x座標を更新させる
 </p>
 
 
-<pre class="example">user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
-{:pos [1 1]}
-user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
-{:pos [2 1]}
-user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
-{:pos [3 1]}
-user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
-{:pos [4 1]}
+<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1])
+{<span style="color: #7fffd4;">:pos</span> [1 1]}
+user&gt; (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1])
+{<span style="color: #7fffd4;">:pos</span> [2 1]}
+user&gt; (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1])
+{<span style="color: #7fffd4;">:pos</span> [3 1]}
+user&gt; (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1])
+{<span style="color: #7fffd4;">:pos</span> [4 1]}
 </pre>
 
 
@@ -532,27 +525,27 @@ user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
 </p>
 
 
-<pre class="example">(def mainloop
-  (proxy [TimerTask] []
+<pre class="src src-clojure">(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">mainloop</span>
+  (<span style="color: #eedd82;">proxy</span> [<span style="color: #b0c4de;">TimerTask</span>] []
     (run []
-      (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1]) ;; 座標更新
-      (if (&lt; 640 (nth (@player :pos) 0))
-             (swap! player assoc :pos [0 0]))
+      (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1]) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#24231;&#27161;&#26356;&#26032;</span>
+      (<span style="color: #b0c4de;">if</span> (<span style="color: #eedd82;">&lt;</span> 640 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0))
+             (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [0 0]))
 
-      (let [g (.. frame (getGraphics))
-            player-x (nth (@player :pos) 0)
-            player-y (nth (@player :pos) 1)]
+      (<span style="color: #b0c4de;">let</span> [g (<span style="color: #b0c4de;">..</span> frame (<span style="color: #b0c4de;">getGraphics</span>))
+            player-x (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)
+            player-y (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 1)]
 
-        (doto g
-          (.translate (.. insets left) (.. insets top))
-          (.setColor clear-color)
-          (.fillRect 0 0 640 480)
-          (.drawImage image
+        (<span style="color: #b0c4de;">doto</span> g
+          (<span style="color: #b0c4de;">.translate</span> (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets top))
+          (<span style="color: #b0c4de;">.setColor</span> clear-color)
+          (<span style="color: #b0c4de;">.fillRect</span> 0 0 640 480)
+          (<span style="color: #b0c4de;">.drawImage</span> image
                       player-x player-y
-                      (+ player-x 32) (+ player-y 32)
+                      (<span style="color: #eedd82;">+</span> player-x 32) (<span style="color: #eedd82;">+</span> player-y 32)
                       0 0 32 32
                       frame)
-          (.dispose))))))
+          (<span style="color: #b0c4de;">.dispose</span>))))))
 </pre>
 
 
@@ -561,7 +554,7 @@ user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
 </p>
 
 
-<pre class="example">(.. (Timer.) (schedule mainloop (long 0) (long 20)))
+<pre class="src src-clojure">(<span style="color: #b0c4de;">..</span> (<span style="color: #b0c4de;">Timer.</span>) (schedule mainloop (<span style="color: #eedd82;">long</span> 0) (<span style="color: #eedd82;">long</span> 20)))
 </pre>
 
 
@@ -584,14 +577,14 @@ user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
 </p>
 
 
-<pre class="example">(doto frame
-    (.setSize (+ 640 (.. insets left) (.. insets right)) (+ 480 (.. insets top) (.. insets bottom)))
-    (.setVisible true)
-    (.setIgnoreRepaint true) ;; ウィンドウの再描画を無効に(BufferStrategyを使うので)
-    (.createBufferStrategy 2) ;;  setVisibleメソッドのあとで呼ばないと実行時エラーになる
+<pre class="src src-clojure">(<span style="color: #b0c4de;">doto</span> frame
+    (<span style="color: #b0c4de;">.setSize</span> (<span style="color: #eedd82;">+</span> 640 (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets right)) (<span style="color: #eedd82;">+</span> 480 (<span style="color: #b0c4de;">..</span> insets top) (<span style="color: #b0c4de;">..</span> insets bottom)))
+    (<span style="color: #b0c4de;">.setVisible</span> true)
+    (<span style="color: #b0c4de;">.setIgnoreRepaint</span> true) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#20877;&#25551;&#30011;&#12434;&#28961;&#21177;&#12395;(BufferStrategy&#12434;&#20351;&#12358;&#12398;&#12391;)</span>
+    (<span style="color: #b0c4de;">.createBufferStrategy</span> 2) <span style="color: #ff7f24;">;;  </span><span style="color: #ff7f24;">setVisible&#12513;&#12477;&#12483;&#12489;&#12398;&#12354;&#12392;&#12391;&#21628;&#12400;&#12394;&#12356;&#12392;&#23455;&#34892;&#26178;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;</span>
     )
-;; バッファ作成
-(def buffer (.. frame (getBufferStrategy)))
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12496;&#12483;&#12501;&#12449;&#20316;&#25104;</span>
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">buffer</span> (<span style="color: #b0c4de;">..</span> frame (<span style="color: #b0c4de;">getBufferStrategy</span>)))
 </pre>
 
 
@@ -600,30 +593,30 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 </p>
 
 
-<pre class="example">(defn create-mainloop
+<pre class="src src-clojure">(<span style="color: #00ffff;">defn</span> <span style="color: #87cefa;">create-mainloop</span>
   []
-  (proxy [TimerTask] []
+  (<span style="color: #eedd82;">proxy</span> [<span style="color: #b0c4de;">TimerTask</span>] []
     (run []
-      (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1]) ;; 座標更新
-      (if (&lt; 640 (nth (@player :pos) 0))
-             (swap! player assoc :pos [0 0]))
+      (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1]) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#24231;&#27161;&#26356;&#26032;</span>
+      (<span style="color: #b0c4de;">if</span> (<span style="color: #eedd82;">&lt;</span> 640 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0))
+             (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [0 0]))
 
-      (if (not (.. buffer (contentsLost)))
-        (let [g (.. buffer (getDrawGraphics))
-              player-x (nth (@player :pos) 0)
-              player-y (nth (@player :pos) 1)]
-          (doto g
-            (.translate (.. insets left) (.. insets top))
-            (.setColor clear-color)
-            (.fillRect 0 0 640 480)
-            (.translate (.. insets left) (.. insets top))
-            (.drawImage image
+      (<span style="color: #b0c4de;">if</span> (<span style="color: #eedd82;">not</span> (<span style="color: #b0c4de;">..</span> buffer (<span style="color: #b0c4de;">contentsLost</span>)))
+        (<span style="color: #b0c4de;">let</span> [g (<span style="color: #b0c4de;">..</span> buffer (<span style="color: #b0c4de;">getDrawGraphics</span>))
+              player-x (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)
+              player-y (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 1)]
+          (<span style="color: #b0c4de;">doto</span> g
+            (<span style="color: #b0c4de;">.translate</span> (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets top))
+            (<span style="color: #b0c4de;">.setColor</span> clear-color)
+            (<span style="color: #b0c4de;">.fillRect</span> 0 0 640 480)
+            (<span style="color: #b0c4de;">.translate</span> (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets top))
+            (<span style="color: #b0c4de;">.drawImage</span> image
                         player-x player-y
-                        (+ player-x 32) (+ player-y 32)
+                        (<span style="color: #eedd82;">+</span> player-x 32) (<span style="color: #eedd82;">+</span> player-y 32)
                         0 0 32 32
                         frame)
-            (.dispose))
-          (.. buffer (show))
+            (<span style="color: #b0c4de;">.dispose</span>))
+          (<span style="color: #b0c4de;">..</span> buffer (show))
           )))))
 </pre>
 
@@ -636,63 +629,63 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 </p>
 
 
-<pre class="example">(ns hello-cube.core)
+<pre class="src src-clojure">(<span style="color: #b0c4de;">ns</span> hello-cube.core)
 
-(import (javax.swing JFrame))
-(import (java.util Timer TimerTask))
-(import (java.awt Graphics Color))
-(import (java.awt.image BufferedImage))
-(import (javax.imageio ImageIO))
-(import (java.io File))
+(<span style="color: #b0c4de;">import</span> (javax.swing <span style="color: #b0c4de;">JFrame</span>))
+(<span style="color: #b0c4de;">import</span> (java.util <span style="color: #b0c4de;">Timer</span> <span style="color: #b0c4de;">TimerTask</span>))
+(<span style="color: #b0c4de;">import</span> (java.awt <span style="color: #b0c4de;">Graphics</span> <span style="color: #b0c4de;">Color</span>))
+(<span style="color: #b0c4de;">import</span> (java.awt.image <span style="color: #b0c4de;">BufferedImage</span>))
+(<span style="color: #b0c4de;">import</span> (javax.imageio <span style="color: #b0c4de;">ImageIO</span>))
+(<span style="color: #b0c4de;">import</span> (java.io <span style="color: #b0c4de;">File</span>))
 
-(def clear-color (Color. 0 0 127))
-(def frame (JFrame. "Clojure Sample Game")) 
-(def image (ImageIO/read (File. "gai.png"))) ;; 画像読み込み
-(def player (atom {:pos [0 0]}))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">clear-color</span> (<span style="color: #b0c4de;">Color.</span> 0 0 127))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">frame</span> (<span style="color: #b0c4de;">JFrame.</span> <span style="color: #ffa07a;">"Clojure Sample Game"</span>)) 
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">image</span> (<span style="color: #b0c4de;">ImageIO/read</span> (<span style="color: #b0c4de;">File.</span> <span style="color: #ffa07a;">"gai.png"</span>))) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#30011;&#20687;&#35501;&#12415;&#36796;&#12415;</span>
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">player</span> (<span style="color: #eedd82;">atom</span> {<span style="color: #7fffd4;">:pos</span> [0 0]}))
 
-;; 枠を考慮してサイズ指定
-(doto frame
-    (.setVisible true)
-    (.setIgnoreRepaint true) ;; ウィンドウの再描画を無効に(BufferStrategyを使うので)
-    (.createBufferStrategy 2) ;;  setVisibleメソッドのあとで呼ばないと実行時エラーになる
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#26528;&#12434;&#32771;&#24942;&#12375;&#12390;&#12469;&#12452;&#12474;&#25351;&#23450;</span>
+(<span style="color: #b0c4de;">doto</span> frame
+    (<span style="color: #b0c4de;">.setVisible</span> true)
+    (<span style="color: #b0c4de;">.setIgnoreRepaint</span> true) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#20877;&#25551;&#30011;&#12434;&#28961;&#21177;&#12395;(BufferStrategy&#12434;&#20351;&#12358;&#12398;&#12391;)</span>
+    (<span style="color: #b0c4de;">.createBufferStrategy</span> 2) <span style="color: #ff7f24;">;;  </span><span style="color: #ff7f24;">setVisible&#12513;&#12477;&#12483;&#12489;&#12398;&#12354;&#12392;&#12391;&#21628;&#12400;&#12394;&#12356;&#12392;&#23455;&#34892;&#26178;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;</span>
     )
 
-;; バッファ作成
-(def buffer (.. frame (getBufferStrategy)))
-(def insets (.. frame getInsets))  ;; ウィンドウを表示してから出ないと値が入らない。
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12496;&#12483;&#12501;&#12449;&#20316;&#25104;</span>
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">buffer</span> (<span style="color: #b0c4de;">..</span> frame (<span style="color: #b0c4de;">getBufferStrategy</span>)))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">insets</span> (<span style="color: #b0c4de;">..</span> frame <span style="color: #b0c4de;">getInsets</span>))  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12434;&#34920;&#31034;&#12375;&#12390;&#12363;&#12425;&#20986;&#12394;&#12356;&#12392;&#20516;&#12364;&#20837;&#12425;&#12394;&#12356;&#12290;</span>
 
-(doto frame
-    (.setSize (+ 640 (.. insets left) (.. insets right)) (+ 480 (.. insets top) (.. insets bottom))))
+(<span style="color: #b0c4de;">doto</span> frame
+    (<span style="color: #b0c4de;">.setSize</span> (<span style="color: #eedd82;">+</span> 640 (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets right)) (<span style="color: #eedd82;">+</span> 480 (<span style="color: #b0c4de;">..</span> insets top) (<span style="color: #b0c4de;">..</span> insets bottom))))
 
 
-(defn create-mainloop
+(<span style="color: #00ffff;">defn</span> <span style="color: #87cefa;">create-mainloop</span>
   []
-  (proxy [TimerTask] []
+  (<span style="color: #eedd82;">proxy</span> [<span style="color: #b0c4de;">TimerTask</span>] []
     (run []
-      (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1]) ;; 座標更新
-      (if (&lt; 640 (nth (@player :pos) 0))
-             (swap! player assoc :pos [0 0]))
+      (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [(<span style="color: #eedd82;">+</span> 1 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)) 1]) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#24231;&#27161;&#26356;&#26032;</span>
+      (<span style="color: #b0c4de;">if</span> (<span style="color: #eedd82;">&lt;</span> 640 (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0))
+             (<span style="color: #eedd82;">swap!</span> player assoc <span style="color: #7fffd4;">:pos</span> [0 0]))
 
-      (if (not (.. buffer (contentsLost)))
-        (let [g (.. buffer (getDrawGraphics))
-              player-x (nth (@player :pos) 0)
-              player-y (nth (@player :pos) 1)]
-          (doto g
-            (.translate (.. insets left) (.. insets top))
-            (.setColor clear-color)
-            (.fillRect 0 0 640 480)
-            (.translate (.. insets left) (.. insets top))
-            (.drawImage image
+      (<span style="color: #b0c4de;">if</span> (<span style="color: #eedd82;">not</span> (<span style="color: #b0c4de;">..</span> buffer (<span style="color: #b0c4de;">contentsLost</span>)))
+        (<span style="color: #b0c4de;">let</span> [g (<span style="color: #b0c4de;">..</span> buffer (<span style="color: #b0c4de;">getDrawGraphics</span>))
+              player-x (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 0)
+              player-y (<span style="color: #eedd82;">nth</span> (@player <span style="color: #7fffd4;">:pos</span>) 1)]
+          (<span style="color: #b0c4de;">doto</span> g
+            (<span style="color: #b0c4de;">.translate</span> (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets top))
+            (<span style="color: #b0c4de;">.setColor</span> clear-color)
+            (<span style="color: #b0c4de;">.fillRect</span> 0 0 640 480)
+            (<span style="color: #b0c4de;">.translate</span> (<span style="color: #b0c4de;">..</span> insets left) (<span style="color: #b0c4de;">..</span> insets top))
+            (<span style="color: #b0c4de;">.drawImage</span> image
                         player-x player-y
-                        (+ player-x 32) (+ player-y 32)
+                        (<span style="color: #eedd82;">+</span> player-x 32) (<span style="color: #eedd82;">+</span> player-y 32)
                         0 0 32 32
                         frame)
-            (.dispose))
-          (.. buffer (show))
+            (<span style="color: #b0c4de;">.dispose</span>))
+          (<span style="color: #b0c4de;">..</span> buffer (show))
           )))))
 
-(def timer (Timer.))
-(.. timer (schedule (create-mainloop) (long 0) (long 20)))
+(<span style="color: #00ffff;">def</span> <span style="color: #87cefa;">timer</span> (<span style="color: #b0c4de;">Timer.</span>))
+(<span style="color: #b0c4de;">..</span> timer (schedule (create-mainloop) (<span style="color: #eedd82;">long</span> 0) (<span style="color: #eedd82;">long</span> 20)))
 </pre>
 
 
@@ -774,9 +767,9 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 
 
 
-<pre class="example">(mikio_kun
- {:興味 "ubuntu/emacs/clojure"
-  :一言 "Clojurianになりたい"})
+<pre class="src src-clojure">(mikio_kun
+ {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 
 
@@ -808,13 +801,13 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> <li><a href="../../../article/2012/12/22_nuxus7ubuntu.html">nuxus7にubuntuをインストール</a></li> <li><a href="../../../article/2012/12/22_nexus7root.html">nexus7をroot化した後にやること</a></li> <li><a href="../../../article/2012/12/22_rootneuxs7.html">root化したneuxs7をアップデート</a></li> <li><a href="../../../article/2012/12/22_cygwinssh.html">cygwinでssh接続できない</a></li> <li><a href="../../../article/2012/12/22_git-remote-origin.html">=git remote= でoriginが表示されなくなった。</a></li> <li><a href="../../../article/2012/12/22_xargs.html">空白を含むファイルをxargsで削除する</a></li> <li><a href="../../../article/2012/12/22_org-online.html">org-onlineをタメス。</a></li> <li><a href="../../../article/2012/12/22_stumpwm.html">stumpwmを試す</a></li> 
+		<li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> <li><a href="../../../article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け</a></li> <li><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses</a></li> <li><a href="../../../article/2012/12/29_oblogubuntuapache2.html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</a></li> <li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 103.33%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/awk.html">awk</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 208.33%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/greasemonkey.html">greasemonkey</a></li> <li style="font-size: 185.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/howm.html">howm</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 138.33%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 133.85%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

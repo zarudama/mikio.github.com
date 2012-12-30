@@ -19,28 +19,28 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-static-top">
       <div class="navbar-inner">
-	<div class="container">
-	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-	  <a class="brand" href="../../../index.html">ざる魂</a>
-	  <div class="nav-collapse collapse">
-	    <ul>
-<li><a href="#"><i>icon-file icon-white</i> article</a>
+	      <a class="brand" href="../../../index.html">ざる魂</a>
+	      <div class="nav-collapse collapse">
+	        <ul>
+<li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">openssh-serverをインストールしようとしたら、CDをいれろと。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">firefoxで常にIMEをOFFにする方法</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">git merge でrenmae関係のエラーがでた</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">o-blogをcloneする。</a>
 
 </li>
 </ul>
@@ -59,13 +59,13 @@
 
 
 
-	  </div>
-	</div>
+	      </div>
+	    </div>
       </div>
     </div>
-    <div class="subnav subnav-fixed visible-desktop">
+    <div class="subnav visible-desktop">
       <div class="container">
-	<ul class="breadcrumb">
+	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
   <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>Windows版のSwank-Clojureでclojure-jack-inが実行できない。</li>
   </ul>
@@ -77,21 +77,14 @@
   <header class="article-header">
 
     <div class="well">
+      <time data-updated="true" pubdate="" datetime="">
+        <a href="../../../article/2012/index.html">2012</a>
+          年
+          <a href="../../../article/2012/04/index.html"> 4月</a>
+          06日
+      </time>
       <div class="row">
-	<div class="date span1">
-	  <div class=" date-d">06</div>
-	  <div class=" date-m"><a href="../../../article/2012/04/index.html"> 4月</a></div>
-	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
-	  </div>
-	</div>
-	<div class="span1">
-	  <div class="qr-code">
-  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3a%2f%2fmikio.github.com%2f%2farticle%2f2012%2f04%2f06_windowsswank-clojureclojure-jack-in.html"
-       alt="qr-code" />
-</div>
-
-	</div>
-	<h1 class="offset2" style="font-size: 250%">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</h1>
+	    <h1 class="span11" style="font-size: 250%">Windows版のSwank-Clojureでclojure-jack-inが実行できない。</h1>
       </div>
       <nav>
 	<ul class="pager">
@@ -119,18 +112,18 @@
 </p>
 
 
-<pre class="example">$ diff -u $HOME/bin/lein.bat.orig $HOME/bin/lein.bat
+<pre class="src src-sh">$ diff -u $<span style="color: #eedd82;">HOME</span>/bin/lein.bat.orig $<span style="color: #eedd82;">HOME</span>/bin/lein.bat
 --- /cygdrive/c/Users/mikio/bin/lein.bat.orig  2012-04-05 12:59:29.352024000 +0900
 +++ /cygdrive/c/Users/mikio/bin/lein.bat       2012-04-06 13:32:27.537281600 +0900
 @@ -23,7 +23,7 @@
 
- if "x%LEIN_HOME%" == "x" (
-     if exist "%CD%\.lein" (
--        if /I NOT %CD%==%USERPROFILE% echo Running in bundled mode.
-+        if /I NOT "%CD%"=="%USERPROFILE%" echo Running in bundled mode.
-         set LEIN_HOME=%CD%\.lein
-     ) else (
-         set LEIN_HOME=%USERPROFILE%\.lein
+ <span style="color: #00ffff;">if</span> <span style="color: #ffa07a;">"x%LEIN_HOME%"</span> == <span style="color: #ffa07a;">"x"</span> (
+     <span style="color: #00ffff;">if</span> exist <span style="color: #ffa07a;">"%CD%\.lein"</span> (
+-        if /I NOT %CD%==%USERPROFILE% echo Running<span style="color: #00ffff;"> in</span> bundled mode.
++        if /I NOT <span style="color: #ffa07a;">"%CD%"</span>==<span style="color: #ffa07a;">"%USERPROFILE%"</span> echo Running<span style="color: #00ffff;"> in</span> bundled mode.
+         <span style="color: #b0c4de;">set</span> <span style="color: #eedd82;">LEIN_HOME</span>=%CD%<span style="color: #ffa07a;">\.</span>lein
+     ) <span style="color: #00ffff;">else</span> (
+         <span style="color: #b0c4de;">set</span> <span style="color: #eedd82;">LEIN_HOME</span>=%USERPROFILE%<span style="color: #ffa07a;">\.</span>lein
 </pre>
 
 
@@ -147,8 +140,8 @@ dos窓でlein.batを実行すると下記のエラーがでてしまう。
 </p>
 
 
-<pre class="example">C:\Documents and Settings\mikio&gt;lein
-and の使い方が誤っています。
+<pre class="src src-sh">C:\Documents and Settings\mikio&gt;lein
+and &#12398;&#20351;&#12356;&#26041;&#12364;&#35492;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;
 </pre>
 
 <p>
@@ -160,9 +153,9 @@ dosのバッチファイルを読むのは数年ぶりですがとりあえず
 </p>
 
 
-<pre class="example">::@echo off
+<pre class="src src-sh">::@echo off
 
-set JAVA_OPTS=-Dswank.encoding=utf-8-unix
+<span style="color: #b0c4de;">set</span> <span style="color: #eedd82;">JAVA_OPTS</span>=-Dswank.encoding=utf-8-unix
 </pre>
 
 <p>
@@ -170,9 +163,9 @@ set JAVA_OPTS=-Dswank.encoding=utf-8-unix
 </p>
 
 
-<pre class="example">C:\Documents and Settings\mikio&gt;if "" NEQ "" cd ""
-and の使い方が誤っています。
-C:\Documents and Settings\mikio&gt;        if /I NOT C:\Documents and Settings\mikio==C:\Documents and Settings\mikio echo Running in bundled mode.
+<pre class="src src-sh">C:\Documents and Settings\mikio&gt;if <span style="color: #ffa07a;">""</span> NEQ <span style="color: #ffa07a;">""</span> cd <span style="color: #ffa07a;">""</span>
+and &#12398;&#20351;&#12356;&#26041;&#12364;&#35492;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;
+C:\Documents and Settings\mikio&gt;        if /I NOT C:\Documents and Settings\<span style="color: #eedd82;">mikio</span>==C:\Documents and Settings\mikio echo Running<span style="color: #00ffff;"> in</span> bundled mode.
 </pre>
 
 
@@ -186,7 +179,7 @@ IF文の条件式で与えられた変数が空白を含むために
 </p>
 
 
-<pre class="example">C:\Documents and Settings\mikio&gt;lein.bat
+<pre class="src src-sh">C:\Documents and Settings\mikio&gt;lein.bat
 Leiningen is a tool for working with Clojure projects.
 
 Several tasks are available:
@@ -194,30 +187,30 @@ classpath   Print the classpath of the current project.
 clean       Remove compiled class files and jars from project.
 compile     Compile Clojure source into .class files.
 deploy      Build jar and deploy to remote repository.
-deps        Download :dependencies and put them in :library-path.
-help        Display a list of tasks or help for a given task.
+deps        Download :dependencies and put them<span style="color: #00ffff;"> in</span> :library-path.
+<span style="color: #b0c4de;">help</span>        Display a list of tasks or help for a given task.
 install     Install current project or download specified project.
-interactive Enter an interactive task shell. Aliased to "int".
-jack-in     Jack in to a Clojure SLIME session from Emacs.
-jar         Package up all the project's files into a jar file.
-javac       Compile Java source files.
-new         Create a new project skeleton.
-noir        Create and manage noir projects.
-plugin      Manage user-level plugins.
-pom         Write a pom.xml file to disk for Maven interop.
-repl        Start a repl session either with the current project or standalone.
-retest      Run only the test namespaces which failed last time around.
-run         Run the project's -main function.
+interactive Enter an interactive task shell. Aliased to <span style="color: #ffa07a;">"int"</span>.
+jack-in     Jack<span style="color: #00ffff;"> in</span> to a Clojure SLIME session from Emacs.
+jar         Package up all the project<span style="color: #ffa07a;">'s files into a jar file.</span>
+<span style="color: #ffa07a;">javac       Compile Java source files.</span>
+<span style="color: #ffa07a;">new         Create a new project skeleton.</span>
+<span style="color: #ffa07a;">noir        Create and manage noir projects.</span>
+<span style="color: #ffa07a;">plugin      Manage user-level plugins.</span>
+<span style="color: #ffa07a;">pom         Write a pom.xml file to disk for Maven interop.</span>
+<span style="color: #ffa07a;">repl        Start a repl session either with the current project or standalone.</span>
+<span style="color: #ffa07a;">retest      Run only the test namespaces which failed last time around.</span>
+<span style="color: #ffa07a;">run         Run the project'</span>s -main function.
 search      Search remote maven repositories for matching jars.
 swank       Launch swank server for Emacs to connect.
-test        Run the project's tests.
-test!       Run a project's tests after cleaning and fetching dependencies.
-trampoline  Run a task without nesting the project's JVM inside Leiningen's.
+<span style="color: #b0c4de;">test</span>        Run the project<span style="color: #ffa07a;">'s tests.</span>
+<span style="color: #ffa07a;">test!       Run a project'</span>s tests after cleaning and fetching dependencies.
+trampoline  Run a task without nesting the project<span style="color: #ffa07a;">'s JVM inside Leiningen'</span>s.
 uberjar     Package up the project files and all dependencies into a jar file.
 upgrade     Upgrade Leiningen to the latest stable release.
 version     Print version for Leiningen and the current JVM.
 
-Run lein help $TASK for details.
+Run lein help $<span style="color: #eedd82;">TASK</span> for details.
 See also: readme, tutorial, copying, sample, deploying and news.
 
 C:\Documents and Settings\mikio&gt;
@@ -272,9 +265,9 @@ C:\Documents and Settings\mikio&gt;
 
 
 
-<pre class="example">(mikio_kun
- {:興味 "ubuntu/emacs/clojure"
-  :一言 "Clojurianになりたい"})
+<pre class="src src-clojure">(mikio_kun
+ {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 
 
@@ -306,13 +299,13 @@ C:\Documents and Settings\mikio&gt;
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> <li><a href="../../../article/2012/12/22_nuxus7ubuntu.html">nuxus7にubuntuをインストール</a></li> <li><a href="../../../article/2012/12/22_nexus7root.html">nexus7をroot化した後にやること</a></li> <li><a href="../../../article/2012/12/22_rootneuxs7.html">root化したneuxs7をアップデート</a></li> <li><a href="../../../article/2012/12/22_cygwinssh.html">cygwinでssh接続できない</a></li> <li><a href="../../../article/2012/12/22_git-remote-origin.html">=git remote= でoriginが表示されなくなった。</a></li> <li><a href="../../../article/2012/12/22_xargs.html">空白を含むファイルをxargsで削除する</a></li> <li><a href="../../../article/2012/12/22_org-online.html">org-onlineをタメス。</a></li> <li><a href="../../../article/2012/12/22_stumpwm.html">stumpwmを試す</a></li> 
+		<li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> <li><a href="../../../article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け</a></li> <li><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses</a></li> <li><a href="../../../article/2012/12/29_oblogubuntuapache2.html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</a></li> <li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 103.33%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/awk.html">awk</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 208.33%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/greasemonkey.html">greasemonkey</a></li> <li style="font-size: 185.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/howm.html">howm</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 138.33%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 133.85%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

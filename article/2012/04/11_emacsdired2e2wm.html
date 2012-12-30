@@ -19,28 +19,28 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-static-top">
       <div class="navbar-inner">
-	<div class="container">
-	  <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-	  <a class="brand" href="../../../index.html">ざる魂</a>
-	  <div class="nav-collapse collapse">
-	    <ul>
-<li><a href="#"><i>icon-file icon-white</i> article</a>
+	      <a class="brand" href="../../../index.html">ざる魂</a>
+	      <div class="nav-collapse collapse">
+	        <ul>
+<li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">openssh-serverをインストールしようとしたら、CDをいれろと。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">firefoxで常にIMEをOFFにする方法</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">git merge でrenmae関係のエラーがでた</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Lisp error in nil: (error ob:post-title accessing a non-ob:post)</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">o-blogをcloneする。</a>
 
 </li>
 </ul>
@@ -59,13 +59,13 @@
 
 
 
-	  </div>
-	</div>
+	      </div>
+	    </div>
       </div>
     </div>
-    <div class="subnav subnav-fixed visible-desktop">
+    <div class="subnav visible-desktop">
       <div class="container">
-	<ul class="breadcrumb">
+	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
   <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</li>
   </ul>
@@ -77,21 +77,14 @@
   <header class="article-header">
 
     <div class="well">
+      <time data-updated="true" pubdate="" datetime="">
+        <a href="../../../article/2012/index.html">2012</a>
+          年
+          <a href="../../../article/2012/04/index.html"> 4月</a>
+          11日
+      </time>
       <div class="row">
-	<div class="date span1">
-	  <div class=" date-d">11</div>
-	  <div class=" date-m"><a href="../../../article/2012/04/index.html"> 4月</a></div>
-	  <div class=" date-y"><a href="../../../article/2012/index.html">2012</a>
-	  </div>
-	</div>
-	<div class="span1">
-	  <div class="qr-code">
-  <img src="http://chart.apis.google.com/chart?chs=50x50&cht=qr&chld=|0&chl=http%3a%2f%2fmikio.github.com%2f%2farticle%2f2012%2f04%2f11_emacsdired2e2wm.html"
-       alt="qr-code" />
-</div>
-
-	</div>
-	<h1 class="offset2" style="font-size: 250%">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</h1>
+	    <h1 class="span11" style="font-size: 250%">emacsのDiredを2画面ファイラ化するe2wmのパースペクティブをつくってみた</h1>
       </div>
       <nav>
 	<ul class="pager">
@@ -144,7 +137,7 @@ SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの
 </p>
 
 
-<pre class="example">(install-elisp "https://raw.github.com/gist/2357888/e6fea3452290c7b73dbeb2fe6123211356594c66/e2wm-wfiler.el")
+<pre class="src src-emacs-lisp">(install-elisp <span style="color: #ffa07a;">"https://raw.github.com/gist/2357888/e6fea3452290c7b73dbeb2fe6123211356594c66/e2wm-wfiler.el"</span>)
 </pre>
 
 <p>
@@ -152,9 +145,9 @@ SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの
 </p>
 
 
-<pre class="example">(require 'e2wm)
-(require 'e2wm-config)
-(require 'e2wm-wfiler)
+<pre class="src src-emacs-lisp">(<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">e2wm</span>)
+(<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">e2wm-config</span>)
+(<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">e2wm-wfiler</span>)
 </pre>
 
 
@@ -163,7 +156,7 @@ SunrizeCommanderでは独自にウィンドウ制御しているためe2wmとの
 </p>
 
 
-<pre class="example">M-x e2wm:dp-wfiler
+<pre class="src src-sh">M-x e2wm:dp-wfiler
 </pre>
 
 <p>
@@ -190,8 +183,8 @@ pは多分prink(揃える)の頭文字からだと思います。
 </p>
 
 
-<pre class="example">(define-key e2wm:dp-wfiler-minor-mode-map (kbd "C-t") 'e2wm:dp-wfiler-move-buffers-command)
-(define-key e2wm:dp-wfiler-minor-mode-map (kbd "M-p") 'e2wm:dp-wfiler-sync-buffers-command)
+<pre class="src src-emacs-lisp">(define-key e2wm:dp-wfiler-minor-mode-map (kbd <span style="color: #ffa07a;">"C-t"</span>) 'e2wm:dp-wfiler-move-buffers-command)
+(define-key e2wm:dp-wfiler-minor-mode-map (kbd <span style="color: #ffa07a;">"M-p"</span>) 'e2wm:dp-wfiler-sync-buffers-command)
 </pre>
 
 
@@ -200,13 +193,13 @@ pは多分prink(揃える)の頭文字からだと思います。
 </p>
 
 
-<pre class="example">(global-set-key (kbd "C-c 1") 'e2wm:dp-code)
-(global-set-key (kbd "C-c 2") 'e2wm:dp-two)
-(global-set-key (kbd "C-c 3") 'e2wm:dp-doc)
-(global-set-key (kbd "C-c 4") 'e2wm:dp-wfiler)
-(global-set-key (kbd "C-c 5") 'e2wm:dp-magit)
-(global-set-key (kbd "C-c 6") 'e2wm:dp-dashboard)
-(global-set-key (kbd "C-c 7") 'e2wm:dp-array)
+<pre class="src src-emacs-lisp">(global-set-key (kbd <span style="color: #ffa07a;">"C-c 1"</span>) 'e2wm:dp-code)
+(global-set-key (kbd <span style="color: #ffa07a;">"C-c 2"</span>) 'e2wm:dp-two)
+(global-set-key (kbd <span style="color: #ffa07a;">"C-c 3"</span>) 'e2wm:dp-doc)
+(global-set-key (kbd <span style="color: #ffa07a;">"C-c 4"</span>) 'e2wm:dp-wfiler)
+(global-set-key (kbd <span style="color: #ffa07a;">"C-c 5"</span>) 'e2wm:dp-magit)
+(global-set-key (kbd <span style="color: #ffa07a;">"C-c 6"</span>) 'e2wm:dp-dashboard)
+(global-set-key (kbd <span style="color: #ffa07a;">"C-c 7"</span>) 'e2wm:dp-array)
 </pre>
 
 
@@ -217,7 +210,7 @@ pは多分prink(揃える)の頭文字からだと思います。
 </p>
 
 
-<pre class="example">(setq dired-dwim-target t)
+<pre class="src src-sh">(setq dired-dwim-target t)
 </pre>
 
 
@@ -249,23 +242,23 @@ pは多分prink(揃える)の頭文字からだと思います。
 </p>
 
 
-<pre class="example">;;-----------------------------------------------------------------
-;; diredでWindowsに関連付けられたアプリを起動する
-;; http://k4zmblog.dtiblog.com/blog-entry-153.html
-;;-----------------------------------------------------------------
-(defun uenox-dired-winstart ()
-  "Type '[uenox-dired-winstart]': win-start the current line's file."
+<pre class="src src-emacs-lisp"><span style="color: #ff7f24;">;;</span><span style="color: #ff7f24;">-----------------------------------------------------------------</span>
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">dired&#12391;Windows&#12395;&#38306;&#36899;&#20184;&#12369;&#12425;&#12428;&#12383;&#12450;&#12503;&#12522;&#12434;&#36215;&#21205;&#12377;&#12427;</span>
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">http://k4zmblog.dtiblog.com/blog-entry-153.html</span>
+<span style="color: #ff7f24;">;;</span><span style="color: #ff7f24;">-----------------------------------------------------------------</span>
+(<span style="color: #00ffff;">defun</span> <span style="color: #87cefa;">uenox-dired-winstart</span> ()
+  <span style="color: #ffa07a;">"Type '[uenox-dired-winstart]': win-start the current line's file."</span>
   (interactive)
-  (if (eq major-mode 'dired-mode)
-      (let ((fname (dired-get-filename)))
-        (w32-shell-execute "open" fname)
-        (message "win-started %s" fname))))
+  (<span style="color: #00ffff;">if</span> (eq major-mode 'dired-mode)
+      (<span style="color: #00ffff;">let</span> ((fname (dired-get-filename)))
+        (w32-shell-execute <span style="color: #ffa07a;">"open"</span> fname)
+        (message <span style="color: #ffa07a;">"win-started %s"</span> fname))))
 
-;; dired のキー割り当て追加
-(if (eq window-system 'w32)
+<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">dired &#12398;&#12461;&#12540;&#21106;&#12426;&#24403;&#12390;&#36861;&#21152;</span>
+(<span style="color: #00ffff;">if</span> (eq window-system 'w32)
     (add-hook 'dired-mode-hook
-               (lambda ()
-                 (define-key dired-mode-map "z" 'uenox-dired-winstart))))
+               (<span style="color: #00ffff;">lambda</span> ()
+                 (define-key dired-mode-map <span style="color: #ffa07a;">"z"</span> 'uenox-dired-winstart))))
 </pre>
 
 <p>
@@ -334,9 +327,9 @@ pは多分prink(揃える)の頭文字からだと思います。
 
 
 
-<pre class="example">(mikio_kun
- {:興味 "ubuntu/emacs/clojure"
-  :一言 "Clojurianになりたい"})
+<pre class="src src-clojure">(mikio_kun
+ {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 
 
@@ -368,13 +361,13 @@ pは多分prink(揃える)の頭文字からだと思います。
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> <li><a href="../../../article/2012/12/22_nuxus7ubuntu.html">nuxus7にubuntuをインストール</a></li> <li><a href="../../../article/2012/12/22_nexus7root.html">nexus7をroot化した後にやること</a></li> <li><a href="../../../article/2012/12/22_rootneuxs7.html">root化したneuxs7をアップデート</a></li> <li><a href="../../../article/2012/12/22_cygwinssh.html">cygwinでssh接続できない</a></li> <li><a href="../../../article/2012/12/22_git-remote-origin.html">=git remote= でoriginが表示されなくなった。</a></li> <li><a href="../../../article/2012/12/22_xargs.html">空白を含むファイルをxargsで削除する</a></li> <li><a href="../../../article/2012/12/22_org-online.html">org-onlineをタメス。</a></li> <li><a href="../../../article/2012/12/22_stumpwm.html">stumpwmを試す</a></li> 
+		<li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> <li><a href="../../../article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け</a></li> <li><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses</a></li> <li><a href="../../../article/2012/12/29_oblogubuntuapache2.html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</a></li> <li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 103.33%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/awk.html">awk</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/blog.html">blog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 208.33%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/github.html">github</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/greasemonkey.html">greasemonkey</a></li> <li style="font-size: 185.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/howm.html">howm</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/o.html">o</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 138.33%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 133.85%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

@@ -9,42 +9,42 @@
   
   <url>
     <loc>http://mikio.github.com//index.html</loc>
-    <lastmod>2012-12-26T00:00:00Z</lastmod>
+    <lastmod>2012-12-30T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/12/23_emacsjdeejava/index.html</loc>
-    <lastmod>2012-12-26T00:00:00Z</lastmod>
+    <lastmod>2012-12-30T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/08/27_windows/index.html</loc>
-    <lastmod>2012-12-26T00:00:00Z</lastmod>
+    <lastmod>2012-12-30T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
-    <lastmod>2012-12-26T00:00:00Z</lastmod>
+    <lastmod>2012-12-30T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
-    <lastmod>2012-12-26T00:00:00Z</lastmod>
+    <lastmod>2012-12-30T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
-    <lastmod>2012-12-26T00:00:00Z</lastmod>
+    <lastmod>2012-12-30T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -52,6 +52,54 @@
 
 
   <url>
+    <loc>http://mikio.github.com//article/2012/12/30_openssh-servercd.html</loc>
+    <lastmod>2012-12-30T17:34:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/30_ubuntu-server-lvm.html</loc>
+    <lastmod>2012-12-30T17:34:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/30_firefoximeoff.html</loc>
+    <lastmod>2012-12-30T17:31:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/30_git-merge-renmae.html</loc>
+    <lastmod>2012-12-30T17:30:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/30_o-blogclone.html</loc>
+    <lastmod>2012-12-30T17:28:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/30_eshell.html</loc>
+    <lastmod>2012-12-30T17:27:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/30_terminfotermcapncurses.html</loc>
+    <lastmod>2012-12-30T17:27:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2012/12/29_oblogubuntuapache2.html</loc>
+    <lastmod>2012-12-29T18:11:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
     <loc>http://mikio.github.com//article/2012/12/23_emacsjdeejava.html</loc>
     <lastmod>2012-12-23T08:20:00Z</lastmod>
     <changefreq>weekly</changefreq>
