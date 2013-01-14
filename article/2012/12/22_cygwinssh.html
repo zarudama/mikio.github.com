@@ -32,15 +32,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">openssh-serverをインストールしようとしたら、CDをいれろと。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">emacsでgoogleReaderを読む</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">firefoxで常にIMEをOFFにする方法</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">git merge でrenmae関係のエラーがでた</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">o-blogをcloneする。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">CentOS5.6にtmux1.7をインストールする</a>
 
 </li>
 </ul>
@@ -96,8 +96,8 @@
   </header>
   <div class="article-content">
     <p>
-/home/mikioにホームを設定してるのではなく、c:/Users/mikioにHOMEを設定し
-てる場合でssh接続すると、下記のように/home/mikioディレクトリが作成でき
+ <code>/home/mikio</code> にホームを設定してるのではなく、 <code>c:/Users/mikio</code> にHOMEを設定し
+てる場合でssh接続すると、下記のように <code>/home/mikio</code> ディレクトリが作成でき
 ないと怒られてしまう。
 </p>
 
@@ -106,12 +106,12 @@
 OpenSSH_6.1p1, OpenSSL 1.0.1c 10 May 2012
 debug1: Connecting to 192.168.10.2 [192.168.10.2] port 30890.
 debug1: Connection established.
-Could not create directory <span style="color: #ffa07a;">'/home/miki/.ssh'</span>.
+Could not create directory <span style="color: #ff00ff;">'/home/mikio/.ssh'</span>.
 </pre>
 
 <p>
-この場合は、/etc/passwdの/home/mikioとなってるところを、
-/cygdrive/c/Users/mikioに書き換えれば良い。
+この場合は、 <code>/etc/passwd</code> の <code>/home/mikio</code> となってるところを、
+ <code>/cygdrive/c/Users/mikio</code> に書き換えれば良い。
 </p><ul>
 <li><a href="http://ekawas.blogspot.jp/2007/03/solving-pesky-ssh-issues-in-cygwin.html">http://ekawas.blogspot.jp/2007/03/solving-pesky-ssh-issues-in-cygwin.html</a>
 </li>
@@ -127,12 +127,12 @@ Could not create directory <span style="color: #ffa07a;">'/home/miki/.ssh'</span
 debug1: Next authentication method: publickey
 debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug1: No more authentication methods to try.
-Permission denied (publickey)<span style="color: #b0c4de;">.</span>
+Permission denied (publickey)<span style="color: #0000ff; font-weight: bold;">.</span>
 </pre>
 
 <p>
-下記よるとホスト側で/etc/ssh/sshd<sub>configの設定でユーザを許可してないの</sub>
-が原因とあったので調べたところドンピシャでした。
+下記よるとホスト側で <code>/etc/ssh/sshd_config</code> の設定でユーザを許可してな
+いのが原因とあったので調べたところドンピシャでした。
 </p>
 <ul>
 <li><a href="http://lunatear.net/archives/000300.html">http://lunatear.net/archives/000300.html</a>
@@ -145,10 +145,10 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 </p>
 
 
-<pre class="src src-sh"><span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">AllowUsers&#12395;&#12518;&#12540;&#12470;&#12434;&#36861;&#21152;</span>
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #ff0000;">AllowUsers&#12395;&#12518;&#12540;&#12470;&#12434;&#36861;&#21152;</span>
 $ sudo vi /etc/ssh/sshd_config
 
-<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#20877;&#36215;&#21205; </span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#20877;&#36215;&#21205; </span>
 $ sudo /etc/init.d/ssh restart
  &#65306;
 debug1: SSH2_MSG_SERVICE_ACCEPT received
@@ -156,7 +156,7 @@ debug1: Authentications that can continue: publickey
 debug1: Next authentication method: publickey
 debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug1: No more authentication methods to try.
-Permission denied (publickey)<span style="color: #b0c4de;">.</span>
+Permission denied (publickey)<span style="color: #0000ff; font-weight: bold;">.</span>
 </pre>
 
 
@@ -164,7 +164,7 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 接続ホスト側でログを確認してみる。
 </p>
 <p>
-/etc/ssh/sshd<sub>configを編集</sub>
+ <code>/etc/ssh/sshd_config</code> を編集
 </p>
 
 
@@ -197,24 +197,24 @@ debug1: sshd version OpenSSH_5.9p1 Debian-5ubuntu1
 debug1: read PEM private key done: type RSA
 debug1: Checking blacklist file /usr/share/ssh/blacklist.RSA-2048
 debug1: Checking blacklist file /etc/ssh/blacklist.RSA-2048
-debug1: private host key: <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">0 type 1 RSA</span>
+debug1: private host key: <span style="color: #ff0000;">#</span><span style="color: #ff0000;">0 type 1 RSA</span>
 debug1: read PEM private key done: type DSA
 debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
 debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
-debug1: private host key: <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">1 type 2 DSA</span>
+debug1: private host key: <span style="color: #ff0000;">#</span><span style="color: #ff0000;">1 type 2 DSA</span>
 debug1: read PEM private key done: type ECDSA
 debug1: Checking blacklist file /usr/share/ssh/blacklist.ECDSA-256
 debug1: Checking blacklist file /etc/ssh/blacklist.ECDSA-256
-debug1: private host key: <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">2 type 3 ECDSA</span>
-debug1: <span style="color: #eedd82;">rexec_argv</span>[0]=<span style="color: #ffa07a;">'/usr/sbin/sshd'</span>
-debug1: <span style="color: #eedd82;">rexec_argv</span>[1]=<span style="color: #ffa07a;">'-d'</span>
+debug1: private host key: <span style="color: #ff0000;">#</span><span style="color: #ff0000;">2 type 3 ECDSA</span>
+debug1: <span style="color: #ffff00;">rexec_argv</span>[0]=<span style="color: #ff00ff;">'/usr/sbin/sshd'</span>
+debug1: <span style="color: #ffff00;">rexec_argv</span>[1]=<span style="color: #ff00ff;">'-d'</span>
 Set /proc/self/oom_score_adj from 0 to -1000
 debug1: Bind to port 30890 on 0.0.0.0.
 Server listening on 0.0.0.0 port 30890.
 debug1: Bind to port 30890 on ::.
 Server listening on :: port 30890.
-debug1: Server will not fork when running<span style="color: #00ffff;"> in</span> debugging mode.
-debug1: rexec start<span style="color: #00ffff;"> in</span> 5 out 5 newsock 5 pipe -1 sock 8
+debug1: Server will not fork when running<span style="color: #ffff00;"> in</span> debugging mode.
+debug1: rexec start<span style="color: #ffff00;"> in</span> 5 out 5 newsock 5 pipe -1 sock 8
 debug1: inetd sockets after dupping: 3, 3
 Connection from 192.168.10.229 port 64488
 debug1: Client protocol version 2.0; client software version OpenSSH_6.1
@@ -234,9 +234,9 @@ debug1: SSH2_MSG_NEWKEYS received [preauth]
 debug1: KEX done [preauth]
 debug1: userauth-request for user mikio service ssh-connection method none [preauth]
 debug1: attempt 0 failures 0 [preauth]
-debug1: PAM: initializing for <span style="color: #ffa07a;">"mikio"</span>
-debug1: PAM: setting PAM_RHOST to <span style="color: #ffa07a;">"miki-pc.lan"</span>
-debug1: PAM: setting PAM_TTY to <span style="color: #ffa07a;">"ssh"</span>
+debug1: PAM: initializing for <span style="color: #ff00ff;">"mikio"</span>
+debug1: PAM: setting PAM_RHOST to <span style="color: #ff00ff;">"miki-pc.lan"</span>
+debug1: PAM: setting PAM_TTY to <span style="color: #ff00ff;">"ssh"</span>
 Connection closed by 192.168.10.229 [preauth]
 debug1: do_cleanup [preauth]
 debug1: monitor_read_log: child log fd closed
@@ -261,11 +261,11 @@ debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug3: no such identity: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug2: we did not send a packet, disable method
 debug1: No more authentication methods to try.
-Permission denied (publickey)<span style="color: #b0c4de;">.</span>
+Permission denied (publickey)<span style="color: #0000ff; font-weight: bold;">.</span>
 </pre>
 
 <p>
-おおおお!、なんという初歩的ミス!。.ssh/configの秘密鍵の名前をタイポ。
+おおおお!、なんという初歩的ミス!。 <code>.ssh/config</code> の秘密鍵の名前をタイポ。
 </p>
 
 
@@ -283,35 +283,35 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 <ul>
 <li>パーミッションを疑え!
 <ul>
-<li>$HOME -&gt; 700
+<li><code>$HOME</code> -&gt; <code>700</code>
 </li>
-<li>$HOME/.ssh -&gt; 700
+<li><code>$HOME/.ssh</code> -&gt; <code>700</code>
 </li>
-<li>$HOME/.ssh/id<sub>rsa</sub> -&gt; 644
+<li><code>$HOME/.ssh/id_rsa</code> -&gt; <code>644</code>
 </li>
-<li>サーバ側の$HOME/.ssh/authorized<sub>keys</sub> -&gt; 644
+<li>サーバ側の <code>$HOME/.ssh/authorized_keys</code> -&gt; 644
 </li>
 </ul>
 
 </li>
 <li>ログイン許可してるユーザを確認しろ!
 <ul>
-<li>サーバ側の/etc/ssh/sshd<sub>configの</sub> = AllowUsers= 
+<li>サーバ側の <code>/etc/ssh/sshd_config</code> の <code>AllowUsers</code> 
 </li>
 </ul>
 
 </li>
 <li>クライアント側のログを確認しろ!
 <ul>
-<li>ssh -v HOSTNAME
+<li><code>ssh -v HOSTNAME</code>
 </li>
 <li>vオプションの数でデバッグレベルを調節できる!
 <ul>
-<li>ssh -v HOSTNAME
+<li><code>ssh -v HOSTNAME</code>
 </li>
-<li>ssh -vv HOSTNAME
+<li><code>ssh -vv HOSTNAME</code>
 </li>
-<li>ssh -vvv HOSTNAME
+<li><code>ssh -vvv HOSTNAME</code> 
 </li>
 </ul>
 
@@ -321,18 +321,18 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 </li>
 <li>サーバ側のログを確認しろ!
 <ul>
-<li>サーバ側の/etc/ssh/sshd<sub>config</sub>
+<li>サーバ側の <code>/etc/ssh/sshd_config</code>
 <ul>
-<li>SyslogFacility AUTH
+<li><code>SyslogFacility AUTH</code>
 </li>
-<li>LogLevel VERBOSE
+<li><code>LogLevel VERBOSE</code>
 </li>
 </ul>
 
 </li>
-<li>sudo tail -f /var/log/auth.log
+<li><code>sudo tail -f /var/log/auth.log</code>
 </li>
-<li>/usr/sbin/sshd -d
+<li><code>/usr/sbin/sshd -d</code>
 </li>
 </ul>
 
@@ -344,8 +344,7 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 
 <p>
 以上で大体解決すると思います。
-</p>
-</div>
+</p></div>
 </div>
 
   </div>
@@ -355,7 +354,7 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/cygwin.html">cygwin</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/cygwin.html">cygwin</a></li><li class="label label-inverse small"><a href="../../../tags/hamari.html">hamari</a></li><li class="label label-inverse small"><a href="../../../tags/ssh.html">ssh</a></li>
       </ul>
     </nav>
   </footer>
@@ -386,9 +385,9 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 
 
 
-<pre class="src src-clojure">(mikio_kun
- {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+<pre class="src src-emacs-lisp">(mikio_kun
+ {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 
 
@@ -420,13 +419,13 @@ Permission denied (publickey)<span style="color: #b0c4de;">.</span>
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> <li><a href="../../../article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け</a></li> <li><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses</a></li> <li><a href="../../../article/2012/12/29_oblogubuntuapache2.html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</a></li> <li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> 
+		<li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 133.85%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
+  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 213.91%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>mewで送信できるようにする</title>
+    <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="o-blog version 1.2-120-g06a5a11"/>
+    <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script>
+    <script src="../../../style/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-modal.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-transition.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-dropdown.js" type="text/javascript"></script>
+    <script src="../../../style/bootstrap/js/bootstrap-collapse.js" type="text/javascript"></script>
+    <script src="../../../style/js/prettify.js" type="text/javascript"></script>
+    <script src="../../../style/js/o-blog.linenumber.js" type="text/javascript"></script>
+    <script src="../../../style/js/o-blog-fix.js" type="text/javascript"></script>
+    
+  </head>
+  <body>
+
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+	    <div class="container">
+	      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+	      <a class="brand" href="../../../index.html">ざる魂</a>
+	      <div class="nav-collapse collapse">
+	        <ul>
+<li><a href="#"><i>icon-file icon-white</i> Article</a>
+<ul>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a>
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">emacsでgoogleReaderを読む</a>
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a>
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a>
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">CentOS5.6にtmux1.7をインストールする</a>
+
+</li>
+</ul>
+
+</li>
+<li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
+
+</li>
+<li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
+
+</li>
+<li><a href="../../../index.xml">RSS</a>
+</li>
+</ul>
+
+
+
+
+	      </div>
+	    </div>
+      </div>
+    </div>
+    <div class="subnav visible-desktop">
+      <div class="container">
+	    <ul class="breadcrumb">
+  <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/01/index.html">01</a> <span class="divider">/</span></li><li>mewで送信できるようにする</li>
+  </ul>
+
+      </div>
+    </div>
+    <div id="page" class="container">
+
+  <header class="article-header">
+
+    <div class="well">
+      <time data-updated="true" pubdate="" datetime="">
+        <a href="../../../article/2012/index.html">2012</a>
+          年
+          <a href="../../../article/2012/01/index.html"> 1月</a>
+          18日
+      </time>
+      <div class="row">
+	    <h1 class="span11" style="font-size: 250%">mewで送信できるようにする</h1>
+      </div>
+      <nav>
+	<ul class="pager">
+	  <li class="previous"><a href="../../../article/2012/01/18_.html"><i class="icon-chevron-left"></i>&nbsp;$(ドル)丸括弧（カッコ）</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/01/18_su-su.html">"su -" と "su" のちがい&nbsp;<i class="icon-chevron-right"></i></a></li>
+	</ul>
+      </nav>
+    </div>
+
+  </header>
+  <div class="article-content">
+    <p>
+会社でmewを使おうと思い、popサーバーとsmtpサーバーの設定をする。
+その結果、受信は成功するも送信は失敗するという状態になった。
+</p>
+
+
+<pre class="src src-sh">Cannot connect to the SMTP server
+</pre>
+
+<p>
+原因を調べても全くわからなかったが、下記サイトを見てやっと原因がわかった。
+</p><ul>
+<li><a href="http://d.hatena.ne.jp/peppoco/20110406/1302106751">http://d.hatena.ne.jp/peppoco/20110406/1302106751</a>
+</li>
+</ul>
+
+<p>McFeeがemacsをアクセスブロックしているらしい。試しにログを見てみると下記のとおり。
+[タスクトレイ 右クリック] -&gt; [管理機能] -&gt; [VirusScan Enterprize] -&gt; [アクセス保護 右クリック] -&gt; [ログの表示]
+</p>
+
+
+<pre class="src src-sh">2012/01/04  15:03:12    &#12509;&#12540;&#12488; &#12502;&#12525;&#12483;&#12463; &#12523;&#12540;&#12523;&#12395;&#12424;&#12426;&#12502;&#12525;&#12483;&#12463;&#12373;&#12428;&#12414;&#12375;&#12383;  C:\Users\mikio\opt\emacs-23.2\bin\emacs.exe &#12454;&#12452;&#12523;&#12473;&#23550;&#31574;&#27161;&#28310;&#20445;&#35703;:&#22823;&#37327;&#12513;&#12540;&#12523;&#37197;&#20449;&#22411;&#12527;&#12540;&#12512;&#12395;&#12513;&#12540;&#12523;&#12434;&#36865;&#20449;&#12373;&#12379;&#12394;&#12356;   10.0.192.16:25
+2012/01/04  17:08:46    &#12509;&#12540;&#12488; &#12502;&#12525;&#12483;&#12463; &#12523;&#12540;&#12523;&#12395;&#12424;&#12426;&#12502;&#12525;&#12483;&#12463;&#12373;&#12428;&#12414;&#12375;&#12383;  C:\Users\mikio\opt\emacs-23.2\bin\emacs.exe &#12454;&#12452;&#12523;&#12473;&#23550;&#31574;&#27161;&#28310;&#20445;&#35703;:&#22823;&#37327;&#12513;&#12540;&#12523;&#37197;&#20449;&#22411;&#12527;&#12540;&#12512;&#12395;&#12513;&#12540;&#12523;&#12434;&#36865;&#20449;&#12373;&#12379;&#12394;&#12356;   10.0.192.16:25
+</pre>
+
+
+
+<p>
+解除する手順は下記のとおり。
+</p>
+
+
+<pre class="src src-sh">* [&#12473;&#12479;&#12540;&#12488;]&#65310;[&#12503;&#12525;&#12464;&#12521;&#12512;]&#65310;[McAfee]&#65310;[VirusScan &#12467;&#12531;&#12477;&#12540;&#12523;]&#12434;&#36984;&#25246;
+* [&#12450;&#12463;&#12475;&#12473;&#20445;&#35703;]&#12434;&#36984;&#25246;
+* &#21491;&#12463;&#12522;&#12483;&#12463;&#12363;&#12425;&#12300;&#12503;&#12525;&#12497;&#12486;&#12451;&#12301;&#12434;&#36984;&#25246;
+* [&#12450;&#12463;&#12475;&#12473;&#20445;&#35703;]&#12479;&#12502;&#12398;&#12300;&#12454;&#12452;&#12523;&#12473;&#23550;&#31574;&#27161;&#28310;&#20445;&#35703;&#12301;&#12363;&#12425;&#38500;&#22806;&#12377;&#12427;&#12503;&#12525;&#12475;&#12473;&#12395; emacs.exe &#12434;&#36861;&#21152;
+</pre>
+
+<p>
+でもこれは会社ではMcfeeの設定をいじれないので実施できない。
+しかたがないので、emacs.exeをリネームして逃げることにした。
+emacs.exe -&gt; thunder_emacs.exe
+</p>
+<p>
+ただこれをやってしまうと、runemacs.exeで呼び出せなくなる。
+(DOS窓が表示されてしまう)
+これについては、仮想画面にDOS窓を押し込むことで見難さを解消する。
+</p>
+  </div>
+  
+  <footer class="well article-footer">
+    Posted on <time datetime="2012-01-18T08:58:00Z"> 水曜日 1月, 18 2012 at 08:58:00</time>.
+    <nav class="tag-cloud">
+      <h1><i class="icon-tags"></i> related tags</h1>
+      <ul>
+	<li class="label label-inverse small"><a href="../../../tags/emacs.html">emacs</a></li><li class="label label-inverse small"><a href="../../../tags/hamari.html">hamari</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'mikiokunblog'; // required: replace example with your forum shortname
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+      <div id="footer">
+	<div class="container">
+	  <div class="row">
+	    <section class="span3">
+	      <h1>About</h1>
+	      <p>
+<img src="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg"  alt="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg" />
+</p>
+
+
+
+<pre class="src src-emacs-lisp">(mikio_kun
+ {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+</pre>
+
+
+	    </section>
+	    <nav id="links" class="span3">
+	      <h1>Links</h1>
+	      <ul>
+		<ul>
+<li><a href="../../../index.html"><i>icon-home icon-white</i> Home</a>
+
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)"><i>icon-file icon-white</i> Tips</a>
+
+</li>
+<li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
+
+</li>
+<li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
+
+</li>
+<li><a href="../../../index.xml">RSS</a>
+</li>
+</ul>
+
+
+
+	      </ul>
+	    </nav>
+	    <nav id="archives" class="span3">
+	      <h1><a href="../../../archives.html">Archives</a></h1>
+	      <ul>
+		<li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> 
+	      </ul>
+	    </nav>
+	    <nav class="tags span3">
+	      <h1><a href="../../../tags/index.html">Tags</a></h1>
+	      <ul>
+  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 213.91%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
+</ul>
+
+	    </nav>
+	  </div>
+	</div>
+	<div class="copyright" style="text-align: center;">
+	  <p>
+Copyright © 2008-2012 <a href="http://twitter.com/mikio_kun">mikio</a>
+</p>
+	  <p>Powered by <a href="https://github.com/renard/o-blog">o-blog</a>.</p>
+	</div>
+      </div>
+
+<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-30203998-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+</script>
+
+
+</body>
+</html>
+

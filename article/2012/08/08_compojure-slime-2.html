@@ -32,15 +32,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">openssh-serverをインストールしようとしたら、CDをいれろと。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">emacsでgoogleReaderを読む</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">firefoxで常にIMEをOFFにする方法</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">git merge でrenmae関係のエラーがでた</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">o-blogをcloneする。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">CentOS5.6にtmux1.7をインストールする</a>
 
 </li>
 </ul>
@@ -88,7 +88,7 @@
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/08/03_compojure-slime-1.html"><i class="icon-chevron-left"></i>&nbsp;Compojure + SLIMEを試す その1</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/08/27_windows.html">Windowsでプロセスツリーや実行ファイルのパスを表示したい&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/08/07_gimp.html"><i class="icon-chevron-left"></i>&nbsp;GIMPについて</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/08/27_windows.html">Windowsでプロセスツリーや実行ファイルのパスを表示したい&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
@@ -103,12 +103,12 @@
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">use</span> 'hello-world.handler)
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">use</span> 'hello-world.handler)
 nil
-user&gt; (<span style="color: #eedd82;">use</span> 'ring.util.serve)
+user&gt; (<span style="color: #ffff00;">use</span> 'ring.util.serve)
 nil
 user&gt; (serve app)
-<span style="color: #b0c4de;">Started</span> web server on port 3000
+<span style="color: #0000ff; font-weight: bold;">Started</span> web server on port 3000
 nil
 </pre>
 
@@ -131,10 +131,10 @@ nil
 </p>
 
 
-<pre class="src src-clojure"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">src/hello_world/handler.clj</span>
-(<span style="color: #00ffff;">defroutes</span> <span style="color: #87cefa;">app-routes</span>
+<pre class="src src-clojure"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">src/hello_world/handler.clj</span>
+(<span style="color: #ffff00;">defroutes</span> <span style="color: #0000ff; font-weight: bold;">app-routes</span>
   &#65306;
-  (route/resources <span style="color: #ffa07a;">"/"</span>) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8592;&#12371;&#12371;&#12434;&#36861;&#21152;</span>
+  (route/resources <span style="color: #ff00ff;">"/"</span>) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#8592;&#12371;&#12371;&#12434;&#36861;&#21152;</span>
   &#65306;
   )
 </pre>
@@ -144,7 +144,7 @@ nil
 </p>
 
 
-<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> {&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12523;&#12540;&#12488;}
+<pre class="src src-sh"><span style="color: #0000ff; font-weight: bold;">cd</span> {&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12523;&#12540;&#12488;}
 mkdir -p resources/public/css
 touch resources/public/css/style.css ;; &#20013;&#36523;&#12399;&#36969;&#24403;&#12395;&#32232;&#38598;
 </pre>
@@ -154,9 +154,9 @@ touch resources/public/css/style.css ;; &#20013;&#36523;&#12399;&#36969;&#24403;
 </p>
 
 
-<pre class="src src-clojure">[<span style="color: #7fffd4;">:head</span>
-  [<span style="color: #7fffd4;">:title</span> <span style="color: #ffa07a;">"hello-world"</span>]
-  (include-css <span style="color: #ffa07a;">"/css/style.css"</span>)]
+<pre class="src src-clojure">[<span style="color: #ffff00;">:head</span>
+  [<span style="color: #ffff00;">:title</span> <span style="color: #ff00ff;">"hello-world"</span>]
+  (include-css <span style="color: #ff00ff;">"/css/style.css"</span>)]
 </pre>
 
 
@@ -173,17 +173,17 @@ touch resources/public/css/style.css ;; &#20013;&#36523;&#12399;&#36969;&#24403;
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #eedd82;">use</span> 'hello-world.test.handler)
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">use</span> 'hello-world.test.handler)
 nil
-user&gt; (<span style="color: #eedd82;">use</span> 'clojure.test)
+user&gt; (<span style="color: #ffff00;">use</span> 'clojure.test)
 nil
-user&gt; (<span style="color: #98fb98;">run-tests</span> 'hello-world.test.handler)
+user&gt; (<span style="color: #00ff00;">run-tests</span> 'hello-world.test.handler)
 
-<span style="color: #b0c4de;">Testing</span> hello-world.test.handler
+<span style="color: #0000ff; font-weight: bold;">Testing</span> hello-world.test.handler
 
-<span style="color: #b0c4de;">Ran</span> 1 tests containing 3 assertions.
+<span style="color: #0000ff; font-weight: bold;">Ran</span> 1 tests containing 3 assertions.
 0 failures, 0 errors.
-{<span style="color: #7fffd4;">:type</span> <span style="color: #7fffd4;">:summary</span>, <span style="color: #7fffd4;">:pass</span> 3, <span style="color: #7fffd4;">:test</span> 1, <span style="color: #7fffd4;">:error</span> 0, <span style="color: #7fffd4;">:fail</span> 0}
+{<span style="color: #ffff00;">:type</span> <span style="color: #ffff00;">:summary</span>, <span style="color: #ffff00;">:pass</span> 3, <span style="color: #ffff00;">:test</span> 1, <span style="color: #ffff00;">:error</span> 0, <span style="color: #ffff00;">:fail</span> 0}
 </pre>
 
 <p>
@@ -204,19 +204,19 @@ user&gt; (<span style="color: #98fb98;">run-tests</span> 'hello-world.test.handl
 </p>
 
 
-<pre class="src src-clojure"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12371;&#12428;&#12399;</span>
-(<span style="color: #00ffff;">defroutes</span> <span style="color: #87cefa;">serve</span>
-  (<span style="color: #b0c4de;">GET</span> <span style="color: #ffa07a;">"/"</span> [] <span style="color: #ffa07a;">"Hello world"</span>))
+<pre class="src src-clojure"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12371;&#12428;&#12399;</span>
+(<span style="color: #ffff00;">defroutes</span> <span style="color: #0000ff; font-weight: bold;">serve</span>
+  (<span style="color: #0000ff; font-weight: bold;">GET</span> <span style="color: #ff00ff;">"/"</span> [] <span style="color: #ff00ff;">"Hello world"</span>))
 
-<span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12371;&#12435;&#12394;&#24863;&#12376;?</span>
-(<span style="color: #00ffff;">defn</span> <span style="color: #87cefa;">serve</span>
+<span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12371;&#12435;&#12394;&#24863;&#12376;?</span>
+(<span style="color: #ffff00;">defn</span> <span style="color: #0000ff; font-weight: bold;">serve</span>
   [request]
-  (<span style="color: #b0c4de;">if</span> (<span style="color: #b0c4de;">and</span> (<span style="color: #eedd82;">=</span> (<span style="color: #7fffd4;">:request-method</span> request) <span style="color: #7fffd4;">:get</span>)
-           (<span style="color: #eedd82;">=</span> (<span style="color: #7fffd4;">:uri</span> request) <span style="color: #ffa07a;">"/"</span>))
-  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">response</span>
-  {<span style="color: #7fffd4;">:status</span> 200
-   <span style="color: #7fffd4;">:headers</span> {<span style="color: #ffa07a;">"ContentType"</span> <span style="color: #ffa07a;">"text/html"</span>}
-   <span style="color: #7fffd4;">:body</span> <span style="color: #ffa07a;">"Hello world"</span>}))
+  (<span style="color: #0000ff; font-weight: bold;">if</span> (<span style="color: #0000ff; font-weight: bold;">and</span> (<span style="color: #ffff00;">=</span> (<span style="color: #ffff00;">:request-method</span> request) <span style="color: #ffff00;">:get</span>)
+           (<span style="color: #ffff00;">=</span> (<span style="color: #ffff00;">:uri</span> request) <span style="color: #ff00ff;">"/"</span>))
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">response</span>
+  {<span style="color: #ffff00;">:status</span> 200
+   <span style="color: #ffff00;">:headers</span> {<span style="color: #ff00ff;">"ContentType"</span> <span style="color: #ff00ff;">"text/html"</span>}
+   <span style="color: #ffff00;">:body</span> <span style="color: #ff00ff;">"Hello world"</span>}))
 </pre>
 
 <ul>
@@ -246,9 +246,9 @@ middlewareかなんかで、もうちょっと整理されたかたちで入っ�
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #00ffff;">defroutes</span> <span style="color: #87cefa;">app-routes</span>
-  (<span style="color: #b0c4de;">GET</span> <span style="color: #ffa07a;">"/params"</span> {params <span style="color: #7fffd4;">:params</span>} (<span style="color: #eedd82;">str</span> params))
-  (route/not-found <span style="color: #ffa07a;">"Not Found"</span>))
+<pre class="src src-clojure">(<span style="color: #ffff00;">defroutes</span> <span style="color: #0000ff; font-weight: bold;">app-routes</span>
+  (<span style="color: #0000ff; font-weight: bold;">GET</span> <span style="color: #ff00ff;">"/params"</span> {params <span style="color: #ffff00;">:params</span>} (<span style="color: #ffff00;">str</span> params))
+  (route/not-found <span style="color: #ff00ff;">"Not Found"</span>))
 </pre>
 
 <p>
@@ -257,14 +257,13 @@ middlewareかなんかで、もうちょっと整理されたかたちで入っ�
 </p>
 
 
-<pre class="src src-sh">{:fuga <span style="color: #ffa07a;">"111"</span>, :hoge <span style="color: #ffa07a;">"aaa"</span>}
+<pre class="src src-sh">{:fuga <span style="color: #ff00ff;">"111"</span>, :hoge <span style="color: #ff00ff;">"aaa"</span>}
 </pre>
 
 <p>
 てな感じに。キーと値がそれぞれマップとして格納されてきた。
 さらにキーはclojureのキーワードに変換されてる。
-</p>
-</div>
+</p></div>
 </div>
 
   </div>
@@ -274,7 +273,7 @@ middlewareかなんかで、もうちょっと整理されたかたちで入っ�
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/clojure.html">clojure</a></li><li class="label label-inverse small"><a href="../../../tags/slime.html">slime</a></li><li class="label label-inverse small"><a href="../../../tags/compojure.html">compojure</a></li><li class="label label-inverse small"><a href="../../../tags/hiccup.html">hiccup</a></li><li class="label label-inverse small"><a href="../../../tags/ring.html">ring</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/clojure.html">clojure</a></li>
       </ul>
     </nav>
   </footer>
@@ -305,9 +304,9 @@ middlewareかなんかで、もうちょっと整理されたかたちで入っ�
 
 
 
-<pre class="src src-clojure">(mikio_kun
- {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+<pre class="src src-emacs-lisp">(mikio_kun
+ {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 
 
@@ -339,13 +338,13 @@ middlewareかなんかで、もうちょっと整理されたかたちで入っ�
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> <li><a href="../../../article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け</a></li> <li><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses</a></li> <li><a href="../../../article/2012/12/29_oblogubuntuapache2.html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</a></li> <li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> 
+		<li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 133.85%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
+  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 213.91%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

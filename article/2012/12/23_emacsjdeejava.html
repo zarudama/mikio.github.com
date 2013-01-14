@@ -32,15 +32,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">openssh-serverをインストールしようとしたら、CDをいれろと。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">emacsでgoogleReaderを読む</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">firefoxで常にIMEをOFFにする方法</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">git merge でrenmae関係のエラーがでた</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a>
 </li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">o-blogをcloneする。</a>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">CentOS5.6にtmux1.7をインストールする</a>
 
 </li>
 </ul>
@@ -327,24 +327,24 @@ CEDETとJDEEのビルドができたら下記の設定を.emacsに加えます�
 </p>
 
 
-<pre class="src src-emacs-lisp"><span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#8595;&#12392;&#12395;&#12363;&#12367;&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12398;&#26368;&#21021;&#12398;&#12411;&#12358;&#12391;&#35501;&#12415;&#12371;&#12416;</span>
-(load-file <span style="color: #ffa07a;">"~/site-lisp/cedet-1.1/common/cedet.el"</span>) 
+<pre class="src src-emacs-lisp"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#8595;&#12392;&#12395;&#12363;&#12367;&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12398;&#26368;&#21021;&#12398;&#12411;&#12358;&#12391;&#35501;&#12415;&#12371;&#12416;</span>
+(load-file <span style="color: #ff00ff;">"~/site-lisp/cedet-1.1/common/cedet.el"</span>) 
 
-(add-to-list 'load-path <span style="color: #ffa07a;">"~/site-lisp/jdee/dist/jdee-2.4.1/lisp"</span>)
-(load <span style="color: #ffa07a;">"jde-autoload"</span>)
+(add-to-list 'load-path <span style="color: #ff00ff;">"~/site-lisp/jdee/dist/jdee-2.4.1/lisp"</span>)
+(load <span style="color: #ff00ff;">"jde-autoload"</span>)
 
-(<span style="color: #00ffff;">defun</span> <span style="color: #87cefa;">my-jde-mode-hook</span> ()
-  (<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">jde</span>)
+(<span style="color: #ffff00;">defun</span> <span style="color: #0000ff; font-weight: bold;">my-jde-mode-hook</span> ()
+  (<span style="color: #ffff00;">require</span> '<span style="color: #ffff00;">jde</span>)
 
-  (setq jde-build-function 'jde-ant-build) <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">&#12499;&#12523;&#12489;&#12395;ant&#12434;&#21033;&#29992;&#12377;&#12427;</span>
-  (setq jde-ant-read-target t)             <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">target&#12434;&#21839;&#12356;&#21512;&#12431;&#12379;&#12427;</span>
-  (setq jde-ant-enable-find t)             <span style="color: #ff7f24;">; </span><span style="color: #ff7f24;">ant&#12395;-find&#12458;&#12503;&#12471;&#12519;&#12531;&#12434;&#25351;&#23450;&#12377;&#12427;(&#35201;&#12425;&#12394;&#12356;&#12363;&#12418;)</span>
+  (setq jde-build-function 'jde-ant-build) <span style="color: #ff0000;">; </span><span style="color: #ff0000;">&#12499;&#12523;&#12489;&#12395;ant&#12434;&#21033;&#29992;&#12377;&#12427;</span>
+  (setq jde-ant-read-target t)             <span style="color: #ff0000;">; </span><span style="color: #ff0000;">target&#12434;&#21839;&#12356;&#21512;&#12431;&#12379;&#12427;</span>
+  (setq jde-ant-enable-find t)             <span style="color: #ff0000;">; </span><span style="color: #ff0000;">ant&#12395;-find&#12458;&#12503;&#12471;&#12519;&#12531;&#12434;&#25351;&#23450;&#12377;&#12427;(&#35201;&#12425;&#12394;&#12356;&#12363;&#12418;)</span>
 
-  <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">complilation&#12496;&#12483;&#12501;&#12449;&#12434;&#33258;&#21205;&#30340;&#12395;&#12473;&#12463;&#12525;&#12540;&#12523;&#12373;&#12379;&#12427;</span>
+  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">complilation&#12496;&#12483;&#12501;&#12449;&#12434;&#33258;&#21205;&#30340;&#12395;&#12473;&#12463;&#12525;&#12540;&#12523;&#12373;&#12379;&#12427;</span>
   (setq compilation-ask-about-save nil)
   (setq compilation-scroll-output 'first-error)
 
-  (define-key jde-mode-map (kbd <span style="color: #ffa07a;">"C-c C-v ."</span>) 'jde-complete-minibuf)
+  (define-key jde-mode-map (kbd <span style="color: #ff00ff;">"C-c C-v ."</span>) 'jde-complete-minibuf)
   )
 
 (add-hook 'jde-mode-hook 'my-jde-mode-hook)
@@ -420,34 +420,34 @@ githubから落してください。
 </p>
 
 
-<pre class="src src-emacs-lisp">(jde-project-file-version <span style="color: #ffa07a;">"1.0"</span>)
+<pre class="src src-emacs-lisp">(jde-project-file-version <span style="color: #ff00ff;">"1.0"</span>)
 (jde-set-variables
 
- <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">--------------</span>
- <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">project common</span>
- <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">--------------</span>
- '(jde-jdk (quote (<span style="color: #ffa07a;">"1.7"</span>)))
- '(jde-jdk-registry (quote ((<span style="color: #ffa07a;">"1.7"</span> . <span style="color: #ffa07a;">"c:/Program Files/Java/jdk1.7.0_09/"</span>)
+ <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">--------------</span>
+ <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">project common</span>
+ <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">--------------</span>
+ '(jde-jdk (quote (<span style="color: #ff00ff;">"1.7"</span>)))
+ '(jde-jdk-registry (quote ((<span style="color: #ff00ff;">"1.7"</span> . <span style="color: #ff00ff;">"c:/Program Files/Java/jdk1.7.0_09/"</span>)
                             )))
- '(jde-jdk-doc-url <span style="color: #ffa07a;">"http://docs.oracle.com/javase/jp/6/api/"</span>)
+ '(jde-jdk-doc-url <span style="color: #ff00ff;">"http://docs.oracle.com/javase/jp/6/api/"</span>)
  '(jde-help-docsets '(
-                      <span style="color: #ff7f24;">;;</span><span style="color: #ff7f24;">("JDK API" "file://c:/Users/mikio/Dropbox/java6_ja_apidocs/ja/api" nil)</span>
-                      (<span style="color: #ffa07a;">"JDK API"</span> <span style="color: #ffa07a;">"http://docs.oracle.com/javase/jp/6/api/"</span> nil)
+                      <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">("JDK API" "file://c:/Users/mikio/Dropbox/java6_ja_apidocs/ja/api" nil)</span>
+                      (<span style="color: #ff00ff;">"JDK API"</span> <span style="color: #ff00ff;">"http://docs.oracle.com/javase/jp/6/api/"</span> nil)
                       ))
  '(jde-help-use-frames nil)
 
- <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">--------------</span>
- <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">this project only</span>
- <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">--------------</span>
- '(jde-sourcepath (quote (<span style="color: #ffa07a;">"./src"</span> <span style="color: #ffa07a;">"./test"</span>)))
- '(jde-global-classpath (quote (<span style="color: #ffa07a;">"./build/classes"</span> <span style="color: #ffa07a;">"./build/test"</span> <span style="color: #ffa07a;">"./lib"</span>)))
- '(jde-lib-directory-names '(<span style="color: #ffa07a;">"lib"</span>))
+ <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">--------------</span>
+ <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">this project only</span>
+ <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">--------------</span>
+ '(jde-sourcepath (quote (<span style="color: #ff00ff;">"./src"</span> <span style="color: #ff00ff;">"./test"</span>)))
+ '(jde-global-classpath (quote (<span style="color: #ff00ff;">"./build/classes"</span> <span style="color: #ff00ff;">"./build/test"</span> <span style="color: #ff00ff;">"./lib"</span>)))
+ '(jde-lib-directory-names '(<span style="color: #ff00ff;">"lib"</span>))
  '(jde-expand-classpath-p t)
 
  '(jde-build-function (quote jde-ant-build))
  '(jde-ant-enable-find t)
  '(jde-ant-read-target t)
- '(jde-ant-working-directory <span style="color: #ffa07a;">"./"</span>))
+ '(jde-ant-working-directory <span style="color: #ff00ff;">"./"</span>))
 </pre>
 
 
@@ -512,7 +512,7 @@ BeanShellを起動しておくと、ちょっとしたAPIの挙動を調べる�
 </p>
 
 
-<pre class="src src-sh">bsh % System.out.println(System.getenv().get(<span style="color: #ffa07a;">"JAVA_HOME"</span>));
+<pre class="src src-sh">bsh % System.out.println(System.getenv().get(<span style="color: #ff00ff;">"JAVA_HOME"</span>));
 C:\Program Files\Java\jdk1.7.0_09
 </pre>
 
@@ -680,10 +680,10 @@ import文の挿入が成功したら <code>C-c C-v C-b</code> でビルドプロ
 </p>
 
 
-<pre class="src src-emacs-lisp">(<span style="color: #00ffff;">defun</span> <span style="color: #87cefa;">my-jde-mode-hook</span> ()
-  (<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">helm-jdee-method</span>) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
-  (<span style="color: #00ffff;">require</span> '<span style="color: #7fffd4;">jde</span>)
-  (define-key jde-mode-map (kbd <span style="color: #ffa07a;">"C-c C-v C-i"</span>) 'helm-jdee-method) <span style="color: #ff7f24;">;; </span><span style="color: #ff7f24;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+<pre class="src src-emacs-lisp">(<span style="color: #ffff00;">defun</span> <span style="color: #0000ff; font-weight: bold;">my-jde-mode-hook</span> ()
+  (<span style="color: #ffff00;">require</span> '<span style="color: #ffff00;">helm-jdee-method</span>) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+  (<span style="color: #ffff00;">require</span> '<span style="color: #ffff00;">jde</span>)
+  (define-key jde-mode-map (kbd <span style="color: #ff00ff;">"C-c C-v C-i"</span>) 'helm-jdee-method) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
   )
 </pre>
 
@@ -800,7 +800,7 @@ JAVAの対応も結構進んでいるようです(メーリングリストでよ
 </li>
 <li>割と最近のMLのやりとり。
 <ul>
-<li><a href="http://sourceforge.net/mailarchive/message.php?msg_id=28645729">http://sourceforge.net/mailarchive/message.php?msg_id=28645729</a>
+<li><a href="http://sourceforge.net/mailarchive/message.php?msg_id=28645729">http://sourceforge.net/mailarchive/message.php?msg\_id=28645729</a>
 </li>
 </ul>
 
@@ -871,9 +871,9 @@ JAVAの対応も結構進んでいるようです(メーリングリストでよ
 
 
 
-<pre class="src src-clojure">(mikio_kun
- {<span style="color: #7fffd4;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #7fffd4;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+<pre class="src src-emacs-lisp">(mikio_kun
+ {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 
 
@@ -905,13 +905,13 @@ JAVAの対応も結構進んでいるようです(メーリングリストでよ
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> <li><a href="../../../article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け</a></li> <li><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses</a></li> <li><a href="../../../article/2012/12/29_oblogubuntuapache2.html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</a></li> <li><a href="../../../article/2012/12/23_emacsjdeejava.html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li> <li><a href="../../../article/2012/12/22_ack.html">今更ながらackいれた。</a></li> 
+		<li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-merge-renmae.html">git merge でrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/centos.html">centos</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/commonlisp.html">commonlisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/css.html">css</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/eclipse.html">eclipse</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gamedev.html">gamedev</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/hiccup.html">hiccup</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/javascript.html">javascript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lvm.html">lvm</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/mew.html">mew</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/notes.html">notes</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/ring.html">ring</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rooted.html">rooted</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/scheme.html">scheme</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sdic.html">sdic</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 133.85%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sudo.html">sudo</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/swank.html">swank</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
+  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 213.91%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
 </ul>
 
 	    </nav>

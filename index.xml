@@ -5,9 +5,360 @@
   <link href="http://mikio.github.com/"/>
   <updated>Lisp error in nil: (wrong-type-argument integerp nil)</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">openssh-serverをインストールしようとしたら、CDをいれろと。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_openssh-servercd.html"/><updated>2012-12-30T17:34:00Z</updated><published>2012-12-30T17:34:00Z</published><id>article/2012/12/30_openssh-servercd.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;pre class="src src-sh"&gt;Media Change: Please insert the disc labeled 
-&lt;span style="color: #ffa07a;"&gt;'Ubuntu-Server 12.04.1 LTS _Precise Pangolin_  - Release amd64 (2012817.3)'&lt;/span&gt;
- &lt;span style="color: #00ffff;"&gt;in&lt;/span&gt; the drive &lt;span style="color: #ffa07a;"&gt;'/media/cdrom/'&lt;/span&gt; and press enter.
+  <entry><title type="html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/11_java.html"/><updated>2013-01-11T22:37:00Z</updated><published>2013-01-11T22:37:00Z</published><id>article/2013/01/11_java.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/java.html" term="java" label="java"/><content type="html">&lt;p&gt;
+JAVA&#12391;&#31471;&#26411;(gnome-terminal, putty, cygwin&#12394;&#12393;)&#12391;&#21205;&#20316;&#12377;&#12427;TUI(&#12486;&#12461;&#12473;&#12488;&#12518;&#12540;
+&#12470;&#12540;&#12452;&#12531;&#12479;&#12540;&#12501;&#12455;&#12452;&#12473;)&#12505;&#12540;&#12473;&#12398;&#12450;&#12503;&#12522;&#12434;&#20316;&#12427;&#12395;&#12399;&#12393;&#12358;&#12377;&#12428;&#12400;&#12356;&#12356;&#12363;&#12392;&#24605;&#12356;&#12289;&#12414;
+&#12378;&#12521;&#12452;&#12502;&#12521;&#12522;&#12434;&#35519;&#26619;&#12375;&#12414;&#12375;&#12383;&#12290;&#20197;&#19979;&#12398;3&#12388;&#12364;&#35211;&#12388;&#12363;&#12426;&#12414;&#12375;&#12383;&#12424;&#12290;
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://sourceforge.net/projects/javacurses/"&gt;jcurses&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pitman.co.za/projects/charva/"&gt;charva&lt;/a&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://code.google.com/p/lanterna/"&gt;lanterna&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+jcurses&#12399;&#19968;&#30058;&#32769;&#33303;&#12387;&#12413;&#12356;&#12290;&#20840;&#12367;&#26356;&#26032;&#12373;&#12428;&#12390;&#12394;&#12356;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+charva&#12399;swing/awt&#20114;&#25563;&#12398;&#12521;&#12452;&#12502;&#12521;&#12522;&#12434;TUI&#12391;&#34920;&#31034;&#12377;&#12427;&#12418;&#12398;&#12290;&#24847;&#27442;&#30340;&#12394;&#12521;&#12452;&#12502;&#12521;
+&#12522;&#12384;&#12364;&#12420;&#12387;&#12401;&#12426;&#38283;&#30330;&#20572;&#27490;&#20013;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#26368;&#24460;&#12398;laterna&#12399;&#12289;&#27963;&#30330;&#12395;&#38283;&#30330;&#12375;&#12390;&#12356;&#12390;&#12289;&#12375;&#12363;&#12418;Pure Java&#12391;&#38283;&#30330;&#12373;&#12428;&#12390;&#12414;&#12377;!
+&#12388;&#12414;&#12426;&#12289;&#20182;&#12398;&#12521;&#12452;&#12502;&#12521;&#12522;&#12392;&#36949;&#12387;&#12390;&#12493;&#12452;&#12486;&#12451;&#12502;&#12398;&#12521;&#12452;&#12502;&#12522;&#12364;&#24517;&#35201;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;&#12384;
+&#12363;&#12425;&#23566;&#20837;&#12364;&#31777;&#21336;&#12391;&#12377;(Maven&#12522;&#12509;&#12472;&#12488;&#12522;&#12418;&#12354;&#12426;&#12414;&#12377;)&#12290;ScreenShot&#12434;&#35211;&#12427;&#38480;&#12426;Mac
+&#12391;&#12418;Ubuntu&#12391;&#12418;Windwos7&#12391;&#12418;&#21516;&#12376;&#12424;&#12358;&#12395;&#21205;&#12356;&#12390;&#12381;&#12358;&#12391;&#12377;&#12290;&#29694;&#26178;&#28857;&#12391;&#12289;Java&#12391;
+TUI&#12450;&#12503;&#12522;&#12434;&#38283;&#30330;&#12377;&#12427;&#12394;&#12425;laterna&#19968;&#25246;&#12363;&#12418;&#12375;&#12428;&#12414;&#12379;&#12435;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+laterna&#12395;&#12362;&#12356;&#12390;&#20491;&#20154;&#30340;&#12395;&#12394;&#12395;&#12424;&#12426;&#23305;&#12375;&#12356;&#12398;&#12364;&#12289;&lt;a href="http://sjl.bitbucket.org/clojure-lanterna/"&gt;clojure-laterna&lt;/a&gt; &#12392;&#12356;&#12358;
+Clojure&#12398;&#12521;&#12483;&#12497;&#12540;&#12364;&#12354;&#12427;&#12392;&#12356;&#12358;&#12371;&#12392;&#12391;&#12377;&#12397;&#12290;&#12371;&#12428;&#12391;TUI&#12505;&#12540;&#12473;&#12398;&#12486;&#12461;&#12473;&#12488;&#12456;&#12487;&#12451;
+&#12479;&#12392;&#12363;&#20316;&#12426;&#12383;&#12356;&#12394;&#12353;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">emacsでgoogleReaderを読む</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/11_emacsgooglereader.html"/><updated>2013-01-11T21:36:00Z</updated><published>2013-01-11T21:36:00Z</published><id>article/2013/01/11_emacsgooglereader.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+&#22522;&#26412;&#30340;&#12395;&#12391;&#12365;&#12427;&#12384;&#12369;emacs&#19978;&#12391;&#12394;&#12435;&#12391;&#12418;&#25805;&#20316;&#12375;&#12383;&#12356;&#12398;&#12391;&#12377;&#12364;&#12289;&#29694;&#22312;&#12289;
+GoogleReader&#12399;&#12289;emacs&#19978;&#12391;&#35501;&#12435;&#12391;&#12414;&#12379;&#12435;&#12290;w3m&#12363;&#12425;&#12525;&#12464;&#12452;&#12531;&#12391;&#12365;&#12394;&#12367;&#12394;&#12387;&#12390;&#12375;
+&#12414;&#12387;&#12383;&#12363;&#12425;&#12391;&#12377;&#12290;&#12381;&#12371;&#12391;emacs&#19978;&#12391;Google&#12450;&#12503;&#12522;&#12434;&#25805;&#20316;&#12391;&#12365;&#12427;&#12392;&#12356;&#12358;
+&lt;code&gt;g-client&lt;/code&gt; &#12434;&#35430;&#12375;&#12390;&#12415;&#12427;&#12371;&#12392;&#12395;&#12375;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#19979;&#35352;&#12434;&#21442;&#32771;&#12395;&#12375;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://titilat.raindrop.jp/blog/?p=12"&gt;http://titilat.raindrop.jp/blog/?p=12&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+make&#12395;&#24517;&#35201;&#12381;&#12358;&#12394;&#12418;&#12398;&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12290;&#19981;&#35201;&#12394;&#12418;&#12398;&#12418;&#12354;&#12427;&#12363;&#12418;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;apt-cyg install libxslt &lt;span style="color: #ff0000;"&gt;# &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;g&amp;#36215;&amp;#21205;&amp;#26178;&amp;#12395;&amp;#24517;&amp;#35201;&lt;/span&gt;
+apt-cyg install openssl-devel
+apt-cyg install libgc-devel
+apt-cyg install gcc
+apt-cyg install autoconf
+apt-cyg install make
+&lt;/pre&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;&lt;span style="color: #0000ff; font-weight: bold;"&gt;cd&lt;/span&gt; Dropbox/site-lisp/
+svn export http://emacspeak.googlecode.com/svn/trunk/lisp/g-client/
+&lt;span style="color: #0000ff; font-weight: bold;"&gt;cd&lt;/span&gt; g-client/
+make
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12364;&#12391;&#12390;&#12375;&#12414;&#12358;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ make
+ :
+Generating /cygdrive/c/Users/mikio/Dropbox/site-lisp/g-client/g-cus-load.el...done
+emacs -batch -q -no-site-file  -eval &lt;span style="color: #ff00ff;"&gt;'(setq vc-handled-backends nil)'&lt;/span&gt;  -l ./g-load-path.el -l ./g-loaddefs.el  -f batch-byte-compile org2blogger.el
+
+In toplevel form:
+org2blogger.el:33:1:Error: Can&lt;span style="color: #ff00ff;"&gt;'t find library org&lt;/span&gt;
+&lt;span style="color: #ff00ff;"&gt;Makefile:68: recipe for target `org2blogger.elc'&lt;/span&gt; failed
+make: *** [org2blogger.elc] Error 1
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+blogger&#12399;&#20351;&#29992;&#12375;&#12394;&#12356;&#12398;&#12391;&#12289;org2blogger.elc&#12398;&#12479;&#12540;&#12466;&#12483;&#12488;&#12434;&#12414;&#12427;&#12387;&#12392;&#21066;&#38500;&#12375;&#12383;&#12290;
+&#12391;&#12289;&#20170;&#24230;&#12399;&#25104;&#21151;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ make
+ :
+gtube.el:349:1:Warning: the &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &lt;span style="color: #fa8072;"&gt;`word-at-point' is not known to be&lt;/span&gt;
+&lt;span style="color: #fa8072;"&gt;    defined.&lt;/span&gt;
+&lt;span style="color: #fa8072;"&gt;Wrote /cygdrive/c/Users/mikio/Dropbox/site-lisp/g-client/gtube.elc&lt;/span&gt;
+&lt;span style="color: #fa8072;"&gt;emacs -batch -q -no-site-file  -eval '(setq vc-handled-backends nil)'  -l ./g-load-path.el -l ./g-loaddefs.el  -f batch-byte-compile gsheet.el&lt;/span&gt;
+&lt;span style="color: #fa8072;"&gt;Wrote /cygdrive/c/Users/mikio/Dropbox/site-lisp/g-client/gsheet.elc&lt;/span&gt;
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&lt;code&gt;.emacs&lt;/code&gt; &#12395;&#19979;&#35352;&#12434;&#35373;&#23450;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-emacs-lisp"&gt;(load-library &lt;span style="color: #ff00ff;"&gt;"g"&lt;/span&gt;)
+(setq g-user-email &lt;span style="color: #ff00ff;"&gt;"hoge@gmail.com"&lt;/span&gt;)
+(setq browse-url-browser-function 'w3m-browse-url)
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+ &lt;code&gt;M-x greader-reading-list&lt;/code&gt; &#12434;&#23455;&#34892;&#12375;&#12383;&#12425;&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12364;w3m&#19978;&#12391;&#34920;&#31034;&#12373;&#12428;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="example"&gt;-:1: parser error : Start tag expected, '&amp;lt;' not found &#25351;&#23450;&#12373;&#12428;&#12383;&#12497;&#12473;&#12364;&#35211;&#12388;&#12363;&#12426;&#12414;&#12379;&#12435;&#12290; ^ unable to parse - 
+&lt;/pre&gt;
+
+&lt;p&gt;
+cygwin&#19978;&#12398;emacs&#12384;&#12387;&#12383;&#12425;&#22823;&#19976;&#22827;&#12384;&#12387;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#34920;&#31034;&#12373;&#12428;&#12427;&#12487;&#12540;&#12479;&#12399;&#12289;xml&#12434;xslt&#12391;html&#12395;&#22793;&#25563;&#12375;&#12383;&#12418;&#12398;&#12391;&#12289;&#12506;&#12540;&#12472;&#12398;&#19978;&#37096;&#12395;RSS&#12398;&#21508;&#35352;&#20107;&#12398;&#12479;&#12452;&#12488;&#12523;&#19968;&#35239;&#12364;&#12394;&#12425;&#12403;
+&#12522;&#12531;&#12463;(&#12506;&#12540;&#12472;&#20869;&#12522;&#12531;&#12463;)&#12434;&#36799;&#12427;&#12392;&#12289;&#19979;&#37096;&#12398;&#27010;&#35201;&#25991;&#12395;&#12472;&#12515;&#12531;&#12503;&#12377;&#12427;&#12392;&#12356;&#12358;&#12418;&#12398;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#35430;&#12375;&#12390;&#12415;&#12390;&#12431;&#12363;&#12387;&#12383;&#12364;&#12289;googlreader&#12363;&#12425;&#12398;xml&#12434;xslt&#12391;html&#12395;&#22793;&#25563;&#12375;&#12390;&#34920;&#31034;&#12375;
+&#12390;&#12356;&#12427;&#12290;&#12394;&#12398;&#12391;&#12289;w3m&#19978;&#12391;&#12393;&#12435;&#12393;&#12435;&#27425;&#12398;&#35352;&#20107;&#12434;&#35501;&#12415;&#12377;&#12377;&#12417;&#12427;&#12392;&#12356;&#12358;&#12371;&#12392;&#12364;&#20986;&#26469;&#12394;
+&#12373;&#12381;&#12358;(&#38745;&#30340;html&#12394;&#12398;&#12391;)&#12290;&#12414;&#12383;&#34920;&#31034;&#12373;&#12428;&#12427;&#24773;&#22577;&#12418;&#12479;&#12464;&#27598;&#12391;&#12399;&#12394;&#12356;&#12375;&#12289;&#20214;&#25968;&#12418;&#23569;
+&#12394;&#12356;&#12398;&#12391;&#33258;&#20998;&#12398;&#35201;&#20214;&#12434;&#28288;&#12383;&#12375;&#12390;&#12394;&#12363;&#12387;&#12383;&#12290;CUI&#12398;peep&#12399;&#22823;&#20998;&#20351;&#12356;&#12420;&#12377;&#12363;&#12387;&#12383;&#12398;&#12391;
+&#27531;&#24565;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/06_emacspackage-elisp.html"/><updated>2013-01-06T10:21:00Z</updated><published>2013-01-06T10:21:00Z</published><id>article/2013/01/06_emacspackage-elisp.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
+&#20170;&#12414;&#12391;&#12497;&#12483;&#12465;&#12540;&#12472;&#31649;&#29702;&#12395;&#12399; &lt;code&gt;el-get&lt;/code&gt; &#12434;&#20351;&#29992;&#12375;&#12390;&#12365;&#12383;&#12398;&#12391;&#12377;&#12364;&#12289;Windows&#29872;&#22659;&#12364;
+&#12513;&#12452;&#12531;&#12384;&#12392; &lt;code&gt;git clone&lt;/code&gt; &#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12363;&#12387;&#12383;&#12426;&#12289;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#24460;&#12398;&#12499;&#12523;&#12489;&#24037;
+&#31243;&#12364;&#22833;&#25943;&#12375;&#12383;&#12426;&#12391;&#12289;&#12394;&#12363;&#12394;&#12363;&#38627;&#20736;&#12375;&#12390;&#12356;&#12383;&#12398;&#12391;&#12289;el-get&#12434;&#36766;&#12417;emacs&#27161;&#28310;&#12398;
+&lt;code&gt;package.el&lt;/code&gt; &#12434;&#12513;&#12452;&#12531;&#12395;&#12377;&#12427;&#12371;&#12392;&#12395;&#12375;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&lt;code&gt;package.el&lt;/code&gt; &#12394;&#12425;&#12400;&#27161;&#28310;&#35013;&#20633;&#12391;&#12377;&#12375;&#12289;&#12469;&#12452;&#12488;&#12522;&#12509;&#12472;&#12488;&#12522;&#12395;&#21508;&#25152;&#12398;elisp&#12364;&#12480;&#12454;
+&#12531;&#12525;&#12540;&#12489;&#12373;&#12428;&#12383;&#29366;&#24907;&#12394;&#12398;&#12391;http&#12391;&#12377;&#12409;&#12390;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12391;&#12365;&#12427;&#12398;&#12391;&#22823;&#25269;&#12398;&#29872;&#22659;&#12391;
+&#12358;&#12414;&#12367;&#21205;&#12365;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12497;&#12483;&#12465;&#12540;&#12472;&#12398;&#12522;&#12509;&#12472;&#12488;&#12522;&#12469;&#12452;&#12488;&#12392;&#12375;&#12390;&#12399;&#12289;&#26132;&#12399;Marmalade&#12364;&#26356;&#26032;&#12364;&#30427;&#12435;&#12384;&#12387;&#12383;&#12398;
+&#12391;&#12377;&#12364;&#12289;&#26368;&#36817;&#12391;&#12399;MELPA&#12364;&#12513;&#12452;&#12531;&#12395;&#12394;&#12387;&#12390;&#12365;&#12390;&#12427;&#12424;&#12358;&#12391;&#12377;&#12290;&#12394;&#12398;&#12391;&#31169;&#12399;&#12289;MELPA
+&#12513;&#12452;&#12531;&#12391;&#20351;&#29992;&#12375;&#12390;&#12414;&#12377;&#12290;Marmalade&#12399;&#28961;&#21177;&#12395;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;&#29702;&#30001;&#12399;&#21516;&#12376;&#12497;&#12483;&#12465;&#12540;&#12472;
+&#12364;&#21516;&#26178;&#12395;&#34920;&#31034;&#12373;&#12428;&#12390;&#12375;&#12414;&#12358;&#12363;&#12425;&#12391;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#20197;&#19979;&#12399;&#31169;&#12398;&#35373;&#23450;&#12391;&#12377;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-emacs-lisp"&gt;(&lt;span style="color: #ffff00;"&gt;require&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;mikio-util&lt;/span&gt;)
+
+(&lt;span style="color: #ffff00;"&gt;when&lt;/span&gt; (&lt;span style="color: #ffff00;"&gt;require&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;package&lt;/span&gt; nil t)
+
+  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;Marmalade&lt;/span&gt;
+  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;(add-to-list 'package-archives&lt;/span&gt;
+  &lt;span style="color: #ff0000;"&gt;;;              &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;'("marmalade" . "http://marmalade-repo.org/packages/"))&lt;/span&gt;
+
+  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;MELPA&lt;/span&gt;
+  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;(add-to-list 'package-archives&lt;/span&gt;
+  &lt;span style="color: #ff0000;"&gt;;;              &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;'("melpa" . "http://melpa.milkbox.net/packages/") t)&lt;/span&gt;
+
+  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;MELPA&amp;#12398;&amp;#12415;&amp;#12395;&amp;#12377;&amp;#12427;&amp;#12290;&lt;/span&gt;
+  (setq package-archives (list '(&lt;span style="color: #ff00ff;"&gt;"melpa"&lt;/span&gt; . &lt;span style="color: #ff00ff;"&gt;"http://melpa.milkbox.net/packages/"&lt;/span&gt;)))
+
+
+
+  &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;&amp;#12452;&amp;#12531;&amp;#12473;&amp;#12488;&amp;#12540;&amp;#12523;&amp;#12377;&amp;#12427;&amp;#12487;&amp;#12451;&amp;#12524;&amp;#12463;&amp;#12488;&amp;#12522;&amp;#12434;&amp;#25351;&amp;#23450;&lt;/span&gt;
+  (setq my-package-directory (mikio/elisp-home &lt;span style="color: #ff00ff;"&gt;"package"&lt;/span&gt;))
+  (mikio/make-directory my-package-directory)
+  (setq package-user-dir (concat my-package-directory &lt;span style="color: #ff00ff;"&gt;"/"&lt;/span&gt;))
+
+  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;
+  (package-initialize)
+
+  (setq my-packages
+        '(undo-tree
+          helm
+          auto-complete
+          popwin
+          smartrep
+          color-moccur
+          yasnippet
+
+          helm-git
+          helm-gtags
+          helm-c-moccur
+          helm-c-yasnippet
+
+          paredit
+          ruby-mode
+          php-mode
+          js2-mode
+          web-mode
+
+          nrepl
+          nrepl-ritz
+          ac-nrepl
+          &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;ac-slime&lt;/span&gt;
+          magit
+
+          jaunte
+          rainbow-delimiters
+
+          &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;window manager by kiwanami&lt;/span&gt;
+          window-layout
+          e2wm
+
+          twittering-mode
+          &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;o-blog&lt;/span&gt;
+
+          evil
+          ))
+
+  (&lt;span style="color: #ffff00;"&gt;require&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;cl&lt;/span&gt;)
+  (mapcar (&lt;span style="color: #ffff00;"&gt;lambda&lt;/span&gt; (x)
+            (&lt;span style="color: #ffff00;"&gt;when&lt;/span&gt; (not (package-installed-p x))
+              (package-install x)))
+          my-packages)
+)
+
+(&lt;span style="color: #ffff00;"&gt;provide&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;mikio-package&lt;/span&gt;)
+&lt;/pre&gt;
+
+&lt;p&gt;
+github&#12399;&#12371;&#12385;&#12425;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el"&gt;https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el&lt;/a&gt;
+
+&lt;p&gt;
+ &lt;code&gt;my-packages&lt;/code&gt; &#12395;&#33258;&#20998;&#12398;&#24517;&#35201;&#12394;&#12497;&#12483;&#12465;&#12540;&#12472;&#12434;&#12414;&#12392;&#12417;&#12390;&#23450;&#32681;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
+&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#12371;&#12358;&#12377;&#12427;&#12371;&#12392;&#12395;&#12424;&#12387;&#12390;&#12289;&#29872;&#22659;&#12364;&#22793;&#12431;&#12387;&#12390;&#12418;emacs&#36215;&#21205;&#26178;&#12395;&#33258;&#21205;&#30340;&#12395;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;
+&#12375;&#12390;&#12367;&#12428;&#12427;&#12398;&#12391;&#27005;&#12481;&#12531;&#12391;&#12377;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/06_cygwintmux.html"/><updated>2013-01-06T08:56:00Z</updated><published>2013-01-06T08:56:00Z</published><id>article/2013/01/06_cygwintmux.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+&#26368;&#21021;Cygwin&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#21476;&#12356;&#12363;&#12425;&#12363;&#12394;&#12392;&#24605;&#12387;&#12390;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12375;&#12390;&#12418;&#25913;&#21892;
+&#12379;&#12378;&#12289;&#12394;&#12425;&#12400;&#12392;tmux&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#26368;&#26032;&#12395;&#12375;&#12390;&#12418;&#30452;&#12425;&#12378;&#12289;&#32080;&#23616;cyg-terminal&#12398;
+&#12458;&#12503;&#12471;&#12519;&#12531;&#12391;Text&#12398;&#35373;&#23450;&#12434;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#22793;&#26356;&#12375;&#12383;&#12425;&#12289;&#34920;&#31034;&#23849;&#12428;&#12364;&#35299;&#28040;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="example"&gt;&#22793;&#26356;&#21069;
+Locale:JA_jp
+CharacterSet:UTF-8
+
+&#22793;&#26356;&#24460;
+Locale:C
+CharacterSet:UTF-8
+&lt;/pre&gt;
+
+</content></entry><entry><title type="html">CentOS5.6にtmux1.7をインストールする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/06_centos56tmux17.html"/><updated>2013-01-06T08:56:00Z</updated><published>2013-01-06T08:56:00Z</published><id>article/2013/01/06_centos56tmux17.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+&#29694;&#22312;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12356;&#12427;tmux&#12399;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;1.5 &#12290;
+cygwin&#12363;&#12425;&#20351;&#29992;&#12377;&#12427;&#12392;&#12289;&#32619;&#32218;&#12398;&#34920;&#31034;&#12364;&#12362;&#12363;&#12375;&#12367;&#12394;&#12427;&#12398;&#12391;
+&#35430;&#12375;&#12395;tmux&#12434;1.7&#12395;&#12375;&#12390;&#12415;&#12427;&#12371;&#12392;&#12395;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+make&#12375;&#12383;&#12425;&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ sudo make
+gcc -DPACKAGE_NAME=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_TARNAME=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_VERSION=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;1.7&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_STRING=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\ &lt;/span&gt;1.7&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_BUGREPORT=&lt;span style="color: #ff00ff;"&gt;\"\"&lt;/span&gt; -DPACKAGE_URL=&lt;span style="color: #ff00ff;"&gt;\"\"&lt;/span&gt; -DPACKAGE=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DVERSION=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;1.7&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_CURSES_H=1 -DHAVE_DIRENT_H=1 -DHAVE_FCNTL_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_NCURSES_H=1 -DHAVE_PATHS_H=1 -DHAVE_PTY_H=1 -DHAVE_STDINT_H=1 -DHAVE_SYS_DIR_H=1 -DHAVE_TERM_H=1 -DHAVE_B64_NTOP=1 -DHAVE_FORKPTY=1 -DHAVE_DAEMON=1 -DHAVE_SETENV=1 -DHAVE_ASPRINTF=1 -DHAVE_STRCASESTR=1 -DHAVE_STRSEP=1 -DHAVE_DECL_OPTARG=1 -DHAVE_DECL_OPTIND=1 -DHAVE_DECL_OPTRESET=0 -DHAVE_BZERO=1 -DHAVE_DIRFD=1 -DHAVE_SYSCONF=1 -DHAVE_BSD_TYPES=1 -DHAVE___PROGNAME=1 -DHAVE_PROC_PID=1 -I.    -iquote. -I/usr/local/include    -D_GNU_SOURCE -std=c99    -MT control.o -MD -MP -MF .deps/control.Tpo -c -o control.o control.c
+control.c: In &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &amp;#8216;control_callback&amp;#8217;:
+control.c:103: &amp;#35686;&amp;#21578;: implicit declaration of &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &amp;#8216;evbuffer_readln&amp;#8217;
+control.c:103: error: &amp;#8216;EVBUFFER_EOL_LF&amp;#8217; undeclared (first use&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt; this &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt;)
+control.c:103: error: (Each undeclared identifier is reported only once
+control.c:103: error: for each &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &lt;span style="color: #0000ff; font-weight: bold;"&gt;it&lt;/span&gt; appears in.)
+control.c:103: &amp;#35686;&amp;#21578;: assignment makes pointer from integer without a cast
+make: *** [control.o] &amp;#12456;&amp;#12521;&amp;#12540; 1
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#19979;&#35352;&#12395;&#12424;&#12427;&#12392;libevent&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#21476;&#12356;&#21487;&#33021;&#24615;&#12364;&#12354;&#12427;&#12424;&#12358;&#12394;&#12398;&#12391;&#12289;libevevnt&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#35519;&#12409;&#12427;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://sourceforge.net/mailarchive/forum.php?thread_name=CALmqh6G6zzvcKcwRmNOmFRT0qO8A__YD3RjDuBwnSJ=JutTMPA@mail.gmail.com&amp;amp;forum_name=tmux-users"&gt;http://sourceforge.net/mailarchive/forum.php?thread\_name=CALmqh6G6zzvcKcwRmNOmFRT0qO8A\_\_YD3RjDuBwnSJ%3DJutTMPA%40mail.gmail.com&amp;amp;forum\_name=tmux-users&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;pre class="src src-sh"&gt;$ ldd /usr/local/bin/tmux
+        linux-gate.so.1 =&amp;gt;  (0x00e0c000)
+        libutil.so.1 =&amp;gt; /lib/libutil.so.1 (0x00de4000)
+        libm.so.6 =&amp;gt; /lib/libm.so.6 (0x00685000)
+        libncurses.so.5 =&amp;gt; /usr/lib/libncurses.so.5 (0x0075b000)
+        libevent-1.4.so.2 =&amp;gt; /usr/lib/libevent-1.4.so.2 (0x001b5000)
+        librt.so.1 =&amp;gt; /lib/librt.so.1 (0x00742000)
+        libc.so.6 =&amp;gt; /lib/libc.so.6 (0x00523000)
+        libresolv.so.2 =&amp;gt; /lib/libresolv.so.2 (0x00a2a000)
+        /lib/ld-linux.so.2 (0x00504000)
+        libdl.so.2 =&amp;gt; /lib/libdl.so.2 (0x0067e000)
+        libnsl.so.1 =&amp;gt; /lib/libnsl.so.1 (0x008d7000)
+        libpthread.so.0 =&amp;gt; /lib/libpthread.so.0 (0x006b0000)
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+tmux&#12398;&#12469;&#12452;&#12488;&#12434;&#35211;&#12427;&#12392;&#12289;libevent&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12399;&#12289;1.4 or 2.0&#12392;&#12354;&#12427;&#12398;&#12391;&#19968;&#35211;&#21839;&#38988;&#12394;&#12373;&#12381;&#12358;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/3593"&gt;http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/3593&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;pre class="example"&gt;That's still an old version.  Use either libevent-1.4.14b or libevent-2.0.21
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12392;&#12354;&#12427;&#12290;&#12381;&#12371;&#12391;&#12289;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12356;&#12427;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#30906;&#35469;&#12375;&#12383;&#12392;&#12371;&#12429;&#12289;1.4.13&#12384;&#12387;&#12383;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-sh"&gt;$ sudo yum list installed |grep libevent-devel
+libevent-devel.i386                     1.4.13-1                       installed
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12381;&#12371;&#12391;1.4.14&#12395;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12391;&#12365;&#12394;&#12356;&#12363;&#35519;&#26619;&#12375;&#12390;&#12415;&#12427;&#12290;
+yum&#32076;&#30001;&#12391;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12377;&#12427;&#26041;&#27861;&#12364;&#12431;&#12363;&#12425;&#12394;&#12363;&#12387;&#12383;&#12398;&#12391;
+&#25163;&#21205;&#12391;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12371;&#12392;&#12395;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;&lt;span style="color: #ff0000;"&gt;# &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;yum&amp;#29256;&amp;#12497;&amp;#12483;&amp;#12465;&amp;#12540;&amp;#12472;&amp;#12434;&amp;#21066;&amp;#38500;&lt;/span&gt;
+sudo yum remove libevent-devel
+
+sudo wget --no-check-certificate https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz
+sudo tar xvfz libevent-1.4.14b-stable.tar.gz
+&lt;span style="color: #0000ff; font-weight: bold;"&gt;cd&lt;/span&gt; libevent-1.4.14b-stable
+sudo ./configure
+sudo make
+sudo paco -D make install
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#32080;&#23616;cygwin&#12391;&#12398;&#32619;&#32218;&#34920;&#31034;&#23849;&#12428;&#12399;&#30452;&#12425;&#12394;&#12363;&#12387;&#12383;&#12290;&#12290;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">openssh-serverをインストールしようとしたら、CDをいれろと。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_openssh-servercd.html"/><updated>2012-12-30T17:34:00Z</updated><published>2012-12-30T17:34:00Z</published><id>article/2012/12/30_openssh-servercd.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;pre class="src src-sh"&gt;Media Change: Please insert the disc labeled 
+&lt;span style="color: #ff00ff;"&gt;'Ubuntu-Server 12.04.1 LTS _Precise Pangolin_  - Release amd64 (2012817.3)'&lt;/span&gt;
+ &lt;span style="color: #ffff00;"&gt;in&lt;/span&gt; the drive &lt;span style="color: #ff00ff;"&gt;'/media/cdrom/'&lt;/span&gt; and press enter.
 &lt;/pre&gt;
 
 &lt;p&gt;
@@ -56,8 +407,50 @@ $ vgremove /dev/{&amp;#12508;&amp;#12522;&amp;#12517;&amp;#12540;&amp;#12512;&am
 &#12371;&#12398;&#26178;&#12289;swap&#38936;&#22495;&#12395;&#21106;&#12426;&#24403;&#12390;&#12383;&#12418;&#12398;&#12364;&#21066;&#38500;&#12391;&#12365;&#12394;&#12356;&#22580;&#21512;&#12364;&#12354;&#12427;&#12364;
 &#12381;&#12398;&#26178;&#12399;&#12289;&#12356;&#12387;&#12383;&#12435;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#20316;&#26989;&#12434;&#20013;&#26029;&#12375;&#12390;&#12420;&#12426;&#30452;&#12379;&#12400;&#12424;&#12356;&#12290;
 &lt;/p&gt;
-</content></entry><entry><title type="html">firefoxで常にIMEをOFFにする方法</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_firefoximeoff.html"/><updated>2012-12-30T17:31:00Z</updated><published>2012-12-30T17:31:00Z</published><id>article/2012/12/30_firefoximeoff.html</id><category scheme="/tags/firefox.html" term="firefox" label="firefox"/><content type="html">
+</content></entry><entry><title type="html">firefoxで常にIMEをOFFにする方法</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_firefoximeoff.html"/><updated>2012-12-30T17:31:00Z</updated><published>2012-12-30T17:31:00Z</published><id>article/2012/12/30_firefoximeoff.html</id><category scheme="/tags/firefox.html" term="firefox" label="firefox"/><content type="html">&lt;ul&gt;
+&lt;li&gt;&#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#12501;&#12457;&#12523;&#12480;&#12398;&#22580;&#25152;&#12434;&#35519;&#12409;&#12427;&#12290;
+&lt;ul&gt;
+&lt;li&gt;&#12504;&#12523;&#12503; -&amp;gt; &#12488;&#12521;&#12502;&#12523;&#12471;&#12517;&#12540;&#12486;&#12451;&#12531;&#12464;&#24773;&#22577; -&amp;gt; &#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#22522;&#26412;&#24773;&#22577; -&amp;gt; &#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#12501;&#12457;&#12523;&#12480;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;{&#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#12501;&#12457;&#12523;&#12480;}/userChrome.css &#12434;&#38283;&#12367;(&#12394;&#12369;&#12428;&#12400;&#20316;&#25104;)
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&#19979;&#35352;&#12398;&#12467;&#12540;&#12489;&#12434;&#36861;&#21152;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-css"&gt;&lt;span style="color: #0000ff; font-weight: bold;"&gt;@charset&lt;/span&gt; &lt;span style="color: #ff00ff;"&gt;"utf-8"&lt;/span&gt;;
+&lt;span style="color: #0000ff; font-weight: bold;"&gt;* *|input &lt;/span&gt;{&lt;span style="color: #ffff00;"&gt;ime-mode&lt;/span&gt;: inactive &lt;span style="color: #0000ff; font-weight: bold;"&gt;!important&lt;/span&gt;;}
+&lt;/pre&gt;
+
+
+&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;&#21442;&#32771;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://ameblo.jp/damocha/entry-11105732309.html"&gt;http://ameblo.jp/damocha/entry-11105732309.html&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
 </content></entry><entry><title type="html">git merge でrenmae関係のエラーがでた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_git-merge-renmae.html"/><updated>2012-12-30T17:30:00Z</updated><published>2012-12-30T17:30:00Z</published><id>article/2012/12/30_git-merge-renmae.html</id><category scheme="/tags/git.html" term="git" label="git"/><content type="html">&lt;p&gt;
+git merge &#12375;&#12383;&#12425;&#27425;&#12398;&#12424;&#12358;&#12394;&#12527;&#12540;&#12491;&#12531;&#12464;&#12364;&#12391;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="example"&gt;warning: inexact rename detection was skipped due to too many files.
+warning: you may want to set your merge.renamelimit variable to at least 1814 and retry the command.
+&lt;/pre&gt;
+
+
+&lt;p&gt;
 &#19979;&#35352;&#12395;&#12424;&#12427;&#12392;&#12289;&#12487;&#12501;&#12457;&#12523;&#12488;&#12398;&#35373;&#23450;&#12391;&#12399;&#12289;rename&#12398;&#12510;&#12540;&#12472;&#12399;&#12450;&#12523;&#12468;&#12522;&#12474;&#12512;&#12364;&#36933;&#12356;&#12383;&#12417;&#12395;OFF&#12395;&#12375;&#12390;&#12427;&#12425;&#12375;&#12356;&#12290;
 &lt;/p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href="http://stackoverflow.com/questions/7830728/warning-on-diff-renamelimit-variable-when-doing-git-push"&gt;http://stackoverflow.com/questions/7830728/warning-on-diff-renamelimit-variable-when-doing-git-push&lt;/a&gt;
@@ -108,920 +501,5 @@ $ git remote add upstream git://github.com/renard/o-blog.git
 $ git merge upstream/master
 &lt;/pre&gt;
 
-</content></entry><entry><title type="html">eshell上でリダイレクトした結果が文字化け</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_eshell.html"/><updated>2012-12-30T17:27:00Z</updated><published>2012-12-30T17:27:00Z</published><id>article/2012/12/30_eshell.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;pre class="src src-sh"&gt;$ git diff &amp;gt; hoge.patch
-&lt;/pre&gt;
-
-&lt;p&gt;
-hoge.patch&#12434;&#38283;&#12367;&#12392;&#19979;&#35352;&#12398;&#12424;&#12358;&#12394;&#21046;&#24481;&#12467;&#12540;&#12489;&#12398;&#12414;&#12376;&#12387;&#12383;&#32080;&#26524;&#12395;&#12394;&#12426;patch&#12392;&#12375;&#12390;&#20351;&#29992;&#12391;&#12365;&#12394;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;^[[0m^[[01;32march^[[0m      ^[[01;32mcut^[[0m                   ^[[01;32mdoexec^[[0m      ^[[01;32mgettext^[[0m   ^[[01;36mksh^[[0m
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12427;&#12403;&#12365;&#12385;&#12373;&#12435;&#12398;&#12513;&#12523;&#12510;&#12460;&#31532;3&#21495;&#12395;&#32057;&#20171;&#12373;&#12428;&#12390;&#12356;&#12383;esh-myparser.el&#12434;&#20351;&#12387;&#12390;&#20197;&#19979;&#12398;&#12467;&#12510;&#12531;&#12489;&#12391;&#12362;&#12387;&#12369;&#12540;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ b git diff &amp;gt; hoge.patch
-&lt;/pre&gt;
-
-</content></entry><entry><title type="html">terminfoとtermcapとncurses</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_terminfotermcapncurses.html"/><updated>2012-12-30T17:27:00Z</updated><published>2012-12-30T17:27:00Z</published><id>article/2012/12/30_terminfotermcapncurses.html</id><category scheme="/tags/terminal.html" term="terminal" label="terminal"/><content type="html">&lt;ul&gt;
-&lt;li&gt;terminfo(termcap&#12399;&#36942;&#21435;&#12398;&#35215;&#26684;)
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#12300;terminfo &#12399;&#30011;&#38754;&#25351;&#21521;&#12398;&#12503;&#12525;&#12464;&#12521;&#12512;&#12364;&#20351;&#12358;&#12289;&#31471;&#26411; &#12434;&#35352;&#36848;&#12377;&#12427;&#12487;&#12540;&#12479;&#12505;&#12540;&#12473;
-&#12391;&#8230;&#12301; &#12392;&#12354;&#12426;&#12414;&#12377;&#12290;terminfo &#12399;&#31471;&#26411;&#12395;&#12486;&#12461;&#12473;&#12488; &#12434;&#34920;&#31034;&#12377;&#12427;&#12383;&#12417;&#12395;&#20351;&#12358;&#21046;&#24481;&#12471;&#12540;
-&#12465;&#12531;&#12473;(&#12456;&#12473;&#12465;&#12540;&#12503;&#12467;&#12540;&#12489;)&#12398;&#19968;&#33324;&#30340;&#12394;&#38598;&#21512;&#12434; &#23450;&#32681;&#12375;&#12289;&#29305;&#27530;&#12394;&#12489;&#12521;&#12452;&#12496;&#12434;&#20351;&#12358;&#24517;
-&#35201;&#12394;&#12375;&#12395;&#12373;&#12414;&#12374;&#12414;&#12394;&#31471;&#26411;&#12495;&#12540;&#12489;&#12454;&#12455;&#12450;&#12395;&#23550;&#24540; &#12391;&#12365;&#12427;&#12424;&#12358;&#12395;&#12375;&#12414;&#12377;&#12290;
-/usr/share/terminfo &#12395;&#12354;&#12426;&#12414;&#12377;&#12290;
-$TERM&#12398;&#20516;&#12434;&#12461;&#12540;&#12395;&#12375;&#12390;&#12487;&#12540;&#12479;&#12434;&#12498;&#12483;&#12497;&#12523;&#12290;
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ncurses
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ncurses &#12399;&#12289;&#31471;&#26411;&#12395;&#20381;&#23384;&#12375;&#12394;&#12356;&#24418;&#24335;&#12391;&#12486;&#12461;&#12473;&#12488;&#12518;&#12540;&#12470;&#12452;&#12531;&#12479;&#12501;&#12455;&#12540;&#12473;&#65288;TUI&#65289;
-&#12434;&#20316;&#25104;&#12377;&#12427;&#12383;&#12417;&#12398;API&#12434;&#25552;&#20379;&#12377;&#12427;&#12521;&#12452;&#12502;&#12521;&#12522;&#12290;&#30011;&#38754;&#20999;&#12426;&#26367;&#12360;&#12434;&#26368;&#36969;&#21270;&#12375;&#12289;&#12522;&#12514;&#12540;
-&#12488;&#12471;&#12455;&#12523;&#12391;&#20351;&#12387;&#12390;&#12418;&#12524;&#12452;&#12486;&#12531;&#12471;&#12434;&#26368;&#23567;&#12395;&#25233;&#12360;&#12427;&#12424;&#12358;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&#33394;&#12398;&#21046;&#24481;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#12467;&#12531;&#12477;&#12540;&#12523;&#12391;&#12399;&#12300;ANSI&#12456;&#12473;&#12465;&#12540;&#12503;&#12471;&#12540;&#12465;&#12531;&#12473;&#12301;&#12392;&#12356;&#12358;&#21046;&#24481;&#12471;&#12540;&#12465;&#12531;&#12473;&#12391;&#33394;&#12434;&#25351;
-&#23450;&#12377;&#12427;&#12290;
-&lt;/p&gt;</content></entry><entry><title type="html">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/29_oblogubuntuapache2.html"/><updated>2012-12-29T18:11:00Z</updated><published>2012-12-29T18:11:00Z</published><id>article/2012/12/29_oblogubuntuapache2.html</id><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/><content type="html">&lt;p&gt;
-&#12371;&#12398;&#12502;&#12525;&#12464;&#12399;oblog&#12391;&#26360;&#12356;&#12390;&#12427;&#12435;&#12384;&#12369;&#12393;&#12289;&#29983;&#25104;&#12373;&#12428;&#12383;html&#12434;file&#12392;&#12375;&#12390;&#38283;&#12356;&#12390;&#12415;
-&#12427;&#12392;css&#12364;&#12358;&#12414;&#12367;&#36969;&#29992;&#12373;&#12428;&#12394;&#12363;&#12387;&#12383;&#12426;&#12377;&#12427;&#12398;&#12391;&#12289;&#12503;&#12524;&#12499;&#12517;&#12540;&#29992;&#12395;&#33258;&#23429;&#12469;&#12540;&#12496;&#12395;
-apache&#12434;&#20837;&#12428;&#12427;&#12371;&#12392;&#12395;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12414;&#12378;&#12399;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ sudo apt-get install apache2
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#19979;&#35352;&#12398;&#35373;&#23450;&#12391;oblog&#12434;&#35373;&#23450;&#12377;&#12427;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cd /etc/apache2/sites-available
-$ cp default oblog.whitebase
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-oblog.whitebase&#12501;&#12449;&#12452;&#12523;&#12434;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#32232;&#38598;
-&lt;/p&gt;
-
-
-&lt;pre class="example"&gt;&amp;lt;VirtualHost oblog.whitebase:80&amp;gt;
-    ServerAdmin webmaster@localhost
-
-    DocumentRoot /home/mikio/dev/mikio.github.com
-    &amp;lt;Directory /&amp;gt;
-        Options FollowSymLinks
-        AllowOverride None
-    &amp;lt;/Directory&amp;gt;
-    &amp;lt;Directory /home/mikio/dev/mikio.github.com&amp;gt;
-        Options Indexes FollowSymLinks MultiViews
-        AllowOverride None
-        Order allow,deny
-        allow from all
-    &amp;lt;/Directory&amp;gt;
-
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-
-    # Possible values include: debug, info, notice, warn, error, crit,
-    # alert, emerg.
-    LogLevel warn
-
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-&amp;lt;/VirtualHost&amp;gt;
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-/etc/hosts&#12434;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#20462;&#27491;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;192.168.10.2    whitebase.lan   whitebase
-192.168.10.2    oblog.whitebase
-&lt;/pre&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;$ sudo a2ensite oblog.whitebase
-$ sudo service apache2 reload
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#32154;&#12356;&#12390;Windows7&#20596;&#12391;hosts&#12434;&#35373;&#23450;&#12377;&#12427;&#12290;Windows7&#12391;hosts&#12501;&#12449;&#12452;&#12523;&#12434;&#32232;&#38598;&#12377;&#12427;&#12395;
-&#12399;&#12289;&#12513;&#12514;&#24115;&#12434;&#31649;&#29702;&#32773;&#27177;&#38480;&#12391;&#38283;&#12367;&#24517;&#35201;&#12364;&#12354;&#12427;&#12290;&#12473;&#12479;&#12540;&#12488;&#12513;&#12491;&#12517;&#12540;&#12391;notepad&#12392;&#20837;&#21147;
-&#12375;&#12289;&#21491;&#12463;&#12522;&#12391;&#12300;&#31649;&#29702;&#32773;&#27177;&#38480;&#12391;&#23455;&#34892;&#12377;&#12427;&#12301;&#12434;&#36984;&#25246;&#12377;&#12428;&#12400;&#33391;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="example"&gt;c:/Windows/System32/drivers/etc/hosts
-192.168.10.2 whitebase
-192.168.10.2 oblog.whitebase
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#35373;&#23450;&#12364;&#32066;&#12431;&#12387;&#12383;&#12425;&#19979;&#35352;&#12408;&#12450;&#12463;&#12475;&#12473;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://oblog.whitebase/"&gt;http://oblog.whitebase/&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-</content></entry><entry><title type="html">Emacs中毒者に贈るJDEEによるJava開発環境の構築</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/23_emacsjdeejava.html"/><updated>2012-12-23T08:20:00Z</updated><published>2012-12-23T08:20:00Z</published><id>article/2012/12/23_emacsjdeejava.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
-&#12371;&#12398;&#25237;&#31295;&#12399; &lt;a href="http://qiita.com/advent-calendar/2012/emacs"&gt;Emacs Advent Calendar 2012&lt;/a&gt; &#12398;23&#26085;&#30446;&#12398;&#35352;&#20107;&#12391;&#12377;&#12290; 
-&lt;/p&gt;
-
-&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;&#12399;&#12376;&#12417;&#12395;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-
-&lt;p&gt;
-Java&#38283;&#30330;&#12392;&#12356;&#12360;&#12400;Eclipse&#19968;&#25246;&#12394;&#12371;&#12398;&#26178;&#20195;&#12289;&#12393;&#12428;&#12384;&#12369;&#38656;&#35201;&#12364;&#12354;&#12427;&#12363;&#12431;&#12363;&#12426;&#12414;&#12379;&#12435;
-&#12364;&#12289;Emacs&#20013;&#27602;&#12394;&#30342;&#12373;&#12435;&#12399;&#12289;&#12391;&#12365;&#12428;&#12400;Eclipse&#12394;&#12435;&#12363;&#20351;&#12356;&#12383;&#12367;&#12394;&#12356;&#12391;&#12377;&#12424;&#12397;&#65311;&#31169;
-&#12399;&#20351;&#12356;&#12383;&#12367;&#12394;&#12356;&#12391;&#12377;(&#31505;)&#12290;&#31169;&#12418;&#12372;&#22810;&#20998;&#12395;&#12418;&#12428;&#12378;&#12289;&#12394;&#12435;&#12391;&#12418;Emacs&#12391;&#28168;&#12414;&#12375;&#12383;&#12356;&#20154;
-&#12395;&#12394;&#12387;&#12390;&#12375;&#12414;&#12387;&#12383;&#12398;&#12391;&#12289;&#24403;&#28982;Java&#12418;Emacs&#12391;&#38283;&#30330;&#12375;&#12383;&#12367;&#12394;&#12426;&#12414;&#12377;&#12290;&#12381;&#12371;&#12391;JDEE&#12398;
-&#29872;&#22659;&#12434;&#27083;&#31689;&#12375;&#12424;&#12358;&#12392;&#12375;&#12383;&#12398;&#12391;&#12377;&#12364;&#12289;JDEE&#12398;&#38283;&#30330;&#12399;&#20572;&#27490;&#12375;&#12390;&#12356;&#12427;&#12379;&#12356;&#12363;&#12289;&#26368;&#26032;&#12398;
-Emacs23&#12420;24&#12384;&#12392;&#12377;&#12435;&#12394;&#12426;&#21205;&#12365;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-
-&lt;p&gt;
-&#12394;&#12425;&#12400;&#12392;&#12289;malabar-mode&#12418;&#35430;&#12375;&#12383;&#12398;&#12391;&#12377;&#12364;&#12289;Maven&#29872;&#22659;&#12434;&#35201;&#27714;&#12375;&#12390;&#12365;&#12414;&#12377;&#12375;&#12289;&#12394;
-&#12435;&#12384;&#12363;&#21205;&#20316;&#12364;&#12418;&#12387;&#12373;&#12426;&#12394;&#19978;&#12395;(JDEE&#12424;&#12426;&#37325;&#12356;&#21360;&#35937;)&#12392;&#12371;&#12429;&#12393;&#12371;&#12429;&#12456;&#12521;&#12540;&#12364;&#12391;&#12383;&#12426;
-&#12375;&#12390;&#12358;&#12414;&#12367;&#21205;&#12365;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12391;&#12289;&#12420;&#12387;&#12401;&#12426;JDEE&#12364;&#12356;&#12356;&#12392;&#12356;&#12358;&#12371;&#12392;&#12391;&#12289;&#33510;&#21172;&#12398;&#26411;&#12289;&#26368;&#36817;&#12420;&#12387;&#12392;emacs&#12395;&#12424;&#12427;
-Java&#38283;&#30330;&#29872;&#22659;(JDEE)&#12364;&#27083;&#31689;&#12391;&#12365;&#12383;&#12398;&#12391;&#12381;&#12398;&#26041;&#27861;&#12434;&#12513;&#12514;&#12375;&#12390;&#12362;&#12365;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#20170;&#22238;&#12399;&#12289;JDEE&#12398;&#23566;&#20837;&#26041;&#27861;&#12375;&#12363;&#35299;&#35500;&#12375;&#12414;&#12379;&#12435;&#12364;&#12289;&#26368;&#32066;&#30340;&#12394;&#31169;&#12398;Java&#38283;&#30330;&#29872;&#22659;&#12399;
-&#20197;&#19979;&#12398;&#12392;&#12362;&#12426;&#12391;&#12377;&#12290;&#20170;&#12392;&#12371;&#12429;ant&#12505;&#12540;&#12473;&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12391;&#12375;&#12363;&#20351;&#29992;&#12375;&#12390;&#12362;&#12425;&#12378;&#12289;
-Maven&#12505;&#12540;&#12473;&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12391;&#12399;&#21205;&#20316;&#30906;&#35469;&#12375;&#12390;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
-&lt;caption&gt;&lt;/caption&gt;
-&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
-&lt;/colgroup&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12452;&#12531;&#12509;&#12540;&#12488;&#25991;&#12398;&#33258;&#21205;&#29983;&#25104;&lt;/td&gt;&lt;td class="left"&gt;JDEE&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;Javadoc&#34920;&#31034;&lt;/td&gt;&lt;td class="left"&gt;JDEE + w3m&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12499;&#12523;&#12489;&lt;/td&gt;&lt;td class="left"&gt;JDEE + ant&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12487;&#12496;&#12483;&#12460;&lt;/td&gt;&lt;td class="left"&gt;JDEE + jdb&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;REPL&#12413;&#12356;&#12418;&#12398;&lt;/td&gt;&lt;td class="left"&gt;JDEE(BeanShell)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12467;&#12540;&#12489;&#12473;&#12491;&#12506;&#12483;&#12488;&lt;/td&gt;&lt;td class="left"&gt;Yasnippet&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12479;&#12464;&#12472;&#12515;&#12531;&#12503;&lt;/td&gt;&lt;td class="left"&gt;gtags(global)&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12513;&#12477;&#12483;&#12489;&#35036;&#23436;&lt;/td&gt;&lt;td class="left"&gt;helm-jdee-method(&#25305;&#20316;)&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;p&gt;
-&#12414;&#12384;&#23566;&#20837;&#12375;&#12383;&#12400;&#12363;&#12426;&#12391;&#26908;&#35388;&#12375;&#12390;&#12394;&#12356;&#12418;&#12398;&#12418;&#12354;&#12426;&#12414;&#12377;&#12290;JDEE&#12399;
-&#12300;BeanShell(JavaInterpreter) + &#22823;&#20316;Elisp&#25313;&#24373;&#12301;&#12392;&#12356;&#12358;&#12289;&#12300;&#37325;&#12356; + &#37325;&#12356;&#12301;&#12398;
-&#24375;&#21147;&#12479;&#12483;&#12464;&#12391;&#12377;&#12290;&#21205;&#20316;&#36895;&#24230;&#12395;&#12388;&#12356;&#12390;&#12399;&#26399;&#24453;&#12375;&#12394;&#12356;&#12411;&#12358;&#12364;&#33391;&#12356;&#12391;&#12377;&#12290;&#12513;&#12477;&#12483;&#12489;&#35036;
-&#23436;&#12395;&#12388;&#12356;&#12390;&#12399;&#12289;Helm&#12391;&#35036;&#23436;&#12377;&#12427;elisp&#12434;&#33258;&#20316;&#12375;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-2" class="outline-3"&gt;
-&lt;h3 id="sec-2"&gt;&#24517;&#35201;&#12394;&#12418;&#12398;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2"&gt;
-
-
-&lt;p&gt;
-JDEE&#12398;&#12499;&#12523;&#12489;&#12395;&#12399;&#19979;&#35352;&#12398;&#12418;&#12398;&#12364;&#24517;&#35201;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
-&lt;/p&gt;&lt;dl&gt;
-&lt;dt&gt;emacs24.2&lt;/dt&gt;&lt;dd&gt;emacs&#12399;&#22519;&#31558;&#26178;&#28857;&#12398;&#26368;&#26032;&#12398;emacs24.2&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
-
-&lt;/dd&gt;
-&lt;dt&gt;&lt;a href="http://jdee.sourceforge.net/"&gt;JDEE-2.4.1&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;github&#12395; &lt;a href="https://github.com/emacsmirror/jdee/"&gt;&#12511;&#12521;&#12540;&lt;/a&gt; &#12364;&#12354;&#12426;&#12414;&#12377;&#12398;&#12391;&#12381;&#12385;&#12425;&#12434;&#21033;&#29992;&#12375;&#12414;&#12377;&#12290;
-
-&lt;/dd&gt;
-&lt;dt&gt;&lt;a href="http://cedet.sourceforge.net/"&gt;CEDET 1.1&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;CEDET&#12399;&#12289;emacs24&#12395;&#21516;&#26801;&#12373;&#12428;&#12390;&#12356;&#12427;&#12398;&#12391;&#12377;&#12364;(Version:
-               1.0pre7)&#12289;JDEE&#12364;&#21205;&#20316;&#12375;&#12394;&#12356;&#12398;&#12391;&#21029;&#36884;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12414;&#12377;&#12290;&#12383;
-               &#12384;&#12375;&#12289;&#29305;&#23450;&#12398;tar&#12391;&#12394;&#12356;&#12392;&#12358;&#12414;&#12367;&#21205;&#20316;&#12375;&#12414;&#12379;&#12435;&#12290;&#24460;&#36848;&#12375;&#12414;&#12377;&#12290;
-
-&lt;/dd&gt;
-&lt;dt&gt;&lt;a href="http://sourceforge.net/projects/ant-contrib/files/ant-contrib/ant-contrib-0.6/"&gt;ant-contrib-0.6&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;ant-contrib&#12399;&#12289;ant&#20596;&#12398;&#12521;&#12452;&#12502;&#12521;&#12522;&#12392;&#12375;&#12390;&#12499;&#12523;&#12489;&#26178;&#12395;&#24517;
-     &#35201;&#12391;&#12377;&#12290;
-&lt;/dd&gt;
-&lt;/dl&gt;
-
-
-&lt;p&gt;
-&#12354;&#12392;&#12399;ant&#12398;&#26368;&#26032;&#29256;&#12392;JDK&#12398;&#26368;&#26032;&#29256;&#12434;&#29992;&#24847;&#12375;&#12390;&#12362;&#12365;&#12414;&#12377;&#12290;&#12414;&#12383;&#29872;&#22659;&#22793;&#25968;
- &lt;code&gt;JAVA_HOME&lt;/code&gt; &#12399;&#24517;&#38920;&#12391;&#12377;&#12290;&#12385;&#12394;&#12415;&#12395;&#12289;elib1.0&#12399;emacs22&#20197;&#38477;&#12363;&#12425;&#32068;&#12415;&#36796;&#12415;&#12394;&#12398;&#12391;&#24517;
-&#35201;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#20197;&#38477;&#12391;&#12399;&#12289; &lt;code&gt;~/site-lisp&lt;/code&gt; &#12392;&#12358;&#12356;&#12358;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#20316;&#25104;&#12375;&#12289;&#12381;&#12371;&#12395;&#24517;&#35201;&#12394;&#12477;&#12540;
-&#12473;&#12467;&#12540;&#12489;&#12434;&#23637;&#38283;&#12375;&#12390;&#12499;&#12523;&#12489;&#12377;&#12427;&#12371;&#12392;&#12395;&#12375;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;~/site-lisp
-  |
-  +- cedet-1.1
-  |
-  +- jdee
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12385;&#12394;&#12415;&#12395;&#21205;&#20316;&#30906;&#35469;&#12399;&#12289;windows7,windowXP,ubuntu-server&#19978;&#12398;CUI&#29872;&#22659;&#12391;&#12375;&#12390;&#12356;
-&#12414;&#12377;&#12290;&#23455;&#38555;&#12398;&#27083;&#31689;&#12399;&#12289;Cygwin+WindowsXP&#12391;&#23455;&#26045;&#12375;&#12414;&#12375;&#12383;&#12290;Linux&#12418;Mac&#12418;&#22823;&#20307;&#21516;
-&#12376;&#12363;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-3" class="outline-3"&gt;
-&lt;h3 id="sec-3"&gt;CEDET&#12398;&#12499;&#12523;&#12489;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-3"&gt;
-
-&lt;p&gt;&#12414;&#12378;&#12399;&#12289;JDEE&#12364;&#20381;&#23384;&#12375;&#12390;&#12356;&#12427;&#12497;&#12483;&#12465;&#12540;&#12472;CEDET&#12434;&#23566;&#20837;&#12375;&#12414;&#12377;&#12290;&#26368;&#26032;&#12398;&#12473;&#12490;&#12483;&#12503;
-&#12471;&#12519;&#12483;&#12488;(tar&#12508;&#12540;&#12523;)&#12420;&#12289;&#12522;&#12509;&#12472;&#12488;&#12522;&#12363;&#12425;&#21462;&#24471;&#12375;&#12383;CEDET&#12384;&#12392;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12356;&#12398;
-&#12391;&#24517;&#12378;&#19979;&#35352;&#12363;&#12425;&#21462;&#24471;&#12375;&#12383;CEDET&#12434;&#20351;&#29992;&#12375;&#12390;&#19979;&#12373;&#12356;&#12290;&lt;sup&gt;&lt;a class="footref" name="fnr.1" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://jdee.sourceforge.net/"&gt;http://jdee.sourceforge.net/&lt;/a&gt; &#12434;&#38283;&#12367;
-&lt;/li&gt;
-&lt;li&gt;&#24038;&#12513;&#12491;&#12517;&#12540;&#12398;[Downloading the JDEE] &#12522;&#12531;&#12463;&#12434;&#12463;&#12522;&#12483;&#12463;
-&lt;/li&gt;
-&lt;li&gt;&#19978;&#37096;&#12398;[project download area]&#12522;&#12531;&#12463;&#12434;&#12463;&#12522;&#12483;&#12463;
-&lt;/li&gt;
-&lt;li&gt;[Download cedet-1.1.tar.gz (2.2 MB)]&#12522;&#12531;&#12463;&#12434;&#12463;&#12522;&#12483;&#12463;&#12375;&#12390;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12375;&#12383; &lt;code&gt;cedet-1.1.tar.gz&lt;/code&gt; &#12434; &lt;code&gt;~/site-lisp&lt;/code&gt; &#12395;cedet-1.1&#12392;&#12375;&#12390;
-&#23637;&#38283;&#12375;&#12390;&#12362;&#12365;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#32154;&#12356;&#12390;&#12499;&#12523;&#12489;&#12375;&#12414;&#12377;&#12290;Make&#29872;&#22659;&#12364;&#12354;&#12427;&#22580;&#21512;&#12399;&#12289;&#26222;&#36890;&#12395;make&#12375;&#12390;&#19979;&#12373;&#12356;&#12290;&#19968;&#30330;&#30446;
-&#12399;&#29983;&#25104;&#12501;&#12449;&#12452;&#12523;&#12398;&#38918;&#30058;&#12398;&#38306;&#20418;&#12391;&#22833;&#25943;&#12377;&#12427;&#12371;&#12392;&#12364;&#12354;&#12427;&#12398;&#12391;&#12289;&#12381;&#12435;&#12394;&#26178;&#12399;&#12418;&#12358;&#19968;&#24230;
-make&#12375;&#12390;&#19979;&#12373;&#12356;&#12290;Make&#12395;&#12399;&#32080;&#27083;&#26178;&#38291;&#12364;&#12363;&#12363;&#12426;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cd cedet-1.1
-$ make
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-Windows&#12394;&#20154;&#12420;Make&#29872;&#22659;&#12364;&#12394;&#12356;&#22580;&#21512;&#12399;&#12289;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;emacs&#26412;&#20307;&#12434;&#20351;&#29992;&#12375;&#12390;&#12499;&#12523;
-&#12489;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#35443;&#32048;&#12399;&#12289;cedet-build.el&#26412;&#20307;&#12398;&#12504;&#12483;&#12480;&#12395;&#12467;&#12513;&#12531;&#12488;&#12392;&#12375;&#12390;&#35352;&#36848;
-&#12373;&#12428;&#12390;&#12356;&#12414;&#12377;&#12290;emacs&#12391;&#12499;&#12523;&#12489;&#12377;&#12427;&#22580;&#21512;&#12289;&#36884;&#20013;&#12391;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#20316;&#25104;&#12398;Yes/No&#12398;&#20837;
-&#21147;&#12434;&#27714;&#12417;&#12425;&#12428;&#12427;&#12398;&#12391;&#38626;&#24109;&#12375;&#12394;&#12356;&#12411;&#12358;&#12364;&#33391;&#12356;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;$ cd cedet-1.1
-$ C:/Users/mikio/apps/emacs-24.2/bin/runemacs.exe -Q -l cedet-build.el -f cedet-build
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-4" class="outline-3"&gt;
-&lt;h3 id="sec-4"&gt;JDEE&#12398;&#12499;&#12523;&#12489;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-4"&gt;
-
-&lt;p&gt;&#12499;&#12523;&#12489;&#12395;&#12399; &lt;a href="http://sourceforge.net/projects/ant-contrib/files/ant-contrib/ant-contrib-0.6/"&gt;ant-contrib-0.6&lt;/a&gt; &#12364;&#24517;&#35201;&#12391;&#12377;&#12290;ant-contrib-0.6.zip&#12434;&#23637;&#38283;&#12375;&#12390;&#12391;
-&#12365;&#12383; &lt;code&gt;ant-contrib-0.6.jar&lt;/code&gt; &#12434; &lt;code&gt;~/.ant/lib/&lt;/code&gt; &#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12395;&#37197;&#32622;&#12375;&#12390;&#12362;&#12356;&#12390;
-&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12414;&#12378;&#12399;JDEE&#12514;&#12472;&#12517;&#12540;&#12523;&#12434;&#28310;&#20633;&#12375;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cd ~/site-lisp/
-$ git clone https://github.com/emacsmirror/jdee.git
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-jdee&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12395;&#20837;&#12426;&#12289;1&#24230;&#12384;&#12369;ant&#12434;&#23455;&#34892;&#12375;&#12390;build.properties&#12434;&#29983;&#25104;&#12375;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ cd jdee
-$ ant configure
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-build.properties&#12434;&#32232;&#38598;&#12375;&#12414;&#12377;&#12290; &lt;code&gt;cedet.dir&lt;/code&gt;, &lt;code&gt;build.bin.emacs&lt;/code&gt; &#12434;&#29872;&#22659;&#12395;
-&#21512;&#12431;&#12379;&#12390;&#32232;&#38598;&#12375;&#12414;&#12377;&#12290; 
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;elib.dir=
-prefix.dir=
-cedet.dir=c:/Users/mikio/site-lisp/cedet-1.1
-build.bin.emacs=C:/Users/mikio/apps/emacs-24.2/bin/runemacs.exe
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#28310;&#20633;&#12364;&#12391;&#12365;&#12383;&#12425;&#12499;&#12523;&#12489;&#12375;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;ant
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#20197;&#19978;&#12391;&#12289;&#12499;&#12523;&#12489;&#12364;&#23436;&#20102;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-5" class="outline-3"&gt;
-&lt;h3 id="sec-5"&gt;.emacs&#12398;&#35373;&#23450;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-5"&gt;
-
-
-&lt;p&gt;
-CEDET&#12392;JDEE&#12398;&#12499;&#12523;&#12489;&#12364;&#12391;&#12365;&#12383;&#12425;&#19979;&#35352;&#12398;&#35373;&#23450;&#12434;.emacs&#12395;&#21152;&#12360;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-emacs-lisp"&gt;&lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#8595;&amp;#12392;&amp;#12395;&amp;#12363;&amp;#12367;&amp;#35373;&amp;#23450;&amp;#12501;&amp;#12449;&amp;#12452;&amp;#12523;&amp;#12398;&amp;#26368;&amp;#21021;&amp;#12398;&amp;#12411;&amp;#12358;&amp;#12391;&amp;#35501;&amp;#12415;&amp;#12371;&amp;#12416;&lt;/span&gt;
-(load-file &lt;span style="color: #ffa07a;"&gt;"~/site-lisp/cedet-1.1/common/cedet.el"&lt;/span&gt;) 
-
-(add-to-list 'load-path &lt;span style="color: #ffa07a;"&gt;"~/site-lisp/jdee/dist/jdee-2.4.1/lisp"&lt;/span&gt;)
-(load &lt;span style="color: #ffa07a;"&gt;"jde-autoload"&lt;/span&gt;)
-
-(&lt;span style="color: #00ffff;"&gt;defun&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;my-jde-mode-hook&lt;/span&gt; ()
-  (&lt;span style="color: #00ffff;"&gt;require&lt;/span&gt; '&lt;span style="color: #7fffd4;"&gt;jde&lt;/span&gt;)
-
-  (setq jde-build-function 'jde-ant-build) &lt;span style="color: #ff7f24;"&gt;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#12499;&amp;#12523;&amp;#12489;&amp;#12395;ant&amp;#12434;&amp;#21033;&amp;#29992;&amp;#12377;&amp;#12427;&lt;/span&gt;
-  (setq jde-ant-read-target t)             &lt;span style="color: #ff7f24;"&gt;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;target&amp;#12434;&amp;#21839;&amp;#12356;&amp;#21512;&amp;#12431;&amp;#12379;&amp;#12427;&lt;/span&gt;
-  (setq jde-ant-enable-find t)             &lt;span style="color: #ff7f24;"&gt;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;ant&amp;#12395;-find&amp;#12458;&amp;#12503;&amp;#12471;&amp;#12519;&amp;#12531;&amp;#12434;&amp;#25351;&amp;#23450;&amp;#12377;&amp;#12427;(&amp;#35201;&amp;#12425;&amp;#12394;&amp;#12356;&amp;#12363;&amp;#12418;)&lt;/span&gt;
-
-  &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;complilation&amp;#12496;&amp;#12483;&amp;#12501;&amp;#12449;&amp;#12434;&amp;#33258;&amp;#21205;&amp;#30340;&amp;#12395;&amp;#12473;&amp;#12463;&amp;#12525;&amp;#12540;&amp;#12523;&amp;#12373;&amp;#12379;&amp;#12427;&lt;/span&gt;
-  (setq compilation-ask-about-save nil)
-  (setq compilation-scroll-output 'first-error)
-
-  (define-key jde-mode-map (kbd &lt;span style="color: #ffa07a;"&gt;"C-c C-v ."&lt;/span&gt;) 'jde-complete-minibuf)
-  )
-
-(add-hook 'jde-mode-hook 'my-jde-mode-hook)
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12509;&#12452;&#12531;&#12488;&#12399;&#12289;CEDET&#12434;&#35501;&#12415;&#36796;&#12416;&#38918;&#30058;&#12391;&#12377;&#12290;CEDET&#12399;Emacs&#12395;&#27161;&#28310;&#12391;&#32068;&#12415;&#36796;&#12414;&#12428;&#12390;&#12356;
-&#12427;&#12383;&#12417;&#12289;&#12391;&#12365;&#12427;&#12384;&#12369;&#26089;&#12367;&#35501;&#12415;&#36796;&#12414;&#12394;&#12356;&#12392;&#12289;&#32068;&#12415;&#36796;&#12415;&#20596;&#12364;&#26377;&#21177;&#12395;&#12394;&#12387;&#12390;&#12375;&#12414;&#12356;&#12289;
-&#33258;&#20998;&#12391;&#12499;&#12523;&#12489;&#12375;&#12383;&#12411;&#12358;&#12364;&#26377;&#21177;&#12395;&#12394;&#12426;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-CEDET&#12364;&#27491;&#12375;&#12367;&#35501;&#12415;&#12371;&#12414;&#12428;&#12383;&#12363;&#12393;&#12358;&#12363;&#12399; &lt;code&gt;M-x cedet-version&lt;/code&gt; &#12391;&#30906;&#35469;&#12391;&#12365;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="example"&gt;CEDET Version:  1.1
-                Requested   File        Loaded
-  Package       Version     Version     Version
-  ----------------------------------------------------------
-  cedet:          1.1     ok      ok
-  eieio:          1.4     ok      ok
-  semantic:       2.1     ok      ok
-  srecode:        1.1     ok      ok
-  ede:            1.1     ok      ok
-  speedbar:       1.0.4   ok      ok
-  cogre:          1.1     ok      Not Loaded
-  cedet-contrib:  1.1     ok      Not Loaded
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-6" class="outline-3"&gt;
-&lt;h3 id="sec-6"&gt;&#12469;&#12531;&#12503;&#12523;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12398;&#28310;&#20633;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-6"&gt;
-
-
-&lt;p&gt;
-&#12371;&#12371;&#12414;&#12391;&#20316;&#26989;&#12391;&#12365;&#12383;&#12425;&#12289;&#21205;&#20316;&#30906;&#35469;&#12375;&#12390;&#12415;&#12414;&#12375;&#12423;&#12358;&#12290;JDEE&#12398;&#21205;&#20316;&#30906;&#35469;&#29992;&#12395; &lt;a href="https://github.com/mikio/sample-java-project"&gt;Java&#12503; &#12525;&#12472;&#12455;&#12463;&#12488;&lt;/a&gt; &#12434;&#28310;&#20633;&#12375;&#12414;&#12375;&#12383;&#12290;&#12392;&#12356;&#12387;&#12390;&#12418;&#31169;&#12398;&#20316;&#12387;&#12383;&#12418;&#12398;&#12391;&#12399;&#12394;&#12367;&#12390;&#12289;
-&lt;a href="https://github.com/skeeto/emacs-java"&gt;java-mode-plus&lt;/a&gt; &#12434;&#20316;&#25104;&#12375;&#12390;&#12427;skeeto&#12373;&#12435;&#12398; &lt;a href="https://github.com/skeeto/sample-java-project"&gt;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&lt;/a&gt; &#12434;fork&#12375;&#12390;&#12356;&#12367;&#12388;&#12363;
-&#36861;&#21152;&#12375;&#12383;&#12418;&#12398;&#12391;&#12377;&#12290;fork&#21069;&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12399;&#12450;&#12494;&#12486;&#12540;&#12471;&#12519;&#12531;&#12434;&#27963;&#29992;&#12375;&#12390;&#12377;&#12372;&#12367;
-&#12471;&#12531;&#12503;&#12523;&#12395;&#26360;&#12363;&#12428;&#12383;&#12377;&#12400;&#12425;&#12375;&#12356;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12394;&#12398;&#12391;&#12377;&#12364;&#12289;JDEE&#12364;&#12450;&#12494;&#12486;&#12540;&#12471;&#12519;
-&#12531;&#12434;&#12469;&#12509;&#12540;&#12488;&#12375;&#12390;&#12356;&#12394;&#12356;&#12383;&#12417;&#12289;&#12431;&#12374;&#12431;&#12374;&#25913;&#24746;&#65311;&#12375;&#12390;&#21476;&#12356;&#12521;&#12452;&#12502;&#12521;&#12522;&#12434;&#20351;&#29992;&#12375;&#12390;
-&#26360;&#12365;&#12394;&#12362;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;&#12354;&#12367;&#12414;&#12391;JDEE&#12398;&#21205;&#20316;&#30906;&#35469;&#29992;&#12398;&#12418;&#12398;&#12394;&#12398;&#12391;&#12289;&#12381;&#12398;&#12414;&#12414;&#20351;&#29992;
-&#12377;&#12427;&#12392;&#12365;&#12399;&#27880;&#24847;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12371;&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12399;ivy&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;ivy&#12392;&#12399;&#12289;ant&#12505;&#12540;&#12473;&#12398;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;
-&#12391;&#12289;Maven&#12398;&#12522;&#12509;&#12472;&#12488;&#12522;&#12434;&#21033;&#29992;&#12375;&#12390;&#24517;&#35201;&#12394;jar&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12377;&#12427;&#12514;&#12472;&#12517;&#12540;&#12523;&#12391;
-&#12377;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ant.apache.org/ivy/download.cgi"&gt;http://ant.apache.org/ivy/download.cgi&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#19978;&#35352;&#12469;&#12452;&#12488;&#12363;&#12425;&#26368;&#26032;&#29256;&#12434;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12375;&#12390;&#23637;&#38283;&#12375;&#12383;&#12425;&#12289; &lt;code&gt;ivy-2.3.0-rc1.jar&lt;/code&gt;
- &#12434; &lt;code&gt;~/.ant/lib/&lt;/code&gt; &#12395;&#37197;&#32622;&#12375;&#12383;&#12425;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#23436;&#20102;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-ivy&#12398;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12364;&#32066;&#12431;&#12387;&#12383;&#12425;&#12289;&#12469;&#12531;&#12503;&#12523;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12434;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;
-github&#12363;&#12425;&#33853;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ git clone https://github.com/mikio/sample-java-project.git
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#32154;&#12356;&#12390;prj.el&#12434;&#33258;&#20998;&#12398;&#29872;&#22659;&#12395;&#21512;&#12431;&#12379;&#12390;&#32232;&#38598;&#12375;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-emacs-lisp"&gt;(jde-project-file-version &lt;span style="color: #ffa07a;"&gt;"1.0"&lt;/span&gt;)
-(jde-set-variables
-
- &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;--------------&lt;/span&gt;
- &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;project common&lt;/span&gt;
- &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;--------------&lt;/span&gt;
- '(jde-jdk (quote (&lt;span style="color: #ffa07a;"&gt;"1.7"&lt;/span&gt;)))
- '(jde-jdk-registry (quote ((&lt;span style="color: #ffa07a;"&gt;"1.7"&lt;/span&gt; . &lt;span style="color: #ffa07a;"&gt;"c:/Program Files/Java/jdk1.7.0_09/"&lt;/span&gt;)
-                            )))
- '(jde-jdk-doc-url &lt;span style="color: #ffa07a;"&gt;"http://docs.oracle.com/javase/jp/6/api/"&lt;/span&gt;)
- '(jde-help-docsets '(
-                      &lt;span style="color: #ff7f24;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;("JDK API" "file://c:/Users/mikio/Dropbox/java6_ja_apidocs/ja/api" nil)&lt;/span&gt;
-                      (&lt;span style="color: #ffa07a;"&gt;"JDK API"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"http://docs.oracle.com/javase/jp/6/api/"&lt;/span&gt; nil)
-                      ))
- '(jde-help-use-frames nil)
-
- &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;--------------&lt;/span&gt;
- &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;this project only&lt;/span&gt;
- &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;--------------&lt;/span&gt;
- '(jde-sourcepath (quote (&lt;span style="color: #ffa07a;"&gt;"./src"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"./test"&lt;/span&gt;)))
- '(jde-global-classpath (quote (&lt;span style="color: #ffa07a;"&gt;"./build/classes"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"./build/test"&lt;/span&gt; &lt;span style="color: #ffa07a;"&gt;"./lib"&lt;/span&gt;)))
- '(jde-lib-directory-names '(&lt;span style="color: #ffa07a;"&gt;"lib"&lt;/span&gt;))
- '(jde-expand-classpath-p t)
-
- '(jde-build-function (quote jde-ant-build))
- '(jde-ant-enable-find t)
- '(jde-ant-read-target t)
- '(jde-ant-working-directory &lt;span style="color: #ffa07a;"&gt;"./"&lt;/span&gt;))
-&lt;/pre&gt;
-
-
-&lt;p&gt;
- &lt;code&gt;jde-jdk&lt;/code&gt; &#12289; &lt;code&gt;jde-jdk-registry&lt;/code&gt; &#12434;&#12525;&#12540;&#12459;&#12523;&#12398;&#29872;&#22659;&#12395;&#21512;&#12431;&#12379;&#12390;&#32232;&#38598;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12414;&#12383;&#12289;&#20170;&#22238;&#12398;&#12469;&#12531;&#12503;&#12523;&#12434;&#20351;&#29992;&#12375;&#12394;&#12356;&#22580;&#21512;&#12289;&#19979;&#35352;&#12398;&#22793;&#25968;&#12434;&#33258;&#20998;&#12398;&#29872;&#22659;&#12395;&#21512;&#12431;&#12379;&#12390;
-&#36969;&#23452;&#35373;&#23450;&#12377;&#12428;&#12400;&#12393;&#12398;&#29872;&#22659;&#12391;&#12418;&#21205;&#12367;&#12363;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
-&lt;caption&gt;&lt;/caption&gt;
-&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
-&lt;/colgroup&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td class="left"&gt;jde-sourcepath&lt;/td&gt;&lt;td class="left"&gt;.java&#12398;&#22580;&#25152;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;jde-global-classpath&lt;/td&gt;&lt;td class="left"&gt;.class&#12398;&#22580;&#25152;&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;jde-lib-directory-names&lt;/td&gt;&lt;td class="left"&gt;.jar&#12398;&#22580;&#25152;&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7" class="outline-3"&gt;
-&lt;h3 id="sec-7"&gt;&#21205;&#20316;&#30906;&#35469;&#12375;&#12390;&#12415;&#12427;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-7"&gt;
-
-
-&lt;p&gt;
-&#32154;&#12356;&#12390;&#12418;&#12429;&#12418;&#12429;&#12398;&#21205;&#20316;&#30906;&#35469;&#12434;&#12375;&#12390;&#12356;&#12365;&#12414;&#12377;&#12290;
- &lt;code&gt;&amp;lt;PROJECT-ROOT&amp;gt;/src/sample/java/project/SampleJavaProject.java&lt;/code&gt; &#12434;&#38283;&#12356;
- &#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7-1" class="outline-4"&gt;
-&lt;h4 id="sec-7-1"&gt;BeanShell&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-7-1"&gt;
-
-&lt;p&gt;&#12362;&#12418;&#12416;&#12429;&#12395;&#12289; &lt;code&gt;C-c C-v C-k&lt;/code&gt; &#12391;BeanShell&#12434;&#36215;&#21205;&#12375;&#12414;&#12377;&#12290;&#12414;&#12428;&#12395;Java&#12501;&#12449;&#12452;&#12523;
-&#12434;&#38283;&#12356;&#12390;&#12418;Jde-mode&#12395;&#12394;&#12425;&#12394;&#12356;&#12371;&#12392;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;&#21407;&#22240;&#12399;&#12431;&#12363;&#12425;&#12394;&#12356;&#12398;&#12391;&#12377;&#12364;&#12289;
-&#12418;&#12375;&#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12364;&#21177;&#12363;&#12394;&#12363;&#12387;&#12383;&#22580;&#21512;&#12399;&#12289;&#25163;&#21205;&#12391; &lt;code&gt;M-x jde-mode&lt;/code&gt; &#12375;&#12390;&#12363;&#12425;&#20877;
-&#24230;&#12289; &lt;code&gt;C-c C-v C-k&lt;/code&gt; &#12375;&#12390;&#19979;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-BeanShell&#12399;&#12289;JDEE&#12434;&#20351;&#29992;&#12377;&#12427;&#19978;&#12391;Emacs&#12392;Java&#12398;&#27211;&#28193;&#12375;&#30340;&#12394;&#20301;&#32622;&#12389;&#12369;&#12395;&#12354;&#12427;&#12424;
-&#12358;&#12391;&#12289;&#27096;&#12293;&#12394;&#21205;&#20316;&#12398;&#35023;&#12391;&#21205;&#12367;&#12415;&#12383;&#12356;&#12391;&#12377;&#12290;&#12383;&#12384;&#12375;&#38750;&#24120;&#12395;&#36215;&#21205;&#12364;&#37325;&#12356;&#12398;&#12391;&#26368;&#21021;&#12395;
-&#36215;&#21205;&#12375;&#12390;&#12362;&#12367;&#12392;&#33391;&#12356;&#12391;&#12377;&#12290;&#36215;&#21205;&#12434;&#12363;&#12369;&#12427;&#12392; &lt;code&gt;Starting the BeanShell. Please wait...&lt;/code&gt; &#12398;&#12513;&#12483;&#12475;&#12540;&#12472;&#12364;&#12511;&#12491;&#12496;&#12483;&#12501;&#12449;&#12395;&#34920;&#31034;&#12373;&#12428;&#12427;&#12398;&#12391;&#12289; &lt;code&gt;bsh %&lt;/code&gt; &#12398;&#12503;&#12525;&#12531;
-&#12503;&#12488;&#12364;&#12391;&#12427;&#12414;&#12391;&#24453;&#12385;&#12414;&#12377;&#12290;&#12467;&#12540;&#12498;&#12540;&#12398;&#19968;&#26479;&#12391;&#12418;&#29992;&#24847;&#12375;&#12383;&#12411;&#12358;&#12364;&#12356;&#12356;&#12363;&#12418;&#12391;&#12377;(2
-&#22238;&#30446;&#31227;&#34892;&#12399;&#36895;&#12356;)&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/bean-shell.png"  alt="../../../article/2012/12/23_emacsjdeejava/bean-shell.png" /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-BeanShell&#12434;&#36215;&#21205;&#12375;&#12390;&#12362;&#12367;&#12392;&#12289;&#12385;&#12423;&#12387;&#12392;&#12375;&#12383;API&#12398;&#25369;&#21205;&#12434;&#35519;&#12409;&#12427;&#12392;&#12365;&#20415;&#21033;&#12391;&#12377;&#12290;
-&#20363;&#12360;&#12400;&#29872;&#22659;&#22793;&#25968; &lt;code&gt;JAVA_HOME&lt;/code&gt; &#12434;&#35519;&#12409;&#12427;API&#12398;&#21205;&#20316;&#30906;&#35469;&#12434;&#12375;&#12383;&#12356;&#26178;&#12399;&#12289;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;bsh % System.out.println(System.getenv().get(&lt;span style="color: #ffa07a;"&gt;"JAVA_HOME"&lt;/span&gt;));
-C:\Program Files\Java\jdk1.7.0_09
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12392;&#12356;&#12358;&#39080;&#12395;&#31777;&#21336;&#12395;&#30906;&#35469;&#12391;&#12365;&#12414;&#12377;(&#12356;&#12385;&#12356;&#12385;System.out.println&#12375;&#12394;&#12356;&#12392;&#32080;&#26524;&#12364;&#12431;&#12363;&#12425;&#12394;&#12356;&#12391;&#12377;&#12364;)&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12385;&#12394;&#12415;&#12395;&#12289;&#12394;&#12395;&#12363;&#21205;&#20316;&#12364;&#12362;&#12363;&#12375;&#12356;&#12394;(&#12452;&#12531;&#12509;&#12540;&#12488;&#12420;&#12513;&#12477;&#12483;&#12489;&#12398;&#35036;&#23436;&#12364;&#21177;&#12363;&#12394;&#12356;&#12394;
-&#12393;)&#12392;&#24605;&#12387;&#12383;&#12425;&#12371;&#12398;BeanShell&#12434;&#20877;&#36215;&#21205;&#12377;&#12428;&#12400;( &lt;code&gt;M-x jde-bsh-exit&lt;/code&gt; &#12391;
-BeanShell&#12434;&#32066;&#20102;&#12391;&#12365;&#12427;)&#12289;&#30452;&#12427;&#12371;&#12392;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;&#12371;&#12398;&#36794;&#12399;SLIME&#12395;&#20284;&#12390;&#12414;&#12377;&#12397;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7-2" class="outline-4"&gt;
-&lt;h4 id="sec-7-2"&gt;&#20381;&#23384;&#12521;&#12452;&#12502;&#12521;&#12522;&#12398;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-7-2"&gt;
-
-&lt;p&gt;&#32154;&#12356;&#12390;&#12503;&#12525;&#12472;&#12455;&#12463;&#12488;&#12395;&#24517;&#35201;&#12394;jar&#12434;&#12522;&#12509;&#12472;&#12488;&#12522;&#12363;&#12425;&#12525;&#12540;&#12459;&#12523;&#12395;&#12418;&#12387;&#12390;&#12365;&#12414;&#12377;&#12290;&#36890;
-&#24120;&#12399;&#12289;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#12467;&#12510;&#12531;&#12489;&#12521;&#12452;&#12531;&#12363;&#12425;&#20837;&#21147;&#12375;&#12414;&#12377;&#12364;&#12289;&#12371;&#12428;&#12434;JDEE&#12363;&#12425;&#25805;&#20316;&#12375;
-&#12390;&#12415;&#12414;&#12375;&#12423;&#12358;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ ant lib
-&lt;/pre&gt;
-
-&lt;p&gt;
- &lt;code&gt;C-c C-v C-b&lt;/code&gt; &#12391;ant&#12434;&#23455;&#34892;&#12391;&#12365;&#12414;&#12377;&#12290;&#12511;&#12491;&#12496;&#12483;&#12501;&#12449;&#12395;ant&#12398;&#12479;&#12540;&#12466;&#12483;&#12488;&#12434;&#27714;&#12417;
-&#12427;&#12503;&#12525;&#12531;&#12503;&#12488;&#12364;&#34920;&#31034;&#12373;&#12428;&#12427;&#12398;&#12391; &lt;code&gt;C-i&lt;/code&gt; &#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#12479;&#12540;&#12466;&#12483;&#12488;&#12398;&#19968;&#35239;&#12364;&#34920;&#31034;
-&#12373;&#12428;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/ant-target.png"  alt="../../../article/2012/12/23_emacsjdeejava/ant-target.png" /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&#12503;&#12525;&#12531;&#12503;&#12488;&#12391; &lt;code&gt;lib&lt;/code&gt; &#12392;&#20837;&#21147;&#12375;&#12390;&#12456;&#12531;&#12479;&#12540;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/ant-lib.png"  alt="../../../article/2012/12/23_emacsjdeejava/ant-lib.png" /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&#28961;&#20107;&#25104;&#21151;&#12377;&#12428;&#12400;&#12289; &lt;code&gt;&amp;lt;PROJECT_ROOT&amp;gt;/lib&lt;/code&gt; &#12395;&#24517;&#35201;&#12394;jar&#12501;&#12449;&#12452;&#12523;&#12364;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12373;&#12428;&#12390;&#12356;&#12427;&#12399;&#12378;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ ls -la lib
-total 26716
-drwxr-xr-x+ 1 mikio None       0 Dec 22 11:06 .
-drwxr-xr-x+ 1 mikio None       0 Nov 28 23:04 ..
--rwxr-xr-x  1 mikio None   74080 Jan 10  2012 annotations-2.0.0.jar
-                  :
-                  :
--rwxr-xr-x  1 mikio None  124724 Nov 23  2005 xmlParserAPIs-2.6.2.jar
--rwxr-xr-x  1 mikio None  108874 Nov 16  2006 xom-1.0.jar
-&lt;/pre&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7-3" class="outline-4"&gt;
-&lt;h4 id="sec-7-3"&gt;&#12499;&#12523;&#12489;&#12456;&#12521;&#12540;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-7-3"&gt;
-
-&lt;p&gt;&#12388;&#12366;&#12395;&#12499;&#12523;&#12489;&#12395;&#22833;&#25943;&#12375;&#12390;&#12456;&#12521;&#12540;&#34920;&#31034;&#12373;&#12428;&#12383;&#26178;&#12398;&#25369;&#21205;&#12434;&#35430;&#12375;&#12390;&#12415;&#12414;&#12375;&#12423;&#12358;&#12290;&#12414;&#12378;&#12289;
-&#12431;&#12374;&#12392;&#12499;&#12523;&#12489;&#12434;&#22833;&#25943;&#12373;&#12379;&#12427;&#12383;&#12417;&#12395;&#12289;&#12477;&#12540;&#12473;&#20882;&#38957;&#12398;import&#25991;&#12434;&#20840;&#12390;&#21066;&#38500;&#12375;&#12414;&#12377;&#12290;
-&#27425;&#12395;&#12289; &lt;code&gt;C-c C-v C-b RET&lt;/code&gt; &#12391;&#12499;&#12523;&#12489;&#12375;&#12390;&#12415;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#24403;&#28982;&#12456;&#12521;&#12540;&#12364;&#34920;&#31034;&#12373;&#12428;&#12414;&#12377;&#12364;&#12289;&#12456;&#12521;&#12540;&#12364;&#34920;&#31034;&#12373;&#12428;&#12383;&#22580;&#21512;&#12289; &lt;code&gt;M-g M-n, M-g M-p&lt;/code&gt; &#12391;&#12377;&#12400;&#12420;&#12367;&#12472;&#12515;&#12531;&#12503;&#12391;&#12365;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/ant-error.png"  alt="../../../article/2012/12/23_emacsjdeejava/ant-error.png" /&gt;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7-4" class="outline-4"&gt;
-&lt;h4 id="sec-7-4"&gt;import&#12398;&#33258;&#21205;&#25407;&#20837;&#12392;&#12499;&#12523;&#12489;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-7-4"&gt;
-
-&lt;p&gt;import&#25991;&#12434;&#33258;&#21205;&#25407;&#20837;&#12377;&#12427;&#12395;&#12399;&#12289; &lt;code&gt;C-c C-v z&lt;/code&gt; &#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#36890;&#24120;&#12399;&#12289;JDEE&#12364;&#33258;
-&#21205;&#12391;&#24517;&#35201;&#12394;&#12463;&#12521;&#12473;&#12434;&#12393;&#12400;&#12387;&#12392;&#25407;&#20837;&#12375;&#12390;&#12367;&#12428;&#12414;&#12377;&#12290;&#12383;&#12384;&#12375;&#20170;&#22238;&#12398;&#22580;&#21512;&#12399;&#12289;&#20505;&#35036;&#12364;
-&#35079;&#25968;&#12354;&#12427;&#12398;&#12391;CUI&#12395;&#12424;&#12427;&#36984;&#25246;&#30011;&#38754;&#12364;&#34920;&#31034;&#12373;&#12428;&#12414;&#12377;&#12290;&#24517;&#35201;&#12394;&#12463;&#12521;&#12473;&#12398;&#12459;&#12483;&#12467;&#12398;&#12392;&#12371;
-&#12429;&#12391;RET&#12434;&#21481;&#12356;&#12390;&#36984;&#25246;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;( &lt;code&gt;org.apache.commons&lt;/code&gt; &#12391;&#22987;&#12414;&#12427;&#12418;&#12398;&#12434;&#36984;
-&#25246;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;)&#12290;&#26368;&#24460;&#12395;OK&#12398;&#19978;&#12391;RET&#12391;&#27770;&#23450;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/import.png"  alt="../../../article/2012/12/23_emacsjdeejava/import.png" /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-import&#25991;&#12398;&#25407;&#20837;&#12364;&#25104;&#21151;&#12375;&#12383;&#12425; &lt;code&gt;C-c C-v C-b&lt;/code&gt; &#12391;&#12499;&#12523;&#12489;&#12503;&#12525;&#12531;&#12503;&#12488;&#12434;&#34920;&#31034;&#12375;&#12289;&#20309;
-&#12418;&#12479;&#12540;&#12466;&#12483;&#12488;&#12434;&#20837;&#21147;&#12379;&#12378;&#12395;&#12456;&#12531;&#12479;&#12540;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#20170;&#24230;&#12399;&#12499;&#12523;&#12489;&#12364;&#25104;&#21151;&#12377;&#12427;&#12399;
-&#12378;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7-5" class="outline-4"&gt;
-&lt;h4 id="sec-7-5"&gt;API&#12489;&#12461;&#12517;&#12513;&#12531;&#12488;&#12398;&#21442;&#29031;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-7-5"&gt;
-
-&lt;p&gt;&#12459;&#12540;&#12477;&#12523;&#12434;String&#12398;&#12392;&#12371;&#12429;&#12395;&#21512;&#12431;&#12379;&#12390; &lt;code&gt;C-c C-v C-w&lt;/code&gt; &#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;String&#12463;
-&#12521;&#12473;&#12398;Javadoc&#12364;&#12502;&#12521;&#12454;&#12470;&#19978;&#12395;&#38283;&#12365;&#12414;&#12377;&#12290;emacser&#12394;&#12425;&#24403;&#28982;w3m&#12391;&#12377;&#12424;&#12397;&#65311;&#12525;&#12540;&#12459;
-&#12523;&#12395;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12375;&#12383;API&#12434;&#25351;&#23450;&#12377;&#12427;&#12392;&#26356;&#12395;&#24555;&#36969;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/javadoc.png"  alt="../../../article/2012/12/23_emacsjdeejava/javadoc.png" /&gt;
-&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-7-6" class="outline-4"&gt;
-&lt;h4 id="sec-7-6"&gt;&#12513;&#12477;&#12483;&#12489;&#35036;&#23436;&lt;/h4&gt;
-&lt;div class="outline-text-4" id="text-7-6"&gt;
-
-&lt;p&gt; &lt;code&gt;C-c C-v .&lt;/code&gt; &#12391;&#12513;&#12477;&#12483;&#12489;&#12398;&#35036;&#23436;&#12364;&#12391;&#12365;&#12414;&#12377;&#12290; &lt;code&gt;options.&lt;/code&gt; &#12392;&#12500;&#12522;&#12458;&#12489;&#12414;&#12391;&#25171;&#12387;
-&#12383;&#12392;&#12371;&#12429;&#12391; &lt;code&gt;C-c C-v .&lt;/code&gt; &#12375;&#12414;&#12377;&#12290; 
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/method.png"  alt="../../../article/2012/12/23_emacsjdeejava/method.png" /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&#12511;&#12491;&#12496;&#12483;&#12501;&#12449;&#12395; &lt;code&gt;[...]&lt;/code&gt; &#12364;&#34920;&#31034;&#12373;&#12428;&#12414;&#12377;&#12290;&#12371;&#12371;&#12391; &lt;code&gt;C-i&lt;/code&gt; &#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#20505;&#35036;
-&#12364;&#19968;&#35239;&#34920;&#31034;&#12373;&#12428;&#12414;&#12377;&#12290;&#24341;&#25968;&#12418;&#21547;&#12417;&#12390;&#20837;&#21147;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;&#36969;&#24403;&#12394;&#12392;&#12371;&#12429;&#12391; &lt;code&gt;C-i&lt;/code&gt;
-&#12375;&#12394;&#12364;&#12425;&#20505;&#35036;&#12364;&#12402;&#12392;&#12388;&#12395;&#32094;&#12426;&#12371;&#12417;&#12383;&#12392;&#12371;&#12429;&#12391;&#12456;&#12531;&#12479;&#12540;&#12377;&#12428;&#12400;&#12289;&#36984;&#12435;&#12384;&#12513;&#12477;&#12483;&#12489;
-&#12434;&#20837;&#21147;&#12391;&#12365;&#12414;&#12377;&#12290;&#12371;&#12428;&#12399;&#12371;&#12428;&#12391;&#24863;&#21205;&#12418;&#12398;&#12391;&#12377;&#12364;&lt;sup&gt;&lt;a class="footref" name="fnr.2" href="#fn.2"&gt;2&lt;/a&gt;&lt;/sup&gt; &#12539;&#12539;&#12539;&#12392;&#12387;&#12390;&#12418;&#20351;&#12356;&#12389;&#12425;
-&#12356;&#12391;&#12377;&#12397;&#12290;&#12391;&#12418;&#23433;&#24515;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;helm&#29256;&#12434;&#20316;&#12426;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-8" class="outline-3"&gt;
-&lt;h3 id="sec-8"&gt;&#12513;&#12477;&#12483;&#12489;&#35036;&#23436;(Helm&#29256;)&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-8"&gt;
-
-&lt;p&gt;&#12511;&#12491;&#12496;&#12483;&#12501;&#12449;&#12391;&#12513;&#12477;&#12483;&#12489;&#12434;&#35036;&#23436;&#12377;&#12427;&#27231;&#33021;&#12399;&#30906;&#12363;&#12395;&#20415;&#21033;&#12391;&#12377;&#12364;&#12289;&#20170;&#12392;&#12394;&#12387;&#12390;&#12399;&#12371;
-&#12398;&#12452;&#12531;&#12479;&#12540;&#12501;&#12455;&#12452;&#12473;&#12399;&#21476;&#12367;&#12373;&#12356;&#12391;&#12377;&#12397;&#12290;&#12381;&#12371;&#12391;&#12371;&#12398;&#27231;&#33021;&#12434;Helm&#12391;&#23455;&#29694;&#12375;&#12390;&#12415;&#12414;
-&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/mikio/emacs-helm-jdee-method"&gt;helm-jdee-method.el&lt;/a&gt;  &lt;sup&gt;&lt;a class="footref" name="fnr.3" href="#fn.3"&gt;3&lt;/a&gt;&lt;/sup&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#20170;&#22238;&#12399;&#26178;&#38291;&#12364;&#12394;&#12363;&#12387;&#12383;&#12398;&#12391;&#25163;&#21205;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12391;&#12377;&#12364;&#12289;&#12381;&#12398;&#12358;&#12385;MELPA&#12395;&#30331;&#37682;&#12375;&#12414;
-&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12371;&#12398;elisp&#25313;&#24373;&#12399;Helm&#12392;Yasnippet&#12395;&#20381;&#23384;&#12375;&#12390;&#12356;&#12414;&#12377;(&#23566;&#20837;&#12375;&#12390;&#12394;&#12356;&#26041;&#12399;&#12371;&#12398;&#27231;&#20250;
-&#12395;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12371;&#12392;&#12434;&#12362;&#21223;&#12417;&#12375;&#12414;&#12377;)&#12290;&#12414;&#12378;&lt;a href="https://raw.github.com/mikio/emacs-helm-jdee-method/master/helm-jdee-method.el"&gt;helm-jdee-moethod.el&lt;/a&gt; &#12434;&#12525;&#12540;
-&#12489;&#12497;&#12473;&#12398;&#12392;&#12362;&#12387;&#12383;&#12392;&#12371;&#12429;&#12395;&#32622;&#12356;&#12390;&#20170;&#22238;&#35373;&#23450;&#12375;&#12383; &lt;code&gt;.emacs&lt;/code&gt; &#12398;
- &lt;code&gt;my-jde-mode-hook&lt;/code&gt; &#38306;&#25968;&#12398;&#20882;&#38957;&#12391;&#19979;&#35352;&#12398;&#35373;&#23450;&#12434;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-emacs-lisp"&gt;(&lt;span style="color: #00ffff;"&gt;defun&lt;/span&gt; &lt;span style="color: #87cefa;"&gt;my-jde-mode-hook&lt;/span&gt; ()
-  (&lt;span style="color: #00ffff;"&gt;require&lt;/span&gt; '&lt;span style="color: #7fffd4;"&gt;helm-jdee-method&lt;/span&gt;) &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#12371;&amp;#12428;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
-  (&lt;span style="color: #00ffff;"&gt;require&lt;/span&gt; '&lt;span style="color: #7fffd4;"&gt;jde&lt;/span&gt;)
-  (define-key jde-mode-map (kbd &lt;span style="color: #ffa07a;"&gt;"C-c C-v C-i"&lt;/span&gt;) 'helm-jdee-method) &lt;span style="color: #ff7f24;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff7f24;"&gt;&amp;#12371;&amp;#12428;&amp;#12434;&amp;#36861;&amp;#21152;&lt;/span&gt;
-  )
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12371;&#12428;&#12391;&#20363;&#12360;&#12400;&#12289; &lt;code&gt;options.&lt;/code&gt; &#12392;&#12500;&#12522;&#12458;&#12489;&#12414;&#12391;&#25171;&#12387;&#12383;&#12392;&#12371;&#12429;&#12391; &lt;code&gt;C-c C-v C-i&lt;/code&gt; &#12377;&#12427;&#12392;
-&#12513;&#12477;&#12483;&#12489;&#12398;&#20505;&#35036;&#19968;&#35239;&#12364;helm&#12391;&#34920;&#31034;&#12373;&#12428;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/helm1.png"  alt="../../../article/2012/12/23_emacsjdeejava/helm1.png" /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;
-&#36969;&#24403;&#12395;&#36984;&#12406;&#12392;&#12513;&#12477;&#12483;&#12489;&#12364;&#25407;&#20837;&#12373;&#12428;&#12427;&#12398;&#12391;&#12377;&#12364;&#12289;Yasnippet&#12391;&#21205;&#30340;&#12395;&#12486;&#12531;&#12503;&#12524;&#12540;&#12488;
-&#12434;&#20316;&#25104;&#12375;&#12390;&#12356;&#12427;&#12398;&#12391;&#24341;&#25968;&#12372;&#12392;&#12395;&#20516;&#12434;&#20837;&#21147;&#12391;&#12365;&#12414;&#12377;&#12290;&#24341;&#25968;&#12434;&#20837;&#21147;&#12375;&#12383;&#12425;Tab&#12391;&#31227;&#21205;
-&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;img src="../../../article/2012/12/23_emacsjdeejava/helm2.png"  alt="../../../article/2012/12/23_emacsjdeejava/helm2.png" /&gt;
-&lt;/p&gt;
-&lt;p&gt;
-&#20808;&#31243;&#12398;&#12511;&#12491;&#12496;&#12483;&#12501;&#12449;&#29256;&#12395;&#27604;&#12409;&#12427;&#12392;&#12289;Eclipse&#12398;&#12452;&#12531;&#12486;&#12522;&#12475;&#12531;&#12473;&#27231;&#33021;&#12415;&#12383;&#12356;&#12391;&#12289;&#12394;
-&#12363;&#12394;&#12363;&#20415;&#21033;&#12394;&#12435;&#12376;&#12419;&#12394;&#12356;&#12391;&#12375;&#12423;&#12358;&#12363;&#65311;&#12414;&#12383;&#12289;&#33258;&#21069;&#12398;&#12463;&#12521;&#12473;&#12418;BeanShell&#12434;&#20877;&#36215;&#21205;
-&#12377;&#12428;&#12400;&#35036;&#23436;&#12373;&#12428;&#12414;&#12377;&#12375;&#12289;ClassPath&#12373;&#12360;&#27491;&#12375;&#12367;&#35373;&#23450;&#12373;&#12428;&#12390;&#12428;&#12400;&#12289;AndroidSDK&#12394;&#12435;
-&#12363;&#12398;API&#12418;&#36969;&#20999;&#12395;&#35036;&#23436;&#12375;&#12390;&#12367;&#12428;&#12427;&#12392;&#24605;&#12356;&#12414;&#12377;(Android&#12395;&#38306;&#12375;&#12390;&#31169;&#12399;&#12414;&#12384;&#35430;&#12375;&#12390;&#12414;
-&#12379;&#12435;&#12290;DalvikVM&#12394;&#12398;&#12391;&#39364;&#30446;&#12363;&#12418;&#65311;)&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12385;&#12394;&#12415;&#12395;&#35036;&#23436;&#27231;&#33021;&#12434;auto-complete&#12395;&#12375;&#12394;&#12363;&#12387;&#12383;&#29702;&#30001;&#12399;&#12289;&#12513;&#12477;&#12483;&#12489;&#35036;&#23436;&#12364;&#12363;&#12394;&#12426;
-&#39640;&#12467;&#12473;&#12488;&#12384;&#12363;&#12425;&#12391;&#12377;&#12290;&#12371;&#12428;&#12434;&#33258;&#21205;&#12391;&#12420;&#12427;&#12392;&#12289;&#12392;&#12390;&#12418;&#12418;&#12387;&#12373;&#12426;&#12395;&#12394;&#12387;&#12390;&#12375;&#12414;&#12358;&#12398;
-&#12391;&#12289;&#12518;&#12540;&#12470;&#12364;&#24517;&#35201;&#12394;&#12392;&#12365;&#12395;&#12300;&#12424;&#12387;&#12371;&#12425;&#12375;&#12423;&#12301;&#12387;&#12390;&#24863;&#12376;&#12391;&#21033;&#29992;&#12377;&#12427;&#12371;&#12392;&#12434;&#24819;&#23450;&#12375;
-&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-9" class="outline-3"&gt;
-&lt;h3 id="sec-9"&gt;&#25805;&#20316;&#26041;&#27861;&#12414;&#12392;&#12417;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-9"&gt;
-
-&lt;p&gt;&#12371;&#12371;&#12414;&#12391;&#12398;&#27231;&#33021;&#12398;&#25805;&#20316;&#26041;&#27861;&#12434;&#12414;&#12392;&#12417;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
-&lt;caption&gt;&lt;/caption&gt;
-&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
-&lt;/colgroup&gt;
-&lt;tbody&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12513;&#12477;&#12483;&#12489;&#12398;&#35036;&#23436;&lt;/td&gt;&lt;td class="left"&gt;C-c C-v .&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12513;&#12477;&#12483;&#12489;&#12398;&#35036;&#23436;(Helm)&lt;/td&gt;&lt;td class="left"&gt;C-c C-v C-i&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#12499;&#12523;&#12489;(ant)&lt;/td&gt;&lt;td class="left"&gt;C-c C-v C-b&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;BeanShell&#36215;&#21205;&lt;/td&gt;&lt;td class="left"&gt;C-c C-v C-k&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;BeanShell&#32066;&#20102;&lt;/td&gt;&lt;td class="left"&gt;M-x jde-bsh-exit&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;prj.el&#12398;&#20877;&#35501;&#36796;&lt;/td&gt;&lt;td class="left"&gt;M-x jde-load-project-file&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;&#33258;&#21205;import&lt;/td&gt;&lt;td class="left"&gt;C-c C-v z&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td class="left"&gt;javadoc&#12398;&#34920;&#31034;&lt;/td&gt;&lt;td class="left"&gt;C-c C-v C-w&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&#12371;&#12428;&#12384;&#12369;&#12391;&#12418;&#22823;&#20998;&#20415;&#21033;&#12395;&#20351;&#12360;&#12427;&#12398;&#12391;&#12399;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;
-
-&lt;p&gt;
-&#12371;&#12428;&#12395;&#21152;&#12360;&#12390;&#12289;&#12487;&#12496;&#12483;&#12460;&#12398;&#36215;&#21205;&#12420;Junit&#12398;&#12501;&#12449;&#12452;&#12523;&#21336;&#20301;&#12398;&#23455;&#34892;&#12394;&#12393;&#12364;&#20351;&#12360;&#12428;&#12400;&#26356;&#12395;&#20415;&#21033;&#12384;&#12392;
-&#24605;&#12356;&#12414;&#12377;&#12364;&#12289;&#33258;&#20998;&#12399;&#12414;&#12384;&#35430;&#12375;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12414;&#12383;&#12289;&#12371;&#12428;&#12425;JDEE&#12398;&#22522;&#26412;&#27231;&#33021;&#12395;&#21152;&#12360;&#12390;&#12289;&#31169;&#12399;&#12289;AutoComplete, Yasnippet,
-Gtags&#12394;&#12393;&#12434;&#23566;&#20837;&#12375;&#12390;&#12362;&#12426;&#12289;&#12363;&#12394;&#12426;&#24555;&#36969;&#12395;&#20351;&#12360;&#12390;&#12414;&#12377;&lt;sup&gt;&lt;a class="footref" name="fnr.4" href="#fn.4"&gt;4&lt;/a&gt;&lt;/sup&gt;flymake&#12418;&#35430;
-&#12375;&#12383;&#12398;&#12391;&#12377;&#12364;&#12289;&#21205;&#20316;&#12364;&#37325;&#12356;&#12398;&#12391;&#12356;&#12414;&#12398;&#12392;&#12371;&#12429;&#24120;&#29992;&#12375;&#12390;&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-10" class="outline-3"&gt;
-&lt;h3 id="sec-10"&gt;&#25152;&#24863;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-10"&gt;
-
-&lt;p&gt;&#12371;&#12371;&#12414;&#12391;&#32057;&#20171;&#12375;&#12390;&#12362;&#12356;&#12390;&#12394;&#12435;&#12391;&#12377;&#12364;&#12289;JDEE&#12399;&#29694;&#22312;&#12391;&#12399;&#38283;&#30330;&#12364;&#20572;&#27490;&#12375;&#12390;&#12414;&#12377;&#12290;&#12381;
-&#12398;&#12383;&#12417;&#26032;&#12375;&#12356;&#25991;&#27861;&#12399;&#12469;&#12509;&#12540;&#12488;&#12373;&#12428;&#12390;&#12414;&#12379;&#12435;(&#12450;&#12494;&#12486;&#12540;&#12471;&#12519;&#12531;&#12289;&#12472;&#12455;&#12493;&#12522;&#12463;&#12473;&#12289;&#25313;
-&#24373;for&#25991;&#12394;&#12393;)&#12290;&#29305;&#12395;&#12450;&#12494;&#12486;&#12540;&#12471;&#12519;&#12531;&#12434;&#21033;&#29992;&#12375;&#12383;Java&#12467;&#12540;&#12489;&#12384;&#12392;&#12289;Import&#25991;&#12394;&#12393;
-&#12399;&#12358;&#12414;&#12367;&#35036;&#23436;&#12391;&#12365;&#12394;&#12363;&#12387;&#12383;&#12426;&#12375;&#12414;&#12377;&#12290;&#20491;&#20154;&#30340;&#12395;&#12399;&#20877;&#38283;&#12434;&#39000;&#12387;&#12390;&#12356;&#12427;&#12398;&#12391;&#12377;&#12364;&#12289;
-&#20840;&#28982;&#12381;&#12398;&#27671;&#37197;&#12364;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;&#12290;&#12290;&#12381;&#12435;&#12394;JDEE&#12392;&#12399;&#23550;&#35937;&#30340;&#12395;CEDET&#12398;&#38283;&#30330;&#12399;&#30427;&#12435;&#12391;&#12289;
-JAVA&#12398;&#23550;&#24540;&#12418;&#32080;&#27083;&#36914;&#12435;&#12391;&#12356;&#12427;&#12424;&#12358;&#12391;&#12377;(&#12513;&#12540;&#12522;&#12531;&#12464;&#12522;&#12473;&#12488;&#12391;&#12424;&#12367;&#35441;&#38988;&#12434;&#12415;&#12363;&#12369;&#12414;
-&#12377;)&#12290;&#12394;&#12398;&#12391;&#23558;&#26469;&#30340;&#12395;&#12399;&#12289;JDEE&#12434;&#12420;&#12417;&#12390;CEDET&#12513;&#12452;&#12531;&#12398;&#29872;&#22659;&#12395;&#31227;&#34892;&#12377;&#12427;&#12363;&#12418;&#12375;&#12428;
-&#12414;&#12379;&#12435;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#20197;&#19978;&#12289;&#38263;&#25991;&#12434;&#12371;&#12371;&#12414;&#12391;&#35501;&#12435;&#12391;&#38914;&#12356;&#12390;&#12354;&#12426;&#12364;&#12392;&#12358;&#12372;&#12374;&#12356;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-11" class="outline-3"&gt;
-&lt;h3 id="sec-11"&gt;&#21442;&#32771;URL&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-11"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;JDEE&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12363;&#12425;&#12398;&#35373;&#23450;&#12392;&#12363;&#19979;&#35352;&#12398;&#12469;&#12452;&#12488;&#12364;&#22823;&#22793;&#21442;&#32771;&#12395;&#12394;&#12387;&#12383;&#12290;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://epian-wiki.appspot.com/wiki/Emacs/JDEE"&gt;http://epian-wiki.appspot.com/wiki/Emacs/JDEE&lt;/a&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;li&gt;&#25805;&#20316;&#26041;&#27861;&#12399;&#12513;&#12491;&#12517;&#12540;&#12434;&#38283;&#12369;&#12400;&#22823;&#20307;&#12431;&#12363;&#12427;&#12290;&#35443;&#12375;&#12367;&#12399;&#20197;&#19979;&#12398;&#12469;&#12452;&#12488;&#12364;&#35443;&#12375;&#12356;&#12290;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.02.246.ne.jp/~torutk/jdee/jdee.html"&gt;http://www.02.246.ne.jp/~torutk/jdee/jdee.html&lt;/a&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;li&gt;&#21106;&#12392;&#26368;&#36817;&#12398;ML&#12398;&#12420;&#12426;&#12392;&#12426;&#12290;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://sourceforge.net/mailarchive/message.php?msg_id=28645729"&gt;http://sourceforge.net/mailarchive/message.php?msg_id=28645729&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-&lt;div id="footnotes"&gt;
-&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
-&lt;div id="text-footnotes"&gt;
-&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.1" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; &#26368;&#26032;&#12398;CEDET&#12418;&#20170;&#22238;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12377;&#12427;CEDET&#12418;&#21516;&#12376;Ver1.1&#12391;&#12377;&#12364;&#12289;&#12522;&#12509;&#12472;&#12488;&#12522;&#12363;&#12425;&#21462;&#24471;&#12375;&#12383;&#12418;&#12398;&#12399;&#12289;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#27083;&#25104;&#12394;&#12393;&#12364;&#22823;
-&#24133;&#12395;&#22793;&#12431;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.2" href="#fnr.2"&gt;2&lt;/a&gt;&lt;/sup&gt; JDEE&#32057;&#20171;&#12469;&#12452;&#12488;&#12398;&#22810;&#12367;&#12364;&#12289;&#12513;&#12477;&#12483;&#12489;&#35036;&#23436;&#12398;&#12473;&#12463;&#12522;&#12540;&#12531;&#12471;&#12519;&#12483;&#12488;&#12395;GUI&#12513;&#12491;&#12517;&#12540;&#29256;&#12434;&#36617;&#12379;&#12390;&#12356;&#12383;&#12398;&#12391;&#12289;CUI&#12391;&#12399;&#12513;&#12477;&#12483;&#12489;&#35036;&#23436;&#12399;&#20351;&#12360;&#12394;&#12356;&#12418;&#12398;&#12392;&#21208;&#36949;&#12356;&#12375;&#12390;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.3" href="#fnr.3"&gt;3&lt;/a&gt;&lt;/sup&gt; &#12377;&#12415;&#12414;&#12379;&#12435;&#12289;anything&#29256;&#12399;&#20316;&#25104;&#12375;&#12390;&#12414;&#12379;&#12435;&#12290;&#35201;&#26395;&#12364;&#12354;&#12428;&#12400;&#23550;&#24540;&#12377;&#12427;&#12363;&#12418;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.4" href="#fnr.4"&gt;4&lt;/a&gt;&lt;/sup&gt; Yasnippet&#12399;nekop&#12373;&#12435;&#12398;&#23450;&#32681;&#12375;&#12383; &lt;a href="https://github.com/nekop/yasnippet-java-mode"&gt;Java&#12398;&#12420;&#12388;&lt;/a&gt; &#12434;&#21033;&#29992;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;&#12354;&#12426;&#12364;&#12392;&#12358;&#12372;&#12374;&#12356;&#12414;&#12377;&#12290;
-&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-</content></entry><entry><title type="html">今更ながらackいれた。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/22_ack.html"/><updated>2012-12-22T22:30:00Z</updated><published>2012-12-22T22:30:00Z</published><id>article/2012/12/22_ack.html</id><category scheme="/tags/linux.html" term="linux" label="linux"/><content type="html">&lt;p&gt;
-&#12458;&#12503;&#12471;&#12519;&#12531;&#12395; &lt;code&gt;--{ext}&lt;/code&gt; &#12394;&#24863;&#12376;&#12391;&#25313;&#24373;&#23376;&#12434;&#25351;&#23450;&#12391;&#12365;&#12427;&#12290;&#12487;&#12501;&#12457;&#12523;&#12488;&#12391;&#20877;&#24112;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#25351;&#23450;&#12394;&#12398;&#12391;&#27005;&#12481;&#12531;&#12290;&#12362;&#12414;&#12369;&#12395;.git&#12392;&#12363;.svn&#12392;&#12363;&#12399;&#28961;&#35222;&#12377;&#12427;&#12398;&#12391;&#36895;&#12356;&#12392;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ ack --java &lt;span style="color: #ffa07a;"&gt;'public'&lt;/span&gt;|head
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:12:public abstract class AbstractTask implements Task {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:44:    public AbstractTask() {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:53:    public AbstractTask(final int priority) {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:63:    public AbstractTask(final String name, final int priority) {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:77:    public final int getPriority() {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:89:    public final String getName() {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:101:    public final boolean isAlive() {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:109:    public abstract void execute();
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:116:    public void kill() {
-src/main/java/com/googlecode/ochagl/app/AbstractTask.java:127:    public static int getCount() {
-&lt;/pre&gt;
-
-
-&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;&#21442;&#32771;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/tototoshi/20101214/1292330164"&gt;http://d.hatena.ne.jp/tototoshi/20101214/1292330164&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-&lt;div id="outline-container-2" class="outline-3"&gt;
-&lt;h3 id="sec-2"&gt;&#36861;&#35352;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-2"&gt;
-
-&lt;p&gt; windows&#12384;&#12392;&#12358;&#12414;&#12367;&#21205;&#12363;&#12394;&#12363;&#12387;&#12383;&#12398;&#12391;&#12289;&#32080;&#23616; &lt;code&gt;helm-do-grep&lt;/code&gt; &#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12427;&#12290;
-&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
 </content></entry>
 </feed>
