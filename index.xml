@@ -385,7 +385,7 @@ sudo paco -D make install
 &lt;/li&gt;
 &lt;/ul&gt;
 
-</content></entry><entry><title type="html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_ubuntu-server-lvm.html"/><updated>2012-12-30T17:34:00Z</updated><published>2012-12-30T17:34:00Z</published><id>article/2012/12/30_ubuntu-server-lvm.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_ubuntu-server-lvm.html"/><updated>2012-12-30T17:34:00Z</updated><published>2012-12-30T17:34:00Z</published><id>article/2012/12/30_ubuntu-server-lvm.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/><content type="html">&lt;p&gt;
 Ubuntu Server&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#30452;&#12375;&#12383;&#12392;&#12365;&#12289;&#21069;&#22238;&#20316;&#12387;&#12383;LVM&#12434;&#20877;&#27083;&#25104;&#12375;&#12424;&#12358;&#12392;&#12375;&#12383;&#12425;
 VG&#12420;LVM&#12364;&#21066;&#38500;&#12391;&#12365;&#12394;&#12367;&#12390;&#20808;&#12395;&#36914;&#12417;&#12394;&#12367;&#12394;&#12387;&#12383;&#12290;
 &lt;/p&gt;
@@ -394,7 +394,7 @@ VG&#12420;LVM&#12364;&#21066;&#38500;&#12391;&#12365;&#12394;&#12367;&#12390;&#2
 Ubuntu Server&#12391;&#12399;&#20206;&#24819;&#12467;&#12531;&#12477;&#12540;&#12523;&#12364;&#35079;&#25968;&#31435;&#12385;&#12354;&#12364;&#12387;&#12390;&#12356;&#12390;&#12289; &lt;code&gt;ALT + F1 - F4&lt;/code&gt; &#12391;&#20999;&#12426;&#26367;&#12360;&#12425;&#12428;&#12427;&#12398;&#12384;&#12290;
 &lt;/p&gt;
 &lt;p&gt;
-&#12414;&#12378;&#12289;&#12508;&#12522;&#12517;&#12540;&#12512;&#12464;&#12523;&#12540;&#12503;&#12434;&#21066;&#38500;&#12375;&#12289;&#12381;&#12398;&#24460;&#12289;&#12508;&#12522;&#12517;&#12540;&#12512;&#12464;&#12523;&#12540;&#12503;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;
+&#12414;&#12378;&#12289;&#35542;&#29702;&#12508;&#12522;&#12517;&#12540;&#12512;&#12434;&#21066;&#38500;&#12375;&#12289;&#12381;&#12398;&#24460;&#12289;&#12508;&#12522;&#12517;&#12540;&#12512;&#12464;&#12523;&#12540;&#12503;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;
 &lt;/p&gt;
 
 
@@ -440,7 +440,7 @@ $ vgremove /dev/{&amp;#12508;&amp;#12522;&amp;#12517;&amp;#12540;&amp;#12512;&am
 
 &lt;/div&gt;
 &lt;/div&gt;
-</content></entry><entry><title type="html">git merge でrenmae関係のエラーがでた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_git-merge-renmae.html"/><updated>2012-12-30T17:30:00Z</updated><published>2012-12-30T17:30:00Z</published><id>article/2012/12/30_git-merge-renmae.html</id><category scheme="/tags/git.html" term="git" label="git"/><content type="html">&lt;p&gt;
+</content></entry><entry><title type="html">git mergeでrenmae関係のエラーがでた</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_git-mergerenmae.html"/><updated>2012-12-30T17:30:00Z</updated><published>2012-12-30T17:30:00Z</published><id>article/2012/12/30_git-mergerenmae.html</id><category scheme="/tags/git.html" term="git" label="git"/><content type="html">&lt;p&gt;
 git merge &#12375;&#12383;&#12425;&#27425;&#12398;&#12424;&#12358;&#12394;&#12527;&#12540;&#12491;&#12531;&#12464;&#12364;&#12391;&#12383;&#12290;
 &lt;/p&gt;
 

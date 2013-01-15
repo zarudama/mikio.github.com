@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>.emacsに必要なpackage を指定して自動で各種elispをインストールする</title>
+    <title>git remoteでoriginが表示されなくなった。</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-120-g06a5a11"/>
@@ -67,7 +67,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../article/2013/01/index.html">01</a> <span class="divider">/</span></li><li>.emacsに必要なpackage を指定して自動で各種elispをインストールする</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/12/index.html">12</a> <span class="divider">/</span></li><li>git remoteでoriginが表示されなくなった。</li>
   </ul>
 
       </div>
@@ -78,140 +78,53 @@
 
     <div class="well">
       <time data-updated="true" pubdate="" datetime="">
-        <a href="../../../article/2013/index.html">2013</a>
+        <a href="../../../article/2012/index.html">2012</a>
           年
-          <a href="../../../article/2013/01/index.html"> 1月</a>
-          06日
+          <a href="../../../article/2012/12/index.html">12月</a>
+          22日
       </time>
       <div class="row">
-	    <h1 class="span11" style="font-size: 250%">.emacsに必要なpackage を指定して自動で各種elispをインストールする</h1>
+	    <h1 class="span11" style="font-size: 250%">git remoteでoriginが表示されなくなった。</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2013/01/06_cygwintmux.html"><i class="icon-chevron-left"></i>&nbsp;cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li><li class="next" style="text-align: right;"><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2012/12/22_xargs.html"><i class="icon-chevron-left"></i>&nbsp;空白を含むファイルをxargsで削除する</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/12/22_cygwinssh.html">cygwinでssh接続できない&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
 
   </header>
   <div class="article-content">
-    <p>
-今までパッケージ管理には <code>el-get</code> を使用してきたのですが、Windows環境が
-メインだと <code>git clone</code> がうまくいかなかったり、インストール後のビルド工
-程が失敗したりで、なかなか難儀していたので、el-getを辞めemacs標準の
-<code>package.el</code> をメインにすることにしました。
-</p>
+    <pre class="src src-sh">$ git remote
+</pre>
+
+
 <p>
-<code>package.el</code> ならば標準装備ですし、サイトリポジトリに各所のelispがダウ
-ンロードされた状態なのでhttpですべてインストールできるので大抵の環境で
-うまく動きます。
-</p>
-<p>
-パッケージのリポジトリサイトとしては、昔はMarmaladeが更新が盛んだったの
-ですが、最近ではMELPAがメインになってきてるようです。なので私は、MELPA
-メインで使用してます。Marmaladeは無効にしています。理由は同じパッケージ
-が同時に表示されてしまうからです。
-</p>
-<p>
-以下は私の設定です。
+branch情報をみてみる。
 </p>
 
 
-<pre class="src src-emacs-lisp">(<span style="color: #ffff00;">require</span> '<span style="color: #ffff00;">mikio-util</span>)
-
-(<span style="color: #ffff00;">when</span> (<span style="color: #ffff00;">require</span> '<span style="color: #ffff00;">package</span> nil t)
-
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">Marmalade</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">(add-to-list 'package-archives</span>
-  <span style="color: #ff0000;">;;              </span><span style="color: #ff0000;">'("marmalade" . "http://marmalade-repo.org/packages/"))</span>
-
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">MELPA</span>
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">(add-to-list 'package-archives</span>
-  <span style="color: #ff0000;">;;              </span><span style="color: #ff0000;">'("melpa" . "http://melpa.milkbox.net/packages/") t)</span>
-
-  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">MELPA&#12398;&#12415;&#12395;&#12377;&#12427;&#12290;</span>
-  (setq package-archives (list '(<span style="color: #ff00ff;">"melpa"</span> . <span style="color: #ff00ff;">"http://melpa.milkbox.net/packages/"</span>)))
-
-
-
-  <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#25351;&#23450;</span>
-  (setq my-package-directory (mikio/elisp-home <span style="color: #ff00ff;">"package"</span>))
-  (mikio/make-directory my-package-directory)
-  (setq package-user-dir (concat my-package-directory <span style="color: #ff00ff;">"/"</span>))
-
-  <span style="color: #ff0000;">;; </span>
-  (package-initialize)
-
-  (setq my-packages
-        '(undo-tree
-          helm
-          auto-complete
-          popwin
-          smartrep
-          color-moccur
-          yasnippet
-
-          helm-git
-          helm-gtags
-          helm-c-moccur
-          helm-c-yasnippet
-
-          paredit
-          ruby-mode
-          php-mode
-          js2-mode
-          web-mode
-
-          nrepl
-          nrepl-ritz
-          ac-nrepl
-          <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">ac-slime</span>
-          magit
-
-          jaunte
-          rainbow-delimiters
-
-          <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">window manager by kiwanami</span>
-          window-layout
-          e2wm
-
-          twittering-mode
-          <span style="color: #ff0000;">;;</span><span style="color: #ff0000;">o-blog</span>
-
-          evil
-          ))
-
-  (<span style="color: #ffff00;">require</span> '<span style="color: #ffff00;">cl</span>)
-  (mapcar (<span style="color: #ffff00;">lambda</span> (x)
-            (<span style="color: #ffff00;">when</span> (not (package-installed-p x))
-              (package-install x)))
-          my-packages)
-)
-
-(<span style="color: #ffff00;">provide</span> '<span style="color: #ffff00;">mikio-package</span>)
+<pre class="src src-sh">$ git branch -a
+* master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/master
 </pre>
 
 <p>
-githubはこちら。
-</p><ul>
-<li><a href="https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el">https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el</a>
-
+remote情報は一応残っている。
+</p>
 <p>
- <code>my-packages</code> に自分の必要なパッケージをまとめて定義しています。
-</p></li>
-</ul>
-
-<p>こうすることによって、環境が変わってもemacs起動時に自動的にインストール
-してくれるので楽チンです。
+どうやら <code>.git/config</code> ファイルが削除されてしまったのが原因ぽい。
+適当なディレクトリにリポジトリをcloneしなおして <code>.git/config</code> をコピーしなおしたら直った。
 </p>
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2013-01-06T10:21:00Z"> 日曜日 1月, 06 2013 at 10:21:00</time>.
+    Posted on <time datetime="2012-12-22T22:27:00Z"> 土曜日 12月, 22 2012 at 22:27:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/emacs.html">emacs</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/hamari.html">hamari</a></li>
       </ul>
     </nav>
   </footer>
