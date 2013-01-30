@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Ubuntu 12.04 LTS On ZENBOOK UX21E</title>
+    <title>python window tiler を試す</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-120-g06a5a11"/>
@@ -67,7 +67,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/05/index.html">05</a> <span class="divider">/</span></li><li>Ubuntu 12.04 LTS On ZENBOOK UX21E</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../article/2013/01/index.html">01</a> <span class="divider">/</span></li><li>python window tiler を試す</li>
   </ul>
 
       </div>
@@ -78,17 +78,17 @@
 
     <div class="well">
       <time data-updated="true" pubdate="" datetime="">
-        <a href="../../../article/2012/index.html">2012</a>
+        <a href="../../../article/2013/index.html">2013</a>
           年
-          <a href="../../../article/2012/05/index.html"> 5月</a>
-          12日
+          <a href="../../../article/2013/01/index.html"> 1月</a>
+          29日
       </time>
       <div class="row">
-	    <h1 class="span11" style="font-size: 250%">Ubuntu 12.04 LTS On ZENBOOK UX21E</h1>
+	    <h1 class="span11" style="font-size: 250%">python window tiler を試す</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/05/11_nodejsnpm-nodejs.html"><i class="icon-chevron-left"></i>&nbsp;node.jsのnpmでエラーが発生してインストールできない          :node.js:</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/05/12_apacheorder.html">apacheのOrderディレクティブ&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2013/01/11_java.html"><i class="icon-chevron-left"></i>&nbsp;Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li><li class="next" style="text-align: right;"><a href="../../../article/2013/01/31_lein.html">leinの出力するメッセージを英語化する。&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
     </div>
@@ -96,68 +96,79 @@
   </header>
   <div class="article-content">
     <p>
-メインで使用していたノートが3年になるのでZENBOOKを買った。
-次期モデルの噂も出始めてはいるが、いつになるかもわからないし、欲しいときが買いどきということで購入。
+<a href="http://www.lifehacker.jp/2013/01/130120mykids_command_line.html">この記事</a> にxmonadがでてきたので、自分が普段使っているWindowsでもタイル
+型マネージャを使いたくなった。実は以前にも何度か試したことがあったが、
+どれもキーバインドが好みでなかったり動作が不安定だったりで、いまいち納
+得のいくものがなかったので、使っていなかったのだ。でもその時から大分時
+間も経ってるので、最近は何かないかなと調べたところPythonで実装されたそ
+の名もずばり「Python-windows-tiler」というものを見つけた。
 </p>
-<p>
-ubuntuもほとんどそのままの状態で大体の機能が使えている。
-</p>
-<p>
-<img src="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg"  alt="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg" />
-</p>
-<p>
-以下を参考にした。
-</p><ul>
-<li><a href="https://help.ubuntu.com/community/AsusZenbook">https://help.ubuntu.com/community/AsusZenbook</a>
+<ul>
+<li><a href="https://github.com/Tzbob/python-windows-tiler">https://github.com/Tzbob/python-windows-tiler</a>
+</li>
+<li><a href="http://d.hatena.ne.jp/uhiaha888/20121125/1353824257">http://d.hatena.ne.jp/uhiaha888/20121125/1353824257</a>
 </li>
 </ul>
 
 
 <p>
-インストール後の設定は別エントリにまとめている。
+使用方法は簡単で、バイナリを解凍してPWT.exeを実行するだけだが、パスに日
+本語を含むとエラーになるのでルートに解凍するのが良いと思う。
 </p>
 <p>
-事前に2chや価格comで情報収集していたが、感想としてはやはりキーボードの打ちにくさが一番気になった。
-他のキーボードを使わずに、このノートだけを使いつづければ、多分慣れてし
-まって、なんとも思わなくなるんだろう。
-けれども自分の場合、会社ではロジクールの打ちやすいキーボードを使用して
-いるので凄く気になってしまう。。。
+キーバインディングはAwesomeなどと似ている。ただ、Altキーを使用するので
+Emacsとキーバインディングが被ってしまうのでconfig.iniを開き、altを全て
+winにしてPWT.exeを再起動した。
 </p>
 <p>
-つぎにヒンジ。自分が丁度いいと思う角度で止めようと思っても、
-自重でトルクがかかってパカっと最大まで開いてしまう。
-普段大きな問題となることないが、地味に痛い。ただし固体差もあるだろうか
-ら大丈夫な人もいるかと思う。
+これでとりあえずEmacsとのキーバインディングの回避ができた。めでたしめで
+たし、と思ったのだが、Win+Lキーでウィンドウの横幅を広げようとしたらロッ
+ク画面になってしまう。。。
 </p>
 <p>
-トラックパッドについては言われていたほど誤タッチもなく割と快適。キーボー
-ドメインの操作のときはF9を押下すればオフにできるしね。
+てことでWin+Lを無効化する方法を模索したけど、結局どれもうまくいかなかっ
+たので横幅操作は封印することにした。てか、Winを使用するコンビネーション
+キーはどれもWindowsに奪われてしまってうまくイカナイ。。。とはいえ、Win
+キー経由でタイル操作はとても使いやすい。多様する操作はこれ。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Win+SPC</td><td class="left">ウィンドウレイアウトの変更</td></tr>
+<tr><td class="left">Win+j, Win+k</td><td class="left">ALT+TABの代りになる</td></tr>
+<tr><td class="left">Win+S+Ent</td><td class="left">プライマリの切替</td></tr>
+<tr><td class="left">Win+数字キー</td><td class="left">仮想デスクトップの切替</td></tr>
+<tr><td class="left">Win+S+数字キー</td><td class="left">カレントアプリを仮想デスクトップへ移動</td></tr>
+</tbody>
+</table>
+
+
+<p>
+特にWin+j,kがイイ!
 </p>
 <p>
-液晶については、視野角が狭く見づらいという意見があったが、自分は特に気にならない。
-動画鑑賞メインとかビジュアル系の用途には多分よわいだろう。自分の場合は
-プログラミングなので大丈夫かと。
+自宅のUbuntu環境ではStumpWMを使用していたが、これはEmacserにはなじみの
+あるキー操作なんだけど(Screen系のプリフィックスキーのあるやつ)、それが
+逆に操作の混乱を生んでしまう。というのもの、自分の場合デスクトップの
+emacsでは <code>windows.el</code> を使用し、端末ではtmuxを使用してるので、タイル型
+ウィンドウマネージャのキーバインドにプレフィックスを使用すると混乱する
+のだ。それにデスクトップのウィンドウ操作はできるだけすばやくしたいので
+Screen系のStumpWMよりAwesome系のほうがサクサク操作できる。以上から自分
+にはAwesome系の操作体系のほうが向いているような気がした。
 </p>
 <p>
-バッテリーのもちに関してはまだ計測したわではないのでわからないがあまり
-期待できないだろう。もって3時間てところか？
-</p>
-<p>
-不満が多いエントリになってしまったが、全般としては、かなり満足している。
-とても静かだし、薄くて軽い。なによりさくさく動く。
-</p>
-<p>
-次期モデルは、オプションとしてIPSと高解像度化が図られるとのことだが
-それに加えてキーボードとヒンジの問題が改善されればかなり使いやすくなると思う。
+ということで、Ubuntuではxmonadをもう一度使ってみようと思う。
 </p>
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2012-05-12T08:01:00Z"> 土曜日 5月, 12 2012 at 08:01:00</time>.
+    Posted on <time datetime="2013-01-29T23:07:00Z"> 火曜日 1月, 29 2013 at 23:07:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/ubuntu.html">ubuntu</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/windows.html">windows</a></li><li class="label label-inverse small"><a href="../../../tags/xmonad.html">xmonad</a></li>
       </ul>
     </nav>
   </footer>

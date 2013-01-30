@@ -32,15 +32,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">leinの出力するメッセージを英語化する。</a>
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">python window tiler を試す</a>
+</li>
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a>
 </li>
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">emacsでgoogleReaderを読む</a>
 </li>
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a>
-</li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a>
-</li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">CentOS5.6にtmux1.7をインストールする</a>
 
 </li>
 </ul>
@@ -130,6 +130,107 @@ CommonLispであるstumpwm。そのうち試したいと思います。
 しかしタイル型使ってると、UnityとかgnomuShellの動向がどうでもよくなりま
 すな。
 </p>
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">インストールメモ</h3>
+<div class="outline-text-3" id="text-1">
+
+
+
+
+<pre class="src src-sh">$ sudo apt-get install xmonad
+$ sudo apt-get install gmrun <span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#12461;&#12540;&#12527;&#12540;&#12489;&#12521;&#12531;&#12481;&#12515;&#12540;</span>
+$ sudo apt-get install xmobar <span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#12473;&#12486;&#12540;&#12479;&#12473;&#12496;&#12540;</span>
+</pre>
+
+
+<p>
+最低限のコマンド
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Mod-S-q</td><td class="left">ログアウト</td></tr>
+<tr><td class="left">Mod-S-c</td><td class="left">ウィンドウクローズ</td></tr>
+<tr><td class="left">Mod-S-RET</td><td class="left">端末起動</td></tr>
+<tr><td class="left">Mod-S-p</td><td class="left">キーワードランチャー起動</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<code>~/.xmobar</code> を作成する。
+</p>
+
+
+<pre class="src src-haskell">Config { font = <span style="color: #ff00ff;">"xft:Sans-9:bold"</span>
+       , bgColor = <span style="color: #ff00ff;">"black"</span>
+       , fgColor = <span style="color: #ff00ff;">"grey"</span>
+       , position = Top
+       , lowerOnStart = False
+       , commands = [ Run Network <span style="color: #ff00ff;">"eth0"</span> [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"0"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"32"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
+                    , Run Cpu [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"3"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"50"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
+                    , Run Memory [<span style="color: #ff00ff;">"-t"</span>,<span style="color: #ff00ff;">"Mem: &lt;usedratio&gt;%"</span>] 10
+                    , Run Swap [] 10
+                    , Run Battery [] 600
+                    , Run Com <span style="color: #ff00ff;">"lsb_release"</span> [<span style="color: #ff00ff;">"-s"</span>,<span style="color: #ff00ff;">"-d"</span>] <span style="color: #ff00ff;">""</span> 36000
+                    , Run Date <span style="color: #ff00ff;">"%Y %b %_d(%a) %H:%M:%S"</span> <span style="color: #ff00ff;">"date"</span> 10
+                    ]
+       , sepChar = <span style="color: #ff00ff;">"%"</span>
+       , alignSep = <span style="color: #ff00ff;">"}{"</span>
+       , template = <span style="color: #ff00ff;">"&lt;fc=#ee9a00&gt;%lsb_release%&lt;/fc&gt; | %cpu% | %memory% %swap% | %eth0% | %battery% }{ %date%"</span>
+       }
+</pre>
+
+
+<p>
+ <code>~/.xmonad/xmonad.hs</code> を作成する。
+</p>
+
+
+<pre class="src src-haskell">import XMonad
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.EZConfig(additionalKeys)
+import System.IO
+
+main = do
+        xmproc &lt;- spawnPipe <span style="color: #ff00ff;">"/usr/bin/xmobar /home/mikio/.xmobarrc"</span>  -- .xmoabrrc&#12398;&#12497;&#12473;&#12434;&#35352;&#36848;&#12375;&#12390;&#12362;&#12367;
+        xmonad $ defaultConfig
+             { manageHook = manageDocks &lt;+&gt; manageHook defaultConfig
+             , layoutHook = avoidStruts  $  layoutHook defaultConfig
+             , logHook = dynamicLogWithPP $ xmobarPP
+             { ppOutput = hPutStrLn xmproc
+             , ppTitle = xmobarColor <span style="color: #ff00ff;">"green"</span> <span style="color: #ff00ff;">""</span> . shorten 50
+              }
+             , modMask = mod4Mask     -- Windows&#12461;&#12540;&#12434;Mod&#12461;&#12540;&#12392;&#12375;&#12390;&#12496;&#12452;&#12531;&#12489;&#12377;&#12427;
+          } `additionalKeys`
+          [ ((mod4Mask .|. shiftMask, xK_z), spawn <span style="color: #ff00ff;">"xscreensaver-command -lock"</span>)
+          , ((controlMask, xK_Print), spawn <span style="color: #ff00ff;">"sleep 0.2; scrot -s"</span>)
+          , ((0, xK_Print), spawn <span style="color: #ff00ff;">"scrot"</span>)
+          ]
+
+</pre>
+
+
+<p>
+最低限のコマンド
+</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Mod-S-q</td><td class="left">ログアウト</td></tr>
+<tr><td class="left">Mod-S-c</td><td class="left">ウィンドウクローズ</td></tr>
+<tr><td class="left">Mod-S-RET</td><td class="left">端末起動</td></tr>
+<tr><td class="left">Mod-S-p</td><td class="left">キーワードランチャー起動</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
   </div>
   
   <footer class="well article-footer">
@@ -196,19 +297,18 @@ CommonLispであるstumpwm。そのうち試したいと思います。
 </ul>
 
 
-
 	      </ul>
 	    </nav>
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-mergerenmae.html">git mergeでrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> 
+		<li><a href="../../../article/2013/01/31_lein.html">leinの出力するメッセージを英語化する。</a></li> <li><a href="../../../article/2013/01/29_python-window-tiler.html">python window tiler を試す</a></li> <li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 110.43%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
+  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 110.43%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>

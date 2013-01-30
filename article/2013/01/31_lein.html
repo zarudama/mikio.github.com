@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>Ubuntu 12.04 LTS On ZENBOOK UX21E</title>
+    <title>leinの出力するメッセージを英語化する。</title>
     <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-120-g06a5a11"/>
@@ -67,7 +67,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/05/index.html">05</a> <span class="divider">/</span></li><li>Ubuntu 12.04 LTS On ZENBOOK UX21E</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../article/2013/01/index.html">01</a> <span class="divider">/</span></li><li>leinの出力するメッセージを英語化する。</li>
   </ul>
 
       </div>
@@ -78,17 +78,17 @@
 
     <div class="well">
       <time data-updated="true" pubdate="" datetime="">
-        <a href="../../../article/2012/index.html">2012</a>
+        <a href="../../../article/2013/index.html">2013</a>
           年
-          <a href="../../../article/2012/05/index.html"> 5月</a>
-          12日
+          <a href="../../../article/2013/01/index.html"> 1月</a>
+          31日
       </time>
       <div class="row">
-	    <h1 class="span11" style="font-size: 250%">Ubuntu 12.04 LTS On ZENBOOK UX21E</h1>
+	    <h1 class="span11" style="font-size: 250%">leinの出力するメッセージを英語化する。</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/05/11_nodejsnpm-nodejs.html"><i class="icon-chevron-left"></i>&nbsp;node.jsのnpmでエラーが発生してインストールできない          :node.js:</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/05/12_apacheorder.html">apacheのOrderディレクティブ&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2013/01/29_python-window-tiler.html"><i class="icon-chevron-left"></i>&nbsp;python window tiler を試す</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
@@ -96,68 +96,50 @@
   </header>
   <div class="article-content">
     <p>
-メインで使用していたノートが3年になるのでZENBOOKを買った。
-次期モデルの噂も出始めてはいるが、いつになるかもわからないし、欲しいときが買いどきということで購入。
+WindowsのCygwinでleinを弄っていると、java.exeの出力メッセージが
+が文字化けする。
 </p>
 <p>
-ubuntuもほとんどそのままの状態で大体の機能が使えている。
+下記は、leinじゃないけど、javaを実行したときの文字化けの例。
 </p>
-<p>
-<img src="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg"  alt="../../../article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/ubuntu-ux21e-640-480.jpg" />
-</p>
-<p>
-以下を参考にした。
-</p><ul>
-<li><a href="https://help.ubuntu.com/community/AsusZenbook">https://help.ubuntu.com/community/AsusZenbook</a>
-</li>
-</ul>
+
+
+<pre class="src src-sh">$ java -jar target/hoge-0.1.0-SNAPSHOT.jar
+&#9618;G&#9618;&#9618;&#9618;[: &#9618;&#9618;&#9618;C&#9618;&#9618;&#9618;E&#9618;N&#9618;&#9618;&#9618;Xhoge.core&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#514;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;&#9618;[&#9618;h&#9618;&#322;&#9618;&#9618;&#1794;&#9618;&#9618;&#9618;&#322;&#9618;&#9618;&#9618;
+</pre>
 
 
 <p>
-インストール後の設定は別エントリにまとめている。
+これは、java.exeのメッセージがShiftJISのに対してCygwin環境がUTF-8なのが
+原因。解消するには、メッセージを英語表記にすれば良い。
 </p>
+
+
+<pre class="src src-sh">$ java -Duser.language=en -jar target/hoge-0.1.0-SNAPSHOT.jar
+Error: Could not find or load main class hoge.core
+</pre>
+
+
 <p>
-事前に2chや価格comで情報収集していたが、感想としてはやはりキーボードの打ちにくさが一番気になった。
-他のキーボードを使わずに、このノートだけを使いつづければ、多分慣れてし
-まって、なんとも思わなくなるんだろう。
-けれども自分の場合、会社ではロジクールの打ちやすいキーボードを使用して
-いるので凄く気になってしまう。。。
+これをlein実行時に指定するには、 <code>~/.lein/profiles.clj</code> を以下のように
+編集しておく。
 </p>
-<p>
-つぎにヒンジ。自分が丁度いいと思う角度で止めようと思っても、
-自重でトルクがかかってパカっと最大まで開いてしまう。
-普段大きな問題となることないが、地味に痛い。ただし固体差もあるだろうか
-ら大丈夫な人もいるかと思う。
-</p>
-<p>
-トラックパッドについては言われていたほど誤タッチもなく割と快適。キーボー
-ドメインの操作のときはF9を押下すればオフにできるしね。
-</p>
-<p>
-液晶については、視野角が狭く見づらいという意見があったが、自分は特に気にならない。
-動画鑑賞メインとかビジュアル系の用途には多分よわいだろう。自分の場合は
-プログラミングなので大丈夫かと。
-</p>
-<p>
-バッテリーのもちに関してはまだ計測したわではないのでわからないがあまり
-期待できないだろう。もって3時間てところか？
-</p>
-<p>
-不満が多いエントリになってしまったが、全般としては、かなり満足している。
-とても静かだし、薄くて軽い。なによりさくさく動く。
-</p>
-<p>
-次期モデルは、オプションとしてIPSと高解像度化が図られるとのことだが
-それに加えてキーボードとヒンジの問題が改善されればかなり使いやすくなると思う。
-</p>
+
+
+<pre class="src src-clojure"><span style="color: #ffff00;">:jvm-opts</span> [
+           <span style="color: #ff00ff;">"-Duser.language=en"</span>
+           ]
+</pre>
+
+
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2012-05-12T08:01:00Z"> 土曜日 5月, 12 2012 at 08:01:00</time>.
+    Posted on <time datetime="2013-01-31T03:38:00Z"> 木曜日 1月, 31 2013 at 03:38:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/ubuntu.html">ubuntu</a></li>
+	
       </ul>
     </nav>
   </footer>

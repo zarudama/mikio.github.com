@@ -32,15 +32,15 @@
 	        <ul>
 <li><a href="#"><i>icon-file icon-white</i> Article</a>
 <ul>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">leinの出力するメッセージを英語化する。</a>
+</li>
+<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">python window tiler を試す</a>
+</li>
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a>
 </li>
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">emacsでgoogleReaderを読む</a>
 </li>
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a>
-</li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a>
-</li>
-<li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)">CentOS5.6にtmux1.7をインストールする</a>
 
 </li>
 </ul>
@@ -178,9 +178,9 @@ image = <span style="color: #0000ff; font-weight: bold;">javax.imageio.ImageIO.r
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">import</span> (java.awt.image <span style="color: #0000ff; font-weight: bold;">BufferedImage</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (javax.imageio <span style="color: #0000ff; font-weight: bold;">ImageIO</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (java.io <span style="color: #0000ff; font-weight: bold;">File</span>))
+<pre class="src src-clojure">(<span style="color: #ffff00;">import</span> (java.awt.image <span style="color: #0000ff; font-weight: bold;">BufferedImage</span>))
+(<span style="color: #ffff00;">import</span> (javax.imageio <span style="color: #0000ff; font-weight: bold;">ImageIO</span>))
+(<span style="color: #ffff00;">import</span> (java.io <span style="color: #0000ff; font-weight: bold;">File</span>))
 (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">image</span> (<span style="color: #0000ff; font-weight: bold;">ImageIO/read</span> (<span style="color: #0000ff; font-weight: bold;">File.</span> <span style="color: #ff00ff;">"gai.png"</span>))) 
 </pre>
 
@@ -189,9 +189,9 @@ image = <span style="color: #0000ff; font-weight: bold;">javax.imageio.ImageIO.r
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">import</span> (java.awt <span style="color: #0000ff; font-weight: bold;">Graphics</span>))
-(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">graphics</span> (<span style="color: #0000ff; font-weight: bold;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getGraphics</span>)))
-(<span style="color: #0000ff; font-weight: bold;">doto</span> graphics
+<pre class="src src-clojure">(<span style="color: #ffff00;">import</span> (java.awt <span style="color: #0000ff; font-weight: bold;">Graphics</span>))
+(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">graphics</span> (<span style="color: #ffff00;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getGraphics</span>)))
+(<span style="color: #ffff00;">doto</span> graphics
   (<span style="color: #0000ff; font-weight: bold;">.drawImage</span> image 0 0 frame))
 </pre>
 
@@ -204,7 +204,7 @@ image = <span style="color: #0000ff; font-weight: bold;">javax.imageio.ImageIO.r
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">..</span> graphics (<span style="color: #0000ff; font-weight: bold;">drawLine</span> 0 0 640 480))
+<pre class="src src-clojure">(<span style="color: #ffff00;">..</span> graphics (<span style="color: #0000ff; font-weight: bold;">drawLine</span> 0 0 640 480))
 </pre>
 
 
@@ -229,7 +229,7 @@ image = <span style="color: #0000ff; font-weight: bold;">javax.imageio.ImageIO.r
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">insets</span> (<span style="color: #0000ff; font-weight: bold;">..</span> frame <span style="color: #0000ff; font-weight: bold;">getInsets</span>)) 
+<pre class="src src-clojure">(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">insets</span> (<span style="color: #ffff00;">..</span> frame <span style="color: #0000ff; font-weight: bold;">getInsets</span>)) 
 </pre>
 
 
@@ -248,10 +248,10 @@ image = <span style="color: #0000ff; font-weight: bold;">javax.imageio.ImageIO.r
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">setVisible</span> true))
-(<span style="color: #0000ff; font-weight: bold;">..</span> graphics (translate (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets top)))
-(<span style="color: #0000ff; font-weight: bold;">..</span> graphics (<span style="color: #0000ff; font-weight: bold;">clearRect</span> 0 0 640 480))
-(<span style="color: #0000ff; font-weight: bold;">..</span> graphics (<span style="color: #0000ff; font-weight: bold;">drawImage</span> image 0 0 frame))
+<pre class="src src-clojure">(<span style="color: #ffff00;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">setVisible</span> true))
+(<span style="color: #ffff00;">..</span> graphics (translate (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets top)))
+(<span style="color: #ffff00;">..</span> graphics (<span style="color: #0000ff; font-weight: bold;">clearRect</span> 0 0 640 480))
+(<span style="color: #ffff00;">..</span> graphics (<span style="color: #0000ff; font-weight: bold;">drawImage</span> image 0 0 frame))
 </pre>
 
 <p>
@@ -269,8 +269,8 @@ insentsを利用したついでに説明。
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">doto</span> frame
-    (<span style="color: #0000ff; font-weight: bold;">.setSize</span> (<span style="color: #ffff00;">+</span> 640 (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets right)) (<span style="color: #ffff00;">+</span> 480 (<span style="color: #0000ff; font-weight: bold;">..</span> insets top) (<span style="color: #0000ff; font-weight: bold;">..</span> insets bottom)))
+<pre class="src src-clojure">(<span style="color: #ffff00;">doto</span> frame
+    (<span style="color: #0000ff; font-weight: bold;">.setSize</span> (<span style="color: #0000ff; font-weight: bold;">+</span> 640 (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets right)) (<span style="color: #0000ff; font-weight: bold;">+</span> 480 (<span style="color: #ffff00;">..</span> insets top) (<span style="color: #ffff00;">..</span> insets bottom)))
     (<span style="color: #0000ff; font-weight: bold;">.setVisible</span> true))
 </pre>
 
@@ -347,12 +347,12 @@ Clojureで継承が必要なJavaクラスを使うには、proxyを使う。
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">import</span> (java.util <span style="color: #0000ff; font-weight: bold;">Timer</span> <span style="color: #0000ff; font-weight: bold;">TimerTask</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (java.util <span style="color: #0000ff; font-weight: bold;">TimerTask</span>))
+<pre class="src src-clojure">(<span style="color: #ffff00;">import</span> (java.util <span style="color: #0000ff; font-weight: bold;">Timer</span> <span style="color: #0000ff; font-weight: bold;">TimerTask</span>))
+(<span style="color: #ffff00;">import</span> (java.util <span style="color: #0000ff; font-weight: bold;">TimerTask</span>))
 (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">mainloop</span>
-  (<span style="color: #ffff00;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
+  (<span style="color: #0000ff; font-weight: bold;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
     (run []
-      (<span style="color: #ffff00;">println</span> <span style="color: #ff00ff;">"&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;"</span>))
+      (<span style="color: #0000ff; font-weight: bold;">println</span> <span style="color: #ff00ff;">"&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;"</span>))
     )) 
 </pre>
 
@@ -362,7 +362,7 @@ Clojureで継承が必要なJavaクラスを使うには、proxyを使う。
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">..</span> mainloop run) 
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">..</span> mainloop run) 
 &#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
 nil
 </pre>
@@ -375,7 +375,7 @@ nil
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) schedule mainloop 0 500)
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) schedule mainloop 0 500)
 
 <span style="color: #0000ff; font-weight: bold;">Malformed</span> member expression
   [<span style="color: #0000ff; font-weight: bold;">Thrown</span> class <span style="color: #0000ff; font-weight: bold;">java.lang.IllegalArgumentException</span>]
@@ -395,7 +395,7 @@ Backtrace:
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) schedule mainloop (<span style="color: #ffff00;">long</span> 0) (<span style="color: #ffff00;">long</span> 500))
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) schedule mainloop (<span style="color: #0000ff; font-weight: bold;">long</span> 0) (<span style="color: #0000ff; font-weight: bold;">long</span> 500))
 <span style="color: #0000ff; font-weight: bold;">No</span> matching field found: schedule for class <span style="color: #0000ff; font-weight: bold;">java.util.Timer</span>
   [<span style="color: #0000ff; font-weight: bold;">Thrown</span> class <span style="color: #0000ff; font-weight: bold;">java.lang.IllegalArgumentException</span>]
 
@@ -413,7 +413,7 @@ scheduleをカッコでくくらないと駄目らしい。
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) (schedule mainloop (<span style="color: #ffff00;">long</span> 0) (<span style="color: #ffff00;">long</span> 500)))
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) (schedule mainloop (<span style="color: #0000ff; font-weight: bold;">long</span> 0) (<span style="color: #0000ff; font-weight: bold;">long</span> 500)))
 &#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
 &#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
 &#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
@@ -451,7 +451,7 @@ Clojureはデフォルトでは値を更新できない。これを変更する�
 
 
 <pre class="src src-clojure"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12503;&#12524;&#12452;&#12516;&#12540;&#23450;&#32681;</span>
-(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">player</span> (<span style="color: #ffff00;">atom</span> {<span style="color: #ffff00;">:pos</span> [0 0]}))
+(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">player</span> (<span style="color: #0000ff; font-weight: bold;">atom</span> {<span style="color: #ffff00;">:pos</span> [0 0]}))
 </pre>
 
 
@@ -471,7 +471,7 @@ x座標は配列の0番目
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0) 
+<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0) 
 0
 </pre>
 
@@ -481,7 +481,7 @@ y座標は配列の1番目
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1) 
+<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1) 
 0
 </pre>
 
@@ -495,7 +495,7 @@ playerの座標を更新してみる。
 #&lt;Atom@2a134eca: {<span style="color: #ffff00;">:pos</span> [0 0]}&gt;
 
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#22793;&#26356;</span>
-user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 1])
+user&gt; (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 1])
 {<span style="color: #ffff00;">:pos</span> [0 1]}
 
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12383;&#12375;&#12363;&#12395;&#26356;&#26032;&#12373;&#12428;&#12383;</span>
@@ -509,13 +509,13 @@ x座標を更新させる
 </p>
 
 
-<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
+<pre class="src src-clojure">user&gt; (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
 {<span style="color: #ffff00;">:pos</span> [1 1]}
-user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
+user&gt; (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
 {<span style="color: #ffff00;">:pos</span> [2 1]}
-user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
+user&gt; (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
 {<span style="color: #ffff00;">:pos</span> [3 1]}
-user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
+user&gt; (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1])
 {<span style="color: #ffff00;">:pos</span> [4 1]}
 </pre>
 
@@ -526,23 +526,23 @@ user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="c
 
 
 <pre class="src src-clojure">(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">mainloop</span>
-  (<span style="color: #ffff00;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
+  (<span style="color: #0000ff; font-weight: bold;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
     (run []
-      (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1]) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#24231;&#27161;&#26356;&#26032;</span>
-      (<span style="color: #0000ff; font-weight: bold;">if</span> (<span style="color: #ffff00;">&lt;</span> 640 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0))
-             (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 0]))
+      (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1]) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#24231;&#27161;&#26356;&#26032;</span>
+      (<span style="color: #ffff00;">if</span> (<span style="color: #0000ff; font-weight: bold;">&lt;</span> 640 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0))
+             (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 0]))
 
-      (<span style="color: #0000ff; font-weight: bold;">let</span> [g (<span style="color: #0000ff; font-weight: bold;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getGraphics</span>))
-            player-x (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)
-            player-y (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1)]
+      (<span style="color: #ffff00;">let</span> [g (<span style="color: #ffff00;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getGraphics</span>))
+            player-x (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)
+            player-y (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1)]
 
-        (<span style="color: #0000ff; font-weight: bold;">doto</span> g
-          (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets top))
+        (<span style="color: #ffff00;">doto</span> g
+          (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets top))
           (<span style="color: #0000ff; font-weight: bold;">.setColor</span> clear-color)
           (<span style="color: #0000ff; font-weight: bold;">.fillRect</span> 0 0 640 480)
           (<span style="color: #0000ff; font-weight: bold;">.drawImage</span> image
                       player-x player-y
-                      (<span style="color: #ffff00;">+</span> player-x 32) (<span style="color: #ffff00;">+</span> player-y 32)
+                      (<span style="color: #0000ff; font-weight: bold;">+</span> player-x 32) (<span style="color: #0000ff; font-weight: bold;">+</span> player-y 32)
                       0 0 32 32
                       frame)
           (<span style="color: #0000ff; font-weight: bold;">.dispose</span>))))))
@@ -554,7 +554,7 @@ user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="c
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) (schedule mainloop (<span style="color: #ffff00;">long</span> 0) (<span style="color: #ffff00;">long</span> 20)))
+<pre class="src src-clojure">(<span style="color: #ffff00;">..</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>) (schedule mainloop (<span style="color: #0000ff; font-weight: bold;">long</span> 0) (<span style="color: #0000ff; font-weight: bold;">long</span> 20)))
 </pre>
 
 
@@ -577,14 +577,14 @@ user&gt; (<span style="color: #ffff00;">swap!</span> player assoc <span style="c
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">doto</span> frame
-    (<span style="color: #0000ff; font-weight: bold;">.setSize</span> (<span style="color: #ffff00;">+</span> 640 (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets right)) (<span style="color: #ffff00;">+</span> 480 (<span style="color: #0000ff; font-weight: bold;">..</span> insets top) (<span style="color: #0000ff; font-weight: bold;">..</span> insets bottom)))
+<pre class="src src-clojure">(<span style="color: #ffff00;">doto</span> frame
+    (<span style="color: #0000ff; font-weight: bold;">.setSize</span> (<span style="color: #0000ff; font-weight: bold;">+</span> 640 (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets right)) (<span style="color: #0000ff; font-weight: bold;">+</span> 480 (<span style="color: #ffff00;">..</span> insets top) (<span style="color: #ffff00;">..</span> insets bottom)))
     (<span style="color: #0000ff; font-weight: bold;">.setVisible</span> true)
     (<span style="color: #0000ff; font-weight: bold;">.setIgnoreRepaint</span> true) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#20877;&#25551;&#30011;&#12434;&#28961;&#21177;&#12395;(BufferStrategy&#12434;&#20351;&#12358;&#12398;&#12391;)</span>
     (<span style="color: #0000ff; font-weight: bold;">.createBufferStrategy</span> 2) <span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">setVisible&#12513;&#12477;&#12483;&#12489;&#12398;&#12354;&#12392;&#12391;&#21628;&#12400;&#12394;&#12356;&#12392;&#23455;&#34892;&#26178;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;</span>
     )
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12496;&#12483;&#12501;&#12449;&#20316;&#25104;</span>
-(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">buffer</span> (<span style="color: #0000ff; font-weight: bold;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getBufferStrategy</span>)))
+(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">buffer</span> (<span style="color: #ffff00;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getBufferStrategy</span>)))
 </pre>
 
 
@@ -595,28 +595,28 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 
 <pre class="src src-clojure">(<span style="color: #ffff00;">defn</span> <span style="color: #0000ff; font-weight: bold;">create-mainloop</span>
   []
-  (<span style="color: #ffff00;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
+  (<span style="color: #0000ff; font-weight: bold;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
     (run []
-      (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1]) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#24231;&#27161;&#26356;&#26032;</span>
-      (<span style="color: #0000ff; font-weight: bold;">if</span> (<span style="color: #ffff00;">&lt;</span> 640 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0))
-             (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 0]))
+      (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1]) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#24231;&#27161;&#26356;&#26032;</span>
+      (<span style="color: #ffff00;">if</span> (<span style="color: #0000ff; font-weight: bold;">&lt;</span> 640 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0))
+             (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 0]))
 
-      (<span style="color: #0000ff; font-weight: bold;">if</span> (<span style="color: #ffff00;">not</span> (<span style="color: #0000ff; font-weight: bold;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">contentsLost</span>)))
-        (<span style="color: #0000ff; font-weight: bold;">let</span> [g (<span style="color: #0000ff; font-weight: bold;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">getDrawGraphics</span>))
-              player-x (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)
-              player-y (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1)]
-          (<span style="color: #0000ff; font-weight: bold;">doto</span> g
-            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets top))
+      (<span style="color: #ffff00;">if</span> (<span style="color: #0000ff; font-weight: bold;">not</span> (<span style="color: #ffff00;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">contentsLost</span>)))
+        (<span style="color: #ffff00;">let</span> [g (<span style="color: #ffff00;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">getDrawGraphics</span>))
+              player-x (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)
+              player-y (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1)]
+          (<span style="color: #ffff00;">doto</span> g
+            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets top))
             (<span style="color: #0000ff; font-weight: bold;">.setColor</span> clear-color)
             (<span style="color: #0000ff; font-weight: bold;">.fillRect</span> 0 0 640 480)
-            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets top))
+            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets top))
             (<span style="color: #0000ff; font-weight: bold;">.drawImage</span> image
                         player-x player-y
-                        (<span style="color: #ffff00;">+</span> player-x 32) (<span style="color: #ffff00;">+</span> player-y 32)
+                        (<span style="color: #0000ff; font-weight: bold;">+</span> player-x 32) (<span style="color: #0000ff; font-weight: bold;">+</span> player-y 32)
                         0 0 32 32
                         frame)
             (<span style="color: #0000ff; font-weight: bold;">.dispose</span>))
-          (<span style="color: #0000ff; font-weight: bold;">..</span> buffer (show))
+          (<span style="color: #ffff00;">..</span> buffer (show))
           )))))
 </pre>
 
@@ -629,63 +629,63 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 </p>
 
 
-<pre class="src src-clojure">(<span style="color: #0000ff; font-weight: bold;">ns</span> hello-cube.core)
+<pre class="src src-clojure">(<span style="color: #ffff00;">ns</span> hello-cube.core)
 
-(<span style="color: #0000ff; font-weight: bold;">import</span> (javax.swing <span style="color: #0000ff; font-weight: bold;">JFrame</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (java.util <span style="color: #0000ff; font-weight: bold;">Timer</span> <span style="color: #0000ff; font-weight: bold;">TimerTask</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (java.awt <span style="color: #0000ff; font-weight: bold;">Graphics</span> <span style="color: #0000ff; font-weight: bold;">Color</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (java.awt.image <span style="color: #0000ff; font-weight: bold;">BufferedImage</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (javax.imageio <span style="color: #0000ff; font-weight: bold;">ImageIO</span>))
-(<span style="color: #0000ff; font-weight: bold;">import</span> (java.io <span style="color: #0000ff; font-weight: bold;">File</span>))
+(<span style="color: #ffff00;">import</span> (javax.swing <span style="color: #0000ff; font-weight: bold;">JFrame</span>))
+(<span style="color: #ffff00;">import</span> (java.util <span style="color: #0000ff; font-weight: bold;">Timer</span> <span style="color: #0000ff; font-weight: bold;">TimerTask</span>))
+(<span style="color: #ffff00;">import</span> (java.awt <span style="color: #0000ff; font-weight: bold;">Graphics</span> <span style="color: #0000ff; font-weight: bold;">Color</span>))
+(<span style="color: #ffff00;">import</span> (java.awt.image <span style="color: #0000ff; font-weight: bold;">BufferedImage</span>))
+(<span style="color: #ffff00;">import</span> (javax.imageio <span style="color: #0000ff; font-weight: bold;">ImageIO</span>))
+(<span style="color: #ffff00;">import</span> (java.io <span style="color: #0000ff; font-weight: bold;">File</span>))
 
 (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">clear-color</span> (<span style="color: #0000ff; font-weight: bold;">Color.</span> 0 0 127))
 (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">frame</span> (<span style="color: #0000ff; font-weight: bold;">JFrame.</span> <span style="color: #ff00ff;">"Clojure Sample Game"</span>)) 
 (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">image</span> (<span style="color: #0000ff; font-weight: bold;">ImageIO/read</span> (<span style="color: #0000ff; font-weight: bold;">File.</span> <span style="color: #ff00ff;">"gai.png"</span>))) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#30011;&#20687;&#35501;&#12415;&#36796;&#12415;</span>
-(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">player</span> (<span style="color: #ffff00;">atom</span> {<span style="color: #ffff00;">:pos</span> [0 0]}))
+(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">player</span> (<span style="color: #0000ff; font-weight: bold;">atom</span> {<span style="color: #ffff00;">:pos</span> [0 0]}))
 
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#26528;&#12434;&#32771;&#24942;&#12375;&#12390;&#12469;&#12452;&#12474;&#25351;&#23450;</span>
-(<span style="color: #0000ff; font-weight: bold;">doto</span> frame
+(<span style="color: #ffff00;">doto</span> frame
     (<span style="color: #0000ff; font-weight: bold;">.setVisible</span> true)
     (<span style="color: #0000ff; font-weight: bold;">.setIgnoreRepaint</span> true) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#20877;&#25551;&#30011;&#12434;&#28961;&#21177;&#12395;(BufferStrategy&#12434;&#20351;&#12358;&#12398;&#12391;)</span>
     (<span style="color: #0000ff; font-weight: bold;">.createBufferStrategy</span> 2) <span style="color: #ff0000;">;;  </span><span style="color: #ff0000;">setVisible&#12513;&#12477;&#12483;&#12489;&#12398;&#12354;&#12392;&#12391;&#21628;&#12400;&#12394;&#12356;&#12392;&#23455;&#34892;&#26178;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;</span>
     )
 
 <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12496;&#12483;&#12501;&#12449;&#20316;&#25104;</span>
-(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">buffer</span> (<span style="color: #0000ff; font-weight: bold;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getBufferStrategy</span>)))
-(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">insets</span> (<span style="color: #0000ff; font-weight: bold;">..</span> frame <span style="color: #0000ff; font-weight: bold;">getInsets</span>))  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12434;&#34920;&#31034;&#12375;&#12390;&#12363;&#12425;&#20986;&#12394;&#12356;&#12392;&#20516;&#12364;&#20837;&#12425;&#12394;&#12356;&#12290;</span>
+(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">buffer</span> (<span style="color: #ffff00;">..</span> frame (<span style="color: #0000ff; font-weight: bold;">getBufferStrategy</span>)))
+(<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">insets</span> (<span style="color: #ffff00;">..</span> frame <span style="color: #0000ff; font-weight: bold;">getInsets</span>))  <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12434;&#34920;&#31034;&#12375;&#12390;&#12363;&#12425;&#20986;&#12394;&#12356;&#12392;&#20516;&#12364;&#20837;&#12425;&#12394;&#12356;&#12290;</span>
 
-(<span style="color: #0000ff; font-weight: bold;">doto</span> frame
-    (<span style="color: #0000ff; font-weight: bold;">.setSize</span> (<span style="color: #ffff00;">+</span> 640 (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets right)) (<span style="color: #ffff00;">+</span> 480 (<span style="color: #0000ff; font-weight: bold;">..</span> insets top) (<span style="color: #0000ff; font-weight: bold;">..</span> insets bottom))))
+(<span style="color: #ffff00;">doto</span> frame
+    (<span style="color: #0000ff; font-weight: bold;">.setSize</span> (<span style="color: #0000ff; font-weight: bold;">+</span> 640 (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets right)) (<span style="color: #0000ff; font-weight: bold;">+</span> 480 (<span style="color: #ffff00;">..</span> insets top) (<span style="color: #ffff00;">..</span> insets bottom))))
 
 
 (<span style="color: #ffff00;">defn</span> <span style="color: #0000ff; font-weight: bold;">create-mainloop</span>
   []
-  (<span style="color: #ffff00;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
+  (<span style="color: #0000ff; font-weight: bold;">proxy</span> [<span style="color: #0000ff; font-weight: bold;">TimerTask</span>] []
     (run []
-      (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #ffff00;">+</span> 1 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1]) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#24231;&#27161;&#26356;&#26032;</span>
-      (<span style="color: #0000ff; font-weight: bold;">if</span> (<span style="color: #ffff00;">&lt;</span> 640 (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0))
-             (<span style="color: #ffff00;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 0]))
+      (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [(<span style="color: #0000ff; font-weight: bold;">+</span> 1 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)) 1]) <span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#24231;&#27161;&#26356;&#26032;</span>
+      (<span style="color: #ffff00;">if</span> (<span style="color: #0000ff; font-weight: bold;">&lt;</span> 640 (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0))
+             (<span style="color: #0000ff; font-weight: bold;">swap!</span> player assoc <span style="color: #ffff00;">:pos</span> [0 0]))
 
-      (<span style="color: #0000ff; font-weight: bold;">if</span> (<span style="color: #ffff00;">not</span> (<span style="color: #0000ff; font-weight: bold;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">contentsLost</span>)))
-        (<span style="color: #0000ff; font-weight: bold;">let</span> [g (<span style="color: #0000ff; font-weight: bold;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">getDrawGraphics</span>))
-              player-x (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)
-              player-y (<span style="color: #ffff00;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1)]
-          (<span style="color: #0000ff; font-weight: bold;">doto</span> g
-            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets top))
+      (<span style="color: #ffff00;">if</span> (<span style="color: #0000ff; font-weight: bold;">not</span> (<span style="color: #ffff00;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">contentsLost</span>)))
+        (<span style="color: #ffff00;">let</span> [g (<span style="color: #ffff00;">..</span> buffer (<span style="color: #0000ff; font-weight: bold;">getDrawGraphics</span>))
+              player-x (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 0)
+              player-y (<span style="color: #0000ff; font-weight: bold;">nth</span> (@player <span style="color: #ffff00;">:pos</span>) 1)]
+          (<span style="color: #ffff00;">doto</span> g
+            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets top))
             (<span style="color: #0000ff; font-weight: bold;">.setColor</span> clear-color)
             (<span style="color: #0000ff; font-weight: bold;">.fillRect</span> 0 0 640 480)
-            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #0000ff; font-weight: bold;">..</span> insets left) (<span style="color: #0000ff; font-weight: bold;">..</span> insets top))
+            (<span style="color: #0000ff; font-weight: bold;">.translate</span> (<span style="color: #ffff00;">..</span> insets left) (<span style="color: #ffff00;">..</span> insets top))
             (<span style="color: #0000ff; font-weight: bold;">.drawImage</span> image
                         player-x player-y
-                        (<span style="color: #ffff00;">+</span> player-x 32) (<span style="color: #ffff00;">+</span> player-y 32)
+                        (<span style="color: #0000ff; font-weight: bold;">+</span> player-x 32) (<span style="color: #0000ff; font-weight: bold;">+</span> player-y 32)
                         0 0 32 32
                         frame)
             (<span style="color: #0000ff; font-weight: bold;">.dispose</span>))
-          (<span style="color: #0000ff; font-weight: bold;">..</span> buffer (show))
+          (<span style="color: #ffff00;">..</span> buffer (show))
           )))))
 
 (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">timer</span> (<span style="color: #0000ff; font-weight: bold;">Timer.</span>))
-(<span style="color: #0000ff; font-weight: bold;">..</span> timer (schedule (create-mainloop) (<span style="color: #ffff00;">long</span> 0) (<span style="color: #ffff00;">long</span> 20)))
+(<span style="color: #ffff00;">..</span> timer (schedule (create-mainloop) (<span style="color: #0000ff; font-weight: bold;">long</span> 0) (<span style="color: #0000ff; font-weight: bold;">long</span> 20)))
 </pre>
 
 
@@ -793,19 +793,18 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 </ul>
 
 
-
 	      </ul>
 	    </nav>
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> <li><a href="../../../article/2012/12/30_git-mergerenmae.html">git mergeでrenmae関係のエラーがでた</a></li> <li><a href="../../../article/2012/12/30_o-blogclone.html">o-blogをcloneする。</a></li> 
+		<li><a href="../../../article/2013/01/31_lein.html">leinの出力するメッセージを英語化する。</a></li> <li><a href="../../../article/2013/01/29_python-window-tiler.html">python window tiler を試す</a></li> <li><a href="../../../article/2013/01/11_java.html">Javaでコンソールアプリを作りたいのでライブラリを調査してみた</a></li> <li><a href="../../../article/2013/01/11_emacsgooglereader.html">emacsでgoogleReaderを読む</a></li> <li><a href="../../../article/2013/01/06_emacspackage-elisp.html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></li> <li><a href="../../../article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li> <li><a href="../../../article/2013/01/06_centos56tmux17.html">CentOS5.6にtmux1.7をインストールする</a></li> <li><a href="../../../article/2012/12/30_openssh-servercd.html">openssh-serverをインストールしようとしたら、CDをいれろと。</a></li> <li><a href="../../../article/2012/12/30_ubuntu-server-lvm.html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</a></li> <li><a href="../../../article/2012/12/30_firefoximeoff.html">firefoxで常にIMEをOFFにする方法</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 110.43%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> 
+  <li style="font-size: 104.35%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 153.04%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 122.61%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 98.26%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 128.70%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 104.35%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 116.52%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 86.09%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 110.43%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 92.17%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>
