@@ -5,7 +5,370 @@
   <link href="http://mikio.github.com/"/>
   <updated>Lisp error in nil: (wrong-type-argument integerp nil)</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">leinの出力するメッセージを英語化する。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_lein.html"/><updated>2013-01-31T03:38:00Z</updated><published>2013-01-31T03:38:00Z</published><id>article/2013/01/31_lein.html</id><content type="html">&lt;p&gt;
+  <entry><title type="html">Redditで海外サイトをチェックする!</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/02/01_reddit.html"/><updated>2013-02-01T23:57:00Z</updated><published>2013-02-01T23:57:00Z</published><id>article/2013/02/01_reddit.html</id><category scheme="/tags/reddit.html" term="reddit" label="reddit"/><category scheme="/tags/firefox.html" term="firefox" label="firefox"/><content type="html">&lt;p&gt;
+&#12415;&#12394;&#12373;&#12435;&#12300;&#12399;&#12390;&#12502;&#12301;&#20351;&#12387;&#12390;&#12414;&#12377;&#12363;&#65311;&#26085;&#26412;&#12391;&#12469;&#12452;&#12488;&#12398;&#35413;&#20385;&#12434;&#12377;&#12427;&#12392;&#12365;&#12300;&#12399;&#12390;&#12502;&#25968;&#12301;
+&#12364;&#12402;&#12392;&#12388;&#12398;&#25351;&#27161;&#12395;&#12394;&#12427;&#12392;&#24605;&#12356;&#12414;&#12377;&#12290;&#12381;&#12435;&#12394;&#25351;&#27161;&#12398;&#12402;&#12392;&#12388;&#12395;&#28023;&#22806;&#12391;&#12399; &lt;a href="http://www.reddit.com/r/Clojure/"&gt;reddit&lt;/a&gt; &#12364;
+&#26377;&#21517;&#12425;&#12375;&#12356;&#12391;&#12377;&#12290;&lt;sup&gt;&lt;a class="footref" name="fnr.1" href="#fn.1"&gt;1&lt;/a&gt;&lt;/sup&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&#31169;&#12398;&#22580;&#21512;&#12289; &lt;a href="http://www.blog.replore.com/?p=6"&gt;&#12371;&#12371;&lt;/a&gt; &#12391;&#32057;&#20171;&#12373;&#12428;&#12390;&#12356;&#12383;&#12398;&#12434;&#12365;&#12387;&#12363;&#12369;&#12395;&#12289;Clojure&#12398;&#24773;&#22577;&#12434;&#28417;&#12427;&#12392;&#12365;
+&#12398;&#24773;&#22577;&#28304;&#12392;&#12375;&#12390;&#38971;&#32321;&#12395;&#12481;&#12455;&#12483;&#12463;&#12377;&#12427;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12375;&#12383;&#12290;&#31169;&#12399;&#26085;&#26412;&#12398;&#35352;&#20107;&#12434;&#12481;&#12455;&#12483;
+&#12463;&#12377;&#12427;&#12392;&#12365;&#12289;&#12414;&#12378;&#12393;&#12428;&#12384;&#12369;&#12300;&#12399;&#12390;&#12502;&#12301;&#12373;&#12428;&#12390;&#12427;&#12363;&#12387;&#12390;&#12398;&#12434;&#26465;&#20214;&#21453;&#23556;&#12390;&#12365;&#12395;&#12481;&#12455;&#12483;
+&#12463;&#12375;&#12390;&#12375;&#12414;&#12358;&#12398;&#12391;&#12377;&#12364;&#12289;&#12381;&#12398;&#26178;Firefox&#12398;&#25313;&#24373;&#12434;&#21033;&#29992;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;&#35352;&#20107;&#12364;&#34920;&#31034;&#12373;
+&#12428;&#12427;&#12392;&#21516;&#26178;&#12395;&#12399;&#12390;&#12502;&#25968;&#12418;&#34920;&#31034;&#12373;&#12428;&#12427;&#12398;&#12391;&#12289;&#12399;&#12390;&#12406;&#32076;&#30001;&#12391;&#38283;&#12356;&#12383;&#35352;&#20107;&#12391;&#12394;&#12367;&#12390;&#12418;
+&#12381;&#12398;&#35352;&#20107;&#12364;&#12393;&#12428;&#12384;&#12369;&#35441;&#38988;&#12363;&#12392;&#12358;&#12371;&#12392;&#12364;&#12431;&#12363;&#12387;&#12390;&#38750;&#24120;&#12395;&#20415;&#21033;&#12391;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+Reiddit&#12399;&#12289;&#35352;&#20107;&#12434;&#32057;&#20171;&#12373;&#12428;&#12390;&#12381;&#12398;&#35352;&#20107;&#12395;&#12388;&#12356;&#12390;&#12467;&#12513;&#12531;&#12488;&#12364;&#12388;&#12367;&#20181;&#32068;&#12415;&#12394;&#12398;&#12391;
+&#12300;&#12399;&#12390;&#12502;&#12301;&#12395;&#12385;&#12423;&#12387;&#12392;&#20284;&#12390;&#12356;&#12414;&#12377;&#12290;&#12377;&#12427;&#12392;&#24403;&#28982;&#27442;&#12375;&#12367;&#12394;&#12426;&#12414;&#12377;&#25313;&#24373;&#12364;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12381;&#12375;&#12383;&#12425;&#20844;&#24335;&#12484;&#12540;&#12523;&#12392;&#12375;&#12390;&#12354;&#12426;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://addons.mozilla.org/ja/firefox/addon/socialite/"&gt;https://addons.mozilla.org/ja/firefox/addon/socialite/&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&#12371;&#12428;&#12391;&#12371;&#12398;&#12484;&#12540;&#12523;&#12434;&#35211;&#12428;&#12400;&#12289;&#28023;&#22806;&#12469;&#12452;&#12488;&#12391;&#12418;&#35441;&#38988;&#12398;&#12469;&#12452;&#12488;&#12394;&#12398;&#12363;&#12393;&#12358;&#12363;&#21028;&#26029;&#12391;
+&#12365;&#12414;&#12377;!
+&lt;/p&gt;
+
+&lt;div id="footnotes"&gt;
+&lt;h2 class="footnotes"&gt;Footnotes: &lt;/h2&gt;
+&lt;div id="text-footnotes"&gt;
+&lt;p class="footnote"&gt;&lt;sup&gt;&lt;a class="footnum" name="fn.1" href="#fnr.1"&gt;1&lt;/a&gt;&lt;/sup&gt; Reddit&#12395;&#12388;&#12356;&#12390;&#12399;&#12289;&#19979;&#35352;&#12364;&#35443;&#12375;&#12356;&#12391;&#12377;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://blog.steamcommunity.jp/2012/01/2reddit-pc.html"&gt;http://blog.steamcommunity.jp/2012/01/2reddit-pc.html&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">Compojureの起動方法まとめ</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/02/01_compojure.html"/><updated>2013-02-01T23:37:00Z</updated><published>2013-02-01T23:37:00Z</published><id>article/2013/02/01_compojure.html</id><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><category scheme="/tags/compojure.html" term="compojure" label="compojure"/><content type="html">&lt;p&gt;
+nrepl(emacs)&#12363;&#12425;&#36215;&#21205;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;user&amp;gt; (&lt;span style="color: #0000ff; font-weight: bold;"&gt;use&lt;/span&gt; 'hello-world.handler)
+user&amp;gt; (&lt;span style="color: #0000ff; font-weight: bold;"&gt;use&lt;/span&gt; 'ring.util.serve)
+user&amp;gt; (serve app)
+&lt;span style="color: #0000ff; font-weight: bold;"&gt;Started&lt;/span&gt; web server on port 3000
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12469;&#12540;&#12496;&#12540;&#12398;&#22580;&#21512;&#12399;&#19979;&#35352;&#12391;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;user&amp;gt; (serve-headless app)
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#20877;&#36215;&#21205;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-clojure"&gt;user&amp;gt; (serve 'hello-world.handler)
+&lt;span style="color: #0000ff; font-weight: bold;"&gt;Stopped&lt;/span&gt; web server
+&lt;span style="color: #0000ff; font-weight: bold;"&gt;Started&lt;/span&gt; web server on port 3000
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12525;&#12540;&#12459;&#12523;&#29872;&#22659;(&#12487;&#12473;&#12463;&#12488;&#12483;&#12503;)&#12398;&#31471;&#26411;&#12391;&#36215;&#21205;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ lein ring server-headless
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12469;&#12540;&#12496;&#12540;&#19978;&#12391;&#36215;&#21205;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ lein ring server-headless
+&lt;/pre&gt;
+
+</content></entry><entry><title type="html">端末からサーバー上のcompojureが起動しない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_compojure.html"/><updated>2013-01-31T23:37:00Z</updated><published>2013-01-31T23:37:00Z</published><id>article/2013/01/31_compojure.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/compojure.html" term="compojure" label="compojure"/><content type="html">&lt;p&gt;
+&#33258;&#20316;&#12469;&#12540;&#12496;&#12540;&#19978;&#12398;compojure&#12391;&#20316;&#12387;&#12383;&#12450;&#12503;&#12522;&#12434;&#36215;&#21205;&#12375;&#12424;&#12358;&#12392;&#12375;&#12383;&#12392;&#12371;&#12429;&#12289;&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12364;&#30330;&#29983;&#12375;&#12390;&#36215;&#21205;&#12375;&#12394;&#12363;&#12387;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ lein ring server
+2013-02-01 17:23:52.538:INFO::Logging to STDERR via org.mortbay.log.StdErrLog
+2013-02-01 17:23:52.540:INFO::jetty-6.1.26
+Started server on port 3001
+2013-02-01 17:23:52.567:WARN::failed SocketConnector@0.0.0.0:3000: java.net.BindException: Address already&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt; use
+2013-02-01 17:23:52.567:WARN::failed Server@18532dc: java.net.BindException: Address already&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt; use
+2013-02-01 17:23:52.567:INFO::jetty-6.1.26
+2013-02-01 17:23:52.569:INFO::Started SocketConnector@0.0.0.0:3001
+Exception&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt; thread &lt;span style="color: #ff00ff;"&gt;"main"&lt;/span&gt; java.awt.HeadlessException:
+No X11 DISPLAY variable was set, but this program performed an operation which requires it.
+        at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:159)
+        at java.awt.Window.&amp;lt;init&amp;gt;(Window.java:432)
+        at java.awt.Frame.&amp;lt;init&amp;gt;(Frame.java:403)
+        at java.awt.Frame.&amp;lt;init&amp;gt;(Frame.java:368)
+        at javax.swing.JFrame.&amp;lt;init&amp;gt;(JFrame.java:158)
+        at clojure.java.browse_ui$&lt;span style="color: #ffff00;"&gt;open_url_in_swing&lt;/span&gt;.invoke(browse_ui.clj:20)
+        at clojure.lang.Var.invoke(Var.java:415)
+        at clojure.java.browse$&lt;span style="color: #ffff00;"&gt;open_url_in_swing&lt;/span&gt;.invoke(browse.clj:44)
+        at clojure.java.browse$&lt;span style="color: #ffff00;"&gt;browse_url&lt;/span&gt;.invoke(browse.clj:52)
+        at ring.server.standalone$&lt;span style="color: #ffff00;"&gt;open_browser_to&lt;/span&gt;.invoke(standalone.clj:39)
+        at ring.server.standalone$&lt;span style="color: #ffff00;"&gt;serve&lt;/span&gt;$&lt;span style="color: #ffff00;"&gt;fn__1497&lt;/span&gt;.invoke(standalone.clj:102)
+        at ring.server.standalone$&lt;span style="color: #ffff00;"&gt;try_port&lt;/span&gt;.invoke(standalone.clj:16)
+        at ring.server.standalone$&lt;span style="color: #ffff00;"&gt;try_port&lt;/span&gt;.invoke(standalone.clj:19)
+        at ring.server.standalone$&lt;span style="color: #ffff00;"&gt;serve&lt;/span&gt;.doInvoke(standalone.clj:95)
+        at clojure.lang.RestFn.invoke(RestFn.java:423)
+        at ring.server.leiningen$&lt;span style="color: #ffff00;"&gt;serve&lt;/span&gt;.invoke(leiningen.clj:20)
+        at user$&lt;span style="color: #ffff00;"&gt;eval2358&lt;/span&gt;.invoke(NO_SOURCE_FILE:1)
+        at clojure.lang.Compiler.eval(Compiler.java:6511)
+        at clojure.lang.Compiler.eval(Compiler.java:6501)
+        at clojure.lang.Compiler.eval(Compiler.java:6477)
+        at clojure.core$&lt;span style="color: #ffff00;"&gt;eval&lt;/span&gt;.invoke(core.clj:2797)
+        at clojure.main$&lt;span style="color: #ffff00;"&gt;eval_opt&lt;/span&gt;.invoke(main.clj:297)
+        at clojure.main$&lt;span style="color: #ffff00;"&gt;initialize&lt;/span&gt;.invoke(main.clj:316)
+        at clojure.main$&lt;span style="color: #ffff00;"&gt;null_opt&lt;/span&gt;.invoke(main.clj:349)
+        at clojure.main$&lt;span style="color: #ffff00;"&gt;main&lt;/span&gt;.doInvoke(main.clj:427)
+        at clojure.lang.RestFn.invoke(RestFn.java:421)
+        at clojure.lang.Var.invoke(Var.java:419)
+        at clojure.lang.AFn.applyToHelper(AFn.java:163)
+        at clojure.lang.Var.applyTo(Var.java:532)
+        at clojure.main.main(main.java:37)
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12394;&#12435;&#12391;&#12469;&#12540;&#12496;&#12540;&#19978;&#12391;&#36215;&#21205;&#12375;&#12390;&#12427;&#12398;&#12395;X11&#12434;&#20351;&#12362;&#12358;&#12392;&#12375;&#12390;&#12427;&#12435;&#12384;&#65311;&#12392;&#24605;&#12387;&#12383;&#12364;&#12289;&#12371;
+&#12428;&#12399;Compojure&#12364;&#33258;&#21205;&#30340;&#12395;&#12502;&#12521;&#12454;&#12470;&#12434;&#36215;&#21205;&#12373;&#12379;&#12424;&#12358;&#12392;&#12375;&#12390;&#12427;&#12363;&#12425;&#12425;&#12375;&#12356;&#12290;
+&lt;a href="https://github.com/NeillAlexander/battleships/issues/1"&gt;https://github.com/NeillAlexander/battleships/issues/1&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+&#12469;&#12540;&#12496;&#12540;&#19978;&#12391;&#36215;&#21205;&#12395;&#12399;&#19979;&#35352;&#12398;&#12467;&#12510;&#12531;&#12489;&#12434;&#20351;&#29992;&#12377;&#12428;&#12400;&#33391;&#12356;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ lein ring server-headless
+&lt;/pre&gt;
+
+</content></entry><entry><title type="html">o-blogのフォント</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_o-blog.html"/><updated>2013-01-31T22:37:00Z</updated><published>2013-01-31T22:37:00Z</published><id>article/2013/01/31_o-blog.html</id><category scheme="/tags/oblog.html" term="oblog" label="oblog"/><content type="html">&lt;p&gt;
+o-blog&#12398;&#12487;&#12501;&#12457;&#12523;&#12488;&#12398;&#12501;&#12457;&#12531;&#12488;&#12364;&#27671;&#12395;&#20837;&#12425;&#12394;&#12363;&#12387;&#12383;&#12398;&#12391;&#12289;&#12513;&#12452;&#12522;&#12458;&#31995;&#12434;&#20351;&#29992;&#12377;&#12427;&#12424;&#12358;&#12395;&#20462;&#27491;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-sh"&gt;$ git diff templates/style/less/
+diff --git a/templates/style/less/o-blog-default.less b/templates/style/less/o-blog-default.less
+old mode 100644
+new mode 100755
+index a819c1d..6d1f06f
+--- a/templates/style/less/o-blog-default.less
++++ b/templates/style/less/o-blog-default.less
+@@ -24,12 +24,15 @@
+
+
+     h1, h2, h3, h4, h5, h6 {
+-   font-family: &lt;span style="color: #ff00ff;"&gt;"Yanone Kaffeesatz"&lt;/span&gt;, &lt;span style="color: #ff00ff;"&gt;"Helvetica Neue"&lt;/span&gt;, Helvetica, Arial, sans-serif;
++    font-family: &lt;span style="color: #ff00ff;"&gt;'Hiragino Kaku Gothic ProN'&lt;/span&gt;, Meiryo, &lt;span style="color: #ff00ff;"&gt;'MS PGothic'&lt;/span&gt;, Sans-serif;
+     }
+
+
+     @monoFontFamily: &lt;span style="color: #ff00ff;"&gt;"Ubuntu Mono"&lt;/span&gt;, Menlo, Monaco, Consolas, &lt;span style="color: #ff00ff;"&gt;"Courier New"&lt;/span&gt;;
+-    @sansFontFamily: &lt;span style="color: #ff00ff;"&gt;"Andika"&lt;/span&gt;, &lt;span style="color: #ff00ff;"&gt;"Helvetica Neue"&lt;/span&gt;, Helvetica, Arial, sans-serif;
++    @sansFontFamily: &lt;span style="color: #ff00ff;"&gt;'Hiragino Kaku Gothic ProN'&lt;/span&gt;, Meiryo, &lt;span style="color: #ff00ff;"&gt;'MS PGothic'&lt;/span&gt;, Sans-serif;
++
+
+diff --git a/templates/style/less/o-blog.less b/templates/style/less/o-blog.less
+old mode 100644
+new mode 100755
+index 78ee71b..a4a98ee
+--- a/templates/style/less/o-blog.less
++++ b/templates/style/less/o-blog.less
+@@ -3,7 +3,8 @@
+     @import &lt;span style="color: #ff00ff;"&gt;"font-Ubuntu-Mono.less"&lt;/span&gt;;
+     @import &lt;span style="color: #ff00ff;"&gt;"font-Andika.less"&lt;/span&gt;;
+     @monoFontFamily: &lt;span style="color: #ff00ff;"&gt;"Ubuntu Mono"&lt;/span&gt;, Menlo, Monaco, Consolas, &lt;span style="color: #ff00ff;"&gt;"Courier New"&lt;/span&gt;;
+-    @sansFontFamily: &lt;span style="color: #ff00ff;"&gt;"Andika"&lt;/span&gt;, &lt;span style="color: #ff00ff;"&gt;"Helvetica Neue"&lt;/span&gt;, Helvetica, Arial, sans-serif;
++    @sansFontFamily: &lt;span style="color: #ff00ff;"&gt;'Hiragino Kaku Gothic ProN'&lt;/span&gt;, Meiryo, &lt;span style="color: #ff00ff;"&gt;'MS PGothic'&lt;/span&gt;, Sans-serif;
++    /*@sansFontFamily: &lt;span style="color: #ff00ff;"&gt;"Andika"&lt;/span&gt;, &lt;span style="color: #ff00ff;"&gt;"Helvetica Neue"&lt;/span&gt;, Helvetica, Arial, sans-serif;*/
+
+ }
+
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#22793;&#26356;&#20869;&#23481;&#12399;&#12289;&#19979;&#35352;&#12434;&#21442;&#32771;&#12395;&#12375;&#12383;&#12290;
+&lt;/p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wada811.blogspot.com/2012/12/best-font-family-definitive-edition.html"&gt;http://wada811.blogspot.com/2012/12/best-font-family-definitive-edition.html&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;
+&#12487;&#12501;&#12457;&#12523;&#12488;&#12398;&#12501;&#12457;&#12531;&#12488;&#12399;&#19979;&#35352;&#12398;&#12392;&#12362;&#12426;
+&lt;/p&gt;&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+&lt;caption&gt;&lt;/caption&gt;
+&lt;colgroup&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;&lt;col class="left" /&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#22522;&#26412;&#12501;&#12457;&#12531;&#12488;&lt;/td&gt;&lt;td class="left"&gt;Andika&lt;/td&gt;&lt;td class="left"&gt;&lt;a href="http://www.google.com/webfonts/specimen/Andika"&gt;http://www.google.com/webfonts/specimen/Andika&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#12504;&#12483;&#12480;&#12392;&#12363;&#12399;&#12371;&#12428;&lt;/td&gt;&lt;td class="left"&gt;Yanone&lt;/td&gt;&lt;td class="left"&gt;&lt;a href="http://www.yanone.de/typedesign/kaffeesatz/"&gt;http://www.yanone.de/typedesign/kaffeesatz/&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#12467;&#12540;&#12489;&#12414;&#12431;&#12426;&lt;/td&gt;&lt;td class="left"&gt;Ubuntu Mono&lt;/td&gt;&lt;td class="left"&gt;&lt;a href="http://www.google.com/webfonts/specimen/Ubuntu+Mono"&gt;http://www.google.com/webfonts/specimen/Ubuntu+Mono&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td class="left"&gt;&#12450;&#12452;&#12467;&#12531;&#12392;&#12363;&lt;/td&gt;&lt;td class="left"&gt;Awesome&lt;/td&gt;&lt;td class="left"&gt;&lt;a href="http://hyper-text.org/archives/2012/10/font_awesome.shtml"&gt;http://hyper-text.org/archives/2012/10/font\_awesome.shtml&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+</content></entry><entry><title type="html">Firefoxで水平スクロールを改ページする方法</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_firefox.html"/><updated>2013-01-31T21:37:00Z</updated><published>2013-01-31T21:37:00Z</published><id>article/2013/01/31_firefox.html</id><category scheme="/tags/firefox.html" term="firefox" label="firefox"/><category scheme="/tags/keysnail.html" term="keysnail" label="keysnail"/><content type="html">&lt;p&gt;
+&#12479;&#12452;&#12523;&#22411;&#12454;&#12451;&#12531;&#12489;&#12454;&#12510;&#12493;&#12540;&#12472;&#12515;&#12540;&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12427;&#12392;&#12289;&#12454;&#12451;&#12531;&#12489;&#12454;&#26528;&#12364;&#22266;&#23450;&#12394;&#12398;&#12391;
+&#20363;&#12360;&#12400;Firefox&#12394;&#12393;&#12391;&#27178;&#12473;&#12463;&#12525;&#12540;&#12523;&#12375;&#12394;&#12356;&#12392;&#30011;&#38754;&#12398;&#31471;&#12364;&#35211;&#12428;&#12394;&#12356;&#12371;&#12392;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12381;&#12435;&#12394;&#26178;&#27442;&#12375;&#12356;&#27231;&#33021;&#12364;&#27178;&#12473;&#12463;&#12525;&#12540;&#12523;&#12394;&#12398;&#12391;&#12377;&#12364;&#12289;&#12374;&#12387;&#12392;&#35519;&#12409;&#12383;&#38480;&#12426;&#12289;&#27178;&#26041;&#21521;&#12395;
+&#25913;&#12506;&#12540;&#12472;&#12392;&#12356;&#12358;&#12461;&#12540;&#12508;&#12540;&#12489;&#12471;&#12519;&#12540;&#12488;&#12459;&#12483;&#12488;&#12399;&#28961;&#12373;&#12381;&#12358;&#12391;&#12377;&#12290;&#12381;&#12371;&#12391;&#23433;&#30452;&#12391;&#12377;&#12364;&#12289;
+KeysNail&#12398;&#12461;&#12540;&#12496;&#12452;&#12531;&#12489;&#12392;&#12375;&#12390;&#12289;&#12499;&#12517;&#12540;&#12514;&#12540;&#12489;&#26178;&#12395;&#34892;&#38957;&#34892;&#26411;&#31227;&#21205;&#12392;&#12375;&#12390;&#19979;&#35352;&#12398;
+&#12424;&#12358;&#12395;&#21106;&#12426;&#12354;&#12390;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+
+&lt;pre class="src src-javascript"&gt;key.setViewKey([[&lt;span style="color: #ff00ff;"&gt;"C-e"&lt;/span&gt;]], &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; (&lt;span style="color: #ffff00;"&gt;ev&lt;/span&gt;) {
+    &lt;span style="color: #ffff00;"&gt;for&lt;/span&gt; (&lt;span style="color: #ffff00;"&gt;var&lt;/span&gt; &lt;span style="color: #ffff00;"&gt;i&lt;/span&gt; = 0; i &amp;lt; 100; i++) {
+        key.generateKey(ev.originalTarget, KeyEvent.DOM_VK_RIGHT, &lt;span style="color: #ffff00;"&gt;true&lt;/span&gt;);
+    }
+}, &lt;span style="color: #ff00ff;"&gt;'&amp;#21491;&amp;#31471;&amp;#12408;&amp;#31227;&amp;#21205;'&lt;/span&gt;, &lt;span style="color: #ffff00;"&gt;false&lt;/span&gt;);
+
+key.setViewKey([[&lt;span style="color: #ff00ff;"&gt;"C-a"&lt;/span&gt;]], &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; (&lt;span style="color: #ffff00;"&gt;ev&lt;/span&gt;) {
+    &lt;span style="color: #ffff00;"&gt;for&lt;/span&gt; (&lt;span style="color: #ffff00;"&gt;var&lt;/span&gt; &lt;span style="color: #ffff00;"&gt;i&lt;/span&gt; = 0; i &amp;lt; 100; i++) {
+        key.generateKey(ev.originalTarget, KeyEvent.DOM_VK_LEFT, &lt;span style="color: #ffff00;"&gt;true&lt;/span&gt;);
+    }
+}, &lt;span style="color: #ff00ff;"&gt;'&amp;#24038;&amp;#31471;&amp;#12408;&amp;#31227;&amp;#21205;'&lt;/span&gt;, &lt;span style="color: #ffff00;"&gt;false&lt;/span&gt;);
+&lt;/pre&gt;
+
+
+&lt;p&gt;
+&#12371;&#12428;&#12391;&#12289;&#12300;&#12402;&#12423;&#12356;&#12387;&#12301;&#12392;&#12356;&#12358;&#24863;&#12376;&#12391;&#31471;&#12387;&#12371;&#12364;&#27671;&#36605;&#12395;&#38322;&#35239;&#12391;&#12365;&#12427;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">Helmでバックスペース(C-h)が効かなくなった!</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_helmc-h.html"/><updated>2013-01-31T20:37:00Z</updated><published>2013-01-31T20:37:00Z</published><id>article/2013/01/31_helmc-h.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/helm.html" term="helm" label="helm"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
+helm&#12475;&#12483;&#12471;&#12519;&#12531;&#20013;&#12395;&#25171;&#12385;&#38291;&#36949;&#12356;&#12375;&#12383;&#12392;&#12365;&#12395;&#12289;C-h&#12391;&#12496;&#12483;&#12463;&#12473;&#12506;&#12540;&#12473;&#12377;&#12427;&#12371;&#12392;&#12364;&#12424;
+&#12367;&#12354;&#12427;&#12398;&#12391;&#12377;&#12364;&#12289;&#12371;&#12428;&#12364;&#12356;&#12388;&#12398;&#12414;&#12395;&#12363;&#12391;&#12365;&#12394;&#12367;&#12394;&#12387;&#12390;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#22810;&#20998;&#20170;&#12414;&#12391;&#12399;.emacs&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#20013;&#12398;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-emacsl-lisp"&gt;(define-key global-map (kbd &lt;span style="color: #ff00ff;"&gt;"C-h"&lt;/span&gt;) 'delete-backward-char)
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12364;&#26377;&#21177;&#12395;&#12394;&#12387;&#12390;&#12356;&#12390;&#12289;helm&#29420;&#33258;&#12398;&#35373;&#23450;&#12434;&#12375;&#12394;&#12367;&#12390;&#12418;&#12458;&#12483;&#12465;&#12540;&#12384;&#12387;&#12383;&#12435;&#12391;&#12377;&#12364;&#12289;
+helm&#12434;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12375;&#12383;&#12425;&#21177;&#12363;&#12394;&#12367;&#12394;&#12387;&#12390;&#12375;&#12414;&#12387;&#12383;&#12424;&#12358;&#12391;&#12377;&#12290;&#12381;&#12371;&#12391;&#12289;
+emacs&#36215;&#21205;&#20013;&#12395;&#19979;&#35352;&#12434;&#35413;&#20385;&#12375;&#12390;&#20940;&#12356;&#12384;&#12398;&#12391;&#12377;&#12364;&#12289;&#20877;&#36215;&#21205;&#12375;&#12383;&#12425;&#21177;&#12363;&#12394;&#12367;&#12394;&#12426;&#12414;&#12375;
+&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-emacs-lisp"&gt;(define-key helm-map (kbd &lt;span style="color: #ff00ff;"&gt;"C-h"&lt;/span&gt;) 'delete-backward-char)
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#21407;&#22240;&#12399;&#12289;&#12371;&#12398;&#24335;&#12364;&#35413;&#20385;&#12373;&#12428;&#12427;&#12479;&#12452;&#12511;&#12531;&#12464;&#12391;helm&#12364;&#35501;&#12415;&#12371;&#12414;&#12428;&#12390;&#12394;&#12356;&#12383;&#12417;&#12391;&#12289;
+helm-map&#12364;&#23384;&#22312;&#12375;&#12390;&#12394;&#12356;&#12424;&#12358;&#12391;&#12377;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12371;&#12398;&#25163;&#12398;&#19981;&#20855;&#21512;&#12399;&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12434;&#12356;&#12376;&#12387;&#12390;&#12427;&#12392;&#12424;&#12367;&#36973;&#36935;&#12377;&#12427;&#12398;&#12391;&#12377;&#12364;&#12289;&#12356;&#12414;&#12356;
+&#12385;&#22238;&#36991;&#26041;&#27861;&#12364;&#12431;&#12363;&#12387;&#12390;&#12414;&#12379;&#12435;&#12391;&#12375;&#12383;&#12290;&#12375;&#12383;&#12356;&#12371;&#12392;&#12399;&#12300;helm&#12434;&#12365;&#12385;&#12435;&#12392;&#35501;&#12415;&#36796;&#12435;
+&#12384;&#12354;&#12392;&#12395;&#24335;&#12434;&#35413;&#20385;&#12377;&#12427;&#12301;&#12392;&#12356;&#12358;&#12371;&#12392;&#12394;&#12435;&#12391;&#12377;&#12364;&#12290;
+&lt;/p&gt;
+&lt;p&gt;
+&#12391;&#12289;&#20170;&#22238;&#12399;&#23569;&#12375;&#26178;&#38291;&#12434;&#12392;&#12387;&#12390;Google&#20808;&#29983;&#12363;&#12425;&#32862;&#12365;&#12384;&#12375;&#12383;&#32080;&#26524;&#12289;
+&lt;code&gt;eval-after-load&lt;/code&gt; &#12434;&#20351;&#29992;&#12377;&#12428;&#12400;&#33391;&#12356;&#12371;&#12392;&#12364;&#12431;&#12363;&#12426;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;
+
+
+&lt;pre class="src src-emacs-lisp"&gt;(&lt;span style="color: #ffff00;"&gt;eval-after-load&lt;/span&gt; 'helm
+  '(&lt;span style="color: #ffff00;"&gt;progn&lt;/span&gt;
+     (define-key helm-map (kbd &lt;span style="color: #ff00ff;"&gt;"C-h"&lt;/span&gt;) 'delete-backward-char)
+     ))
+&lt;/pre&gt;
+
+&lt;p&gt;
+&#12371;&#12428;&#12391;&#28961;&#20107;helm&#12475;&#12483;&#12471;&#12519;&#12531;&#20013;&#12395; &lt;code&gt;C-h (delete-backward-char)&lt;/code&gt; &#12364;&#20351;&#29992;&#12391;&#12365;&#12427;
+&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12375;&#12383;&#12290;
+&lt;/p&gt;</content></entry><entry><title type="html">WindowsでLinuxするのに、CygwinとVirtualBoxどっちがいいか？</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_windowslinuxcygwinvirtualbox.html"/><updated>2013-01-31T19:37:00Z</updated><published>2013-01-31T19:37:00Z</published><id>article/2013/01/31_windowslinuxcygwinvirtualbox.html</id><category scheme="/tags/cygwin.html" term="cygwin" label="cygwin"/><category scheme="/tags/virtualbox.html" term="virtualbox" label="virtualbox"/><content type="html">&lt;p&gt;
+&#33258;&#23429;&#12391;&#12399;Ubuntu&#12364;&#20351;&#12360;&#12427;&#12363;&#12425;&#12356;&#12356;&#12435;&#12384;&#12369;&#12393;&#12289;&#20250;&#31038;&#12391;&#12398;&#20316;&#26989;&#12399;Windows&#12364;&#24517;&#38920;&#12290;
+&#12394;&#12398;&#12391;&#12393;&#12358;&#12395;&#12363;Linux&#29872;&#22659;&#12434;&#27083;&#31689;&#12375;&#12383;&#12356;&#12290;&#36984;&#25246;&#32930;&#12399;&#12405;&#12383;&#12388;&#12290;
+&lt;/p&gt;
+
+&lt;div id="outline-container-1" class="outline-3"&gt;
+&lt;h3 id="sec-1"&gt;Cygwin&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-1"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&#20840;&#20307;&#30340;&#12395;&#36605;&#12356;&#12290;
+&lt;/li&gt;
+&lt;li&gt;Windows&#12392;&#12398;&#34701;&#21512;&#24615;&#12364;&#39640;&#12356;&#12290;Dos&#12398;&#12467;&#12510;&#12531;&#12489;&#12364;Cygwin&#19978;&#12391;&#20351;&#12360;&#12427;&#12375;&#12289;Win&#12450;&#12503;&#12522;&#12398;&#36215;&#21205;&#12418;&#12391;&#12365;&#12427;&#12290;
+&lt;/li&gt;
+&lt;li&gt;&#20840;&#30011;&#38754;&#12450;&#12503;&#12522;&#12392;&#12363;&#12384;&#12392;&#32080;&#27083;&#34920;&#31034;&#23849;&#12428;&#12377;&#12427;&#12371;&#12392;&#12364;&#12354;&#12427;&#12290;
+&lt;/li&gt;
+&lt;li&gt;Cygwin&#29256;emacs&#12399;&#32080;&#27083;&#37325;&#12356;&#12290;
+&lt;/li&gt;
+&lt;li&gt;Linux&#12420;Mac&#12391;&#12399;&#31777;&#21336;&#12395;&#21205;&#12367;&#12418;&#12398;&#12364;&#12289;Cygwin&#12391;&#12399;&#32080;&#27083;&#33510;&#21172;&#12377;&#12427;&#12290;
+&lt;ul&gt;
+&lt;li&gt;&#29305;&#12395;clojure&#12398;&#12450;&#12503;&#12522;&#12391;&#12497;&#12473;&#12414;&#12431;&#12426;&#12398;&#38306;&#20418;&#12391;&#21205;&#12363;&#12394;&#12356;&#12503;&#12525;&#12464;&#12521;&#12512;&#12418;&#22810;&#12356;&#12290;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-2" class="outline-3"&gt;
+&lt;h3 id="sec-2"&gt;VirtualBox&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-2"&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&#12394;&#12435;&#12392;&#12356;&#12387;&#12390;&#12418;&#20114;&#25563;&#24615;&#12364;&#39640;&#12356;(&#12354;&#12383;&#12426;&#12414;&#12360;&#12384;&#12364;)&#12290;&#12493;&#12483;&#12488;&#12398;Linux&#21521;&#12369;&#12398;&#12494;&#12454;&#12495;&#12454;&#12364;&#12381;&#12398;&#12414;&#12414;&#20351;&#12360;&#12427;&#12290;
+&lt;/li&gt;
+&lt;li&gt;GUI&#12434;&#20351;&#29992;&#12377;&#12427;&#12392;&#12393;&#12358;&#12375;&#12390;&#12418;&#12418;&#12387;&#12373;&#12426;&#12290;
+&lt;/li&gt;
+&lt;li&gt;Excel&#12392;&#12398;&#20341;&#29992;&#12364;&#12391;&#12365;&#12394;&#12356;&#12290;
+&lt;ul&gt;
+&lt;li&gt;&#12471;&#12540;&#12512;&#12524;&#12473;&#12514;&#12540;&#12489;&#12399;&#30011;&#38754;&#12364;&#20081;&#12428;&#12427;&#12398;&#12391;&#12452;&#12516;&#12290;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/li&gt;
+&lt;li&gt;VirtualBox&#12398;&#12450;&#12483;&#12503;&#12487;&#12540;&#12488;&#12394;&#12393;&#12391;&#21205;&#20316;&#12364;&#19981;&#23433;&#23450;&#12395;&#12394;&#12427;&#21487;&#33021;&#24615;&#12364;&#12354;&#12427;&#12290;
+&lt;/li&gt;
+&lt;li&gt;&#12473;&#12490;&#12483;&#12503;&#12471;&#12519;&#12483;&#12488;&#12391;&#20445;&#23384;&#12391;&#12365;&#12427;&#12290;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div id="outline-container-3" class="outline-3"&gt;
+&lt;h3 id="sec-3"&gt;&#32080;&#35542;&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-3"&gt;
+
+&lt;p&gt;&#12420;&#12387;&#12401;&#12426;Cygwin&#12364;&#12356;&#12356;&#12363;&#12394;&#12353;&#12290;Python-Windows-Tiler&#12434;&#20351;&#29992;&#12377;&#12428;&#12400;&#12381;&#12428;&#12394;&#12426;&#24555;
+&#36969;&#12384;&#12375;&#12290;
+&lt;/p&gt;&lt;/div&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">leinの出力するメッセージを英語化する。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/31_lein.html"/><updated>2013-01-31T03:38:00Z</updated><published>2013-01-31T03:38:00Z</published><id>article/2013/01/31_lein.html</id><category scheme="/tags/lein.html" term="lein" label="lein"/><category scheme="/tags/java.html" term="java" label="java"/><content type="html">&lt;p&gt;
 Windows&#12398;Cygwin&#12391;lein&#12434;&#24324;&#12387;&#12390;&#12356;&#12427;&#12392;&#12289;java.exe&#12398;&#20986;&#21147;&#12513;&#12483;&#12475;&#12540;&#12472;&#12364;
 &#12364;&#25991;&#23383;&#21270;&#12369;&#12377;&#12427;&#12290;
 &lt;/p&gt;
@@ -139,407 +502,5 @@ TUI&#12450;&#12503;&#12522;&#12434;&#38283;&#30330;&#12377;&#12427;&#12394;&#124
 laterna&#12395;&#12362;&#12356;&#12390;&#20491;&#20154;&#30340;&#12395;&#12394;&#12395;&#12424;&#12426;&#23305;&#12375;&#12356;&#12398;&#12364;&#12289;&lt;a href="http://sjl.bitbucket.org/clojure-lanterna/"&gt;clojure-laterna&lt;/a&gt; &#12392;&#12356;&#12358;
 Clojure&#12398;&#12521;&#12483;&#12497;&#12540;&#12364;&#12354;&#12427;&#12392;&#12356;&#12358;&#12371;&#12392;&#12391;&#12377;&#12397;&#12290;&#12371;&#12428;&#12391;TUI&#12505;&#12540;&#12473;&#12398;&#12486;&#12461;&#12473;&#12488;&#12456;&#12487;&#12451;
 &#12479;&#12392;&#12363;&#20316;&#12426;&#12383;&#12356;&#12394;&#12353;&#12290;
-&lt;/p&gt;</content></entry><entry><title type="html">emacsでgoogleReaderを読む</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/11_emacsgooglereader.html"/><updated>2013-01-11T21:36:00Z</updated><published>2013-01-11T21:36:00Z</published><id>article/2013/01/11_emacsgooglereader.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
-&#22522;&#26412;&#30340;&#12395;&#12391;&#12365;&#12427;&#12384;&#12369;emacs&#19978;&#12391;&#12394;&#12435;&#12391;&#12418;&#25805;&#20316;&#12375;&#12383;&#12356;&#12398;&#12391;&#12377;&#12364;&#12289;&#29694;&#22312;&#12289;
-GoogleReader&#12399;&#12289;emacs&#19978;&#12391;&#35501;&#12435;&#12391;&#12414;&#12379;&#12435;&#12290;w3m&#12363;&#12425;&#12525;&#12464;&#12452;&#12531;&#12391;&#12365;&#12394;&#12367;&#12394;&#12387;&#12390;&#12375;
-&#12414;&#12387;&#12383;&#12363;&#12425;&#12391;&#12377;&#12290;&#12381;&#12371;&#12391;emacs&#19978;&#12391;Google&#12450;&#12503;&#12522;&#12434;&#25805;&#20316;&#12391;&#12365;&#12427;&#12392;&#12356;&#12358;
-&lt;code&gt;g-client&lt;/code&gt; &#12434;&#35430;&#12375;&#12390;&#12415;&#12427;&#12371;&#12392;&#12395;&#12375;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#19979;&#35352;&#12434;&#21442;&#32771;&#12395;&#12375;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://titilat.raindrop.jp/blog/?p=12"&gt;http://titilat.raindrop.jp/blog/?p=12&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-make&#12395;&#24517;&#35201;&#12381;&#12358;&#12394;&#12418;&#12398;&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12290;&#19981;&#35201;&#12394;&#12418;&#12398;&#12418;&#12354;&#12427;&#12363;&#12418;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;apt-cyg install libxslt &lt;span style="color: #ff0000;"&gt;# &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;g&amp;#36215;&amp;#21205;&amp;#26178;&amp;#12395;&amp;#24517;&amp;#35201;&lt;/span&gt;
-apt-cyg install openssl-devel
-apt-cyg install libgc-devel
-apt-cyg install gcc
-apt-cyg install autoconf
-apt-cyg install make
-&lt;/pre&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;&lt;span style="color: #0000ff; font-weight: bold;"&gt;cd&lt;/span&gt; Dropbox/site-lisp/
-svn export http://emacspeak.googlecode.com/svn/trunk/lisp/g-client/
-&lt;span style="color: #0000ff; font-weight: bold;"&gt;cd&lt;/span&gt; g-client/
-make
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12364;&#12391;&#12390;&#12375;&#12414;&#12358;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ make
- :
-Generating /cygdrive/c/Users/mikio/Dropbox/site-lisp/g-client/g-cus-load.el...done
-emacs -batch -q -no-site-file  -eval &lt;span style="color: #ff00ff;"&gt;'(setq vc-handled-backends nil)'&lt;/span&gt;  -l ./g-load-path.el -l ./g-loaddefs.el  -f batch-byte-compile org2blogger.el
-
-In toplevel form:
-org2blogger.el:33:1:Error: Can&lt;span style="color: #ff00ff;"&gt;'t find library org&lt;/span&gt;
-&lt;span style="color: #ff00ff;"&gt;Makefile:68: recipe for target `org2blogger.elc'&lt;/span&gt; failed
-make: *** [org2blogger.elc] Error 1
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-blogger&#12399;&#20351;&#29992;&#12375;&#12394;&#12356;&#12398;&#12391;&#12289;org2blogger.elc&#12398;&#12479;&#12540;&#12466;&#12483;&#12488;&#12434;&#12414;&#12427;&#12387;&#12392;&#21066;&#38500;&#12375;&#12383;&#12290;
-&#12391;&#12289;&#20170;&#24230;&#12399;&#25104;&#21151;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ make
- :
-gtube.el:349:1:Warning: the &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &lt;span style="color: #fa8072;"&gt;`word-at-point' is not known to be&lt;/span&gt;
-&lt;span style="color: #fa8072;"&gt;    defined.&lt;/span&gt;
-&lt;span style="color: #fa8072;"&gt;Wrote /cygdrive/c/Users/mikio/Dropbox/site-lisp/g-client/gtube.elc&lt;/span&gt;
-&lt;span style="color: #fa8072;"&gt;emacs -batch -q -no-site-file  -eval '(setq vc-handled-backends nil)'  -l ./g-load-path.el -l ./g-loaddefs.el  -f batch-byte-compile gsheet.el&lt;/span&gt;
-&lt;span style="color: #fa8072;"&gt;Wrote /cygdrive/c/Users/mikio/Dropbox/site-lisp/g-client/gsheet.elc&lt;/span&gt;
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&lt;code&gt;.emacs&lt;/code&gt; &#12395;&#19979;&#35352;&#12434;&#35373;&#23450;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-emacs-lisp"&gt;(load-library &lt;span style="color: #ff00ff;"&gt;"g"&lt;/span&gt;)
-(setq g-user-email &lt;span style="color: #ff00ff;"&gt;"hoge@gmail.com"&lt;/span&gt;)
-(setq browse-url-browser-function 'w3m-browse-url)
-&lt;/pre&gt;
-
-
-&lt;p&gt;
- &lt;code&gt;M-x greader-reading-list&lt;/code&gt; &#12434;&#23455;&#34892;&#12375;&#12383;&#12425;&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12364;w3m&#19978;&#12391;&#34920;&#31034;&#12373;&#12428;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="example"&gt;-:1: parser error : Start tag expected, '&amp;lt;' not found &#25351;&#23450;&#12373;&#12428;&#12383;&#12497;&#12473;&#12364;&#35211;&#12388;&#12363;&#12426;&#12414;&#12379;&#12435;&#12290; ^ unable to parse - 
-&lt;/pre&gt;
-
-&lt;p&gt;
-cygwin&#19978;&#12398;emacs&#12384;&#12387;&#12383;&#12425;&#22823;&#19976;&#22827;&#12384;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#34920;&#31034;&#12373;&#12428;&#12427;&#12487;&#12540;&#12479;&#12399;&#12289;xml&#12434;xslt&#12391;html&#12395;&#22793;&#25563;&#12375;&#12383;&#12418;&#12398;&#12391;&#12289;&#12506;&#12540;&#12472;&#12398;&#19978;&#37096;&#12395;RSS&#12398;&#21508;&#35352;&#20107;&#12398;&#12479;&#12452;&#12488;&#12523;&#19968;&#35239;&#12364;&#12394;&#12425;&#12403;
-&#12522;&#12531;&#12463;(&#12506;&#12540;&#12472;&#20869;&#12522;&#12531;&#12463;)&#12434;&#36799;&#12427;&#12392;&#12289;&#19979;&#37096;&#12398;&#27010;&#35201;&#25991;&#12395;&#12472;&#12515;&#12531;&#12503;&#12377;&#12427;&#12392;&#12356;&#12358;&#12418;&#12398;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#35430;&#12375;&#12390;&#12415;&#12390;&#12431;&#12363;&#12387;&#12383;&#12364;&#12289;googlreader&#12363;&#12425;&#12398;xml&#12434;xslt&#12391;html&#12395;&#22793;&#25563;&#12375;&#12390;&#34920;&#31034;&#12375;
-&#12390;&#12356;&#12427;&#12290;&#12394;&#12398;&#12391;&#12289;w3m&#19978;&#12391;&#12393;&#12435;&#12393;&#12435;&#27425;&#12398;&#35352;&#20107;&#12434;&#35501;&#12415;&#12377;&#12377;&#12417;&#12427;&#12392;&#12356;&#12358;&#12371;&#12392;&#12364;&#20986;&#26469;&#12394;
-&#12373;&#12381;&#12358;(&#38745;&#30340;html&#12394;&#12398;&#12391;)&#12290;&#12414;&#12383;&#34920;&#31034;&#12373;&#12428;&#12427;&#24773;&#22577;&#12418;&#12479;&#12464;&#27598;&#12391;&#12399;&#12394;&#12356;&#12375;&#12289;&#20214;&#25968;&#12418;&#23569;
-&#12394;&#12356;&#12398;&#12391;&#33258;&#20998;&#12398;&#35201;&#20214;&#12434;&#28288;&#12383;&#12375;&#12390;&#12394;&#12363;&#12387;&#12383;&#12290;CUI&#12398;peep&#12399;&#22823;&#20998;&#20351;&#12356;&#12420;&#12377;&#12363;&#12387;&#12383;&#12398;&#12391;
-&#27531;&#24565;&#12290;
-&lt;/p&gt;</content></entry><entry><title type="html">.emacsに必要なpackage を指定して自動で各種elispをインストールする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/06_emacspackage-elisp.html"/><updated>2013-01-06T10:21:00Z</updated><published>2013-01-06T10:21:00Z</published><id>article/2013/01/06_emacspackage-elisp.html</id><category scheme="/tags/emacs.html" term="emacs" label="emacs"/><content type="html">&lt;p&gt;
-&#20170;&#12414;&#12391;&#12497;&#12483;&#12465;&#12540;&#12472;&#31649;&#29702;&#12395;&#12399; &lt;code&gt;el-get&lt;/code&gt; &#12434;&#20351;&#29992;&#12375;&#12390;&#12365;&#12383;&#12398;&#12391;&#12377;&#12364;&#12289;Windows&#29872;&#22659;&#12364;
-&#12513;&#12452;&#12531;&#12384;&#12392; &lt;code&gt;git clone&lt;/code&gt; &#12364;&#12358;&#12414;&#12367;&#12356;&#12363;&#12394;&#12363;&#12387;&#12383;&#12426;&#12289;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#24460;&#12398;&#12499;&#12523;&#12489;&#24037;
-&#31243;&#12364;&#22833;&#25943;&#12375;&#12383;&#12426;&#12391;&#12289;&#12394;&#12363;&#12394;&#12363;&#38627;&#20736;&#12375;&#12390;&#12356;&#12383;&#12398;&#12391;&#12289;el-get&#12434;&#36766;&#12417;emacs&#27161;&#28310;&#12398;
-&lt;code&gt;package.el&lt;/code&gt; &#12434;&#12513;&#12452;&#12531;&#12395;&#12377;&#12427;&#12371;&#12392;&#12395;&#12375;&#12414;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&lt;code&gt;package.el&lt;/code&gt; &#12394;&#12425;&#12400;&#27161;&#28310;&#35013;&#20633;&#12391;&#12377;&#12375;&#12289;&#12469;&#12452;&#12488;&#12522;&#12509;&#12472;&#12488;&#12522;&#12395;&#21508;&#25152;&#12398;elisp&#12364;&#12480;&#12454;
-&#12531;&#12525;&#12540;&#12489;&#12373;&#12428;&#12383;&#29366;&#24907;&#12394;&#12398;&#12391;http&#12391;&#12377;&#12409;&#12390;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12391;&#12365;&#12427;&#12398;&#12391;&#22823;&#25269;&#12398;&#29872;&#22659;&#12391;
-&#12358;&#12414;&#12367;&#21205;&#12365;&#12414;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12497;&#12483;&#12465;&#12540;&#12472;&#12398;&#12522;&#12509;&#12472;&#12488;&#12522;&#12469;&#12452;&#12488;&#12392;&#12375;&#12390;&#12399;&#12289;&#26132;&#12399;Marmalade&#12364;&#26356;&#26032;&#12364;&#30427;&#12435;&#12384;&#12387;&#12383;&#12398;
-&#12391;&#12377;&#12364;&#12289;&#26368;&#36817;&#12391;&#12399;MELPA&#12364;&#12513;&#12452;&#12531;&#12395;&#12394;&#12387;&#12390;&#12365;&#12390;&#12427;&#12424;&#12358;&#12391;&#12377;&#12290;&#12394;&#12398;&#12391;&#31169;&#12399;&#12289;MELPA
-&#12513;&#12452;&#12531;&#12391;&#20351;&#29992;&#12375;&#12390;&#12414;&#12377;&#12290;Marmalade&#12399;&#28961;&#21177;&#12395;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;&#29702;&#30001;&#12399;&#21516;&#12376;&#12497;&#12483;&#12465;&#12540;&#12472;
-&#12364;&#21516;&#26178;&#12395;&#34920;&#31034;&#12373;&#12428;&#12390;&#12375;&#12414;&#12358;&#12363;&#12425;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#20197;&#19979;&#12399;&#31169;&#12398;&#35373;&#23450;&#12391;&#12377;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-emacs-lisp"&gt;(&lt;span style="color: #ffff00;"&gt;require&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;mikio-util&lt;/span&gt;)
-
-(&lt;span style="color: #ffff00;"&gt;when&lt;/span&gt; (&lt;span style="color: #ffff00;"&gt;require&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;package&lt;/span&gt; nil t)
-
-  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;Marmalade&lt;/span&gt;
-  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;(add-to-list 'package-archives&lt;/span&gt;
-  &lt;span style="color: #ff0000;"&gt;;;              &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;'("marmalade" . "http://marmalade-repo.org/packages/"))&lt;/span&gt;
-
-  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;MELPA&lt;/span&gt;
-  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;(add-to-list 'package-archives&lt;/span&gt;
-  &lt;span style="color: #ff0000;"&gt;;;              &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;'("melpa" . "http://melpa.milkbox.net/packages/") t)&lt;/span&gt;
-
-  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;MELPA&amp;#12398;&amp;#12415;&amp;#12395;&amp;#12377;&amp;#12427;&amp;#12290;&lt;/span&gt;
-  (setq package-archives (list '(&lt;span style="color: #ff00ff;"&gt;"melpa"&lt;/span&gt; . &lt;span style="color: #ff00ff;"&gt;"http://melpa.milkbox.net/packages/"&lt;/span&gt;)))
-
-
-
-  &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;&amp;#12452;&amp;#12531;&amp;#12473;&amp;#12488;&amp;#12540;&amp;#12523;&amp;#12377;&amp;#12427;&amp;#12487;&amp;#12451;&amp;#12524;&amp;#12463;&amp;#12488;&amp;#12522;&amp;#12434;&amp;#25351;&amp;#23450;&lt;/span&gt;
-  (setq my-package-directory (mikio/elisp-home &lt;span style="color: #ff00ff;"&gt;"package"&lt;/span&gt;))
-  (mikio/make-directory my-package-directory)
-  (setq package-user-dir (concat my-package-directory &lt;span style="color: #ff00ff;"&gt;"/"&lt;/span&gt;))
-
-  &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;
-  (package-initialize)
-
-  (setq my-packages
-        '(undo-tree
-          helm
-          auto-complete
-          popwin
-          smartrep
-          color-moccur
-          yasnippet
-
-          helm-git
-          helm-gtags
-          helm-c-moccur
-          helm-c-yasnippet
-
-          paredit
-          ruby-mode
-          php-mode
-          js2-mode
-          web-mode
-
-          nrepl
-          nrepl-ritz
-          ac-nrepl
-          &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;ac-slime&lt;/span&gt;
-          magit
-
-          jaunte
-          rainbow-delimiters
-
-          &lt;span style="color: #ff0000;"&gt;;; &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;window manager by kiwanami&lt;/span&gt;
-          window-layout
-          e2wm
-
-          twittering-mode
-          &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;o-blog&lt;/span&gt;
-
-          evil
-          ))
-
-  (&lt;span style="color: #ffff00;"&gt;require&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;cl&lt;/span&gt;)
-  (mapcar (&lt;span style="color: #ffff00;"&gt;lambda&lt;/span&gt; (x)
-            (&lt;span style="color: #ffff00;"&gt;when&lt;/span&gt; (not (package-installed-p x))
-              (package-install x)))
-          my-packages)
-)
-
-(&lt;span style="color: #ffff00;"&gt;provide&lt;/span&gt; '&lt;span style="color: #ffff00;"&gt;mikio-package&lt;/span&gt;)
-&lt;/pre&gt;
-
-&lt;p&gt;
-github&#12399;&#12371;&#12385;&#12425;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el"&gt;https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el&lt;/a&gt;
-
-&lt;p&gt;
- &lt;code&gt;my-packages&lt;/code&gt; &#12395;&#33258;&#20998;&#12398;&#24517;&#35201;&#12394;&#12497;&#12483;&#12465;&#12540;&#12472;&#12434;&#12414;&#12392;&#12417;&#12390;&#23450;&#32681;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
-&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#12371;&#12358;&#12377;&#12427;&#12371;&#12392;&#12395;&#12424;&#12387;&#12390;&#12289;&#29872;&#22659;&#12364;&#22793;&#12431;&#12387;&#12390;&#12418;emacs&#36215;&#21205;&#26178;&#12395;&#33258;&#21205;&#30340;&#12395;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;
-&#12375;&#12390;&#12367;&#12428;&#12427;&#12398;&#12391;&#27005;&#12481;&#12531;&#12391;&#12377;&#12290;
-&lt;/p&gt;</content></entry><entry><title type="html">cygwin経由で表示したtmuxの分割罫線が表示崩れする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/06_cygwintmux.html"/><updated>2013-01-06T08:56:00Z</updated><published>2013-01-06T08:56:00Z</published><id>article/2013/01/06_cygwintmux.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
-&#26368;&#21021;Cygwin&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#21476;&#12356;&#12363;&#12425;&#12363;&#12394;&#12392;&#24605;&#12387;&#12390;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12375;&#12390;&#12418;&#25913;&#21892;
-&#12379;&#12378;&#12289;&#12394;&#12425;&#12400;&#12392;tmux&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#26368;&#26032;&#12395;&#12375;&#12390;&#12418;&#30452;&#12425;&#12378;&#12289;&#32080;&#23616;cyg-terminal&#12398;
-&#12458;&#12503;&#12471;&#12519;&#12531;&#12391;Text&#12398;&#35373;&#23450;&#12434;&#19979;&#35352;&#12398;&#12424;&#12358;&#12395;&#22793;&#26356;&#12375;&#12383;&#12425;&#12289;&#34920;&#31034;&#23849;&#12428;&#12364;&#35299;&#28040;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="example"&gt;&#22793;&#26356;&#21069;
-Locale:JA_jp
-CharacterSet:UTF-8
-
-&#22793;&#26356;&#24460;
-Locale:C
-CharacterSet:UTF-8
-&lt;/pre&gt;
-
-</content></entry><entry><title type="html">CentOS5.6にtmux1.7をインストールする</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/01/06_centos56tmux17.html"/><updated>2013-01-06T08:56:00Z</updated><published>2013-01-06T08:56:00Z</published><id>article/2013/01/06_centos56tmux17.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;p&gt;
-&#29694;&#22312;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12356;&#12427;tmux&#12399;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;1.5 &#12290;
-cygwin&#12363;&#12425;&#20351;&#29992;&#12377;&#12427;&#12392;&#12289;&#32619;&#32218;&#12398;&#34920;&#31034;&#12364;&#12362;&#12363;&#12375;&#12367;&#12394;&#12427;&#12398;&#12391;
-&#35430;&#12375;&#12395;tmux&#12434;1.7&#12395;&#12375;&#12390;&#12415;&#12427;&#12371;&#12392;&#12395;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-make&#12375;&#12383;&#12425;&#19979;&#35352;&#12398;&#12456;&#12521;&#12540;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ sudo make
-gcc -DPACKAGE_NAME=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_TARNAME=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_VERSION=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;1.7&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_STRING=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\ &lt;/span&gt;1.7&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DPACKAGE_BUGREPORT=&lt;span style="color: #ff00ff;"&gt;\"\"&lt;/span&gt; -DPACKAGE_URL=&lt;span style="color: #ff00ff;"&gt;\"\"&lt;/span&gt; -DPACKAGE=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;tmux&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DVERSION=&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt;1.7&lt;span style="color: #ff00ff;"&gt;\"&lt;/span&gt; -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_CURSES_H=1 -DHAVE_DIRENT_H=1 -DHAVE_FCNTL_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_NCURSES_H=1 -DHAVE_PATHS_H=1 -DHAVE_PTY_H=1 -DHAVE_STDINT_H=1 -DHAVE_SYS_DIR_H=1 -DHAVE_TERM_H=1 -DHAVE_B64_NTOP=1 -DHAVE_FORKPTY=1 -DHAVE_DAEMON=1 -DHAVE_SETENV=1 -DHAVE_ASPRINTF=1 -DHAVE_STRCASESTR=1 -DHAVE_STRSEP=1 -DHAVE_DECL_OPTARG=1 -DHAVE_DECL_OPTIND=1 -DHAVE_DECL_OPTRESET=0 -DHAVE_BZERO=1 -DHAVE_DIRFD=1 -DHAVE_SYSCONF=1 -DHAVE_BSD_TYPES=1 -DHAVE___PROGNAME=1 -DHAVE_PROC_PID=1 -I.    -iquote. -I/usr/local/include    -D_GNU_SOURCE -std=c99    -MT control.o -MD -MP -MF .deps/control.Tpo -c -o control.o control.c
-control.c: In &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &amp;#8216;control_callback&amp;#8217;:
-control.c:103: &amp;#35686;&amp;#21578;: implicit declaration of &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &amp;#8216;evbuffer_readln&amp;#8217;
-control.c:103: error: &amp;#8216;EVBUFFER_EOL_LF&amp;#8217; undeclared (first use&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt; this &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt;)
-control.c:103: error: (Each undeclared identifier is reported only once
-control.c:103: error: for each &lt;span style="color: #ffff00;"&gt;function&lt;/span&gt; &lt;span style="color: #0000ff; font-weight: bold;"&gt;it&lt;/span&gt; appears in.)
-control.c:103: &amp;#35686;&amp;#21578;: assignment makes pointer from integer without a cast
-make: *** [control.o] &amp;#12456;&amp;#12521;&amp;#12540; 1
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#19979;&#35352;&#12395;&#12424;&#12427;&#12392;libevent&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#21476;&#12356;&#21487;&#33021;&#24615;&#12364;&#12354;&#12427;&#12424;&#12358;&#12394;&#12398;&#12391;&#12289;libevevnt&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#35519;&#12409;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://sourceforge.net/mailarchive/forum.php?thread_name=CALmqh6G6zzvcKcwRmNOmFRT0qO8A__YD3RjDuBwnSJ=JutTMPA@mail.gmail.com&amp;amp;forum_name=tmux-users"&gt;http://sourceforge.net/mailarchive/forum.php?thread\_name=CALmqh6G6zzvcKcwRmNOmFRT0qO8A\_\_YD3RjDuBwnSJ%3DJutTMPA%40mail.gmail.com&amp;amp;forum\_name=tmux-users&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-&lt;pre class="src src-sh"&gt;$ ldd /usr/local/bin/tmux
-        linux-gate.so.1 =&amp;gt;  (0x00e0c000)
-        libutil.so.1 =&amp;gt; /lib/libutil.so.1 (0x00de4000)
-        libm.so.6 =&amp;gt; /lib/libm.so.6 (0x00685000)
-        libncurses.so.5 =&amp;gt; /usr/lib/libncurses.so.5 (0x0075b000)
-        libevent-1.4.so.2 =&amp;gt; /usr/lib/libevent-1.4.so.2 (0x001b5000)
-        librt.so.1 =&amp;gt; /lib/librt.so.1 (0x00742000)
-        libc.so.6 =&amp;gt; /lib/libc.so.6 (0x00523000)
-        libresolv.so.2 =&amp;gt; /lib/libresolv.so.2 (0x00a2a000)
-        /lib/ld-linux.so.2 (0x00504000)
-        libdl.so.2 =&amp;gt; /lib/libdl.so.2 (0x0067e000)
-        libnsl.so.1 =&amp;gt; /lib/libnsl.so.1 (0x008d7000)
-        libpthread.so.0 =&amp;gt; /lib/libpthread.so.0 (0x006b0000)
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-tmux&#12398;&#12469;&#12452;&#12488;&#12434;&#35211;&#12427;&#12392;&#12289;libevent&#12398;&#12496;&#12540;&#12472;&#12519;&#12531;&#12399;&#12289;1.4 or 2.0&#12392;&#12354;&#12427;&#12398;&#12391;&#19968;&#35211;&#21839;&#38988;&#12394;&#12373;&#12381;&#12358;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/3593"&gt;http://permalink.gmane.org/gmane.comp.terminal-emulators.tmux.user/3593&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-
-
-&lt;pre class="example"&gt;That's still an old version.  Use either libevent-1.4.14b or libevent-2.0.21
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12392;&#12354;&#12427;&#12290;&#12381;&#12371;&#12391;&#12289;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#12390;&#12356;&#12427;&#12496;&#12540;&#12472;&#12519;&#12531;&#12434;&#30906;&#35469;&#12375;&#12383;&#12392;&#12371;&#12429;&#12289;1.4.13&#12384;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-
-
-
-&lt;pre class="src src-sh"&gt;$ sudo yum list installed |grep libevent-devel
-libevent-devel.i386                     1.4.13-1                       installed
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12381;&#12371;&#12391;1.4.14&#12395;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12391;&#12365;&#12394;&#12356;&#12363;&#35519;&#26619;&#12375;&#12390;&#12415;&#12427;&#12290;
-yum&#32076;&#30001;&#12391;&#12496;&#12540;&#12472;&#12519;&#12531;&#12450;&#12483;&#12503;&#12377;&#12427;&#26041;&#27861;&#12364;&#12431;&#12363;&#12425;&#12394;&#12363;&#12387;&#12383;&#12398;&#12391;
-&#25163;&#21205;&#12391;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12371;&#12392;&#12395;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;&lt;span style="color: #ff0000;"&gt;# &lt;/span&gt;&lt;span style="color: #ff0000;"&gt;yum&amp;#29256;&amp;#12497;&amp;#12483;&amp;#12465;&amp;#12540;&amp;#12472;&amp;#12434;&amp;#21066;&amp;#38500;&lt;/span&gt;
-sudo yum remove libevent-devel
-
-sudo wget --no-check-certificate https://github.com/downloads/libevent/libevent/libevent-1.4.14b-stable.tar.gz
-sudo tar xvfz libevent-1.4.14b-stable.tar.gz
-&lt;span style="color: #0000ff; font-weight: bold;"&gt;cd&lt;/span&gt; libevent-1.4.14b-stable
-sudo ./configure
-sudo make
-sudo paco -D make install
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#32080;&#23616;cygwin&#12391;&#12398;&#32619;&#32218;&#34920;&#31034;&#23849;&#12428;&#12399;&#30452;&#12425;&#12394;&#12363;&#12387;&#12383;&#12290;&#12290;&#12290;
-&lt;/p&gt;</content></entry><entry><title type="html">openssh-serverをインストールしようとしたら、CDをいれろと。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_openssh-servercd.html"/><updated>2012-12-30T17:34:00Z</updated><published>2012-12-30T17:34:00Z</published><id>article/2012/12/30_openssh-servercd.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">&lt;pre class="src src-sh"&gt;Media Change: Please insert the disc labeled 
-&lt;span style="color: #ff00ff;"&gt;'Ubuntu-Server 12.04.1 LTS _Precise Pangolin_  - Release amd64 (2012817.3)'&lt;/span&gt;
- &lt;span style="color: #ffff00;"&gt;in&lt;/span&gt; the drive &lt;span style="color: #ff00ff;"&gt;'/media/cdrom/'&lt;/span&gt; and press enter.
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#19979;&#35352;&#12434;&#21442;&#32771;&#12395; &lt;code&gt;/etc/sources.list&lt;/code&gt; &#12434;&#35211;&#12427;&#12392;&#12394;&#12380;&#12363;&#12289;cdrom&#12398;&#35352;&#36848;&#12364;&#12290;&#12375;&#12363;&#12418;3&#34892;&#12418;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://d.hatena.ne.jp/majix/"&gt;http://d.hatena.ne.jp/majix/&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;p&gt;
-&#12371;&#12428;&#12425;&#12434;&#21066;&#38500;&#12375;&#19979;&#35352;&#12434;&#36861;&#35352;&#12375;&#12383;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;deb http://jp.archive.ubuntu.com/ubuntu/ precise main 
-&lt;/pre&gt;
-
-
-&lt;p&gt;
-&#12385;&#12394;&#12415;&#12395;&#12371;&#12398;&#12477;&#12540;&#12473;&#12522;&#12473;&#12488;&#12399;&#19979;&#35352;&#12391;&#31777;&#21336;&#12395;&#20316;&#25104;&#12391;&#12365;&#12427;&#12290;
-&lt;/p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://repogen.simplylinux.ch/"&gt;http://repogen.simplylinux.ch/&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-</content></entry><entry><title type="html">Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_ubuntu-server-lvm.html"/><updated>2012-12-30T17:34:00Z</updated><published>2012-12-30T17:34:00Z</published><id>article/2012/12/30_ubuntu-server-lvm.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/><content type="html">&lt;p&gt;
-Ubuntu Server&#12434;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12375;&#30452;&#12375;&#12383;&#12392;&#12365;&#12289;&#21069;&#22238;&#20316;&#12387;&#12383;LVM&#12434;&#20877;&#27083;&#25104;&#12375;&#12424;&#12358;&#12392;&#12375;&#12383;&#12425;
-VG&#12420;LVM&#12364;&#21066;&#38500;&#12391;&#12365;&#12394;&#12367;&#12390;&#20808;&#12395;&#36914;&#12417;&#12394;&#12367;&#12394;&#12387;&#12383;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12371;&#12398;&#29366;&#24907;&#12434;&#22238;&#36991;&#12377;&#12427;&#12395;&#12399;&#12289; &#12414;&#12378; &lt;code&gt;ALT+F2&lt;/code&gt; &#12391;&#12467;&#12531;&#12477;&#12540;&#12523;&#12434;&#20999;&#12426;&#26367;&#12360;&#12427;&#12290;
-Ubuntu Server&#12391;&#12399;&#20206;&#24819;&#12467;&#12531;&#12477;&#12540;&#12523;&#12364;&#35079;&#25968;&#31435;&#12385;&#12354;&#12364;&#12387;&#12390;&#12356;&#12390;&#12289; &lt;code&gt;ALT + F1 - F4&lt;/code&gt; &#12391;&#20999;&#12426;&#26367;&#12360;&#12425;&#12428;&#12427;&#12398;&#12384;&#12290;
-&lt;/p&gt;
-&lt;p&gt;
-&#12414;&#12378;&#12289;&#35542;&#29702;&#12508;&#12522;&#12517;&#12540;&#12512;&#12434;&#21066;&#38500;&#12375;&#12289;&#12381;&#12398;&#24460;&#12289;&#12508;&#12522;&#12517;&#12540;&#12512;&#12464;&#12523;&#12540;&#12503;&#12434;&#21066;&#38500;&#12377;&#12427;&#12290;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-sh"&gt;$ lvremove /dev/{&amp;#12508;&amp;#12522;&amp;#12517;&amp;#12540;&amp;#12512;&amp;#12464;&amp;#12523;&amp;#12540;&amp;#12503;}/{&amp;#35542;&amp;#29702;&amp;#12508;&amp;#12522;&amp;#12517;&amp;#12540;&amp;#12512;}
-$ vgremove /dev/{&amp;#12508;&amp;#12522;&amp;#12517;&amp;#12540;&amp;#12512;&amp;#12464;&amp;#12523;&amp;#12540;&amp;#12503;}
-&lt;/pre&gt;
-
-&lt;p&gt;
-&#12391;&#21066;&#38500;&#12391;&#12365;&#12427;&#12290;
-&#12371;&#12398;&#26178;&#12289;swap&#38936;&#22495;&#12395;&#21106;&#12426;&#24403;&#12390;&#12383;&#12418;&#12398;&#12364;&#21066;&#38500;&#12391;&#12365;&#12394;&#12356;&#22580;&#21512;&#12364;&#12354;&#12427;&#12364;
-&#12381;&#12398;&#26178;&#12399;&#12289;&#12356;&#12387;&#12383;&#12435;&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#20316;&#26989;&#12434;&#20013;&#26029;&#12375;&#12390;&#12420;&#12426;&#30452;&#12379;&#12400;&#12424;&#12356;&#12290;
-&lt;/p&gt;
-</content></entry><entry><title type="html">firefoxで常にIMEをOFFにする方法</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2012/12/30_firefoximeoff.html"/><updated>2012-12-30T17:31:00Z</updated><published>2012-12-30T17:31:00Z</published><id>article/2012/12/30_firefoximeoff.html</id><category scheme="/tags/firefox.html" term="firefox" label="firefox"/><content type="html">&lt;ul&gt;
-&lt;li&gt;&#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#12501;&#12457;&#12523;&#12480;&#12398;&#22580;&#25152;&#12434;&#35519;&#12409;&#12427;&#12290;
-&lt;ul&gt;
-&lt;li&gt;&#12504;&#12523;&#12503; -&amp;gt; &#12488;&#12521;&#12502;&#12523;&#12471;&#12517;&#12540;&#12486;&#12451;&#12531;&#12464;&#24773;&#22577; -&amp;gt; &#12450;&#12503;&#12522;&#12465;&#12540;&#12471;&#12519;&#12531;&#22522;&#26412;&#24773;&#22577; -&amp;gt; &#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#12501;&#12457;&#12523;&#12480;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/li&gt;
-&lt;li&gt;{&#12503;&#12525;&#12501;&#12449;&#12452;&#12523;&#12501;&#12457;&#12523;&#12480;}/userChrome.css &#12434;&#38283;&#12367;(&#12394;&#12369;&#12428;&#12400;&#20316;&#25104;)
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&#19979;&#35352;&#12398;&#12467;&#12540;&#12489;&#12434;&#36861;&#21152;
-&lt;/p&gt;
-
-
-&lt;pre class="src src-css"&gt;&lt;span style="color: #0000ff; font-weight: bold;"&gt;@charset&lt;/span&gt; &lt;span style="color: #ff00ff;"&gt;"utf-8"&lt;/span&gt;;
-&lt;span style="color: #0000ff; font-weight: bold;"&gt;* *|input &lt;/span&gt;{&lt;span style="color: #ffff00;"&gt;ime-mode&lt;/span&gt;: inactive &lt;span style="color: #0000ff; font-weight: bold;"&gt;!important&lt;/span&gt;;}
-&lt;/pre&gt;
-
-
-&lt;div id="outline-container-1" class="outline-3"&gt;
-&lt;h3 id="sec-1"&gt;&#21442;&#32771;&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-1"&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://ameblo.jp/damocha/entry-11105732309.html"&gt;http://ameblo.jp/damocha/entry-11105732309.html&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-
-&lt;/div&gt;
-&lt;/div&gt;
-</content></entry>
+&lt;/p&gt;</content></entry>
 </feed>
