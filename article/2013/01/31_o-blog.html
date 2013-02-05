@@ -100,42 +100,38 @@ o-blogのデフォルトのフォントが気に入らなかったので、メ�
 </p>
 
 
-<pre class="src src-sh">$ git diff templates/style/less/
-diff --git a/templates/style/less/o-blog-default.less b/templates/style/less/o-blog-default.less
-old mode 100644
-new mode 100755
-index a819c1d..6d1f06f
+<pre class="src src-sh">diff --git a/templates/style/less/o-blog-default.less b/templates/style/less/o-blog-default.less
+index a819c1d..10d8e50 100644
 --- a/templates/style/less/o-blog-default.less
 +++ b/templates/style/less/o-blog-default.less
-@@ -24,12 +24,15 @@
+@@ -24,12 +24,13 @@
 
 
      h1, h2, h3, h4, h5, h6 {
 -   font-family: <span style="color: #ff00ff;">"Yanone Kaffeesatz"</span>, <span style="color: #ff00ff;">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif;
-+    font-family: <span style="color: #ff00ff;">'Hiragino Kaku Gothic ProN'</span>, Meiryo, <span style="color: #ff00ff;">'MS PGothic'</span>, Sans-serif;
++    font-family: <span style="color: #ff00ff;">'Hiragino Kaku Gothic ProN'</span>, Meiryo, <span style="color: #ff00ff;">'VL &#12468;&#12471;&#12483;&#12463;'</span>, <span style="color: #ff00ff;">'MS PGothic'</span>, Sans-serif;
      }
 
 
      @monoFontFamily: <span style="color: #ff00ff;">"Ubuntu Mono"</span>, Menlo, Monaco, Consolas, <span style="color: #ff00ff;">"Courier New"</span>;
 -    @sansFontFamily: <span style="color: #ff00ff;">"Andika"</span>, <span style="color: #ff00ff;">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif;
-+    @sansFontFamily: <span style="color: #ff00ff;">'Hiragino Kaku Gothic ProN'</span>, Meiryo, <span style="color: #ff00ff;">'MS PGothic'</span>, Sans-serif;
++    @sansFontFamily: <span style="color: #ff00ff;">'Hiragino Kaku Gothic ProN'</span>, Meiryo, <span style="color: #ff00ff;">'VL &#12468;&#12471;&#12483;&#12463;'</span>, <span style="color: #ff00ff;">'MS PGothic'</span>, Sans-serif;
 +
 
 diff --git a/templates/style/less/o-blog.less b/templates/style/less/o-blog.less
-old mode 100644
-new mode 100755
-index 78ee71b..a4a98ee
+index 78ee71b..50b3df3 100644
 --- a/templates/style/less/o-blog.less
 +++ b/templates/style/less/o-blog.less
-@@ -3,7 +3,8 @@
+@@ -3,8 +3,7 @@
      @import <span style="color: #ff00ff;">"font-Ubuntu-Mono.less"</span>;
      @import <span style="color: #ff00ff;">"font-Andika.less"</span>;
      @monoFontFamily: <span style="color: #ff00ff;">"Ubuntu Mono"</span>, Menlo, Monaco, Consolas, <span style="color: #ff00ff;">"Courier New"</span>;
 -    @sansFontFamily: <span style="color: #ff00ff;">"Andika"</span>, <span style="color: #ff00ff;">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif;
-+    @sansFontFamily: <span style="color: #ff00ff;">'Hiragino Kaku Gothic ProN'</span>, Meiryo, <span style="color: #ff00ff;">'MS PGothic'</span>, Sans-serif;
-+    /*@sansFontFamily: <span style="color: #ff00ff;">"Andika"</span>, <span style="color: #ff00ff;">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif;*/
-
+-
++    @sansFontFamily: <span style="color: #ff00ff;">'Hiragino Kaku Gothic ProN'</span>, Meiryo, <span style="color: #ff00ff;">'VL &#12468;&#12471;&#12483;&#12463;'</span>, <span style="color: #ff00ff;">'MS PGothic'</span>, Sans-serif;
  }
+ @import <span style="color: #ff00ff;">"../bootstrap/less/bootstrap.less"</span>;
+ @import <span style="color: #ff00ff;">"../bootstrap/less/responsive.less"</span>;
 
 </pre>
 

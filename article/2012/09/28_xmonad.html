@@ -163,22 +163,22 @@ $ sudo apt-get install xmobar <span style="color: #ff0000;"># </span><span style
 </p>
 
 
-<pre class="src src-haskell">Config { font = <span style="color: #ff00ff;">"xft:Sans-9:bold"</span>
-       , bgColor = <span style="color: #ff00ff;">"black"</span>
-       , fgColor = <span style="color: #ff00ff;">"grey"</span>
-       , position = Top
-       , lowerOnStart = False
-       , commands = [ Run Network <span style="color: #ff00ff;">"eth0"</span> [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"0"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"32"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
-                    , Run Cpu [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"3"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"50"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
-                    , Run Memory [<span style="color: #ff00ff;">"-t"</span>,<span style="color: #ff00ff;">"Mem: &lt;usedratio&gt;%"</span>] 10
-                    , Run Swap [] 10
-                    , Run Battery [] 600
-                    , Run Com <span style="color: #ff00ff;">"lsb_release"</span> [<span style="color: #ff00ff;">"-s"</span>,<span style="color: #ff00ff;">"-d"</span>] <span style="color: #ff00ff;">""</span> 36000
-                    , Run Date <span style="color: #ff00ff;">"%Y %b %_d(%a) %H:%M:%S"</span> <span style="color: #ff00ff;">"date"</span> 10
+<pre class="src src-haskell"><span style="color: #00ff00;">Config</span> { font <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"xft:Sans-9:bold"</span>
+       , bgColor <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"black"</span>
+       , fgColor <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"grey"</span>
+       , position <span style="color: #ffff00;">=</span> <span style="color: #00ff00;">Top</span>
+       , lowerOnStart <span style="color: #ffff00;">=</span> <span style="color: #00ff00;">False</span>
+       , commands <span style="color: #ffff00;">=</span> [ <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Network</span> <span style="color: #ff00ff;">"eth0"</span> [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"0"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"32"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
+                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Cpu</span> [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"3"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"50"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
+                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Memory</span> [<span style="color: #ff00ff;">"-t"</span>,<span style="color: #ff00ff;">"Mem: &lt;usedratio&gt;%"</span>] 10
+                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Swap</span> <span style="color: #00ff00;">[]</span> 10
+                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Battery</span> <span style="color: #00ff00;">[]</span> 600
+                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Com</span> <span style="color: #ff00ff;">"lsb_release"</span> [<span style="color: #ff00ff;">"-s"</span>,<span style="color: #ff00ff;">"-d"</span>] <span style="color: #ff00ff;">""</span> 36000
+                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Date</span> <span style="color: #ff00ff;">"%Y %b %_d(%a) %H:%M:%S"</span> <span style="color: #ff00ff;">"date"</span> 10
                     ]
-       , sepChar = <span style="color: #ff00ff;">"%"</span>
-       , alignSep = <span style="color: #ff00ff;">"}{"</span>
-       , template = <span style="color: #ff00ff;">"&lt;fc=#ee9a00&gt;%lsb_release%&lt;/fc&gt; | %cpu% | %memory% %swap% | %eth0% | %battery% }{ %date%"</span>
+       , sepChar <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"%"</span>
+       , alignSep <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"}{"</span>
+       , template <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"&lt;fc=#ee9a00&gt;%lsb_release%&lt;/fc&gt; | %cpu% | %memory% %swap% | %eth0% | %battery% }{ %date%"</span>
        }
 </pre>
 
@@ -188,25 +188,25 @@ $ sudo apt-get install xmobar <span style="color: #ff0000;"># </span><span style
 </p>
 
 
-<pre class="src src-haskell">import XMonad
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
-import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeys)
-import System.IO
+<pre class="src src-haskell"><span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad</span>
+<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Hooks.DynamicLog</span>
+<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Hooks.ManageDocks</span>
+<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Util.Run</span>(spawnPipe)
+<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Util.EZConfig</span>(additionalKeys)
+<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">System.IO</span>
 
-main = do
-        xmproc &lt;- spawnPipe <span style="color: #ff00ff;">"/usr/bin/xmobar /home/mikio/.xmobarrc"</span>  -- .xmoabrrc&#12398;&#12497;&#12473;&#12434;&#35352;&#36848;&#12375;&#12390;&#12362;&#12367;
-        xmonad $ defaultConfig
-             { manageHook = manageDocks &lt;+&gt; manageHook defaultConfig
-             , layoutHook = avoidStruts  $  layoutHook defaultConfig
-             , logHook = dynamicLogWithPP $ xmobarPP
-             { ppOutput = hPutStrLn xmproc
-             , ppTitle = xmobarColor <span style="color: #ff00ff;">"green"</span> <span style="color: #ff00ff;">""</span> . shorten 50
+<span style="color: #0000ff; font-weight: bold;">main</span> <span style="color: #ffff00;">=</span> <span style="color: #ffff00;">do</span>
+        xmproc <span style="color: #ffff00;">&lt;-</span> spawnPipe <span style="color: #ff00ff;">"/usr/bin/xmobar /home/mikio/.xmobarrc"</span>  <span style="color: #ff0000;">-- </span><span style="color: #ff0000;">.xmoabrrc&#12398;&#12497;&#12473;&#12434;&#35352;&#36848;&#12375;&#12390;&#12362;&#12367;</span>
+        xmonad <span style="color: #ffff00;">$</span> defaultConfig
+             { manageHook <span style="color: #ffff00;">=</span> manageDocks <span style="color: #ffff00;">&lt;+&gt;</span> manageHook defaultConfig
+             , layoutHook <span style="color: #ffff00;">=</span> avoidStruts  <span style="color: #ffff00;">$</span>  layoutHook defaultConfig
+             , logHook <span style="color: #ffff00;">=</span> dynamicLogWithPP <span style="color: #ffff00;">$</span> xmobarPP
+             { ppOutput <span style="color: #ffff00;">=</span> hPutStrLn xmproc
+             , ppTitle <span style="color: #ffff00;">=</span> xmobarColor <span style="color: #ff00ff;">"green"</span> <span style="color: #ff00ff;">""</span> <span style="color: #ffff00;">.</span> shorten 50
               }
-             , modMask = mod4Mask     -- Windows&#12461;&#12540;&#12434;Mod&#12461;&#12540;&#12392;&#12375;&#12390;&#12496;&#12452;&#12531;&#12489;&#12377;&#12427;
-          } `additionalKeys`
-          [ ((mod4Mask .|. shiftMask, xK_z), spawn <span style="color: #ff00ff;">"xscreensaver-command -lock"</span>)
+             , modMask <span style="color: #ffff00;">=</span> mod4Mask     <span style="color: #ff0000;">-- </span><span style="color: #ff0000;">Windows&#12461;&#12540;&#12434;Mod&#12461;&#12540;&#12392;&#12375;&#12390;&#12496;&#12452;&#12531;&#12489;&#12377;&#12427;</span>
+          } <span style="color: #ffff00;">`additionalKeys`</span>
+          [ ((mod4Mask <span style="color: #ffff00;">.|.</span> shiftMask, xK_z), spawn <span style="color: #ff00ff;">"xscreensaver-command -lock"</span>)
           , ((controlMask, xK_Print), spawn <span style="color: #ff00ff;">"sleep 0.2; scrot -s"</span>)
           , ((0, xK_Print), spawn <span style="color: #ff00ff;">"scrot"</span>)
           ]
