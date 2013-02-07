@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</title>
+    <title>Twitter bootstrap.lessのコンパイル</title>
 <!--    <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/> -->
     <link rel="stylesheet" type="text/css" href="../../../style/o-blog.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -68,7 +68,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/12/index.html">12</a> <span class="divider">/</span></li><li>oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../article/2013/02/index.html">02</a> <span class="divider">/</span></li><li>Twitter bootstrap.lessのコンパイル</li>
   </ul>
 
       </div>
@@ -79,17 +79,17 @@
 
     <div class="well">
       <time data-updated="true" pubdate="" datetime="">
-        <a href="../../../article/2012/index.html">2012</a>
+        <a href="../../../article/2013/index.html">2013</a>
           年
-          <a href="../../../article/2012/12/index.html">12月</a>
-          29日
+          <a href="../../../article/2013/02/index.html"> 2月</a>
+          07日
       </time>
       <div class="row">
-	    <h1 class="span11" style="font-size: 250%">oblogをプレビューできるようにするためにUbuntuにApache2をインストールする</h1>
+	    <h1 class="span11" style="font-size: 250%">Twitter bootstrap.lessのコンパイル</h1>
       </div>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/12/23_emacsjdeejava.html"><i class="icon-chevron-left"></i>&nbsp;Emacs中毒者に贈るJDEEによるJava開発環境の構築</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/12/30_terminfotermcapncurses.html">terminfoとtermcapとncurses&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2013/02/01_reddit.html"><i class="icon-chevron-left"></i>&nbsp;Redditで海外サイトをチェックする!</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
     </div>
@@ -97,105 +97,196 @@
   </header>
   <div class="article-content">
     <p>
-このブログはoblogで書いてるんだけど、生成されたhtmlをfileとして開いてみ
-るとcssがうまく適用されなかったりするので、プレビュー用に自宅サーバに
-apacheを入れることにした。
+o-blogは、Twitter Bootstrapのlessを使用しているのですが、
+事前にコンパイルしていないので、初回ページの表示にかなり時間がかかります。
+このブログが重いのはその為です。
+ということで、o-blogで使用してるlessをコンパイルすることにしました。
+ <code>~/dev/</code> という作業ディレクトリで作業します。
 </p>
-<p>
-まずはインストール。
+
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">環境準備</h3>
+<div class="outline-text-3" id="text-1">
+
+<p>lessをコンパイルするには、まずnode.jsが必要です。
+Windowsであれば公式サイトからインストーラをダウンロードしてインストール、
+ubuntuであればapt-getなどでインストールします。
 </p>
 
 
-<pre class="src src-sh">$ sudo apt-get install apache2
+<pre class="src src-sh">$ sudo apt-get install nodejs
 </pre>
 
 
 <p>
-下記の設定でoblogを設定する
+続いてless.jsのソースコードを入手します。
 </p>
 
 
-<pre class="src src-sh">$ cd /etc/apache2/sites-available
-$ cp default oblog.whitebase
+<pre class="src src-sh">$ cd ~/dev/
+$ git clone https://github.com/cloudhead/less.js
+$ cd less.js
+</pre>
+
+<p>
+以上で準備ができました。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">コンパイルをためす</h3>
+<div class="outline-text-3" id="text-2">
+
+
+<p>
+下記の内容のlessファイルを <code>~/dev/less-test/style.less</code> として保存します。
+</p>
+
+
+<pre class="src src-css"><span style="color: #0000ff; font-weight: bold;">@main-bg</span>: #efefef;
+<span style="color: #0000ff; font-weight: bold;">@default-color</span>: #aaaaaa;
+<span style="color: #0000ff; font-weight: bold;">html </span>{
+    <span style="color: #ffff00;">background-color</span>: <span style="color: #0000ff; font-weight: bold;">@main-bg</span>;
+    <span style="color: #ffff00;">color</span>: <span style="color: #0000ff; font-weight: bold;">@default-color</span>;
+}
+</pre>
+
+
+
+<p>
+あとは、lesscコマンドでコンパイルできます。
+</p>
+
+
+<pre class="src src-sh">$ cd ~/dev/less.js
+$ bin/lessc ../less-test/style.less
+html {
+  background-color: <span style="color: #ff0000;">#</span><span style="color: #ff0000;">efefef;</span>
+  color: <span style="color: #ff0000;">#</span><span style="color: #ff0000;">aaaaaa;</span>
+}
+</pre>
+
+<p>
+コンパイル結果は、標準出力に表示されます。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">Bootstrapをコンパイルする。</h3>
+<div class="outline-text-3" id="text-3">
+
+<p>Twitter Bootstrapのlessソースをダウンロードします。
+</p>
+
+
+<pre class="src src-sh">$ cd ~/dev
+$ git clone https://github.com/twitter/bootstrap.git
 </pre>
 
 
 <p>
-oblog.whitebaseファイルを下記のように編集
+コンパイルします。
 </p>
 
 
-<pre class="example">&lt;VirtualHost oblog.whitebase:80&gt;
-    ServerAdmin webmaster@localhost
-
-    DocumentRoot /home/mikio/dev/mikio.github.com
-    &lt;Directory /&gt;
-        Options FollowSymLinks
-        AllowOverride None
-    &lt;/Directory&gt;
-    &lt;Directory /home/mikio/dev/mikio.github.com&gt;
-        Options Indexes FollowSymLinks MultiViews
-        AllowOverride None
-        Order allow,deny
-        allow from all
-    &lt;/Directory&gt;
-
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-
-    # Possible values include: debug, info, notice, warn, error, crit,
-    # alert, emerg.
-    LogLevel warn
-
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-&lt;/VirtualHost&gt;
+<pre class="src src-sh">$ cd ~/dev/less.js
+$ bin/lessc ../bootstrap/less/bootstrap.less 
+ParseError: Unrecognised input<span style="color: #ffff00;"> in</span> /home/mikio/dev/bootstrap/less/mixins.less on line 561, column 7:
+560     .spanX (@index) when (@index &gt; 0) {
+<span style="color: #0000ff; font-weight: bold;">561</span>       (~<span style="color: #ff00ff;">".span@{index}"</span>) { .span(@index); }
+562       .spanX(@index - 1);
 </pre>
 
-
 <p>
-/etc/hostsを下記のように修正
+シンタックスエラーになってしまいました。
+</p>
+<p>
+原因を調べたところ(かなりハマりました)、
+lessの文法が、ver1.4から変更になったせいのようです。
+</p>
+<p>
+less.orgの文字列エスケープの説明を読むと下記のように、
+selectorの変数名の文法に変更があったとあります。
 </p>
 
 
-<pre class="src src-sh">192.168.10.2    whitebase.lan   whitebase
-192.168.10.2    oblog.whitebase
+<pre class="example">Note: prior to less 1.3.1 a (~"@{name}") type of selector was supported.
+ Support for this will be removed in 1.4.0.
 </pre>
-
-
-
-<pre class="src src-sh">$ sudo a2ensite oblog.whitebase
-$ sudo service apache2 reload
-</pre>
-
 
 <p>
-続いてWindows7側でhostsを設定する。Windows7でhostsファイルを編集するに
-は、メモ帳を管理者権限で開く必要がある。スタートメニューでnotepadと入力
-し、右クリで「管理者権限で実行する」を選択すれば良い。
+bootstrap.lessは、less.1.3.1 a以前の文法で記述されているので
+less.jsのバージョンを変更します。
 </p>
 
 
-<pre class="example">c:/Windows/System32/drivers/etc/hosts
-192.168.10.2 whitebase
-192.168.10.2 oblog.whitebase
+<pre class="src src-sh">$ git tag
+1.1.4-lastest
+1.1.5-extend_patch
+v1.0
+v1.3.0
+v1.3.1
+v1.3.2
+v1.3.3
+$ git co v1.3.3
+$ bin/lessc ../bootstrap/less/bootstrap.less
 </pre>
 
+<p>
+これでやっとコンパイルできたました!
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-3">
+<h3 id="sec-4">o-blog.less をコンパイルする。</h3>
+<div class="outline-text-3" id="text-4">
+
+<p>Bootstrapがコンパイルできるようになったので、本ブログのlessである、
+o-blog.lessもコンパイルしてみます。
+</p>
+
+
+<pre class="src src-sh">$ bin/lessc ../../Dropbox/site-lisp/o-blog/templates/style/less/o-blog.less &gt; o-blog.css
+/home/mikio/dev/less.js$ bin/lessc ../../Dropbox/site-lisp/o-blog/templates/style/less/o-blog.less &gt; o-blog.css
+/home/mikio/dev/less.js$ ls -ltr
+&#21512;&#35336; 236
+-rw-rw-r-- 1 mikio mikio    287  2&#26376;  7 20:20 README.md
+-rw-rw-r-- 1 mikio mikio   9764  2&#26376;  7 20:20 LICENSE
+-rw-rw-r-- 1 mikio mikio   1559  2&#26376;  7 20:20 CONTRIBUTING.md
+-rw-rw-r-- 1 mikio mikio   4522  2&#26376;  7 20:20 CHANGELOG.md
+drwxrwxr-x 2 mikio mikio   4096  2&#26376;  7 20:20 benchmark
+drwxrwxr-x 3 mikio mikio   4096  2&#26376;  7 20:20 lib
+drwxrwxr-x 2 mikio mikio   4096  2&#26376;  7 20:35 build
+drwxrwxr-x 2 mikio mikio   4096  2&#26376;  7 20:35 bin
+-rw-rw-r-- 1 mikio mikio   1824  2&#26376;  7 20:35 Makefile
+drwxrwxr-x 2 mikio mikio   4096  2&#26376;  7 20:35 dist
+drwxrwxr-x 5 mikio mikio   4096  2&#26376;  7 20:35 test
+-rw-rw-r-- 1 mikio mikio    756  2&#26376;  7 20:35 package.json
+-rw-rw-r-- 1 mikio mikio 179293  2&#26376;  7 20:38 o-blog.css
+</pre>
 
 <p>
-設定が終わったら下記へアクセス。
-</p><ul>
-<li><a href="http://oblog.whitebase/">http://oblog.whitebase/</a>
-</li>
-</ul>
-
+無事コンパイルできました!
+サイズが180Kbもありますが。
+あとは、このcssを読みこむようにし、less.jsを読みこまないようにすれば、
+このブログも軽くなるはず。
+</p></div>
+</div>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2012-12-29T18:11:00Z"> 土曜日 12月, 29 2012 at 18:11:00</time>.
+    Posted on <time datetime="2013-02-07T20:49:00Z"> 木曜日 2月, 07 2013 at 20:49:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/ubuntu.html">ubuntu</a></li>
+	
       </ul>
     </nav>
   </footer>

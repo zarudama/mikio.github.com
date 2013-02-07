@@ -9,49 +9,49 @@
   
   <url>
     <loc>http://mikio.github.com//index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/12/23_emacsjdeejava/index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/08/27_windows/index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
-    <lastmod>2013-02-05T00:00:00Z</lastmod>
+    <lastmod>2013-02-07T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -59,6 +59,12 @@
 
 
   <url>
+    <loc>http://mikio.github.com//article/2013/02/07_twitter-bootstrapless.html</loc>
+    <lastmod>2013-02-07T20:49:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
     <loc>http://mikio.github.com//article/2013/02/01_reddit.html</loc>
     <lastmod>2013-02-01T23:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
