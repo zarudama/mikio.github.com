@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <title>Compojureの起動方法まとめ</title>
 <!--    <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/> -->
-    <link rel="stylesheet" type="text/css" href="../../../style/o-blog.css"/>
+    <link rel="stylesheet" type="text/css" href="../../../style/less/o-blog.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-120-g06a5a11"/>
 <!--    <script src="../../../style/js/less-1.3.0.min.js" type="text/javascript"></script> -->
@@ -31,7 +31,7 @@
 	      <a class="brand" href="../../../index.html">ざる魂</a>
 	      <div class="nav-collapse collapse">
 	        <ul>
-<li><a href="#"><i>icon-file icon-white</i> Article</a>
+<li><a href="#"><i>icon-file icon-white</i> 最近の更新</a>
 <ul>
 <li><a href="../../../article/2013/02/07_twitter-bootstrapless.html">Twitter bootstrap.lessのコンパイル</a>
 </li>
@@ -109,15 +109,6 @@ user&gt; (serve app)
 
 
 <p>
-サーバーの場合は下記で。
-</p>
-
-
-<pre class="src src-clojure">user&gt; (serve-headless app)
-</pre>
-
-
-<p>
 再起動
 </p>
 
@@ -129,16 +120,28 @@ user&gt; (serve app)
 
 
 <p>
-ローカル環境(デスクトップ)の端末で起動
+端末で起動
 </p>
 
 
-<pre class="src src-sh">$ lein ring server-headless
+<pre class="src src-sh">$ lein ring server
 </pre>
 
 
 <p>
-サーバー上で起動
+サーバー上で起動する場合は、環境がないので <code>*-headless</code> 関数を使う。
+</p>
+<p>
+nreplから起動
+</p>
+
+
+<pre class="src src-clojure">user&gt; (serve-headless app)
+</pre>
+
+
+<p>
+端末で起動
 </p>
 
 
