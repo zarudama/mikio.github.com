@@ -76,24 +76,9 @@
     <div id="page" class="container">
 
   <header class="article-header">
-
-    <div class="well">
-      <time data-updated="true" pubdate="" datetime="">
-        <a href="../../../article/2012/index.html">2012</a>
-          年
-          <a href="../../../article/2012/08/index.html"> 8月</a>
-          28日
-      </time>
-      <div class="row">
-	    <h1 class="span11" style="font-size: 250%">Clojureでxmlを読みこむ方法</h1>
-      </div>
-      <nav>
-	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/08/27_puttycygwin-terminal.html"><i class="icon-chevron-left"></i>&nbsp;puttyをやめて、cygwin Terminalにする</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/08/28_cygwingit-cygcrypto-098dll.html">cygwinでgitを使おうとしたら、 cygcrypto-0.9.8.dllがないと怒られる。&nbsp;<i class="icon-chevron-right"></i></a></li>
-	</ul>
-      </nav>
+    <div class="row">
+	  <h1 class="span11" style="font-size: 250%">Clojureでxmlを読みこむ方法</h1>
     </div>
-
   </header>
   <div class="article-content">
     <ul>
@@ -168,8 +153,8 @@ xml-seq を使用すると、それぞれのタグが、rootになった状態�
 
 
 <p>
-xmlのデータが画面に表示されると、場合によってはスクロールが重くなるので、そんな時は
-C-c M-o でバッファクリアすると良い感じ。
+xmlのデータが画面に表示されると、場合によってはスクロールが重くなるので、
+そんな時はC-c M-o でバッファクリアすると良い感じ。
 </p>
 </div>
 
@@ -179,12 +164,14 @@ C-c M-o でバッファクリアすると良い感じ。
 <h3 id="sec-2">応用：文字列としてのXMLを読みこむ</h3>
 <div class="outline-text-3" id="text-2">
 
-<p>同期的に一度だけ読むのであれば、clojure.xml.parseの関数に直接ファイルや
-URIを指定すればお気軽簡単で良いのだが、現実的には、タイムアウトなどを設
-定したり、非同期のライブラリを使用して並列に複数のXMLを同時に取得するこ
-とが多いと思う。そんな時は、直接URLを渡すのではなく、別の手段で取得した
-文字列を渡したくなると思う。というわけで、clojure.xml.parseに文字列を渡
-す方法。
+<p>同期的に一度だけ読むのであれば、 <code>clojure.xml.parse</code> 
+の関数に直接ファイルやURIを指定するだけで良い。
+しかし現実的には、タイムアウトなどを設定したり、非同期のライブラリを使用して、
+並列に複数のXMLを同時に取得することが多いと思う。
+</p>
+<p>
+そんな時は、直接URLを渡すのではなく、別の手段で取得した文字列を渡したくなると思う。
+というわけで、clojure.xml.parseに文字列を渡す方法。
 </p>
 
 
@@ -208,10 +195,10 @@ JavaAPIを使って文字列をStreamに変換する。
 </p>
 
 
-<pre class="src src-sh">user&gt; (def str-xml-data <span style="color: #ff00ff;">"&lt;parent&gt;&lt;child&gt;hello&lt;/child&gt;&lt;/parent&gt;"</span>)
-user&gt; (import <span style="color: #ff00ff;">'(java.io ByteArrayInputStream))</span>
-<span style="color: #ff00ff;">user&gt; (x/parse (ByteArrayInputStream. (.. str-xml-data getBytes)))</span>
-<span style="color: #ff00ff;">{:tag :parent, :attrs nil, :content [{:tag :child, :attrs nil, :content ["hello"]}]}</span>
+<pre class="src src-clojure">user&gt; (<span style="color: #ffff00;">def</span> <span style="color: #0000ff; font-weight: bold;">str-xml-data</span> <span style="color: #ff00ff;">"&lt;parent&gt;&lt;child&gt;hello&lt;/child&gt;&lt;/parent&gt;"</span>)
+user&gt; (<span style="color: #ffff00;">import</span> '(java.io <span style="color: #0000ff; font-weight: bold;">ByteArrayInputStream</span>))
+user&gt; (x/parse (<span style="color: #0000ff; font-weight: bold;">ByteArrayInputStream.</span> (<span style="color: #ffff00;">..</span> str-xml-data <span style="color: #0000ff; font-weight: bold;">getBytes</span>)))
+{<span style="color: #ffff00;">:tag</span> <span style="color: #ffff00;">:parent</span>, <span style="color: #ffff00;">:attrs</span> nil, <span style="color: #ffff00;">:content</span> [{<span style="color: #ffff00;">:tag</span> <span style="color: #ffff00;">:child</span>, <span style="color: #ffff00;">:attrs</span> nil, <span style="color: #ffff00;">:content</span> [<span style="color: #ff00ff;">"hello"</span>]}]}
 </pre>
 
 <p>
@@ -229,6 +216,12 @@ String文字列のをまるごと渡すのでxmlが巨大な場合は注意。
 	<li class="label label-inverse small"><a href="../../../tags/clojure.html">clojure</a></li>
       </ul>
     </nav>
+      <nav>
+	<ul class="pager">
+	  <li class="previous"><a href="../../../article/2012/08/27_puttycygwin-terminal.html"><i class="icon-chevron-left"></i>&nbsp;puttyをやめて、cygwin Terminalにする</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/08/28_cygwingit-cygcrypto-098dll.html">cygwinでgitを使おうとしたら、 cygcrypto-0.9.8.dllがないと怒られる。&nbsp;<i class="icon-chevron-right"></i></a></li>
+	</ul>
+      </nav>
+
   </footer>
   <div id="disqus_thread"></div>
 <script type="text/javascript">

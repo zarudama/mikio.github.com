@@ -7603,6 +7603,13 @@ li {
   padding-top: 40px;
   marging-top: 40px;
 }
+#page .article-header h1 {
+  color: #102203;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38px;
+  margin: 0.3em 0;
+}
 #page .article-header .date {
   border: 1px solid #999999;
   display: inline-block;
@@ -7630,23 +7637,55 @@ li {
   margin-bottom: 0;
   margin-top: 24.923076923076923px;
 }
+#page .outline-1 h1 {
+  border-bottom: 1px solid #CCCCCC;
+  font-size: 1.7em;
+  font-weight: 400;
+  margin: 1.2em 0 0.6em;
+}
+#page .outline-2 h2 {
+  border-bottom: 1px solid #CCCCCC;
+  font-size: 1.5em;
+  font-weight: 400;
+  margin: 1.2em 0 0.6em;
+}
+#page .outline-3 h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  margin: 1.2em 0 0.6em;
+}
+#page .outline-4 h4 {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 1.2em 0 0.6em;
+}
+#page .outline-5 h5 {
+  font-size: 1.1em;
+  font-weight: 400;
+  margin: 1.2em 0 0.6em;
+}
+#page .outline-6 h6 {
+  font-size: 1.0em;
+  font-weight: 400;
+  margin: 1.2em 0 0.6em;
+}
 #page .article-content .outline-1 {
-  margin-left: 1em;
+  margin-left: 0em;
 }
 #page .article-content .outline-2 {
-  margin-left: 2em;
+  margin-left: 0em;
 }
 #page .article-content .outline-3 {
-  margin-left: 3em;
+  margin-left: 0em;
 }
 #page .article-content .outline-4 {
-  margin-left: 4em;
+  margin-left: 0em;
 }
 #page .article-content .outline-5 {
-  margin-left: 5em;
+  margin-left: 0em;
 }
 #page .article-content .outline-6 {
-  margin-left: 6em;
+  margin-left: 0em;
 }
 #page .article-content .alert-heading {
   font-weight: bolder;
