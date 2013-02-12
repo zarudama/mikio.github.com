@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>LVMではまった</title>
+    <title>見出しテスト</title>
 <!--    <link rel="stylesheet" type="text/less" href="../../../style/less/o-blog.less"/> -->
     <link rel="stylesheet" type="text/css" href="../../../style/less/o-blog.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -68,7 +68,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2010/index.html">2010</a> <span class="divider">/</span></li><li><a href="../../../article/2010/07/index.html">07</a> <span class="divider">/</span></li><li>LVMではまった</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2009/index.html">2009</a> <span class="divider">/</span></li><li><a href="../../../article/2009/02/index.html">02</a> <span class="divider">/</span></li><li>見出しテスト</li>
   </ul>
 
       </div>
@@ -77,173 +77,77 @@
 
   <header class="article-header">
     <div class="row">
-	  <h1 class="span11" style="font-size: 250%">LVMではまった</h1>
+	  <h1 class="span11" style="font-size: 250%">見出しテスト</h1>
     </div>
   </header>
   <div class="article-content">
     <div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">はじめに</h3>
+<h3 id="sec-1">見出し1</h3>
 <div class="outline-text-3" id="text-1">
 
-<p>日経Linux2010年６月号の特集を真似てCENTOSをLVMのミラーで構築したのはいいが
-ある日ディスクサイズをみたらもうディスクフルになってる！
-</p>
-
-
-<pre class="src src-sh">[miki@localhost ~]$ df -h
-Filesystem          &#12469;&#12452;&#12474;  &#20351;&#29992;  &#27531;&#12426; &#20351;&#29992;% &#12510;&#12454;&#12531;&#12488;&#20301;&#32622;
-/dev/md0              3.9G  2.3G  1.5G  61% /
-/dev/mapper/vg00-home
-                      3.9G  3.7G     0 100% /home
-/dev/mapper/vg00-var  3.9G  3.7G  836K 100% /var
-/dev/mapper/vg00-mysql
-                      3.9G  137M  3.6G   4% /var/lib/mysql
-tmpfs                1006M     0 1006M   0% /dev/shm
-</pre>
-
-<p>
-ディスクは１６０GB確保したはずなのになぜ？
-dfの結果をよく見ると、合計で１６Gしかない。。。なぜだ？
-ちなみにRAID1のディスクミラーをつかって160GBのディスク２台で運用している。
+<p>あああ
 </p>
 </div>
 
+<div id="outline-container-1-1" class="outline-4">
+<h4 id="sec-1-1">見出し2</h4>
+<div class="outline-text-4" id="text-1-1">
+
+<p>あああ
+</p>
 </div>
 
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">LVM</h3>
-<div class="outline-text-3" id="text-2">
+<div id="outline-container-1-1-1" class="outline-5">
+<h5 id="sec-1-1-1">見出し3</h5>
+<div class="outline-text-5" id="text-1-1-1">
 
-<p>LVMよくわからないのでググる。
-下記を見る限り、LVMは作成されていて、容量が足りないわけだから
-既存のLVを増やさばいいということがわかった。
+<p>あああ
 </p>
+</div>
 
+<div id="outline-container-1-1-1-1" class="outline-6">
+<h6 id="sec-1-1-1-1">見出し4</h6>
+<div class="outline-text-6" id="text-1-1-1-1">
 
-<pre class="src src-sh">[miki@localhost ~]$ df -h
-Filesystem          &#12469;&#12452;&#12474;  &#20351;&#29992;  &#27531;&#12426; &#20351;&#29992;% &#12510;&#12454;&#12531;&#12488;&#20301;&#32622;
-/dev/md0              3.9G  2.3G  1.5G  61% /
-/dev/mapper/vg00-home
-                      3.9G  3.7G     0 100% /home
-/dev/mapper/vg00-var  3.9G  3.7G  836K 100% /var
-/dev/mapper/vg00-mysql
-                      3.9G  137M  3.6G   4% /var/lib/mysql
-tmpfs                1006M     0 1006M   0% /dev/shm
-</pre>
-
-
-<p>
-pgdisplayが見つからない。
+<p>あああ
 </p>
+</div>
 
+<div id="outline-container-1-1-1-1-1" class="outline-7">
+<h7 id="sec-1-1-1-1-1">見出し5</h7>
+<div class="outline-text-7" id="text-1-1-1-1-1">
 
-<pre class="src src-sh">[miki@localhost ~]$ which pvdisplay
-/usr/bin/which: no pvdisplay<span style="color: #ffff00;"> in</span> (/usr/kerberos/bin:/usr/local/jdk1.6.0_24//bin:/usr/local/bin:/bin:/usr/bin:/home/miki/bin)
-</pre>
-
-
-<p>
-もしかして個別にインストールが必要なのかとか、rootじゃないと使えないコマンドなのかとかで
-わざわざVGAの小型モニタかってrootで直接作業したけど見つからず＾＾。
+<p>あああ
 </p>
-<p>
-その後、下記コマンドで見つかった。
+</div>
+
+<div id="outline-container-1-1-1-1-1-1" class="outline-8">
+<h8 id="sec-1-1-1-1-1-1">見出し6</h8>
+<div class="outline-text-8" id="text-1-1-1-1-1-1">
+
+<p>あああ
 </p>
-
-
-<pre class="src src-sh">[miki@localhost ~]$ whereis pvdisplay
-pvdisplay: /usr/sbin/pvdisplay /usr/share/man/man8/pvdisplay.8.gz
-</pre>
-
-<p>
-アホ過ぎる。。。
-</p>
-
-
-
-<pre class="src src-sh">[miki@localhost ~]$ sudo /usr/sbin/pvdisplay
-  --- Physical volume ---
-  PV Name               /dev/md1
-  VG Name               vg00
-  PV Size               290.10 GB / not usable 5.00 MB
-  Allocatable           yes
-  PE Size (KByte)       32768
-  Total PE              9283
-  Free PE               8835
-  Allocated PE          448
-  PV UUID               p6XFrn-nSDe-mcgf-VcVm-o5ME-VWzW-1RoLh3
-</pre>
-
-<p>
-物理ボリュームが290GBあるということか。
-</p>
-
-<p>
-PV(PhisicalVolume): 物理ディスク
-VG(VlumeGroup)    : 物理ディスクを束ねた物(PVをまとめて大きな論理ハードディスクとみなす）
-</p>
-<p>
-LV(LogicalVolume) : 論理ディスク
-</p>
-
-<p>
-論理ボリュームの/homeのディスクサイズを増やす
-</p>
-
-
-<pre class="src src-sh">$ sudo /usr/sbin/lvextend -L +80G /dev/vg00/home
-</pre>
-
-<p>
-増やしたらFilesysteを拡張する。本来はunmountする必要があるが、ext3はオンラインで拡張できるらいしい。
-</p>
-
-
-<pre class="src src-sh">$ sudo /sbin/resize2fs /dev/vg00/home
-</pre>
-
-
-<p>
-続いてvar下を増やす。
-</p>
-
-
-<pre class="src src-sh">sudo /usr/sbin/lvextend -L +30G /dev/vg00/var
-sudo /sbin/resize2fs /dev/vg00/var
-</pre>
-
-
-<p>
-さらにmysql下も増やす。
-</p>
-
-
-<pre class="src src-sh">sudo /usr/sbin/lvextend -L +100G /dev/vg00/mysql
-sudo /sbin/resize2fs /dev/vg00/var
-</pre>
-
-
-
-<p>
-これでとりあえずひと通り増やせた。
-/var配下は共有ディレクトリをふくんでるので今後、さらに増やす必要があるかも。
-逆にmysqlはwikipediaのデータを置かない限り100GBもいらないかもな。
-</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
   </div>
   
   <footer class="well article-footer">
-    Posted on <time datetime="2010-07-26T19:25:00Z"> 月曜日 7月, 26 2010 at 19:25:00</time>.
+    Posted on <time datetime="2009-02-13T00:47:00Z"> 金曜日 2月, 13 2009 at 00:47:00</time>.
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/hamari.html">hamari</a></li>
+	
       </ul>
     </nav>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2009/02/13_.html"><i class="icon-chevron-left"></i>&nbsp;見出しテスト</a></li><li class="next" style="text-align: right;"><a href="../../../article/2011/04/03_dropboxgit.html">DropboxでGit&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous">&nbsp;</li><li class="next" style="text-align: right;"><a href="../../../article/2010/07/26_lvm.html">LVMではまった&nbsp;<i class="icon-chevron-right"></i></a></li>
 	</ul>
       </nav>
 
