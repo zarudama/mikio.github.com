@@ -89,42 +89,22 @@ html {
 #page {
 
     padding-top: 0 * @navbarHeight;
-    margin-top: @navbarHeight;
+    margin-top: 0 * @navbarHeight;
     margin-bottom: 2.0em;
 
     .article-header{
 
         h1 {
             color: #102203;
-            font-size: 32px;
+            font-size: 3.0em;
             font-weight: 400;
             line-height: 1.2em;
-            margin: 0.3em 0;
         }
-	    .date {
-	        border: 1px solid @grayLight;
-	        display: inline-block;
-	        width: 2.3em;
-	        .text-center();
-	        a {
-		        display: block;
-		        color: fade(@linkColor, 50%);
-	        }
-	        .date-d {
-		        font-size: 1.5em;
-	        }
-	        .date-m {
-		        text-transform: uppercase;
-		        font-size: 1em;
-		        font-weight: bolder;
-	        }
-	        .date-y {
-		        background: @grayLight;
-		        font-size: 1em;
-		        font-weight: bolder;
-	        }
-	    }
-
+        .postdate {
+            color: #102203;
+            font-size: 0.7em;
+            margin: 2em 0 2em 0;
+        }
 	    .pager {
 	        margin-bottom: 0;
 	        margin-top: @baseLineHeight;

@@ -7515,6 +7515,9 @@ h5,
 h6 {
   font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'VL ゴシック', 'MS PGothic', Sans-serif;
 }
+.navbar-static-top li {
+  line-height: 24.923076923076923px;
+}
 .navbar-fixed-top li {
   line-height: 24.923076923076923px;
 }
@@ -7601,38 +7604,19 @@ li {
 }
 #page {
   padding-top: 0px;
-  margin-top: 40px;
+  margin-top: 0px;
   margin-bottom: 2.0em;
 }
 #page .article-header h1 {
   color: #102203;
-  font-size: 32px;
+  font-size: 3.0em;
   font-weight: 400;
   line-height: 1.2em;
-  margin: 0.3em 0;
 }
-#page .article-header .date {
-  border: 1px solid #999999;
-  display: inline-block;
-  width: 2.3em;
-  text-align: center;
-}
-#page .article-header .date a {
-  display: block;
-  color: rgba(153, 51, 51, 0.5);
-}
-#page .article-header .date .date-d {
-  font-size: 1.5em;
-}
-#page .article-header .date .date-m {
-  text-transform: uppercase;
-  font-size: 1em;
-  font-weight: bolder;
-}
-#page .article-header .date .date-y {
-  background: #999999;
-  font-size: 1em;
-  font-weight: bolder;
+#page .article-header .postdate {
+  color: #102203;
+  font-size: 0.7em;
+  margin: 2em 0 2em 0;
 }
 #page .article-header .pager {
   margin-bottom: 0;
