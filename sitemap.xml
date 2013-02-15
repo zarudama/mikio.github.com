@@ -9,49 +9,49 @@
   
   <url>
     <loc>http://mikio.github.com//index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/12/23_emacsjdeejava/index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/08/27_windows/index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
-    <lastmod>2013-02-13T00:00:00Z</lastmod>
+    <lastmod>2013-02-16T00:00:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -59,6 +59,24 @@
 
 
   <url>
+    <loc>http://mikio.github.com//article/2013/02/16_org-mode.html</loc>
+    <lastmod>2013-02-16T01:13:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2013/02/16_o-blog.html</loc>
+    <lastmod>2013-02-16T01:13:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2013/02/15_sbclubuntu.html</loc>
+    <lastmod>2013-02-15T08:43:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
     <loc>http://mikio.github.com//article/2013/02/07_twitter-bootstrapless.html</loc>
     <lastmod>2013-02-07T20:49:00Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -407,7 +425,7 @@
     <priority>0.6</priority>
   </url>
 <url>
-    <loc>http://mikio.github.com//article/2012/08/29_sbcl.html</loc>
+    <loc>http://mikio.github.com//article/2012/08/29_cygwinsbcl.html</loc>
     <lastmod>2012-08-29T09:58:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -569,7 +587,7 @@
     <priority>0.6</priority>
   </url>
 <url>
-    <loc>http://mikio.github.com//article/2012/04/22_curvus-skkwceskkservddskk.html</loc>
+    <loc>http://mikio.github.com//article/2012/04/22_corvus-skkwceskkservddskk.html</loc>
     <lastmod>2012-04-22T09:43:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
