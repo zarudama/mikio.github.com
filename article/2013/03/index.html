@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>emacsをスクリプト言語として活用する</title>
+    <title>ざる魂</title>
     <link rel="stylesheet" type="text/css" href="../../../style/less/o-blog.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-121-g9cff278"/>
@@ -67,108 +67,23 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>emacsをスクリプト言語として活用する</li>
+  <li><a href="../../../archives.html">Archives</a> <span class="divider">/</span></li><li><a href="../../index.html">Article</a> <span class="divider">/</span></li><li><a href="../index.html">2013</a> <span class="divider">/</span></li><li>03</li>
   </ul>
 
       </div>
     </div>
     <div id="page" class="container">
 
-  <header class="article-header">
-	<h1 class=" style="font-size: 250%">emacsをスクリプト言語として活用する</h1>
-    <div class="postdate">Posted on <time datetime="2012-04-22T09:42:00Z"> 日曜日 4月, 22 2012 at 09:42:00</time>.</div>
-  </header>
+<article>
   <div class="article-content">
-    <p>
-emacsはエディタなのですが、その拡張にemacs-lispというlisp方言を使用しています。
-通常このemacs-lispは、エディタの拡張に使用するものなので、
-emacsのメジャーモードを作ったり、新たな編集コマンドを作成するためのもです。
-あたり前ですね。
-</p>
-<p>
-なのですが。emacsにはスクリプトモードというものがあるのですよ。
-emacsをエディタとして利用するのではなくて、emacs-lispというスクリプト言語として、
-perlやrubyのようにテキスト処理に活用するのです。
-</p>
-<p>
-早速テストしてみます。
-下記のスクリプトを用意します。
-</p>
-
-
-<pre class="src src-emacs-lisp"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">helloworld.el</span>
-(princ <span style="color: #ff00ff;">"Hello, World!\n"</span>)
-</pre>
-
-
-<p>
-下記で実行できます。
-</p>
-
-
-<pre class="src src-sh">$ emacs --script helloworld.el
-Hello, World!
-</pre>
-
-<p>
-スクリプトモードで起動したemacsには、ライブラリもほとんど読みこまれていないので起動も超速です!
-これで普段のちょっとした雑用をlispで記述できます。
-clojureは初回起動が重すぎるので起動が速いというのは魅力的ですね。
-</p>
-<p>
-emacs-lispを使って日々の雑用処理をこなしていけば、
-lispで仕事ができる上にemacs自体の力もついて一石二鳥です。
-</p>
-<p>
-すごくわくわくしますね!
-</p>
-
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">参考URL</h3>
-<div class="outline-text-3" id="text-1">
-
-<p>この記事は下記の記事に触発されました。ぜひ一読を!
-</p><ul>
-<li><a href="http://cx4a.org/pub/emacs-lisp-for-scripting.ja.html">http://cx4a.org/pub/emacs-lisp-for-scripting.ja.html</a>
-</li>
+    <nav class="archives">
+      <ul class="month 2013 3">
+  <li>02 <a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a></li>
 </ul>
 
-
-
-</div>
-</div>
-
-  </div>
-  
-  <footer class="well article-footer">
-    <nav class="tag-cloud">
-      <h1><i class="icon-tags"></i> related tags</h1>
-      <ul>
-	<li class="label label-inverse small"><a href="../../../tags/emacs.html">emacs</a></li>
-      </ul>
     </nav>
-      <nav>
-	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/04/22_cygwinwindows.html"><i class="icon-chevron-left"></i>&nbsp;cygwinでwindowsアプリをキルする。</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/22_corvus-skkwceskkservddskk.html">Corvus-SKK+wceSKKServの環境でddskkのユーザ辞書を追加する方法&nbsp;<i class="icon-chevron-right"></i></a></li>
-	</ul>
-      </nav>
-
-  </footer>
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-  var disqus_shortname = 'mikiokunblog'; // required: replace example with your forum shortname
-
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
+  </div>
+</article>
       </div>
       <div id="footer">
 	<div class="container">

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>emacsをスクリプト言語として活用する</title>
+    <title>ファイルオープン数が上限値に達した</title>
     <link rel="stylesheet" type="text/css" href="../../../style/less/o-blog.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-121-g9cff278"/>
@@ -67,7 +67,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/04/index.html">04</a> <span class="divider">/</span></li><li>emacsをスクリプト言語として活用する</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../article/2013/03/index.html">03</a> <span class="divider">/</span></li><li>ファイルオープン数が上限値に達した</li>
   </ul>
 
       </div>
@@ -75,66 +75,297 @@
     <div id="page" class="container">
 
   <header class="article-header">
-	<h1 class=" style="font-size: 250%">emacsをスクリプト言語として活用する</h1>
-    <div class="postdate">Posted on <time datetime="2012-04-22T09:42:00Z"> 日曜日 4月, 22 2012 at 09:42:00</time>.</div>
+	<h1 class=" style="font-size: 250%">ファイルオープン数が上限値に達した</h1>
+    <div class="postdate">Posted on <time datetime="2013-03-02T11:59:00Z"> 土曜日 3月, 02 2013 at 11:59:00</time>.</div>
   </header>
   <div class="article-content">
     <p>
-emacsはエディタなのですが、その拡張にemacs-lispというlisp方言を使用しています。
-通常このemacs-lispは、エディタの拡張に使用するものなので、
-emacsのメジャーモードを作ったり、新たな編集コマンドを作成するためのもです。
-あたり前ですね。
-</p>
-<p>
-なのですが。emacsにはスクリプトモードというものがあるのですよ。
-emacsをエディタとして利用するのではなくて、emacs-lispというスクリプト言語として、
-perlやrubyのようにテキスト処理に活用するのです。
-</p>
-<p>
-早速テストしてみます。
-下記のスクリプトを用意します。
-</p>
-
-
-<pre class="src src-emacs-lisp"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">helloworld.el</span>
-(princ <span style="color: #ff00ff;">"Hello, World!\n"</span>)
-</pre>
-
-
-<p>
-下記で実行できます。
-</p>
-
-
-<pre class="src src-sh">$ emacs --script helloworld.el
-Hello, World!
-</pre>
-
-<p>
-スクリプトモードで起動したemacsには、ライブラリもほとんど読みこまれていないので起動も超速です!
-これで普段のちょっとした雑用をlispで記述できます。
-clojureは初回起動が重すぎるので起動が速いというのは魅力的ですね。
-</p>
-<p>
-emacs-lispを使って日々の雑用処理をこなしていけば、
-lispで仕事ができる上にemacs自体の力もついて一石二鳥です。
-</p>
-<p>
-すごくわくわくしますね!
-</p>
-
-<div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">参考URL</h3>
-<div class="outline-text-3" id="text-1">
-
-<p>この記事は下記の記事に触発されました。ぜひ一読を!
+下記に対処方法方法がある。
 </p><ul>
-<li><a href="http://cx4a.org/pub/emacs-lisp-for-scripting.ja.html">http://cx4a.org/pub/emacs-lisp-for-scripting.ja.html</a>
+<li><a href="http://thinkit.co.jp/free/tech/23/5">http://thinkit.co.jp/free/tech/23/5</a>
+</li>
+<li><a href="http://www.matsuaz.com/matsumotojs/2010/12/24/1293117835413.html">http://www.matsuaz.com/matsumotojs/2010/12/24/1293117835413.html</a>
 </li>
 </ul>
 
 
 
+<div id="outline-container-1" class="outline-3">
+<h3 id="sec-1">確認方法</h3>
+<div class="outline-text-3" id="text-1">
+
+<p>ファイル上限値の確認コマンドは以下。
+</p>
+
+
+<pre class="src src-sh">$ cat /proc/sys/fs/file-nr
+1792    0       566699
+</pre>
+
+<p>
+左から順に
+</p><ul>
+<li>今までにオープンしたことのあるファイルの最大数
+</li>
+<li>現在オープンしているファイルの総数
+</li>
+<li>オープン可能なファイル数の上限
+</li>
+</ul>
+
+<p>となる。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-3">
+<h3 id="sec-2">一時的な設定方法</h3>
+<div class="outline-text-3" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-4">
+<h4 id="sec-2-1">システム全体</h4>
+<div class="outline-text-4" id="text-2-1">
+
+
+<p>
+現状のファイルディスクリプタの上限値を確認
+</p>
+
+
+<pre class="src src-sh">$ cat /proc/sys/fs/file-nr
+1792    0       566699
+</pre>
+
+
+<p>
+一時的にファイルディスクリプタの上限値を変更する。
+</p>
+
+
+<pre class="src src-sh">$ /sbin/sysctl -w fs.file-max = 1234567
+</pre>
+
+
+<p>
+設定値の確認
+</p>
+
+
+<pre class="src src-sh">$ cat /proc/sys/fs/file-nr
+1216    0       1234567
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-4">
+<h4 id="sec-2-2">ユーザ毎(カレントユーザ)</h4>
+<div class="outline-text-4" id="text-2-2">
+
+<p>現在のセッション(自分が起動したプロセス)に対して、
+ファイルディスクリプタ上限値を設定するには、 <code>ulimit</code> を使用する。
+</p>
+<p>
+ulimitはユーザに対していろいろな制限を設定するコマンド。
+ulimit -a で全ての設定値を確認できる。
+</p>
+
+
+<pre class="src src-sh">$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 114688
+max locked memory       (kbytes, -l) 32
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 1024
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 10240
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 114688
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
+</pre>
+
+
+<p>
+ファイルディスクリプタの上限値を設定するには、 <code>ulimit -n N</code> でファイルディスクリプタ上限をN個に変更できる。
+</p>
+<p>
+まず現状のファイルディスクリプタの上限値を確認する。
+</p>
+
+
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #ff0000;">(open files&#12364;&#35442;&#24403;)</span>
+$ ulimit -n
+1024
+</pre>
+
+
+<p>
+ただし、一般ユーザではこの値を設定できないため(sudoでも実行できない)、rootユーザで実行しなくてはならない。
+</p>
+
+
+<pre class="src src-sh">$ ulimit -n 2048
+-bash: ulimit: open files: cannot modify limit: &#35377;&#21487;&#12373;&#12428;&#12390;&#12356;&#12394;&#12356;&#25805;&#20316;&#12391;&#12377;
+$ sudo ulimit -n 2048
+sudo: ulimit: command not found
+</pre>
+
+
+<p>
+rootで実施。
+</p>
+
+
+<pre class="src src-sh">$ sudo su
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">ulimit -n 2048</span>
+$ ulimit -n
+2048
+</pre>
+
+<p>
+直接rootになることは禁止されている環境も多いため、実質この方法は実施できない。
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-3">
+<h3 id="sec-3">恒久的な設定方法</h3>
+<div class="outline-text-3" id="text-3">
+
+<p>一時的な方法では、OSを再起動すると初期値に戻ってしまう。
+これを防ぐためには、設定ファイルに直接記述する。
+</p>
+<p>
+設定対象のファイルは以下のとおり。
+</p><dl>
+<dt>/etc/sysctl.conf</dt><dd>システム全体のファイルオープン数
+</dd>
+<dt>/etc/security/limits.conf</dt><dd>アカウント毎のファイルオープン数
+</dd>
+</dl>
+
+
+<p>
+設定前にバックアップしておく。
+</p>
+
+
+<pre class="src src-sh">sudo cp /etc/security/limits.conf /etc/security/limits.conf.orig
+sudo cp /etc/sysctl.conf /etc/sysctl.conf.orig
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-4">
+<h4 id="sec-3-1">sysctl.conf</h4>
+<div class="outline-text-4" id="text-3-1">
+
+
+<p>
+まず現在値を確認。
+</p>
+
+
+<pre class="src src-sh">$ cat /proc/sys/fs/file-nr
+1792    0       566699
+</pre>
+
+
+<p>
+sysctl.confを編集。
+</p>
+
+
+<pre class="src src-sh">$ sudo vi /etc/sysctl.conf
+fs.file-max = 1232457
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">FORMAT</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">fs.file-max = N :&#12471;&#12473;&#12486;&#12512;&#20840;&#20307;&#12398;&#12501;&#12449;&#12452;&#12523;&#12487;&#12451;&#12473;&#12463;&#12522;&#12503;&#12479;&#12398;&#19978;&#38480;</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">kernel.threads-max = N :&#12471;&#12473;&#12486;&#12512;&#20840;&#20307;&#12398;&#12503;&#12525;&#12475;&#12473;&#25968;&#12398;&#19978;&#38480;</span>
+</pre>
+
+
+<p>
+設定ファイルの内容を反映させる。
+</p>
+
+
+<pre class="src src-sh">$ sudo /sbin/sysctl -p
+</pre>
+
+
+<p>
+変更を確認。
+</p>
+
+
+<pre class="src src-sh">$ cat /proc/sys/fs/file-nr
+1792    0       1234567
+</pre>
+
+
+<p>
+ちなみに上限値は下記でも確認できる。
+</p>
+
+
+<pre class="src src-sh">$ /sbin/sysctl fs.file-max
+fs.file-max = 593544
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-4">
+<h4 id="sec-3-2">limits.conf</h4>
+<div class="outline-text-4" id="text-3-2">
+
+
+<p>
+注意点として、limits.confに設定した値は、ログインしないdameonプロセスには効かないとのこと。
+</p><ul>
+<li><a href="http://yumewaza.yumemi.co.jp/2010/07/limitsconf.html">http://yumewaza.yumemi.co.jp/2010/07/limitsconf.html</a>
+</li>
+</ul>
+
+<p>/etc/init.d/配下から起動する場合は、その起動スクリプト内に ulimit -n &lt;num&gt; を記述する必要がある。
+</p>
+<p>
+limits.confは設定値は、ログインしたユーザのセッション内で有効になる。
+</p>
+
+
+<pre class="src src-sh">$ sudo vi /etc/security/limits.conf
+mikio soft nofile 2048
+mikio hard nofile 2048
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">FORMAT</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">&lt;USER&gt; &lt;soft|hard&gt; &lt;nofile|noproc&gt; &lt;&#35373;&#23450;&#25968;&gt;</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">soft:&#19968;&#33324;&#12518;&#12540;&#12470;&#12364;&#35373;&#23450;&#21487;&#33021;&#12394;&#19978;&#38480;&#20516;(ulimit -n&#12398;&#12371;&#12392;&#12363;&#12394;&#65311;)</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">hard:&#12523;&#12540;&#12488;&#12518;&#12540;&#12470;&#12364;&#35373;&#23450;&#21487;&#33021;&#12394;&#19978;&#38480;&#20516;</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">nofile: &#12501;&#12449;&#12452;&#12523;&#12487;&#12451;&#12473;&#12463;&#12522;&#12503;&#12479;&#12398;&#19978;&#38480;&#20516;</span>
+<span style="color: #ff0000;"># </span><span style="color: #ff0000;">noproc: &#12503;&#12525;&#12475;&#12473;(&#12473;&#12524;&#12483;&#12489;)&#12398;&#19978;&#38480;&#20516;</span>
+</pre>
+
+<p>
+すぐに反映させるには、一度ログアウトして、そこから対象プロセス(tomcatやapache)を再起動する。
+</p></div>
 </div>
 </div>
 
@@ -144,12 +375,12 @@ lispで仕事ができる上にemacs自体の力もついて一石二鳥です�
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/emacs.html">emacs</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/linux.html">linux</a></li>
       </ul>
     </nav>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2012/04/22_cygwinwindows.html"><i class="icon-chevron-left"></i>&nbsp;cygwinでwindowsアプリをキルする。</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/04/22_corvus-skkwceskkservddskk.html">Corvus-SKK+wceSKKServの環境でddskkのユーザ辞書を追加する方法&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2013/02/16_org-mode.html"><i class="icon-chevron-left"></i>&nbsp;org-modeの段落の改行を削除したい</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
 
