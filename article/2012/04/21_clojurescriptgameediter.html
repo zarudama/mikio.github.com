@@ -15,6 +15,7 @@
     <script src="../../../style/js/o-blog.linenumber.js" type="text/javascript"></script>
     <script src="../../../style/js/o-blog-fix.js" type="text/javascript"></script>
     
+    
   </head>
   <body>
 
@@ -28,36 +29,31 @@
           </a>
 	      <a class="brand" href="../../../index.html">ざる魂</a>
 	      <div class="nav-collapse collapse">
-	        <ul>
-<li><a href="#"><i>icon-file icon-white</i> 最近の更新</a>
-<ul>
-<li><a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a>
+	        <ul class="org-ul">
+<li><i><i>icon-file icon-white</i> 最近の更新</i>
+<ul class="org-ul">
+<li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a>
 </li>
-<li><a href="../../../article/2013/02/16_org-mode.html">org-modeの段落の改行を削除したい</a>
+<li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a>
 </li>
-<li><a href="../../../article/2013/02/16_o-blog.html">o-blogのデザインを修正しました。</a>
+<li><a href="../../../article/2013/05/03_git.html">git プロトコルについて</a>
 </li>
-<li><a href="../../../article/2013/02/15_sbclubuntu.html">sbclをubuntuにインストールする</a>
+<li><a href="../../../article/2013/05/03_windowsxpclojure.html">windowsXPでclojureが起動しない</a>
 </li>
-<li><a href="../../../article/2013/02/07_twitter-bootstrapless.html">Twitter bootstrap.lessのコンパイル</a>
-
+<li><a href="../../../article/2013/05/03_firefox.html">firefox の同期不具合</a>
 </li>
 </ul>
-
 </li>
+
 <li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
-
 </li>
+
 <li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
-
 </li>
+
 <li><a href="../../../index.xml">RSS</a>
 </li>
 </ul>
-
-
-
-
 
 	      </div>
 	    </div>
@@ -74,6 +70,7 @@
     </div>
     <div id="page" class="container">
 
+  <div class="article">
   <header class="article-header">
 	<h1 class=" style="font-size: 250%">ClojureScriptで書かれたGameEditerすげぇ</h1>
     <div class="postdate">Posted on <time datetime="2012-04-21T00:35:00Z"> 土曜日 4月, 21 2012 at 00:35:00</time>.</div>
@@ -81,29 +78,29 @@
   <div class="article-content">
     <p>
 最近clojure界隈で話題の<a href="http://www.chris-granger.com/2012/04/12/light-table---a-new-ide-concept/">LightTable</a> ですがその前身として
-ClojureScriptで書かれたゲームエディタがあったようです。<sup><a class="footref" name="fnr.1" href="#fn.1">1</a></sup>
-</p><ul>
+ClojureScriptで書かれたゲームエディタがあったようです。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+<ul class="org-ul">
 <li><a href="http://www.chris-granger.com/2012/02/26/connecting-to-your-creation/">http://www.chris-granger.com/2012/02/26/connecting-to-your-creation/</a>
 </li>
 </ul>
 
 
-
 <p>
 簡単に起動できるのでleinをインストールしてるかたはぜひ一度試されることをお勧めします。
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-sh">$ git clone https://github.com/ibdknox/live-cljs.git
 $ cd live-cljs/
 $ lein run
 </pre>
-
+</div>
 
 <p>
 多分次のようなrecurがどうとかのエラーが発生するので
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-sh"><span style="color: #ff00ff;">"Elapsed time: 58.674804 msecs"</span>
 Exception<span style="color: #ffff00;"> in</span> thread <span style="color: #ff00ff;">"main"</span> java.lang.RuntimeException: java.lang.AssertionError: Assert failed: Can<span style="color: #ff00ff;">'t recur here</span>
@@ -112,12 +109,12 @@ Exception<span style="color: #ffff00;"> in</span> thread <span style="color: #ff
 <span style="color: #ff00ff;">        at clojure.lang.Compiler.eval(Compiler.java:6476)</span>
 <span style="color: #ff00ff;">        at clojure.lang.Compiler.eval(Compiler.java:6455)</span>
 </pre>
-
+</div>
 
 <p>
 下記を実行して再チャレンジ。
 </p>
-
+<div class="org-src-container">
 
 <pre class="src src-sh">$ rm -rf classes/cljs/
 $ lein run
@@ -126,14 +123,14 @@ $ lein run
 2012-04-20 19:58:40.913:INFO::jetty-6.1.25
 2012-04-20 19:58:40.944:INFO::Started SocketConnector@0.0.0.0:8074
 </pre>
-
+</div>
 <p>
 無事ローカルサーバが起動したら下記にアクセス。
-</p><ul>
+</p>
+<ul class="org-ul">
 <li><a href="http://localhost:8074/">http://localhost:8074/</a>
 </li>
 </ul>
-
 
 <p>
 Clojurescriptで書かれたゲームエディタが起動します。
@@ -141,17 +138,18 @@ Clojurescriptで書かれたゲームエディタが起動します。
 コード中のパラメータをいじるとすぐに反映されて楽しいです。
 こういう開発をEmacs+SLIME+Clojureでしたかった！てかやろう!
 </p>
-
-
 <div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
+<h2 class="footnotes">&#33050;&#27880;: </h2>
 <div id="text-footnotes">
-<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> ちなみにこの作者の「chris granger」って人、<a href="http://webnoir.org/">Noir</a> の作者だったり
-VisualStudioのプロジェクトマネージャだったりすごい人です。
-</p>
-</div>
-</div>
 
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+ちなみにこの作者の「chris granger」って人、<a href="http://webnoir.org/">Noir</a> の作者だったり
+VisualStudioのプロジェクトマネージャだったりすごい人です。
+</p></div>
+
+
+</div>
+</div>
   </div>
   
   <footer class="well article-footer">
@@ -168,6 +166,7 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
       </nav>
 
   </footer>
+  </div>
   <div id="disqus_thread"></div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -187,54 +186,54 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
       <div id="footer">
 	<div class="container">
 	  <div class="row">
-	    <section class="span3">
+	    <nav class="span3">
 	      <h1>About</h1>
-	      <p>
-<img src="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg"  alt="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg" />
-</p>
+	      
+<div class="figure">
+<p><img src="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg"  alt="9f2afee0916f884e17ba9de3a4d09e70.jpg"/></p>
+</div>
 
-
+<div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
  {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
   <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
+</div>
 
-
-	    </section>
+	    </nav>
 	    <nav id="links" class="span3">
 	      <h1>Links</h1>
 	      <ul>
-		<ul>
+		<ul class="org-ul">
 <li><a href="../../../index.html"><i>icon-home icon-white</i> Home</a>
-
 </li>
+
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)"><i>icon-file icon-white</i> Tips</a>
-
 </li>
+
 <li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
-
 </li>
+
 <li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
-
 </li>
+
 <li><a href="../../../index.xml">RSS</a>
 </li>
 </ul>
-
 
 	      </ul>
 	    </nav>
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a></li> <li><a href="../../../article/2013/02/16_org-mode.html">org-modeの段落の改行を削除したい</a></li> <li><a href="../../../article/2013/02/16_o-blog.html">o-blogのデザインを修正しました。</a></li> <li><a href="../../../article/2013/02/15_sbclubuntu.html">sbclをubuntuにインストールする</a></li> <li><a href="../../../article/2013/02/07_twitter-bootstrapless.html">Twitter bootstrap.lessのコンパイル</a></li> <li><a href="../../../article/2013/02/01_reddit.html">Redditで海外サイトをチェックする!</a></li> <li><a href="../../../article/2013/02/01_compojure.html">Compojureの起動方法まとめ</a></li> <li><a href="../../../article/2013/01/31_compojure.html">端末からサーバー上のcompojureが起動しない</a></li> <li><a href="../../../article/2013/01/31_o-blog.html">o-blogのフォント</a></li> <li><a href="../../../article/2013/01/31_firefox.html">Firefoxで水平スクロールを改ページする方法</a></li> 
+		<li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> <li><a href="../../../article/2013/05/03_git.html">git プロトコルについて</a></li> <li><a href="../../../article/2013/05/03_windowsxpclojure.html">windowsXPでclojureが起動しない</a></li> <li><a href="../../../article/2013/05/03_firefox.html">firefox の同期不具合</a></li> <li><a href="../../../article/2013/05/03_emacs243-on-cygwin.html">emacs24.3 on cygwin</a></li> <li><a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a></li> <li><a href="../../../article/2013/02/16_org-mode.html">org-modeの段落の改行を削除したい</a></li> <li><a href="../../../article/2013/02/16_o-blog.html">o-blogのデザインを修正しました。</a></li> <li><a href="../../../article/2013/02/15_sbclubuntu.html">sbclをubuntuにインストールする</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 150.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 96.15%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 106.92%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 128.46%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 106.92%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 96.15%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 98.67%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 140.67%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 210.67%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 112.67%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>
@@ -244,6 +243,7 @@ VisualStudioのプロジェクトマネージャだったりすごい人です�
 	  <p>
 Copyright © 2008-2012 <a href="http://twitter.com/mikio_kun">mikio</a>
 </p>
+
 	  <p>Powered by <a href="https://github.com/renard/o-blog">o-blog</a>.</p>
 	</div>
       </div>

@@ -15,6 +15,7 @@
     <script src="../../../style/js/o-blog.linenumber.js" type="text/javascript"></script>
     <script src="../../../style/js/o-blog-fix.js" type="text/javascript"></script>
     
+    
   </head>
   <body>
 
@@ -28,36 +29,31 @@
           </a>
 	      <a class="brand" href="../../../index.html">ざる魂</a>
 	      <div class="nav-collapse collapse">
-	        <ul>
-<li><a href="#"><i>icon-file icon-white</i> 最近の更新</a>
-<ul>
-<li><a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a>
+	        <ul class="org-ul">
+<li><i><i>icon-file icon-white</i> 最近の更新</i>
+<ul class="org-ul">
+<li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a>
 </li>
-<li><a href="../../../article/2013/02/16_org-mode.html">org-modeの段落の改行を削除したい</a>
+<li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a>
 </li>
-<li><a href="../../../article/2013/02/16_o-blog.html">o-blogのデザインを修正しました。</a>
+<li><a href="../../../article/2013/05/03_git.html">git プロトコルについて</a>
 </li>
-<li><a href="../../../article/2013/02/15_sbclubuntu.html">sbclをubuntuにインストールする</a>
+<li><a href="../../../article/2013/05/03_windowsxpclojure.html">windowsXPでclojureが起動しない</a>
 </li>
-<li><a href="../../../article/2013/02/07_twitter-bootstrapless.html">Twitter bootstrap.lessのコンパイル</a>
-
+<li><a href="../../../article/2013/05/03_firefox.html">firefox の同期不具合</a>
 </li>
 </ul>
-
 </li>
+
 <li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
-
 </li>
+
 <li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
-
 </li>
+
 <li><a href="../../../index.xml">RSS</a>
 </li>
 </ul>
-
-
-
-
 
 	      </div>
 	    </div>
@@ -74,16 +70,18 @@
     </div>
     <div id="page" class="container">
 
+  <div class="article">
   <header class="article-header">
 	<h1 class=" style="font-size: 250%">(超個人的)Windowsインストール後にやることまとめ</h1>
     <div class="postdate">Posted on <time datetime="2011-04-28T22:50:00Z"> 木曜日 4月, 28 2011 at 22:50:00</time>.</div>
   </header>
   <div class="article-content">
-    <div id="outline-container-1" class="outline-3">
-<h3 id="sec-1">ソフトのインストールポリシー</h3>
-<div class="outline-text-3" id="text-1">
+    
 
-<ul>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">ソフトのインストールポリシー</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
 <li>インストーラのないツールは基本的に%HOME%/apps下に展開する。
 </li>
 <li>インストーラものはデフォルト値でインストール
@@ -93,87 +91,66 @@
 <li>UNIX系(コマンドライン系)のミドルウェアでインストーラーがない場合は%HOME&amp;/opt/下に展開する。
 </li>
 </ul>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-2" class="outline-3">
-<h3 id="sec-2">コントロールキーの設定</h3>
-<div class="outline-text-3" id="text-2">
-
-
-</div>
-
-<div id="outline-container-2-1" class="outline-5">
-<h5 id="sec-2-1">xp</h5>
-<div class="outline-text-5" id="text-2-1">
-
-<ul>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">コントロールキーの設定</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-0-1" class="outline-4">
+<h4 id="sec-2-0-1">xp</h4>
+<div class="outline-text-4" id="text-2-0-1">
+<ul class="org-ul">
 <li>xkeyemacsをつかってcapsキーをctrsキーにする。
 </li>
 </ul>
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-2-2" class="outline-5">
-<h5 id="sec-2-2">win7</h5>
-<div class="outline-text-5" id="text-2-2">
-
-<ul>
-<li>Changekeyを使用する。
-<ul>
-<li>chgkey.exe(;k)
+<div id="outline-container-sec-2-0-2" class="outline-4">
+<h4 id="sec-2-0-2">win7</h4>
+<div class="outline-text-4" id="text-2-0-2">
+<ul class="org-ul">
+<li>Changekeyを使用する(右クリメニューで管理者として実行すること)。
+<ul class="org-ul">
+<li>chgkey.exe
 </li>
 <li>Dropboxに保存してある。
 </li>
 </ul>
-
 </li>
 <li>GUIのキーボードが表示されるので変更する
-<ul>
-<li>Caps -&gt; ctrl
+<ul class="org-ul">
+<li>Caps → Ctrl
 </li>
-<li>無変換 ー&gt; Shift
+<li>無変換 → Ctrl
 </li>
-<li>変換 -&gt; Ctrl
+<li>変換 → Ctrl
 </li>
-<li>ひらがな -&gt; Return
+<li>ひらがな → Shift 
 </li>
 </ul>
-
 </li>
 <li>再起動
 </li>
 </ul>
-
-
 </div>
 </div>
-
 </div>
-
-<div id="outline-container-3" class="outline-3">
-<h3 id="sec-3">Usersディレクトリの作成(XPのみ)</h3>
-<div class="outline-text-3" id="text-3">
-
-<p>「Link Shell Extension」をインストールして
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Usersディレクトリの作成(XPのみ)</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+「Link Shell Extension」をインストールして
 「c:\」に「C:\Documents and Settings」のディレクトリジャンクションを作り名前を「Users」とする。
 これにより
 c:\Users\というディレクトリができ、Windows7/Vistaと同じような構成になる。
 </p>
 </div>
-
 </div>
-
-<div id="outline-container-4" class="outline-3">
-<h3 id="sec-4">一番最初にインストール</h3>
-<div class="outline-text-3" id="text-4">
-
-<ul>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">一番最初にインストール</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
 <li>Launcy
 </li>
 <li>Firefox
@@ -183,121 +160,97 @@ c:\Users\というディレクトリができ、Windows7/Vistaと同じような
 <li>ExpLzh
 </li>
 </ul>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-5" class="outline-3">
-<h3 id="sec-5">環境変数の設定</h3>
-<div class="outline-text-3" id="text-5">
-
-<ul>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">環境変数の設定</h2>
+<div class="outline-text-2" id="text-5">
+<ul class="org-ul">
 <li>HOME
-<ul>
+<ul class="org-ul">
 <li>XPの場合:HOME=c:\Users\mikio
 </li>
 <li>Windows7の場合:HOME=%USERPROFILE%
-
 </li>
+
 <li>HOMEはダブルクォーテーションで囲んではいけない。emacsが起動しなくなる。
 </li>
 <li>HOMEはcygwin,Emacs用、XYZZYHOMEはxyzzy用の環境変数。
 </li>
 <li>※cygwinでは、HOMEを設定すると、自動的に/home/mikiがc:\mikiにマウントされる。
-
 </li>
 </ul>
-
 </li>
+
 <li>MAVEN_HOME
- %HOME%\opt\
+%HOME%\opt\
 </li>
 <li>XYZZYHOME
-<ul>
+<ul class="org-ul">
 <li>XYZZYHOME=%HOME%\aps\xyzzy
 </li>
 <li>PATH
-    c:\cygwin\bin;
-
+c:\cygwin\bin;
 </li>
 </ul>
-
 </li>
+
 <li>下記は.bashrc側に置くので設定しなくて良い。
-  JAVA_HOME=%HOME%\opt\
-  ANT_HOME=
-
+JAVA_HOME=%HOME%\opt\
+ANT_HOME=
 </li>
+
 <li>PATH
 </li>
 </ul>
-
-<p>%PATH%;%HOME%\bin;%MAVEN_HOME%\bin;%HOME%\opt\php-5.3.8-Win32-VC9-x86
-</p><ul>
+<p>
+%PATH%;%HOME%\bin;%MAVEN_HOME%\bin;%HOME%\opt\php-5.3.8-Win32-VC9-x86
+</p>
+<ul class="org-ul">
 <li>TERM
-  xternm(CYGWIN用)
+xternm(CYGWIN用)
 </li>
 <li>CYGWIN
-  tty(screenのデタッチ用)
+tty(screenのデタッチ用)
 </li>
 </ul>
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-6" class="outline-3">
-<h3 id="sec-6">キーボードの入力速度を早める</h3>
-<div class="outline-text-3" id="text-6">
-
-<ul>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">キーボードの入力速度を早める</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
 <li>(Win7) [コンパネ] -&gt; [コンピュータの簡単操作] -&gt; [キーボード動作の変更] -&gt; [キーボードの設定]
 </li>
 </ul>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-7" class="outline-3">
-<h3 id="sec-7">アンチエイリアスの設定</h3>
-<div class="outline-text-3" id="text-7">
-
-<ul>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">アンチエイリアスの設定</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
 <li>MacTypeをインストールする。
 </li>
 <li>fontは「Mig 1M」を使用する。MigMix1M 行間が広いので注意。
 </li>
 </ul>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-8" class="outline-3">
-<h3 id="sec-8">入れるソフト</h3>
-<div class="outline-text-3" id="text-8">
-
-
-</div>
-
-<div id="outline-container-8-1" class="outline-4">
-<h4 id="sec-8-1">インストーラ系ソフトのインストール</h4>
-<div class="outline-text-4" id="text-8-1">
-
-<ul>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8">入れるソフト</h2>
+<div class="outline-text-2" id="text-8">
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1">インストーラ系ソフトのインストール</h3>
+<div class="outline-text-3" id="text-8-1">
+<ul class="org-ul">
 <li>Spybot Searcy &amp; Directory
 </li>
 <li>Link Shell Extension
-<ul>
+<ul class="org-ul">
 <li><a href="http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html">http://schinagl.priv.at/nt/hardlinkshellext/hardlinkshellext.html</a>
 </li>
 </ul>
-
 </li>
 <li>AdujustClock
 </li>
@@ -318,29 +271,25 @@ c:\Users\というディレクトリができ、Windows7/Vistaと同じような
 <li>JDK, JRE
 </li>
 </ul>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-8-2" class="outline-4">
-<h4 id="sec-8-2">解凍系</h4>
-<div class="outline-text-4" id="text-8-2">
-
-<ul>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2">解凍系</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
 <li>cygwinのインストール
-
 </li>
+
 <li>putty、ごった煮にさらに機能追加版
-<ul>
+<ul class="org-ul">
 <li><a href="http://ice.hotmint.com/putty/">http://ice.hotmint.com/putty/</a>
 </li>
 </ul>
-
-<p> ※オリジナルのごった煮版は、コマンドラインからのplinkがうまく使えなかったので使用しない。
+<p>
+※オリジナルのごった煮版は、コマンドラインからのplinkがうまく使えなかったので使用しない。
 </p>
 </li>
+
 <li>Jane sytle
 </li>
 <li>eclip
@@ -352,37 +301,32 @@ c:\Users\というディレクトリができ、Windows7/Vistaと同じような
 <li>TClock Light (for Windows XP)
 </li>
 <li>tclocklight-kt100204(for WIndows7)
-  タスクバーを左たてに表示する場合、tclock.iniを書きに書きかえる。
-  Format="yy/mm/dd\nddd\nhh:nn:ss"
+タスクバーを左たてに表示する場合、tclock.iniを書きに書きかえる。
+Format="yy/mm/dd\nddd\nhh:nn:ss"
 </li>
 <li>AdjustClock
- windows7の場合、OSに自動同期機能があるのでいらない。
+windows7の場合、OSに自動同期機能があるのでいらない。
 </li>
 </ul>
-
-
 </div>
-
 </div>
-
-<div id="outline-container-8-3" class="outline-4">
-<h4 id="sec-8-3">スタートアップの設定</h4>
-<div class="outline-text-4" id="text-8-3">
-
-<ul>
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3">スタートアップの設定</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
 <li>タートアップフォルダの開き方
-<ul>
+<ul class="org-ul">
 <li>[スタート] -&gt; [すべてのプログラム] -&gt; []
 </li>
 <li>スタートアップを右クリック - 開く
 </li>
 </ul>
-
 </li>
 </ul>
-
-<p>下記を登録する。
-</p><ul>
+<p>
+下記を登録する。
+</p>
+<ul class="org-ul">
 <li>tclock
 </li>
 <li>eclip
@@ -390,135 +334,105 @@ c:\Users\というディレクトリができ、Windows7/Vistaと同じような
 <li>pagent
 </li>
 </ul>
-
-
 </div>
 </div>
-
 </div>
-
-<div id="outline-container-9" class="outline-3">
-<h3 id="sec-9">MySQL</h3>
-<div class="outline-text-3" id="text-9">
-
-<p>MySQLのHPにてCommunityServerをインストールする。
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9">MySQL</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+MySQLのHPにてCommunityServerをインストールする。
 HPの上の方にある大きなバナーのやつだと余計な製品がたくさん入って
 わけわからんので注意。
 </p>
 </div>
-
 </div>
-
-<div id="outline-container-10" class="outline-3">
-<h3 id="sec-10">php</h3>
-<div class="outline-text-3" id="text-10">
-
-<ul>
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10">php</h2>
+<div class="outline-text-2" id="text-10">
+<ul class="org-ul">
 <li><a href="http://windows.php.net/download/#php-5.3-ts-VC9-x86">http://windows.php.net/download/#php-5.3-ts-VC9-x86</a>
 </li>
 </ul>
-
-<p>windows版のバイナリ(*.zip)をダウンロードして展開する。
-</p><ul>
+<p>
+windows版のバイナリ(*.zip)をダウンロードして展開する。
+</p>
+<ul class="org-ul">
 <li>展開場所の例
 </li>
 </ul>
-
-
-
+<div class="org-src-container">
 
 <pre class="src src-sh">$<span style="color: #ffff00;">HOME</span>/opt/php
 </pre>
-
-
-
+</div>
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-11" class="outline-3">
-<h3 id="sec-11">別PCに移行する場合</h3>
-<div class="outline-text-3" id="text-11">
-
-
-</div>
-
-<div id="outline-container-11-1" class="outline-4">
-<h4 id="sec-11-1">ファイル共有の設定</h4>
-<div class="outline-text-4" id="text-11-1">
-
-<ul>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">別PCに移行する場合</h2>
+<div class="outline-text-2" id="text-11">
+</div><div id="outline-container-sec-11-1" class="outline-3">
+<h3 id="sec-11-1">ファイル共有の設定</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
 <li>コンパネ　-　Windowsファイアウォール - 例外
 </li>
 <li>「ファイルとプリンタの共有」をチェックする。
 </li>
 </ul>
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-11-2" class="outline-4">
-<h4 id="sec-11-2">ローカルPCのAdminユーザのパスワードを設定</h4>
-<div class="outline-text-4" id="text-11-2">
-
-<ul>
+<div id="outline-container-sec-11-2" class="outline-3">
+<h3 id="sec-11-2">ローカルPCのAdminユーザのパスワードを設定</h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
 <li>コントロールパネル - ユーザアカウント
 </li>
 <li>Administratorを選択し、[パスワードのリセット]をクリックし、新しいパスワードを入力する。
 </li>
 </ul>
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-11-3" class="outline-4">
-<h4 id="sec-11-3">設定ファイルのコピー</h4>
-<div class="outline-text-4" id="text-11-3">
-
-<ul>
+<div id="outline-container-sec-11-3" class="outline-3">
+<h3 id="sec-11-3">設定ファイルのコピー</h3>
+<div class="outline-text-3" id="text-11-3">
+<ul class="org-ul">
 <li>エクスプローラを立ち上げ、旧端末のCドライブに接続する。
-
-<p> -- \\旧端末のコンピュータ名\C$
-</p></li>
+-- \\旧端末のコンピュータ名\C$
+</li>
 <li>旧端末の必要な情報をコピーする(FireCopyを使用する。)。
-
-<p> -- c:\miki
-</p></li>
+-- c:\miki
+</li>
 </ul>
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-11-4" class="outline-4">
-<h4 id="sec-11-4">移行用ソフト</h4>
-<div class="outline-text-4" id="text-11-4">
-
-<ul>
+<div id="outline-container-sec-11-4" class="outline-3">
+<h3 id="sec-11-4">移行用ソフト</h3>
+<div class="outline-text-3" id="text-11-4">
+<ul class="org-ul">
 <li>FireFile Copy :高速ファイルツール。上書き確認とかいろいろ。エクスプローラだときつい。
 </li>
 </ul>
-
-
 </div>
 </div>
-
 </div>
-
-<div id="outline-container-12" class="outline-3">
-<h3 id="sec-12">Faithの自作マシンでのドライバインストール</h3>
-<div class="outline-text-3" id="text-12">
-
-<p>windows7を入れた最初の状態では、ネットワークアダプタのドライバがないため
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">Faithの自作マシンでのドライバインストール</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+windows7を入れた最初の状態では、ネットワークアダプタのドライバがないため
 ネットにつながらない。
 そこで、ドライバをインストールする。ネットワークアダプター以外にも
 いくつかドライバがないものがあるのでついでにインストールしておく
-</p><ul>
+</p>
+<ul class="org-ul">
 <li>ユニバーサルシリアルバスや
-
 </li>
+
 <li>マザーボードのCD-ROMを用意する(P8Z68V-PRO)。
 </li>
 <li>[コントロールパネル] - [ハードウェアとサウンド]-[デバイスマネージャ]
@@ -528,7 +442,6 @@ HPの上の方にある大きなバナーのやつだと余計な製品がたく
 <li>[ドライバーソフトウェアの更新]－[コンピュータを参照してドライバーソフトウェアを検索します]
 </li>
 </ul>
-
 </div>
 </div>
 
@@ -548,6 +461,7 @@ HPの上の方にある大きなバナーのやつだと余計な製品がたく
       </nav>
 
   </footer>
+  </div>
   <div id="disqus_thread"></div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -567,54 +481,54 @@ HPの上の方にある大きなバナーのやつだと余計な製品がたく
       <div id="footer">
 	<div class="container">
 	  <div class="row">
-	    <section class="span3">
+	    <nav class="span3">
 	      <h1>About</h1>
-	      <p>
-<img src="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg"  alt="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg" />
-</p>
+	      
+<div class="figure">
+<p><img src="http://ja.gravatar.com/userimage/34519202/9f2afee0916f884e17ba9de3a4d09e70.jpg"  alt="9f2afee0916f884e17ba9de3a4d09e70.jpg"/></p>
+</div>
 
-
+<div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
  {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
   <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
+</div>
 
-
-	    </section>
+	    </nav>
 	    <nav id="links" class="span3">
 	      <h1>Links</h1>
 	      <ul>
-		<ul>
+		<ul class="org-ul">
 <li><a href="../../../index.html"><i>icon-home icon-white</i> Home</a>
-
 </li>
+
 <li><a href="Lisp error in nil: (error ob:post-htmlfile accessing a non-ob:post)"><i>icon-file icon-white</i> Tips</a>
-
 </li>
+
 <li><a href="../../../tags/index.html"><i>icon-tags icon-white</i> Tags</a>
-
 </li>
+
 <li><a href="../../../archives.html"><i>icon-list icon-white</i> Archives</a>
-
 </li>
+
 <li><a href="../../../index.xml">RSS</a>
 </li>
 </ul>
-
 
 	      </ul>
 	    </nav>
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a></li> <li><a href="../../../article/2013/02/16_org-mode.html">org-modeの段落の改行を削除したい</a></li> <li><a href="../../../article/2013/02/16_o-blog.html">o-blogのデザインを修正しました。</a></li> <li><a href="../../../article/2013/02/15_sbclubuntu.html">sbclをubuntuにインストールする</a></li> <li><a href="../../../article/2013/02/07_twitter-bootstrapless.html">Twitter bootstrap.lessのコンパイル</a></li> <li><a href="../../../article/2013/02/01_reddit.html">Redditで海外サイトをチェックする!</a></li> <li><a href="../../../article/2013/02/01_compojure.html">Compojureの起動方法まとめ</a></li> <li><a href="../../../article/2013/01/31_compojure.html">端末からサーバー上のcompojureが起動しない</a></li> <li><a href="../../../article/2013/01/31_o-blog.html">o-blogのフォント</a></li> <li><a href="../../../article/2013/01/31_firefox.html">Firefoxで水平スクロールを改ページする方法</a></li> 
+		<li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> <li><a href="../../../article/2013/05/03_git.html">git プロトコルについて</a></li> <li><a href="../../../article/2013/05/03_windowsxpclojure.html">windowsXPでclojureが起動しない</a></li> <li><a href="../../../article/2013/05/03_firefox.html">firefox の同期不具合</a></li> <li><a href="../../../article/2013/05/03_emacs243-on-cygwin.html">emacs24.3 on cygwin</a></li> <li><a href="../../../article/2013/03/02_.html">ファイルオープン数が上限値に達した</a></li> <li><a href="../../../article/2013/02/16_org-mode.html">org-modeの段落の改行を削除したい</a></li> <li><a href="../../../article/2013/02/16_o-blog.html">o-blogのデザインを修正しました。</a></li> <li><a href="../../../article/2013/02/15_sbclubuntu.html">sbclをubuntuにインストールする</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 101.54%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 150.00%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 96.15%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 123.08%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 209.23%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 106.92%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 101.54%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 128.46%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 106.92%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 96.15%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 85.38%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 112.31%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 90.77%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 98.67%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 140.67%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 210.67%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 122.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 94.00%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 108.00%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 112.67%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 89.33%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 84.67%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>
@@ -624,6 +538,7 @@ HPの上の方にある大きなバナーのやつだと余計な製品がたく
 	  <p>
 Copyright © 2008-2012 <a href="http://twitter.com/mikio_kun">mikio</a>
 </p>
+
 	  <p>Powered by <a href="https://github.com/renard/o-blog">o-blog</a>.</p>
 	</div>
       </div>
