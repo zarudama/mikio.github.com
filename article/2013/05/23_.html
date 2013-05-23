@@ -77,10 +77,112 @@
   </header>
   <div class="article-content">
     <p>
-最近は、emacs-w3mをメインにときどきchromeという使いかた。
-chromeのキーバインドは、vimiumで。
+最近はChromeを使っている。
 </p>
 
+<p>
+emacs-w3mをメインにしつつ、必要に応じてChromeという使いかた。
+(Chromeのキーバインドは、Vimiumを使用してViキーバインドにしている)
+</p>
+
+<p>
+タブの操作やURLの編集操作にはWindows標準のキーバインドを使用し、
+移動系の操作のみ <code>hjkl, C-f, C-b</code> あたりを使用している。
+というか、Chromeはキーバインドを変更するための制限が厳しいので
+Firefoxのように細部まで再現できない。
+</p>
+
+<p>
+最初はそれが不便に感じたが、今は逆にそれが良いことだと感じている。
+というのも、Firefoxの頃は、再現性が高いだけに細かの部分で操作ミスを良くしてしまうのだが、
+Chromeの場合はWiwndowsキーバインドメインにしているので頭を切り替えやすいという利点がある。
+また、Firefoxだと快適すぎるがゆえにw3m-emacsとの使い分けがあいまいになってしまう。
+(そこまでしてなぜw3m-emacs使うの馬鹿？って感じだが)。
+</p>
+
+<p>
+でもいつも気づくとfirefoxに戻っているんですがね。。。
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Chorme</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>○：なんだかんだで描画が速い。
+</li>
+<li>○：Blinkには期待できる。ソースがスリムになりバグが減るかも。
+</li>
+<li>○：モバイル系のサイトで特に表示崩れが少ない。
+</li>
+<li>○：WebGL対応のゲーム系アプリが多い。
+</li>
+<li>×：chromeはたまに表示が極端に重くなったり、スクロールできなくなったり、ページがフリーズすることがある。
+</li>
+<li>×：クッキーが発行されなくなったり、削除できなくなったりする。
+<ul class="org-ul">
+<li>edit this cookieの不具合っぽかった。
+</li>
+</ul>
+</li>
+<li>×：キーボードショートカットが効かないところが多い。(アドレスバー、新規タブ画面など)
+</li>
+<li>×：ipアドレスの表示がキャッシュされて古いことがある。
+</li>
+<li>×：proxyの切りかえがいまいち。
+</li>
+<li>×：全般的になんでもできるfirefoxに比べると拡張のできが今いち。
+</li>
+<li>×：XPだとSKK系のIMEがなぜかうまく使用できない。
+</li>
+<li>×：android版の出来が今いち。
+</li>
+<li>×：vimperetor系の拡張も、結局ChormeAPIの制限のせいで今イチ。
+<ul class="org-ul">
+<li>→hjklなどの移動以外は、もともとのショートカットを多様するほうが混乱しなくてすむ。
+</li>
+</ul>
+</li>
+<li>×：MacTypeなどアンチエイリアス系ソフトを使用していると度々描画関連の不具合が発生する
+</li>
+<li>×：XMLの表示が
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Firefox</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>○：keysnail,vimperetorなど拡張のできが最強。
+</li>
+<li>○：他にはNESなどのスーファミエミュが、そのままブラウザ上で走ったりする。
+</li>
+<li>○：emacsとの連携(Mozilla REPLなどあり)が強力。 
+</li>
+<li>×：ひとつのタブがフリーズすると、他のタブも影響をうける。
+</li>
+<li>×：アカウントの同期管理が煩雑。
+</li>
+<li>×：Sumsngと提携に不安が。。。
+</li>
+<li>×：Android版、UIのできはいいが、表示崩れするサイトが多い
+</li>
+<li>×：PC版でもgithubをはじめ、ブラウザテストがおざなりになりつつある。
+</li>
+<li>×：keysnaliを使ったときに、M-wでコピーしないと、クリップボードを共有できいないことがある。
+</li>
+<li>×：タブの切り替えが重くなることがある。
+</li>
+<li>×：たま起動せずにプロセスが残ることがある。
+</li>
+<li>○：なんだかんだでやっぱりfirefoxが一番快適。
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">ブラウザ比較表</h2>
+<div class="outline-text-2" id="text-3">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -92,116 +194,114 @@ chromeのキーバインドは、vimiumで。
 <col class="left"/>
 
 <col class="left"/>
-
-<col class="left"/>
 </colgroup>
 <tbody>
 <tr>
 <td class="left">&#xa0;</td>
-<td class="left">android表示崩れ</td>
+<td class="left">GC</td>
+<td class="left">FF</td>
+<td class="left">OP</td>
+</tr>
+
+<tr>
+<td class="left">Android表示崩れ</td>
+<td class="left">◎</td>
+<td class="left">×</td>
+<td class="left">○</td>
+</tr>
+
+<tr>
+<td class="left">viキーバインド</td>
+<td class="left">◎</td>
+<td class="left">◎</td>
+<td class="left">△</td>
+</tr>
+
+<tr>
+<td class="left">emacsキーバインド</td>
+<td class="left">◎</td>
+<td class="left">◎</td>
+<td class="left">△</td>
+</tr>
+
+<tr>
 <td class="left">拡張同期</td>
+<td class="left">◎</td>
+<td class="left">△</td>
+<td class="left">×</td>
+</tr>
+
+<tr>
 <td class="left">タブ同期</td>
-<td class="left">ブクマ,パスワードなど同期</td>
-</tr>
-
-<tr>
-<td class="left">Chrome</td>
-<td class="left">◎</td>
-<td class="left">◎</td>
 <td class="left">○</td>
+<td class="left">△</td>
 <td class="left">○</td>
 </tr>
 
 <tr>
-<td class="left">Opera</td>
-<td class="left">◎(Beta版の場合)</td>
-<td class="left">×</td>
-<td class="left">×</td>
+<td class="left">ブクマ同期</td>
+<td class="left">○</td>
+<td class="left">△</td>
 <td class="left">○</td>
 </tr>
 
 <tr>
-<td class="left">Firefox</td>
-<td class="left">×</td>
+<td class="left">パスワード同期</td>
 <td class="left">○</td>
-<td class="left">◎</td>
+<td class="left">△</td>
 <td class="left">○</td>
 </tr>
 </tbody>
 </table>
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">chorme</h2>
-<div class="outline-text-2" id="text-1">
-<ul class="org-ul">
-<li>×：chromeはたまに表示が極端に重くなったり、スクロールできなくなったり、ページがフリーズすることがある。
-</li>
-<li>×：クッキーが発行されなくなったり、削除できなくなったりする
-<ul class="org-ul">
-<li>edith this cookieの不具合っぽかた
-</li>
-</ul>
-</li>
-<li>×：キーボードショートカットが効かないところが多い。(アドレスバー、新規タブ画面など)
-</li>
-<li>×：ipアドレスの表示がキャッシュされて古いことがある。
-</li>
-<li>×：proxyの切りかえがいまいち
-</li>
-<li>×：全般的になんでもできるfirefoxに比べると拡張のできが今いち。
-</li>
-<li>×：CurvusSKKが使用できない。
-</li>
-<li>×：android版の出来が今いち
-</li>
-<li>×：vimperetor系の拡張も、結局ChormeAPIの制限のせいで今イチ。
-<ul class="org-ul">
-<li>→hjklなどの移動以外は、もともとのショートカットを多様するほうが混乱しなくてすむ。
-</li>
-</ul>
-</li>
-<li>×：MacTypeなどアンチエイリアス系ソフトを使用していると度々描画関連の不具合が発生する
-</li>
-<li>○：Blinkには期待できる。ソースがスリムになりバグが減るかも。
-</li>
-<li>○：モバイル系のサイトで特に表示崩れが少ない。
-</li>
-<li>○：WebGL対応のゲーム系アプリが多い。
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">firefox</h2>
-<div class="outline-text-2" id="text-2">
-<ul class="org-ul">
-<li>×：ひとつのタブがフリーズすると、他のタブも影響をうける
-</li>
-<li>×：アカウントの同期管理が煩雑
-</li>
-<li>×：Sumsngと提携に不安。。。
-</li>
-<li>×：Android版、UIのできはいいが、表示崩れするサイトが多い
-</li>
-<li>×：PC版でもgithubをはじめ、ブラウザテストがおざなりになりつつある。
-</li>
-<li>×：keysnaliを使ったときに、M-wでコピーしないと、クリップボードを共有できいないことがある。
-</li>
-<li>×：タブの切り替えが重くなることがある。
-</li>
-<li>○：emacsとの連携(Mozilla REPLなどあり) 
-</li>
-<li>○：keysnail,vimperetorなど拡張のできが最強。
-</li>
-<li>○：nesなどはそのままブラウザ上でエミュレータが走ったりするし。
-</li>
-<li>○：なんだかんだでやっぱりfirefoxが一番快適
-</li>
-</ul>
-
 <p>
-いつも気づくとfirefoxに戻っている。。。
+凡例
 </p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left"/>
+
+<col class="left"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="left">GC</td>
+<td class="left">GoogleChrome</td>
+</tr>
+
+<tr>
+<td class="left">FF</td>
+<td class="left">Fireofx</td>
+</tr>
+
+<tr>
+<td class="left">OP</td>
+<td class="left">Opera</td>
+</tr>
+
+<tr>
+<td class="left">◎</td>
+<td class="left">非常に快適</td>
+</tr>
+
+<tr>
+<td class="left">○</td>
+<td class="left">快適</td>
+</tr>
+
+<tr>
+<td class="left">△</td>
+<td class="left">不満あり</td>
+</tr>
+
+<tr>
+<td class="left">×</td>
+<td class="left">実現不能</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
