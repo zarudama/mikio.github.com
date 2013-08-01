@@ -9,49 +9,56 @@
   
   <url>
     <loc>http://mikio.github.com//index.html</loc>
-    <lastmod>2013-06-14T22:48:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2013/05/03_windowsemacs243/index.html</loc>
-    <lastmod>2013-06-14T22:48:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>http://mikio.github.com//article/2000/12/23_emacsjdeejava242/index.html</loc>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/12/23_emacsjdeejava/index.html</loc>
-    <lastmod>2013-06-14T22:49:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/index.html</loc>
-    <lastmod>2013-06-14T22:49:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
-    <lastmod>2013-06-14T22:49:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
-    <lastmod>2013-06-14T22:49:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
-    <lastmod>2013-06-14T22:49:00Z</lastmod>
+    <lastmod>2013-08-02T00:57:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -59,30 +66,6 @@
 
 
   <url>
-    <loc>http://mikio.github.com//article/2013/06/14_tmux.html</loc>
-    <lastmod>2013-06-14T01:09:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//article/2013/06/14_helm.html</loc>
-    <lastmod>2013-06-14T01:08:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//article/2013/06/14_rss.html</loc>
-    <lastmod>2013-06-14T01:06:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
-    <loc>http://mikio.github.com//article/2013/06/14_cygwingit-statusmodified.html</loc>
-    <lastmod>2013-06-14T01:05:00Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-<url>
     <loc>http://mikio.github.com//article/2013/05/23_clj-webdriver.html</loc>
     <lastmod>2013-05-23T08:15:00Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -1009,6 +992,12 @@
 <url>
     <loc>http://mikio.github.com//article/2009/02/13_.html</loc>
     <lastmod>2009-02-13T00:47:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
+    <loc>http://mikio.github.com//article/2000/12/23_emacsjdeejava242.html</loc>
+    <lastmod>2000-12-23T08:20:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

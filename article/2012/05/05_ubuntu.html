@@ -32,15 +32,15 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
-<li><a href="../../../article/2013/06/14_tmux.html">tmux操作中に操作できなくなった</a>
-</li>
-<li><a href="../../../article/2013/06/14_helm.html">helmのファイル一覧でパスを表示する</a>
-</li>
-<li><a href="../../../article/2013/06/14_rss.html">RSSの種類まとめ</a>
-</li>
-<li><a href="../../../article/2013/06/14_cygwingit-statusmodified.html">cygwin上でgit statusすると変更してないのにmodified表示されてしまう</a>
-</li>
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
+</li>
+<li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
+</li>
+<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
+</li>
+<li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a>
+</li>
+<li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a>
 </li>
 </ul>
 </li>
@@ -373,15 +373,20 @@ PATTERN: (&#65399;&#65388;&#65391;&#65404;&#65389;|&#12461;&#12515;&#12483;&#124
 <h2 id="sec-10">xmodmapによるキーマッピング</h2>
 <div class="outline-text-2" id="text-10">
 <p>
-~/.Xmodmapを作成する。
+下記を参考にした。
+<a href="http://d.hatena.ne.jp/kenbeese/20120214/title">http://d.hatena.ne.jp/kenbeese/20120214/title</a>
+</p>
+
+<p>
+~/.xmodmapを作成する。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">keycode 102 = Shift_L
-keycode 101 = Return
+<pre class="src src-sh"><span style="color: #ff0000;">#</span><span style="color: #ff0000;">+end_src</span>
 
-keycode 100 = Control_L
-add Control = Control_L
+&#21453;&#26144;
+<span style="color: #ff0000;">#</span><span style="color: #ff0000;">+begin_src sh</span>
+xmodmap ~/.xmodmap
 </pre>
 </div>
 
@@ -390,7 +395,7 @@ add Control = Control_L
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">xmodmap ~/.Xmodmap
+<pre class="src src-sh">xmodmap ~/.xmodmap
 </pre>
 </div>
 
@@ -399,25 +404,59 @@ add Control = Control_L
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">&#28961;&#22793;&#25563;&#8594;shift
-&#22793;&#25563;&#8594;ctrl
-&#12459;&#12479;&#12459;&#12490;&#12402;&#12425;&#12364;&#12394;&#8594;return
+<pre class="src src-sh"><span style="color: #0000ff; font-weight: bold;">&#28961;&#22793;&#25563;</span>(102)&#8594;ctrl
+<span style="color: #0000ff; font-weight: bold;">&#22793;&#25563;</span>(keycode 100)&#8594;ctrl
+<span style="color: #0000ff; font-weight: bold;">&#12459;&#12479;&#12459;&#12490;&#12402;&#12425;&#12364;&#12394;</span>(101)&#8594;shift
+</pre>
+</div>
+
+
+<p>
+更に起動時に自動的に有効になるように、 <code>~/.xmodrc</code> を準備する。
+下記を記述する。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">xmodmap ~/.xmodmap
+</pre>
+</div>
+
+<p>
+もし割り当てを変更したいときは、xdevコマンドを使ってキーコードを
+調べ、 <code>~/.xmomap</code> を変更すれば良い。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-11" class="outline-2">
+<h2 id="sec-11">git</h2>
+<div class="outline-text-2" id="text-11">
+<div class="org-src-container">
+
+<pre class="src src-sh">sudo apt-get install git
+git config --global alias.st <span style="color: #ff00ff;">"status"</span>
+git config --global alias.ci <span style="color: #ff00ff;">"commit"</span>
+git config --global alias.br <span style="color: #ff00ff;">"branch"</span>
+git config --global alias.co <span style="color: #ff00ff;">"checkout"</span>
+git config --global color.ui <span style="color: #ff00ff;">"auto"</span>
+git config --global core.pager <span style="color: #ff00ff;">"cat"</span>
+git config --global user.email <span style="color: #ff00ff;">"hoge@faga.com"</span>
+git config --global user.name <span style="color: #ff00ff;">"hoge"</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-11" class="outline-2">
-<h2 id="sec-11">skk(uim)</h2>
-<div class="outline-text-2" id="text-11">
+<div id="outline-container-sec-12" class="outline-2">
+<h2 id="sec-12">skk(uim)</h2>
+<div class="outline-text-2" id="text-12">
+<p>
+ubuntuは、標準でiBusを使用しているが、ibus-sskは
+kは変換時にemacsのキーバインドが使えないので、
+変わりにuimというインプットメソッドがあるので入れてみる。
+</p>
 <ul class="org-ul">
 <li><a href="http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1">http://ubuntu-note.blog.so-net.ne.jp/2010-10-17-1</a>
 </li>
 </ul>
-
-<p>
-ibus-skkは変換時にemacsのキーバインドが使えないので、
-変わりにuimというインプットメソッドがあるので入れてみる。
-</p>
 
 <div class="org-src-container">
 
@@ -425,18 +464,19 @@ ibus-skkは変換時にemacsのキーバインドが使えないので、
 </pre>
 </div>
 
-<p>
-Input Method Switcherの起動
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">im-switch -c
-</pre>
-</div>
 <ul class="org-ul">
-<li>リストの中から、uim-toolbar を選択する。
+<li>設定　言語サポート　「キーボードに使うIMシステム」
 </li>
-<li>ログインしなおす。
+<li>uimを選択
+</li>
+</ul>
+<p>
+その後ログアウトすれば使用できるようになる。
+</p>
+<ul class="org-ul">
+<li>Dashでuimを入力すると設定画面が表示される
+</li>
+<li>ツールバーは表示できない。
 </li>
 </ul>
 
@@ -451,9 +491,9 @@ emacsと重複するため、SKKの起動キーを変更する。
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-12" class="outline-2">
-<h2 id="sec-12">jdk</h2>
-<div class="outline-text-2" id="text-12">
+<div id="outline-container-sec-13" class="outline-2">
+<h2 id="sec-13">jdk</h2>
+<div class="outline-text-2" id="text-13">
 <p>
 下記よりjdk最新版を取得する。
 </p>
@@ -516,9 +556,9 @@ javaws
 </div>
 </div>
 
-<div id="outline-container-sec-12-1" class="outline-3">
-<h3 id="sec-12-1">参考</h3>
-<div class="outline-text-3" id="text-12-1">
+<div id="outline-container-sec-13-1" class="outline-3">
+<h3 id="sec-13-1">参考</h3>
+<div class="outline-text-3" id="text-13-1">
 <ul class="org-ul">
 <li><a href="http://radi0ant.hatenablog.com/entry/2011/12/29/015013">http://radi0ant.hatenablog.com/entry/2011/12/29/015013</a>
 </li>
@@ -528,9 +568,9 @@ javaws
 </div>
 </div>
 </div>
-<div id="outline-container-sec-13" class="outline-2">
-<h2 id="sec-13">lein(clojure)</h2>
-<div class="outline-text-2" id="text-13">
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14">lein(clojure)</h2>
+<div class="outline-text-2" id="text-14">
 <p>
 binディレクトリを作成する。
 </p>
@@ -557,9 +597,9 @@ chmod +x lein
 </div>
 </div>
 </div>
-<div id="outline-container-sec-14" class="outline-2">
-<h2 id="sec-14">eclipse</h2>
-<div class="outline-text-2" id="text-14">
+<div id="outline-container-sec-15" class="outline-2">
+<h2 id="sec-15">eclipse</h2>
+<div class="outline-text-2" id="text-15">
 <ul class="org-ul">
 <li><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0167">http://gihyo.jp/admin/serial/01/ubuntu-recipe/0167</a>
 </li>
@@ -581,12 +621,12 @@ chmod +x lein
 </p>
 </div>
 </div>
-<div id="outline-container-sec-15" class="outline-2">
-<h2 id="sec-15">その他</h2>
-<div class="outline-text-2" id="text-15">
-</div><div id="outline-container-sec-15-1" class="outline-3">
-<h3 id="sec-15-1">DVDについて</h3>
-<div class="outline-text-3" id="text-15-1">
+<div id="outline-container-sec-16" class="outline-2">
+<h2 id="sec-16">その他</h2>
+<div class="outline-text-2" id="text-16">
+</div><div id="outline-container-sec-16-1" class="outline-3">
+<h3 id="sec-16-1">DVDについて</h3>
+<div class="outline-text-3" id="text-16-1">
 <p>
 DVDをみるためには以下のインストールが必要。
 </p>
@@ -604,9 +644,9 @@ $ sudo sh /usr/share/doc/libdvdread4/install-css.sh
 </ul>
 </div>
 </div>
-<div id="outline-container-sec-15-2" class="outline-3">
-<h3 id="sec-15-2">vmwareなどでインストールしたときにlocaleに日本語がない場合</h3>
-<div class="outline-text-3" id="text-15-2">
+<div id="outline-container-sec-16-2" class="outline-3">
+<h3 id="sec-16-2">vmwareなどでインストールしたときにlocaleに日本語がない場合</h3>
+<div class="outline-text-3" id="text-16-2">
 <div class="org-src-container">
 
 <pre class="src src-sh">sudo apt-get install language-pack-ja
@@ -615,9 +655,9 @@ sudo dpkg-reconfigure locales
 </div>
 </div>
 </div>
-<div id="outline-container-sec-15-3" class="outline-3">
-<h3 id="sec-15-3">クリップボード履歴</h3>
-<div class="outline-text-3" id="text-15-3">
+<div id="outline-container-sec-16-3" class="outline-3">
+<h3 id="sec-16-3">クリップボード履歴</h3>
+<div class="outline-text-3" id="text-16-3">
 <div class="org-src-container">
 
 <pre class="src src-sh">sudo apt-get install parcellite
@@ -625,9 +665,9 @@ sudo dpkg-reconfigure locales
 </div>
 </div>
 </div>
-<div id="outline-container-sec-15-4" class="outline-3">
-<h3 id="sec-15-4">スクリーンショット</h3>
-<div class="outline-text-3" id="text-15-4">
+<div id="outline-container-sec-16-4" class="outline-3">
+<h3 id="sec-16-4">スクリーンショット</h3>
+<div class="outline-text-3" id="text-16-4">
 <p>
 Ubuntuでは標準でスクリーンショットがあって、PrintScrキーを押下するだけでアクティブウィンドウが
 png形式でキャプチャされる。
@@ -646,9 +686,9 @@ png形式でキャプチャされる。
 </div>
 </div>
 </div>
-<div id="outline-container-sec-16" class="outline-2">
-<h2 id="sec-16">日本語IMEについて</h2>
-<div class="outline-text-2" id="text-16">
+<div id="outline-container-sec-17" class="outline-2">
+<h2 id="sec-17">日本語IMEについて</h2>
+<div class="outline-text-2" id="text-17">
 <p>
 Linuxは、日本語入力には３つのソフトウェアが必要。
 </p>
@@ -778,13 +818,13 @@ Linuxは、日本語入力には３つのソフトウェアが必要。
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/06/14_tmux.html">tmux操作中に操作できなくなった</a></li> <li><a href="../../../article/2013/06/14_helm.html">helmのファイル一覧でパスを表示する</a></li> <li><a href="../../../article/2013/06/14_rss.html">RSSの種類まとめ</a></li> <li><a href="../../../article/2013/06/14_cygwingit-statusmodified.html">cygwin上でgit statusすると変更してないのにmodified表示されてしまう</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> 
+		<li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> <li><a href="../../../article/2013/05/03_git.html">git プロトコルについて</a></li> <li><a href="../../../article/2013/05/03_windowsxpclojure.html">windowsXPでclojureが起動しない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 95.56%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 134.44%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 122.78%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 196.67%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 95.56%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 99.44%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rss.html">rss</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 107.22%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 203.53%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 108.82%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>

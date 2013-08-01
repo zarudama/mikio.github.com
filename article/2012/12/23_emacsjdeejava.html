@@ -32,15 +32,15 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
-<li><a href="../../../article/2013/06/14_tmux.html">tmux操作中に操作できなくなった</a>
-</li>
-<li><a href="../../../article/2013/06/14_helm.html">helmのファイル一覧でパスを表示する</a>
-</li>
-<li><a href="../../../article/2013/06/14_rss.html">RSSの種類まとめ</a>
-</li>
-<li><a href="../../../article/2013/06/14_cygwingit-statusmodified.html">cygwin上でgit statusすると変更してないのにmodified表示されてしまう</a>
-</li>
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
+</li>
+<li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
+</li>
+<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
+</li>
+<li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a>
+</li>
+<li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a>
 </li>
 </ul>
 </li>
@@ -81,8 +81,32 @@
 </p>
 
 <div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1">はじめに</h2>
+<h2 id="sec-1">追記(2013/08/01)</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+いつの間にか本家JDEEがCEDET2.0に対応していました。
+emacs24.3にはCEDET2.0が最初から導入されているため、CEDETを別途導入する必要はなくなります。
+これによりJDEEの導入がグッっと簡単になりました。
+</p>
+
+<p>
+そこで最新のemacs24.3対応ということでもう一度記事の内容を整理しました。
+特に理由のない限り、最新のemacsとJDEEを利用するのが良いかと思います。
+</p>
+
+<p>
+また嬉しいことにJDEE(に代わるJavaの開発環境)の開発(議論)がスタートしているみたいです。
+今後に期待しましょう。
+</p>
+<ul class="org-ul">
+<li><a href="http://sourceforge.net/mailarchive/message.php?msg_id=30783951">http://sourceforge.net/mailarchive/message.php?msg_id=30783951</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">はじめに</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Java開発といえばEclipse一択なこの時代、どれだけ需要があるかわかりませんが、
 Emacs中毒な皆さんはできればEclipseなんか使いたくないですよね？
@@ -166,28 +190,22 @@ JDEEは「BeanShell(JavaInterpreter) + 大作Elisp拡張」という、
 </p>
 </div>
 </div>
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2">必要なもの</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">必要なもの</h2>
+<div class="outline-text-2" id="text-3">
 <p>
 JDEEのビルドには下記のものが必要になります。
 </p>
 <dl class="org-dl">
-<dt> emacs24.2 </dt><dd>emacsは執筆時点の最新のemacs24.2を使用しています。
+<dt> emacs24.3 </dt><dd>emacsは執筆時点の最新のemacs24.3を使用しています。
 </dd>
 
-<dt> <a href="http://jdee.sourceforge.net/">JDEE-2.4.1</a> </dt><dd>githubに <a href="https://github.com/emacsmirror/jdee/">ミラー</a> がありますのでそちらを利用します。
+<dt> <a href="http://jdee.sourceforge.net/">JDEE-2.4.2</a> </dt><dd>githubに <a href="https://github.com/emacsmirror/jdee/">ミラー</a> がありますのでそちらを利用します。
 </dd>
 
-<dt> <a href="http://cedet.sourceforge.net/">CEDET 1.1</a> </dt><dd>CEDETは、emacs24に同梱されているのですが(Version:1.0pre7)、
+<dt> <a href="http://cedet.sourceforge.net/">CEDET</a> </dt><dd>CEDETは、24.3同梱のものを使用するので別途用意する必要はありません。
 </dd>
-</dl>
-<p>
-JDEEが動作しないので別途インストールします。
-ただし、特定のtarでないとうまく動作しません。後述します。
-</p>
 
-<dl class="org-dl">
 <dt> <a href="http://sourceforge.net/projects/ant-contrib/files/ant-contrib/ant-contrib-0.6/">ant-contrib-0.6</a> </dt><dd>ant-contribは、
 </dd>
 </dl>
@@ -209,8 +227,6 @@ ant側のライブラリとしてビルド時に必要です。
 
 <pre class="src src-sh">~/site-lisp
   |
-  +- cedet-1.1
-  |
   +- jdee
 </pre>
 </div>
@@ -221,61 +237,13 @@ ant側のライブラリとしてビルド時に必要です。
 </p>
 </div>
 </div>
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3">CEDETのビルド</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-まずは、JDEEが依存しているパッケージCEDETを導入します。
-最新のスナップショット(tarボール)や、リポジトリから取得したCEDETだとうまくいかないので、
-必ず下記から取得したCEDETを使用して下さい。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
-</p>
-<ul class="org-ul">
-<li><a href="http://jdee.sourceforge.net/">http://jdee.sourceforge.net/</a> を開く
-</li>
-<li>左メニューの[Downloading the JDEE] リンクをクリック
-</li>
-<li>上部の[project download area]リンクをクリック
-</li>
-<li>[Download cedet-1.1.tar.gz (2.2 MB)]リンクをクリックしてダウンロード
-</li>
-</ul>
-
-<p>
-ダウンロードした <code>cedet-1.1.tar.gz</code> を <code>~/site-lisp</code> にcedet-1.1として展開しておきます。
-</p>
-
-<p>
-続いてビルドします。Make環境がある場合は、普通にmakeして下さい。
-一発目は生成ファイルの順番の関係で失敗することがあるので、
-そんな時はもう一度makeして下さい。Makeには結構時間がかかります。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ cd cedet-1.1
-$ make
-</pre>
-</div>
-
-<p>
-Windowsな人やMake環境がない場合は、下記のようにemacs本体を使用してビルドしてください。
-詳細は、cedet-build.el本体のヘッダにコメントとして記述されています。
-emacsでビルドする場合、途中でディレクトリ作成のYes/Noの入力を求められるので離席しないほうが良いです。
-</p>
-
-<div class="org-src-container">
-
-<pre class="src src-sh">$ cd cedet-1.1
-$ C:/Users/mikio/apps/emacs-24.2/bin/runemacs.exe -Q -l cedet-build.el -f cedet-build
-</pre>
-</div>
-</div>
-</div>
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4">JDEEのビルド</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 ビルドには <a href="http://sourceforge.net/projects/ant-contrib/files/ant-contrib/ant-contrib-0.6/">ant-contrib-0.6</a> が必要です。ant-contrib-0.6.zipを展開してできた
  <code>ant-contrib-0.6.jar</code> を <code>~/.ant/lib/</code> ディレクトリに配置しておいてください。
+ここでは、~/srcにソースファイル群を展開し、~/site-lisp/jdeeにインストールすことにします。
 </p>
 
 <p>
@@ -283,13 +251,13 @@ $ C:/Users/mikio/apps/emacs-24.2/bin/runemacs.exe -Q -l cedet-build.el -f cedet-
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ cd ~/site-lisp/
+<pre class="src src-sh">$ cd ~/src
 $ git clone https://github.com/emacsmirror/jdee.git
 </pre>
 </div>
 
 <p>
-jdeeディレクトリに入り、1度だけantを実行してbuild.propertiesを生成します。
+jdeeディレクトリに入り <code>ant confugre</code> を実行してbuild.propertiesを生成します。
 </p>
 <div class="org-src-container">
 
@@ -303,10 +271,11 @@ build.propertiesを編集します。 <code>cedet.dir</code>, <code>build.bin.em
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">elib.dir=
-prefix.dir=
-cedet.dir=c:/Users/mikio/site-lisp/cedet-1.1
-build.bin.emacs=C:/Users/mikio/apps/emacs-24.2/bin/runemacs.exe
+<pre class="src src-sh"><span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#32118;&#23550;&#12497;&#12473;&#12391;&#35352;&#36848;&#12377;&#12427;&#12371;&#12392;</span>
+elib.dir=
+prefix.dir=C:/Users/mikio/Dropbox/site-lisp/jdee
+cedet.dir=
+build.bin.emacs=c:/Users/mikio/apps/emacs-24.3/bin/runemacs.exe
 </pre>
 </div>
 
@@ -320,7 +289,16 @@ build.bin.emacs=C:/Users/mikio/apps/emacs-24.2/bin/runemacs.exe
 </div>
 
 <p>
-以上で、ビルドが完了です。
+最後に <code>prefix.dir</code> で定義したディレクトリにインストールします。
+このときインストール先のディレクトリは無くても勝手に作ってくれます。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">ant install
+</pre>
+</div>
+<p>
+以上で完了です。
 </p>
 </div>
 </div>
@@ -332,10 +310,7 @@ CEDETとJDEEのビルドができたら下記の設定を.emacsに加えます�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp"><span style="color: #ff0000;">;; </span><span style="color: #ff0000;">&#8595;&#12392;&#12395;&#12363;&#12367;&#35373;&#23450;&#12501;&#12449;&#12452;&#12523;&#12398;&#26368;&#21021;&#12398;&#12411;&#12358;&#12391;&#35501;&#12415;&#12371;&#12416;</span>
-(load-file <span style="color: #ff00ff;">"~/site-lisp/cedet-1.1/common/cedet.el"</span>) 
-
-(add-to-list 'load-path <span style="color: #ff00ff;">"~/site-lisp/jdee/dist/jdee-2.4.1/lisp"</span>)
+<pre class="src src-emacs-lisp">(add-to-list 'load-path <span style="color: #ff00ff;">"~/site-lisp/jdee/lisp"</span>)
 (load <span style="color: #ff00ff;">"jde-autoload"</span>)
 
 (<span style="color: #ffff00;">defun</span> <span style="color: #0000ff; font-weight: bold;">my-jde-mode-hook</span> ()
@@ -355,28 +330,6 @@ CEDETとJDEEのビルドができたら下記の設定を.emacsに加えます�
 (add-hook 'jde-mode-hook 'my-jde-mode-hook)
 </pre>
 </div>
-<p>
-ポイントは、CEDETを読み込む順番です。CEDETはEmacsに標準で組み込まれているため、
-できるだけ早く読み込まないと、組み込み側が有効になってしまい、自分でビルドしたほうが有効になりません。
-</p>
-
-<p>
-CEDETが正しく読みこまれたかどうかは <code>M-x cedet-version</code> で確認できます。
-</p>
-<pre class="example">
-CEDET Version:  1.1
-                Requested   File        Loaded
-  Package       Version     Version     Version
-  ----------------------------------------------------------
-  cedet:          1.1     ok      ok
-  eieio:          1.4     ok      ok
-  semantic:       2.1     ok      ok
-  srecode:        1.1     ok      ok
-  ede:            1.1     ok      ok
-  speedbar:       1.0.4   ok      ok
-  cogre:          1.1     ok      Not Loaded
-  cedet-contrib:  1.1     ok      Not Loaded
-</pre>
 </div>
 </div>
 <div id="outline-container-sec-6" class="outline-2">
@@ -672,7 +625,7 @@ emacserなら当然w3mですよね？ローカルにダウンロードしたAPI�
 ミニバッファに <code>[...]</code> が表示されます。ここで <code>C-i</code> してください。
 候補が一覧表示されます。引数も含めて入力してください。
 適当なところで <code>C-i</code> しながら候補がひとつに絞りこめたところでエンターすれば、
-選んだメソッドを入力できます。これはこれで感動ものですが<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup> 
+選んだメソッドを入力できます。これはこれで感動ものですが<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup> 
 ・・・とっても使いづらいですね。でも安心してください。helm版を作りました。
 </p>
 </div>
@@ -688,7 +641,7 @@ emacserなら当然w3mですよね？ローカルにダウンロードしたAPI�
 </p>
 
 <ul class="org-ul">
-<li><a href="https://github.com/mikio/emacs-helm-jdee-method">helm-jdee-method.el</a>  <sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>
+<li><a href="https://github.com/mikio/emacs-helm-jdee-method">helm-jdee-method.el</a>  <sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>
 </li>
 </ul>
 
@@ -816,7 +769,7 @@ ClassPathさえ正しく設定されてれば、AndroidSDKなんかのAPIも適�
 
 <p>
 また、これらJDEEの基本機能に加えて、私は、AutoComplete, Yasnippet,Gtagsなどを導入しており、
-かなり快適に使えてます<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>flymakeも試したのですが、動作が重いのでいまのところ常用してません。
+かなり快適に使えてます<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>flymakeも試したのですが、動作が重いのでいまのところ常用してません。
 </p>
 </div>
 </div>
@@ -871,6 +824,8 @@ ClassPathさえ正しく設定されてれば、AndroidSDKなんかのAPIも適�
 <ul class="org-ul">
 <li>2013/01/15 <code>jde-lib-directory-names</code> の説明が間違っていたため、修正しました。失礼しました。
 </li>
+<li>2013/08/01 本家JDEEがCEDET2.0に対応したので記事も併せて修正しました。
+</li>
 </ul>
 </div>
 </div>
@@ -879,18 +834,14 @@ ClassPathさえ正しく設定されてれば、AndroidSDKなんかのAPIも適�
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-最新のCEDETも今回ダウンロードするCEDETも同じVer1.1ですが、リポジトリから取得したものは、ディレクトリ構成などが大幅に変わっています。
-</p></div>
-
-<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
 JDEE紹介サイトの多くが、メソッド補完のスクリーンショットにGUIメニュー版を載せていたので、CUIではメソッド補完は使えないものと勘違いしてました。
 </p></div>
 
-<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
 すみません、anything版は作成してません。要望があれば対応するかもです。
 </p></div>
 
-<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
 Yasnippetはnekopさんの定義した <a href="https://github.com/nekop/yasnippet-java-mode">Javaのやつ</a> を利用しています。ありがとうございます。
 </p></div>
 
@@ -974,13 +925,13 @@ Yasnippetはnekopさんの定義した <a href="https://github.com/nekop/yasnipp
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/06/14_tmux.html">tmux操作中に操作できなくなった</a></li> <li><a href="../../../article/2013/06/14_helm.html">helmのファイル一覧でパスを表示する</a></li> <li><a href="../../../article/2013/06/14_rss.html">RSSの種類まとめ</a></li> <li><a href="../../../article/2013/06/14_cygwingit-statusmodified.html">cygwin上でgit statusすると変更してないのにmodified表示されてしまう</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> 
+		<li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> <li><a href="../../../article/2013/05/03_git.html">git プロトコルについて</a></li> <li><a href="../../../article/2013/05/03_windowsxpclojure.html">windowsXPでclojureが起動しない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 95.56%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 134.44%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 122.78%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 196.67%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 95.56%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 115.00%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 99.44%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 103.33%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/rss.html">rss</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 91.67%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 107.22%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 87.78%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 83.89%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 203.53%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 108.82%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>
