@@ -5,7 +5,24 @@
   <link href="http://mikio.github.com/"/>
   <updated>Lisp error in nil: (wrong-type-argument integerp nil)</updated>
   <id>http://mikio.github.com/index.xml</id>
-  <entry><title type="html">clj-webdriverを使用としたらなぜか例外発生</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/05/23_clj-webdriver.html"/><updated>2013-05-23T08:15:00Z</updated><published>2013-05-23T08:15:00Z</published><id>article/2013/05/23_clj-webdriver.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><content type="html">&lt;p&gt;
+  <entry><title type="html">ubuntuでprocessingのショートカットをつくる</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/08/05_ubuntuprocessing.html"/><updated>2013-08-05T08:29:00Z</updated><published>2013-08-05T08:29:00Z</published><id>article/2013/08/05_ubuntuprocessing.html</id><category scheme="/tags/ubuntu.html" term="ubuntu" label="ubuntu"/><category scheme="/tags/processing.html" term="processing" label="processing"/><content type="html">&lt;p&gt;
+Ubuntu&#12399;&#12289;&#26222;&#27573;&#12399;Xmonad&#12434;&#20351;&#12387;&#12390;&#12427;&#12398;&#12391;&#12377;&#12364;&#12289;&#12383;&#12414;&#12395;&#12358;&#12414;&#12367;&#21205;&#12363;&#12394;&#12356;&#12450;&#12503;&#12522;&#12364;&#12354;&#12426;&#12414;&#12377;&#12290;
+Processing&#12418;Xmonad&#19978;&#12391;&#12399;&#12358;&#12414;&#12367;&#21205;&#12363;&#12394;&#12363;&#12387;&#12383;&#12398;&#12391;&#12289;&#12392;&#12426;&#12354;&#12360;&#12378;Unity&#12398;Ubuntu&#12391;&#21205;&#12363;&#12375;&#12390;&#12427;&#12398;&#12391;&#12377;&#12364;&#12289;
+Ubuntu&#29256;&#12398;Processing&#12399;&#12471;&#12455;&#12523;&#12473;&#12463;&#12522;&#12503;&#12488;&#12391;&#36215;&#21205;&#12377;&#12427;&#12398;&#12391;&#12289;&#12381;&#12398;&#12414;&#12414;&#12391;&#12399;&#12521;&#12531;&#12481;&#12515;&#12540;&#12395;&#30331;&#37682;&#12391;&#12365;&#12414;&#12379;&#12435;&#12290;
+&#19979;&#35352;&#12398;&#12424;&#12358;&#12394;*.desktop&#12501;&#12449;&#12452;&#12523;&#12434;&#20316;&#25104;&#12377;&#12427;&#12392;&#12480;&#12502;&#12523;&#12463;&#12522;&#12483;&#12483;&#12463;&#12391;&#36215;&#21205;&#12391;&#12365;&#12289;&#12363;&#12388;&#12521;&#12531;&#12481;&#12515;&#12540;&#12395;&#30331;&#37682;&#12391;&#12365;&#12427;&#12424;&#12358;&#12395;&#12394;&#12426;&#12414;&#12377;&#12290;
+&lt;/p&gt;
+&lt;div class="org-src-container"&gt;
+
+&lt;pre class="src src-sh"&gt;[Desktop Entry]
+&lt;span style="color: #ffff00;"&gt;Type&lt;/span&gt;=Application
+&lt;span style="color: #ffff00;"&gt;Name&lt;/span&gt;=Processing
+&lt;span style="color: #ffff00;"&gt;GenericName&lt;/span&gt;=PDE
+&lt;span style="color: #ffff00;"&gt;Icon&lt;/span&gt;=/home/mikio/opt/processing-2.0.1/lib/icons/pde-48.png
+&lt;span style="color: #ffff00;"&gt;Exec&lt;/span&gt;=/usr/bin/sh /home/mikio/opt/processing-2.0.1/processing
+&lt;span style="color: #ffff00;"&gt;Terminal&lt;/span&gt;=false
+&lt;/pre&gt;
+&lt;/div&gt;
+</content></entry><entry><title type="html">clj-webdriverを使用としたらなぜか例外発生</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/05/23_clj-webdriver.html"/><updated>2013-05-23T08:15:00Z</updated><published>2013-05-23T08:15:00Z</published><id>article/2013/05/23_clj-webdriver.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><category scheme="/tags/clojure.html" term="clojure" label="clojure"/><content type="html">&lt;p&gt;
 &#12405;&#12383;&#12388;&#12398;&#12521;&#12452;&#12502;&#12521;&#12522;&#12364;&#12354;&#12387;&#12383;&#12392;&#12375;&#12390;&#12289;&#12381;&#12398;2&#12388;&#12364;&#20381;&#23384;&#12375;&#12390;&#12427;&#21516;&#12376;&#12521;&#12452;&#12502;&#12521;&#12522;&#12434;&#20351;&#29992;&#12375;&#12390;&#12356;&#12390;&#12289;
 &#12395;&#12418;&#12363;&#12363;&#12431;&#12425;&#12378;&#12496;&#12540;&#12472;&#12519;&#12531;&#12364;&#12381;&#12428;&#12382;&#12428;&#36949;&#12358;&#22580;&#21512;&#12358;&#12414;&#12367;&#21205;&#12363;&#12394;&#12356;&#12424;&#12387;&#12390;&#35441;&#12290;
 &lt;/p&gt;
@@ -870,113 +887,5 @@ vim&#12398;neobundle&#12434;&#35430;&#12375;&#12390;&#12415;&#12390;&#12356;&#12
 &lt;p&gt;
 &#20170;&#12414;&#12391;el-get&#12434;&#25964;&#36960;&#12375;&#12390;&#12365;&#12383;&#12369;&#12393;&#12371;&#12428;&#12391;&#24489;&#27963;&#12373;&#12379;&#12390;&#12418;&#12356;&#12356;&#12363;&#12418;&#12375;&#12428;&#12394;&#12356;&#12290;
 &lt;/p&gt;
-</content></entry><entry><title type="html">windowsXPでclojureが起動しない</title><author><name>nil</name></author><link href="http://mikio.github.com//article/2013/05/03_windowsxpclojure.html"/><updated>2013-05-03T08:35:00Z</updated><published>2013-05-03T08:35:00Z</published><id>article/2013/05/03_windowsxpclojure.html</id><category scheme="/tags/hamari.html" term="hamari" label="hamari"/><content type="html">
-
-&lt;div id="outline-container-sec-1" class="outline-2"&gt;
-&lt;h2 id="sec-1"&gt;&#30151;&#29366;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-1"&gt;
-&lt;p&gt;
-windows&#29872;&#22659;&#12391;&#12289;repl&#12364;&#36215;&#21205;&#12391;&#12365;&#12394;&#12356;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-2" class="outline-2"&gt;
-&lt;h2 id="sec-2"&gt;&#32080;&#35542;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-2"&gt;
-&lt;p&gt;
- &lt;code&gt;~/.lein/profiles.clj&lt;/code&gt; &#12395; &lt;code&gt;file.separator=/&lt;/code&gt; &#12375;&#12390;&#12383;&#12398;&#12364;&#21407;&#22240;&#12290;
-&#12371;&#12398;&#12379;&#12356;&#12391;&#12289;clojure&#12408;&#12398;&#12463;&#12521;&#12473;&#12497;&#12473;&#12364;&#36890;&#12387;&#12390;&#12356;&#12394;&#12363;&#12387;&#12383;&#12290;
-&#25955;&#12293;&#33510;&#21172;&#12375;&#12383;&#26411;&#12364;&#12371;&#12435;&#12394;&#12458;&#12481;&#12392;&#12399;&#12290;&#12290;&#12290;
-&#22810;&#20998;ritz&#12434;&#21205;&#12363;&#12381;&#12358;&#12392;&#12356;&#12429;&#12356;&#12429;&#35430;&#34892;&#37679;&#35492;&#12375;&#12383;&#38555;&#12289;&#12418;&#12392;&#12395;&#25147;&#12377;&#12398;&#12434;&#24536;&#12428;&#12390;&#12356;&#12383;&#12435;&#12384;&#12429;&#12358;&#12392;&#24605;&#12358;&#12290;
-&lt;/p&gt;
-&lt;div class="org-src-container"&gt;
-
-&lt;pre class="src src-clojure"&gt;&lt;span style="color: #ffff00;"&gt;:jvm-opts&lt;/span&gt; [
-          &lt;span style="color: #ff00ff;"&gt;"-Duser.language=en"&lt;/span&gt;
-          &lt;span style="color: #ff0000;"&gt;;;&lt;/span&gt;&lt;span style="color: #ff0000;"&gt;"-Dfile.separator=/"&lt;/span&gt;
-          &lt;span style="color: #ff00ff;"&gt;"-Duser.home=c:\\Users\\mikio"&lt;/span&gt;
-           ]
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div id="outline-container-sec-3" class="outline-2"&gt;
-&lt;h2 id="sec-3"&gt;&#32076;&#36942;&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-3"&gt;
-&lt;div class="org-src-container"&gt;
-
-&lt;pre class="src src-sh"&gt;C:\Documents and Settings\mikio&amp;gt;cd dev/sample
-
-C:\Documents and Settings\mikio\dev\sample&amp;gt;lein repl
-Error: Could not find or load main class clojure.main
-Exception&lt;span style="color: #ffff00;"&gt; in&lt;/span&gt; thread &lt;span style="color: #ff00ff;"&gt;"Thread-1"&lt;/span&gt; clojure.lang.ExceptionInfo: Subprocess failed {:e
-xit-code 1}
-        at clojure.core$&lt;span style="color: #ffff00;"&gt;ex_info&lt;/span&gt;.invoke(core.clj:4327)
-        at leiningen.core.eval$&lt;span style="color: #ffff00;"&gt;fn__2654&lt;/span&gt;.invoke(eval.clj:213)
-        at clojure.lang.MultiFn.invoke(MultiFn.java:231)
-        at leiningen.core.eval$&lt;span style="color: #ffff00;"&gt;eval_in_project&lt;/span&gt;.invoke(eval.clj:283)
-        at leiningen.repl$&lt;span style="color: #ffff00;"&gt;start_server&lt;/span&gt;.invoke(repl.clj:117)
-        at leiningen.repl$&lt;span style="color: #ffff00;"&gt;server&lt;/span&gt;$&lt;span style="color: #ffff00;"&gt;fn__6110&lt;/span&gt;.invoke(repl.clj:173)
-        at clojure.lang.AFn.applyToHelper(AFn.java:159)
-        at clojure.lang.AFn.applyTo(AFn.java:151)
-        at clojure.core$&lt;span style="color: #ffff00;"&gt;apply&lt;/span&gt;.invoke(core.clj:617)
-        at clojure.core$&lt;span style="color: #ffff00;"&gt;with_bindings_STAR_&lt;/span&gt;.doInvoke(core.clj:1788)
-        at clojure.lang.RestFn.invoke(RestFn.java:425)
-        at clojure.lang.AFn.applyToHelper(AFn.java:163)
-        at clojure.lang.RestFn.applyTo(RestFn.java:132)
-        at clojure.core$&lt;span style="color: #ffff00;"&gt;apply&lt;/span&gt;.invoke(core.clj:621)
-        at clojure.core$&lt;span style="color: #ffff00;"&gt;bound_fn_STAR_&lt;/span&gt;$&lt;span style="color: #ffff00;"&gt;fn__4102&lt;/span&gt;.doInvoke(core.clj:1810)
-        at clojure.lang.RestFn.invoke(RestFn.java:397)
-        at clojure.lang.AFn.run(AFn.java:24)
-        at java.lang.Thread.run(Thread.java:722)
-&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;
-classpath&#12434;&#30906;&#35469;&#12375;&#12390;&#12415;&#12427;&#12290;
-&lt;/p&gt;
-&lt;div class="org-src-container"&gt;
-
-&lt;pre class="src src-sh"&gt;C:\Documents and Settings\mikio\dev\sample\test;C:\Documents and Settings\m-oon
-o\dev\sample\src;C:\Documents and Settings\mikio\dev\sample\dev-resources;C:\Do
-cuments and Settings\mikio\dev\sample\resources;C:\Documents and Settings\m-oon
-o\dev\sample\target\classes;C:\Documents and Settings\mikio&lt;span style="color: #ff00ff;"&gt;\.&lt;/span&gt;m2\repository\org&lt;span style="color: #ff00ff;"&gt;\&lt;/span&gt;
-clojure\clojure\1.5.1\clojure-1.5.1.jar
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;
-clojure-1.5.1.jar&#12408;&#12497;&#12473;&#12364;&#31354;&#30333;&#12434;&#21547;&#12416;&#12418;&#12398;&#12395;&#12394;&#12387;&#12390;&#12356;&#12427;&#12398;&#12364;&#24618;&#12375;&#12356;&#12290;
-&lt;/p&gt;
-
-&lt;p&gt;
-&#35430;&#12375;&#12395;lein&#32076;&#30001;&#12391;&#12399;&#12394;&#12367;&#12289;&#30452;&#25509;&#36215;&#21205;&#12375;&#12390;&#12415;&#12383;&#12290;
-&lt;/p&gt;
-&lt;div class="org-src-container"&gt;
-
-&lt;pre class="src src-sh"&gt;C:\Documents and Settings\mikio&amp;gt;java -cp C:\Documents and Settings\mikio&lt;span style="color: #ff00ff;"&gt;\.&lt;/span&gt;m2\r
-epository\org\clojure\clojure\1.4.0\clojure-1.4.0.jar clojure.main
-&amp;#12456;&amp;#12521;&amp;#12540;: &amp;#12513;&amp;#12452;&amp;#12531;&amp;#12539;&amp;#12463;&amp;#12521;&amp;#12473;and&amp;#12364;&amp;#35211;&amp;#12388;&amp;#12363;&amp;#12425;&amp;#12394;&amp;#12363;&amp;#12387;&amp;#12383;&amp;#12363;&amp;#12525;&amp;#12540;&amp;#12489;&amp;#12391;&amp;#12365;&amp;#12414;&amp;#12379;&amp;#12435;&amp;#12391;&amp;#12375;&amp;#12383;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;
-&#12513;&#12483;&#12475;&#12540;&#12472;&#12364;&#26085;&#26412;&#35486;&#12384;&#12369;&#12393;&#20869;&#23481;&#12399;&#21516;&#12376;&#12384;!
-&#12463;&#12521;&#12473;&#12497;&#12473;&#12434;&#12480;&#12502;&#12523;&#12463;&#12458;&#12540;&#12486;&#12540;&#12471;&#12519;&#12531;&#12391;&#22258;&#12387;&#12390;&#12415;&#12383;&#12290;
-&lt;/p&gt;
-&lt;div class="org-src-container"&gt;
-
-&lt;pre class="src src-sh"&gt;C:\Documents and Settings\mikio&amp;gt;java -cp &lt;span style="color: #ff00ff;"&gt;"C:\Documents and Settings\mikio\.m2\&lt;/span&gt;
-&lt;span style="color: #ff00ff;"&gt;repository\org\clojure\clojure\1.4.0\clojure-1.4.0.jar"&lt;/span&gt; clojure.main
-Clojure 1.4.0
-&lt;span style="color: #ffff00;"&gt;user&lt;/span&gt;=&amp;gt;
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;
-&#12499;&#12531;&#12468;!&#12387;&#12390;&#12371;&#12392;&#12399;&#12289;&#12497;&#12473;&#12395;&#31354;&#30333;&#12364;&#12354;&#12427;&#12363;&#12425;&#39364;&#30446;&#12384;&#12387;&#12383;&#12435;&#12384;&#12290;
-&#20170;&#12414;&#12391;&#12399;&#22823;&#19976;&#22827;&#12384;&#12387;&#12383;&#12398;&#12395;&#20309;&#25925;&#12384;&#12429;&#12358;&#12290;
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </content></entry>
 </feed>

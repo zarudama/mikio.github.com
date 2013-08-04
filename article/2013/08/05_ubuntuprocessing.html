@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
-    <title>lessとは</title>
+    <title>ubuntuでprocessingのショートカットをつくる</title>
     <link rel="stylesheet" type="text/css" href="../../../style/less/o-blog.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="generator" content="o-blog version 1.2-121-g9cff278"/>
@@ -63,7 +63,7 @@
       <div class="container">
 	    <ul class="breadcrumb">
   <li><a href="../../../index.html">Home</a> <span class="divider">/</span></li>
-  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2012/index.html">2012</a> <span class="divider">/</span></li><li><a href="../../../article/2012/01/index.html">01</a> <span class="divider">/</span></li><li>lessとは</li>
+  <li><a href="../../../article/index.html">Article</a> <span class="divider">/</span></li><li><a href="../../../article/2013/index.html">2013</a> <span class="divider">/</span></li><li><a href="../../../article/2013/08/index.html">08</a> <span class="divider">/</span></li><li>ubuntuでprocessingのショートカットをつくる</li>
   </ul>
 
       </div>
@@ -72,24 +72,27 @@
 
   <div class="article">
   <header class="article-header">
-	<h1 class=" style="font-size: 250%">lessとは</h1>
-    <div class="postdate">Posted on <time datetime="2012-01-18T08:16:00Z"> 水曜日 1月, 18 2012 at 08:16:00</time>.</div>
+	<h1 class=" style="font-size: 250%">ubuntuでprocessingのショートカットをつくる</h1>
+    <div class="postdate">Posted on <time datetime="2013-08-05T08:29:00Z"> 月曜日 8月, 05 2013 at 08:29:00</time>.</div>
   </header>
   <div class="article-content">
     <p>
-jekyllや <a href="http://renard.github.com/o-blog/">o-blog</a> を使っていたら、lessというものがでてきた。どうもcssの代わりになるもののようだが、なにものかわからなった。
+Ubuntuは、普段はXmonadを使ってるのですが、たまにうまく動かないアプリがあります。
+ProcessingもXmonad上ではうまく動かなかったので、とりあえずUnityのUbuntuで動かしてるのですが、
+Ubuntu版のProcessingはシェルスクリプトで起動するので、そのままではランチャーに登録できません。
+下記のような*.desktopファイルを作成するとダブルクリッックで起動でき、かつランチャーに登録できるようになります。
 </p>
+<div class="org-src-container">
 
-<p>
-簡単にいうとlessとは、変数の使えるcssのようだ。less.jsを使用して、cssを適用していくようである。
-</p>
-<ul class="org-ul">
-<li><a href="http://ascii.jp/elem/000/000/668/668205/">http://ascii.jp/elem/000/000/668/668205/</a>
-</li>
-</ul>
-
-<p>
-また、less.jsを使いたくない場合、.lessを.cssに変換するコンパイラもあるらしい。</p>
+<pre class="src src-sh">[Desktop Entry]
+<span style="color: #ffff00;">Type</span>=Application
+<span style="color: #ffff00;">Name</span>=Processing
+<span style="color: #ffff00;">GenericName</span>=PDE
+<span style="color: #ffff00;">Icon</span>=/home/mikio/opt/processing-2.0.1/lib/icons/pde-48.png
+<span style="color: #ffff00;">Exec</span>=/usr/bin/sh /home/mikio/opt/processing-2.0.1/processing
+<span style="color: #ffff00;">Terminal</span>=false
+</pre>
+</div>
 
   </div>
   
@@ -97,12 +100,12 @@ jekyllや <a href="http://renard.github.com/o-blog/">o-blog</a> を使ってい�
     <nav class="tag-cloud">
       <h1><i class="icon-tags"></i> related tags</h1>
       <ul>
-	<li class="label label-inverse small"><a href="../../../tags/tips.html">tips</a></li>
+	<li class="label label-inverse small"><a href="../../../tags/ubuntu.html">ubuntu</a></li><li class="label label-inverse small"><a href="../../../tags/processing.html">processing</a></li>
       </ul>
     </nav>
       <nav>
 	<ul class="pager">
-	  <li class="previous"><a href="../../../article/2011/11/09_clojure1.html"><i class="icon-chevron-left"></i>&nbsp;Clojureでゲームプログラミングその1 実験編</a></li><li class="next" style="text-align: right;"><a href="../../../article/2012/01/18_.html">$(ドル)丸括弧（カッコ）&nbsp;<i class="icon-chevron-right"></i></a></li>
+	  <li class="previous"><a href="../../../article/2013/05/23_clj-webdriver.html"><i class="icon-chevron-left"></i>&nbsp;clj-webdriverを使用としたらなぜか例外発生</a></li><li class="next">&nbsp;</li>
 	</ul>
       </nav>
 
