@@ -131,7 +131,7 @@ PDEのおかげで、javaのパスとかメインクラスの作成とか面倒�
 <h3 id="sec-1-2">インストールが超簡単。</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
-ダウンロードして展開するだけです。JDEとかは内蔵されているので別途インストールする必要がありません。
+ダウンロードして展開するだけです。Java実行環境は同梱されてるので別途インストールする必要がありません。
 </p>
 </div>
 </div>
@@ -174,11 +174,13 @@ Processingするにはxmonadの設定ファイルを修正する必要があり�
 </p>
 
 <p>
-<code>~/.xmonad/xmonad.hs</code> ファイルのlogHookを下記のように <code>takeTopFocus</code> に置き換えます。
+<code>~/.xmonad/xmonad.hs</code> ファイルのlogHookを下記のように <code>XMonad.Hooks.ICCCMFocus</code> をインポートして、
+logHook の右辺を <code>takeTopFocus</code> に置き換えます。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"> :
+<pre class="src src-sh">import XMonad.Hooks.ICCCMFocus
+ :
 main = do
  :
 xmonad $ defaultConfig 
