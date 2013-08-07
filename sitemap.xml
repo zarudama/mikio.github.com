@@ -9,56 +9,63 @@
   
   <url>
     <loc>http://mikio.github.com//index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+<url>
+    <loc>http://mikio.github.com//article/2013/08/07_ubuntuxmonademacsprocessing/index.html</loc>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2013/05/03_windowsemacs243/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2000/12/23_emacsjdeejava242/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/12/23_emacsjdeejava/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/09_skk/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2012/04/04_emacs/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
 <url>
     <loc>http://mikio.github.com//article/2011/11/09_clojure1/index.html</loc>
-    <lastmod>2013-08-05T08:35:00Z</lastmod>
+    <lastmod>2013-08-07T13:35:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -66,6 +73,12 @@
 
 
   <url>
+    <loc>http://mikio.github.com//article/2013/08/07_ubuntuxmonademacsprocessing.html</loc>
+    <lastmod>2013-08-07T12:56:00Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+<url>
     <loc>http://mikio.github.com//article/2013/08/05_ubuntuprocessing.html</loc>
     <lastmod>2013-08-05T08:29:00Z</lastmod>
     <changefreq>weekly</changefreq>
