@@ -32,6 +32,8 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
+<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a>
+</li>
 <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a>
 </li>
 <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a>
@@ -39,8 +41,6 @@
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
 </li>
 <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
-</li>
-<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
 </li>
 </ul>
 </li>
@@ -113,8 +113,8 @@ CUIでtmuxを操作してるときの一覧できる快適さをGUIに求めた�
 <div class="org-src-container">
 
 <pre class="src src-sh">$ sudo apt-get install xmonad
-$ sudo apt-get install dmenu  <span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#12461;&#12540;&#12508;&#12540;&#12489;&#12521;&#12531;&#12481;&#12515;&#12540;</span>
-$ sudo apt-get install xmobar <span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#12473;&#12486;&#12540;&#12479;&#12473;&#12496;&#12540;</span>
+$ sudo apt-get install dmenu  <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#12461;&#12540;&#12508;&#12540;&#12489;&#12521;&#12531;&#12481;&#12515;&#12540;</span>
+$ sudo apt-get install xmobar <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#12473;&#12486;&#12540;&#12479;&#12473;&#12496;&#12540;</span>
 </pre>
 </div>
 
@@ -123,23 +123,23 @@ xmorbar用の設定ファイル( <code>~/.xmobarrc</code> )を作成する。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-haskell"><span style="color: #ff0000;">-- </span><span style="color: #ff0000;">-*- mode:haskell -*-</span>
-<span style="color: #00ff00;">Config</span> { font <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"xft:Sans-9:bold"</span>
-       , bgColor <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"black"</span>
-       , fgColor <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"grey"</span>
-       , position <span style="color: #ffff00;">=</span> <span style="color: #00ff00;">Top</span>
-       , lowerOnStart <span style="color: #ffff00;">=</span> <span style="color: #00ff00;">False</span>
-       , commands <span style="color: #ffff00;">=</span> [ <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Network</span> <span style="color: #ff00ff;">"eth0"</span> [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"0"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"32"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
-                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Cpu</span> [<span style="color: #ff00ff;">"-L"</span>,<span style="color: #ff00ff;">"3"</span>,<span style="color: #ff00ff;">"-H"</span>,<span style="color: #ff00ff;">"50"</span>,<span style="color: #ff00ff;">"--normal"</span>,<span style="color: #ff00ff;">"green"</span>,<span style="color: #ff00ff;">"--high"</span>,<span style="color: #ff00ff;">"red"</span>] 10
-                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Memory</span> [<span style="color: #ff00ff;">"-t"</span>,<span style="color: #ff00ff;">"Mem: &lt;usedratio&gt;%"</span>] 10
-                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Swap</span> <span style="color: #00ff00;">[]</span> 10
-                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Battery</span> <span style="color: #00ff00;">[]</span> 600
-                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Com</span> <span style="color: #ff00ff;">"lsb_release"</span> [<span style="color: #ff00ff;">"-s"</span>,<span style="color: #ff00ff;">"-d"</span>] <span style="color: #ff00ff;">""</span> 36000
-                    , <span style="color: #00ff00;">Run</span> <span style="color: #00ff00;">Date</span> <span style="color: #ff00ff;">"%Y %b %_d(%a) %H:%M:%S"</span> <span style="color: #ff00ff;">"date"</span> 10
+<pre class="src src-haskell"><span style="color: #ff7f24;">-- </span><span style="color: #ff7f24;">-*- mode:haskell -*-</span>
+<span style="color: #98fb98;">Config</span> { font <span style="color: #eedd82;">=</span> <span style="color: #ffa07a;">"xft:Sans-9:bold"</span>
+       , bgColor <span style="color: #eedd82;">=</span> <span style="color: #ffa07a;">"black"</span>
+       , fgColor <span style="color: #eedd82;">=</span> <span style="color: #ffa07a;">"grey"</span>
+       , position <span style="color: #eedd82;">=</span> <span style="color: #98fb98;">Top</span>
+       , lowerOnStart <span style="color: #eedd82;">=</span> <span style="color: #98fb98;">False</span>
+       , commands <span style="color: #eedd82;">=</span> [ <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Network</span> <span style="color: #ffa07a;">"eth0"</span> [<span style="color: #ffa07a;">"-L"</span>,<span style="color: #ffa07a;">"0"</span>,<span style="color: #ffa07a;">"-H"</span>,<span style="color: #ffa07a;">"32"</span>,<span style="color: #ffa07a;">"--normal"</span>,<span style="color: #ffa07a;">"green"</span>,<span style="color: #ffa07a;">"--high"</span>,<span style="color: #ffa07a;">"red"</span>] 10
+                    , <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Cpu</span> [<span style="color: #ffa07a;">"-L"</span>,<span style="color: #ffa07a;">"3"</span>,<span style="color: #ffa07a;">"-H"</span>,<span style="color: #ffa07a;">"50"</span>,<span style="color: #ffa07a;">"--normal"</span>,<span style="color: #ffa07a;">"green"</span>,<span style="color: #ffa07a;">"--high"</span>,<span style="color: #ffa07a;">"red"</span>] 10
+                    , <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Memory</span> [<span style="color: #ffa07a;">"-t"</span>,<span style="color: #ffa07a;">"Mem: &lt;usedratio&gt;%"</span>] 10
+                    , <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Swap</span> <span style="color: #98fb98;">[]</span> 10
+                    , <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Battery</span> <span style="color: #98fb98;">[]</span> 600
+                    , <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Com</span> <span style="color: #ffa07a;">"lsb_release"</span> [<span style="color: #ffa07a;">"-s"</span>,<span style="color: #ffa07a;">"-d"</span>] <span style="color: #ffa07a;">""</span> 36000
+                    , <span style="color: #98fb98;">Run</span> <span style="color: #98fb98;">Date</span> <span style="color: #ffa07a;">"%Y %b %_d(%a) %H:%M:%S"</span> <span style="color: #ffa07a;">"date"</span> 10
                     ]
-       , sepChar <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"%"</span>
-       , alignSep <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"}{"</span>
-       , template <span style="color: #ffff00;">=</span> <span style="color: #ff00ff;">"&lt;fc=#ee9a00&gt;%lsb_release%&lt;/fc&gt; | %cpu% | %memory% %swap% | %eth0% | %battery% }{ %date%"</span>
+       , sepChar <span style="color: #eedd82;">=</span> <span style="color: #ffa07a;">"%"</span>
+       , alignSep <span style="color: #eedd82;">=</span> <span style="color: #ffa07a;">"}{"</span>
+       , template <span style="color: #eedd82;">=</span> <span style="color: #ffa07a;">"&lt;fc=#ee9a00&gt;%lsb_release%&lt;/fc&gt; | %cpu% | %memory% %swap% | %eth0% | %battery% }{ %date%"</span>
        }
 </pre>
 </div>
@@ -149,27 +149,27 @@ xmorbar用の設定ファイル( <code>~/.xmobarrc</code> )を作成する。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-haskell"><span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad</span>
-<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Hooks.DynamicLog</span>
-<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Hooks.ManageDocks</span>
-<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Util.Run</span>(spawnPipe)
-<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">XMonad.Util.EZConfig</span>(additionalKeys)
-<span style="color: #ffff00;">import</span> <span style="color: #00ff00;">System.IO</span>
+<pre class="src src-haskell"><span style="color: #ffff00;">import</span> <span style="color: #98fb98;">XMonad</span>
+<span style="color: #ffff00;">import</span> <span style="color: #98fb98;">XMonad.Hooks.DynamicLog</span>
+<span style="color: #ffff00;">import</span> <span style="color: #98fb98;">XMonad.Hooks.ManageDocks</span>
+<span style="color: #ffff00;">import</span> <span style="color: #98fb98;">XMonad.Util.Run</span>(spawnPipe)
+<span style="color: #ffff00;">import</span> <span style="color: #98fb98;">XMonad.Util.EZConfig</span>(additionalKeys)
+<span style="color: #ffff00;">import</span> <span style="color: #98fb98;">System.IO</span>
 
-<span style="color: #0000ff; font-weight: bold;">main</span> <span style="color: #ffff00;">=</span> <span style="color: #ffff00;">do</span>
-        xmproc <span style="color: #ffff00;">&lt;-</span> spawnPipe <span style="color: #ff00ff;">"/usr/bin/xmobar /home/mikio/.xmobarrc"</span>  <span style="color: #ff0000;">-- </span><span style="color: #ff0000;">.xmoabrrc&#12398;&#12497;&#12473;&#12434;&#35352;&#36848;&#12375;&#12390;&#12362;&#12367;</span>
-        xmonad <span style="color: #ffff00;">$</span> defaultConfig
-             { manageHook <span style="color: #ffff00;">=</span> manageDocks <span style="color: #ffff00;">&lt;+&gt;</span> manageHook defaultConfig
-             , layoutHook <span style="color: #ffff00;">=</span> avoidStruts  <span style="color: #ffff00;">$</span>  layoutHook defaultConfig
-             , logHook <span style="color: #ffff00;">=</span> dynamicLogWithPP <span style="color: #ffff00;">$</span> xmobarPP
-             { ppOutput <span style="color: #ffff00;">=</span> hPutStrLn xmproc
-             , ppTitle <span style="color: #ffff00;">=</span> xmobarColor <span style="color: #ff00ff;">"green"</span> <span style="color: #ff00ff;">""</span> <span style="color: #ffff00;">.</span> shorten 50
+<span style="color: #87cefa;">main</span> <span style="color: #eedd82;">=</span> <span style="color: #ffff00;">do</span>
+        xmproc <span style="color: #eedd82;">&lt;-</span> spawnPipe <span style="color: #ffa07a;">"/usr/bin/xmobar /home/mikio/.xmobarrc"</span>  <span style="color: #ff7f24;">-- </span><span style="color: #ff7f24;">.xmoabrrc&#12398;&#12497;&#12473;&#12434;&#35352;&#36848;&#12375;&#12390;&#12362;&#12367;</span>
+        xmonad <span style="color: #eedd82;">$</span> defaultConfig
+             { manageHook <span style="color: #eedd82;">=</span> manageDocks <span style="color: #eedd82;">&lt;+&gt;</span> manageHook defaultConfig
+             , layoutHook <span style="color: #eedd82;">=</span> avoidStruts  <span style="color: #eedd82;">$</span>  layoutHook defaultConfig
+             , logHook <span style="color: #eedd82;">=</span> dynamicLogWithPP <span style="color: #eedd82;">$</span> xmobarPP
+             { ppOutput <span style="color: #eedd82;">=</span> hPutStrLn xmproc
+             , ppTitle <span style="color: #eedd82;">=</span> xmobarColor <span style="color: #ffa07a;">"green"</span> <span style="color: #ffa07a;">""</span> <span style="color: #eedd82;">.</span> shorten 50
               }
-             , modMask <span style="color: #ffff00;">=</span> mod4Mask     <span style="color: #ff0000;">-- </span><span style="color: #ff0000;">Windows&#12461;&#12540;&#12434;Mod&#12461;&#12540;&#12392;&#12375;&#12390;&#12496;&#12452;&#12531;&#12489;&#12377;&#12427;</span>
-          } <span style="color: #ffff00;">`additionalKeys`</span>
-          [ ((mod4Mask <span style="color: #ffff00;">.|.</span> shiftMask, xK_z), spawn <span style="color: #ff00ff;">"xscreensaver-command -lock"</span>)
-          , ((controlMask, xK_Print), spawn <span style="color: #ff00ff;">"sleep 0.2; scrot -s"</span>)
-          , ((0, xK_Print), spawn <span style="color: #ff00ff;">"scrot"</span>)
+             , modMask <span style="color: #eedd82;">=</span> mod4Mask     <span style="color: #ff7f24;">-- </span><span style="color: #ff7f24;">Windows&#12461;&#12540;&#12434;Mod&#12461;&#12540;&#12392;&#12375;&#12390;&#12496;&#12452;&#12531;&#12489;&#12377;&#12427;</span>
+          } <span style="color: #eedd82;">`additionalKeys`</span>
+          [ ((mod4Mask <span style="color: #eedd82;">.|.</span> shiftMask, xK_z), spawn <span style="color: #ffa07a;">"xscreensaver-command -lock"</span>)
+          , ((controlMask, xK_Print), spawn <span style="color: #ffa07a;">"sleep 0.2; scrot -s"</span>)
+          , ((0, xK_Print), spawn <span style="color: #ffa07a;">"scrot"</span>)
           ]
 </pre>
 </div>
@@ -287,8 +287,8 @@ xmodmapの設定とdropboxの読み込みを設定しています。
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
- {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+ {<span style="color: #b0c4de;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #b0c4de;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 </div>
 
@@ -318,13 +318,13 @@ xmodmapの設定とdropboxの読み込みを設定しています。
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> 
+		<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li> <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>

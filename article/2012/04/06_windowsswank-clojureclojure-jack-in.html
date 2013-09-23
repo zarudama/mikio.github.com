@@ -32,6 +32,8 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
+<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a>
+</li>
 <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a>
 </li>
 <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a>
@@ -39,8 +41,6 @@
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
 </li>
 <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
-</li>
-<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
 </li>
 </ul>
 </li>
@@ -91,18 +91,18 @@
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ diff -u $<span style="color: #ffff00;">HOME</span>/bin/lein.bat.orig $<span style="color: #ffff00;">HOME</span>/bin/lein.bat
+<pre class="src src-sh">$ diff -u $<span style="color: #eedd82;">HOME</span>/bin/lein.bat.orig $<span style="color: #eedd82;">HOME</span>/bin/lein.bat
 --- /cygdrive/c/Users/mikio/bin/lein.bat.orig  2012-04-05 12:59:29.352024000 +0900
 +++ /cygdrive/c/Users/mikio/bin/lein.bat       2012-04-06 13:32:27.537281600 +0900
 @@ -23,7 +23,7 @@
 
- <span style="color: #ffff00;">if</span> <span style="color: #ff00ff;">"x%LEIN_HOME%"</span> == <span style="color: #ff00ff;">"x"</span> (
-     <span style="color: #ffff00;">if</span> exist <span style="color: #ff00ff;">"%CD%\.lein"</span> (
+ <span style="color: #ffff00;">if</span> <span style="color: #ffa07a;">"x%LEIN_HOME%"</span> == <span style="color: #ffa07a;">"x"</span> (
+     <span style="color: #ffff00;">if</span> exist <span style="color: #ffa07a;">"%CD%\.lein"</span> (
 -        if /I NOT %CD%==%USERPROFILE% echo Running<span style="color: #ffff00;"> in</span> bundled mode.
-+        if /I NOT <span style="color: #ff00ff;">"%CD%"</span>==<span style="color: #ff00ff;">"%USERPROFILE%"</span> echo Running<span style="color: #ffff00;"> in</span> bundled mode.
-         <span style="color: #0000ff; font-weight: bold;">set</span> <span style="color: #ffff00;">LEIN_HOME</span>=%CD%<span style="color: #ff00ff;">\.</span>lein
++        if /I NOT <span style="color: #ffa07a;">"%CD%"</span>==<span style="color: #ffa07a;">"%USERPROFILE%"</span> echo Running<span style="color: #ffff00;"> in</span> bundled mode.
+         <span style="color: #b0c4de;">set</span> <span style="color: #eedd82;">LEIN_HOME</span>=%CD%<span style="color: #ffa07a;">\.</span>lein
      ) <span style="color: #ffff00;">else</span> (
-         <span style="color: #0000ff; font-weight: bold;">set</span> <span style="color: #ffff00;">LEIN_HOME</span>=%USERPROFILE%<span style="color: #ff00ff;">\.</span>lein
+         <span style="color: #b0c4de;">set</span> <span style="color: #eedd82;">LEIN_HOME</span>=%USERPROFILE%<span style="color: #ffa07a;">\.</span>lein
 </pre>
 </div>
 </div>
@@ -132,7 +132,7 @@ dosのバッチファイルを読むのは数年ぶりですがとりあえず
 
 <pre class="src src-sh">::@echo off
 
-<span style="color: #0000ff; font-weight: bold;">set</span> <span style="color: #ffff00;">JAVA_OPTS</span>=-Dswank.encoding=utf-8-unix
+<span style="color: #b0c4de;">set</span> <span style="color: #eedd82;">JAVA_OPTS</span>=-Dswank.encoding=utf-8-unix
 </pre>
 </div>
 <p>
@@ -140,9 +140,9 @@ dosのバッチファイルを読むのは数年ぶりですがとりあえず
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">C:\Documents and Settings\mikio&gt;if <span style="color: #ff00ff;">""</span> NEQ <span style="color: #ff00ff;">""</span> cd <span style="color: #ff00ff;">""</span>
+<pre class="src src-sh">C:\Documents and Settings\mikio&gt;if <span style="color: #ffa07a;">""</span> NEQ <span style="color: #ffa07a;">""</span> cd <span style="color: #ffa07a;">""</span>
 and &#12398;&#20351;&#12356;&#26041;&#12364;&#35492;&#12387;&#12390;&#12356;&#12414;&#12377;&#12290;
-C:\Documents and Settings\mikio&gt;        if /I NOT C:\Documents and Settings\<span style="color: #ffff00;">mikio</span>==C:\Documents and Settings\mikio echo Running<span style="color: #ffff00;"> in</span> bundled mode.
+C:\Documents and Settings\mikio&gt;        if /I NOT C:\Documents and Settings\<span style="color: #eedd82;">mikio</span>==C:\Documents and Settings\mikio echo Running<span style="color: #ffff00;"> in</span> bundled mode.
 </pre>
 </div>
 
@@ -166,29 +166,29 @@ clean       Remove compiled class files and jars from project.
 compile     Compile Clojure source into .class files.
 deploy      Build jar and deploy to remote repository.
 deps        Download :dependencies and put them<span style="color: #ffff00;"> in</span> :library-path.
-<span style="color: #0000ff; font-weight: bold;">help</span>        Display a list of tasks or help for a given task.
+<span style="color: #b0c4de;">help</span>        Display a list of tasks or help for a given task.
 install     Install current project or download specified project.
-interactive Enter an interactive task shell. Aliased to <span style="color: #ff00ff;">"int"</span>.
+interactive Enter an interactive task shell. Aliased to <span style="color: #ffa07a;">"int"</span>.
 jack-in     Jack<span style="color: #ffff00;"> in</span> to a Clojure SLIME session from Emacs.
-jar         Package up all the project<span style="color: #ff00ff;">'s files into a jar file.</span>
-<span style="color: #ff00ff;">javac       Compile Java source files.</span>
-<span style="color: #ff00ff;">new         Create a new project skeleton.</span>
-<span style="color: #ff00ff;">noir        Create and manage noir projects.</span>
-<span style="color: #ff00ff;">plugin      Manage user-level plugins.</span>
-<span style="color: #ff00ff;">pom         Write a pom.xml file to disk for Maven interop.</span>
-<span style="color: #ff00ff;">repl        Start a repl session either with the current project or standalone.</span>
-<span style="color: #ff00ff;">retest      Run only the test namespaces which failed last time around.</span>
-<span style="color: #ff00ff;">run         Run the project'</span>s -main function.
+jar         Package up all the project<span style="color: #ffa07a;">'s files into a jar file.</span>
+<span style="color: #ffa07a;">javac       Compile Java source files.</span>
+<span style="color: #ffa07a;">new         Create a new project skeleton.</span>
+<span style="color: #ffa07a;">noir        Create and manage noir projects.</span>
+<span style="color: #ffa07a;">plugin      Manage user-level plugins.</span>
+<span style="color: #ffa07a;">pom         Write a pom.xml file to disk for Maven interop.</span>
+<span style="color: #ffa07a;">repl        Start a repl session either with the current project or standalone.</span>
+<span style="color: #ffa07a;">retest      Run only the test namespaces which failed last time around.</span>
+<span style="color: #ffa07a;">run         Run the project'</span>s -main function.
 search      Search remote maven repositories for matching jars.
 swank       Launch swank server for Emacs to connect.
-<span style="color: #0000ff; font-weight: bold;">test</span>        Run the project<span style="color: #ff00ff;">'s tests.</span>
-<span style="color: #ff00ff;">test!       Run a project'</span>s tests after cleaning and fetching dependencies.
-trampoline  Run a task without nesting the project<span style="color: #ff00ff;">'s JVM inside Leiningen'</span>s.
+<span style="color: #b0c4de;">test</span>        Run the project<span style="color: #ffa07a;">'s tests.</span>
+<span style="color: #ffa07a;">test!       Run a project'</span>s tests after cleaning and fetching dependencies.
+trampoline  Run a task without nesting the project<span style="color: #ffa07a;">'s JVM inside Leiningen'</span>s.
 uberjar     Package up the project files and all dependencies into a jar file.
 upgrade     Upgrade Leiningen to the latest stable release.
 version     Print version for Leiningen and the current JVM.
 
-Run lein help $<span style="color: #ffff00;">TASK</span> for details.
+Run lein help $<span style="color: #eedd82;">TASK</span> for details.
 See also: readme, tutorial, copying, sample, deploying and news.
 
 C:\Documents and Settings\mikio&gt;
@@ -252,8 +252,8 @@ C:\Documents and Settings\mikio&gt;
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
- {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+ {<span style="color: #b0c4de;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #b0c4de;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 </div>
 
@@ -283,13 +283,13 @@ C:\Documents and Settings\mikio&gt;
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> 
+		<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li> <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>

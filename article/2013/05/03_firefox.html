@@ -32,6 +32,8 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
+<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a>
+</li>
 <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a>
 </li>
 <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a>
@@ -39,8 +41,6 @@
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
 </li>
 <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
-</li>
-<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
 </li>
 </ul>
 </li>
@@ -78,7 +78,12 @@
   <div class="article-content">
     <p>
 下記のエラーが頻繁に表示される。
+</p>
+<pre class="example">
 「接続中にエラーが発生しました: 不明なエラー。この処理は自動的に再施行されます。」
+</pre>
+
+<p>
 これの対処方法は、
 </p>
 <ul class="org-ul">
@@ -104,7 +109,7 @@ syncエラーの原因が読めることがわかった。
 </pre>
 </div>
 <p>
-今まで同期エラーがでると、原因を示してくれないので対処のしようがなかったのだけれど
+今まで同期エラーがでると、原因を示してくれないので対処のしようがなかったのだけれど、
 このログをみれば詳細な情報が手にはいるので大助かり。
 </p>
 
@@ -115,7 +120,7 @@ syncエラーの原因が読めることがわかった。
 
 <pre class="src src-sh">1368414694893   Sync.Engine.Bookmarks   DEBUG   First sync, uploading all items
 1368414694893   Sync.Engine.Bookmarks   INFO    2 outgoing items pre-reconciliation
-1368414695441   Sync.Engine.Bookmarks   WARN    Got exception <span style="color: #ff00ff;">"Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsINavBookmarksService.getItemType] Stack trace: _buildGUIDMap()@resource://gre/modules/services-sync/engines/bookmarks.js:233 &lt; resource://gre/modules/services-sync/engines/bookmarks.js:357 &lt; _mapDupe()@resource://gre/modules/services-sync/engines/bookmarks.js:313 &lt; _findDupe()@resource://gre/modules/services-sync/engines/bookmarks.js:413 &lt; _reconcile()@resource://services-sync/engines.js:1120 &lt; resource://services-sync/engines.js:903 &lt; resource://gre/modules/services-sync/record.js:625 &lt; Channel_onDataAvail()@resource://gre/modules/services-sync/resource.js:542 &lt; &lt;file:unknown&gt;"</span> building GUID map. Skipping all other incoming items.
+1368414695441   Sync.Engine.Bookmarks   WARN    Got exception <span style="color: #ffa07a;">"Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsINavBookmarksService.getItemType] Stack trace: _buildGUIDMap()@resource://gre/modules/services-sync/engines/bookmarks.js:233 &lt; resource://gre/modules/services-sync/engines/bookmarks.js:357 &lt; _mapDupe()@resource://gre/modules/services-sync/engines/bookmarks.js:313 &lt; _findDupe()@resource://gre/modules/services-sync/engines/bookmarks.js:413 &lt; _reconcile()@resource://services-sync/engines.js:1120 &lt; resource://services-sync/engines.js:903 &lt; resource://gre/modules/services-sync/record.js:625 &lt; Channel_onDataAvail()@resource://gre/modules/services-sync/resource.js:542 &lt; &lt;file:unknown&gt;"</span> building GUID map. Skipping all other incoming items.
 1368414695441   Sync.Engine.Bookmarks   WARN    Reconciliation failed: aborting incoming processing.
 </pre>
 </div>
@@ -135,11 +140,10 @@ syncエラーの原因が読めることがわかった。
 </li>
 <li><code>Clear My Sync Data</code> をクリックしてサーバー上のデータを削除
 </li>
-<li>上述した方法でアカウントをリセット。そのとき、「他のすべてのデバイスのブラウザデータを、このパソコンのデータと置き換える 
+<li>上述した方法でアカウントをリセット。そのとき、「他のすべてのデバイスのブラウザデータを、このパソコンのデータと置き換える」を選択する。
 </li>
 </ul>
 <p>
-」を選択する。
 ただしこの方法は、同期もとにするPCのデータに異常がない場合に有効。
 </p>
 
@@ -157,20 +161,6 @@ syncエラーの原因が読めることがわかった。
 <li><a href="http://coffeecupman.blog28.fc2.com/blog-entry-25.html">http://coffeecupman.blog28.fc2.com/blog-entry-25.html</a>
 </li>
 </ul>
-
-
-
-<p>
-1368414695441    Sync.Engine.Bookmarks    WARN    Got exception "Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsINavBookmarksService.getItemType] Stack trace: _buildGUIDMap()@resource://gre/modules/services-sync/engines/bookmarks.js:233
- &lt; resource://gre/modules/services-sync/engines/bookmarks.js:357 &lt; 
-_mapDupe()@resource://gre/modules/services-sync/engines/bookmarks.js:313 &lt; 
-_findDupe()@resource://gre/modules/services-sync/engines/bookmarks.js:413 &lt; 
-_reconcile()@resource://services-sync/engines.js:1120 &lt; 
-resource://services-sync/engines.js:903 &lt;
- resource://gre/modules/services-sync/record.js:625 &lt;
- Channel_onDataAvail()@resource://gre/modules/services-sync/resource.js:542 &lt;
- <a href="unknown">unknown</a>" building GUID map. Skipping all other incoming items.
-</p>
 </div>
 </div>
 
@@ -220,8 +210,8 @@ resource://services-sync/engines.js:903 &lt;
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
- {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+ {<span style="color: #b0c4de;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #b0c4de;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 </div>
 
@@ -251,13 +241,13 @@ resource://services-sync/engines.js:903 &lt;
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> 
+		<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li> <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>

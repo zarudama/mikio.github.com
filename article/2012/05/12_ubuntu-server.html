@@ -32,6 +32,8 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
+<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a>
+</li>
 <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a>
 </li>
 <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a>
@@ -39,8 +41,6 @@
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
 </li>
 <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
-</li>
-<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
 </li>
 </ul>
 </li>
@@ -268,9 +268,9 @@ UbuntuServerを入れてみた。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="color: #ffff00;">case</span> $<span style="color: #ffff00;">TERM</span><span style="color: #ffff00;"> in</span>
-linux) <span style="color: #ffff00;">LANG</span>=C ;;
-*) <span style="color: #ffff00;">LANG</span>=ja_JP.UTF-8;;
+<pre class="src src-sh"><span style="color: #ffff00;">case</span> $<span style="color: #eedd82;">TERM</span><span style="color: #ffff00;"> in</span>
+linux) <span style="color: #eedd82;">LANG</span>=C ;;
+*) <span style="color: #eedd82;">LANG</span>=ja_JP.UTF-8;;
 <span style="color: #ffff00;">esac</span>
 </pre>
 </div>
@@ -356,21 +356,21 @@ $ ssh 192.168.10.2
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">=== modified file <span style="color: #ff00ff;">'ssh/sshd_config'</span>
+<pre class="src src-sh">=== modified file <span style="color: #ffa07a;">'ssh/sshd_config'</span>
 --- ssh/sshd_config 2012-09-22 20:00:00 +0000
 +++ ssh/sshd_config 2012-09-22 21:11:08 +0000
 @@ -2,7 +2,7 @@
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">See the sshd_config(5) manpage for details</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">See the sshd_config(5) manpage for details</span>
 
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">What ports, IPs and protocols we listen for</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">What ports, IPs and protocols we listen for</span>
 -Port 22
 +Port xx 
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">Use these options to restrict which interfaces/protocols sshd will bind to</span>
- <span style="color: #ff0000;">#</span><span style="color: #ff0000;">ListenAddress ::</span>
- <span style="color: #ff0000;">#</span><span style="color: #ff0000;">ListenAddress 0.0.0.0</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Use these options to restrict which interfaces/protocols sshd will bind to</span>
+ <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">ListenAddress ::</span>
+ <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">ListenAddress 0.0.0.0</span>
 @@ -24,7 +24,7 @@
 
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">Authentication:</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Authentication:</span>
  LoginGraceTime 120
 -PermitRootLogin yes
 +PermitRootLogin no
@@ -380,15 +380,15 @@ $ ssh 192.168.10.2
 @@ -48,7 +48,7 @@
  ChallengeResponseAuthentication no
 
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">Change to no to disable tunnelled clear text passwords</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Change to no to disable tunnelled clear text passwords</span>
 -#PasswordAuthentication yes
 +PasswordAuthentication no
 
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">Kerberos options</span>
- <span style="color: #ff0000;">#</span><span style="color: #ff0000;">KerberosAuthentication no</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">Kerberos options</span>
+ <span style="color: #ff7f24;">#</span><span style="color: #ff7f24;">KerberosAuthentication no</span>
 @@ -85,3 +85,4 @@
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">PAM authentication, then enable this but set PasswordAuthentication</span>
- <span style="color: #ff0000;"># </span><span style="color: #ff0000;">and ChallengeResponseAuthentication to 'no'.</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">PAM authentication, then enable this but set PasswordAuthentication</span>
+ <span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">and ChallengeResponseAuthentication to 'no'.</span>
  UsePAM yes
 +AllowUsers mikio
 </pre>
@@ -412,7 +412,7 @@ $ ssh 192.168.10.2
 
 <pre class="src src-sh">mikio@whitebase:/etc$ sudo bzr diff
 [sudo] password for mikio: 
-=== modified file <span style="color: #ff00ff;">'network/interfaces'</span>
+=== modified file <span style="color: #ffa07a;">'network/interfaces'</span>
 --- network/interfaces  2012-09-22 21:35:38 +0000
 +++ network/interfaces  2012-09-22 21:58:28 +0000
 @@ -9,7 +9,8 @@
@@ -442,15 +442,15 @@ $HOME/bin/free_dns.sh
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">wget -O /tmp/update_freedns.log --read-timeout=0.0 --waitretry=5 --tries=400 <span style="color: #ff00ff;">'http://freedns.afraid.org/dynamic/update.php?VFR2RnJVTVRNMG9BQU1mSWFEUTo1NTY2NDU2'</span>
+<pre class="src src-sh">wget -O /tmp/update_freedns.log --read-timeout=0.0 --waitretry=5 --tries=400 <span style="color: #ffa07a;">'http://freedns.afraid.org/dynamic/update.php?VFR2RnJVTVRNMG9BQU1mSWFEUTo1NTY2NDU2'</span>
 </pre>
 </div>
 
 <div class="org-src-container">
 
 <pre class="src src-sh">$ crontab -e 
-<span style="color: #ff0000;"># </span><span style="color: #ff0000;">m h  dom mon dow   command</span>
-45 * * * * $<span style="color: #ffff00;">HOME</span>/bin/free_dns.sh
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">m h  dom mon dow   command</span>
+45 * * * * $<span style="color: #eedd82;">HOME</span>/bin/free_dns.sh
 </pre>
 </div>
 </div>
@@ -503,8 +503,8 @@ $HOME/bin/free_dns.sh
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
- {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+ {<span style="color: #b0c4de;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #b0c4de;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 </div>
 
@@ -534,13 +534,13 @@ $HOME/bin/free_dns.sh
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> 
+		<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li> <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>

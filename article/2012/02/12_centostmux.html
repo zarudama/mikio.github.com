@@ -32,6 +32,8 @@
 	        <ul class="org-ul">
 <li><i><i>icon-file icon-white</i> 最近の更新</i>
 <ul class="org-ul">
+<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a>
+</li>
 <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a>
 </li>
 <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a>
@@ -39,8 +41,6 @@
 <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a>
 </li>
 <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a>
-</li>
-<li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a>
 </li>
 </ul>
 </li>
@@ -85,11 +85,11 @@
 <pre class="src src-sh">$ sudo vi /etc/yum.repos.d/CentOS5.2i386-Base.repo
 
 [dag]
-<span style="color: #ffff00;">name</span>=Dag RPM Repository for Redhat EL5
-<span style="color: #ffff00;">baseurl</span>=http://apt.sw.be/redhat/el$<span style="color: #ffff00;">releasever</span>/en/$<span style="color: #ffff00;">basearch</span>/dag
-<span style="color: #ffff00;">gpgcheck</span>=1
-<span style="color: #ffff00;">enabled</span>=0
-<span style="color: #ffff00;">gpgkey</span>=http://dag.wieers.com/packages/RPM-GPG-KEY.dag.txt
+<span style="color: #eedd82;">name</span>=Dag RPM Repository for Redhat EL5
+<span style="color: #eedd82;">baseurl</span>=http://apt.sw.be/redhat/el$<span style="color: #eedd82;">releasever</span>/en/$<span style="color: #eedd82;">basearch</span>/dag
+<span style="color: #eedd82;">gpgcheck</span>=1
+<span style="color: #eedd82;">enabled</span>=0
+<span style="color: #eedd82;">gpgkey</span>=http://dag.wieers.com/packages/RPM-GPG-KEY.dag.txt
 </pre>
 </div>
 <p>
@@ -109,7 +109,7 @@ NGだったのでソースから入れ直す(tmux1.4)
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ wget http://downloads.sourceforge.net/project/tmux/tmux/tmux-1.4/tmux-1.4.tar.gz?<span style="color: #ffff00;">r</span>=http%3A%2F%2Ftmux.sourceforge.net%2F&amp;<span style="color: #ffff00;">ts</span>=1300762620&amp;<span style="color: #ffff00;">use_mirror</span>=jaist
+<pre class="src src-sh">$ wget http://downloads.sourceforge.net/project/tmux/tmux/tmux-1.4/tmux-1.4.tar.gz?<span style="color: #eedd82;">r</span>=http%3A%2F%2Ftmux.sourceforge.net%2F&amp;<span style="color: #eedd82;">ts</span>=1300762620&amp;<span style="color: #eedd82;">use_mirror</span>=jaist
 </pre>
 </div>
 
@@ -128,15 +128,15 @@ ncuressとかがないといってエラーがでるのでいれた。
 <div class="org-src-container">
 
 <pre class="src src-sh">server-client.o: In <span style="color: #ffff00;">function</span> <span style="color: #fa8072;">`server_client_msg_error':</span>
-<span style="color: #fa8072;">server-client.c:(.text+0x1f1e): undefined reference to `</span>evbuffer_add_vprintf<span style="color: #ff00ff;">'</span>
-<span style="color: #ff00ff;">server-client.o: In function `server_client_msg_print'</span>:
+<span style="color: #fa8072;">server-client.c:(.text+0x1f1e): undefined reference to `</span>evbuffer_add_vprintf<span style="color: #ffa07a;">'</span>
+<span style="color: #ffa07a;">server-client.o: In function `server_client_msg_print'</span>:
 server-client.c:(.text+0x1f88): undefined reference to <span style="color: #fa8072;">`evbuffer_add_vprintf'</span>
-<span style="color: #fa8072;">server-client.o: In function `</span>server_client_msg_info<span style="color: #ff00ff;">':</span>
-<span style="color: #ff00ff;">server-client.c:(.text+0x1ffc): undefined reference to `evbuffer_add_vprintf'</span>
+<span style="color: #fa8072;">server-client.o: In function `</span>server_client_msg_info<span style="color: #ffa07a;">':</span>
+<span style="color: #ffa07a;">server-client.c:(.text+0x1ffc): undefined reference to `evbuffer_add_vprintf'</span>
 server.o: In <span style="color: #ffff00;">function</span> <span style="color: #fa8072;">`server_start':</span>
-<span style="color: #fa8072;">server.c:(.text+0x2ed): undefined reference to `</span>event_reinit<span style="color: #ff00ff;">'</span>
-<span style="color: #ff00ff;">collect2: ld &#12399;&#12473;&#12486;&#12540;&#12479;&#12473; 1 &#12391;&#32066;&#20102;&#12375;&#12414;&#12375;&#12383;</span>
-<span style="color: #ff00ff;">make: *** [tmux] &#12456;&#12521;&#12540; 1</span>
+<span style="color: #fa8072;">server.c:(.text+0x2ed): undefined reference to `</span>event_reinit<span style="color: #ffa07a;">'</span>
+<span style="color: #ffa07a;">collect2: ld &#12399;&#12473;&#12486;&#12540;&#12479;&#12473; 1 &#12391;&#32066;&#20102;&#12375;&#12414;&#12375;&#12383;</span>
+<span style="color: #ffa07a;">make: *** [tmux] &#12456;&#12521;&#12540; 1</span>
 </pre>
 </div>
 
@@ -146,9 +146,9 @@ server.o: In <span style="color: #ffff00;">function</span> <span style="color: #
 <div class="org-src-container">
 
 <pre class="src src-sh">server.o: In <span style="color: #ffff00;">function</span> <span style="color: #fa8072;">`server_start':</span>
-<span style="color: #fa8072;">server.c:(.text+0x32a): undefined reference to `</span>event_reinit<span style="color: #ff00ff;">'</span>
-<span style="color: #ff00ff;">collect2: ld &#12399;&#12473;&#12486;&#12540;&#12479;&#12473; 1 &#12391;&#32066;&#20102;&#12375;&#12414;&#12375;&#12383;</span>
-<span style="color: #ff00ff;">make: *** [tmux] &#12456;&#12521;&#12540; 1</span>
+<span style="color: #fa8072;">server.c:(.text+0x32a): undefined reference to `</span>event_reinit<span style="color: #ffa07a;">'</span>
+<span style="color: #ffa07a;">collect2: ld &#12399;&#12473;&#12486;&#12540;&#12479;&#12473; 1 &#12391;&#32066;&#20102;&#12375;&#12414;&#12375;&#12383;</span>
+<span style="color: #ffa07a;">make: *** [tmux] &#12456;&#12521;&#12540; 1</span>
 </pre>
 </div>
 
@@ -178,7 +178,7 @@ Nothing to do
 <div class="org-src-container">
 
 <pre class="src src-sh">tar xvfz libevent-1.4.14b-stable.tar.gz
-<span style="color: #0000ff; font-weight: bold;">cd</span> libevent-1.4.14b-stable
+<span style="color: #b0c4de;">cd</span> libevent-1.4.14b-stable
 ./configure
 make
 sudo make install
@@ -209,7 +209,7 @@ libevnt-1.4.so.2自体はあるので、パスが通っていないのが原因�
 <div class="org-src-container">
 
 <pre class="src src-sh">$ sudo vi /etc/profile
-<span style="color: #0000ff; font-weight: bold;">export</span> <span style="color: #ffff00;">LD_LIBRARY_PATH</span>=$<span style="color: #ffff00;">LD_LIBRARY_PATH</span>:/usr/local/lib
+<span style="color: #b0c4de;">export</span> <span style="color: #eedd82;">LD_LIBRARY_PATH</span>=$<span style="color: #eedd82;">LD_LIBRARY_PATH</span>:/usr/local/lib
 $ . /etc/profile
 </pre>
 </div>
@@ -220,10 +220,10 @@ $ . /etc/profile
 <div class="org-src-container">
 
 <pre class="src src-sh">$ sudo vi /etc/ld.so.conf
-<span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#26411;&#23614;&#12395;&#12521;&#12452;&#12502;&#12521;&#12522;&#12434;&#36861;&#21152;</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#26411;&#23614;&#12395;&#12521;&#12452;&#12502;&#12521;&#12522;&#12434;&#36861;&#21152;</span>
 /usr/local/lib
 
-<span style="color: #ff0000;"># </span><span style="color: #ff0000;">&#12521;&#12452;&#12502;&#12521;&#12522;&#12497;&#12473;&#12434;&#21453;&#26144;</span>
+<span style="color: #ff7f24;"># </span><span style="color: #ff7f24;">&#12521;&#12452;&#12502;&#12521;&#12522;&#12497;&#12473;&#12434;&#21453;&#26144;</span>
 $ sudo /sbin/ldconfig
 </pre>
 </div>
@@ -284,8 +284,8 @@ $ sudo /sbin/ldconfig
 <div class="org-src-container">
 
 <pre class="src src-emacs-lisp">(mikio_kun
- {<span style="color: #0000ff; font-weight: bold;">:&#33288;&#21619;</span> <span style="color: #ff00ff;">"ubuntu/emacs/clojure"</span>
-  <span style="color: #0000ff; font-weight: bold;">:&#19968;&#35328;</span> <span style="color: #ff00ff;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
+ {<span style="color: #b0c4de;">:&#33288;&#21619;</span> <span style="color: #ffa07a;">"ubuntu/emacs/clojure"</span>
+  <span style="color: #b0c4de;">:&#19968;&#35328;</span> <span style="color: #ffa07a;">"Clojurian&#12395;&#12394;&#12426;&#12383;&#12356;"</span>})
 </pre>
 </div>
 
@@ -315,13 +315,13 @@ $ sudo /sbin/ldconfig
 	    <nav id="archives" class="span3">
 	      <h1><a href="../../../archives.html">Archives</a></h1>
 	      <ul>
-		<li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> <li><a href="../../../article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li> 
+		<li><a href="../../../article/2013/09/23_nexus72013bunker-ring.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li> <li><a href="../../../article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li> <li><a href="../../../article/2013/08/05_ubuntuprocessing.html">ubuntuでprocessingのショートカットをつくる</a></li> <li><a href="../../../article/2013/05/23_clj-webdriver.html">clj-webdriverを使用としたらなぜか例外発生</a></li> <li><a href="../../../article/2013/05/23_.html">ブラウザ比較</a></li> <li><a href="../../../article/2013/05/23_cygwinnamazu.html">cygwinでnamazu</a></li> <li><a href="../../../article/2013/05/10_java.html">javaのクラスローダについて</a></li> <li><a href="../../../article/2013/05/10_jdee-c-c-c-v-c-b-ant.html">jdee C-c C-v C-b してantができない</a></li> <li><a href="../../../article/2013/05/04_twittering-mode.html">Twittering-mode が起動しない</a></li> <li><a href="../../../article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li> 
 	      </ul>
 	    </nav>
 	    <nav class="tags span3">
 	      <h1><a href="../../../tags/index.html">Tags</a></h1>
 	      <ul>
-  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 96.47%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
+  <li style="font-size: 96.47%;"><a href="../../../tags/android.html">android</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/apache.html">apache</a></li> <li style="font-size: 137.65%;"><a href="../../../tags/clojure.html">clojure</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/clojurescript.html">clojurescript</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/coffeescript.html">coffeescript</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/compojure.html">compojure</a></li> <li style="font-size: 121.18%;"><a href="../../../tags/cygwin.html">cygwin</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/dos.html">dos</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/dropbox.html">dropbox</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/e2wm.html">e2wm</a></li> <li style="font-size: 207.65%;"><a href="../../../tags/emacs.html">emacs</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/emacslisp.html">emacslisp</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/evil.html">evil</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/firefox.html">firefox</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/gimp.html">gimp</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/git.html">git</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/gnus.html">gnus</a></li> <li style="font-size: 220.00%;"><a href="../../../tags/hamari.html">hamari</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/helm.html">helm</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/java.html">java</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/jdee.html">jdee</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/jruby.html">jruby</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/keysnail.html">keysnail</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/lein.html">lein</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/less.html">less</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/linux.html">linux</a></li> <li style="font-size: 100.59%;"><a href="../../../tags/lisp.html">lisp</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/misaki.html">misaki</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/namazu.html">namazu</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/nexus7.html">nexus7</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/nrepl.html">nrepl</a></li> <li style="font-size: 92.35%;"><a href="../../../tags/oblog.html">oblog</a></li> <li style="font-size: 104.71%;"><a href="../../../tags/playframework.html">playframework</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/problem.html">problem</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/processing.html">processing</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/reddit.html">reddit</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/ruby.html">ruby</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/sbcl.html">sbcl</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/skk.html">skk</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/slime.html">slime</a></li> <li style="font-size: 84.12%;"><a href="../../../tags/ssh.html">ssh</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/svn.html">svn</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/terminal.html">terminal</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/test.html">test</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tips.html">tips</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/tmux.html">tmux</a></li> <li style="font-size: 117.06%;"><a href="../../../tags/ubuntu.html">ubuntu</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/virtualbox.html">virtualbox</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/windows.html">windows</a></li> <li style="font-size: 80.00%;"><a href="../../../tags/windowsxp.html">windowsxp</a></li> <li style="font-size: 88.24%;"><a href="../../../tags/xmonad.html">xmonad</a></li> 
 </ul>
 
 	    </nav>
