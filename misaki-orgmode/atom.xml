@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>misaki orgmode</title>
+<link href="http://localhost:8080/misaki-orgmode/atom.xml" rel="self" />
+<link href="http://localhost:8080/misaki-orgmode/" />
+<updated></updated>
+<id>http://localhost:8080</id>
+<author><name>mikio_kun</name></author>
+
+<entry>
+<title>Toc off</title>
+<link>http://localhost:8080/misaki-orgmode/2011-01/foo.html</link>
+<updated>2013-12-29T00:00:00</updated>
+<id>http://localhost:8080/misaki-orgmode/2011-01/foo.html</id>
+<content type="html"></content>
+</entry>
+<entry>
+<title>Clojureでゲームプログラミングその1 実験編</title>
+<link>http://localhost:8080/misaki-orgmode/2044-04/foo.html</link>
+<updated>2013-12-28T00:00:00</updated>
+<id>http://localhost:8080/misaki-orgmode/2044-04/foo.html</id>
+<content type="html"></content>
+</entry>
+<entry>
+<title>The quick brown fox</title>
+<link>http://localhost:8080/misaki-orgmode/2033-03/baz.html</link>
+<updated>2013-03-03T00:00:00</updated>
+<id>http://localhost:8080/misaki-orgmode/2033-03/baz.html</id>
+<content type="html"></content>
+</entry>
+<entry>
+<title>Libraries</title>
+<link>http://localhost:8080/misaki-orgmode/2022-02/bar.html</link>
+<updated>2012-02-02T00:00:00</updated>
+<id>http://localhost:8080/misaki-orgmode/2022-02/bar.html</id>
+<content type="html"></content>
+</entry>
+
+</feed>
