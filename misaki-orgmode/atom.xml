@@ -8,31 +8,24 @@
 <author><name>mikio_kun</name></author>
 
 <entry>
-<title>Toc off</title>
+<title>Sample cmponets</title>
 <link>http://localhost:8080/misaki-orgmode/2011-01/foo.html</link>
 <updated>2013-12-29T00:00:00</updated>
 <id>http://localhost:8080/misaki-orgmode/2011-01/foo.html</id>
 <content type="html"></content>
 </entry>
 <entry>
-<title>Clojureでゲームプログラミングその1 実験編</title>
-<link>http://localhost:8080/misaki-orgmode/2044-04/foo.html</link>
-<updated>2013-12-28T00:00:00</updated>
-<id>http://localhost:8080/misaki-orgmode/2044-04/foo.html</id>
-<content type="html"></content>
-</entry>
-<entry>
-<title>The quick brown fox</title>
-<link>http://localhost:8080/misaki-orgmode/2033-03/baz.html</link>
-<updated>2013-03-03T00:00:00</updated>
-<id>http://localhost:8080/misaki-orgmode/2033-03/baz.html</id>
-<content type="html"></content>
-</entry>
-<entry>
-<title>Libraries</title>
+<title>Header sample</title>
 <link>http://localhost:8080/misaki-orgmode/2022-02/bar.html</link>
-<updated>2012-02-02T00:00:00</updated>
+<updated>2013-11-30T00:00:00</updated>
 <id>http://localhost:8080/misaki-orgmode/2022-02/bar.html</id>
+<content type="html"></content>
+</entry>
+<entry>
+<title>Header sample(Use table of contents)</title>
+<link>http://localhost:8080/misaki-orgmode/2033-03/baz.html</link>
+<updated>2013-10-30T00:00:00</updated>
+<id>http://localhost:8080/misaki-orgmode/2033-03/baz.html</id>
 <content type="html"></content>
 </entry>
 
