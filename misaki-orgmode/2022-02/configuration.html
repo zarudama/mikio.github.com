@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/misaki-orgmode/css/main.css" />
     
 
-    <title>Archives</title>
+    <title>Configuration</title>
   </head>
   <body>
     <div class="global-header" />
@@ -27,31 +27,64 @@
         <p>Misaki orgmode is static blog generator for org-mode based on Misaki.</p>
       </div>
       <div class="page-header">
-  <h1>Archives</h1>
+  <h1><a href="">Configuration</a></h1>
+  <p class="date">2080-12-1</p>
 </div>
+
 <div id="page">
-    <h2>2099</h2>
-  <ul>
-      <li><a href="/misaki-orgmode/2011-01/getting-started.html">12 01 - Getting Started</a></li>
-  
-  </ul>
-    <h2>2080</h2>
-  <ul>
-      <li><a href="/misaki-orgmode/2022-02/configuration.html">12 01 - Configuration</a></li>
-  
-  </ul>
-    <h2>2070</h2>
-  <ul>
-      <li><a href="/misaki-orgmode/2033-03/customization.html">01 01 - Customization</a></li>
-  
-  </ul>
-    <h2>2014</h2>
-  <ul>
-      <li><a href="/misaki-orgmode/2044-04/edit-templates.html">01 01 - Edit templates</a></li>
-  
-  </ul>
-  
+  <p>
+you revise <code>:site-title, :site-subtitle, twitter-id, disqus-id</code> to set the whole site.
+</p>
+
+<p>
+<code>misaki-orgmode/sample/_config.clj</code>
+</p>
+<div class="org-src-container">
+
+<pre class="src src-clojure">:site {
+  :site-title "YOUR SITE NAME"
+  :site-subtitle "YOUR SITE DESCRIPTION."
+  :your-domain "yoursite.com"
+  :twitter-id "YOUR_TIWTTER_ID"
+  :disqus-id  "YOUR_DISQUS_ID"
+}
+</pre>
 </div>
+</div>
+<footer class="article-footer">
+  <nav class="tag">
+    <ul>
+            <li><span><a href="/misaki-orgmode/tag/tag1.html">tag1</a></span></li>
+            <li><span><a href="/misaki-orgmode/tag/tag2.html">tag2</a></span></li>
+            <li><span><a href="/misaki-orgmode/tag/tag3.html">tag3</a></span></li>
+      
+    </ul>
+  </nav>
+  <nav>
+    <ul class="pager">
+            <li class="prev"><a href="/misaki-orgmode/2011-01/getting-started.html">&laquo; Getting Started</a></li>
+      
+      &nbsp;&nbsp;
+            <li class="next"><a href="/misaki-orgmode/2033-03/customization.html">&raquo; Customization</a></li>
+      
+    </ul>
+  </nav>
+</footer>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+ /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+ var disqus_shortname = 'foomikiokunblog';
+
+ /* * * DON'T EDIT BELOW THIS LINE * * */
+ (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+ })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
         <script type="text/javascript" src="/misaki-orgmode/js/highlight.pack.js"></script>
         <script type="text/javascript" src="/misaki-orgmode/js/main.js"></script>
