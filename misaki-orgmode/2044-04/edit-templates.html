@@ -20,19 +20,23 @@
     <title>Edit templates</title>
   </head>
   <body>
-    <div class="global-header" />
-    <div class="container">
-      <div class="site-header">
+    <header class="global-header">
+      <div class="container site-header">
         <h1><a href="/misaki-orgmode/">Misaki orgmode</a></h1>
         <p>Misaki orgmode is static blog generator for org-mode based on Misaki.</p>
       </div>
-      <div class="page-header">
-  <h1><a href="">Edit templates</a></h1>
-  <p class="date">2014-1-1</p>
-</div>
+    </header>
+    <div class="container">
+      <article>
+  <headr>
+    <div class="article-header">
+      <h1><a href="">Edit templates</a></h1>
+      <p class="date">2060-1-1</p>
+    </div>
+  </headr>
 
-<div id="page">
-  <div id="table-of-contents">
+  <div class="content">
+    <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
@@ -58,34 +62,34 @@ You describe the contents of the article in org-mode of emacs.
 But it is necessary to describe the following header by all means in the beginning of the file.
 </p>
 
-<pre class="example">
-# @layout post
-# @title Edit templates
-# @date 2014-1-1 
-# @tags tag1 tag2 tag3
+<pre>
+# &#64;layout post
+# &#64;title Edit templates
+# &#64;date 2014-1-1 
+# &#64;tags tag1 tag2 tag3
 #+OPTIONS: toc:nil
 </pre>
 
 <dl class="org-dl">
-<dt> @layout </dt><dd>appoint a file name to decide the layout of the article.
+<dt> @ layout </dt><dd>appoint a file name to decide the layout of the article.
 </dd>
-<dt> @title </dt><dd>appoint the title of the article.
+<dt> @ title </dt><dd>appoint the title of the article.
 </dd>
-<dt> @date </dt><dd>appoint the date of the article. The format is "YYYY-MM-DD".
+<dt> @ date </dt><dd>appoint the date of the article. The format is "YYYY-MM-DD".
 </dd>
-<dt> @tags </dt><dd>appoint tag of the article.
+<dt> @ tags </dt><dd>appoint tag of the article.
 </dd>
 <dt> #+OPTIONS: </dt><dd>appoint <code>toc:nil</code> if You want to display a table of contents if You do not want to do <code>toc:t</code>.
 </dd>
 </dl>
 
 <p>
-Use a as follows if You want to use cuma to mention later.
+Use <code>#BEGIN_HTML</code> as follows if You want to use cuma to mention later.
 </p>
-<pre class="example">
-#+BEGIN_HTML
-＄(hello "world")
-#+END_HTML
+<pre>
+ #@+BEGIN_HTML
+ &#36;(hello "world")
+ #@+END_HTML
 </pre>
 </div>
 </div>
@@ -122,11 +126,11 @@ Please refer to follows for the <code>*site*</code> variable.
 <h3 id="sec-2-1"><span class="section-number-3">2.1</span> examples</h3>
 <div class="outline-text-3" id="text-2-1">
 </div><ol class="org-ol"><li>A list of all articles.<br/><div class="outline-text-4" id="text-2-1-1">
-<pre class="example">
+<pre>
 &lt;ul&gt;
-＠(for all-posts)
-&lt;li&gt;&lt;a href="＄(url)"&gt;＄(title)&lt;/a&gt;&lt;/li&gt;
-＠(end)
+&#64;(for all-posts)
+&lt;li&gt;&lt;a href="&#36;(url)"&gt;&#36;(title)&lt;/a&gt;&lt;/li&gt;
+&#64;(end)
 &lt;/ul&gt;
 </pre>
 
@@ -140,18 +144,18 @@ Please refer to follows for the <code>*site*</code> variable.
 </div>
 </li>
 <li>A list of All tags.<br/><div class="outline-text-4" id="text-2-1-2">
-<pre class="example">
+<pre>
 &lt;ul&gt;
-＠(for all-tags)
-  &lt;li&gt;&lt;a href="＄(url)"&gt;＄(name)(＄(count))&lt;/a&gt;&lt;/li&gt;
-＠(end)
+&#64;(for all-tags)
+  &lt;li&gt;&lt;a href="&#36;(url)"&gt;&#36;(name)(&#36;(count))&lt;/a&gt;&lt;/li&gt;
+&#64;(end)
 &lt;/ul&gt;
 </pre>
 
 <ul>
-  <li><a href="/misaki-orgmode/tag/tag1.html">tag1(3)</a></li>
+  <li><a href="/misaki-orgmode/tag/tag1.html">tag1(2)</a></li>
   <li><a href="/misaki-orgmode/tag/tag2.html">tag2(3)</a></li>
-  <li><a href="/misaki-orgmode/tag/tag3.html">tag3(2)</a></li>
+  <li><a href="/misaki-orgmode/tag/tag3.html">tag3(1)</a></li>
 
 </ul>
 </div>
@@ -174,47 +178,48 @@ You can use it in a template file if You add a function to  <code>misaki-orgmode
 <p>
 call it as follows.
 </p>
-<pre class="example">
-＄(hello "world") =&gt; hello world
+<pre>
+  &#36;(hello "world") => hello world
 </pre>
 HELLO WORLD!!!
 </div>
 </div>
 </div>
-</div>
-<footer class="article-footer">
-  <nav class="tag">
-    <ul>
-            <li><span><a href="/misaki-orgmode/tag/tag1.html">tag1</a></span></li>
-            <li><span><a href="/misaki-orgmode/tag/tag2.html">tag2</a></span></li>
-            <li><span><a href="/misaki-orgmode/tag/tag3.html">tag3</a></span></li>
-      
-    </ul>
-  </nav>
-  <nav>
-    <ul class="pager">
-            <li class="prev"><a href="/misaki-orgmode/2033-03/customization.html">&laquo; Customization</a></li>
-      
-      &nbsp;&nbsp;
-      
-    </ul>
-  </nav>
-</footer>
+  </div>
 
-<div id="disqus_thread"></div>
-<script type="text/javascript">
- /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
- var disqus_shortname = 'foomikiokunblog';
+  <footer class="article-footer">
+    <nav class="tag">
+      <ul>
+                <li><span><a href="/misaki-orgmode/tag/tag2.html">tag2</a></span></li>
+        
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pager">
+                <li class="prev"><a href="/misaki-orgmode/2033-03/customization.html">&laquo; Customization</a></li>
+        
+        &nbsp;&nbsp;
+        
+      </ul>
+    </nav>
+  </footer>
 
- /* * * DON'T EDIT BELOW THIS LINE * * */
- (function() {
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
- })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+   var disqus_shortname = 'foomikiokunblog';
+
+   /* * * DON'T EDIT BELOW THIS LINE * * */
+   (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</article>
     </div>
         <script type="text/javascript" src="/misaki-orgmode/js/highlight.pack.js"></script>
         <script type="text/javascript" src="/misaki-orgmode/js/main.js"></script>
@@ -225,9 +230,9 @@ HELLO WORLD!!!
           <div class="w50per">
             <h2>Tags</h2>
             <ul>
-                            <li><a href="/misaki-orgmode/tag/tag1.html">tag1(3)</a></li>
+                            <li><a href="/misaki-orgmode/tag/tag1.html">tag1(2)</a></li>
                             <li><a href="/misaki-orgmode/tag/tag2.html">tag2(3)</a></li>
-                            <li><a href="/misaki-orgmode/tag/tag3.html">tag3(2)</a></li>
+                            <li><a href="/misaki-orgmode/tag/tag3.html">tag3(1)</a></li>
               
             </ul>
           </div>
