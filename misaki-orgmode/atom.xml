@@ -9,30 +9,30 @@
 
         <entry>
         <title>Getting Started</title>
-        <link>http://localhost:8080/misaki-orgmode/2011-01/getting-started.html</link>
+        <link>http://localhost:8080/misaki-orgmode/2099-12/01-getting-started.html</link>
         <updated>2099-12-01T00:00:00</updated>
-        <id>http://localhost:8080/misaki-orgmode/2011-01/getting-started.html</id>
+        <id>http://localhost:8080/misaki-orgmode/2099-12/01-getting-started.html</id>
         <content type="html"></content>
     </entry>
         <entry>
         <title>Configuration</title>
-        <link>http://localhost:8080/misaki-orgmode/2022-02/configuration.html</link>
+        <link>http://localhost:8080/misaki-orgmode/2080-12/02-configuration.html</link>
         <updated>2080-12-01T00:00:00</updated>
-        <id>http://localhost:8080/misaki-orgmode/2022-02/configuration.html</id>
+        <id>http://localhost:8080/misaki-orgmode/2080-12/02-configuration.html</id>
         <content type="html"></content>
     </entry>
         <entry>
         <title>Customization</title>
-        <link>http://localhost:8080/misaki-orgmode/2033-03/customization.html</link>
+        <link>http://localhost:8080/misaki-orgmode/2070-01/03-customization.html</link>
         <updated>2070-01-01T00:00:00</updated>
-        <id>http://localhost:8080/misaki-orgmode/2033-03/customization.html</id>
+        <id>http://localhost:8080/misaki-orgmode/2070-01/03-customization.html</id>
         <content type="html"></content>
     </entry>
         <entry>
         <title>Edit templates</title>
-        <link>http://localhost:8080/misaki-orgmode/2044-04/edit-templates.html</link>
+        <link>http://localhost:8080/misaki-orgmode/2060-01/04-edit-templates.html</link>
         <updated>2060-01-01T00:00:00</updated>
-        <id>http://localhost:8080/misaki-orgmode/2044-04/edit-templates.html</id>
+        <id>http://localhost:8080/misaki-orgmode/2060-01/04-edit-templates.html</id>
         <content type="html"></content>
     </entry>
     
