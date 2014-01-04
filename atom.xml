@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Misaki orgmode</title>
+    <link href="http://localhost:8080/atom.xml" rel="self" />
+    <link href="http://localhost:8080/" />
+    <updated></updated>
+    <id>http://localhost:8080</id>
+    <author><name>mikio_kun</name></author>
+
+        <entry>
+        <title>ubuntuでxmonadして、emacsでProcessingしてます</title>
+        <link>http://localhost:8080/article/2013/08/07_ubuntuxmonademacsprocessing.html</link>
+        <updated>2013-08-07T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/08/07_ubuntuxmonademacsprocessing.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>helmのファイル一覧でパスを表示する</title>
+        <link>http://localhost:8080/article/2013/06/14_helm.html</link>
+        <updated>2013-06-14T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/06/14_helm.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>windows版emacs24.3で画像を表示する。</title>
+        <link>http://localhost:8080/article/2013/05/03_windowsemacs243.html</link>
+        <updated>2013-05-03T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/05/03_windowsemacs243.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>firefox の同期不具合</title>
+        <link>http://localhost:8080/article/2013/05/03_firefox.html</link>
+        <updated>2013-05-03T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/05/03_firefox.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>ファイルオープン数が上限値に達した</title>
+        <link>http://localhost:8080/article/2013/03/02_file-open.html</link>
+        <updated>2013-03-02T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/03/02_file-open.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>python window tiler を試す</title>
+        <link>http://localhost:8080/article/2013/01/29_python-window-tiler.html</link>
+        <updated>2013-01-29T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/01/29_python-window-tiler.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>cygwin経由で表示したtmuxの分割罫線が表示崩れする</title>
+        <link>http://localhost:8080/article/2013/01/06_cygwintmux.html</link>
+        <updated>2013-01-06T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/01/06_cygwintmux.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>.emacsに必要なpackage を指定して自動で各種elispをインストールする</title>
+        <link>http://localhost:8080/article/2013/01/06_emacspackage-elisp.html</link>
+        <updated>2013-01-06T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/01/06_emacspackage-elisp.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Ubuntu Server インストール時に前回作ったLVMが削除できなかった。</title>
+        <link>http://localhost:8080/article/2012/12/30_ubuntu-server-lvm.html</link>
+        <updated>2012-12-30T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/12/30_ubuntu-server-lvm.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Emacs中毒者に贈るJDEEによるJava開発環境の構築</title>
+        <link>http://localhost:8080/article/2012/12/23_emacsjdeejava.html</link>
+        <updated>2012-12-23T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/12/23_emacsjdeejava.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>cygwinでssh接続できない</title>
+        <link>http://localhost:8080/article/2012/12/22_cygwinssh.html</link>
+        <updated>2012-12-22T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/12/22_cygwinssh.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>howm-modeとorg-modeを同時に使ってみたい。</title>
+        <link>http://localhost:8080/article/2012/09/28_howm-modeorg-mode.html</link>
+        <updated>2012-09-28T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/09/28_howm-modeorg-mode.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>swank-clojureの後継モジュールのnREPLを試してみた</title>
+        <link>http://localhost:8080/article/2012/09/07_swank-clojurenrepl.html</link>
+        <updated>2012-09-07T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/09/07_swank-clojurenrepl.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</title>
+        <link>http://localhost:8080/article/2012/09/06_firefox-focus.html</link>
+        <updated>2012-09-06T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/09/06_firefox-focus.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</title>
+        <link>http://localhost:8080/article/2012/08/29_git-repo-delete.html</link>
+        <updated>2012-08-29T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/08/29_git-repo-delete.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>puttyをやめて、cygwin Terminalにする</title>
+        <link>http://localhost:8080/article/2012/08/27_puttycygwin-terminal.html</link>
+        <updated>2012-08-27T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/08/27_puttycygwin-terminal.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Javaでカンマ区切りの数字を出力する。</title>
+        <link>http://localhost:8080/article/2012/05/21_java.html</link>
+        <updated>2012-05-21T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/05/21_java.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>sudoで環境変数を引き継ぎたい</title>
+        <link>http://localhost:8080/article/2012/03/10_sudo.html</link>
+        <updated>2012-03-10T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/03/10_sudo.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>SKKを導入してみる(WindowsXP)</title>
+        <link>http://localhost:8080/article/2012/03/09_skkwindowsxp.html</link>
+        <updated>2012-03-09T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/03/09_skkwindowsxp.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>tmux セッションの保存方法</title>
+        <link>http://localhost:8080/article/2012/02/12_tmux.html</link>
+        <updated>2012-02-12T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/02/12_tmux.html</id>
+        <content type="html"></content>
+    </entry>
+    
+</feed>
