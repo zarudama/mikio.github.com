@@ -35,5 +35,19 @@
         <id>http://localhost:8080/misaki-orgmode/2060-01/04-edit-templates.html</id>
         <content type="html"></content>
     </entry>
+        <entry>
+        <title>Difference with Misaki</title>
+        <link>http://localhost:8080/misaki-orgmode/2050-12/05-change-spec.html</link>
+        <updated>2050-12-01T00:00:00</updated>
+        <id>http://localhost:8080/misaki-orgmode/2050-12/05-change-spec.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>日本語の説明</title>
+        <link>http://localhost:8080/misaki-orgmode/2000-12/99-readme-ja.html</link>
+        <updated>2000-12-01T00:00:00</updated>
+        <id>http://localhost:8080/misaki-orgmode/2000-12/99-readme-ja.html</id>
+        <content type="html"></content>
+    </entry>
     
 </feed>
