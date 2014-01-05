@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</title>
+    <title>emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,90 +30,120 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</a></h1>
-      <p class="date">2012/9/06</p>
+      <h1><a href="">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></h1>
+      <p class="date">2012/5/10</p>
     </div>
   </headr>
 
   <div class="content">
     <p>
-Twitter,google,その他多くの検索サイトでは、ページを開くと勝手にフォーカ
-スが移動して入力待ち状態になる。この挙動は多くの普通の人にとっては操作
-性が良くなるんだろうけど、FirefoxのKeysnailでキーボード操作をメインとし
-ている自分にとっては不便極まりない。
+まず、Windows版のnode.jsをインストールしておく。インストーラなので簡単。
+その後、npmでsocket.ioをインストール。
 </p>
-
-<p>
-ってことで、この挙動をどうにかするAdd-Onを探していたんだけど、なぜかなかった。
-</p>
-
-<p>
-代わりにGireaseMonkey<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>を使った代替方法が見つかったのでそのスクリプトを使用することにした。
-</p>
-<ul class="org-ul">
-<li><a href="http://javascripter.hatenablog.com/entry/20080620/1213923411">http://javascripter.hatenablog.com/entry/20080620/1213923411</a>
-</li>
-</ul>
-
-<p>
-GreaseMonkeyアドオンをインストールして、下記コードを追加すれば良い。
-</p>
-
-<p>
-新規ユーザスクリプトを追加する手順は以下。
-</p>
-<ul class="org-ul">
-<li>[メニュー]-&gt;[ツール]-&gt;[GreasMonkey]-&gt;[新規ユーザースクリプト]
-</li>
-</ul>
-
 <div class="org-src-container">
 
-<pre class="src src-javascript"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==UserScript==</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@name        no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@namespace   no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@version     1</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@include     http*</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==/UserScript=</span>
-window.addEventListener(<span style="font-style: italic;">'load'</span>,
-<span style="font-weight: bold;">function</span>() {
-  document.activeElement.blur();
-  <span style="font-weight: bold; text-decoration: underline;">this</span>.removeEventListener(<span style="font-style: italic;">'load'</span>, <span style="font-weight: bold; text-decoration: underline;">arguments</span>.callee, <span style="font-weight: bold; text-decoration: underline;">false</span>);
-},
-<span style="font-weight: bold; text-decoration: underline;">false</span>);
+<pre class="src src-sh">dos&gt; npm install socket.io
 </pre>
 </div>
 
 <p>
-コードの意味はよくわかってないから、問題があるかもしれないが、その場合
-はその時考えよう。
+あとは、swank-jsをインストールする。
 </p>
-<div id="footnotes">
-<h2 class="footnotes">&#33050;&#27880;: </h2>
-<div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-Greasemonkeyはchromeにも移植されているので、chromeでも利用できるかもしれない。
-</p></div>
+<p>
+下記を参考にWindowsXP環境にインストールした。
+</p>
+<ul class="org-ul">
+<li><a href="http://e-arrows.sakura.ne.jp/2011/06/connect-to-nodejs-and-chrome-from-emacs.html">http://e-arrows.sakura.ne.jp/2011/06/connect-to-nodejs-and-chrome-from-emacs.html</a>
+</li>
+</ul>
 
+<p>
+上記記事では、本家は更新が止っているとあるが、最近は更新を再開したっぽい。
+もろもろバグフィックスがされているようなのでオリジナルからswank-jsを取得した。
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/swank-js/swank-js">https://github.com/swank-js/swank-js</a>
+</li>
+</ul>
 
+<p>
+インストール方法などは表記のとおりすればOKだが、windowsなのでうまくlnコマンドの部分がうまくいかない。
+回避方法としてswank-js.elはMarmaladeからインストールした。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">M-x packagea-list-packages
+</pre>
 </div>
+<p>
+下記を選択してixでインスール。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">slime-js          0.0.1       installed  Slime extension for swank-js.
+</pre>
+</div>
+
+<p>
+あとは裏でnode swank.jsを走らせて、SLIMEに接続する。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">M-x slime-connect 127.0.0.1 4005
+</pre>
+</div>
+
+<p>
+その後、repl上で接続したいURLを指定する。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">,target-url
+</pre>
+</div>
+
+<p>
+次にブラウザ上で下記にアクセスする。
+</p>
+<ul class="org-ul">
+<li><a href="http://localhost:8009/">http://localhost:8009/</a>
+</li>
+</ul>
+
+<p>
+その後、repl上で接続する。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">,select-remote
+</pre>
+</div>
+
+<p>
+あとはrepl上で下記を実行するとlocalhost:8009上でjsが実行される。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="font-weight: bold;">alert</span> (<span style="font-style: italic;">"hoge"</span>)
+</pre>
 </div>
   </div>
 
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/firefox.html">firefox</a></span></li>
+                <li><span><a href="/tag/emacs.html">emacs</a></span></li>
+                <li><span><a href="/tag/javascript.html">javascript</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2012/09/07_swank-clojurenrepl.html">&laquo; swank-clojureの後継モジュールのnREPLを試してみた</a></li>
+                <li class="prev"><a href="/article/2012/05/21_java.html">&laquo; Javaでカンマ区切りの数字を出力する。</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2012/08/29_git-repo-delete.html">&raquo; 削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a></li>
+                <li class="next"><a href="/article/2012/05/05_windows.html">&raquo; emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></li>
         
       </ul>
     </nav>
@@ -145,35 +175,38 @@ Greasemonkeyはchromeにも移植されているので、chromeでも利用で�
           <div class="w50per">
             <h2>Tags</h2>
             <ul>
-                            <li><a href="/tag/clojure.html">clojure(1)</a></li>
+                            <li><a href="/tag/clojure.html">clojure(2)</a></li>
                             <li><a href="/tag/cygwin.html">cygwin(3)</a></li>
-                            <li><a href="/tag/emacs.html">emacs(7)</a></li>
+                            <li><a href="/tag/emacs.html">emacs(8)</a></li>
                             <li><a href="/tag/firefox.html">firefox(2)</a></li>
+                            <li><a href="/tag/gamedev.html">gamedev(1)</a></li>
                             <li><a href="/tag/git.html">git(1)</a></li>
                             <li><a href="/tag/hamari.html">hamari(3)</a></li>
                             <li><a href="/tag/helm.html">helm(1)</a></li>
                             <li><a href="/tag/java.html">java(2)</a></li>
+                            <li><a href="/tag/javascript.html">javascript(1)</a></li>
                             <li><a href="/tag/jdee.html">jdee(1)</a></li>
                             <li><a href="/tag/linux.html">linux(2)</a></li>
+                            <li><a href="/tag/nexus7.html">nexus7(1)</a></li>
                             <li><a href="/tag/nrepl.html">nrepl(1)</a></li>
                             <li><a href="/tag/processing.html">processing(1)</a></li>
                             <li><a href="/tag/skk.html">skk(1)</a></li>
                             <li><a href="/tag/ssh.html">ssh(2)</a></li>
                             <li><a href="/tag/tmux.html">tmux(1)</a></li>
-                            <li><a href="/tag/ubuntu.html">ubuntu(2)</a></li>
+                            <li><a href="/tag/ubuntu.html">ubuntu(5)</a></li>
                             <li><a href="/tag/windows.html">windows(3)</a></li>
-                            <li><a href="/tag/xmonad.html">xmonad(2)</a></li>
+                            <li><a href="/tag/xmonad.html">xmonad(3)</a></li>
               
             </ul>
           </div>
           <div>
             <h2><a href="/archives.html">Recnet posts</a></h2>
             <ul>
+                            <li><a href="/article/2013/09/23_nexus72013.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li>
                             <li><a href="/article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li>
                             <li><a href="/article/2013/06/14_helm.html">helmのファイル一覧でパスを表示する</a></li>
                             <li><a href="/article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li>
                             <li><a href="/article/2013/05/03_firefox.html">firefox の同期不具合</a></li>
-                            <li><a href="/article/2013/03/02_file-open.html">ファイルオープン数が上限値に達した</a></li>
               
             </ul>
             <h2>Search</h2>

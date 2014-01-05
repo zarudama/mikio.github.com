@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</title>
+    <title>cygwinでsvn upgradeに失敗する。</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,90 +30,98 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</a></h1>
-      <p class="date">2012/9/06</p>
+      <h1><a href="">cygwinでsvn upgradeに失敗する。</a></h1>
+      <p class="date">2012/8/28</p>
     </div>
   </headr>
 
   <div class="content">
     <p>
-Twitter,google,その他多くの検索サイトでは、ページを開くと勝手にフォーカ
-スが移動して入力待ち状態になる。この挙動は多くの普通の人にとっては操作
-性が良くなるんだろうけど、FirefoxのKeysnailでキーボード操作をメインとし
-ている自分にとっては不便極まりない。
+本格的にcygwinをputty代替として使っていく気になったので、Subversionに関
+してもTortoiseSVNからcygwin版のSubversionを使用することにした。
 </p>
-
-<p>
-ってことで、この挙動をどうにかするAdd-Onを探していたんだけど、なぜかなかった。
-</p>
-
-<p>
-代わりにGireaseMonkey<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>を使った代替方法が見つかったのでそのスクリプトを使用することにした。
-</p>
-<ul class="org-ul">
-<li><a href="http://javascripter.hatenablog.com/entry/20080620/1213923411">http://javascripter.hatenablog.com/entry/20080620/1213923411</a>
-</li>
-</ul>
-
-<p>
-GreaseMonkeyアドオンをインストールして、下記コードを追加すれば良い。
-</p>
-
-<p>
-新規ユーザスクリプトを追加する手順は以下。
-</p>
-<ul class="org-ul">
-<li>[メニュー]-&gt;[ツール]-&gt;[GreasMonkey]-&gt;[新規ユーザースクリプト]
-</li>
-</ul>
-
 <div class="org-src-container">
 
-<pre class="src src-javascript"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==UserScript==</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@name        no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@namespace   no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@version     1</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@include     http*</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==/UserScript=</span>
-window.addEventListener(<span style="font-style: italic;">'load'</span>,
-<span style="font-weight: bold;">function</span>() {
-  document.activeElement.blur();
-  <span style="font-weight: bold; text-decoration: underline;">this</span>.removeEventListener(<span style="font-style: italic;">'load'</span>, <span style="font-weight: bold; text-decoration: underline;">arguments</span>.callee, <span style="font-weight: bold; text-decoration: underline;">false</span>);
-},
-<span style="font-weight: bold; text-decoration: underline;">false</span>);
+<pre class="src src-sh">apt-cyg install subversion
+</pre>
+</div>
+<p>
+インストール後、今まで使用していたリポジトリで <code>svn status</code> を実行したら、upgradeしろと言われたので
+してみたところ、下記のエラーが。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ svn upgrade
+svn: E200029: Couldn<span style="font-style: italic;">'t perform atomic initialization</span>
+<span style="font-style: italic;">svn: E200030: SQLite compiled for 3.7.13, but running with 3.7.3</span>
 </pre>
 </div>
 
 <p>
-コードの意味はよくわかってないから、問題があるかもしれないが、その場合
-はその時考えよう。
+ぐぐってみたところ、TortoiseSVNがSQLite3を使用しているのが原因のようだっ
+たので、TortoiseSVNを削除してらリトライ。でも変化せず。
 </p>
-<div id="footnotes">
-<h2 class="footnotes">&#33050;&#27880;: </h2>
-<div id="text-footnotes">
+<div class="org-src-container">
 
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-Greasemonkeyはchromeにも移植されているので、chromeでも利用できるかもしれない。
-</p></div>
-
-
+<pre class="src src-sh">$ sqlite3
+SQLite header and source version mismatch
+2010-10-08 02:34:02 2677848087c9c090efb17c1893e77d6136a9111d
+2012-06-11 02:05:22 f5b5a13f7394dc143aa136f1d4faba6839eaa6dc
+</pre>
 </div>
+
+<p>
+ソースと実行ファイルでバージョンの不一致がおこっている模様。でもソース
+からビルドした記憶はないんだけどなぜだろう。
+よくわからないので、 <code>apt-cyg find sqlite3</code> して関連するパッケージを調べて全て削除した。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ apt-cyg remove libsqlite3-devel libsqlite3_0 odbc-sqlite3 sqlite3 sqlite3-debuginfo
+Removing libsqlite3-devel
+Package libsqlite3-devel removed
+Removing libsqlite3_0
+Package libsqlite3_0 removed
+Package odbc-sqlite3 is not installed, skipping
+Removing sqlite3
+Package sqlite3 removed
+</pre>
+</div>
+
+<p>
+そして、再インストール。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ apt-cyg install sqlite3
+</pre>
+</div>
+
+<p>
+今度はうまくいった。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ svn upgrade
+Upgraded <span style="font-style: italic;">'*************'</span>
+Upgraded <span style="font-style: italic;">'*************'</span>
+ &#65306;
+</pre>
 </div>
   </div>
 
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/firefox.html">firefox</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2012/09/07_swank-clojurenrepl.html">&laquo; swank-clojureの後継モジュールのnREPLを試してみた</a></li>
+                <li class="prev"><a href="/article/2012/08/29_git-repo-delete.html">&laquo; 削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2012/08/29_git-repo-delete.html">&raquo; 削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a></li>
+                <li class="next"><a href="/article/2012/08/27_puttycygwin-terminal.html">&raquo; puttyをやめて、cygwin Terminalにする</a></li>
         
       </ul>
     </nav>

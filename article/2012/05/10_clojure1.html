@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</title>
+    <title>emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,90 +30,29 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</a></h1>
-      <p class="date">2012/9/06</p>
+      <h1><a href="">emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></h1>
+      <p class="date">2012/5/10</p>
     </div>
   </headr>
 
   <div class="content">
-    <p>
-Twitter,google,その他多くの検索サイトでは、ページを開くと勝手にフォーカ
-スが移動して入力待ち状態になる。この挙動は多くの普通の人にとっては操作
-性が良くなるんだろうけど、FirefoxのKeysnailでキーボード操作をメインとし
-ている自分にとっては不便極まりない。
-</p>
-
-<p>
-ってことで、この挙動をどうにかするAdd-Onを探していたんだけど、なぜかなかった。
-</p>
-
-<p>
-代わりにGireaseMonkey<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>を使った代替方法が見つかったのでそのスクリプトを使用することにした。
-</p>
-<ul class="org-ul">
-<li><a href="http://javascripter.hatenablog.com/entry/20080620/1213923411">http://javascripter.hatenablog.com/entry/20080620/1213923411</a>
-</li>
-</ul>
-
-<p>
-GreaseMonkeyアドオンをインストールして、下記コードを追加すれば良い。
-</p>
-
-<p>
-新規ユーザスクリプトを追加する手順は以下。
-</p>
-<ul class="org-ul">
-<li>[メニュー]-&gt;[ツール]-&gt;[GreasMonkey]-&gt;[新規ユーザースクリプト]
-</li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-javascript"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==UserScript==</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@name        no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@namespace   no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@version     1</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@include     http*</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==/UserScript=</span>
-window.addEventListener(<span style="font-style: italic;">'load'</span>,
-<span style="font-weight: bold;">function</span>() {
-  document.activeElement.blur();
-  <span style="font-weight: bold; text-decoration: underline;">this</span>.removeEventListener(<span style="font-style: italic;">'load'</span>, <span style="font-weight: bold; text-decoration: underline;">arguments</span>.callee, <span style="font-weight: bold; text-decoration: underline;">false</span>);
-},
-<span style="font-weight: bold; text-decoration: underline;">false</span>);
-</pre>
-</div>
-
-<p>
-コードの意味はよくわかってないから、問題があるかもしれないが、その場合
-はその時考えよう。
-</p>
-<div id="footnotes">
-<h2 class="footnotes">&#33050;&#27880;: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-Greasemonkeyはchromeにも移植されているので、chromeでも利用できるかもしれない。
-</p></div>
-
-
-</div>
-</div>
+    
   </div>
 
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/firefox.html">firefox</a></span></li>
+                <li><span><a href="/tag/emacs.html">emacs</a></span></li>
+                <li><span><a href="/tag/javascript.html">javascript</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2012/09/07_swank-clojurenrepl.html">&laquo; swank-clojureの後継モジュールのnREPLを試してみた</a></li>
+                <li class="prev"><a href="/article/2012/05/21_java.html">&laquo; Javaでカンマ区切りの数字を出力する。</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2012/08/29_git-repo-delete.html">&raquo; 削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a></li>
+                <li class="next"><a href="/article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html">&raquo; emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></li>
         
       </ul>
     </nav>
@@ -147,12 +86,13 @@ Greasemonkeyはchromeにも移植されているので、chromeでも利用で�
             <ul>
                             <li><a href="/tag/clojure.html">clojure(1)</a></li>
                             <li><a href="/tag/cygwin.html">cygwin(3)</a></li>
-                            <li><a href="/tag/emacs.html">emacs(7)</a></li>
+                            <li><a href="/tag/emacs.html">emacs(9)</a></li>
                             <li><a href="/tag/firefox.html">firefox(2)</a></li>
                             <li><a href="/tag/git.html">git(1)</a></li>
                             <li><a href="/tag/hamari.html">hamari(3)</a></li>
                             <li><a href="/tag/helm.html">helm(1)</a></li>
                             <li><a href="/tag/java.html">java(2)</a></li>
+                            <li><a href="/tag/javascript.html">javascript(2)</a></li>
                             <li><a href="/tag/jdee.html">jdee(1)</a></li>
                             <li><a href="/tag/linux.html">linux(2)</a></li>
                             <li><a href="/tag/nrepl.html">nrepl(1)</a></li>
