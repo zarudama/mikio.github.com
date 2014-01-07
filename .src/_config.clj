@@ -17,7 +17,7 @@
  :emacs "/usr/local/bin/emacs"
  :lang "ja"
 
- :site {:site-title    "Misaki orgmode"
+ :site {:site-title    "ざる魂"
         :site-subtitle "人生パクリパクラレ。技術もパクリパクラレ。知られざる我が魂。" 
         :your-domain   "mikio.github.io"
         :atom          "atom.xml"

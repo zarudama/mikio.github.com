@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>swank-clojureの後継モジュールのnREPLを試してみた|ざる魂</title>
+    <title>Ubuntu 12.04 LTS On ZENBOOK UX21E|ざる魂</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,111 +30,94 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">swank-clojureの後継モジュールのnREPLを試してみた</a></h1>
-      <p class="date">2012/9/07</p>
+      <h1><a href="">Ubuntu 12.04 LTS On ZENBOOK UX21E</a></h1>
+      <p class="date">2012/5/12</p>
     </div>
   </headr>
 
   <div class="content">
     <p>
-いつのまにかswank-clojureが非推奨になり、代わりにnREPLというものが推奨されていた。
-</p>
-<ul class="org-ul">
-<li><a href="https://github.com/technomancy/swank-clojure">https://github.com/technomancy/swank-clojure</a>
-</li>
-</ul>
-<pre class="example">
-This project is no longer under active development.
-
-New users are strongly encouraged to try out nrepl.el instead. If you
-need an advanced debugger, Ritz might be a better fit.
-</pre>
-<p>
-超意訳。「swank-clojureは全然活動してないから、新規のユーザはnrepl.elを強く推奨する。
-もしイケテるデバッガが欲しいならRitzがいいかもYO!。」
+メインで使用していたノートが3年になるのでZENBOOKを買った。
+次期モデルの噂も出始めてはいるが、いつになるかもわからないし、欲しいときが買いどきということで購入。
 </p>
 
 <p>
-ということで、el-getでレシピに下記を追加して <code>nrepl.el</code> をインストール。
+ubuntuもほとんどそのままの状態で大体の機能が使えている。
 </p>
-<div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">:name</span> nrepl
- <span style="font-weight: bold;">:type</span> github
- <span style="font-weight: bold;">:pkgname</span> <span style="font-style: italic;">"kingtim/nrepl.el"</span>
-)
-</pre>
+
+<div class="figure">
+<p><img src="/img/ubuntu-ux21e-640-480.jpg"  alt="ubuntu-ux21e-640-480.jpg"/></p>
 </div>
 
 <p>
-で <code>lein2.0</code> で適当にプロジェクトをつくって、 <code>project.clj</code> に下記を追加。
-</p>
-<pre class="example">
-:dependencies [[org.clojure/clojure "1.4.0"]
-               [org.clojure/tools.nrepl "0.2.0-beta9" ]]
-</pre>
-
-<p>
-最後に <code>M-x nrepl-jack-in</code> すると、nREPL-Server が起動して、nREPLが起動する。
-</p>
-
-<p>
-キーバインドはほとんどSLIMEと同様だし、SLIMEの下記の特徴も実現してるので、これは本格的に移行できる雰囲気。
+以下を参考にした。
 </p>
 <ul class="org-ul">
-<li>シンボルの補完(TABで補完できる)
-</li>
-<li>関数の引数表示(シンボルを打ちこむとミニバッファに自動表示)
+<li><a href="https://help.ubuntu.com/community/AsusZenbook">https://help.ubuntu.com/community/AsusZenbook</a>
 </li>
 </ul>
 
 <p>
-ただSLIMEを常用してきたわけではないので足りない機能もまだありそうだけど。
-たとえば、
-</p>
-<ul class="org-ul">
-<li>REPL上でエラーが発生してもデバッガが起動しない(例外が表示されるだけ)
-</li>
-<li>nREPLとは直接関係ないけど、auto-complte.elに対応するモジュール(ac-slime)がない。
-</li>
-<li>HyperSpecのようなドキュメントシステムは？(doc関数ががあるからいらないか)
-</li>
-</ul>
-
-<p>
-ちなみに下記の記事を読むと、nREPL開発に至る経緯がある。
-</p>
-<ul class="org-ul">
-<li><a href="http://technomancy.us/163">http://technomancy.us/163</a>
-</li>
-</ul>
-
-<p>
-clojureでSLIMEを使用する場合、最新のバージョンだと動かなかったりするので、
-環境構築に苦労したけど、専用のSLIME代替モジュールができたおかげで環境構築が楽になりますな。
+インストール後の設定は別エントリにまとめている。
 </p>
 
 <p>
-nREPLは、まだまだできたばかりのプロジェクトだけれども、
-SLIMEの呪縛から解き放たれた期待のプロジェクト。
-積極的に使っていきたい。
+事前に2chや価格comで情報収集していたが、感想としてはやはりキーボードの打ちにくさが一番気になった。
+他のキーボードを使わずに、このノートだけを使いつづければ、多分慣れてし
+まって、なんとも思わなくなるんだろう。
+けれども自分の場合、会社ではロジクールの打ちやすいキーボードを使用して
+いるので凄く気になってしまう。。。
+</p>
+
+<p>
+つぎにヒンジ。自分が丁度いいと思う角度で止めようと思っても、
+自重でトルクがかかってパカっと最大まで開いてしまう。
+普段大きな問題となることないが、地味に痛い。ただし固体差もあるだろうか
+ら大丈夫な人もいるかと思う。
+</p>
+
+<p>
+トラックパッドについては言われていたほど誤タッチもなく割と快適。キーボー
+ドメインの操作のときはF9を押下すればオフにできるしね。
+</p>
+
+<p>
+液晶については、視野角が狭く見づらいという意見があったが、自分は特に気にならない。
+動画鑑賞メインとかビジュアル系の用途には多分よわいだろう。自分の場合は
+プログラミングなので大丈夫かと。
+</p>
+
+<p>
+バッテリーのもちに関してはまだ計測したわではないのでわからないがあまり
+期待できないだろう。もって3時間てところか？
+</p>
+
+<p>
+不満が多いエントリになってしまったが、全般としては、かなり満足している。
+とても静かだし、薄くて軽い。なによりさくさく動く。
+</p>
+
+<p>
+次期モデルは、オプションとしてIPSと高解像度化が図られるとのことだが
+それに加えてキーボードとヒンジの問題が改善されればかなり使いやすくなると思う。
 </p>
   </div>
 
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/clojure.html">clojure</a></span></li>
-                <li><span><a href="/tag/nrepl.html">nrepl</a></span></li>
+                <li><span><a href="/tag/ubuntu.html">ubuntu</a></span></li>
+                <li><span><a href="/tag/zenbook.html">zenbook</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2012/09/28_howm-modeorg-mode.html">&laquo; howm-modeとorg-modeを同時に使ってみたい。</a></li>
+                <li class="prev"><a href="/article/2012/05/21_java.html">&laquo; Javaでカンマ区切りの数字を出力する。</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2012/09/06_firefox-focus.html">&raquo; Firefoxでサイトを開いた時に自動フォーカスされるのを無効化する。</a></li>
+                <li class="next"><a href="/article/2012/05/10_emacs-slime-nodejs-swank-js-emacsjavascript.html">&raquo; emacs + SLIME + node.js + swank-js でemacsからブラウザ上のjavascriptを実行してみる</a></li>
         
       </ul>
     </nav>
@@ -185,9 +168,10 @@ SLIMEの呪縛から解き放たれた期待のプロジェクト。
                             <li><a href="/tag/skk.html">skk(1)</a></li>
                             <li><a href="/tag/ssh.html">ssh(2)</a></li>
                             <li><a href="/tag/tmux.html">tmux(1)</a></li>
-                            <li><a href="/tag/ubuntu.html">ubuntu(4)</a></li>
+                            <li><a href="/tag/ubuntu.html">ubuntu(5)</a></li>
                             <li><a href="/tag/windows.html">windows(4)</a></li>
                             <li><a href="/tag/xmonad.html">xmonad(3)</a></li>
+                            <li><a href="/tag/zenbook.html">zenbook(1)</a></li>
               
             </ul>
           </div>

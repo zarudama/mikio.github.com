@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title>Misaki orgmode</title>
+    <title>ざる魂</title>
     <link href="http://localhost:8080/atom.xml" rel="self" />
     <link href="http://localhost:8080/" />
     <updated></updated>
@@ -162,10 +162,24 @@
         <content type="html"></content>
     </entry>
         <entry>
+        <title>javapコマンドを使ってみた。</title>
+        <link>http://localhost:8080/article/2012/06/02_javap.html</link>
+        <updated>2012-06-02T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/06/02_javap.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>Javaでカンマ区切りの数字を出力する。</title>
         <link>http://localhost:8080/article/2012/05/21_java.html</link>
         <updated>2012-05-21T00:00:00</updated>
         <id>http://localhost:8080/article/2012/05/21_java.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Ubuntu 12.04 LTS On ZENBOOK UX21E</title>
+        <link>http://localhost:8080/article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e.html</link>
+        <updated>2012-05-12T00:00:00</updated>
+        <id>http://localhost:8080/article/2012/05/12_ubuntu-1204-lts-on-zenbook-ux21e.html</id>
         <content type="html"></content>
     </entry>
         <entry>
