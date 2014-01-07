@@ -8,7 +8,7 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
-        <title>Clojure製ブログジェネレータMisakiのemacs Org-mode版のプラグインを書いた</title>
+        <title>Clojure製ブログジェネレータMisakiのEmacs Org-mode版のプラグインを書いた</title>
         <link>http://localhost:8080/article/2014/01/05_misaki.html</link>
         <updated>2014-01-05T00:00:00</updated>
         <id>http://localhost:8080/article/2014/01/05_misaki.html</id>
@@ -51,9 +51,9 @@
     </entry>
         <entry>
         <title>ファイルオープン数が上限値に達した</title>
-        <link>http://localhost:8080/article/2013/03/02_file-open.html</link>
+        <link>http://localhost:8080/article/2013/03/02_.html</link>
         <updated>2013-03-02T00:00:00</updated>
-        <id>http://localhost:8080/article/2013/03/02_file-open.html</id>
+        <id>http://localhost:8080/article/2013/03/02_.html</id>
         <content type="html"></content>
     </entry>
         <entry>
@@ -135,9 +135,9 @@
     </entry>
         <entry>
         <title>削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</title>
-        <link>http://localhost:8080/article/2012/08/29_git-repo-delete.html</link>
+        <link>http://localhost:8080/article/2012/08/29_.html</link>
         <updated>2012-08-29T00:00:00</updated>
-        <id>http://localhost:8080/article/2012/08/29_git-repo-delete.html</id>
+        <id>http://localhost:8080/article/2012/08/29_.html</id>
         <content type="html"></content>
     </entry>
         <entry>
