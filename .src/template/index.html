@@ -1,0 +1,25 @@
+; @layout layout
+; @title  misaki orgmode
+; @orgmode? false
+<br/>
+<p>
+</p>
+
+<h2>記事一覧</h2>
+<ul>
+@(for posts)
+<li><a href="$(url)">$(date-format date "yyyy/MMM/dd") - $(title)</a></li>
+@(end)
+</ul>
+@(if prev-page)
+<a href="$(prev-page)">&laquo; Newer posts</a>
+@(end)
+@(if next-page)
+<a href="$(next-page)">Older posts &raquo;</a>
+@(end)
+
+
+<h2>Links</h2>
+<ul>
+  <li><a href="$(root)archives.html">Archives</a></li>
+</ul>
