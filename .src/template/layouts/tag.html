@@ -10,7 +10,7 @@
   <div class="content">
     <ul>
       @(for tag-posts)
-      <li><a href="$(url)">$(date-format date "yyyy MMM dd") - $(title)</a></li>
+      <li><a href="$(url)">$(title)</a>  [$(date-format date "yyyy/MM/dd")]</li>
       @(end)
     </ul>
   </div>

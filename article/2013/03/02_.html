@@ -36,12 +36,27 @@
   </headr>
 
   <div class="content">
-    <p>
-CentOSで"too many files"なるエラーが多発したのでその対応策をメモしておく。
+    <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. 確認方法</a></li>
+<li><a href="#sec-2">2. 一時的な設定方法</a>
+<ul>
+<li><a href="#sec-2-1">2.1. システム全体</a></li>
+<li><a href="#sec-2-2">2.2. ユーザ毎(カレントユーザ)</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. 恒久的な設定方法</a></li>
+</ul>
+</div>
+</div>
+<p>
+CentOSで「too many files」なるエラーが多発したのでその対応策をメモしておく。
 </p>
 
 <p>
-下記に対処方法方法がある。
+下記を参考にした。
 </p>
 <ul class="org-ul">
 <li><a href="http://thinkit.co.jp/free/tech/23/5">http://thinkit.co.jp/free/tech/23/5</a>
@@ -164,7 +179,7 @@ $ ulimit -n
 </div>
 
 <p>
-ただし、一般ユーザではこの値を設定できないため(sudoでも実行できない)、rootユーザで実行しなくてはならない。
+下記は、Nを2048個にする例。
 </p>
 <div class="org-src-container">
 
@@ -174,9 +189,9 @@ $ sudo ulimit -n 2048
 sudo: ulimit: command not found
 </pre>
 </div>
-
 <p>
-rootで実施。
+残念ながら一般ユーザ実行すると失敗する(sudoでも実行できない)。
+rootユーザで実行しなくてはならない。
 </p>
 <div class="org-src-container">
 
@@ -187,7 +202,7 @@ $ ulimit -n
 </pre>
 </div>
 <p>
-直接rootになることは禁止されている環境も多いため、実質この方法は実施できない。
+ただし直接rootになることは禁止されている環境も多いため、実質この方法は実施できない。
 </p>
 </div>
 </div>
@@ -367,7 +382,7 @@ mikio hard nofile 2048
                             <li><a href="/tag/javascript.html">javascript(1)</a></li>
                             <li><a href="/tag/jdee.html">jdee(1)</a></li>
                             <li><a href="/tag/linux.html">linux(2)</a></li>
-                            <li><a href="/tag/misaki.html">misaki(1)</a></li>
+                            <li><a href="/tag/misaki.html">misaki(2)</a></li>
                             <li><a href="/tag/nexus7.html">nexus7(1)</a></li>
                             <li><a href="/tag/nrepl.html">nrepl(1)</a></li>
                             <li><a href="/tag/processing.html">processing(1)</a></li>
@@ -387,7 +402,7 @@ mikio hard nofile 2048
                             <li><a href="/article/2013/09/23_nexus72013.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li>
                             <li><a href="/article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li>
                             <li><a href="/article/2013/06/14_helm.html">helmのファイル一覧でパスを表示する</a></li>
-                            <li><a href="/article/2013/05/03_windowsemacs243.html">windows版emacs24.3で画像を表示する。</a></li>
+                            <li><a href="/article/2013/05/04_windowsmisaki.html">Windowsでmisakiのデモが動かない</a></li>
               
             </ul>
             <h2>Search</h2>
