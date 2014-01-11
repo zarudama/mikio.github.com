@@ -58,9 +58,9 @@
     </entry>
         <entry>
         <title>ファイルオープン数が上限値に達した</title>
-        <link>http://localhost:8080/article/2013/03/02_.html</link>
+        <link>http://localhost:8080/article/2013/03/02_file-open.html</link>
         <updated>2013-03-02T00:00:00</updated>
-        <id>http://localhost:8080/article/2013/03/02_.html</id>
+        <id>http://localhost:8080/article/2013/03/02_file-open.html</id>
         <content type="html"></content>
     </entry>
         <entry>
@@ -142,9 +142,9 @@
     </entry>
         <entry>
         <title>削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</title>
-        <link>http://localhost:8080/article/2012/08/29_.html</link>
+        <link>http://localhost:8080/article/2012/08/29_git-repo-delete.html</link>
         <updated>2012-08-29T00:00:00</updated>
-        <id>http://localhost:8080/article/2012/08/29_.html</id>
+        <id>http://localhost:8080/article/2012/08/29_git-repo-delete.html</id>
         <content type="html"></content>
     </entry>
         <entry>
