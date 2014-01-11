@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>Misakiにnrepl-serverを埋め込む</title>
+        <link>http://localhost:8080/article/2014/01/11_misaki2.html</link>
+        <updated>2014-01-11T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/01/11_misaki2.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>Clojure製ブログジェネレータMisakiのEmacs Org-mode版のプラグインを書いた</title>
         <link>http://localhost:8080/article/2014/01/05_misaki.html</link>
         <updated>2014-01-05T00:00:00</updated>
