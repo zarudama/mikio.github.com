@@ -43,6 +43,13 @@
         <content type="html"></content>
     </entry>
         <entry>
+        <title>Banners</title>
+        <link>http://localhost:8080/misaki-orgmode/2040-12/06-banners.html</link>
+        <updated>2040-12-01T00:00:00</updated>
+        <id>http://localhost:8080/misaki-orgmode/2040-12/06-banners.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>日本語の説明</title>
         <link>http://localhost:8080/misaki-orgmode/2000-12/99-readme-ja.html</link>
         <updated>2000-12-01T00:00:00</updated>
