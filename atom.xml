@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>4clojureを問いていく記事</title>
+        <link>http://localhost:8080/article/2014/01/14_4clojure.html</link>
+        <updated>2014-01-14T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/01/14_4clojure.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>Misakiにnrepl-serverを埋め込む</title>
         <link>http://localhost:8080/article/2014/01/11_misaki2.html</link>
         <updated>2014-01-11T00:00:00</updated>
