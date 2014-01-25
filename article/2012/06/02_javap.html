@@ -36,7 +36,57 @@
   </headr>
 
   <div class="content">
-    
+    <p>
+Javaは <code>*.java</code> から <code>*.class</code> を生成するが、これはテキストエディタで閲覧できないバイナリファイルだ。
+これをエディタで閲覧できる状態にするには、jdkに標準搭載されているjavapコマンドを使用しすれば良い。
+</p>
+
+<p>
+例えばhogeというパッケージにあるFuga.javaがあるとする。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="font-weight: bold; text-decoration: underline;">package</span> <span style="font-weight: bold; font-style: italic;">hoge</span>;
+public <span style="font-weight: bold; text-decoration: underline;">class</span> <span style="font-weight: bold; font-style: italic;">Fuga</span> {
+    public <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold; font-style: italic;">main</span>(String[] args) {
+        System.out.println(<span style="font-style: italic;">"Hello Javap!"</span>);
+    }
+}
+</pre>
+</div>
+
+<p>
+これをコンパイルした結果をjavapで見たい時は、以下のようなコマンドを叩けばいい。
+このときhoge.Fugaクラスはhoge/Fuga.lcassというディレクトリ構造になければならない。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">javap -c hoge.Fuga &gt; Fuga.code
+</pre>
+</div>
+
+<p>
+Fuga.codeは以下のようになる。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c"><span style="font-weight: bold; text-decoration: underline;">Compiled</span> <span style="font-weight: bold; font-style: italic;">from</span> <span style="font-style: italic;">"Fuga.java"</span>
+public class hoge.Fuga {
+  <span style="font-weight: bold; text-decoration: underline;">public</span> <span style="font-weight: bold; font-style: italic;">hoge</span>.Fuga();
+    Code:
+       0: aload_0       
+       1: invokespecial #1                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Method java/lang/Object."&lt;init&gt;":()V</span>
+       4: <span style="font-weight: bold;">return</span>        
+
+  public <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">void</span> main(java.lang.String[]);
+    <span style="font-weight: bold; text-decoration: underline;">Code</span>:
+       0: getstatic     #2                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Field java/lang/System.out:Ljava/io/PrintStream;</span>
+       3: ldc           #3                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">String Hello Javap!</span>
+       5: invokevirtual #4                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Method java/io/PrintStream.println:(Ljava/lang/String;)V</span>
+       8: <span style="font-weight: bold;">return</span>        
+}
+</pre>
+</div>
   </div>
 
   <footer class="article-footer">
@@ -114,6 +164,7 @@
                             <li><a href="/tag/processing.html">processing(1)</a></li>
                             <li><a href="/tag/skk.html">skk(1)</a></li>
                             <li><a href="/tag/ssh.html">ssh(2)</a></li>
+                            <li><a href="/tag/thinkpad.html">thinkpad(1)</a></li>
                             <li><a href="/tag/tmux.html">tmux(1)</a></li>
                             <li><a href="/tag/ubuntu.html">ubuntu(5)</a></li>
                             <li><a href="/tag/windows.html">windows(4)</a></li>
@@ -125,11 +176,11 @@
           <div>
             <h2><a href="/archives.html">Recnet posts</a></h2>
             <ul>
+                            <li><a href="/article/2014/01/23_thinkpad-keyboard.html">javapコマンドを使ってみた。</a></li>
                             <li><a href="/article/2014/01/14_4clojure.html">4clojureを問いていく記事</a></li>
                             <li><a href="/article/2014/01/11_misaki2.html">Misakiにnrepl-serverを埋め込む</a></li>
                             <li><a href="/article/2014/01/05_misaki.html">Clojure製ブログジェネレータMisakiのEmacs Org-mode版のプラグインを書いた</a></li>
                             <li><a href="/article/2013/09/23_nexus72013.html">Nexus7(2013)にBUNKER RINGを装着する!</a></li>
-                            <li><a href="/article/2013/08/07_ubuntuxmonademacsprocessing.html">ubuntuでxmonadして、emacsでProcessingしてます</a></li>
               
             </ul>
             <h2>Search</h2>
