@@ -1,8 +1,8 @@
 /* =basic */
 body, h1, h2, h3, h4, p { margin: 0; padding: 0; }
 body, p {
-    font-family: 'Josefin Sans', sans-serif; 
-    /* font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'VL ゴシック', 'MS PGothic', Sans-serif; */
+    /* font-family: 'Josefin Sans', sans-serif;  */
+    font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'VL ゴシック', 'MS PGothic', Sans-serif;
     line-height: 1.6em;
 }
 
