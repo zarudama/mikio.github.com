@@ -18,7 +18,7 @@
  :lang "ja"
 
  :site {:site-title    "ざる魂"
-        :site-subtitle "人生パクリパクラレ。技術もパクリパクラレ。知られざる我が魂。" 
+        :site-subtitle "最初はただの「まね」でいい。真似て学んで「まねぶ」。知られざる我が魂。" 
         :your-domain   "mikio.github.io"
         :atom          "atom.xml"
         :atom-base     "http://localhost:8080"
