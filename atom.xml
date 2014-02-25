@@ -85,6 +85,13 @@
         <content type="html"></content>
     </entry>
         <entry>
+        <title>org-modeの段落の改行を削除したい</title>
+        <link>http://localhost:8080/article/2013/02/16_org-mode.html</link>
+        <updated>2013-02-16T00:00:00</updated>
+        <id>http://localhost:8080/article/2013/02/16_org-mode.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>python window tiler を試す</title>
         <link>http://localhost:8080/article/2013/01/29_python-window-tiler.html</link>
         <updated>2013-01-29T00:00:00</updated>
