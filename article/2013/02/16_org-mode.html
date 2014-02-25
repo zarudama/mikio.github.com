@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>タグ一覧|ざる魂</title>
+    <title>org-modeの段落の改行を削除したい|ざる魂</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,15 +30,114 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1>git</h1>
+      <h1><a href="">org-modeの段落の改行を削除したい</a></h1>
+      <p class="date">2013/2/16</p>
     </div>
   </headr>
+
   <div class="content">
-    <ul>
-            <li><a href="/article/2012/08/29_.html">削除したはずリモートブランチが、別のリポジトリから見ると削除されていない。</a>  [2012/08/29]</li>
-      
-    </ul>
+    <p>
+当ブログは、<a href="http://renard.github.com/o-blog/">o-blog</a> で運営していて、org-modeで原稿を書いています。
+その際、頻繁に <code>fill-paragraph(M-q)</code> を使用するのですが、
+これが <code>org-export-as-html</code> すると都合が悪いのです。
+</p>
+
+<p>
+どう都合が悪いかというと、段落の文のなかに半角スペースが紛れこんでしまうのです。
+</p>
+
+<p>
+例をあげると
+</p>
+<pre class="example">
+今日はいい
+天気ですね!
+</pre>
+<p>
+これは、HTMLエクスポートすると
+</p>
+<pre class="example">
+&lt;p&gt;今日はいい
+ 天気ですね!&lt;/p&gt;
+</pre>
+<p>
+となるので、ブラウザ上では
+</p>
+<pre class="example">
+今日はいい 天気ですね!
+</pre>
+<p>
+となり、文の途中に空白文字が挿入されてしまいます。
+</p>
+
+<p>
+これはHTMLの仕様なので、変更するのはムズかしそうです。
+cssなりorg-modeなりで「pタグの改行は空白にしない」オプションがあればいいのですが、
+ざっと見たかぎり見つかりませんでした。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<p>
+まあしょうがないので、これからは <code>fill-paragraph(M-q)</code> を使用せず、
+1行ごとに改行することにします。
+</p>
+<pre class="example">
+今日はいい天気ですね!
+そうですね。
+</pre>
+<p>
+これはこうなる。
+</p>
+<pre class="example">
+今日はいい天気ですね!そうですね。
+</pre>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+わかち書きが基本の英語圈でできた仕様だからしかたないのだろうけど、
+日本語の文章を書くときは不便だなあ。
+</p></div>
+
+
+</div>
+</div>
   </div>
+
+  <footer class="article-footer">
+    <nav class="tag">
+      <ul>
+                <li><span><a href="/tag/hamari.html">hamari</a></span></li>
+                <li><span><a href="/tag/oblog.html">oblog</a></span></li>
+        
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pager">
+                <li class="prev"><a href="/article/2013/03/02_.html">&laquo; ファイルオープン数が上限値に達した</a></li>
+        
+        &nbsp;&nbsp;
+                <li class="next"><a href="/article/2013/01/29_python-window-tiler.html">&raquo; python window tiler を試す</a></li>
+        
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+   var disqus_shortname = 'mikiokunblog';
+
+   /* * * DON'T EDIT BELOW THIS LINE * * */
+   (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
 </article>
     </div>
         <script type="text/javascript" src="/js/highlight.pack.js"></script>
