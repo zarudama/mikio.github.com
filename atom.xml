@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>特定の日付より古いファイルを削除する方法</title>
+        <link>http://localhost:8080/article/2014/03/15_find-date-del.html</link>
+        <updated>2014-03-15T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/03/15_find-date-del.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>キーボードについて</title>
         <link>http://localhost:8080/article/2014/01/23_thinkpad-keyboard.html</link>
         <updated>2014-01-23T00:00:00</updated>
