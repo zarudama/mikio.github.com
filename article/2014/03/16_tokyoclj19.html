@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>特定の日付より古いファイルを削除する方法|ざる魂</title>
+    <title>tockyo.clj#19に参加してきた。|ざる魂</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,177 +30,97 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">特定の日付より古いファイルを削除する方法</a></h1>
-      <p class="date">2014/3/15</p>
+      <h1><a href="">tockyo.clj#19に参加してきた。</a></h1>
+      <p class="date">2014/3/16</p>
     </div>
   </headr>
 
   <div class="content">
     <p>
-例えば一年以上前の3/3より前(3/2以前)のログファイルを削除したい場合。
-</p>
-
-
-<div class="figure">
-<p><img src="/img/find-del/find1.png" width="400px" alt="find1.png"/></p>
-</div>
-
-<p>
-findがすぐに思いつくが、findには日付指定のオプションが見あたらない。
-</p>
-
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> 答え</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-touchでダミーファイルを作って、findのnewerオプションと否定演算子を使い、xargsとrmで削除する。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ touch -t 201303030000 /tmp/hoge
-$ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer /tmp/hoge|sort|less
-</pre>
-</div>
-<p>
-中身を確認して問題なさそうなら
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer /tmp/hoge|xargs rm
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-sec-2" class="outline-2">
-<h2 id="sec-2"><span class="section-number-2">2</span> 解説</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-普通に考えると <code>find</code> を使って <code>-mtime</code> などで日数を指定する。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ find /usr/local/apache/logs -mtime +180|wc -l
-554
-$ find /usr/local/apache/logs -mtime +90|wc -l
-757
-</pre>
-</div>
-<p>
-でも今回の要件の場合日数を計算するのが面倒なので日付を直接指定して削除したい。
-しかし <code>man find</code> してもそんなオプションはない。
-だが良くみるとファイルのタイムスタンプを基準にするオプション <code>newer</code> ならある。
-このオプションを使えばなんとかなりそうである。
+鉄は熱い打ちに打てということで、帰宅直後のいまのうちに書いておきます。
 </p>
 
 <p>
-まず下記のようにダミーのファイルを作成する。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ touch -t 201303030000 /tmp/hoge
-</pre>
-</div>
-<p>
-tオプションの意味は <code>YYYYMMDDhhmm</code> 。詳細は <code>man touch</code> 参照。
+3年ぶりにtokyo.cljに参加してきました。
+その前の日にはsaitama.cljにも参加してきました。
+この2日間で得られた知見をメモしておきます。
 </p>
 
-<p>
-で、このファイルのタイムスタンプを基準に <code>newer</code> を使えばよい。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ find /usr/local/apache/logs -newer hoge|sort|less
-</pre>
-</div>
-<p>
-これで2013年3月3日以降に変更されたファイルを抽出できる。
-だが今回の場合は「指定日以前」のファイルを抽出したいのでこれでは駄目だ。
-</p>
-
-<p>
-<code>newer</code> があるなら <code>older</code> オプションがありそうだが残念ながらなかった。
-ではどうすればいいんだと小一時間考えた結果、否定オプション <code>!</code> を使えば良いことがわかった。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer hoge|sort|less
-</pre>
-</div>
-<p>
-否定オプションにはエスケープが必要である。
- <code>newer</code> は指定した日を含む「以降」であり、
-その否定なので「以前」ではなく「前」になることに注意(当日は含まない)。
-</p>
-
-
-<div class="figure">
-<p><img src="/img/find-del/find2.png" width="400px" alt="find2.png"/></p>
-</div>
-
-
-<p>
-あとはこの抽出したファイルにxargsを使って適当なコマンドをあてれば良い。
-今回の場合は削除のrmコマンドを使った。
-</p>
-</div>
-</div>
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> ついでに日数指定の復習</h2>
-<div class="outline-text-2" id="text-3">
-</div><div id="outline-container-sec-3-1" class="outline-3">
-<h3 id="sec-3-1"><span class="section-number-3">3.1</span> timeの意味</h3>
-<div class="outline-text-3" id="text-3-1">
-<pre class="example">
-atime:アクセス日(access)
-ctime:ステータス変更日(chenge)
-mtime:ファイルを修正した日(modify)。普通はこれを使用する。
-</pre>
-</div>
-</div>
-<div id="outline-container-sec-3-2" class="outline-3">
-<h3 id="sec-3-2"><span class="section-number-3">3.2</span> 日数の指定</h3>
-<div class="outline-text-3" id="text-3-2">
-
-<div class="figure">
-<p><img src="/img/find-del/find3.png" width="70%" alt="find3.png"/></p>
-</div>
-<pre class="example">
--mtime 4: ちょうど4日前
--mtime +4: 5日以前
--mtime -4: 3日以内
-</pre>
-</div>
-</div>
-</div>
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> 参考</h2>
-<div class="outline-text-2" id="text-4">
 <ul class="org-ul">
-<li><a href="http://futuremix.org/2011/01/find-newer-file-timestamp">http://futuremix.org/2011/01/find-newer-file-timestamp</a>
+<li>引数は、なんでもmapにするのが良い。
 </li>
-<li><a href="http://www.sixnine.net/roadside/find.html">http://www.sixnine.net/roadside/find.html</a>
-</li>
-<li><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find">http://x68000.q-e-d.net/~68user/unix/pickup?find</a>
+<li>変数がないからといってletを使ってはいけないことはない。
+<ul class="org-ul">
+<li>むしろ自己説明的なコードとしてどんどん使うべき。
 </li>
 </ul>
-</div>
-</div>
+</li>
+<li><a href="http://www.luminusweb.net/">Luminus</a> は結構よさげ
+</li>
+<li>noirとLightTableとkormaとVisualStudioは全部おなじ作者
+</li>
+<li>ベテランのすごいエンジニアからも注目されているClojure
+</li>
+<li>会社経営者からも注目されているclojure
+</li>
+<li>asyncを使った <a href="http://www.appbank.net/2013/05/11/iphone-application/599299.php">Dots</a> というスマホゲームのClojureScriptの移植版があるらしい。
+</li>
+<li>ゲームをつくるときの状態管理のひとつの実装例として、ゲーム内のすべての状態をひとつのatomで定義しておく。
+</li>
+<li>4clojureは良い
+</li>
+<li>clojureをつかって機能拡張したいからエディタ作ってますというemacserが二人もいたこと。
+</li>
+<li>WebViewを使ったエディタが最近のトレンド？(atom, lightTable...)
+</li>
+<li>以外とClojureでゲームをつくりたいという需要があること
+</li>
+<li>やっぱりみんな英語が得意、少なくとも情報を得るために海外サイトは見ている。
+</li>
+<li>Clojureをおしゃれな言語にして女子受けをよくして、ゆくゆくは <a href="http://matome.naver.jp/odai/2133291850090095101">アイドル</a> を生みだそう!
+</li>
+<li>5月下旬にはClojureの入門本がでる
+</li>
+<li>次回のtokyo.cljはサイン会!(重要)
+</li>
+</ul>
+
+<p>
+勘ちがいとかあるかもしれまんせんがこんな感じ。
+ライトニングトークの内容はあとで追いかけおようと思います。
+</p>
+
+<p>
+やはり勉強会は懇親会が重要なんだなと思った次第です。
+なにより普段ひとりでClojureコード書くので実際にリアルでClojureの話をできたのはよかったですね。
+</p>
+
+<p>
+自分は長らく初級者だと思ってたんですが、
+今日いざコードを書いてみようとおもったら普通に括弧mapとか括弧ifとか打ってて、
+「あれ、これはもう初級者じゃなくね？」と思ったのでした。あ、でもこれは、EmacsLispの影響かもしれません。
+というか、Clojureのスキルはほとんどないです。
+それでもこのブログは、<a href="http://mikio.github.io/article/2014/01/05_misaki.html">Clojure製のブログジェネレータ</a> で書いてます。
+なにが言いたいかというと、みんなClojureやりましょうです。LightTableとかおすすめです。
+</p>
+
+<p>
+最後に、勉強会を開催主導してくれたスタッフの皆様、お疲れさまでした。
+</p>
   </div>
 
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/linux.html">linux</a></span></li>
+                <li><span><a href="/tag/clojure.html">clojure</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2014/03/16_tokyoclj19.html">&laquo; tockyo.clj#19に参加してきた。</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2014/01/23_thinkpad-keyboard.html">&raquo; キーボードについて</a></li>
+                <li class="next"><a href="/article/2014/03/15_find-date-del.html">&raquo; 特定の日付より古いファイルを削除する方法</a></li>
         
       </ul>
     </nav>

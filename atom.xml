@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>tockyo.clj#19に参加してきた。</title>
+        <link>http://localhost:8080/article/2014/03/16_tokyoclj19.html</link>
+        <updated>2014-03-16T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/03/16_tokyoclj19.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>特定の日付より古いファイルを削除する方法</title>
         <link>http://localhost:8080/article/2014/03/15_find-date-del.html</link>
         <updated>2014-03-15T00:00:00</updated>
