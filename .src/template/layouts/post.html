@@ -1,18 +1,16 @@
 ; @layout   layout
 ; @orgmode? false
 ; @title post-templ
-<article>
-  <headr>
-    <div class="article-header">
-      <h1><a href="$(url)">$(title)</a></h1>
-      <p class="date">$(date-format post-date "yyyy/MMM/dd")</p>
-    </div>
-  </headr>
 
-  <div class="content">
-    $(raw content)
+<div class="article-header">
+  <div class="title">
+  <h1><a href="$(url)">$(title)</a></h1>
   </div>
+  <p class="date">$(date-format post-date "yyyy/MMM/dd")</p>
+</div>
 
+<div class="content">
+  $(raw content)
   <footer class="article-footer">
     <nav class="tag">
       <ul>
@@ -24,11 +22,11 @@
     <nav>
       <ul class="pager">
         @(if prev)
-        <li class="prev"><a href="$(url)">&laquo; $(title)</a></li>
+        <li class="prev"><a href="$(url)">&laquo;&nbsp;$(title)</a></li>
         @(end)
         &nbsp;&nbsp;
         @(if next)
-        <li class="next"><a href="$(url)">&raquo; $(title)</a></li>
+        <li class="next"><a href="$(url)">$(title)&nbsp;&raquo;</a></li>
         @(end)
       </ul>
     </nav>
@@ -48,5 +46,4 @@
   </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
-</article>
+</div>

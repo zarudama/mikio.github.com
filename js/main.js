@@ -1,4 +1,4 @@
 (function(window, undefined){
-    hljs.initHighlightingOnLoad();
+//    hljs.initHighlightingOnLoad();
 }(this));
 

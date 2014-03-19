@@ -1,42 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive pricing table.">
+    <title>.emacsに必要なpackage を指定して自動で各種elispをインストールする|ざる魂</title>
 
-    <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></head>script>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/main-grid-old-ie.css">
     <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/main-grid.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/layouts/pricing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/layouts/pricing.css">
+    <!--<![endif]-->
 
         <link href="/atom.xml" rel="alternate" title="ざる魂" type="application/atom+xml" />
     
 
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Josefin+Sans" />
-        <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css" />
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css" />
     
 
         <link rel="stylesheet" href="/css/main.css" />
     
 
-    <title>.emacsに必要なpackage を指定して自動で各種elispをインストールする|ざる魂</title>
   </head>
   <body>
     <header class="global-header">
-      <div class="container site-header">
-        <h1><a href="/">ざる魂</a></h1>
-        <p>真似て学んで「まねぶ」サル。知られざる我が魂。</p>
+      <div class="container">
+        <div class="site-header">
+          <a href="/"><img src="/img/zarudama-logo.png"></img></a>
+          <p>真似て学んで「まねぶ」サル。知られざる我が魂。</p>
+        </div>
       </div>
     </header>
-    <div class="container">
-      <article>
-  <headr>
-    <div class="article-header">
-      <h1><a href="">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></h1>
-      <p class="date">2013/1/06</p>
-    </div>
-  </headr>
 
-  <div class="content">
-    <p>
+    <div class="l-content">
+      <div class="information ">
+
+        <div class="pure-menu pure-menu-open pure-menu-horizontal">
+          <ul>
+            <li><a href="/archives.html">Archives</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="article-header">
+  <div class="title">
+  <h1><a href="">.emacsに必要なpackage を指定して自動で各種elispをインストールする</a></h1>
+  </div>
+  <p class="date">2013/1/06</p>
+</div>
+
+<div class="content">
+  <p>
 今までパッケージ管理には <code>el-get</code> を使用してきたのですが、
 Windows環境がメインだと <code>git clone</code> がうまくいかなかったり、
 インストール後のビルド工程が失敗したりで、なかなか難儀していたので、
@@ -184,8 +207,6 @@ el-getも全く使用していないというわけではなく、EmacsWikiな�
 </p>
 </div>
 </div>
-  </div>
-
   <footer class="article-footer">
     <nav class="tag">
       <ul>
@@ -195,10 +216,10 @@ el-getも全く使用していないというわけではなく、EmacsWikiな�
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2013/01/06_cygwintmux.html">&laquo; cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li>
+                <li class="prev"><a href="/article/2013/01/06_cygwintmux.html">&laquo;&nbsp;cygwin経由で表示したtmuxの分割罫線が表示崩れする</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2012/12/30_eshell.html">&raquo; eshell上でリダイレクトした結果が文字化け</a></li>
+                <li class="next"><a href="/article/2012/12/30_eshell.html">eshell上でリダイレクトした結果が文字化け&nbsp;&raquo;</a></li>
         
       </ul>
     </nav>
@@ -218,85 +239,35 @@ el-getも全く使用していないというわけではなく、EmacsWikiな�
   </script>
   <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
-</article>
-    </div>
-        <script type="text/javascript" src="/js/highlight.pack.js"></script>
-        <script type="text/javascript" src="/js/main.js"></script>
-    
-<script type="text/javascript">
+                <script type="text/javascript" src="/js/main.js"></script>
+        
+        <script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-30203998-1']);
-  _gaq.push(['_trackPageview']);
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-30203998-1']);
+         _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+         (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
 
-</script>
-    <footer class="global-footer">
-      <div class="container">
-        <div class="column">
-          <div class="w50per">
-            <h2>Tags</h2>
-            <ul>
-                            <li><a href="/tag/clojure.html">clojure(3)</a></li>
-                            <li><a href="/tag/cygwin.html">cygwin(3)</a></li>
-                            <li><a href="/tag/emacs.html">emacs(8)</a></li>
-                            <li><a href="/tag/firefox.html">firefox(2)</a></li>
-                            <li><a href="/tag/gamedev.html">gamedev(1)</a></li>
-                            <li><a href="/tag/git.html">git(1)</a></li>
-                            <li><a href="/tag/hamari.html">hamari(4)</a></li>
-                            <li><a href="/tag/helm.html">helm(1)</a></li>
-                            <li><a href="/tag/java.html">java(3)</a></li>
-                            <li><a href="/tag/javascript.html">javascript(1)</a></li>
-                            <li><a href="/tag/jdee.html">jdee(1)</a></li>
-                            <li><a href="/tag/linux.html">linux(3)</a></li>
-                            <li><a href="/tag/misaki.html">misaki(3)</a></li>
-                            <li><a href="/tag/nexus7.html">nexus7(1)</a></li>
-                            <li><a href="/tag/nrepl.html">nrepl(1)</a></li>
-                            <li><a href="/tag/oblog.html">oblog(1)</a></li>
-                            <li><a href="/tag/processing.html">processing(1)</a></li>
-                            <li><a href="/tag/skk.html">skk(1)</a></li>
-                            <li><a href="/tag/ssh.html">ssh(2)</a></li>
-                            <li><a href="/tag/thinkpad.html">thinkpad(1)</a></li>
-                            <li><a href="/tag/tmux.html">tmux(1)</a></li>
-                            <li><a href="/tag/ubuntu.html">ubuntu(5)</a></li>
-                            <li><a href="/tag/windows.html">windows(4)</a></li>
-                            <li><a href="/tag/xmonad.html">xmonad(3)</a></li>
-                            <li><a href="/tag/zenbook.html">zenbook(1)</a></li>
-              
-            </ul>
-          </div>
-          <div>
-            <h2><a href="/archives.html">Recnet posts</a></h2>
-            <ul>
-                            <li><a href="/article/2014/03/15_find-date-del.html">特定の日付より古いファイルを削除する方法</a></li>
-                            <li><a href="/article/2014/01/23_thinkpad-keyboard.html">キーボードについて</a></li>
-                            <li><a href="/article/2014/01/14_4clojure.html">4clojureを解いていく記事</a></li>
-                            <li><a href="/article/2014/01/11_misaki2.html">Misakiにnrepl-serverを埋め込む</a></li>
-                            <li><a href="/article/2014/01/05_misaki.html">Clojure製ブログジェネレータMisakiのEmacs Org-mode版のプラグインを書いた</a></li>
-              
-            </ul>
-            <h2>Search</h2>
-            <form action="http://google.com/search" method="get">
-              <input type="hidden" name="q" value="site:mikio.github.io">
-              <input class="search" type="text" name="q" results="0" placeholder="Search">
-            </form>
-          </div>
-        </div>
-        <div class="misaki-logo">
-          <p>
-            <a href="https://github.com/mikio/misaki-orgmode" title="generated by Misaki orgmode">
-              <img src="/img/misaki-orgmode-banner.png"/></a>
-              <a href="https://github.com/liquidz/misaki" title="based on Misaki">
-                <img src="/img/misaki-banner.png"/></a></p>
-          <p><a href="http://twitter.com/mikio_kun">@mikio_kun</a> 2014</p>
-        </div>
+        </script>
       </div>
-    </footer>
+    </div>
+
+    <div class="footer l-box">
+      <div class="misaki-logo">
+        <p>
+          <a href="https://github.com/mikio/misaki-orgmode" title="generated by Misaki orgmode">
+            <img src="/img/misaki-orgmode-banner.png"/></a>
+            <a href="https://github.com/liquidz/misaki" title="based on Misaki">
+              <img src="/img/misaki-banner.png"/></a></p>
+        <p><a href="http://twitter.com/mikio_kun">@mikio_kun</a> 2014</p>
+      </div>
+    </div>
   </body>
 </html>

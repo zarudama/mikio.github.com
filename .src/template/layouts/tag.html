@@ -1,17 +1,17 @@
 ; @layout   layout
 ; @orgmode? false
 ; @title タグ一覧
-<article>
-  <headr>
-    <div class="article-header">
-      <h1>$(tag-name)</h1>
-    </div>
-  </headr>
-  <div class="content">
-    <ul>
-      @(for tag-posts)
-      <li><a href="$(url)">$(title)</a>  [$(date-format date "yyyy/MM/dd")]</li>
-      @(end)
-    </ul>
+
+<div class="article-header">
+  <div class="title">
+    <h1>$(tag-name)</h1>
   </div>
+</div>
+
+<div class="content">
+  <ul>
+    @(for tag-posts)
+    <li><a href="$(url)">$(title)</a>  [$(date-format date "yyyy/MM/dd")]</li>
+    @(end)
+  </ul>
 </article>

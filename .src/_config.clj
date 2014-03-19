@@ -25,10 +25,10 @@
         :twitter-id    "mikio_kun"
         :disqus-id     "mikiokunblog"
         :local {:css   ["css/main.css"]
-                :js    ["js/highlight.pack.js"
+                :js    [;;"js/ui.js"
                         "js/main.js"]}
-        :remote {:css ["http://fonts.googleapis.com/css?family=Josefin+Sans"
-                       "http://yandex.st/highlightjs/7.3/styles/github.min.css"]}}
+        :remote {:css ["http://yui.yahooapis.com/pure/0.4.2/pure.css"
+                       ]}}
 
  ;; misaki-orgmode configuration
  ;; cuma extension file

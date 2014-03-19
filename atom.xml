@@ -8,7 +8,7 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
-        <title>tockyo.clj#19に参加してきた。</title>
+        <title>tokyo.clj#19に参加してきた。</title>
         <link>http://localhost:8080/article/2014/03/16_tokyoclj19.html</link>
         <updated>2014-03-16T00:00:00</updated>
         <id>http://localhost:8080/article/2014/03/16_tokyoclj19.html</id>
@@ -43,7 +43,7 @@
         <content type="html"></content>
     </entry>
         <entry>
-        <title>Clojure製ブログジェネレータMisakiのEmacs Org-mode版のプラグインを書いた</title>
+        <title>Emacsのorg-modeでBlogを書ける「Misaki org-mode」を書いた</title>
         <link>http://localhost:8080/article/2014/01/05_misaki.html</link>
         <updated>2014-01-05T00:00:00</updated>
         <id>http://localhost:8080/article/2014/01/05_misaki.html</id>

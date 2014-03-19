@@ -4,17 +4,15 @@
 
 <div class="article-header">
   <div class="title">
-    <h1>記事一覧</h1>
+    <h1>tags</h1>
   </div>
 </div>
 
 <div class="content">
-  @(for archives)
-  <h2>$(year)</h2>
   <ul>
-    @(for posts)
-    <li><a href="$(url)">$(date-format date "MM dd") - $(title)</a></li>
+    @(for all-tags)
+    <li><a href="$(url)">$(name)($(count))</a></li>
     @(end)
   </ul>
-  @(end)
+
 </div>
