@@ -8,10 +8,10 @@
   </div>
 </div>
 
-<div class="content">
+<div class="content tags">
   <ul>
     @(for tag-posts)
-    <li><a href="$(url)">$(title)</a>  [$(date-format date "yyyy/MM/dd")]</li>
+    <li><a href="$(url)">$(title)</a> <span class="date">[$(date-format date "yyyy/MM/dd")]</span></li>
     @(end)
   </ul>
 </article>

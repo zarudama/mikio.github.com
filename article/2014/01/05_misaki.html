@@ -60,15 +60,17 @@
 
 <div class="content">
   <p>
-年末から地味につくっていたMisakiのプラグインですが、
+年末から地味につくっていた <a href="https://github.com/liquidz/misaki">Misaki</a> のプラグインですが、
 ひととおり欲しい機能の実装を終えたので、githubに公開しました。
+Emacs <a href="http://orgmode.org/ja/">org-mode</a> で記事を書けるBlogジェネレータです。
 </p>
 <ul class="org-ul">
 <li><a href="https://github.com/mikio/misaki-orgmode">https://github.com/mikio/misaki-orgmode</a>
 </li>
+<li><a href="http://mikio.github.io/misaki-orgmode/">デモ</a>
+</li>
 </ul>
 <p>
-Emacs org-modeで記事を書けるBlogジェネレータです。
 org-modeのBlogジェネレータは以外と少ないので選択肢が増えたと思います
 (Misaki-orgmodeは、別にBlogに特化しているわけではないので
 静的サイトジェネレータとしても使えます)。
@@ -76,16 +78,15 @@ org-modeのBlogジェネレータは以外と少ないので選択肢が増え�
 
 <p>
 <a href="https://github.com/liquidz/misaki">Misaki</a> をもとに、記事部分(orgファイル)をemacs本体を使ってhtmlにコンパイルする方式を取っています。
-実装にあたっては、misaki-markdownを参考にしました(というかほぼまるパクリです)。
-ロゴはイラレを使ってイチから作りました(ちょっとバナーが大きかったかも)。
+実装にあたっては、<a href="https://github.com/liquidz/misaki-markdown">misaki-markdown</a> を参考にしました(というかほぼまるパクリです)。
+Misaki-orgmodeのロゴはイラストレータを使ってイチから作りました(ちょっとバナーが大きかったかも)。
 デモサイトはcssフレームワークなどを使用して用意したらよかったかもしれませんが、
 シンプルな構成のほうがカスタマイズの自由度が高いと考えあえて採用していません。
 </p>
 
 <p>
-このBlogはもともと <a href="https://github.com/renard/o-blog">o-blog</a> というツールを使用していました。
-このツールは大変使いやすかったのですが、
-1ファイルでの運用を強制されるのと、
+本ブログ「ざるだましい」はもともと <a href="https://github.com/renard/o-blog">o-blog</a> というツールを使用していました。
+このツールは大変使いやすかったのですが、1ファイルでの運用を強制されるのと、
 Clojureプログラミングをしたいという理由からMisakiに乗り換えました。
 </p>
 
@@ -103,14 +104,18 @@ Clojureプログラミングをしたいという理由からMisakiに乗り換�
 org-modeをブログに利用していみたいかたは一考してみてください。
 </p>
 
-<ul class="org-ul">
-<li>Blogのロゴに使用しているフォント
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 参考</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+ざるだましいのロゴに使用しているフォント
+</p>
 <ul class="org-ul">
 <li><a href="http://www.hogera.com/pcb/font/catalog/">http://www.hogera.com/pcb/font/catalog/</a>
 </li>
 </ul>
-</li>
-</ul>
+</div>
+</div>
   <footer class="article-footer">
     <nav class="tag">
       <ul>
