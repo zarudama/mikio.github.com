@@ -27,6 +27,26 @@ li {
 .articles li {
     list-style-type: none;
 }
+.amazon li {
+    list-style-type: none;
+}
+
+.youtube{
+    position:relative;
+    padding-bottom: 56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
+}
+.youtube iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+
 blockquote { color: #888; font-style: italic; }
 blockquote p:before { content: '> '; }
 
