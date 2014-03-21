@@ -7,22 +7,22 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></head>script>
     <![endif]-->
 
-        <link href="/atom.xml" rel="alternate" title="Misaki orgmode" type="application/atom+xml" />
+        <link href="/misaki-orgmode/atom.xml" rel="alternate" title="Misaki orgmode" type="application/atom+xml" />
     
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Josefin+Sans" />
         <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/github.min.css" />
     
 
-        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/misaki-orgmode/css/main.css" />
     
 
-    <title>Edit templates</title>
+    <title>How to make of the article</title>
   </head>
   <body>
     <header class="global-header">
       <div class="container site-header">
-        <h1><a href="/">Misaki orgmode</a></h1>
+        <h1><a href="/misaki-orgmode/">Misaki orgmode</a></h1>
         <p>Misaki orgmode is static blog generator for org-mode based on Misaki.</p>
       </div>
     </header>
@@ -30,7 +30,7 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">Edit templates</a></h1>
+      <h1><a href="">How to make of the article</a></h1>
       <p class="date">2060 1 01</p>
     </div>
   </headr>
@@ -135,12 +135,12 @@ Please refer to follows for the <code>*site*</code> variable.
 </pre>
 
 <ul>
-<li><a href="/2099-12/01-getting-started.html">Getting Started</a></li>
-<li><a href="/2080-12/02-configuration.html">Configuration</a></li>
-<li><a href="/2070-01/03-customization.html">Customization</a></li>
-<li><a href="/2060-12/04-EDIT.html">Edit templates</a></li>
-<li><a href="/2050-12/05-change-spec.html">Difference with Misaki</a></li>
-<li><a href="/2000-12/99-readme-ja.html">日本語の説明</a></li>
+<li><a href="/misaki-orgmode/2099-12/01-getting-started.html">Getting Started</a></li>
+<li><a href="/misaki-orgmode/2080-12/02-configuration.html">Configuration</a></li>
+<li><a href="/misaki-orgmode/2060-12/04-EDIT.html">How to make of the article</a></li>
+<li><a href="/misaki-orgmode/2050-12/05-change-spec.html">Difference with Misaki</a></li>
+<li><a href="/misaki-orgmode/2040-12/06-banners.html">Banners</a></li>
+<li><a href="/misaki-orgmode/2000-12/99-readme-ja.html">日本語の説明</a></li>
 
 </ul>
 </div>
@@ -155,9 +155,9 @@ Please refer to follows for the <code>*site*</code> variable.
 </pre>
 
 <ul>
-  <li><a href="/tag/tag1.html">tag1(3)</a></li>
-  <li><a href="/tag/tag2.html">tag2(3)</a></li>
-  <li><a href="/tag/tag3.html">tag3(2)</a></li>
+  <li><a href="/misaki-orgmode/tag/tag1.html">tag1(3)</a></li>
+  <li><a href="/misaki-orgmode/tag/tag2.html">tag2(3)</a></li>
+  <li><a href="/misaki-orgmode/tag/tag3.html">tag3(2)</a></li>
 
 </ul>
 </div>
@@ -171,9 +171,9 @@ You can use it in a template file if You add a function to  <code>misaki-orgmode
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(defn hello
+<pre class="src src-clojure">(<span style="font-weight: bold;">defn</span> <span style="font-weight: bold;">hello</span>
   [data s]
-  (str/upper-case (str "hello " s "!!!")))
+  (str/upper-case (<span style="font-weight: bold;">str</span> <span style="font-style: italic;">"hello "</span> s <span style="font-style: italic;">"!!!"</span>)))
 </pre>
 </div>
 
@@ -192,16 +192,16 @@ HELLO WORLD!!!
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/tag2.html">tag2</a></span></li>
+                <li><span><a href="/misaki-orgmode/tag/tag2.html">tag2</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/2070-01/03-customization.html">&laquo; Customization</a></li>
+                <li class="prev"><a href="/misaki-orgmode/2080-12/02-configuration.html">&laquo; Configuration</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/2050-12/05-change-spec.html">&raquo; Difference with Misaki</a></li>
+                <li class="next"><a href="/misaki-orgmode/2050-12/05-change-spec.html">&raquo; Difference with Misaki</a></li>
         
       </ul>
     </nav>
@@ -224,41 +224,20 @@ HELLO WORLD!!!
 
 </article>
     </div>
-        <script type="text/javascript" src="/js/highlight.pack.js"></script>
-        <script type="text/javascript" src="/js/main.js"></script>
+        <script type="text/javascript" src="/misaki-orgmode/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="/misaki-orgmode/js/main.js"></script>
     
     <footer class="global-footer">
       <div class="container">
-        <div class="column">
-          <div class="w50per">
-            <h2>Tags</h2>
-            <ul>
-                            <li><a href="/tag/tag1.html">tag1(3)</a></li>
-                            <li><a href="/tag/tag2.html">tag2(3)</a></li>
-                            <li><a href="/tag/tag3.html">tag3(2)</a></li>
-              
-            </ul>
-          </div>
-          <div>
-            <h2><a href="/archives.html">Recnet posts</a></h2>
-            <ul>
-                            <li><a href="/2099-12/01-getting-started.html">Getting Started</a></li>
-                            <li><a href="/2080-12/02-configuration.html">Configuration</a></li>
-              
-            </ul>
-            <h2>Search</h2>
-            <form action="http://google.com/search" method="get">
-              <input type="hidden" name="q" value="site:mikio.github.io">
-              <input class="search" type="text" name="q" results="0" placeholder="Search">
-            </form>
-          </div>
-        </div>
         <div class="misaki-logo">
           <p>
             <a href="https://github.com/mikio/misaki-orgmode" title="generated by Misaki orgmode">
-              <img src="/img/misaki-orgmode-banner.png"/></a>
-              <a href="https://github.com/liquidz/misaki" title="based on Misaki">
-                <img src="/img/misaki-banner.png"/></a></p>
+              <img src="/misaki-orgmode/img/misaki-orgmode-banner.png"/>
+            </a>
+            <a href="https://github.com/liquidz/misaki" title="based on Misaki">
+              <img src="/misaki-orgmode/img/misaki-banner.png"/>
+            </a>
+          </p>
           <p><a href="http://twitter.com/mikio_kun">@mikio_kun</a> 2014</p>
         </div>
       </div>

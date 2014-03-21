@@ -45,14 +45,104 @@ you revise <code>:site-title, :site-subtitle, twitter-id, disqus-id</code> to se
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">:site {
-  :site-title "YOUR SITE NAME"
-  :site-subtitle "YOUR SITE DESCRIPTION."
-  :your-domain "yoursite.com"
-  :twitter-id "YOUR_TIWTTER_ID"
-  :disqus-id  "YOUR_DISQUS_ID"
+<pre class="src src-clojure"><span style="font-weight: bold; text-decoration: underline;">:site</span> {
+  <span style="font-weight: bold; text-decoration: underline;">:site-title</span> <span style="font-style: italic;">"YOUR SITE NAME"</span>
+  <span style="font-weight: bold; text-decoration: underline;">:site-subtitle</span> <span style="font-style: italic;">"YOUR SITE DESCRIPTION."</span>
+  <span style="font-weight: bold; text-decoration: underline;">:your-domain</span> <span style="font-style: italic;">"yoursite.com"</span>
+  <span style="font-weight: bold; text-decoration: underline;">:twitter-id</span> <span style="font-style: italic;">"YOUR_TIWTTER_ID"</span>
+  <span style="font-weight: bold; text-decoration: underline;">:disqus-id</span>  <span style="font-style: italic;">"YOUR_DISQUS_ID"</span>
 }
 </pre>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> customize</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+You can customize a site by editing <code>misaki-orgmode/sample/_config.clj</code>.
+</p>
+
+<p>
+You revise <code>:posts-per-page</code> to change the number of the articles of the list of articles displayed by index.html.
+</p>
+<pre class="example">
+:posts-per-page 2
+</pre>
+
+<p>
+You revise <code>:recent-posts-num</code> to change the number of the indication of the recent article.
+</p>
+<pre class="example">
+:recent-posts-num 2
+</pre>
+
+<p>
+The URL of the article begins by default in "/", but revises <code>:url-base</code> when You want to change this.
+</p>
+<pre class="example">
+:url-base "/"
+</pre>
+
+<p>
+You revise follows if You want to change the format of an output html file.
+</p>
+<pre class="example">
+:post-filename-regexp #"^(.+)$"
+:post-filename-format "＄(year)/＄(month)/＄(day)_＄(filename)"
+</pre>
+<ul class="org-ul">
+<li><code>:post-filename-regexp</code> is a naming rule of input postsFile.It is not necessary to change a particularly unreasonable limit of it.
+</li>
+<li><code>:post-filename-format</code> is a naming rule of output htmlFile.
+</li>
+</ul>
+
+<p>
+When You want to add the file except the blog article, You add html to the following directory.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">misaki-orgmode/sample/template/about.html
+</pre>
+</div>
+<p>
+The example mentioned above is an example of about.html.
+</p>
+
+<p>
+you describe the link to about.html as follows.
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">&#65284;(root)about.html
+</pre>
+</div>
+
+<p>
+When the contents of the file which you added have article names, You add it as follows.
+</p>
+<pre class="example">
+:compile-with-post ["index.html" "archives.html" "atom.xml" "about.html"]
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> emacs</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+You can set customization of org-mode at the time of the compilation by editing org-export.el.
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-clojure">(<span style="font-weight: bold;">import</span> (java.awt.image <span style="font-weight: bold;">BufferedImage</span>))
+(<span style="font-weight: bold;">import</span> (javax.imageio <span style="font-weight: bold;">ImageIO</span>))
+(<span style="font-weight: bold;">import</span> (java.io <span style="font-weight: bold;">File</span>))
+(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">image</span> (<span style="font-weight: bold;">ImageIO/read</span> (<span style="font-weight: bold; text-decoration: underline;">File.</span> <span style="font-style: italic;">"gai.png"</span>)))
+</pre>
+</div>
+</div>
 </div>
   </div>
 
@@ -70,7 +160,7 @@ you revise <code>:site-title, :site-subtitle, twitter-id, disqus-id</code> to se
                 <li class="prev"><a href="/misaki-orgmode/2099-12/01-getting-started.html">&laquo; Getting Started</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/misaki-orgmode/2070-01/03-customization.html">&raquo; Customization</a></li>
+                <li class="next"><a href="/misaki-orgmode/2060-12/04-EDIT.html">&raquo; How to make of the article</a></li>
         
       </ul>
     </nav>

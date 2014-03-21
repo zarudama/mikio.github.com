@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="/misaki-orgmode/css/main.css" />
     
 
-    <title>Customization</title>
+    <title>Emacs Customization</title>
   </head>
   <body>
     <header class="global-header">
@@ -30,86 +30,18 @@
       <article>
   <headr>
     <div class="article-header">
-      <h1><a href="">Customization</a></h1>
+      <h1><a href="">Emacs Customization</a></h1>
       <p class="date">2070 1 01</p>
     </div>
   </headr>
 
   <div class="content">
-    <p>
-You can customize a site by editing <code>misaki-orgmode/sample/_config.clj</code>.
-</p>
+    <div class="org-src-container">
 
-<p>
-You revise <code>:posts-per-page</code> to change the number of the articles of the list of articles displayed by index.html.
-</p>
-<pre class="example">
-:posts-per-page 2
-</pre>
-
-<p>
-You revise <code>:recent-posts-num</code> to change the number of the indication of the recent article.
-</p>
-<pre class="example">
-:recent-posts-num 2
-</pre>
-
-<p>
-The URL of the article begins by default in "/", but revises <code>:url-base</code> when You want to change this.
-</p>
-<pre class="example">
-:url-base "/"
-</pre>
-
-<p>
-You revise follows if You want to change the format of an output html file.
-</p>
-<pre class="example">
-:post-filename-regexp #"^(.+)$"
-:post-filename-format "＄(year)/＄(month)/＄(day)_＄(filename)"
-</pre>
-<ul class="org-ul">
-<li><code>:post-filename-regexp</code> is a naming rule of input postsFile.It is not necessary to change a particularly unreasonable limit of it.
-</li>
-<li><code>:post-filename-format</code> is a naming rule of output htmlFile.
-</li>
-</ul>
-
-<p>
-When You want to add the file except the blog article, You add html to the following directory.
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">misaki-orgmode/sample/template/about.html
-</pre>
-</div>
-<p>
-The example mentioned above is an example of about.html.
-</p>
-
-<p>
-you describe the link to about.html as follows.
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">&#65284;(root)about.html
-</pre>
-</div>
-
-<p>
-When the contents of the file which you added have article names, You add it as follows.
-</p>
-<pre class="example">
-:compile-with-post ["index.html" "archives.html" "atom.xml" "about.html"]
-</pre>
-
-
-<div class="org-src-container">
-
-<pre class="src src-clojure">(import (java.awt.image BufferedImage))
-(import (javax.imageio ImageIO))
-(import (java.io File))
-(def image (ImageIO/read (File. "gai.png")))
+<pre class="src src-clojure">(<span style="font-weight: bold;">import</span> (java.awt.image <span style="font-weight: bold;">BufferedImage</span>))
+(<span style="font-weight: bold;">import</span> (javax.imageio <span style="font-weight: bold;">ImageIO</span>))
+(<span style="font-weight: bold;">import</span> (java.io <span style="font-weight: bold;">File</span>))
+(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">image</span> (<span style="font-weight: bold;">ImageIO/read</span> (<span style="font-weight: bold; text-decoration: underline;">File.</span> <span style="font-style: italic;">"gai.png"</span>)))
 </pre>
 </div>
   </div>
@@ -126,7 +58,7 @@ When the contents of the file which you added have article names, You add it as 
                 <li class="prev"><a href="/misaki-orgmode/2080-12/02-configuration.html">&laquo; Configuration</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/misaki-orgmode/2060-01/04-edit-templates.html">&raquo; Edit templates</a></li>
+                <li class="next"><a href="/misaki-orgmode/2060-12/04-EDIT.html">&raquo; How to make of the article</a></li>
         
       </ul>
     </nav>

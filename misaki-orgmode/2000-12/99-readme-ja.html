@@ -47,15 +47,20 @@
 <li><a href="#sec-1-3">1.3. See also</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">2. 環境設定</a></li>
-<li><a href="#sec-3">3. カスタマイズ</a></li>
-<li><a href="#sec-4">4. テンプレートの編集</a>
+<li><a href="#sec-2">2. 環境設定</a>
 <ul>
-<li><a href="#sec-4-1">4.1. org-files</a></li>
-<li><a href="#sec-4-2">4.2. html-files</a></li>
+<li><a href="#sec-2-1">2.1. サイトの設定</a></li>
+<li><a href="#sec-2-2">2.2. カスタマイズ</a></li>
+<li><a href="#sec-2-3">2.3. emacs</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">5. 本家Misakiとの相違点</a></li>
+<li><a href="#sec-3">3. 記事のつくりかた</a>
+<ul>
+<li><a href="#sec-3-1">3.1. org-files</a></li>
+<li><a href="#sec-3-2">3.2. html-files</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4. 本家Misakiとの相違点</a></li>
 </ul>
 </div>
 </div>
@@ -143,30 +148,29 @@ $ cd misaki-orgmode
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> 環境設定</h2>
 <div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> サイトの設定</h3>
+<div class="outline-text-3" id="text-2-1">
 <p>
 サイト全体の設定は、 <code>:site-title, :site-subtitle, twitter-id, disqus-id</code> を変更します。
-</p>
-
-
-<p>
-<code>misaki-orgmode/sample/_config.clj</code>
+ <code>misaki-orgmode/sample/_config.clj</code>
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">:site {
-  :site-title "YOUR SITE NAME"
-  :site-subtitle "YOUR SITE DESCRIPTION."
-  :your-domain "yoursite.com"
-  :twitter-id "YOUR_TIWTTER_ID"
-  :disqus-id  "YOUR_DISQUS_ID"
+<pre class="src src-clojure"><span style="font-weight: bold; text-decoration: underline;">:site</span> {
+  <span style="font-weight: bold; text-decoration: underline;">:site-title</span> <span style="font-style: italic;">"YOUR SITE NAME"</span>
+  <span style="font-weight: bold; text-decoration: underline;">:site-subtitle</span> <span style="font-style: italic;">"YOUR SITE DESCRIPTION."</span>
+  <span style="font-weight: bold; text-decoration: underline;">:your-domain</span> <span style="font-style: italic;">"yoursite.com"</span>
+  <span style="font-weight: bold; text-decoration: underline;">:twitter-id</span> <span style="font-style: italic;">"YOUR_TIWTTER_ID"</span>
+  <span style="font-weight: bold; text-decoration: underline;">:disqus-id</span>  <span style="font-style: italic;">"YOUR_DISQUS_ID"</span>
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-sec-3" class="outline-2">
-<h2 id="sec-3"><span class="section-number-2">3</span> カスタマイズ</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> カスタマイズ</h3>
+<div class="outline-text-3" id="text-2-2">
 <p>
 <code>misaki-orgmode/sample/_config.clj</code> を編集することでカスタマイズできます。
 </p>
@@ -232,12 +236,22 @@ index.htmlにある記事一覧の表示数を変更するには <code>:posts-pe
 </pre>
 </div>
 </div>
-<div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> テンプレートの編集</h2>
-<div class="outline-text-2" id="text-4">
-</div><div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> org-files</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> emacs</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+org-export.elを編集することで、コンパイル時のorg-modeのカスタマイズを設定できます。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 記事のつくりかた</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> org-files</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 記事の内容は、Emacsのorg-modeで記述します。
 </p>
@@ -280,10 +294,9 @@ index.htmlにある記事一覧の表示数を変更するには <code>:posts-pe
 </pre>
 </div>
 </div>
-
-<div id="outline-container-sec-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> html-files</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> html-files</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 Misaki org-mode のhtmlには、 <a href="https://github.com/liquidz/cuma">cuma template</a> を使用しています。
 </p>
@@ -309,7 +322,7 @@ Misaki org-mode のhtmlには、 <a href="https://github.com/liquidz/cuma">cuma 
 </ul>
 </div>
 
-<ol class="org-ol"><li>サンプル<br/><ol class="org-ol"><li>記事一覧<br/><div class="outline-text-5" id="text-4-2-1-1">
+<ol class="org-ol"><li>サンプル<br/><ol class="org-ol"><li>記事一覧<br/><div class="outline-text-5" id="text-3-2-1-1">
 <pre>
 &lt;ul&gt;
 &#64;(for all-posts)
@@ -321,8 +334,7 @@ Misaki org-mode のhtmlには、 <a href="https://github.com/liquidz/cuma">cuma 
 <ul>
 <li><a href="/misaki-orgmode/2099-12/01-getting-started.html">Getting Started</a></li>
 <li><a href="/misaki-orgmode/2080-12/02-configuration.html">Configuration</a></li>
-<li><a href="/misaki-orgmode/2070-01/03-customization.html">Customization</a></li>
-<li><a href="/misaki-orgmode/2060-01/04-edit-templates.html">Edit templates</a></li>
+<li><a href="/misaki-orgmode/2060-12/04-EDIT.html">How to make of the article</a></li>
 <li><a href="/misaki-orgmode/2050-12/05-change-spec.html">Difference with Misaki</a></li>
 <li><a href="/misaki-orgmode/2040-12/06-banners.html">Banners</a></li>
 <li><a href="/misaki-orgmode/2000-12/99-readme-ja.html">日本語の説明</a></li>
@@ -330,7 +342,7 @@ Misaki org-mode のhtmlには、 <a href="https://github.com/liquidz/cuma">cuma 
 </ul>
 </div>
 </li>
-<li>タグ一覧<br/><div class="outline-text-5" id="text-4-2-1-2">
+<li>タグ一覧<br/><div class="outline-text-5" id="text-3-2-1-2">
 <pre>
 &lt;ul&gt;
 &#64;(for all-tags)
@@ -341,7 +353,7 @@ Misaki org-mode のhtmlには、 <a href="https://github.com/liquidz/cuma">cuma 
 
 <ul>
   <li><a href="/misaki-orgmode/tag/tag1.html">tag1(3)</a></li>
-  <li><a href="/misaki-orgmode/tag/tag2.html">tag2(4)</a></li>
+  <li><a href="/misaki-orgmode/tag/tag2.html">tag2(3)</a></li>
   <li><a href="/misaki-orgmode/tag/tag3.html">tag3(2)</a></li>
 
 </ul>
@@ -349,7 +361,7 @@ Misaki org-mode のhtmlには、 <a href="https://github.com/liquidz/cuma">cuma 
 </li></ol>
 </li>
 
-<li>カスタム関数<br/><div class="outline-text-4" id="text-4-2-2">
+<li>カスタム関数<br/><div class="outline-text-4" id="text-3-2-2">
 <p>
 cumaにはロジックを記述できません。なにか特別なことがしたい場合は、
 clojureの関数を定義することで、cumaからアクセスできます。
@@ -357,9 +369,9 @@ clojureの関数を定義することで、cumaからアクセスできます。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(defn hello
+<pre class="src src-clojure">(<span style="font-weight: bold;">defn</span> <span style="font-weight: bold;">hello</span>
   [data s]
-  (str/upper-case (str "hello " s "!!!")))
+  (str/upper-case (<span style="font-weight: bold;">str</span> <span style="font-style: italic;">"hello "</span> s <span style="font-style: italic;">"!!!"</span>)))
 </pre>
 </div>
 
@@ -374,11 +386,9 @@ HELLO WORLD!!!
 </li></ol>
 </div>
 </div>
-
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> 本家Misakiとの相違点</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 本家Misakiとの相違点</h2>
+<div class="outline-text-2" id="text-4">
 <p>
 いくつか仕様変更があります。
 </p>
