@@ -2,7 +2,8 @@
 body, h1, h2, h3, h4, p { margin: 0; padding: 0; }
 body, p {
     /* font-family: 'Josefin Sans', sans-serif;  */
-    font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'VL ゴシック', 'MS PGothic', Sans-serif;
+     font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'VL ゴシック', 'MS PGothic', Sans-serif; 
+/*font-family: 'Helvetica Neue', 'Helvetica', 'Univers', 'Arial', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'VL ゴシック','MS PGothic', sans-serif;*/
     line-height: 1.6em;
     word-break:break-all;
 }
@@ -193,7 +194,9 @@ hr + p {
     float: right;
 }
 
-/* org-mode */
+/* ------------------- *
+   org-mode
+ * ------------------- */
 .content {
     margin: 1em;
     clear: both;
@@ -338,7 +341,42 @@ pre code {
 }
 
 
-/* pure custumize */
+#table-of-contents {
+    border: 3px #FFEDF0 solid;
+    background-color: #FFF0F5;
+    padding: 0.5em;
+}
+#table-of-contents h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 0.5em;
+    color: #aaa;
+    font-weight: normal;
+}
+#footnotes {
+    border: 2px #FFEDF0 solid;
+    background-color: #FFF0F5;
+    padding: 0.5em;
+}
+#footnotes h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 0.5em;
+    color: #aaa;
+    font-weight: normal;
+}
+.footdef {
+    font-size: 0.5em;
+}
+#text-footnotes p {
+    display:inline;
+    padding: 0;
+    margin: 0;
+}
+ 
+/* ------------------- *
+   Pure Custumize
+ * ------------------- */
 .pure-menu {
     box-shadow: 0 1px 0px rgba(0,0,0, 0.10);
 }
@@ -348,9 +386,4 @@ pre code {
 }
 .footer a {
     color: #888;
-}
-#table-of-contents {
-    border: 1px #FFEDF0 solid;
-    background-color: #FFF0F5;
-    padding: 0.5em;
 }
