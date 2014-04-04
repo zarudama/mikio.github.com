@@ -61,14 +61,18 @@
 <div class="content">
   <p>
 vimをclojureで実装したらしい <a href="https://github.com/maitria/avi">avi</a> を試してみることにした。
-動作環境は、ubuntu12.04。
+確認環境は、ubuntu13.04。
 </p>
+<div class="org-src-container">
 
+<pre class="src src-sh">$ git clone https://github.com/maitria/avi.git
+$ cd avi
+</pre>
+</div>
 <p>
-READMEによると、avi本体を <code>/usr/local</code> 配下にインストールしてしまうようなので、
-あとでアンインストールができなくなると困るので <a href="http://porg.sourceforge.net/">paco</a> を使うことにした.
+READMEによると、avi本体を <code>/usr/local</code> 配下にインストールするとのこと。
+あとでアンインストールができなくなると困るので <a href="http://porg.sourceforge.net/">paco</a> を使うことにした。
 </p>
-
 <div class="org-src-container">
 
 <pre class="src src-sh">$ sudo paco -D <span style="font-weight: bold; font-style: italic;">LEIN_ROOT</span>=yes /home/mikio/bin/lein install
@@ -99,14 +103,15 @@ READMEによると、avi本体を <code>/usr/local</code> 配下にインスト�
 </div>
 
 <p>
-JVMで動くから重いと思ってたら起動が早くてびっくりした。どうやらJNIを使って下回りの部分は <code>C</code> 言語で書かれているようである。
-故に現在は、linux専用っぽい(or MAC?)。
+JVMで動くから重いと思ってたら起動が早くてびっくりした(本家よりはわずかに重い)。
+どうやらJNIを使って下回りの部分はC言語で書かれているようである。
+(なのでwindowsでは動かないかも)。
 </p>
 
 <p>
-肝心の操作は、iはもちろんaも受け付けず、文字入力はなにもできない状態だった。
+肝心の操作は、iコマンドはもちろんaコマンドも受け付けず、文字入力はなにもできない状態だった。
 唯一、 <code>:q</code> はできたので、終了させることはできた。。。
-個々の環境にも依存すると思うので無事操作できた人がいたらコメントやリプで教えていただけると嬉しいです。
+(個々の環境にも依存すると思うので無事操作できた人がいたらコメントやリプで教えていただけると嬉しいです)
 </p>
 
 <p>
