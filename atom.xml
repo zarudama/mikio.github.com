@@ -8,6 +8,34 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>vimのclojure実装であるaviを試してみた。</title>
+        <link>http://localhost:8080/article/2014/04/04_avi.html</link>
+        <updated>2014-04-04T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/04/04_avi.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>jvmの初期ヒープサイズ</title>
+        <link>http://localhost:8080/article/2014/03/25_jvm_mem.html</link>
+        <updated>2014-03-25T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/03/25_jvm_mem.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>ちょい足しawkの基本</title>
+        <link>http://localhost:8080/article/2014/03/25_awk.html</link>
+        <updated>2014-03-25T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/03/25_awk.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>GCの発生頻度などの調査</title>
+        <link>http://localhost:8080/article/2014/03/25_jvm_gcutil.html</link>
+        <updated>2014-03-25T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/03/25_jvm_gcutil.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>tokyo.clj#19に参加してきた。</title>
         <link>http://localhost:8080/article/2014/03/16_tokyoclj19.html</link>
         <updated>2014-03-16T00:00:00</updated>

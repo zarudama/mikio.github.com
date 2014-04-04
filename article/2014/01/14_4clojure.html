@@ -126,7 +126,7 @@ contains an entry with that key and its value is nil.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">#(<span style="font-weight: bold;">nil?</span> (%2 %1 '()))
+<pre class="src src-clojure">#(nil? (%2 %1 '()))
 </pre>
 </div>
 
@@ -139,7 +139,7 @@ contains an entry with that key and its value is nil.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold; text-decoration: underline;">:b</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> nil <span style="font-weight: bold; text-decoration: underline;">:b</span> 2})
+<pre class="src src-clojure">user&gt; (:b {:a nil :b 2})
 2
 </pre>
 </div>
@@ -150,9 +150,9 @@ contains an entry with that key and its value is nil.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">get</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> nil <span style="font-weight: bold; text-decoration: underline;">:b</span> 2})
+<pre class="src src-clojure">user&gt; (get :b {:a nil :b 2})
 nil
-user&gt; (<span style="font-weight: bold;">get</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> nil <span style="font-weight: bold; text-decoration: underline;">:b</span> 2} <span style="font-weight: bold; text-decoration: underline;">:b</span>)
+user&gt; (get {:a nil :b 2} :b)
 2
 </pre>
 </div>
@@ -176,25 +176,25 @@ true?,false?,nil?関数はiffの関数で完全に同値でないと真を返さ
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">true?</span> true)
+<pre class="src src-clojure">user&gt; (true? true)
 true
-user&gt; (<span style="font-weight: bold;">true?</span> 1)
+user&gt; (true? 1)
 false
-user&gt; (<span style="font-weight: bold;">true?</span> 2)
+user&gt; (true? 2)
 false
-user&gt; (<span style="font-weight: bold;">false?</span> nil)
+user&gt; (false? nil)
 false
-user&gt; (<span style="font-weight: bold;">false?</span> false)
+user&gt; (false? false)
 true
-user&gt; (<span style="font-weight: bold;">false?</span> <span style="font-style: italic;">""</span>)
+user&gt; (false? "")
 false
-user&gt; (<span style="font-weight: bold;">nil?</span> nil)
+user&gt; (nil? nil)
 true
-user&gt; (<span style="font-weight: bold;">nil?</span> false)
+user&gt; (nil? false)
 false
-user&gt; (<span style="font-weight: bold;">nil?</span> <span style="font-style: italic;">""</span>)
+user&gt; (nil? "")
 false
-user&gt; (<span style="font-weight: bold;">nil?</span> '())
+user&gt; (nil? '())
 false
 </pre>
 </div>
@@ -209,7 +209,7 @@ false
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(#(<span style="font-weight: bold;">str</span> %1 %2) <span style="font-style: italic;">"Hello"</span> <span style="font-style: italic;">"World!"</span>)
+<pre class="src src-clojure">(#(str %1 %2) "Hello" "World!")
 </pre>
 </div>
 <p>
@@ -225,11 +225,11 @@ false
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt;  (#(<span style="font-weight: bold;">nil?</span> (%2 %1 '())) <span style="font-weight: bold; text-decoration: underline;">:a</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> nil <span style="font-weight: bold; text-decoration: underline;">:b</span> 2})
+<pre class="src src-clojure">user&gt;  (#(nil? (%2 %1 '())) :a {:a nil :b 2})
 true
-user&gt;  (#(<span style="font-weight: bold;">nil?</span> (%2 %1 '())) <span style="font-weight: bold; text-decoration: underline;">:b</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> nil <span style="font-weight: bold; text-decoration: underline;">:b</span> 2})
+user&gt;  (#(nil? (%2 %1 '())) :b {:a nil :b 2})
 false
-user&gt;  (#(<span style="font-weight: bold;">nil?</span> (%2 %1 '())) <span style="font-weight: bold; text-decoration: underline;">:c</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> nil <span style="font-weight: bold; text-decoration: underline;">:b</span> 2})
+user&gt;  (#(nil? (%2 %1 '())) :c {:a nil :b 2})
 false
 </pre>
 </div>
@@ -253,17 +253,17 @@ how each of them produces the same result.
 </pre>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">for</span> [x (<span style="font-weight: bold;">range</span> 40)
-            <span style="font-weight: bold; text-decoration: underline;">:when</span> (<span style="font-weight: bold;">=</span> 1 (<span style="font-weight: bold;">rem</span> x 4))]
+<pre class="src src-clojure">(= __ (for [x (range 40)
+            :when (= 1 (rem x 4))]
         x))
 
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">for</span> [x (<span style="font-weight: bold;">iterate</span> #(<span style="font-weight: bold;">+</span> 4 %) 0)
-            <span style="font-weight: bold; text-decoration: underline;">:let</span> [z (<span style="font-weight: bold;">inc</span> x)]
-            <span style="font-weight: bold; text-decoration: underline;">:while</span> (<span style="font-weight: bold;">&lt;</span> z 40)]
+(= __ (for [x (iterate #(+ 4 %) 0)
+            :let [z (inc x)]
+            :while (&lt; z 40)]
         z))
 
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">for</span> [[x y] (<span style="font-weight: bold;">partition</span> 2 (<span style="font-weight: bold;">range</span> 20))]
-        (<span style="font-weight: bold;">+</span> x y)))
+(= __ (for [[x y] (partition 2 (range 20))]
+        (+ x y)))
 </pre>
 </div>
 
@@ -272,7 +272,7 @@ how each of them produces the same result.
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">map</span> inc (<span style="font-weight: bold;">filter</span> #(<span style="font-weight: bold;">=</span> 0 (<span style="font-weight: bold;">rem</span> % 4)) (<span style="font-weight: bold;">range</span> 40)))
+<pre class="src src-clojure">(map inc (filter #(= 0 (rem % 4)) (range 40)))
 </pre>
 </div>
 
@@ -302,19 +302,19 @@ forを読めば、どんなシーケンスを返すかは想像できるが
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">range</span> 40)
+<pre class="src src-clojure">user&gt; (range 40)
 (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39)
-user&gt; (<span style="font-weight: bold;">filter</span> #(<span style="font-weight: bold;">rem</span> % 4) (<span style="font-weight: bold;">range</span> 40))
+user&gt; (filter #(rem % 4) (range 40))
 (0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39)
-user&gt; (<span style="font-weight: bold;">filter</span> #((<span style="font-weight: bold;">=</span> 0 (<span style="font-weight: bold;">rem</span> % 4))) (<span style="font-weight: bold;">range</span> 40))
-<span style="font-weight: bold;">ClassCastException</span> <span style="font-weight: bold;">java.lang.Boolean</span> cannot be cast to <span style="font-weight: bold;">clojure.lang.IFn</span>  user/eval6704/fn--6705 (NO_SOURCE_FILE:1)
-user&gt; (<span style="font-weight: bold;">filter</span> #((<span style="font-weight: bold;">not</span> (<span style="font-weight: bold;">rem</span> % 4))) (<span style="font-weight: bold;">range</span> 40))
-<span style="font-weight: bold;">ClassCastException</span> <span style="font-weight: bold;">java.lang.Boolean</span> cannot be cast to <span style="font-weight: bold;">clojure.lang.IFn</span>  user/eval6851/fn--6852 (NO_SOURCE_FILE:1)
-user&gt; (<span style="font-weight: bold;">rem</span> 4 4)
+user&gt; (filter #((= 0 (rem % 4))) (range 40))
+ClassCastException java.lang.Boolean cannot be cast to clojure.lang.IFn  user/eval6704/fn--6705 (NO_SOURCE_FILE:1)
+user&gt; (filter #((not (rem % 4))) (range 40))
+ClassCastException java.lang.Boolean cannot be cast to clojure.lang.IFn  user/eval6851/fn--6852 (NO_SOURCE_FILE:1)
+user&gt; (rem 4 4)
 0
-user&gt; (<span style="font-weight: bold;">filter</span> #(<span style="font-weight: bold;">=</span> 0 (<span style="font-weight: bold;">rem</span> % 4)) (<span style="font-weight: bold;">range</span> 40))
+user&gt; (filter #(= 0 (rem % 4)) (range 40))
 (0 4 8 12 16 20 24 28 32 36)
-user&gt; (<span style="font-weight: bold;">map</span> inc (<span style="font-weight: bold;">filter</span> #(<span style="font-weight: bold;">=</span> 0 (<span style="font-weight: bold;">rem</span> % 4)) (<span style="font-weight: bold;">range</span> 40)))
+user&gt; (map inc (filter #(= 0 (rem % 4)) (range 40)))
 (1 5 9 13 17 21 25 29 33 37)
 </pre>
 </div>
@@ -334,13 +334,13 @@ In Clojure, only nil and false represent the values
 </pre>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if-not</span> false 1 0))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if-not</span> nil 1 0))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if</span> true 1 0))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if</span> [] 1 0))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if</span> [0] 1 0))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if</span> 0 1 0))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">if</span> 1 1 0))
+<pre class="src src-clojure">(= __ (if-not false 1 0))
+(= __ (if-not nil 1 0))
+(= __ (if true 1 0))
+(= __ (if [] 1 0))
+(= __ (if [0] 1 0))
+(= __ (if 0 1 0))
+(= __ (if 1 1 0))
 </pre>
 </div>
 
@@ -445,9 +445,9 @@ However, what if you want the map itself to contain
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> (__ 0 [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>]) {<span style="font-weight: bold; text-decoration: underline;">:a</span> 0 <span style="font-weight: bold; text-decoration: underline;">:b</span> 0 <span style="font-weight: bold; text-decoration: underline;">:c</span> 0})
-(<span style="font-weight: bold;">=</span> (__ <span style="font-style: italic;">"x"</span> [1 2 3]) {1 <span style="font-style: italic;">"x"</span> 2 <span style="font-style: italic;">"x"</span> 3 <span style="font-style: italic;">"x"</span>})
-(<span style="font-weight: bold;">=</span> (__ [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span>] [<span style="font-weight: bold; text-decoration: underline;">:foo</span> <span style="font-weight: bold; text-decoration: underline;">:bar</span>]) {<span style="font-weight: bold; text-decoration: underline;">:foo</span> [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span>] <span style="font-weight: bold; text-decoration: underline;">:bar</span> [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span>]})
+<pre class="src src-clojure">(= (__ 0 [:a :b :c]) {:a 0 :b 0 :c 0})
+(= (__ "x" [1 2 3]) {1 "x" 2 "x" 3 "x"})
+(= (__ [:a :b] [:foo :bar]) {:foo [:a :b] :bar [:a :b]})
 </pre>
 </div>
 
@@ -503,9 +503,9 @@ conjは第２以降の引数を順番にlistの先頭にくっつけていく。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">conj</span> '(2 3 4) 1)
+<pre class="src src-clojure">user&gt; (conj '(2 3 4) 1)
 (1 2 3 4)
-user&gt; (<span style="font-weight: bold;">conj</span> '(3 4) 1 2)
+user&gt; (conj '(3 4) 1 2)
 (2 1 3 4)
 </pre>
 </div>
@@ -519,10 +519,10 @@ user&gt; (<span style="font-weight: bold;">conj</span> '(3 4) 1 2)
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">cons</span> 1 '(2 3))
+<pre class="src src-clojure">user&gt; (cons 1 '(2 3))
 (1 2 3)
-user&gt; (<span style="font-weight: bold;">cons</span> 1 2 '(2 3))
-<span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">Evaluation aborted.</span>
+user&gt; (cons 1 2 '(2 3))
+; Evaluation aborted.
 </pre>
 </div>
 </div>
@@ -540,10 +540,10 @@ test not run
 </pre>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> [__]
-  (<span style="font-weight: bold;">list</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>)
-  (<span style="font-weight: bold;">vec</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>))
-  (<span style="font-weight: bold;">vector</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>))
+<pre class="src src-clojure">(= [__]
+  (list :a :b :c)
+  (vec '(:a :b :c))
+  (vector :a :b :c))
 </pre>
 </div>
 <p>
@@ -551,7 +551,7 @@ test not run
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>
+<pre class="src src-clojure">:a :b :c
 </pre>
 </div>
 
@@ -560,8 +560,8 @@ test not run
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">vec</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>))
-[<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>]
+<pre class="src src-clojure">user&gt; (vec '(:a :b :c))
+[:a :b :c]
 </pre>
 </div>
 
@@ -570,8 +570,8 @@ test not run
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">vector</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>)
-[<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>]
+<pre class="src src-clojure">user&gt; (vector :a :b :c)
+[:a :b :c]
 </pre>
 </div>
 
@@ -581,7 +581,7 @@ REPLに入れたらtrueが帰ってきた！
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt;  (<span style="font-weight: bold;">=</span> [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>] (<span style="font-weight: bold;">list</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>) (<span style="font-weight: bold;">vec</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>)) (<span style="font-weight: bold;">vector</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>))
+<pre class="src src-clojure">user&gt;  (= [:a :b :c] (list :a :b :c) (vec '(:a :b :c)) (vector :a :b :c))
 true
 </pre>
 </div>
@@ -594,7 +594,7 @@ true
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>] (<span style="font-weight: bold;">list</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>) (<span style="font-weight: bold;">vec</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>)) (<span style="font-weight: bold;">vector</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>))
+<pre class="src src-clojure">(= [:a :b :c] (list :a :b :c) (vec '(:a :b :c)) (vector :a :b :c))
 </pre>
 </div>
 
@@ -613,7 +613,7 @@ REPLではtrueになるのになぜ？
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt;  (<span style="font-weight: bold;">=</span> [<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>] (<span style="font-weight: bold;">list</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>) (<span style="font-weight: bold;">vec</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>)) (<span style="font-weight: bold;">vector</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>))
+<pre class="src src-clojure">user&gt;  (= [:a :b :c] (list :a :b :c) (vec '(:a :b :c)) (vector :a :b :c))
 </pre>
 </div>
 <p>
@@ -622,9 +622,9 @@ REPLではtrueになるのになぜ？
 <div class="org-src-container">
 
 <pre class="src src-clojure">'[a b c]
-&#12391;&#12399;&#12394;&#12367;&#12390;
+ではなくて
 [a b c]
-&#12391;&#12424;&#12356;&#12392;&#12358;&#12371;&#12392;&#12290;
+でよいとうこと。
 </pre>
 </div>
 </div>
@@ -637,9 +637,9 @@ REPLではtrueになるのになぜ？
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> [1 2 3 4] (<span style="font-weight: bold;">conj</span> [1 2 3] 4))
+<pre class="src src-clojure">user&gt; (= [1 2 3 4] (conj [1 2 3] 4))
 true
-user&gt; (<span style="font-weight: bold;">=</span> [1 2 3 4] (<span style="font-weight: bold;">conj</span> [1 2] 3 4))
+user&gt; (= [1 2 3 4] (conj [1 2] 3 4))
 true
 </pre>
 </div>
@@ -650,8 +650,8 @@ true
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">set</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>)))
-(<span style="font-weight: bold;">=</span> __ (clojure.set/<span style="font-weight: bold;">union</span> #{<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>} #{<span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>}))
+<pre class="src src-clojure">(= __ (set '(:a :a :b :c :c :c :c :d :d)))
+(= __ (clojure.set/union #{:a :b :c} #{:b :c :d}))
 </pre>
 </div>
 <p>
@@ -659,8 +659,8 @@ true
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> #{<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>} (<span style="font-weight: bold;">set</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>)))
-<span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">Evaluation aborted.</span>
+<pre class="src src-clojure">user&gt; (= #{:a :a :b :c :c :c :c :d :d} (set '(:a :a :b :c :c :c :c :d :d)))
+; Evaluation aborted.
 </pre>
 </div>
 <p>
@@ -671,7 +671,7 @@ true
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> #{<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>} (<span style="font-weight: bold;">set</span> '(<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>)))
+<pre class="src src-clojure">user&gt; (= #{:a :b :c :d} (set '(:a :a :b :c :c :c :c :d :d)))
 true
 </pre>
 </div>
@@ -681,8 +681,8 @@ union関数はふたつのsetを合成するものかな。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (clojure.set/<span style="font-weight: bold;">union</span> #{<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span>} #{<span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>})
-#{<span style="font-weight: bold; text-decoration: underline;">:a</span> <span style="font-weight: bold; text-decoration: underline;">:c</span> <span style="font-weight: bold; text-decoration: underline;">:b</span> <span style="font-weight: bold; text-decoration: underline;">:d</span>}
+<pre class="src src-clojure">user&gt; (clojure.set/union #{:a :b :c} #{:b :c :d})
+#{:a :c :b :d}
 </pre>
 </div>
 </div>
@@ -692,7 +692,7 @@ union関数はふたつのsetを合成するものかな。
 <div class="outline-text-2" id="text-10">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> #{1 2 3 4} (<span style="font-weight: bold;">conj</span> #{1 4 3} __))
+<pre class="src src-clojure">(= #{1 2 3 4} (conj #{1 4 3} __))
 </pre>
 </div>
 
@@ -701,9 +701,9 @@ union関数はふたつのsetを合成するものかな。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">conj</span> #{1 4 3} #{2 3 5})
+<pre class="src src-clojure">user&gt; (conj #{1 4 3} #{2 3 5})
 #{1 3 4 #{2 3 5}}
-user&gt; (<span style="font-weight: bold;">conj</span> #{1 4 3} 2 3 5)
+user&gt; (conj #{1 4 3} 2 3 5)
 #{1 2 3 4 5}
 </pre>
 </div>
@@ -712,7 +712,7 @@ user&gt; (<span style="font-weight: bold;">conj</span> #{1 4 3} 2 3 5)
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> #{1 2 3 4} (<span style="font-weight: bold;">conj</span> #{1 4 3} 2 3))
+<pre class="src src-clojure">user&gt; (= #{1 2 3 4} (conj #{1 4 3} 2 3))
 true
 </pre>
 </div>
@@ -723,16 +723,16 @@ true
 <div class="outline-text-2" id="text-11">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ ((<span style="font-weight: bold;">hash-map</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> 10, <span style="font-weight: bold; text-decoration: underline;">:b</span> 20, <span style="font-weight: bold; text-decoration: underline;">:c</span> 30) <span style="font-weight: bold; text-decoration: underline;">:b</span>))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold; text-decoration: underline;">:b</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> 10, <span style="font-weight: bold; text-decoration: underline;">:b</span> 20, <span style="font-weight: bold; text-decoration: underline;">:c</span> 30}))
+<pre class="src src-clojure">(= __ ((hash-map :a 10, :b 20, :c 30) :b))
+(= __ (:b {:a 10, :b 20, :c 30}))
 </pre>
 </div>
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> 20 ((<span style="font-weight: bold;">hash-map</span> <span style="font-weight: bold; text-decoration: underline;">:a</span> 10, <span style="font-weight: bold; text-decoration: underline;">:b</span> 20, <span style="font-weight: bold; text-decoration: underline;">:c</span> 30) <span style="font-weight: bold; text-decoration: underline;">:b</span>))
+<pre class="src src-clojure">user&gt; (= 20 ((hash-map :a 10, :b 20, :c 30) :b))
 true
-user&gt; (<span style="font-weight: bold;">=</span> 20 (<span style="font-weight: bold; text-decoration: underline;">:b</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> 10, <span style="font-weight: bold; text-decoration: underline;">:b</span> 20, <span style="font-weight: bold; text-decoration: underline;">:c</span> 30}))
+user&gt; (= 20 (:b {:a 10, :b 20, :c 30}))
 true
 </pre>
 </div>
@@ -743,7 +743,7 @@ true
 <div class="outline-text-2" id="text-12">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> 1, <span style="font-weight: bold; text-decoration: underline;">:b</span> 2, <span style="font-weight: bold; text-decoration: underline;">:c</span> 3} (<span style="font-weight: bold;">conj</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> 1} __ [<span style="font-weight: bold; text-decoration: underline;">:c</span> 3]))
+<pre class="src src-clojure">(= {:a 1, :b 2, :c 3} (conj {:a 1} __ [:c 3]))
 </pre>
 </div>
 
@@ -752,8 +752,8 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">conj</span> {<span style="font-weight: bold; text-decoration: underline;">:a</span> 1} [<span style="font-weight: bold; text-decoration: underline;">:b</span> 2] [<span style="font-weight: bold; text-decoration: underline;">:c</span> 3])
-{<span style="font-weight: bold; text-decoration: underline;">:c</span> 3, <span style="font-weight: bold; text-decoration: underline;">:b</span> 2, <span style="font-weight: bold; text-decoration: underline;">:a</span> 1}
+<pre class="src src-clojure">user&gt; (conj {:a 1} [:b 2] [:c 3])
+{:c 3, :b 2, :a 1}
 </pre>
 </div>
 </div>
@@ -763,9 +763,9 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 <div class="outline-text-2" id="text-13">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">first</span> '(3 2 1)))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">second</span> [2 3 4]))
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">last</span> (<span style="font-weight: bold;">list</span> 1 2 3)))
+<pre class="src src-clojure">(= __ (first '(3 2 1)))
+(= __ (second [2 3 4]))
+(= __ (last (list 1 2 3)))
 </pre>
 </div>
 </div>
@@ -775,12 +775,12 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 <div class="outline-text-2" id="text-14">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">rest</span> [10 20 30 40]))
+<pre class="src src-clojure">(= __ (rest [10 20 30 40]))
 </pre>
 </div>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> '(20 30 40) (<span style="font-weight: bold;">rest</span> [10 20 30 40]))
+<pre class="src src-clojure">(= '(20 30 40) (rest [10 20 30 40]))
 </pre>
 </div>
 </div>
@@ -790,10 +790,10 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 <div class="outline-text-2" id="text-15">
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> __ ((<span style="font-weight: bold;">fn</span> add-five [x] (<span style="font-weight: bold;">+</span> x 5)) 3))
-(<span style="font-weight: bold;">=</span> __ ((<span style="font-weight: bold;">fn</span> [x] (<span style="font-weight: bold;">+</span> x 5)) 3))
-(<span style="font-weight: bold;">=</span> __ (#(<span style="font-weight: bold;">+</span> % 5) 3))
-(<span style="font-weight: bold;">=</span> __ ((<span style="font-weight: bold;">partial</span> + 5) 3))
+<pre class="src src-clojure">(= __ ((fn add-five [x] (+ x 5)) 3))
+(= __ ((fn [x] (+ x 5)) 3))
+(= __ (#(+ % 5) 3))
+(= __ ((partial + 5) 3))
 </pre>
 </div>
 <p>
@@ -807,11 +807,11 @@ partial関数ってなに？初見だ。
 <div class="outline-text-2" id="text-16">
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold;">Write</span> a function which doubles a number.
-(<span style="font-weight: bold;">=</span> (__ 2) 4)
-(<span style="font-weight: bold;">=</span> (__ 3) 6)
-(<span style="font-weight: bold;">=</span> (__ 11) 22)
-(<span style="font-weight: bold;">=</span> (__ 7) 14)
+<pre class="src src-clojure">Write a function which doubles a number.
+(= (__ 2) 4)
+(= (__ 3) 6)
+(= (__ 11) 22)
+(= (__ 7) 14)
 </pre>
 </div>
 
@@ -820,7 +820,7 @@ partial関数ってなに？初見だ。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> (#(<span style="font-weight: bold;">*</span> 2 %) 2) 4)
+<pre class="src src-clojure">(= (#(* 2 %) 2) 4)
 </pre>
 </div>
 </div>
@@ -831,10 +831,10 @@ partial関数ってなに？初見だ。
 <div class="outline-text-2" id="text-17">
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold;">Write</span> a function which returns a personalized greeting.
-(<span style="font-weight: bold;">=</span> (__ <span style="font-style: italic;">"Dave"</span>) <span style="font-style: italic;">"Hello, Dave!"</span>)
-(<span style="font-weight: bold;">=</span> (__ <span style="font-style: italic;">"Jenn"</span>) <span style="font-style: italic;">"Hello, Jenn!"</span>)
-(<span style="font-weight: bold;">=</span> (__ <span style="font-style: italic;">"Rhea"</span>) <span style="font-style: italic;">"Hello, Rhea!"</span>)
+<pre class="src src-clojure">Write a function which returns a personalized greeting.
+(= (__ "Dave") "Hello, Dave!")
+(= (__ "Jenn") "Hello, Jenn!")
+(= (__ "Rhea") "Hello, Rhea!")
 </pre>
 </div>
 
@@ -844,7 +844,7 @@ partial関数ってなに？初見だ。
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> (<span style="font-weight: bold;">format</span> <span style="font-style: italic;">"Hello, %s!"</span> <span style="font-style: italic;">"Rhea"</span>) <span style="font-style: italic;">"Hello, Rhea!"</span>)
+<pre class="src src-clojure">user&gt; (= (format "Hello, %s!" "Rhea") "Hello, Rhea!")
 true
 </pre>
 </div>
@@ -855,10 +855,10 @@ true
 <div class="outline-text-2" id="text-18">
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold;">The</span> map function takes two arguments: a function (f) and a sequence (s).
-<span style="font-weight: bold;">Map</span> returns a new sequence consisting of the result of applying f to each item of s.
-<span style="font-weight: bold;">Do</span> not confuse the map function with the map data structure.
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">map</span> #(<span style="font-weight: bold;">+</span> % 5) '(1 2 3)))
+<pre class="src src-clojure">The map function takes two arguments: a function (f) and a sequence (s).
+Map returns a new sequence consisting of the result of applying f to each item of s.
+Do not confuse the map function with the map data structure.
+(= __ (map #(+ % 5) '(1 2 3)))
 </pre>
 </div>
 </div>
@@ -869,12 +869,12 @@ true
 <div class="outline-text-2" id="text-19">
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold;">The</span> filter function takes two arguments:
+<pre class="src src-clojure">The filter function takes two arguments:
 a predicate function (f) and a sequence (s).
-<span style="font-weight: bold;">Filter</span> returns a new sequence consisting 
+Filter returns a new sequence consisting 
 of all the items of s for which (f item) returns true.
 
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">filter</span> #(<span style="font-weight: bold;">&gt;</span> % 5) '(3 4 5 6 7)))
+(= __ (filter #(&gt; % 5) '(3 4 5 6 7)))
 </pre>
 </div>
 </div>
@@ -884,17 +884,17 @@ of all the items of s for which (f item) returns true.
 <div class="outline-text-2" id="text-20">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: syntax
 
 
-<span style="font-weight: bold;">Clojure</span> lets you give local names to values using the special let-form.
+Clojure lets you give local names to values using the special let-form.
 test not run    
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">let</span> [x 5] (<span style="font-weight: bold;">+</span> 2 x)))
+(= __ (let [x 5] (+ 2 x)))
 test not run    
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">let</span> [x 3, y 10] (<span style="font-weight: bold;">-</span> y x)))
+(= __ (let [x 3, y 10] (- y x)))
 test not run    
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">let</span> [x 21] (<span style="font-weight: bold;">let</span> [y 3] (<span style="font-weight: bold;">/</span> x y))))
+(= __ (let [x 21] (let [y 3] (/ x y))))
 </pre>
 </div>
 </div>
@@ -904,18 +904,18 @@ test not run
 <div class="outline-text-2" id="text-21">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: regex syntax
 
-<span style="font-weight: bold;">Regex</span> patterns are supported with a special reader macro.
+Regex patterns are supported with a special reader macro.
 test not run    
-(<span style="font-weight: bold;">=</span> __ (<span style="font-weight: bold;">apply</span> str (<span style="font-weight: bold;">re-seq</span> #<span style="font-style: italic;">"[A-Z]+"</span> <span style="font-style: italic;">"bA1B3Ce "</span>)))
+(= __ (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))
 </pre>
 </div>
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> <span style="font-style: italic;">"ABC"</span> (<span style="font-weight: bold;">apply</span> str (<span style="font-weight: bold;">re-seq</span> #<span style="font-style: italic;">"[A-Z]+"</span> <span style="font-style: italic;">"bA1B3Ce "</span>)))
+<pre class="src src-clojure">user&gt; (= "ABC" (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))
 true
 </pre>
 </div>
@@ -926,25 +926,25 @@ true
 <div class="outline-text-2" id="text-22">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: seqs
 
-<span style="font-weight: bold;">Reduce</span> takes a 2 argument function and an optional starting value.
-<span style="font-weight: bold;">It</span> then applies the function to the first 2 items in the sequence
-(<span style="font-weight: bold;">or</span> the starting value and the first element of the sequence).
-<span style="font-weight: bold;">In</span> the next iteration the function will be called
+Reduce takes a 2 argument function and an optional starting value.
+It then applies the function to the first 2 items in the sequence
+(or the starting value and the first element of the sequence).
+In the next iteration the function will be called
  on the previous return value and the next item from the sequence,
  thus reducing the entire collection to one value.
- <span style="font-weight: bold;">Don</span>'t worry, it's not as complicated as it sounds.
-(<span style="font-weight: bold;">=</span> 15 (<span style="font-weight: bold;">reduce</span> __ [1 2 3 4 5]))
-(<span style="font-weight: bold;">=</span>  0 (<span style="font-weight: bold;">reduce</span> __ []))
-(<span style="font-weight: bold;">=</span>  6 (<span style="font-weight: bold;">reduce</span> __ 1 [2 3]))
+ Don't worry, it's not as complicated as it sounds.
+(= 15 (reduce __ [1 2 3 4 5]))
+(=  0 (reduce __ []))
+(=  6 (reduce __ 1 [2 3]))
 </pre>
 </div>
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> 15 (<span style="font-weight: bold;">reduce</span> + [1 2 3 4 5]))
+<pre class="src src-clojure">user&gt; (= 15 (reduce + [1 2 3 4 5]))
 true
 </pre>
 </div>
@@ -955,15 +955,15 @@ true
 <div class="outline-text-2" id="text-23">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: recursion
 
 A recursive function is a function which calls itself.
-<span style="font-weight: bold;">This</span> is one of the fundamental techniques used in functional programming.
-(<span style="font-weight: bold;">=</span> __
-  ((<span style="font-weight: bold;">fn</span> foo [x]
-    (<span style="font-weight: bold;">when</span> (<span style="font-weight: bold;">&gt;</span> x 0)
-      (<span style="font-weight: bold;">conj</span> (foo (<span style="font-weight: bold;">dec</span> x)) x)))
+This is one of the fundamental techniques used in functional programming.
+(= __
+  ((fn foo [x]
+    (when (&gt; x 0)
+      (conj (foo (dec x)) x)))
     5))
 </pre>
 </div>
@@ -971,7 +971,7 @@ A recursive function is a function which calls itself.
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> '(5 4 3 2 1) ((<span style="font-weight: bold;">fn</span> foo [x] (<span style="font-weight: bold;">when</span> (<span style="font-weight: bold;">&gt;</span> x 0) (<span style="font-weight: bold;">conj</span> (foo (<span style="font-weight: bold;">dec</span> x)) x))) 5))
+<pre class="src src-clojure">user&gt; (= '(5 4 3 2 1) ((fn foo [x] (when (&gt; x 0) (conj (foo (dec x)) x))) 5))
 true
 </pre>
 </div>
@@ -982,27 +982,27 @@ true
 <div class="outline-text-2" id="text-24">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: 
 
-<span style="font-weight: bold;">The</span> -&gt; macro threads an expression x through a variable number of forms. 
-<span style="font-weight: bold;">First</span>, x is inserted as the second item in the first form,
+The -&gt; macro threads an expression x through a variable number of forms. 
+First, x is inserted as the second item in the first form,
  making a list of it if it is not a list already.
-<span style="font-weight: bold;">Then</span> the first form is inserted as the second item in the second form,
+Then the first form is inserted as the second item in the second form,
 making a list of that form if necessary.
-<span style="font-weight: bold;">This</span> process continues for all the forms.
-<span style="font-weight: bold;">Using</span> -&gt; can sometimes make your code more readable.
+This process continues for all the forms.
+Using -&gt; can sometimes make your code more readable.
 
-(<span style="font-weight: bold;">=</span> (__ (<span style="font-weight: bold;">sort</span> (<span style="font-weight: bold;">rest</span> (<span style="font-weight: bold;">reverse</span> [2 5 4 1 3 6]))))
-   (<span style="font-weight: bold;">-&gt;</span> [2 5 4 1 3 6] reverse rest sort __)
+(= (__ (sort (rest (reverse [2 5 4 1 3 6]))))
+   (-&gt; [2 5 4 1 3 6] reverse rest sort __)
    5)
 </pre>
 </div>
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> (<span style="font-weight: bold;">last</span> (<span style="font-weight: bold;">sort</span> (<span style="font-weight: bold;">rest</span> (<span style="font-weight: bold;">reverse</span> [2 5 4 1 3 6]))))
-   (<span style="font-weight: bold;">-&gt;</span> [2 5 4 1 3 6] reverse rest sort last)
+<pre class="src src-clojure">(= (last (sort (rest (reverse [2 5 4 1 3 6]))))
+   (-&gt; [2 5 4 1 3 6] reverse rest sort last)
    5)
 </pre>
 </div>
@@ -1013,19 +1013,19 @@ making a list of that form if necessary.
 <div class="outline-text-2" id="text-25">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: recursion
 
-<span style="font-weight: bold;">Clojure</span> only has one non-stack-consuming looping construct: recur.
-<span style="font-weight: bold;">Either</span> a function or a loop can be used as the recursion point. 
-<span style="font-weight: bold;">Either</span> way, recur rebinds the bindings of the recursion point to the values it is passed.
-<span style="font-weight: bold;">Recur</span> must be called from the tail-position, and calling it elsewhere will result in an error.
+Clojure only has one non-stack-consuming looping construct: recur.
+Either a function or a loop can be used as the recursion point. 
+Either way, recur rebinds the bindings of the recursion point to the values it is passed.
+Recur must be called from the tail-position, and calling it elsewhere will result in an error.
 
-(<span style="font-weight: bold;">=</span> __
-  (<span style="font-weight: bold;">loop</span> [x 5
+(= __
+  (loop [x 5
          result []]
-    (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">&gt;</span> x 0)
-      (<span style="font-weight: bold;">recur</span> (<span style="font-weight: bold;">dec</span> x) (<span style="font-weight: bold;">conj</span> result (<span style="font-weight: bold;">+</span> 2 x)))
+    (if (&gt; x 0)
+      (recur (dec x) (conj result (+ 2 x)))
       result)))
 </pre>
 </div>
@@ -1036,14 +1036,14 @@ Topics: recursion
 <div class="outline-text-2" id="text-26">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Elementary</span>
+<pre class="src src-clojure">Difficulty:     Elementary
 Topics: 
 
 
-<span style="font-weight: bold;">The</span> -&gt;&gt; macro threads an expression x through a variable number of forms. <span style="font-weight: bold;">First</span>, x is inserted as the last item in the first form, making a list of it if it is not a list already. <span style="font-weight: bold;">Then</span> the first form is inserted as the last item in the second form, making a list of that form if necessary. <span style="font-weight: bold;">This</span> process continues for all the forms. <span style="font-weight: bold;">Using</span> -&gt;&gt; can sometimes make your code more readable.
+The -&gt;&gt; macro threads an expression x through a variable number of forms. First, x is inserted as the last item in the first form, making a list of it if it is not a list already. Then the first form is inserted as the last item in the second form, making a list of that form if necessary. This process continues for all the forms. Using -&gt;&gt; can sometimes make your code more readable.
 test not run    
-(<span style="font-weight: bold;">=</span> (__ (<span style="font-weight: bold;">map</span> inc (<span style="font-weight: bold;">take</span> 3 (<span style="font-weight: bold;">drop</span> 2 [2 5 4 1 3 6]))))
-   (<span style="font-weight: bold;">-&gt;&gt;</span> [2 5 4 1 3 6] (<span style="font-weight: bold;">drop</span> 2) (<span style="font-weight: bold;">take</span> 3) (<span style="font-weight: bold;">map</span> inc) (__))
+(= (__ (map inc (take 3 (drop 2 [2 5 4 1 3 6]))))
+   (-&gt;&gt; [2 5 4 1 3 6] (drop 2) (take 3) (map inc) (__))
    11)
 </pre>
 </div>
@@ -1052,8 +1052,8 @@ test not run
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">=</span> (<span style="font-weight: bold;">apply</span> + (<span style="font-weight: bold;">map</span> inc (<span style="font-weight: bold;">take</span> 3 (<span style="font-weight: bold;">drop</span> 2 [2 5 4 1 3 6]))))
-   (<span style="font-weight: bold;">-&gt;&gt;</span> [2 5 4 1 3 6] (<span style="font-weight: bold;">drop</span> 2) (<span style="font-weight: bold;">take</span> 3) (<span style="font-weight: bold;">map</span> inc) (<span style="font-weight: bold;">apply</span> +))
+<pre class="src src-clojure">(= (apply + (map inc (take 3 (drop 2 [2 5 4 1 3 6]))))
+   (-&gt;&gt; [2 5 4 1 3 6] (drop 2) (take 3) (map inc) (apply +))
    11)
 </pre>
 </div>
@@ -1064,13 +1064,13 @@ test not run
 <div class="outline-text-2" id="text-27">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Easy</span>
+<pre class="src src-clojure">Difficulty:     Easy
 Topics: seqs core-functions
 
-<span style="font-weight: bold;">Write</span> a function which returns the last element in a sequence.
-(<span style="font-weight: bold;">=</span> (__ [1 2 3 4 5]) 5)
-(<span style="font-weight: bold;">=</span> (__ '(5 4 3)) 3)
-(<span style="font-weight: bold;">=</span> (__ [<span style="font-style: italic;">"b"</span> <span style="font-style: italic;">"c"</span> <span style="font-style: italic;">"d"</span>]) <span style="font-style: italic;">"d"</span>)
+Write a function which returns the last element in a sequence.
+(= (__ [1 2 3 4 5]) 5)
+(= (__ '(5 4 3)) 3)
+(= (__ ["b" "c" "d"]) "d")
 </pre>
 </div>
 <p>
@@ -1084,7 +1084,7 @@ lastは使っちゃダメらしい。
 
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> (#(<span style="font-weight: bold;">first</span> (<span style="font-weight: bold;">reverse</span> %)) '(5 4 3)) 3)
+<pre class="src src-clojure">user&gt; (= (#(first (reverse %)) '(5 4 3)) 3)
 true
 </pre>
 </div>
@@ -1098,14 +1098,14 @@ true
 <div class="outline-text-2" id="text-28">
 <div class="org-src-container">
 
-<pre class="src src-clojure">Difficulty:     <span style="font-weight: bold;">Easy</span>
+<pre class="src src-clojure">Difficulty:     Easy
 Topics: seqs
 
-<span style="font-weight: bold;">Write</span> a function which returns the second to last element from a sequence.
+Write a function which returns the second to last element from a sequence.
 
-(<span style="font-weight: bold;">=</span> (__ (<span style="font-weight: bold;">list</span> 1 2 3 4 5)) 4)
-(<span style="font-weight: bold;">=</span> (__ [<span style="font-style: italic;">"a"</span> <span style="font-style: italic;">"b"</span> <span style="font-style: italic;">"c"</span>]) <span style="font-style: italic;">"b"</span>)
-(<span style="font-weight: bold;">=</span> (__ [[1 2] [3 4]]) [1 2])
+(= (__ (list 1 2 3 4 5)) 4)
+(= (__ ["a" "b" "c"]) "b")
+(= (__ [[1 2] [3 4]]) [1 2])
 </pre>
 </div>
 
@@ -1114,11 +1114,11 @@ Topics: seqs
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">=</span> (#(<span style="font-weight: bold;">second</span> (<span style="font-weight: bold;">reverse</span> %)) (<span style="font-weight: bold;">list</span> 1 2 3 4 5)) 4)
+<pre class="src src-clojure">user&gt; (= (#(second (reverse %)) (list 1 2 3 4 5)) 4)
 true
-user&gt; (<span style="font-weight: bold;">=</span> (#(<span style="font-weight: bold;">second</span> (<span style="font-weight: bold;">reverse</span> %)) [<span style="font-style: italic;">"a"</span> <span style="font-style: italic;">"b"</span> <span style="font-style: italic;">"c"</span>]) <span style="font-style: italic;">"b"</span>)
+user&gt; (= (#(second (reverse %)) ["a" "b" "c"]) "b")
 true
-user&gt; (<span style="font-weight: bold;">=</span> (#(<span style="font-weight: bold;">second</span> (<span style="font-weight: bold;">reverse</span> %)) [[1 2] [3 4]]) [1 2])
+user&gt; (= (#(second (reverse %)) [[1 2] [3 4]]) [1 2])
 true
 </pre>
 </div>

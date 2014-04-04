@@ -145,8 +145,8 @@ ClojureでのGUIはさっぱりわからんけども、とりあえずJavaのサ
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold;">java.awt.image.BufferedImage</span> bimage<span style="font-weight: bold; font-style: italic;">;</span>
-image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <span style="font-weight: bold;">java.io.File</span>(<span style="font-style: italic;">"hoge.png"</span>))<span style="font-weight: bold; font-style: italic;">;</span>
+<pre class="src src-clojure">java.awt.image.BufferedImage bimage;
+image = javax.imageio.ImageIO.read(new java.io.File("hoge.png"));
 </pre>
 </div>
 <p>
@@ -165,10 +165,10 @@ image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">import</span> (java.awt.image <span style="font-weight: bold;">BufferedImage</span>))
-(<span style="font-weight: bold;">import</span> (javax.imageio <span style="font-weight: bold;">ImageIO</span>))
-(<span style="font-weight: bold;">import</span> (java.io <span style="font-weight: bold;">File</span>))
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">image</span> (<span style="font-weight: bold;">ImageIO/read</span> (<span style="font-weight: bold; text-decoration: underline;">File.</span> <span style="font-style: italic;">"gai.png"</span>)))
+<pre class="src src-clojure">(import (java.awt.image BufferedImage))
+(import (javax.imageio ImageIO))
+(import (java.io File))
+(def image (ImageIO/read (File. "gai.png")))
 </pre>
 </div>
 <p>
@@ -176,10 +176,10 @@ image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">import</span> (java.awt <span style="font-weight: bold;">Graphics</span>))
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">graphics</span> (<span style="font-weight: bold;">..</span> frame (<span style="font-weight: bold;">getGraphics</span>)))
-(<span style="font-weight: bold;">doto</span> graphics
-  (<span style="font-weight: bold;">.drawImage</span> image 0 0 frame))
+<pre class="src src-clojure">(import (java.awt Graphics))
+(def graphics (.. frame (getGraphics)))
+(doto graphics
+  (.drawImage image 0 0 frame))
 </pre>
 </div>
 <p>
@@ -197,7 +197,7 @@ image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">..</span> graphics (<span style="font-weight: bold;">drawLine</span> 0 0 640 480))
+<pre class="src src-clojure">(.. graphics (drawLine 0 0 640 480))
 </pre>
 </div>
 
@@ -224,7 +224,7 @@ image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">insets</span> (<span style="font-weight: bold;">..</span> frame <span style="font-weight: bold;">getInsets</span>))
+<pre class="src src-clojure">(def insets (.. frame getInsets))
 </pre>
 </div>
 
@@ -234,7 +234,7 @@ image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <
 <div class="org-src-container">
 
 <pre class="src src-clojure">user&gt; insets
-#&lt;<span style="font-weight: bold;">Insets</span> <span style="font-weight: bold;">java.awt.Insets</span>[top=24,left=1,bottom=5,right=1]&gt;
+#&lt;Insets java.awt.Insets[top=24,left=1,bottom=5,right=1]&gt;
 </pre>
 </div>
 
@@ -243,10 +243,10 @@ image = <span style="font-weight: bold;">javax.imageio.ImageIO.read</span>(new <
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">..</span> frame (<span style="font-weight: bold;">setVisible</span> true))
-(<span style="font-weight: bold;">..</span> graphics (translate (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets top)))
-(<span style="font-weight: bold;">..</span> graphics (<span style="font-weight: bold;">clearRect</span> 0 0 640 480))
-(<span style="font-weight: bold;">..</span> graphics (<span style="font-weight: bold;">drawImage</span> image 0 0 frame))
+<pre class="src src-clojure">(.. frame (setVisible true))
+(.. graphics (translate (.. insets left) (.. insets top)))
+(.. graphics (clearRect 0 0 640 480))
+(.. graphics (drawImage image 0 0 frame))
 </pre>
 </div>
 
@@ -269,9 +269,9 @@ insentsを利用したついでに説明。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">doto</span> frame
-    (<span style="font-weight: bold;">.setSize</span> (<span style="font-weight: bold;">+</span> 640 (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets right)) (<span style="font-weight: bold;">+</span> 480 (<span style="font-weight: bold;">..</span> insets top) (<span style="font-weight: bold;">..</span> insets bottom)))
-    (<span style="font-weight: bold;">.setVisible</span> true))
+<pre class="src src-clojure">(doto frame
+    (.setSize (+ 640 (.. insets left) (.. insets right)) (+ 480 (.. insets top) (.. insets bottom)))
+    (.setVisible true))
 </pre>
 </div>
 <p>
@@ -289,13 +289,13 @@ insentsを利用したついでに説明。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">.drawImage</span>
-        image   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#25551;&#30011;&#30011;&#20687;</span>
-        0 0     <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36578;&#36865;&#20808;&#12398;&#24038;&#19978;&#24231;&#27161;</span>
-        32 32   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#36578;&#36865;&#20808;&#12398;&#21491;&#19979;&#24231;&#27161;</span>
-        0 0     <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#30011;&#20687;&#20803;&#12398;&#24038;&#19978;&#24231;&#27161;</span>
-        32 32   <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#30011;&#20687;&#20803;&#12398;&#21491;&#19979;&#24231;&#27161;</span>
-        frame)  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#25551;&#30011;&#23550;&#35937;</span>
+<pre class="src src-clojure">(.drawImage
+        image   ;; 描画画像
+        0 0     ;; 転送先の左上座標
+        32 32   ;; 転送先の右下座標
+        0 0     ;; 画像元の左上座標
+        32 32   ;; 画像元の右下座標
+        frame)  ;; 描画対象
 </pre>
 </div>
 
@@ -351,12 +351,12 @@ Clojureで継承が必要なJavaクラスを使うには、proxyを使う。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">import</span> (java.util <span style="font-weight: bold;">Timer</span> <span style="font-weight: bold;">TimerTask</span>))
-(<span style="font-weight: bold;">import</span> (java.util <span style="font-weight: bold;">TimerTask</span>))
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">mainloop</span>
-  (<span style="font-weight: bold;">proxy</span> [<span style="font-weight: bold;">TimerTask</span>] []
+<pre class="src src-clojure">(import (java.util Timer TimerTask))
+(import (java.util TimerTask))
+(def mainloop
+  (proxy [TimerTask] []
     (run []
-      (<span style="font-weight: bold;">println</span> <span style="font-style: italic;">"&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;"</span>))
+      (println "呼びだされた"))
     ))
 </pre>
 </div>
@@ -366,8 +366,8 @@ Clojureで継承が必要なJavaクラスを使うには、proxyを使う。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">..</span> mainloop run) 
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+<pre class="src src-clojure">user&gt; (.. mainloop run) 
+呼びだされた
 nil
 </pre>
 </div>
@@ -380,17 +380,17 @@ nil
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">..</span> (<span style="font-weight: bold; text-decoration: underline;">Timer.</span>) schedule mainloop 0 500)
+<pre class="src src-clojure">user&gt; (.. (Timer.) schedule mainloop 0 500)
 
-<span style="font-weight: bold;">Malformed</span> member expression
-  [<span style="font-weight: bold;">Thrown</span> class <span style="font-weight: bold;">java.lang.IllegalArgumentException</span>]
+Malformed member expression
+  [Thrown class java.lang.IllegalArgumentException]
 
 Restarts:
- 0: [<span style="font-weight: bold;">QUIT</span>] <span style="font-weight: bold;">Quit</span> to the <span style="font-weight: bold;">SLIME</span> top level
+ 0: [QUIT] Quit to the SLIME top level
 
 Backtrace:
-  0: <span style="font-weight: bold;">clojure.lang.Compiler$HostExpr$Parser.parse</span>(Compiler.java:825)
-  1: <span style="font-weight: bold;">clojure.lang.Compiler.analyzeSeq</span>(Compiler.java:5369)
+  0: clojure.lang.Compiler$HostExpr$Parser.parse(Compiler.java:825)
+  1: clojure.lang.Compiler.analyzeSeq(Compiler.java:5369)
 </pre>
 </div>
 <p>
@@ -399,16 +399,16 @@ Backtrace:
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">..</span> (<span style="font-weight: bold; text-decoration: underline;">Timer.</span>) schedule mainloop (<span style="font-weight: bold;">long</span> 0) (<span style="font-weight: bold;">long</span> 500))
-<span style="font-weight: bold;">No</span> matching field found: schedule for class <span style="font-weight: bold;">java.util.Timer</span>
-  [<span style="font-weight: bold;">Thrown</span> class <span style="font-weight: bold;">java.lang.IllegalArgumentException</span>]
+<pre class="src src-clojure">user&gt; (.. (Timer.) schedule mainloop (long 0) (long 500))
+No matching field found: schedule for class java.util.Timer
+  [Thrown class java.lang.IllegalArgumentException]
 
 Restarts:
- 0: [<span style="font-weight: bold;">QUIT</span>] <span style="font-weight: bold;">Quit</span> to the <span style="font-weight: bold;">SLIME</span> top level
+ 0: [QUIT] Quit to the SLIME top level
 
 Backtrace:
-  0: <span style="font-weight: bold;">clojure.lang.Reflector.getInstanceField</span>(Reflector.java:245)
-  1: <span style="font-weight: bold;">clojure.lang.Reflector.invokeNoArgInstanceMember</span>(Reflector.java:267)
+  0: clojure.lang.Reflector.getInstanceField(Reflector.java:245)
+  1: clojure.lang.Reflector.invokeNoArgInstanceMember(Reflector.java:267)
 </pre>
 </div>
 <p>
@@ -417,22 +417,22 @@ scheduleをカッコでくくらないと駄目らしい。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">..</span> (<span style="font-weight: bold; text-decoration: underline;">Timer.</span>) (schedule mainloop (<span style="font-weight: bold;">long</span> 0) (<span style="font-weight: bold;">long</span> 500)))
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
-&#21628;&#12403;&#12384;&#12373;&#12428;&#12383;
+<pre class="src src-clojure">user&gt; (.. (Timer.) (schedule mainloop (long 0) (long 500)))
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
+呼びだされた
 nil
 </pre>
 </div>
@@ -452,8 +452,8 @@ Clojureはデフォルトでは値を更新できない。これを変更する�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure"><span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12503;&#12524;&#12452;&#12516;&#12540;&#23450;&#32681;</span>
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">player</span> (<span style="font-weight: bold;">atom</span> {<span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 0]}))
+<pre class="src src-clojure">;; プレイヤー定義
+(def player (atom {:pos [0 0]}))
 </pre>
 </div>
 
@@ -462,7 +462,7 @@ Clojureはデフォルトでは値を更新できない。これを変更する�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>)
+<pre class="src src-clojure">user&gt; (@player :pos)
 [0 0]
 user&gt;
 </pre>
@@ -473,7 +473,7 @@ x座標は配列の0番目
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0) 
+<pre class="src src-clojure">user&gt; (nth (@player :pos) 0) 
 0
 </pre>
 </div>
@@ -483,7 +483,7 @@ y座標は配列の1番目
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 1) 
+<pre class="src src-clojure">user&gt; (nth (@player :pos) 1) 
 0
 </pre>
 </div>
@@ -494,15 +494,15 @@ playerの座標を更新してみる。
 <div class="org-src-container">
 
 <pre class="src src-clojure">user&gt; player
-#&lt;Atom@2a134eca: {<span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 0]}&gt;
+#&lt;Atom@2a134eca: {:pos [0 0]}&gt;
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#22793;&#26356;</span>
-user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 1])
-{<span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 1]}
+;; 変更
+user&gt; (swap! player assoc :pos [0 1])
+{:pos [0 1]}
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12383;&#12375;&#12363;&#12395;&#26356;&#26032;&#12373;&#12428;&#12383;</span>
+;; たしかに更新された
 user&gt; player
-#&lt;Atom@2a134eca: {<span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 1]}&gt;
+#&lt;Atom@2a134eca: {:pos [0 1]}&gt;
 </pre>
 </div>
 
@@ -511,14 +511,14 @@ x座標を更新させる
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1])
-{<span style="font-weight: bold; text-decoration: underline;">:pos</span> [1 1]}
-user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1])
-{<span style="font-weight: bold; text-decoration: underline;">:pos</span> [2 1]}
-user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1])
-{<span style="font-weight: bold; text-decoration: underline;">:pos</span> [3 1]}
-user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1])
-{<span style="font-weight: bold; text-decoration: underline;">:pos</span> [4 1]}
+<pre class="src src-clojure">user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
+{:pos [1 1]}
+user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
+{:pos [2 1]}
+user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
+{:pos [3 1]}
+user&gt; (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1])
+{:pos [4 1]}
 </pre>
 </div>
 
@@ -527,27 +527,27 @@ user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">mainloop</span>
-  (<span style="font-weight: bold;">proxy</span> [<span style="font-weight: bold;">TimerTask</span>] []
+<pre class="src src-clojure">(def mainloop
+  (proxy [TimerTask] []
     (run []
-      (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1]) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#24231;&#27161;&#26356;&#26032;</span>
-      (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">&lt;</span> 640 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0))
-             (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 0]))
+      (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1]) ;; 座標更新
+      (if (&lt; 640 (nth (@player :pos) 0))
+             (swap! player assoc :pos [0 0]))
 
-      (<span style="font-weight: bold;">let</span> [g (<span style="font-weight: bold;">..</span> frame (<span style="font-weight: bold;">getGraphics</span>))
-            player-x (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)
-            player-y (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 1)]
+      (let [g (.. frame (getGraphics))
+            player-x (nth (@player :pos) 0)
+            player-y (nth (@player :pos) 1)]
 
-        (<span style="font-weight: bold;">doto</span> g
-          (<span style="font-weight: bold;">.translate</span> (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets top))
-          (<span style="font-weight: bold;">.setColor</span> clear-color)
-          (<span style="font-weight: bold;">.fillRect</span> 0 0 640 480)
-          (<span style="font-weight: bold;">.drawImage</span> image
+        (doto g
+          (.translate (.. insets left) (.. insets top))
+          (.setColor clear-color)
+          (.fillRect 0 0 640 480)
+          (.drawImage image
                       player-x player-y
-                      (<span style="font-weight: bold;">+</span> player-x 32) (<span style="font-weight: bold;">+</span> player-y 32)
+                      (+ player-x 32) (+ player-y 32)
                       0 0 32 32
                       frame)
-          (<span style="font-weight: bold;">.dispose</span>))))))
+          (.dispose))))))
 </pre>
 </div>
 
@@ -556,7 +556,7 @@ user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">..</span> (<span style="font-weight: bold; text-decoration: underline;">Timer.</span>) (schedule mainloop (<span style="font-weight: bold;">long</span> 0) (<span style="font-weight: bold;">long</span> 20)))
+<pre class="src src-clojure">(.. (Timer.) (schedule mainloop (long 0) (long 20)))
 </pre>
 </div>
 
@@ -579,14 +579,14 @@ user&gt; (<span style="font-weight: bold;">swap!</span> player assoc <span style
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">doto</span> frame
-    (<span style="font-weight: bold;">.setSize</span> (<span style="font-weight: bold;">+</span> 640 (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets right)) (<span style="font-weight: bold;">+</span> 480 (<span style="font-weight: bold;">..</span> insets top) (<span style="font-weight: bold;">..</span> insets bottom)))
-    (<span style="font-weight: bold;">.setVisible</span> true)
-    (<span style="font-weight: bold;">.setIgnoreRepaint</span> true) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#20877;&#25551;&#30011;&#12434;&#28961;&#21177;&#12395;(BufferStrategy&#12434;&#20351;&#12358;&#12398;&#12391;)</span>
-    (<span style="font-weight: bold;">.createBufferStrategy</span> 2) <span style="font-weight: bold; font-style: italic;">;;  </span><span style="font-weight: bold; font-style: italic;">setVisible&#12513;&#12477;&#12483;&#12489;&#12398;&#12354;&#12392;&#12391;&#21628;&#12400;&#12394;&#12356;&#12392;&#23455;&#34892;&#26178;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;</span>
+<pre class="src src-clojure">(doto frame
+    (.setSize (+ 640 (.. insets left) (.. insets right)) (+ 480 (.. insets top) (.. insets bottom)))
+    (.setVisible true)
+    (.setIgnoreRepaint true) ;; ウィンドウの再描画を無効に(BufferStrategyを使うので)
+    (.createBufferStrategy 2) ;;  setVisibleメソッドのあとで呼ばないと実行時エラーになる
     )
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12496;&#12483;&#12501;&#12449;&#20316;&#25104;</span>
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">buffer</span> (<span style="font-weight: bold;">..</span> frame (<span style="font-weight: bold;">getBufferStrategy</span>)))
+;; バッファ作成
+(def buffer (.. frame (getBufferStrategy)))
 </pre>
 </div>
 
@@ -595,30 +595,30 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">defn</span> <span style="font-weight: bold;">create-mainloop</span>
+<pre class="src src-clojure">(defn create-mainloop
   []
-  (<span style="font-weight: bold;">proxy</span> [<span style="font-weight: bold;">TimerTask</span>] []
+  (proxy [TimerTask] []
     (run []
-      (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1]) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#24231;&#27161;&#26356;&#26032;</span>
-      (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">&lt;</span> 640 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0))
-             (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 0]))
+      (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1]) ;; 座標更新
+      (if (&lt; 640 (nth (@player :pos) 0))
+             (swap! player assoc :pos [0 0]))
 
-      (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">not</span> (<span style="font-weight: bold;">..</span> buffer (<span style="font-weight: bold;">contentsLost</span>)))
-        (<span style="font-weight: bold;">let</span> [g (<span style="font-weight: bold;">..</span> buffer (<span style="font-weight: bold;">getDrawGraphics</span>))
-              player-x (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)
-              player-y (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 1)]
-          (<span style="font-weight: bold;">doto</span> g
-            (<span style="font-weight: bold;">.translate</span> (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets top))
-            (<span style="font-weight: bold;">.setColor</span> clear-color)
-            (<span style="font-weight: bold;">.fillRect</span> 0 0 640 480)
-            (<span style="font-weight: bold;">.translate</span> (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets top))
-            (<span style="font-weight: bold;">.drawImage</span> image
+      (if (not (.. buffer (contentsLost)))
+        (let [g (.. buffer (getDrawGraphics))
+              player-x (nth (@player :pos) 0)
+              player-y (nth (@player :pos) 1)]
+          (doto g
+            (.translate (.. insets left) (.. insets top))
+            (.setColor clear-color)
+            (.fillRect 0 0 640 480)
+            (.translate (.. insets left) (.. insets top))
+            (.drawImage image
                         player-x player-y
-                        (<span style="font-weight: bold;">+</span> player-x 32) (<span style="font-weight: bold;">+</span> player-y 32)
+                        (+ player-x 32) (+ player-y 32)
                         0 0 32 32
                         frame)
-            (<span style="font-weight: bold;">.dispose</span>))
-          (<span style="font-weight: bold;">..</span> buffer (show))
+            (.dispose))
+          (.. buffer (show))
           )))))
 </pre>
 </div>
@@ -633,63 +633,63 @@ bufferを使って以下のように呼び出し。TimerTaskクラスオブジ�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-clojure">(<span style="font-weight: bold;">ns</span> hello-cube.core)
+<pre class="src src-clojure">(ns hello-cube.core)
 
-(<span style="font-weight: bold;">import</span> (javax.swing <span style="font-weight: bold;">JFrame</span>))
-(<span style="font-weight: bold;">import</span> (java.util <span style="font-weight: bold;">Timer</span> <span style="font-weight: bold;">TimerTask</span>))
-(<span style="font-weight: bold;">import</span> (java.awt <span style="font-weight: bold;">Graphics</span> <span style="font-weight: bold;">Color</span>))
-(<span style="font-weight: bold;">import</span> (java.awt.image <span style="font-weight: bold;">BufferedImage</span>))
-(<span style="font-weight: bold;">import</span> (javax.imageio <span style="font-weight: bold;">ImageIO</span>))
-(<span style="font-weight: bold;">import</span> (java.io <span style="font-weight: bold;">File</span>))
+(import (javax.swing JFrame))
+(import (java.util Timer TimerTask))
+(import (java.awt Graphics Color))
+(import (java.awt.image BufferedImage))
+(import (javax.imageio ImageIO))
+(import (java.io File))
 
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">clear-color</span> (<span style="font-weight: bold; text-decoration: underline;">Color.</span> 0 0 127))
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">frame</span> (<span style="font-weight: bold; text-decoration: underline;">JFrame.</span> <span style="font-style: italic;">"Clojure Sample Game"</span>)) 
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">image</span> (<span style="font-weight: bold;">ImageIO/read</span> (<span style="font-weight: bold; text-decoration: underline;">File.</span> <span style="font-style: italic;">"gai.png"</span>))) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#30011;&#20687;&#35501;&#12415;&#36796;&#12415;</span>
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">player</span> (<span style="font-weight: bold;">atom</span> {<span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 0]}))
+(def clear-color (Color. 0 0 127))
+(def frame (JFrame. "Clojure Sample Game")) 
+(def image (ImageIO/read (File. "gai.png"))) ;; 画像読み込み
+(def player (atom {:pos [0 0]}))
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#26528;&#12434;&#32771;&#24942;&#12375;&#12390;&#12469;&#12452;&#12474;&#25351;&#23450;</span>
-(<span style="font-weight: bold;">doto</span> frame
-    (<span style="font-weight: bold;">.setVisible</span> true)
-    (<span style="font-weight: bold;">.setIgnoreRepaint</span> true) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12398;&#20877;&#25551;&#30011;&#12434;&#28961;&#21177;&#12395;(BufferStrategy&#12434;&#20351;&#12358;&#12398;&#12391;)</span>
-    (<span style="font-weight: bold;">.createBufferStrategy</span> 2) <span style="font-weight: bold; font-style: italic;">;;  </span><span style="font-weight: bold; font-style: italic;">setVisible&#12513;&#12477;&#12483;&#12489;&#12398;&#12354;&#12392;&#12391;&#21628;&#12400;&#12394;&#12356;&#12392;&#23455;&#34892;&#26178;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;</span>
+;; 枠を考慮してサイズ指定
+(doto frame
+    (.setVisible true)
+    (.setIgnoreRepaint true) ;; ウィンドウの再描画を無効に(BufferStrategyを使うので)
+    (.createBufferStrategy 2) ;;  setVisibleメソッドのあとで呼ばないと実行時エラーになる
     )
 
-<span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12496;&#12483;&#12501;&#12449;&#20316;&#25104;</span>
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">buffer</span> (<span style="font-weight: bold;">..</span> frame (<span style="font-weight: bold;">getBufferStrategy</span>)))
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">insets</span> (<span style="font-weight: bold;">..</span> frame <span style="font-weight: bold;">getInsets</span>))  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12454;&#12451;&#12531;&#12489;&#12454;&#12434;&#34920;&#31034;&#12375;&#12390;&#12363;&#12425;&#20986;&#12394;&#12356;&#12392;&#20516;&#12364;&#20837;&#12425;&#12394;&#12356;&#12290;</span>
+;; バッファ作成
+(def buffer (.. frame (getBufferStrategy)))
+(def insets (.. frame getInsets))  ;; ウィンドウを表示してから出ないと値が入らない。
 
-(<span style="font-weight: bold;">doto</span> frame
-    (<span style="font-weight: bold;">.setSize</span> (<span style="font-weight: bold;">+</span> 640 (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets right)) (<span style="font-weight: bold;">+</span> 480 (<span style="font-weight: bold;">..</span> insets top) (<span style="font-weight: bold;">..</span> insets bottom))))
+(doto frame
+    (.setSize (+ 640 (.. insets left) (.. insets right)) (+ 480 (.. insets top) (.. insets bottom))))
 
 
-(<span style="font-weight: bold;">defn</span> <span style="font-weight: bold;">create-mainloop</span>
+(defn create-mainloop
   []
-  (<span style="font-weight: bold;">proxy</span> [<span style="font-weight: bold;">TimerTask</span>] []
+  (proxy [TimerTask] []
     (run []
-      (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [(<span style="font-weight: bold;">+</span> 1 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)) 1]) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#24231;&#27161;&#26356;&#26032;</span>
-      (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">&lt;</span> 640 (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0))
-             (<span style="font-weight: bold;">swap!</span> player assoc <span style="font-weight: bold; text-decoration: underline;">:pos</span> [0 0]))
+      (swap! player assoc :pos [(+ 1 (nth (@player :pos) 0)) 1]) ;; 座標更新
+      (if (&lt; 640 (nth (@player :pos) 0))
+             (swap! player assoc :pos [0 0]))
 
-      (<span style="font-weight: bold;">if</span> (<span style="font-weight: bold;">not</span> (<span style="font-weight: bold;">..</span> buffer (<span style="font-weight: bold;">contentsLost</span>)))
-        (<span style="font-weight: bold;">let</span> [g (<span style="font-weight: bold;">..</span> buffer (<span style="font-weight: bold;">getDrawGraphics</span>))
-              player-x (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 0)
-              player-y (<span style="font-weight: bold;">nth</span> (@player <span style="font-weight: bold; text-decoration: underline;">:pos</span>) 1)]
-          (<span style="font-weight: bold;">doto</span> g
-            (<span style="font-weight: bold;">.translate</span> (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets top))
-            (<span style="font-weight: bold;">.setColor</span> clear-color)
-            (<span style="font-weight: bold;">.fillRect</span> 0 0 640 480)
-            (<span style="font-weight: bold;">.translate</span> (<span style="font-weight: bold;">..</span> insets left) (<span style="font-weight: bold;">..</span> insets top))
-            (<span style="font-weight: bold;">.drawImage</span> image
+      (if (not (.. buffer (contentsLost)))
+        (let [g (.. buffer (getDrawGraphics))
+              player-x (nth (@player :pos) 0)
+              player-y (nth (@player :pos) 1)]
+          (doto g
+            (.translate (.. insets left) (.. insets top))
+            (.setColor clear-color)
+            (.fillRect 0 0 640 480)
+            (.translate (.. insets left) (.. insets top))
+            (.drawImage image
                         player-x player-y
-                        (<span style="font-weight: bold;">+</span> player-x 32) (<span style="font-weight: bold;">+</span> player-y 32)
+                        (+ player-x 32) (+ player-y 32)
                         0 0 32 32
                         frame)
-            (<span style="font-weight: bold;">.dispose</span>))
-          (<span style="font-weight: bold;">..</span> buffer (show))
+            (.dispose))
+          (.. buffer (show))
           )))))
 
-(<span style="font-weight: bold;">def</span> <span style="font-weight: bold;">timer</span> (<span style="font-weight: bold; text-decoration: underline;">Timer.</span>))
-(<span style="font-weight: bold;">..</span> timer (schedule (create-mainloop) (<span style="font-weight: bold;">long</span> 0) (<span style="font-weight: bold;">long</span> 20)))
+(def timer (Timer.))
+(.. timer (schedule (create-mainloop) (long 0) (long 20)))
 </pre>
 </div>
 </div>
