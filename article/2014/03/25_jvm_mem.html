@@ -60,8 +60,12 @@
 
 <div class="content">
   <p>
-java 1.5以降のはなし
-サーバーモードなのかクライアントモードなのかは、実行ユーザにて、下記コマンドで確認できる。
+jvmは、サーバーモードで起動しているのか、クライアントモードで起動しているかで、
+初期割り当てのヒープサイズが異なる。
+</p>
+
+<p>
+サーバーモードなのかクライアントモードなのかは、実行ユーザにて、下記コマンドで確認できる。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </p>
 <div class="org-src-container">
 
@@ -72,7 +76,7 @@ Java HotSpot(TM) Server VM (build ******)
 </pre>
 </div>
 <p>
-Severモードの場合は、=Server= の表記があるはず。
+Severモードの場合は、 <code>Server</code> の表記があるはず。
 </p>
 
 <p>
@@ -101,6 +105,17 @@ Severモードの場合は、=Server= の表記があるはず。
 <p>
 <a href="http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html">http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html</a>
 </p>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+java 1.5以降のはなし
+</p></div>
+
+
+</div>
+</div>
   <footer class="article-footer">
     <nav class="tag">
       <ul>

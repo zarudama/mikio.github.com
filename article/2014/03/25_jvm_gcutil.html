@@ -59,7 +59,14 @@
 </div>
 
 <div class="content">
-  <div class="org-src-container">
+  <p>
+GCの発生頻度を調査するためのカンペ。gclogを使用せずにお手軽に実施できる。
+</p>
+
+<p>
+まずはプロセスIDを調べる。例としてtomcatの場合。
+</p>
+<div class="org-src-container">
 
 <pre class="src src-sh">$ sudo -u tomcat jps -v
 </pre>
@@ -69,7 +76,7 @@ tomcatユーザの起動したJavaプロセスのIDを付加情報付きで表�
 </p>
 
 <p>
-でも下記のほうが楽かもしれない。
+javaプロセスがひとつしかない場合などは、下記のほうが楽かもしれない。
 </p>
 <div class="org-src-container">
 
@@ -77,13 +84,18 @@ tomcatユーザの起動したJavaプロセスのIDを付加情報付きで表�
 </pre>
 </div>
 
-
+<p>
+PIDが123456だった場合、3秒ごとにgcの発生状況をチェックするコマンドの例。
+</p>
 <div class="org-src-container">
 
 <pre class="src src-sh">jstat -gcutil -t 123456 3000
 </pre>
 </div>
 
+<p>
+意味は以下のとおり。
+</p>
 <pre class="example">
 jstat &lt;出力オプション&gt; &lt;プロセスID&gt; &lt;データ取得間隔(ms)&gt;
 -t タイムスタンプを出力
