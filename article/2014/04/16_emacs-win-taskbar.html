@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive pricing table.">
-    <title>vimのclojure実装であるaviを試してみた。|ざる魂</title>
+    <title>Windows7でemacsのアイコンが2重に表示されるのを防ぐ|ざる魂</title>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/css/main-grid-old-ie.css">
@@ -53,84 +53,81 @@
 
         <div class="article-header">
   <div class="title">
-  <h1><a href="">vimのclojure実装であるaviを試してみた。</a></h1>
+  <h1><a href="">Windows7でemacsのアイコンが2重に表示されるのを防ぐ</a></h1>
   </div>
-  <p class="date">2014/4/04</p>
+  <p class="date">2014/4/16</p>
 </div>
 
 <div class="content">
   <p>
-vimをclojureで実装したらしい <a href="https://github.com/maitria/avi">avi</a> を試してみることにした。
-確認環境は、ubuntu13.04。
+Windows7には、タスクバーにアイコンを登録しておくと、
+Win+数字キーで起動できる便利な機能があります。
+</p>
+
+<p>
+でもこれ、Windows版emacsだとうまくいきません。
+</p>
+
+<p>
+ <code>runemacs.exe</code> を起動してタスクバーに登録しても、
+起動時にDos窓が開いてアイコンが2つ表示されてしまいます。
+これでは不便なのでなんとかします。
+</p>
+
+<p>
+この問題については、下記で解説されてるので一読をおすすめします。
+</p>
+<ul class="org-ul">
+<li><a href="http://dnerkx.blogspot.jp/2009/12/emacs-ntemacs-231-windows-7-part2.html">http://dnerkx.blogspot.jp/2009/12/emacs-ntemacs-231-windows-7-part2.html</a>
+</li>
+</ul>
+
+<p>
+ただしこのサイトで公開されているツールはもうないようなので、
+下記から代替ツールをダウンロードして適当なところに配置します。
+</p>
+<ul class="org-ul">
+<li><a href="https://code.google.com/p/win7appid/">https://code.google.com/p/win7appid/</a>
+</li>
+</ul>
+
+<p>
+<code>runemacs.exe</code> のショートカットを作成して、
+先程ダウンロードしたWin7AppId1.1.exeと同じ場所に配置します。
+</p>
+
+<p>
+さきほどダウンロードしたWin7AppId1.exeを、
+登録したタスクバーアイコンを指定してコマンドプロンプトから実行します。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ git clone https://github.com/maitria/avi.git
-$ cd avi
+<pre class="src src-sh">DOS&gt; Win7AppId1.1.exe runemacs.lnk GNU.Emacs
 </pre>
 </div>
 <p>
-READMEによると、avi本体を <code>/usr/local</code> 配下にインストールするとのこと。
-あとでアンインストールができなくなると困るので <a href="http://porg.sourceforge.net/">paco</a> を使うことにした。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ sudo paco -D <span style="font-weight: bold; font-style: italic;">LEIN_ROOT</span>=yes /home/mikio/bin/lein install
-</pre>
-</div>
-<p>
-<code>LEIN_ROOT</code> は <code>lein</code> をrootユーザーで使用するときは定義しなくてはならないらしい。
-(値のyesは適当)。pacoのDオプションはインストールの対象をカレントディレクトリにするという意味。
+runemacs.lnkが更新されるので、右クリックして「タスクバーに表示する」を
+選択すれば準備オッケーです。
 </p>
 
 <p>
-インストールが始まるとワラワラと沢山のライブラリをダウンロードしてくる。
-ダウンロードとインストールが終ったらコマンドが返るのでおもむろに
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ avi
-</pre>
-</div>
-<p>
-で見慣れたvimの画面が表示された。
-</p>
-
-
-<div class="figure">
-<p><img src="/img/avi/avi.png"  alt="avi.png"/></p>
-<p>起動したところ</p>
-</div>
-
-<p>
-JVMで動くから重いと思ってたら起動が早くてびっくりした(本家よりはわずかに重い)。
-どうやらJNIを使って下回りの部分はC言語で書かれているようである。
-(なのでwindowsでは動かないかも)。
-</p>
-
-<p>
-肝心の操作は、iコマンドはもちろんaコマンドも受け付けず、文字入力はなにもできない状態だった。
-唯一、 <code>:q</code> はできたので、終了させることはできた。。。
-(個々の環境にも依存すると思うので無事操作できた人がいたらコメントやリプで教えていただけると嬉しいです)
-</p>
-
-<p>
-ちょっと残念な結果になったが、今後の開発が非常に楽しみなプロダクトだ。
+これで、タスクバーのアイコンをランチャーとして登録し、
+かつ余計なDos窓が開くこともなくなります。
 </p>
   <footer class="article-footer">
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/clojure.html">clojure</a></span></li>
-                <li><span><a href="/tag/vim.html">vim</a></span></li>
+                <li><span><a href="/tag/emacs.html">emacs</a></span></li>
+                <li><span><a href="/tag/windows.html">windows</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2014/04/16_emacs-win-taskbar.html">&laquo;&nbsp;Windows7でemacsのアイコンが2重に表示されるのを防ぐ</a></li>
+                <li class="prev"><a href="/article/2014/04/27_clojure-xml.html">&laquo;&nbsp;Clojureでxmlを読みこむ方法</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2014/03/25_jvm_mem.html">jvmの初期ヒープサイズ&nbsp;&raquo;</a></li>
+                <li class="next"><a href="/article/2014/04/04_avi.html">vimのclojure実装であるaviを試してみた。&nbsp;&raquo;</a></li>
         
       </ul>
     </nav>

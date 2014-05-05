@@ -111,12 +111,6 @@ h2 a { color: #000; text-decoration: none; }
 .column > div { float: left; }
 .column .w50per { width: 49%; }
 
-h2 { margin: 1em 0 0.5em; color: #444; font-weight: normal; font-size: 2.0em; }
-h2:first-letter { color: HotPink; font-weight: bold; }
-
-h3 { margin: 1em 0 0.5em; color: #444; font-weight: normal; font-size: 1.5em; }
-h3:first-letter { color: HotPink; font-weight: bold; }
-
 /* =container */
 .container { max-width: 940px; margin: 1em auto; }
 .container img {
@@ -220,6 +214,7 @@ code, pre {
     font-family: "Ubuntu Mono", Menlo, Monaco, Consolas, "Courier New";
     font-size: 16px;
     color: #333333;
+    background-color: #f0f0f0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -293,11 +288,6 @@ pre code {
     max-width: 100%;
     height: auto;
 }
-#table-of-contents li {
-    padding: 0;
-    margin: 1px;
-    list-style: none;
-}
 
 .builtin {
   /* font-lock-builtin-face */
@@ -344,23 +334,70 @@ pre code {
   color: #ff0000;
   font-weight: bold;
 }
-
+/*
 .content h1, h2, h3, h4 {
     line-height: 1.2em;
 }
+*/
 
+
+/* 見出し */
+
+.outline-2 h2:first-letter { color: HotPink; font-weight: bold; }
+.outline-2 h3:first-letter { color: HotPink; font-weight: bold; }
+
+.outline-2 h2, h3, h4, h5, h6 {
+    padding: 0.2em 0 0.3em;
+}
+.outline-2 h4, h5, h6 {
+    font-size: 1em;  /* ブラウザによっては本文よりも小さくなってしまうので */
+}
+.outline-2 h5, h6 {
+    margin: 0.5em;
+}
+.outline-2 h2 {
+    border-bottom: 1px solid gray;
+}
+.outline-2 h3 {
+    border-bottom: 2px dotted gray;
+}
+.outline-2 h4 {
+    border-bottom: 1px solid gray;
+}
+.outline-2 h5 {
+    border-bottom: 1px solid #c0c0c0;
+}
+.outline-2 h6 {
+    border-bottom: 1px dotted #c0c0c0;
+}
+span.section-number-2, span.section-number-3, span.section-number-4, span.section-number-5, span.section-number-6 {
+    color: HotPink;
+}
 
 #table-of-contents {
     border: 3px #FFEDF0 solid;
     background-color: #FFF0F5;
     padding: 0.5em;
+    margin: 0.5em 0 2em 0;
+    font-size: 0.7em;
 }
 #table-of-contents h2 {
     padding: 0;
     margin: 0;
-    font-size: 0.5em;
+    font-size: 0.3em;
     color: #aaa;
     font-weight: normal;
+}
+#table-of-contents ul {
+    padding: 0;
+    margin: 0 0 0 2em;
+    list-style: none;
+}
+#table-of-contents li {
+    padding: 0;
+    margin: 0;
+    line-height: 1.6em;
+    list-style: none;
 }
 #footnotes {
     border: 2px #FFEDF0 solid;
@@ -382,6 +419,8 @@ pre code {
     padding: 0;
     margin: 0;
 }
+
+
  
 /* ------------------- *
    Pure Custumize

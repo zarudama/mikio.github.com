@@ -8,6 +8,27 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>libGDX入門その1</title>
+        <link>http://localhost:8080/article/2014/05/04_libgdx-beginner.html</link>
+        <updated>2014-05-04T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/05/04_libgdx-beginner.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Clojureでxmlを読みこむ方法</title>
+        <link>http://localhost:8080/article/2014/04/27_clojure-xml.html</link>
+        <updated>2014-04-27T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/04/27_clojure-xml.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
+        <title>Windows7でemacsのアイコンが2重に表示されるのを防ぐ</title>
+        <link>http://localhost:8080/article/2014/04/16_emacs-win-taskbar.html</link>
+        <updated>2014-04-16T00:00:00</updated>
+        <id>http://localhost:8080/article/2014/04/16_emacs-win-taskbar.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>vimのclojure実装であるaviを試してみた。</title>
         <link>http://localhost:8080/article/2014/04/04_avi.html</link>
         <updated>2014-04-04T00:00:00</updated>
