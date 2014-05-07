@@ -59,64 +59,7 @@
 </div>
 
 <div class="content">
-  <p>
-サーバー上で削除されたリモートブランチは、自動ではローカルリポジトリに反映されない仕様らしい。
-</p>
-<ul class="org-ul">
-<li><a href="http://blog.s21g.com/articles/992">http://blog.s21g.com/articles/992</a>
-</li>
-</ul>
-<p>
-なので、とあるリポジトリで削除したはずのリモートブランチが、別のリポジ
-トリから見ると生きのこってたりする。 <code>git remote show origin</code> で確認で
-きる。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ git remote show origin
- * remote origin
- :
- :
-    refs/remotes/origin/hoge-branch        stale (use <span style="font-style: italic;">'git remote prune'</span> to remove)
-    refs/remotes/origin/fuga-branch        stale (use <span style="font-style: italic;">'git remote prune'</span> to remove)
- :
-</pre>
-</div>
-<p>
-この中で <code>stale (use 'git remote prune' to remove)</code> とあるのがいらないブランチだ。
-stale(腐った)をplue(切り詰める)すれば良い。
-</p>
-
-<p>
-まず、確認。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ git remote prune origin --dry-run
-Pruning origin
-URL: gitolite@db72-dictwiki:wsrch
- * [would prune] origin/hoge-branch
- * [would prune] origin/fuga-branch
-</pre>
-</div>
-
-<p>
-実行。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ git remote prune origin
-</pre>
-</div>
-
-<p>
-もう一回確認。なにも表示されなければ多分成功している。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ git remote prune origin --dry-run
-</pre>
-</div>
+  
   <footer class="article-footer">
     <nav class="tag">
       <ul>

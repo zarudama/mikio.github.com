@@ -21,7 +21,7 @@
         :site-subtitle "真似て学んで「まねぶ」サル。知られざる我が魂。" 
         :your-domain   "mikio.github.io"
         :atom          "atom.xml"
-        :atom-base     "http://localhost:8080"
+        :atom-base     "http://mikio.github.io"
         :twitter-id    "mikio_kun"
         :disqus-id     "mikiokunblog"
         :local {:css   ["css/main.css"]

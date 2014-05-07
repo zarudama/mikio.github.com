@@ -59,63 +59,7 @@
 </div>
 
 <div class="content">
-  <p>
-jvmは、サーバーモードで起動しているのか、クライアントモードで起動しているかで、
-初期割り当てのヒープサイズが異なる。
-</p>
-
-<p>
-サーバーモードなのかクライアントモードなのかは、実行ユーザにて、下記コマンドで確認できる。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ java -version
-java version <span style="font-style: italic;">"*****"</span>
-<span style="font-weight: bold;">Java</span>(TM) SE Runtime Environment (build ******)
-Java HotSpot(TM) Server VM (build ******)
-</pre>
-</div>
-<p>
-Severモードの場合は、 <code>Server</code> の表記があるはず。
-</p>
-
-<p>
-サーバーモード
-</p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col class="left"/>
-
-<col class="left"/>
-</colgroup>
-<tbody>
-<tr>
-<td class="left">初期ヒープサイズ</td>
-<td class="left">マシンの物理メモリーの 1/64 か、妥当な最小サイズかの大きい方。</td>
-</tr>
-
-<tr>
-<td class="left">最大ヒープサイズ</td>
-<td class="left">物理メモリーの 1/4 か、1GB かの小さい方。</td>
-</tr>
-</tbody>
-</table>
-<p>
-<a href="http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html">http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html</a>
-</p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-java 1.5以降のはなし
-</p></div>
-
-
-</div>
-</div>
+  
   <footer class="article-footer">
     <nav class="tag">
       <ul>

@@ -59,62 +59,7 @@
 </div>
 
 <div class="content">
-  <p>
-puttyベースのminntyがいつのまにcygwinに完全統合されて、 <code>Cygwin
-Terminal</code> というアプリになっていたので「putty + pagent」の組み合わせを
-やめて、 <code>Cygwin Terminal</code> と <code>ssh-agent</code> を組みあわせてCygwinだけで
-SSH接続を実現することにした。
-</p>
-
-<p>
-その際、screenを導入することにした。screenを導入することによって、起動
-の高速化はもちろん、ssh-agentプロセスの共有化ができるので、その都度鍵の
-設定をする必要がなくなるからだ。
-</p>
-
-<p>
-導入は簡単。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ apt-cyg install screen
-</pre>
-</div>
-
-<p>
-次に設定ファイル。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">defencoding utf8
-escape ^z^z
-startup_message off
-vbell off
-hardstatus alwayslastline <span style="font-style: italic;">"%w"</span>
-</pre>
-</div>
-
-<p>
-で端末を利用するときは次の手順で。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-sh">$ ssh-agent bash
-$ ssh-add ~/.ssh/id_dsa
-$ ssh-add -l <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#30906;&#35469;</span>
-$ screen
-$ ssh -A HOST
-</pre>
-</div>
-<p>
-ssh-agentを起動してから、screenすることで毎回ssh-agent
-とssh-addをする必要がなくなる。
-</p>
-
-<p>
-あとは必要に応じて、 <code>C-z c</code> で仮想端末を追加すれば良い。これで、
-<code>Cygwin Terminal</code> で疑似マルチターミナルが実現できた!
-</p>
+  
   <footer class="article-footer">
     <nav class="tag">
       <ul>

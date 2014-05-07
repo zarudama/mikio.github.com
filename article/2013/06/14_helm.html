@@ -59,38 +59,7 @@
 </div>
 
 <div class="content">
-  <p>
-helmをアップデートしたら、ファイルの一覧がファイル名のみになってしまい、
-パス部分が表示されなくなってしまった。
-デフォルトの挙動が変更されたようである。
-</p>
-
-<p>
-自分の場合、helm-git.elを使用しているが、
-同じリポジトリに同名ファイルが複数あるため、
-ファイル名だけになると、どのディレクトリのファイルかがわからなくなってしまう。
-これでは困るので調査したところ、ファイル表示部分は、helm本体の <code>helm-files.el</code>
-の機能を流用しており、下記のカスタム変数を定義すればよさそうである。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defcustom</span> <span style="font-weight: bold; font-style: italic;">helm-ff-transformer-show-only-basename</span> t
-  <span style="font-style: italic;">"Show only basename of candidates in `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">helm-find-files</span><span style="font-style: italic;">'.</span>
-<span style="font-style: italic;">This can be toggled at anytime from `</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">helm-find-files</span><span style="font-style: italic;">' with \</span>
-<span style="font-style: italic;">\\&lt;helm-find-files-map&gt;\\[</span><span style="font-weight: bold; font-style: italic; text-decoration: underline;">helm-ff-run-toggle-basename</span><span style="font-style: italic;">]."</span>
-  <span style="font-weight: bold;">:type</span> 'boolean
-  <span style="font-weight: bold;">:group</span> 'helm-files)
-</pre>
-</div>
-
-<p>
-.emacsに下記の定義をすることで無事解決できた。
-</p>
-<div class="org-src-container">
-
-<pre class="src src-emacs-lisp">(setq helm-ff-transformer-show-only-basename nil)
-</pre>
-</div>
+  
   <footer class="article-footer">
     <nav class="tag">
       <ul>

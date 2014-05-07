@@ -59,69 +59,7 @@
 </div>
 
 <div class="content">
-  <p>
-Twitter,google,その他多くの検索サイトでは、ページを開くと勝手にフォーカ
-スが移動して入力待ち状態になる。この挙動は多くの普通の人にとっては操作
-性が良くなるんだろうけど、FirefoxのKeysnailでキーボード操作をメインとし
-ている自分にとっては不便極まりない。
-</p>
-
-<p>
-ってことで、この挙動をどうにかするAdd-Onを探していたんだけど、なぜかなかった。
-</p>
-
-<p>
-代わりにGireaseMonkey<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>を使った代替方法が見つかったのでそのスクリプトを使用することにした。
-</p>
-<ul class="org-ul">
-<li><a href="http://javascripter.hatenablog.com/entry/20080620/1213923411">http://javascripter.hatenablog.com/entry/20080620/1213923411</a>
-</li>
-</ul>
-
-<p>
-GreaseMonkeyアドオンをインストールして、下記コードを追加すれば良い。
-</p>
-
-<p>
-新規ユーザスクリプトを追加する手順は以下。
-</p>
-<ul class="org-ul">
-<li>[メニュー]-&gt;[ツール]-&gt;[GreasMonkey]-&gt;[新規ユーザースクリプト]
-</li>
-</ul>
-
-<div class="org-src-container">
-
-<pre class="src src-javascript"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==UserScript==</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@name        no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@namespace   no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@version     1</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@include     http*</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==/UserScript=</span>
-window.addEventListener(<span style="font-style: italic;">'load'</span>,
-<span style="font-weight: bold;">function</span>() {
-  document.activeElement.blur();
-  <span style="font-weight: bold; text-decoration: underline;">this</span>.removeEventListener(<span style="font-style: italic;">'load'</span>, <span style="font-weight: bold; text-decoration: underline;">arguments</span>.callee, <span style="font-weight: bold; text-decoration: underline;">false</span>);
-},
-<span style="font-weight: bold; text-decoration: underline;">false</span>);
-</pre>
-</div>
-
-<p>
-コードの意味はよくわかってないから、問題があるかもしれないが、その場合
-はその時考えよう。
-</p>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-
-<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-Greasemonkeyはchromeにも移植されているので、chromeでも利用できるかもしれない。
-</p></div>
-
-
-</div>
-</div>
+  
   <footer class="article-footer">
     <nav class="tag">
       <ul>
