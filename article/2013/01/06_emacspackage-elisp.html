@@ -59,7 +59,154 @@
 </div>
 
 <div class="content">
-  
+  <p>
+今までパッケージ管理には <code>el-get</code> を使用してきたのですが、
+Windows環境がメインだと <code>git clone</code> がうまくいかなかったり、
+インストール後のビルド工程が失敗したりで、なかなか難儀していたので、
+el-getを辞めemacs標準の <code>package.el</code> をメインにすることにしました。
+</p>
+
+<p>
+<code>package.el</code> ならば標準装備ですし、サイトリポジトリに各所のelispがダウンロードされた状態なので
+httpですべてインストールできるので大抵の環境でうまく動きます。
+</p>
+
+<p>
+パッケージのリポジトリサイトとしては、昔はMarmaladeが更新が盛んだったのですが、
+最近ではMELPAがメインになってきてるようです。なので私は、MELPAメインで使用してます。
+Marmaladeは無効にしています。理由は同じパッケージが同時に表示されてしまうからです。
+</p>
+
+<p>
+以下は私の設定です。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">mikio-util</span>)
+
+(<span style="font-weight: bold;">when</span> (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span> nil t)
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Marmalade</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-to-list 'package-archives</span>
+  <span style="font-weight: bold; font-style: italic;">;;              </span><span style="font-weight: bold; font-style: italic;">'("marmalade" . "http://marmalade-repo.org/packages/"))</span>
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">MELPA</span>
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-to-list 'package-archives</span>
+  <span style="font-weight: bold; font-style: italic;">;;              </span><span style="font-weight: bold; font-style: italic;">'("melpa" . "http://melpa.milkbox.net/packages/") t)</span>
+
+  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">MELPA&#12398;&#12415;&#12395;&#12377;&#12427;&#12290;</span>
+  (setq package-archives (list '(<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"http://melpa.milkbox.net/packages/"</span>)))
+
+
+
+  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#25351;&#23450;</span>
+  (setq my-package-directory (mikio/elisp-home <span style="font-style: italic;">"package"</span>))
+  (mikio/make-directory my-package-directory)
+  (setq package-user-dir (concat my-package-directory <span style="font-style: italic;">"/"</span>))
+
+  <span style="font-weight: bold; font-style: italic;">;; </span>
+  (package-initialize)
+
+  (setq my-packages
+        '(undo-tree
+          helm
+          auto-complete
+          popwin
+          smartrep
+          color-moccur
+          yasnippet
+
+          helm-git
+          helm-gtags
+          helm-c-moccur
+          helm-c-yasnippet
+
+          paredit
+          ruby-mode
+          php-mode
+          js2-mode
+          web-mode
+
+          nrepl
+          nrepl-ritz
+          ac-nrepl
+          <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">ac-slime</span>
+          magit
+
+          jaunte
+          rainbow-delimiters
+
+          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">window manager by kiwanami</span>
+          window-layout
+          e2wm
+
+          twittering-mode
+          <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">o-blog</span>
+
+          evil
+          ))
+
+  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">cl</span>)
+  (mapcar (<span style="font-weight: bold;">lambda</span> (x)
+            (<span style="font-weight: bold;">when</span> (not (package-installed-p x))
+              (package-install x)))
+          my-packages)
+)
+
+(<span style="font-weight: bold;">provide</span> '<span style="font-weight: bold; text-decoration: underline;">mikio-package</span>)
+</pre>
+</div>
+<p>
+githubはこちら。
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el">https://github.com/mikio/dotfiles/blob/master/emacs/mikio/mikio-package.el</a>
+
+<p>
+<code>my-packages</code> に自分の必要なパッケージをまとめて定義しています。
+</p>
+</li>
+</ul>
+<p>
+こうすることによって、環境が変わってもemacs起動時に自動的にインストール
+してくれるので楽チンです。
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 2013/05/13 追記1:</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+ MELPAリポジトリは、常に最新のパッケージを取得してしまうためアップグレードする際は注意が必要です。
+Uコマンドなどで間違ってアップグレードしてしまっても多分もとに戻せません。
+一方Marmaladeリポジトリの場合、 自分のローカルPCに過去のバージョンの履歴が残っている可能性があるので、
+ダウングレードする道があります(手順は知りませんが)。
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/emacs-jp/emacs-jp.github.com/issues/31">https://github.com/emacs-jp/emacs-jp.github.com/issues/31</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 2013/05/13 追記2:</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+本文では、gitプロトコルでel-getが失敗すると書きましたが、下記の方法を試せば問題ないかもしれません(未検証)。
+</p>
+<ul class="org-ul">
+<li><a href="http://mikio.github.io/article/2013/05/03_git.html">http://mikio.github.io/article/2013/05/03_git.html</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 2013/05/13 追記3:</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+el-getも全く使用していないというわけではなく、EmacsWikiなどhttp通信するものに関しては使用しています。
+</p>
+</div>
+</div>
   <footer class="article-footer">
     <nav class="tag">
       <ul>

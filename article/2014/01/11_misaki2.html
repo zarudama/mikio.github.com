@@ -59,7 +59,164 @@
 </div>
 
 <div class="content">
-  
+  <p>
+misakiのプラグインを開発していて、nreplから接続したかったのでその方法。
+下記のように修正。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">mikio@gnudam:~/dev/misaki$ git diff HEAD^
+diff --git a/.gitignore b/.gitignore
+index fb7a616..777bdaa 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -7,6 +7,8 @@
+ /.lein-failures
+ /checkouts
+ /.lein-deps-sum
++misaki/src/misaki/
++/.nrepl-port
+ /blog
+ /test/public
+ /samples/*/public/201*
+diff --git a/project.clj b/project.clj
+index 82e93ff..8b0aa33 100644
+--- a/project.clj
++++ b/project.clj
+@@ -13,7 +13,9 @@
+                  [cuma <span style="font-style: italic;">"0.0.4"</span>]
+                  [clj-gntp <span style="font-style: italic;">"0.0.1"</span>]
+                  ; cljs compiler
+-                 [org.clojure/clojurescript <span style="font-style: italic;">"0.0-1586"</span>]]
++                 [org.clojure/clojurescript <span style="font-style: italic;">"0.0-1586"</span>]
++                 [org.clojure/tools.nrepl <span style="font-style: italic;">"0.2.3"</span>]
++                 ]
+
+   :plugins [[codox <span style="font-style: italic;">"0.6.4"</span>]
+             [lein-cloverage <span style="font-style: italic;">"1.0.2"</span>]
+diff --git a/samples/blog/_config.clj b/samples/blog/_config.clj
+index e36a47f..0e74f47 100644
+--- a/samples/blog/_config.clj
++++ b/samples/blog/_config.clj
+@@ -17,6 +17,10 @@
+  ;;   default value: 8080
+  :port 8080
+
++ ;; embeded repl-server port
++ ;;   default value: 42042
++ :repl-port 42042
++
+  ;; site language
+  ;;   default value: <span style="font-style: italic;">"en"</span>
+  :lang <span style="font-style: italic;">"en"</span>
+diff --git a/src/misaki/config.clj b/src/misaki/config.clj
+index 735874d..8865cf6 100644
+--- a/src/misaki/config.clj
++++ b/src/misaki/config.clj
+@@ -13,6 +13,7 @@
+ ;; <span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">Default Value</span>
+
+ (def PORT     <span style="font-style: italic;">"Default dev server port."</span> 8080)
++(def REPL-PORT <span style="font-style: italic;">"Default dev nrepl server port."</span> 42042)
+ (def LANGUAGE <span style="font-style: italic;">"Default language."</span>        <span style="font-style: italic;">"en"</span>)
+ (def COMPILER <span style="font-style: italic;">"Default compiler."</span>        <span style="font-style: italic;">"default"</span>)
+ (def POST_FILENAME_REGEXP
+@@ -102,6 +103,7 @@
+                         (path template-dir post-dir))
+       :post-sort-type (:post-sort-type config :date-desc)
+       :port           (:port config PORT)
++      :repl-port           (:repl-port config REPL-PORT)
+       :lang           (:lang config LANGUAGE)
+       :site           (:site config {})
+       :index-name     (:index-name config <span style="font-style: italic;">""</span>)
+diff --git a/src/misaki/server.clj b/src/misaki/server.clj
+index d0fee30..03a593b 100644
+--- a/src/misaki/server.clj
++++ b/src/misaki/server.clj
+@@ -13,7 +13,9 @@
+     [watchtower.core      :refer :all]
+     [compojure.core       :refer [routes]]
+     [compojure.route      :refer [files]]
+-    [ring.adapter.jetty   :refer [run-jetty]]))
++    [ring.adapter.jetty   :refer [run-jetty]]
++    [clojure.tools.nrepl.server :refer [start-server stop-server]]
++    ))
+
+ ; =elapsing
+ (defmacro elapsing
+@@ -87,18 +89,21 @@
+ (defn -main [&amp; [dir :as args]]
+   (binding [*base-dir* (normalize-path dir)]
+     (with-config
+-      ; compile all templates at first
+<span style="font-weight: bold;">-</span>      (do-all-compile)
+-
+-      ; compile all only if <span style="font-style: italic;">'--compile'</span> option is specified
+<span style="font-weight: bold;">-</span>      (when-not (contains? (<span style="font-weight: bold;">set</span> args) <span style="font-style: italic;">"--compile"</span>)
+<span style="font-weight: bold;">-</span>        (start-watcher (:template-dir *config*))
+<span style="font-weight: bold;">-</span>        (println <span style="font-style: italic;">" * starting server: "</span>
+<span style="font-weight: bold;">-</span>                 (cyan (str <span style="font-style: italic;">"http://localhost:"</span>
+<span style="font-weight: bold;">-</span>                            (:port *config*)
+<span style="font-weight: bold;">-</span>                            (:url-base *config*))))
+<span style="font-weight: bold;">-</span>        (run-jetty
+<span style="font-weight: bold;">-</span>          (routes (files (:url-base *config*)
+-                         {:root (:public-dir *config*)}))
+-          {:port (:port *config*)})))))
++      (<span style="font-weight: bold;">let</span> [repl-port (:repl-port *config*)
++            repl-server (start-server :port repl-port)]
++         ;; compile all templates at first
++         (do-all-compile)
++
++         ;; compile all only if <span style="font-style: italic;">'--compile'</span> option is specified
++         (when-not (contains? (<span style="font-weight: bold;">set</span> args) <span style="font-style: italic;">"--compile"</span>)
++           (start-watcher (:template-dir *config*))
++           (println <span style="font-style: italic;">" * starting server: "</span>
++                    (cyan (str <span style="font-style: italic;">"http://localhost:"</span>
++                               (:port *config*)
++                               (:url-base *config*))))
++           (println <span style="font-style: italic;">" * starting nrepl server on port "</span> (cyan repl-port))
++           (run-jetty
++            (routes (files (:url-base *config*)
++                           {:root (:public-dir *config*)}))
++            {:port (:port *config*)}))))))
+</pre>
+</div>
+
+<p>
+下記で、修正したmisakiにローカルのjarが置き換わる。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ cd ~/dev/misaki/
+$ lein install
+</pre>
+</div>
+
+<p>
+misaki本家が更新されたときは、
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ git co master
+$ git fetch upsutream
+$ git merge upstream/master
+$ lein install
+</pre>
+</div>
+<p>
+こんな感じで。
+</p>
+
+<p>
+もし修正版のmisakiを使用したくなくなったら
+リポジトリを手動で削除すれば良い(正式なやりかたがあるかもしれんが)。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ rm -rf ~/.m2/repository/misaki/misaki/0.2.6.2-beta
+$ lein deps
+</pre>
+</div>
   <footer class="article-footer">
     <nav class="tag">
       <ul>

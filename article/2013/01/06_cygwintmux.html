@@ -59,7 +59,20 @@
 </div>
 
 <div class="content">
-  
+  <p>
+最初Cygwinのバージョンが古いからかなと思ってバージョンアップしても改善
+せず、ならばとtmuxのバージョンを最新にしても直らず、結局cyg-terminalの
+オプションでTextの設定を下記のように変更したら、表示崩れが解消した。
+</p>
+<pre class="example">
+変更前
+Locale:JA_jp
+CharacterSet:UTF-8
+
+変更後
+Locale:C
+CharacterSet:UTF-8
+</pre>
   <footer class="article-footer">
     <nav class="tag">
       <ul>

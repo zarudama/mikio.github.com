@@ -59,7 +59,163 @@
 </div>
 
 <div class="content">
-  
+  <p>
+GCの発生頻度を調査するためのカンペ。gclogを使用せずにお手軽に実施できる。
+</p>
+
+<p>
+まずはプロセスIDを調べる。例としてtomcatの場合。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo -u tomcat jps -v
+</pre>
+</div>
+<p>
+tomcatユーザの起動したJavaプロセスのIDを付加情報付きで表示する。
+</p>
+
+<p>
+javaプロセスがひとつしかない場合などは、下記のほうが楽かもしれない。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ pgrep -lf java
+</pre>
+</div>
+
+<p>
+PIDが123456だった場合、3秒ごとにgcの発生状況をチェックするコマンドの例。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">jstat -gcutil -t 123456 3000
+</pre>
+</div>
+
+<p>
+意味は以下のとおり。
+</p>
+<pre class="example">
+jstat &lt;出力オプション&gt; &lt;プロセスID&gt; &lt;データ取得間隔(ms)&gt;
+-t タイムスタンプを出力
+-gcutil GCの統計情報
+</pre>
+
+<p>
+jstatのマニュアルは以下。
+</p>
+<ul class="org-ul">
+<li><a href="http://docs.oracle.com/javase/jp/6/technotes/tools/share/jstat.html">http://docs.oracle.com/javase/jp/6/technotes/tools/share/jstat.html</a>
+</li>
+</ul>
+
+<p>
+gcutilの見出し
+</p>
+<pre class="example">
+Timestamp S0C S1C S0U S1U EC EU OC OU PC PU YGC YGCT FGC FGCT
+</pre>
+<p>
+gcutilの見出しは以下のルールになる
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="left">S*</td>
+<td class="left">Suviver</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">E*</td>
+<td class="left">Eden</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">Y</td>
+<td class="left">Young</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">O*</td>
+<td class="left">Old</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">P*</td>
+<td class="left">Permenet</td>
+<td class="left">Permanent領域は、JVMにロードされたクラスの置き場所</td>
+</tr>
+
+<tr>
+<td class="left">F*</td>
+<td class="left">Full</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">*C</td>
+<td class="left">comitted</td>
+<td class="left">javaが確保したメモリサイズ</td>
+</tr>
+
+<tr>
+<td class="left">*U</td>
+<td class="left">used</td>
+<td class="left">使用済みメモリ</td>
+</tr>
+
+<tr>
+<td class="left">*GC</td>
+<td class="left">&#xa0;</td>
+<td class="left">GCの回数</td>
+</tr>
+
+<tr>
+<td class="left">*GCT</td>
+<td class="left">&#xa0;</td>
+<td class="left">GCの時間</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>
+GCについては、下記が詳しい。
+</p>
+<ul class="org-ul">
+<li><a href="http://www.atmarkit.co.jp/ait/articles/0404/02/news079.html">http://www.atmarkit.co.jp/ait/articles/0404/02/news079.html</a>
+</li>
+<li><a href="http://www.atmarkit.co.jp/ait/articles/0211/30/news002.html">http://www.atmarkit.co.jp/ait/articles/0211/30/news002.html</a>
+</li>
+</ul>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> メモリ使用量を確認したいとき</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+gcオプションを使えばよい。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo jstat -gc -t 12345 3000
+</pre>
+</div>
+</div>
+</div>
   <footer class="article-footer">
     <nav class="tag">
       <ul>

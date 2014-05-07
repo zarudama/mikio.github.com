@@ -59,7 +59,100 @@
 </div>
 
 <div class="content">
-  
+  <p>
+<a href="http://www.lifehacker.jp/2013/01/130120mykids_command_line.html">この記事</a> にxmonadがでてきたので、自分が普段使っているWindowsでもタイル
+型マネージャを使いたくなった。実は以前にも何度か試したことがあったが、
+どれもキーバインドが好みでなかったり動作が不安定だったりで、いまいち納
+得のいくものがなかったので、使っていなかったのだ。でもその時から大分時
+間も経ってるので、最近は何かないかなと調べたところPythonで実装されたそ
+の名もずばり「Python-windows-tiler」というものを見つけた。
+</p>
+
+<ul class="org-ul">
+<li><a href="https://github.com/Tzbob/python-windows-tiler">https://github.com/Tzbob/python-windows-tiler</a>
+</li>
+<li><a href="http://d.hatena.ne.jp/uhiaha888/20121125/1353824257">http://d.hatena.ne.jp/uhiaha888/20121125/1353824257</a>
+</li>
+</ul>
+
+<p>
+使用方法は簡単で、バイナリを解凍してPWT.exeを実行するだけだが、パスに日
+本語を含むとエラーになるのでルートに解凍するのが良いと思う。
+</p>
+
+<p>
+キーバインディングはAwesomeなどと似ている。ただ、Altキーを使用するので
+Emacsとキーバインディングが被ってしまうのでconfig.iniを開き、altを全て
+winにしてPWT.exeを再起動した。
+</p>
+
+<p>
+これでとりあえずEmacsとのキーバインディングの回避ができた。めでたしめで
+たし、と思ったのだが、Win+Lキーでウィンドウの横幅を広げようとしたらロッ
+ク画面になってしまう。。。
+</p>
+
+<p>
+てことでWin+Lを無効化する方法を模索したけど、結局どれもうまくいかなかっ
+たので横幅操作は封印することにした。てか、Winを使用するコンビネーション
+キーはどれもWindowsに奪われてしまってうまくイカナイ。。。とはいえ、Win
+キー経由でタイル操作はとても使いやすい。多様する操作はこれ。
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left"/>
+
+<col class="left"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Win+SPC</td>
+<td class="left">ウィンドウレイアウトの変更</td>
+</tr>
+
+<tr>
+<td class="left">Win+j, Win+k</td>
+<td class="left">ALT+TABの代りになる</td>
+</tr>
+
+<tr>
+<td class="left">Win+S+Ent</td>
+<td class="left">プライマリの切替</td>
+</tr>
+
+<tr>
+<td class="left">Win+数字キー</td>
+<td class="left">仮想デスクトップの切替</td>
+</tr>
+
+<tr>
+<td class="left">Win+S+数字キー</td>
+<td class="left">カレントアプリを仮想デスクトップへ移動</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+特にWin+j,kがイイ!
+</p>
+
+<p>
+自宅のUbuntu環境ではStumpWMを使用していたが、これはEmacserにはなじみの
+あるキー操作なんだけど(Screen系のプリフィックスキーのあるやつ)、それが
+逆に操作の混乱を生んでしまう。というのもの、自分の場合デスクトップの
+emacsでは <code>windows.el</code> を使用し、端末ではtmuxを使用してるので、タイル型
+ウィンドウマネージャのキーバインドにプレフィックスを使用すると混乱する
+のだ。それにデスクトップのウィンドウ操作はできるだけすばやくしたいので
+Screen系のStumpWMよりAwesome系のほうがサクサク操作できる。以上から自分
+にはAwesome系の操作体系のほうが向いているような気がした。
+</p>
+
+<p>
+ということで、Ubuntuではxmonadをもう一度使ってみようと思う。
+</p>
   <footer class="article-footer">
     <nav class="tag">
       <ul>
