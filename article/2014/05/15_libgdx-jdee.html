@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive pricing table.">
-    <title>uim-skkでsticky-shiftを実現する|ざる魂</title>
+    <title>Emacs JDEE でlibGDXプログラミング!|ざる魂</title>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/css/main-grid-old-ie.css">
@@ -53,100 +53,88 @@
 
         <div class="article-header">
   <div class="title">
-  <h1><a href="">uim-skkでsticky-shiftを実現する</a></h1>
+  <h1><a href="">Emacs JDEE でlibGDXプログラミング!</a></h1>
   </div>
-  <p class="date">2014/5/11</p>
+  <p class="date">2014/5/15</p>
 </div>
 
 <div class="content">
   <p>
-Ubuntuを13.04から14.04にアップグレードしました。
-Ubuntu界隈では、IMEがIBus1.5になり使いにくいと大荒れのようです。
-IBus1.5では、IMEを切り替えるとキーボードの配置まで変わるらしく、
-特に英語キーボードを使ってたりするとストレスが半端ないようです。
+<a href="http://mikio.github.io/article/2014/05/04_libgdx-beginner.html">libGDX</a> でゲームプログラミングを始めています。
 </p>
 
 <p>
-私は、幸いにもuim-skkを使用していたので、この騒ぎを体験せずにすみました。
-やっぱりskkはおすすめですね。
+最初は、Eclipseでコーディングしていました。
 </p>
 
 <p>
-そんな我が道をいくuim-skkですが、ひとつ問題がありました。
-それは、sticky-shiftの設定ができないとうことです。
+重すぎるので、軽いと評判IntelliJ IDEAに乘りかえました。
 </p>
 
 <p>
-私は、EmacsとWindowsのSKKFEPでは、セミコロンをSticky-Shiftとして設定しています。
-しかし、uim-skkには、設定ダイアログにそのような項目が見当たりません。
-公式ドキュメントには、対応したとはあるのですが、
-具体的な設定方法が見当りません。
+…Emacsに戻ってきました。
 </p>
+
+<p>
+やはり結局最後はEmacsになってしまう。。。
+</p>
+
+<p>
+ということで、EmacsでJavaやるなら <a href="http://mikio.github.io/article/2012/12/23_emacsjdeejava.html">JDEE</a> です。
+</p>
+
+<p>
+しかしJDEEはgradleをサポートしてません。
+でもやっぱりいるんですねー。すばらしき先人が。
+GradleプロジェクトをJDEEの <code>plj.el</code> に変換するスクリプトを発見しました。
+</p>
+
 <ul class="org-ul">
-<li><a href="https://code.google.com/p/uim-doc-ja/wiki/RequestUimSolved#sticky_shift%E3%82%92%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84">https://code.google.com/p/uim-doc-ja/wiki/RequestUimSolved#sticky_shift%E3%82%92%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84</a>
+<li><a href="http://ignatyev-dev.blogspot.jp/2013/07/gradle-projects-in-jdee.html">http://ignatyev-dev.blogspot.jp/2013/07/gradle-projects-in-jdee.html</a>
 </li>
 </ul>
 
 <p>
-2chに質問したりもしたのですが、特に反応もなく放置されたままでした。
-</p>
-<ul class="org-ul">
-<li><a href="http://anago.2ch.net/test/read.cgi/software/1328329402/197">http://anago.2ch.net/test/read.cgi/software/1328329402/197</a>
-</li>
-</ul>
-
-<p>
-それでもやはりなんとかしたいと思い、 改めてドキュメントを読んでみると、
- <code>~/.uim</code> という設定ファイルの詳しい記述方法がありました。
-最初からもっと読んでおくべきでしたね。。。
-</p>
-<ul class="org-ul">
-<li><a href="https://code.google.com/p/uim-doc-ja/wiki/CustomizeUim">https://code.google.com/p/uim-doc-ja/wiki/CustomizeUim</a>
-</li>
-</ul>
-
-<p>
-そこで、そこの説明に載っているソース( <code>/usr/share/uim/</code> )をgrepしてみると、
-それらしきカスタム変数が定義されていたのです。
-さっそく見よう見まねで <code>~/.uim</code> を定義してみました。
+<code>jdee.gradle</code> を、libGDXのプロジェクトルートに配置し、
+<code>build.gradle</code> を編集し、 <code>apply from:...</code> を追加します。
 </p>
 
 <div class="org-src-container">
 
-<pre class="src src-lisp">(require-module <span style="font-style: italic;">"skk"</span>)
-(define-key skk-sticky-key? '(<span style="font-style: italic;">";"</span>))
+<pre class="src src-sh">     }
+ }
+
++apply from:<span style="font-style: italic;">'jdee.gradle'</span>
+
+ allprojects {
+     apply plugin: <span style="font-style: italic;">"eclipse"</span>
+     apply plugin: <span style="font-style: italic;">"idea"</span>
 </pre>
 </div>
-<p>
-これでバッチリセミコロンでSticky-Shiftできました!
-uim-skkを使用している人はぜひ試してみてください。
-快適さが全然ちがいますよ。
-</p>
 
 <p>
-以下わかったことをまとめておきます。
+あとは、プロジェクトルートで下記コマンドを実行します。
 </p>
-<ul class="org-ul">
-<li>基本は、GUIの設定ダイアログで設定する。
-</li>
-<li>それで設定できないものは、 <code>~/.uim</code> にSchemeで設定ファイルを記述する。
-</li>
-<li>ダイアログとかぶる設定は、 <code>~/.uim</code> が優先される。
-</li>
-<li>端末を開き、uim-shを打ち込めば、uimのschemeのREPLが起動する。
-</li>
-<li>(exit)で終了。
-</li>
-</ul>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">$ ./gradlew jdee
+</pre>
+</div>
+
+<p>
+すると各サブプロジェクト内で、 <code>prj.el</code> が作成されます。
+これで、libGDXのインポートの自動生成やメソッド補完ができます。
+</p>
 
 
 <div class="figure">
-<p><img src="/img/uim/uim.png"  alt="uim.png"/></p>
-<p>uim-shを起動したところ</p>
+<p><img src="/img/libgdx-jdee/001.png"  alt="001.png"/></p>
+<p>Helmメソッド補完 + YASnippetで快適快適ー</p>
 </div>
 
 <p>
-Schemeで設定できる UIM ってやっぱカッコいいな。
+いやしかしこんな奇特な人間、世界でも数人しかいないんだろうなぁー。
 </p>
   <footer class="article-footer">
     <nav class="tag">
@@ -157,10 +145,9 @@ Schemeで設定できる UIM ってやっぱカッコいいな。
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2014/05/15_libgdx-jdee.html">&laquo;&nbsp;Emacs JDEE でlibGDXプログラミング!</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2014/05/04_libgdx-beginner.html">libGDX入門その1&nbsp;&raquo;</a></li>
+                <li class="next"><a href="/article/2014/05/11_uim-skk.html">uim-skkでsticky-shiftを実現する&nbsp;&raquo;</a></li>
         
       </ul>
     </nav>
