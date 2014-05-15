@@ -29,13 +29,6 @@
         <content type="html"></content>
     </entry>
         <entry>
-        <title>libGDX入門その2</title>
-        <link href="http://mikio.github.io/article/2014/05/04_libgdx-beginner2.html" />
-        <updated>2014-05-04T00:00:00</updated>
-        <id>http://mikio.github.io/article/2014/05/04_libgdx-beginner2.html</id>
-        <content type="html"></content>
-    </entry>
-        <entry>
         <title>Clojureでxmlを読みこむ方法</title>
         <link href="http://mikio.github.io/article/2014/04/27_clojure-xml.html" />
         <updated>2014-04-27T00:00:00</updated>
