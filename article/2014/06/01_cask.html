@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive pricing table.">
+    <title>Caskの導入と設定ファイルの棚卸し|ざる魂</title>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/main-grid-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/main-grid.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/layouts/pricing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/layouts/pricing.css">
+    <!--<![endif]-->
+
+        <link href="/atom.xml" rel="alternate" title="ざる魂" type="application/atom+xml" />
+    
+
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css" />
+    
+
+        <link rel="stylesheet" href="/css/main.css" />
+    
+
+  </head>
+  <body>
+    <header class="global-header">
+      <div class="container">
+        <div class="site-header">
+          <a href="/"><img src="/img/zarudama-logo.png"></img></a>
+          <p>真似て学んで「まねぶ」サル。知られざる我が魂。</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="l-content">
+      <div class="information ">
+
+        <div class="pure-menu pure-menu-open pure-menu-horizontal">
+          <ul>
+            <li><a href="/archives.html">Archives</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="article-header">
+  <div class="title">
+  <h1><a href="">Caskの導入と設定ファイルの棚卸し</a></h1>
+  </div>
+  <p class="date">2014/6/01</p>
+</div>
+
+<div class="content">
+  <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. はじめに</a></li>
+<li><a href="#sec-2">2. Caskのインストール</a></li>
+<li><a href="#sec-3">3. 設定ファイルの書き方</a></li>
+<li><a href="#sec-4">4. インストール方法</a></li>
+<li><a href="#sec-5">5. ディレクトリ配置</a></li>
+<li><a href="#sec-6">6. 分割のポリシー</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> はじめに</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+最近Caskが流行り始めてますね。標準のパッケージシステムであるpackage.elがあるのにどうよ？
+って最初は否定的だったのですが、その機能が自分が求めてたものだったので導入しました。
+ClojureのLeiningenみたいに設定ファイルを記述してコマンド叩けば自動でライブラリを落としてくれます。
+良いです。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Caskのインストール</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+インストールは非常に簡単です。
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/cask/cask">https://github.com/cask/cask</a>
+</li>
+</ul>
+
+<p>
+公式にあるとおり下記コマンドを実施するだけです。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+</pre>
+</div>
+<p>
+すると、 <code>~/.cask</code> にcask自身がインストールされます。
+あとは、PATHに下記を追加しておきます。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh"><span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">PATH</span>=$<span style="font-weight: bold; font-style: italic;">PATH</span>:~/.cask/bin
+</pre>
+</div>
+<p>
+これで準備オッケーです。
+</p>
+
+<p>
+Caskファイルを編集して自分の欲しいパッケージを羅列してきます。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ vim ~/.emacs.d/Cask
+</pre>
+</div>
+
+<p>
+で、最後に下記コマンドを実行すれば、あとはツラツラと必要なパッケージが
+<code>~/.emacs.d/.cask</code> というディレクトリに保存されていきます。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ cd ~/.emacs.d
+$ cask
+</pre>
+</div>
+<p>
+簡単ですなー。
+</p>
+
+<p>
+そしてこれらを利用するにはロードパスを通しておきます。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">cask</span> <span style="font-style: italic;">"~/.cask/cask.el"</span>)
+(cask-initialize)
+</pre>
+</div>
+<p>
+あとはいつもどおりの自分の設定を書けばオッケー。
+</p>
+
+<p>
+ちなみにWindowsでは導入できないとの情報を見ましたが
+自分の環境では問題ありませんでした。環境は下記のとおりです。
+</p>
+
+<pre class="example">
+# PC
+Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz 2.50GHz
+RAM 4.00 GB
+
+# Windows
+Windows7 Professional
+Service Pack 1
+32bit
+
+# emacs
+GNU Emacs 24.3.1 (i386-mingw-nt6.1.7601) of 2013-03-18 on MARVIN
+
+# Cygwin
+$ uname -r
+1.7.30(0.272/5/3)
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 設定ファイルの書き方</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Cask導入ついでに、設定ファイルたちの見直しを実施しました。
+これって部屋の掃除と同じで、なかなか気がすすまない作業ですよね。
+毎日すこしずつ掃除してればちょっとの手間ですむけど溜め込むと大変。
+自分は後者でした。
+</p>
+
+<p>
+整理にあたっては、下記の方やりかたを全面採用しました。
+</p>
+<ul class="org-ul">
+<li><a href="http://unknownplace.org/memo/2013/01/21/1/">http://unknownplace.org/memo/2013/01/21/1/</a>
+</li>
+<li><a href="https://github.com/emacs-jp/emacs-jp.github.com/issues/15#issuecomment-13706554">https://github.com/emacs-jp/emacs-jp.github.com/issues/15#issuecomment-13706554</a>
+</li>
+</ul>
+<p>
+このやり方を採用すれば
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ emacs -q -l init.el
+</pre>
+</div>
+<p>
+とするだけで自分の環境が閉じた状態で簡単に再現できます。
+設定ファイルを公開している方は、みんなこの方法を採用したほうがいいんじゃないかなーと思います。
+</p>
+
+<p>
+ちなみに、初期化ファイルは、init-loaderを使用するのが定番のようですが、
+自分には合いませんでした。ファイル名をいじって読み込む順番や読み込みの有無を指定するのが苦手で。
+それよりはコードを直接いじったりコメントアウトするほうが楽でした。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> インストール方法</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+私のemacs環境は下記の方法でどなたでも試すことができます(ただしまだテストしてません)。
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/mikio/.emacs.d">https://github.com/mikio/.emacs.d</a>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ cd ~
+$ git clone https://github.com/mikio/.emacs.d.git
+$ cd .emacs.d
+$ cask
+$ emacs -q -l init.el
+</pre>
+</div>
+<p>
+ちなみに、手動インストールが必要なddskkやJDEEなどはインストールできません(当然)。
+</p>
+
+<p>
+やりかたを公開しているのは別にオレオレemacsをみんなに使って欲しいのではなくて
+自分がどこでも環境を再構築できるようにしたいためです。念の為。
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> ディレクトリ配置</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+ディレクトリ構成は下記のようになってます。
+</p>
+<pre class="example">
+$HOME
+  + Dropbox/site-lisp/ # 手動でインストールしたlisp
+  + .cask/             # Cask自身のインストール場所
+  + .skk/ # ddskkのプライベート辞書の場所
+      + jisyo
+  + .emacs.d/
+      init.el # ブート的な起動ファイル
+      .cask/  # Caskによりインストールされたパッケージ群の保存場所
+      conf/  # 各パッケージの初期化ファイル群
+</pre>
+</div>
+</div>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 分割のポリシー</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+最後に設定ファイル分割のポリシーをメモしておきます。
+</p>
+
+<ul class="org-ul">
+<li>requireが必要ない設定(キーバインドとか、単純な設定など)
+<ul class="org-ul">
+<li>conf/init.elにまとめる
+</li>
+</ul>
+</li>
+<li>標準取り込み済みだけどrequireが必要な設定
+<ul class="org-ul">
+<li>conf/extend.elにまとめる
+</li>
+</ul>
+</li>
+<li>caskで取り込んだ外部パッケージ
+<ul class="org-ul">
+<li>適当な単位で処理を分ける
+</li>
+</ul>
+</li>
+<li>完全に手でインストールしなければならないもの
+<ul class="org-ul">
+<li>JDEE
+</li>
+<li>ddskk
+</li>
+<li>sdic
+</li>
+<li>w3m
+</li>
+<li>navi2ch
+</li>
+<li>これらは、個別に設定ファイルを準備
+</li>
+</ul>
+</li>
+
+<li>全体として、elispが存在しなければ無視するように気を使う
+</li>
+</ul>
+
+<p>
+実はまだ完全に整理しきれていない。。。
+</p>
+</div>
+</div>
+  <footer class="article-footer">
+    <nav class="tag">
+      <ul>
+                <li><span><a href="/tag/emacs.html">emacs</a></span></li>
+        
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pager">
+        
+        &nbsp;&nbsp;
+                <li class="next"><a href="/article/2014/05/15_libgdx-jdee.html">Emacs JDEE でlibGDXプログラミング!&nbsp;&raquo;</a></li>
+        
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+   var disqus_shortname = 'mikiokunblog';
+
+   /* * * DON'T EDIT BELOW THIS LINE * * */
+   (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+                <script type="text/javascript" src="/js/main.js"></script>
+        
+        <script type="text/javascript">
+
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-30203998-1']);
+         _gaq.push(['_trackPageview']);
+
+         (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+
+        </script>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="misaki-logo">
+        <p>
+          <a href="https://github.com/mikio/misaki-orgmode" title="generated by Misaki orgmode">
+            <img src="/img/misaki-orgmode-large-banner.png"/></a>
+        </p>
+        <p>Based on <a href="https://github.com/liquidz/misaki">Miaski</a>.</p>
+        <p>This site is built with <a href="http://purecss.io">Pure</a> CSS Framework.</p>
+        <p><a href="http://twitter.com/mikio_kun">@mikio_kun</a> 2014</p>
+      </div>
+    </div>
+  </body>
+</html>

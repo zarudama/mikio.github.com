@@ -280,7 +280,8 @@ pre code {
     margin: 1em;
 }
 .figure p {
-    font-size: 0.8em;
+    margin: 0;
+    font-size: 0.6em;
 }
 .figure img {
     border-width: 0px;
