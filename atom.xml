@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>libGDX入門 その2 カメラとビューポート</title>
+        <link href="http://mikio.github.io/article/2014/06/02_libgdx-beginner2.html" />
+        <updated>2014-06-02T00:00:00</updated>
+        <id>http://mikio.github.io/article/2014/06/02_libgdx-beginner2.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>Caskの導入と設定ファイルの棚卸し</title>
         <link href="http://mikio.github.io/article/2014/06/01_cask.html" />
         <updated>2014-06-01T00:00:00</updated>
