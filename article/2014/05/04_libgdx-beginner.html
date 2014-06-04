@@ -626,7 +626,7 @@ gradlewコマンドは、プロジェクトルートで実行する必要があ�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">ANDROID_HOME</span>=~/opt/adt-bundle-linux-x86_64-20130717/sdk
+<pre class="src src-sh"><span class="org-builtin">export</span> <span class="org-variable-name">ANDROID_HOME</span>=~/opt/adt-bundle-linux-x86_64-20130717/sdk
 </pre>
 </div>
 <p>
@@ -701,31 +701,31 @@ gdx-setup.jarで作成される雛形は下記のとおりです。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">package</span> com.zarudama.<span style="font-weight: bold; text-decoration: underline;">libgdxtest</span>;
+<pre class="src src-java"><span class="org-keyword">package</span> com.zarudama.<span class="org-constant">libgdxtest</span>;
 
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">ApplicationAdapter</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">Gdx</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">GL20</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">Texture</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">ApplicationAdapter</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">Gdx</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">GL20</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">Texture</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">SpriteBatch</span>;
 
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">LibGdxSample</span> <span style="font-weight: bold;">extends</span> <span style="font-weight: bold; text-decoration: underline;">ApplicationAdapter</span> {
-    <span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span> <span style="font-weight: bold; font-style: italic;">batch</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Texture</span> <span style="font-weight: bold; font-style: italic;">img</span>;
+<span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">LibGdxSample</span> <span class="org-keyword">extends</span> <span class="org-type">ApplicationAdapter</span> {
+    <span class="org-type">SpriteBatch</span> <span class="org-variable-name">batch</span>;
+    <span class="org-type">Texture</span> <span class="org-variable-name">img</span>;
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
-        batch = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span>();
-        img = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Texture</span>(<span style="font-style: italic;">"badlogic.jpg"</span>);
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
+        batch = <span class="org-keyword">new</span> <span class="org-type">SpriteBatch</span>();
+        img = <span class="org-keyword">new</span> <span class="org-type">Texture</span>(<span class="org-string">"badlogic.jpg"</span>);
     }
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
-        Gdx.gl.glClearColor(1, 0, 0, 1); <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">&#30011;&#38754;&#12434;&#36196;&#12391;&#22615;&#12426;&#12388;&#12406;&#12375;</span>
-        Gdx.gl.glClear(<span style="font-weight: bold; text-decoration: underline;">GL20</span>.GL_COLOR_BUFFER_BIT); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12459;&#12521;&#12540;&#12496;&#12483;&#12501;&#12449;&#12434;&#12463;&#12522;&#12450;</span>
-        batch.begin(); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#25551;&#30011;&#12398;&#38283;&#22987;</span>
-        batch.draw(img, 0, 0); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12486;&#12463;&#12473;&#12481;&#12515;&#12540;&#12434;&#25551;&#30011;</span>
-        batch.end(); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#25551;&#30011;&#12398;&#32066;&#20102;</span>
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+        Gdx.gl.glClearColor(1, 0, 0, 1); <span class="org-comment-delimiter">//</span><span class="org-comment">&#30011;&#38754;&#12434;&#36196;&#12391;&#22615;&#12426;&#12388;&#12406;&#12375;</span>
+        Gdx.gl.glClear(<span class="org-constant">GL20</span>.GL_COLOR_BUFFER_BIT); <span class="org-comment-delimiter">// </span><span class="org-comment">&#12459;&#12521;&#12540;&#12496;&#12483;&#12501;&#12449;&#12434;&#12463;&#12522;&#12450;</span>
+        batch.begin(); <span class="org-comment-delimiter">// </span><span class="org-comment">&#25551;&#30011;&#12398;&#38283;&#22987;</span>
+        batch.draw(img, 0, 0); <span class="org-comment-delimiter">// </span><span class="org-comment">&#12486;&#12463;&#12473;&#12481;&#12515;&#12540;&#12434;&#25551;&#30011;</span>
+        batch.end(); <span class="org-comment-delimiter">// </span><span class="org-comment">&#25551;&#30011;&#12398;&#32066;&#20102;</span>
     }
 }
 </pre>
@@ -785,50 +785,50 @@ libGDXはデフォルトで文字描画をサポートしていますので、�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">mikio@gnudam:~/dev/libgdxtest$ git diff
-diff --git a/core/src/com/zarudama/libgdxtest/LibGdxSample.java b/core/src/com/zarudama/libgdxtest/LibGdxSample.java
-index ad39967..3c84c72 100644
---- a/core/src/com/zarudama/libgdxtest/LibGdxSample.java
-+++ b/core/src/com/zarudama/libgdxtest/LibGdxSample.java
-@@ -4,17 +4,20 @@ import com.badlogic.gdx.ApplicationAdapter;
- import com.badlogic.gdx.Gdx;
- import com.badlogic.gdx.graphics.GL20;
- import com.badlogic.gdx.graphics.Texture;
-+import com.badlogic.gdx.graphics.g2d.BitmapFont;
- import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+<pre class="src src-diff"><span class="org-diff-context">mikio@gnudam:~/dev/libgdxtest$ git diff</span>
+<span class="org-diff-context">diff --git a/core/src/com/zarudama/libgdxtest/LibGdxSample.java b/core/src/com/zarudama/libgdxtest/LibGdxSample.java</span>
+<span class="org-diff-context">index ad39967..3c84c72 100644</span>
+<span class="org-diff-header">--- </span><span class="org-diff-file-header"><span class="org-diff-header">a/core/src/com/zarudama/libgdxtest/LibGdxSample.java</span></span>
+<span class="org-diff-header">+++ </span><span class="org-diff-file-header"><span class="org-diff-header">b/core/src/com/zarudama/libgdxtest/LibGdxSample.java</span></span>
+<span class="org-diff-hunk-header">@@ -4,17 +4,20 @@</span><span class="org-diff-function"> import com.badlogic.gdx.ApplicationAdapter;</span>
+<span class="org-diff-context"> import com.badlogic.gdx.Gdx;</span>
+<span class="org-diff-context"> import com.badlogic.gdx.graphics.GL20;</span>
+<span class="org-diff-context"> import com.badlogic.gdx.graphics.Texture;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">import com.badlogic.gdx.graphics.g2d.BitmapFont;</span>
+<span class="org-diff-context"> import com.badlogic.gdx.graphics.g2d.SpriteBatch;</span>
 
- public class LibGdxSample extends ApplicationAdapter {
-     SpriteBatch batch;
--    Texture img;
-+    BitmapFont font;
-+    Texture img;
+<span class="org-diff-context"> public class LibGdxSample extends ApplicationAdapter {</span>
+<span class="org-diff-context">     SpriteBatch batch;</span>
+<span class="org-diff-indicator-removed">-</span><span class="org-diff-removed">    Texture img;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    BitmapFont font;</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    Texture img;</span>
 
-    @Override
-    public void create () {
-       batch = new SpriteBatch();
-       img = new Texture(<span style="font-style: italic;">"badlogic.jpg"</span>);
--   }
-+      font = new BitmapFont();
-+   }
+<span class="org-diff-context">    @Override</span>
+<span class="org-diff-context">    public void create () {</span>
+<span class="org-diff-context">       batch = new SpriteBatch();</span>
+<span class="org-diff-context">       img = new Texture("badlogic.jpg");</span>
+<span class="org-diff-indicator-removed">-</span><span class="org-diff-removed">   }</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">      font = new BitmapFont();</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">   }</span>
 
-    @Override
-    public void render () {
-@@ -22,6 +25,7 @@ public class LibGdxSample extends ApplicationAdapter {
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        batch.begin();
-        batch.draw(img, 0, 0);
-+       font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
-        batch.end();
-    }
+<span class="org-diff-context">    @Override</span>
+<span class="org-diff-context">    public void render () {</span>
+<span class="org-diff-hunk-header">@@ -22,6 +25,7 @@</span><span class="org-diff-function"> public class LibGdxSample extends ApplicationAdapter {</span>
+<span class="org-diff-context">        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);</span>
+<span class="org-diff-context">        batch.begin();</span>
+<span class="org-diff-context">        batch.draw(img, 0, 0);</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">       font.draw(batch, "Hello libGDX", 200, 400);</span>
+<span class="org-diff-context">        batch.end();</span>
+<span class="org-diff-context">    }</span>
 
-+   @Override
-+   public void dispose() {
-+       font.dispose();
-+       batch.dispose();
-+       img.dispose();
-+   }
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">   @Override</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">   public void dispose() {</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">       font.dispose();</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">       batch.dispose();</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">       img.dispose();</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">   }</span>
 
- }
+<span class="org-diff-context"> }</span>
 </pre>
 </div>
 <p>
@@ -878,7 +878,7 @@ index 3c84c72..5ab4749 100644
      public void create () {
          batch = new SpriteBatch();
          font = new BitmapFont();
-         img = new Texture(<span style="font-style: italic;">"badlogic.jpg"</span>);
+         img = new Texture(<span class="org-string">"badlogic.jpg"</span>);
 +        sprite = new Sprite(img);
      }
 
@@ -888,7 +888,7 @@ index 3c84c72..5ab4749 100644
         batch.begin();
 -       batch.draw(img, 0, 0);
 +       sprite.draw(batch);
-        font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
+        font.draw(batch, <span class="org-string">"Hello libGDX"</span>, 200, 400);
         batch.end();
     }
 </pre>
@@ -1011,7 +1011,7 @@ index 5ab4749..e97625e 100644
     public void create () {
 @@ -21,14 +23,30 @@ public class LibGdxSample extends ApplicationAdapter {
          font = new BitmapFont();
-         img = new Texture(<span style="font-style: italic;">"badlogic.jpg"</span>);
+         img = new Texture(<span class="org-string">"badlogic.jpg"</span>);
          sprite = new Sprite(img);
 +        pos = new Vector2();
      }
@@ -1030,7 +1030,7 @@ index 5ab4749..e97625e 100644
 +       if (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
 +           pos.y -= 1;
 +       }
-+       String info = String.format(<span style="font-style: italic;">"pos(%f,%f)"</span>, pos.x, pos.y);
++       String info = String.format(<span class="org-string">"pos(%f,%f)"</span>, pos.x, pos.y);
 +
 +       sprite.setPosition(pos.x, pos.y);
 +
@@ -1040,7 +1040,7 @@ index 5ab4749..e97625e 100644
         sprite.draw(batch);
         batch.draw(sprite, 0, 0);
         font.draw(batch, info, 0, 420);
-        font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
+        font.draw(batch, <span class="org-string">"Hello libGDX"</span>, 200, 400);
         batch.end();
     }
 
@@ -1144,27 +1144,27 @@ index 5ab4749..cf11ba1 100644
      public void create () {
 @@ -21,14 +25,35 @@ public class LibGdxSample extends ApplicationAdapter {
          font = new BitmapFont();
-                img = new Texture(<span style="font-style: italic;">"badlogic.jpg"</span>);
+                img = new Texture(<span class="org-string">"badlogic.jpg"</span>);
          sprite = new Sprite(img);
          pos = new Vector2();
-+        sound = Gdx.audio.newSound(Gdx.files.internal(<span style="font-style: italic;">"jump.wav"</span>));
++        sound = Gdx.audio.newSound(Gdx.files.internal(<span class="org-string">"jump.wav"</span>));
      }
 
      @Override
      public void render () {
-         <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+         <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
              pos.x -= 1;
          }
-         <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+         <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
              pos.x += 1;
          }
-         <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(Input.Keys.UP)) {
+         <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(Input.Keys.UP)) {
              pos.y += 1;
          }
-         <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
+         <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(Input.Keys.DOWN)) {
              pos.y -= 1;
          }
-         String info = String.format(<span style="font-style: italic;">"pos(%f,%f)"</span>, pos.x, pos.y);
+         String info = String.format(<span class="org-string">"pos(%f,%f)"</span>, pos.x, pos.y);
 
 +        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
 +            sound.play();
@@ -1175,7 +1175,7 @@ index 5ab4749..cf11ba1 100644
          batch.begin();
          batch.draw(sprite, pos.x, pos.y);
          font.draw(batch, info, 0, 420);
-         font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
+         font.draw(batch, <span class="org-string">"Hello libGDX"</span>, 200, 400);
          batch.end();
      }
 
@@ -1257,11 +1257,11 @@ index 5ab4749..c345ac8 100644
     public void create () {
 @@ -21,15 +27,48 @@ public class LibGdxSample extends ApplicationAdapter {
          font = new BitmapFont();
-        img = new Texture(<span style="font-style: italic;">"badlogic.jpg"</span>);
+        img = new Texture(<span class="org-string">"badlogic.jpg"</span>);
          sprite = new Sprite(img);
          pos = new Vector2();
-         sound = Gdx.audio.newSound(Gdx.files.internal(<span style="font-style: italic;">"jump.wav"</span>));
-+        music = Gdx.audio.newMusic(Gdx.files.internal(<span style="font-style: italic;">"mixdown.mp3"</span>));
+         sound = Gdx.audio.newSound(Gdx.files.internal(<span class="org-string">"jump.wav"</span>));
++        music = Gdx.audio.newMusic(Gdx.files.internal(<span class="org-string">"mixdown.mp3"</span>));
 +        music.setLooping(true);
 +        music.setVolume(0.5f);
 +        music.play();
@@ -1412,85 +1412,85 @@ index 1c12907..696c158 100644
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">package</span> com.zarudama.<span style="font-weight: bold; text-decoration: underline;">libgdxtest</span>;
+<pre class="src src-java"><span class="org-keyword">package</span> com.zarudama.<span class="org-constant">libgdxtest</span>;
 
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">ApplicationAdapter</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">Gdx</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">Input</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">audio</span>.<span style="font-weight: bold; text-decoration: underline;">Music</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">audio</span>.<span style="font-weight: bold; text-decoration: underline;">Sound</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">GL20</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">Texture</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">BitmapFont</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">Sprite</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">math</span>.<span style="font-weight: bold; text-decoration: underline;">Vector2</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">ApplicationAdapter</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">Gdx</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">Input</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">audio</span>.<span class="org-type">Music</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">audio</span>.<span class="org-type">Sound</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">GL20</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">Texture</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">BitmapFont</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">Sprite</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">SpriteBatch</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">math</span>.<span class="org-type">Vector2</span>;
 
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">LibGdxSample</span> <span style="font-weight: bold;">extends</span> <span style="font-weight: bold; text-decoration: underline;">ApplicationAdapter</span> {
-    <span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span> <span style="font-weight: bold; font-style: italic;">batch</span>;
-    <span style="font-weight: bold; text-decoration: underline;">BitmapFont</span> <span style="font-weight: bold; font-style: italic;">font</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Texture</span> <span style="font-weight: bold; font-style: italic;">img</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sprite</span> <span style="font-weight: bold; font-style: italic;">sprite</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sprite</span> <span style="font-weight: bold; font-style: italic;">sprite2</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Vector2</span> <span style="font-weight: bold; font-style: italic;">pos</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sound</span> <span style="font-weight: bold; font-style: italic;">sound</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Music</span> <span style="font-weight: bold; font-style: italic;">music</span>;
-    <span style="font-weight: bold; text-decoration: underline;">float</span> <span style="font-weight: bold; font-style: italic;">angle</span>;
+<span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">LibGdxSample</span> <span class="org-keyword">extends</span> <span class="org-type">ApplicationAdapter</span> {
+    <span class="org-type">SpriteBatch</span> <span class="org-variable-name">batch</span>;
+    <span class="org-type">BitmapFont</span> <span class="org-variable-name">font</span>;
+    <span class="org-type">Texture</span> <span class="org-variable-name">img</span>;
+    <span class="org-type">Sprite</span> <span class="org-variable-name">sprite</span>;
+    <span class="org-type">Sprite</span> <span class="org-variable-name">sprite2</span>;
+    <span class="org-type">Vector2</span> <span class="org-variable-name">pos</span>;
+    <span class="org-type">Sound</span> <span class="org-variable-name">sound</span>;
+    <span class="org-type">Music</span> <span class="org-variable-name">music</span>;
+    <span class="org-type">float</span> <span class="org-variable-name">angle</span>;
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
-        batch = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span>();
-        font = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">BitmapFont</span>();
-        img = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Texture</span>(<span style="font-style: italic;">"badlogic.jpg"</span>);
-        sprite = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Sprite</span>(img);
-        sprite2 = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Sprite</span>(img);
-        pos = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector2</span>();
-        sound = Gdx.audio.newSound(Gdx.files.internal(<span style="font-style: italic;">"jump.wav"</span>));
-        music = Gdx.audio.newMusic(Gdx.files.internal(<span style="font-style: italic;">"mixdown.mp3"</span>));
-        music.setLooping(<span style="font-weight: bold; text-decoration: underline;">true</span>);
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
+        batch = <span class="org-keyword">new</span> <span class="org-type">SpriteBatch</span>();
+        font = <span class="org-keyword">new</span> <span class="org-type">BitmapFont</span>();
+        img = <span class="org-keyword">new</span> <span class="org-type">Texture</span>(<span class="org-string">"badlogic.jpg"</span>);
+        sprite = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img);
+        sprite2 = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img);
+        pos = <span class="org-keyword">new</span> <span class="org-type">Vector2</span>();
+        sound = Gdx.audio.newSound(Gdx.files.internal(<span class="org-string">"jump.wav"</span>));
+        music = Gdx.audio.newMusic(Gdx.files.internal(<span class="org-string">"mixdown.mp3"</span>));
+        music.setLooping(<span class="org-constant">true</span>);
         music.setVolume(0.5f);
         music.play();
     }
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.LEFT)) {
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.LEFT)) {
             pos.x -= 1;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.RIGHT)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.RIGHT)) {
             pos.x += 1;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.UP)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.UP)) {
             pos.y += 1;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.DOWN)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.DOWN)) {
             pos.y -= 1;
         }
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">String info = String.format("pos(%f,%f)", pos.x, pos.y);</span>
-        <span style="font-weight: bold; text-decoration: underline;">String</span> <span style="font-weight: bold; font-style: italic;">info</span> = <span style="font-style: italic;">""</span>; <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">html&#29256;&#12391;&#12399;&#12467;&#12531;&#12497;&#12452;&#12523;&#12391;&#12365;&#12394;&#12356;&#12290;</span>
+        <span class="org-comment-delimiter">//</span><span class="org-comment">String info = String.format("pos(%f,%f)", pos.x, pos.y);</span>
+        <span class="org-type">String</span> <span class="org-variable-name">info</span> = <span class="org-string">""</span>; <span class="org-comment-delimiter">//</span><span class="org-comment">html&#29256;&#12391;&#12399;&#12467;&#12531;&#12497;&#12452;&#12523;&#12391;&#12365;&#12394;&#12356;&#12290;</span>
 
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.SPACE)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.SPACE)) {
             sound.play();
         }
         sprite.setPosition(pos.x, pos.y);
-        sprite.setScale((<span style="font-weight: bold; text-decoration: underline;">float</span>) Math.sin(angle));
+        sprite.setScale((<span class="org-type">float</span>) Math.sin(angle));
         angle += 0.04;
 
         sprite2.setPosition(200, 300);
         sprite2.setRotation(angle);
 
         Gdx.gl.glClearColor(1, 0, 0, 1);
-        Gdx.gl.glClear(<span style="font-weight: bold; text-decoration: underline;">GL20</span>.GL_COLOR_BUFFER_BIT);
+        Gdx.gl.glClear(<span class="org-constant">GL20</span>.GL_COLOR_BUFFER_BIT);
         batch.begin();
         sprite.draw(batch);
         sprite2.draw(batch);
         font.draw(batch, info, 0, 420);
-        font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
+        font.draw(batch, <span class="org-string">"Hello libGDX"</span>, 200, 400);
         batch.end();
     }
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">dispose</span>() {
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
         sound.dispose();
         music.dispose();
         batch.dispose();

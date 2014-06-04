@@ -69,10 +69,10 @@ Javaは <code>*.java</code> から <code>*.class</code> を生成するが、こ
 </p>
 <div class="org-src-container">
 
-<pre class="src src-c"><span style="font-weight: bold; text-decoration: underline;">package</span> <span style="font-weight: bold; font-style: italic;">hoge</span>;
-public <span style="font-weight: bold; text-decoration: underline;">class</span> <span style="font-weight: bold; font-style: italic;">Fuga</span> {
-    public <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold; font-style: italic;">main</span>(String[] args) {
-        System.out.println(<span style="font-style: italic;">"Hello Javap!"</span>);
+<pre class="src src-c"><span class="org-type">package</span> <span class="org-variable-name">hoge</span>;
+public <span class="org-type">class</span> <span class="org-variable-name">Fuga</span> {
+    public <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-variable-name">main</span>(String[] args) {
+        System.out.println(<span class="org-string">"Hello Javap!"</span>);
     }
 }
 </pre>
@@ -93,20 +93,20 @@ Fuga.codeは以下のようになる。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-c"><span style="font-weight: bold; text-decoration: underline;">Compiled</span> <span style="font-weight: bold; font-style: italic;">from</span> <span style="font-style: italic;">"Fuga.java"</span>
+<pre class="src src-c"><span class="org-type">Compiled</span> <span class="org-variable-name">from</span> <span class="org-string">"Fuga.java"</span>
 public class hoge.Fuga {
-  <span style="font-weight: bold; text-decoration: underline;">public</span> <span style="font-weight: bold; font-style: italic;">hoge</span>.Fuga();
+  <span class="org-type">public</span> <span class="org-variable-name">hoge</span>.Fuga();
     Code:
        0: aload_0       
-       1: invokespecial #1                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Method java/lang/Object."&lt;init&gt;":()V</span>
-       4: <span style="font-weight: bold;">return</span>        
+       1: invokespecial #1                  <span class="org-comment-delimiter">// </span><span class="org-comment">Method java/lang/Object."&lt;init&gt;":()V</span>
+       4: <span class="org-keyword">return</span>        
 
-  public <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">void</span> main(java.lang.String[]);
-    <span style="font-weight: bold; text-decoration: underline;">Code</span>:
-       0: getstatic     #2                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Field java/lang/System.out:Ljava/io/PrintStream;</span>
-       3: ldc           #3                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">String Hello Javap!</span>
-       5: invokevirtual #4                  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Method java/io/PrintStream.println:(Ljava/lang/String;)V</span>
-       8: <span style="font-weight: bold;">return</span>        
+  public <span class="org-keyword">static</span> <span class="org-type">void</span> main(java.lang.String[]);
+    <span class="org-constant">Code</span>:
+       0: getstatic     #2                  <span class="org-comment-delimiter">// </span><span class="org-comment">Field java/lang/System.out:Ljava/io/PrintStream;</span>
+       3: ldc           #3                  <span class="org-comment-delimiter">// </span><span class="org-comment">String Hello Javap!</span>
+       5: invokevirtual #4                  <span class="org-comment-delimiter">// </span><span class="org-comment">Method java/io/PrintStream.println:(Ljava/lang/String;)V</span>
+       8: <span class="org-keyword">return</span>        
 }
 </pre>
 </div>

@@ -116,7 +116,7 @@ Ubuntu12.04LTS版です。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">LANG</span>=C xdg-user-dirs-gtk-update
+<pre class="src src-sh"><span class="org-variable-name">LANG</span>=C xdg-user-dirs-gtk-update
 </pre>
 </div>
 </div>
@@ -198,9 +198,9 @@ add Control = Control_L
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold;">&#28961;&#22793;&#25563;</span>(102)&#8594;ctrl
-<span style="font-weight: bold;">&#22793;&#25563;</span>(keycode 100)&#8594;ctrl
-<span style="font-weight: bold;">&#12459;&#12479;&#12459;&#12490;&#12402;&#12425;&#12364;&#12394;</span>(101)&#8594;shift
+<pre class="src src-sh"><span class="org-function-name">&#28961;&#22793;&#25563;</span>(102)&#8594;ctrl
+<span class="org-function-name">&#22793;&#25563;</span>(keycode 100)&#8594;ctrl
+<span class="org-function-name">&#12459;&#12479;&#12459;&#12490;&#12402;&#12425;&#12364;&#12394;</span>(101)&#8594;shift
 </pre>
 </div>
 
@@ -269,7 +269,7 @@ syncの設定して、keysnailを入れる。
 
 <pre class="src src-sh">mkdir ~/.fonts 
 cp migu-1m-20120411.zip ~/.fonts
-<span style="font-weight: bold;">cd</span> ~/.fonts 
+<span class="org-builtin">cd</span> ~/.fonts 
 unzip migu-1m-20120411.zip
 fc-cache -fv
 </pre>
@@ -350,9 +350,9 @@ pacoは、make install によってインストールされたアプリケーシ
 
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#12477;&#12540;&#12473;&#12399;&#36969;&#24403;&#12395;Web&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;</span>
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">&#12477;&#12540;&#12473;&#12399;&#36969;&#24403;&#12395;Web&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;</span>
 sudo apt-get install libgtkmm-2.4-dev
-<span style="font-weight: bold;">cd</span> ~/src/paco-2.0.9/
+<span class="org-builtin">cd</span> ~/src/paco-2.0.9/
 ./configure
 make
 sudo make install
@@ -369,12 +369,12 @@ sudo make logme
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#12477;&#12540;&#12473;&#12399;&#36969;&#24403;&#12395;Web&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12290;&#12300;emacs24&#12301;&#12392;&#12363;&#12391;&#26908;&#32034;&#12290;</span>
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">&#12477;&#12540;&#12473;&#12399;&#36969;&#24403;&#12395;Web&#12363;&#12425;&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#12290;&#12300;emacs24&#12301;&#12392;&#12363;&#12391;&#26908;&#32034;&#12290;</span>
 sudo apt-get build-dep emacs23
-<span style="font-weight: bold;">cd</span> ~/src/emacs-24/
+<span class="org-builtin">cd</span> ~/src/emacs-24/
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">configure&#12391;&#30011;&#20687;&#38306;&#36899;&#12391;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;&#12363;&#12418;&#12290;&#12381;&#12398;&#12392;&#12365;&#12399;</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">sudo apt-get install libgif-dev ligtiff-dev libxpm-dev</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">configure&#12391;&#30011;&#20687;&#38306;&#36899;&#12391;&#12456;&#12521;&#12540;&#12395;&#12394;&#12427;&#12363;&#12418;&#12290;&#12381;&#12398;&#12392;&#12365;&#12399;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">sudo apt-get install libgif-dev ligtiff-dev libxpm-dev</span>
 
 ./configure
 make
@@ -401,7 +401,7 @@ Kaoriaからソースを取得する。
 
 <pre class="src src-sh">wget http://cmigemo.googlecode.com/files/cmigemo-default-src-20110227.zip
 unzip cmigemo-default-src-20110227.zip
-<span style="font-weight: bold;">cd</span> cmigemo-default-src-20110227
+<span class="org-builtin">cd</span> cmigemo-default-src-20110227
 </pre>
 </div>
 
@@ -410,9 +410,9 @@ unzip cmigemo-default-src-20110227.zip
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">src/wordbuf.c:118: error: &#8216;INT_MAX&#8217; undeclared (first use<span style="font-weight: bold;"> in</span> this <span style="font-weight: bold;">function</span>)
+<pre class="src src-sh">src/wordbuf.c:118: error: &#8216;INT_MAX&#8217; undeclared (first use<span class="org-keyword"> in</span> this <span class="org-keyword">function</span>)
 src/wordbuf.c:118: error: (Each undeclared identifier is reported only once
-src/wordbuf.c:118: error: for each <span style="font-weight: bold;">function</span> <span style="font-weight: bold;">it</span> appears in.)
+src/wordbuf.c:118: error: for each <span class="org-keyword">function</span> <span class="org-function-name">it</span> appears in.)
 </pre>
 </div>
 <p>
@@ -420,7 +420,7 @@ wordbuf.cに下記を追加する。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">include &lt;limits.h&gt;</span>
+<pre class="src src-sh"><span class="org-comment-delimiter">#</span><span class="org-comment">include &lt;limits.h&gt;</span>
 </pre>
 </div>
 
@@ -432,12 +432,12 @@ wordbuf.cに下記を追加する。
 <pre class="src src-sh">sudo apt-get install curl
 sudo apt-get install nkf
 
-<span style="font-weight: bold;">cd</span> ~/src/cmigemo-default-src/
+<span class="org-builtin">cd</span> ~/src/cmigemo-default-src/
 sh ./configure 
 make gcc
-<span style="font-weight: bold;">cd</span> dict
+<span class="org-builtin">cd</span> dict
 make utf-8
-<span style="font-weight: bold;">cd</span> ..
+<span class="org-builtin">cd</span> ..
 sudo paco -D make gcc-install
 </pre>
 </div>
@@ -448,8 +448,8 @@ sudo paco -D make gcc-install
 <div class="org-src-container">
 
 <pre class="src src-sh">$ cmigemo -d /usr/local/share/migemo/utf-8/migemo-dict
-<span style="font-weight: bold;">migemo_open</span>(<span style="font-style: italic;">"/usr/local/share/migemo/utf-8/migemo-dict"</span>)=0xf54010
-<span style="font-weight: bold;">clock</span>()=0.300000
+<span class="org-function-name">migemo_open</span>(<span class="org-string">"/usr/local/share/migemo/utf-8/migemo-dict"</span>)=0xf54010
+<span class="org-function-name">clock</span>()=0.300000
 QUERY: kyassyu
 PATTERN: (&#65399;&#65388;&#65391;&#65404;&#65389;|&#12461;&#12515;&#12483;&#12471;&#12517;|&#12365;&#12419;&#12387;&#12375;&#12421;|&#65355;&#65369;&#65345;&#65363;&#65363;&#65369;&#65365;|kyassyu)
 </pre>
@@ -462,14 +462,14 @@ PATTERN: (&#65399;&#65388;&#65391;&#65404;&#65389;|&#12461;&#12515;&#12483;&#124
 <div class="org-src-container">
 
 <pre class="src src-sh">sudo apt-get install git
-git config --global alias.st <span style="font-style: italic;">"status"</span>
-git config --global alias.ci <span style="font-style: italic;">"commit"</span>
-git config --global alias.br <span style="font-style: italic;">"branch"</span>
-git config --global alias.co <span style="font-style: italic;">"checkout"</span>
-git config --global color.ui <span style="font-style: italic;">"auto"</span>
-git config --global core.pager <span style="font-style: italic;">"cat"</span>
-git config --global user.email <span style="font-style: italic;">"hoge@faga.com"</span>
-git config --global user.name <span style="font-style: italic;">"hoge"</span>
+git config --global alias.st <span class="org-string">"status"</span>
+git config --global alias.ci <span class="org-string">"commit"</span>
+git config --global alias.br <span class="org-string">"branch"</span>
+git config --global alias.co <span class="org-string">"checkout"</span>
+git config --global color.ui <span class="org-string">"auto"</span>
+git config --global core.pager <span class="org-string">"cat"</span>
+git config --global user.email <span class="org-string">"hoge@faga.com"</span>
+git config --global user.name <span class="org-string">"hoge"</span>
 </pre>
 </div>
 </div>
@@ -536,7 +536,7 @@ CUIから最新版をダウンロードする場合。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">wget --no-cookies --header <span style="font-style: italic;">"Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com"</span> -O jdk-6u41-linux-i586.bin <span style="font-style: italic;">'http://download.oracle.com/otn-pub/java/jdk/6u41-b02/jdk-6u41-linux-i586.bin'</span>
+<pre class="src src-sh">wget --no-cookies --header <span class="org-string">"Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com"</span> -O jdk-6u41-linux-i586.bin <span class="org-string">'http://download.oracle.com/otn-pub/java/jdk/6u41-b02/jdk-6u41-linux-i586.bin'</span>
 </pre>
 </div>
 
@@ -555,10 +555,10 @@ sudo mv ./jdk1.7.0_04/ /usr/lib/jvm/jdk1.7.0
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">sudo update-alternatives --install <span style="font-style: italic;">"/usr/bin/java"</span> <span style="font-style: italic;">"java"</span> <span style="font-style: italic;">"/usr/lib/jvm/jdk1.7.0/bin/java"</span> 1
-sudo update-alternatives --install <span style="font-style: italic;">"/usr/bin/javac"</span> <span style="font-style: italic;">"javac"</span> <span style="font-style: italic;">"/usr/lib/jvm/jdk1.7.0/bin/javac"</span> 1
-sudo update-alternatives --install <span style="font-style: italic;">"/usr/bin/javap"</span> <span style="font-style: italic;">"javap"</span> <span style="font-style: italic;">"/usr/lib/jvm/jdk1.7.0/bin/javap"</span> 1
-sudo update-alternatives --install <span style="font-style: italic;">"/usr/bin/javaws"</span> <span style="font-style: italic;">"javaws"</span> <span style="font-style: italic;">"/usr/lib/jvm/jdk1.7.0/bin/javaws"</span> 1
+<pre class="src src-sh">sudo update-alternatives --install <span class="org-string">"/usr/bin/java"</span> <span class="org-string">"java"</span> <span class="org-string">"/usr/lib/jvm/jdk1.7.0/bin/java"</span> 1
+sudo update-alternatives --install <span class="org-string">"/usr/bin/javac"</span> <span class="org-string">"javac"</span> <span class="org-string">"/usr/lib/jvm/jdk1.7.0/bin/javac"</span> 1
+sudo update-alternatives --install <span class="org-string">"/usr/bin/javap"</span> <span class="org-string">"javap"</span> <span class="org-string">"/usr/lib/jvm/jdk1.7.0/bin/javap"</span> 1
+sudo update-alternatives --install <span class="org-string">"/usr/bin/javaws"</span> <span class="org-string">"javaws"</span> <span class="org-string">"/usr/lib/jvm/jdk1.7.0/bin/javaws"</span> 1
 </pre>
 </div>
 
@@ -608,8 +608,8 @@ binディレクトリを作成する。
 <pre class="src src-sh">$ cd ~
 $ mkdir bin
 $ vi .bashrch
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#19979;&#35352;&#12434;&#36861;&#21152;</span>
-<span style="font-weight: bold;">export</span> <span style="font-weight: bold; font-style: italic;">PATH</span>=~/bin
+<span class="org-comment-delimiter"># </span><span class="org-comment">&#19979;&#35352;&#12434;&#36861;&#21152;</span>
+<span class="org-builtin">export</span> <span class="org-variable-name">PATH</span>=~/bin
 </pre>
 </div>
 
@@ -618,10 +618,10 @@ leinをインストールする。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold;">cd</span> ~/bin
+<pre class="src src-sh"><span class="org-builtin">cd</span> ~/bin
 wget https://raw.github.com/technomancy/leiningen/stable/bin/lein
 chmod +x lein
-./elin repl <span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#24460;&#12289;repl&#38283;&#22987;</span>
+./elin repl <span class="org-comment-delimiter"># </span><span class="org-comment">&#12480;&#12454;&#12531;&#12525;&#12540;&#12489;&#24460;&#12289;repl&#38283;&#22987;</span>
 </pre>
 </div>
 </div>

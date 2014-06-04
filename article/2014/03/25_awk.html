@@ -79,7 +79,7 @@
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ awk <span style="font-style: italic;">'[BEGIN {&#21508;&#34892;&#12434;&#20966;&#29702;&#12377;&#12427;&#21069;&#12398;&#20966;&#29702;}] [&#12497;&#12479;&#12540;&#12531;] {&#21508;&#34892;&#12398;&#20966;&#29702;} [END {&#21508;&#34892;&#12434;&#20966;&#29702;&#12375;&#12383;&#24460;&#12398;&#20966;&#29702;}]'</span>
+<pre class="src src-sh">$ awk <span class="org-string">'[BEGIN {&#21508;&#34892;&#12434;&#20966;&#29702;&#12377;&#12427;&#21069;&#12398;&#20966;&#29702;}] [&#12497;&#12479;&#12540;&#12531;] {&#21508;&#34892;&#12398;&#20966;&#29702;} [END {&#21508;&#34892;&#12434;&#20966;&#29702;&#12375;&#12383;&#24460;&#12398;&#20966;&#29702;}]'</span>
 </pre>
 </div>
 
@@ -101,7 +101,7 @@ awk '$1 !~ /^a/{ print}'      # $1が"a"以外で始まるとき、表示(正規
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ cat access.log | awk <span style="font-style: italic;">'$4 = "200" {print $5$6}'</span> | sed <span style="font-style: italic;">'s/\"//g'</span>
+<pre class="src src-sh">$ cat access.log | awk <span class="org-string">'$4 = "200" {print $5$6}'</span> | sed <span class="org-string">'s/\"//g'</span>
 </pre>
 </div>
 </div>
@@ -114,7 +114,7 @@ Fオプションを使用する。カンマの場合は以下のとおり。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">cat access.log | awk -F , <span style="font-style: italic;">'$4 = "200" {print $5$6}'</span> | sed <span style="font-style: italic;">'s/\"//g'</span>
+<pre class="src src-sh">cat access.log | awk -F , <span class="org-string">'$4 = "200" {print $5$6}'</span> | sed <span class="org-string">'s/\"//g'</span>
 </pre>
 </div>
 </div>
@@ -127,7 +127,7 @@ Fオプションを使用する。カンマの場合は以下のとおり。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ gawk <span style="font-style: italic;">'{print gensub(/(.*)([0-9]+)(.*)/,"\\2","")}'</span>
+<pre class="src src-sh">$ gawk <span class="org-string">'{print gensub(/(.*)([0-9]+)(.*)/,"\\2","")}'</span>
 </pre>
 </div>
 <ul class="org-ul">

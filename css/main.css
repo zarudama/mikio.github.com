@@ -290,47 +290,47 @@ pre code {
     height: auto;
 }
 
-.builtin {
+.org-builtin {
   /* font-lock-builtin-face */
   color: #da70d6;
 }
-.comment {
+.org-comment {
   /* font-lock-comment-face */
   color: #b22222;
 }
-.comment-delimiter {
+.org-comment-delimiter {
   /* font-lock-comment-delimiter-face */
   color: #b22222;
 }
-.constant {
+.org-constant {
   /* font-lock-constant-face */
   color: #5f9ea0;
 }
-.function-name {
+.org-function-name {
   /* font-lock-function-name-face */
   color: #0000ff;
 }
-.keyword {
+.org-keyword {
   /* font-lock-keyword-face */
   color: #a020f0;
 }
-.string {
+.org-string {
   /* font-lock-string-face */
   color: #aaa;
 }
-.doc {
+.org-doc {
   /* font-lock-doc-face */
   color: #8b2252;
 }
-.type {
+.org-type {
   /* font-lock-type-face */
   color: #228b22;
 }
-.variable-name {
+.org-variable-name {
   /* font-lock-variable-name-face */
   color: #b8860b;
 }
-.warning {
+.org-warning {
   /* font-lock-warning-face */
   color: #ff0000;
   font-weight: bold;

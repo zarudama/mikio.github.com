@@ -82,29 +82,29 @@ Marmaladeは無効にしています。理由は同じパッケージが同時�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">mikio-util</span>)
+<pre class="src src-emacs-lisp">(<span class="org-keyword">require</span> '<span class="org-constant">mikio-util</span>)
 
-(<span style="font-weight: bold;">when</span> (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">package</span> nil t)
+(<span class="org-keyword">when</span> (<span class="org-keyword">require</span> '<span class="org-constant">package</span> nil t)
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">Marmalade</span>
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-to-list 'package-archives</span>
-  <span style="font-weight: bold; font-style: italic;">;;              </span><span style="font-weight: bold; font-style: italic;">'("marmalade" . "http://marmalade-repo.org/packages/"))</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">Marmalade</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-to-list 'package-archives</span>
+  <span class="org-comment-delimiter">;;              </span><span class="org-comment">'("marmalade" . "http://marmalade-repo.org/packages/"))</span>
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">MELPA</span>
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">(add-to-list 'package-archives</span>
-  <span style="font-weight: bold; font-style: italic;">;;              </span><span style="font-weight: bold; font-style: italic;">'("melpa" . "http://melpa.milkbox.net/packages/") t)</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">MELPA</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">(add-to-list 'package-archives</span>
+  <span class="org-comment-delimiter">;;              </span><span class="org-comment">'("melpa" . "http://melpa.milkbox.net/packages/") t)</span>
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">MELPA&#12398;&#12415;&#12395;&#12377;&#12427;&#12290;</span>
-  (setq package-archives (list '(<span style="font-style: italic;">"melpa"</span> . <span style="font-style: italic;">"http://melpa.milkbox.net/packages/"</span>)))
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">MELPA&#12398;&#12415;&#12395;&#12377;&#12427;&#12290;</span>
+  (setq package-archives (list '(<span class="org-string">"melpa"</span> . <span class="org-string">"http://melpa.milkbox.net/packages/"</span>)))
 
 
 
-  <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#25351;&#23450;</span>
-  (setq my-package-directory (mikio/elisp-home <span style="font-style: italic;">"package"</span>))
+  <span class="org-comment-delimiter">;;</span><span class="org-comment">&#12452;&#12531;&#12473;&#12488;&#12540;&#12523;&#12377;&#12427;&#12487;&#12451;&#12524;&#12463;&#12488;&#12522;&#12434;&#25351;&#23450;</span>
+  (setq my-package-directory (mikio/elisp-home <span class="org-string">"package"</span>))
   (mikio/make-directory my-package-directory)
-  (setq package-user-dir (concat my-package-directory <span style="font-style: italic;">"/"</span>))
+  (setq package-user-dir (concat my-package-directory <span class="org-string">"/"</span>))
 
-  <span style="font-weight: bold; font-style: italic;">;; </span>
+  <span class="org-comment-delimiter">;; </span>
   (package-initialize)
 
   (setq my-packages
@@ -130,30 +130,30 @@ Marmaladeは無効にしています。理由は同じパッケージが同時�
           nrepl
           nrepl-ritz
           ac-nrepl
-          <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">ac-slime</span>
+          <span class="org-comment-delimiter">;;</span><span class="org-comment">ac-slime</span>
           magit
 
           jaunte
           rainbow-delimiters
 
-          <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">window manager by kiwanami</span>
+          <span class="org-comment-delimiter">;; </span><span class="org-comment">window manager by kiwanami</span>
           window-layout
           e2wm
 
           twittering-mode
-          <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">o-blog</span>
+          <span class="org-comment-delimiter">;;</span><span class="org-comment">o-blog</span>
 
           evil
           ))
 
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">cl</span>)
-  (mapcar (<span style="font-weight: bold;">lambda</span> (x)
-            (<span style="font-weight: bold;">when</span> (not (package-installed-p x))
+  (<span class="org-keyword">require</span> '<span class="org-constant">cl</span>)
+  (mapcar (<span class="org-keyword">lambda</span> (x)
+            (<span class="org-keyword">when</span> (not (package-installed-p x))
               (package-install x)))
           my-packages)
 )
 
-(<span style="font-weight: bold;">provide</span> '<span style="font-weight: bold; text-decoration: underline;">mikio-package</span>)
+(<span class="org-keyword">provide</span> '<span class="org-constant">mikio-package</span>)
 </pre>
 </div>
 <p>

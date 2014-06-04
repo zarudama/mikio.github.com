@@ -84,16 +84,16 @@ index 82e93ff..8b0aa33 100644
 --- a/project.clj
 +++ b/project.clj
 @@ -13,7 +13,9 @@
-                  [cuma <span style="font-style: italic;">"0.0.4"</span>]
-                  [clj-gntp <span style="font-style: italic;">"0.0.1"</span>]
+                  [cuma <span class="org-string">"0.0.4"</span>]
+                  [clj-gntp <span class="org-string">"0.0.1"</span>]
                   ; cljs compiler
--                 [org.clojure/clojurescript <span style="font-style: italic;">"0.0-1586"</span>]]
-+                 [org.clojure/clojurescript <span style="font-style: italic;">"0.0-1586"</span>]
-+                 [org.clojure/tools.nrepl <span style="font-style: italic;">"0.2.3"</span>]
+-                 [org.clojure/clojurescript <span class="org-string">"0.0-1586"</span>]]
++                 [org.clojure/clojurescript <span class="org-string">"0.0-1586"</span>]
++                 [org.clojure/tools.nrepl <span class="org-string">"0.2.3"</span>]
 +                 ]
 
-   :plugins [[codox <span style="font-style: italic;">"0.6.4"</span>]
-             [lein-cloverage <span style="font-style: italic;">"1.0.2"</span>]
+   :plugins [[codox <span class="org-string">"0.6.4"</span>]
+             [lein-cloverage <span class="org-string">"1.0.2"</span>]
 diff --git a/samples/blog/_config.clj b/samples/blog/_config.clj
 index e36a47f..0e74f47 100644
 --- a/samples/blog/_config.clj
@@ -107,19 +107,19 @@ index e36a47f..0e74f47 100644
 + :repl-port 42042
 +
   ;; site language
-  ;;   default value: <span style="font-style: italic;">"en"</span>
-  :lang <span style="font-style: italic;">"en"</span>
+  ;;   default value: <span class="org-string">"en"</span>
+  :lang <span class="org-string">"en"</span>
 diff --git a/src/misaki/config.clj b/src/misaki/config.clj
 index 735874d..8865cf6 100644
 --- a/src/misaki/config.clj
 +++ b/src/misaki/config.clj
 @@ -13,6 +13,7 @@
- ;; <span style="font-weight: bold; font-style: italic;">## </span><span style="font-weight: bold; font-style: italic;">Default Value</span>
+ ;; <span class="org-comment-delimiter">## </span><span class="org-comment">Default Value</span>
 
- (def PORT     <span style="font-style: italic;">"Default dev server port."</span> 8080)
-+(def REPL-PORT <span style="font-style: italic;">"Default dev nrepl server port."</span> 42042)
- (def LANGUAGE <span style="font-style: italic;">"Default language."</span>        <span style="font-style: italic;">"en"</span>)
- (def COMPILER <span style="font-style: italic;">"Default compiler."</span>        <span style="font-style: italic;">"default"</span>)
+ (def PORT     <span class="org-string">"Default dev server port."</span> 8080)
++(def REPL-PORT <span class="org-string">"Default dev nrepl server port."</span> 42042)
+ (def LANGUAGE <span class="org-string">"Default language."</span>        <span class="org-string">"en"</span>)
+ (def COMPILER <span class="org-string">"Default compiler."</span>        <span class="org-string">"default"</span>)
  (def POST_FILENAME_REGEXP
 @@ -102,6 +103,7 @@
                          (path template-dir post-dir))
@@ -128,7 +128,7 @@ index 735874d..8865cf6 100644
 +      :repl-port           (:repl-port config REPL-PORT)
        :lang           (:lang config LANGUAGE)
        :site           (:site config {})
-       :index-name     (:index-name config <span style="font-style: italic;">""</span>)
+       :index-name     (:index-name config <span class="org-string">""</span>)
 diff --git a/src/misaki/server.clj b/src/misaki/server.clj
 index d0fee30..03a593b 100644
 --- a/src/misaki/server.clj
@@ -149,32 +149,32 @@ index d0fee30..03a593b 100644
    (binding [*base-dir* (normalize-path dir)]
      (with-config
 -      ; compile all templates at first
-<span style="font-weight: bold;">-</span>      (do-all-compile)
+<span class="org-function-name">-</span>      (do-all-compile)
 -
--      ; compile all only if <span style="font-style: italic;">'--compile'</span> option is specified
-<span style="font-weight: bold;">-</span>      (when-not (contains? (<span style="font-weight: bold;">set</span> args) <span style="font-style: italic;">"--compile"</span>)
-<span style="font-weight: bold;">-</span>        (start-watcher (:template-dir *config*))
-<span style="font-weight: bold;">-</span>        (println <span style="font-style: italic;">" * starting server: "</span>
-<span style="font-weight: bold;">-</span>                 (cyan (str <span style="font-style: italic;">"http://localhost:"</span>
-<span style="font-weight: bold;">-</span>                            (:port *config*)
-<span style="font-weight: bold;">-</span>                            (:url-base *config*))))
-<span style="font-weight: bold;">-</span>        (run-jetty
-<span style="font-weight: bold;">-</span>          (routes (files (:url-base *config*)
+-      ; compile all only if <span class="org-string">'--compile'</span> option is specified
+<span class="org-function-name">-</span>      (when-not (contains? (<span class="org-builtin">set</span> args) <span class="org-string">"--compile"</span>)
+<span class="org-function-name">-</span>        (start-watcher (:template-dir *config*))
+<span class="org-function-name">-</span>        (println <span class="org-string">" * starting server: "</span>
+<span class="org-function-name">-</span>                 (cyan (str <span class="org-string">"http://localhost:"</span>
+<span class="org-function-name">-</span>                            (:port *config*)
+<span class="org-function-name">-</span>                            (:url-base *config*))))
+<span class="org-function-name">-</span>        (run-jetty
+<span class="org-function-name">-</span>          (routes (files (:url-base *config*)
 -                         {:root (:public-dir *config*)}))
 -          {:port (:port *config*)})))))
-+      (<span style="font-weight: bold;">let</span> [repl-port (:repl-port *config*)
++      (<span class="org-builtin">let</span> [repl-port (:repl-port *config*)
 +            repl-server (start-server :port repl-port)]
 +         ;; compile all templates at first
 +         (do-all-compile)
 +
-+         ;; compile all only if <span style="font-style: italic;">'--compile'</span> option is specified
-+         (when-not (contains? (<span style="font-weight: bold;">set</span> args) <span style="font-style: italic;">"--compile"</span>)
++         ;; compile all only if <span class="org-string">'--compile'</span> option is specified
++         (when-not (contains? (<span class="org-builtin">set</span> args) <span class="org-string">"--compile"</span>)
 +           (start-watcher (:template-dir *config*))
-+           (println <span style="font-style: italic;">" * starting server: "</span>
-+                    (cyan (str <span style="font-style: italic;">"http://localhost:"</span>
++           (println <span class="org-string">" * starting server: "</span>
++                    (cyan (str <span class="org-string">"http://localhost:"</span>
 +                               (:port *config*)
 +                               (:url-base *config*))))
-+           (println <span style="font-style: italic;">" * starting nrepl server on port "</span> (cyan repl-port))
++           (println <span class="org-string">" * starting nrepl server on port "</span> (cyan repl-port))
 +           (run-jetty
 +            (routes (files (:url-base *config*)
 +                           {:root (:public-dir *config*)}))

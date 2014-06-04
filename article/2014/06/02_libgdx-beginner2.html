@@ -155,7 +155,7 @@ iPhoneもモデルチェンジ毎に画面サイズが変化しています。
 <p>
 例えば横スクロールアクションを作ったときに、
 Aさんの画面は小さいから敵の動きがところ狭しとなるところが、
-Bさんの端末だと画面が大きいからフィールドが遠くまで見わたせる楽々プレイできる、
+Bさんの端末だと画面が大きいからフィールドが遠くまで見わたせて楽々プレイできる、
 なんてことが発生します。端末によって難易度が変わってくるのです。
 </p>
 
@@ -314,12 +314,12 @@ createメソッド内でカメラを下記のように定義します。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span> <span style="font-weight: bold; font-style: italic;">camera</span>;
+<pre class="src src-java"><span class="org-type">OrthographicCamera</span> <span class="org-variable-name">camera</span>;
 
-<span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
+<span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
   &#65306;
-  camera = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>(800, 480);
+  camera = <span class="org-keyword">new</span> <span class="org-type">OrthographicCamera</span>(800, 480);
   &#65306;
 }
 </pre>
@@ -337,13 +337,13 @@ libGDXのソースコードを見渡しましたが、他に2D用のカメラは
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
     :
   Gdx.gl.glClearColor(1, 0, 0, 1);
-  Gdx.gl.glClear(<span style="font-weight: bold; text-decoration: underline;">GL20</span>.GL_COLOR_BUFFER_BIT);
-  camera.update(); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152; #1</span>
-  batch.setProjectionMatrix(camera.combined); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152; #2</span>
+  Gdx.gl.glClear(<span class="org-constant">GL20</span>.GL_COLOR_BUFFER_BIT);
+  camera.update(); <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152; #1</span>
+  batch.setProjectionMatrix(camera.combined); <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152; #2</span>
   batch.begin();
   sprite.draw(batch);
     :
@@ -396,13 +396,13 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span> <span style="font-weight: bold; font-style: italic;">camera</span>;
-<span style="font-weight: bold; text-decoration: underline;">Viewport</span> <span style="font-weight: bold; font-style: italic;">viewport</span>;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-<span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
+<pre class="src src-java"><span class="org-type">OrthographicCamera</span> <span class="org-variable-name">camera</span>;
+<span class="org-type">Viewport</span> <span class="org-variable-name">viewport</span>;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+<span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
   &#65306;
-  camera = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>(800, 480);
-  viewport = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">FitViewport</span>(800, 480, camera); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+  camera = <span class="org-keyword">new</span> <span class="org-type">OrthographicCamera</span>(800, 480);
+  viewport = <span class="org-keyword">new</span> <span class="org-type">FitViewport</span>(800, 480, camera); <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
   &#65306;
 }
 </pre>
@@ -419,8 +419,8 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">resize</span>(<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">width</span>, <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">height</span>) {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">resize</span>(<span class="org-type">int</span> <span class="org-variable-name">width</span>, <span class="org-type">int</span> <span class="org-variable-name">height</span>) {
     viewport.update(width, height); 
 }
 </pre>
@@ -484,8 +484,8 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">Texture</span> <span style="font-weight: bold; font-style: italic;">bgImg</span>; <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-<span style="font-weight: bold; text-decoration: underline;">Sprite</span> <span style="font-weight: bold; font-style: italic;">bg</span>;     <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+<pre class="src src-java"><span class="org-type">Texture</span> <span class="org-variable-name">bgImg</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+<span class="org-type">Sprite</span> <span class="org-variable-name">bg</span>;     <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
 </pre>
 </div>
 
@@ -494,12 +494,12 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
     :
-   <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-   bgImg = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Texture</span>(<span style="font-style: italic;">"bg.png"</span>);
-   bg = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Sprite</span>(bgImg);
+   <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+   bgImg = <span class="org-keyword">new</span> <span class="org-type">Texture</span>(<span class="org-string">"bg.png"</span>);
+   bg = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(bgImg);
    bg.setScale(2.0f, 2.0f);
    bg.setPosition(-400, -240);
     :
@@ -510,12 +510,12 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
     :
       batch.setProjectionMatrix(camera.combined);
     batch.begin();
-    bg.draw(batch); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+    bg.draw(batch); <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
     sprite.draw(batch);
     sprite2.draw(batch);
     :
@@ -527,8 +527,8 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">dispose</span>() {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
      :
     bgImg.dispose();
 }
@@ -652,7 +652,7 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">glutils</span>.<span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span>;
+<pre class="src src-java"><span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">glutils</span>.<span class="org-type">ShapeRenderer</span>;
 </pre>
 </div>
 
@@ -661,7 +661,7 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span> <span style="font-weight: bold; font-style: italic;">shapeRenderer</span>; <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+<pre class="src src-java"><span class="org-type">ShapeRenderer</span> <span class="org-variable-name">shapeRenderer</span>; <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
 </pre>
 </div>
 
@@ -670,11 +670,11 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
     :
-   <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-   shapeRenderer = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span>();
+   <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+   shapeRenderer = <span class="org-keyword">new</span> <span class="org-type">ShapeRenderer</span>();
     :
 </pre>
 </div>
@@ -683,12 +683,12 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
     :
-  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12527;&#12540;&#12523;&#12489;&#24231;&#27161;&#36600;&#12434;&#25551;&#30011;&#12377;&#12427;&#12290;</span>
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#12527;&#12540;&#12523;&#12489;&#24231;&#27161;&#36600;&#12434;&#25551;&#30011;&#12377;&#12427;&#12290;</span>
   shapeRenderer.setProjectionMatrix(camera.combined);
-  shapeRenderer.begin(<span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span>.<span style="font-weight: bold; text-decoration: underline;">ShapeType</span>.Line);
+  shapeRenderer.begin(<span class="org-constant">ShapeRenderer</span>.<span class="org-constant">ShapeType</span>.Line);
   shapeRenderer.setColor(1, 0, 0, 1);
   shapeRenderer.line(-1024, 0, 1024, 0);
   shapeRenderer.setColor(0, 1, 0, 1);
@@ -703,8 +703,8 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">dispose</span>() {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
      :
    shapeRenderer.dispose();
 }
@@ -744,11 +744,11 @@ X軸を赤、Y軸を緑で描画しています。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
     :
-   camera = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>(800,480);
-   camera.setToOrtho(<span style="font-weight: bold; text-decoration: underline;">false</span>, 800, 480);    <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+   camera = <span class="org-keyword">new</span> <span class="org-type">OrthographicCamera</span>(800,480);
+   camera.setToOrtho(<span class="org-constant">false</span>, 800, 480);    <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
     :
 }
 </pre>
@@ -788,23 +788,23 @@ X軸を赤、Y軸を緑で描画しています。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
-    <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.LEFT)) {
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">pos.x -= 1;            // &#21066;&#38500;</span>
-        camera.position.x -= 2;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+    <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.LEFT)) {
+        <span class="org-comment-delimiter">//</span><span class="org-comment">pos.x -= 1;            // &#21066;&#38500;</span>
+        camera.position.x -= 2;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
     }
-    <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.RIGHT)) {
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">pos.x += 1;            // &#21066;&#38500;</span>
-        camera.position.x += 2;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+    <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.RIGHT)) {
+        <span class="org-comment-delimiter">//</span><span class="org-comment">pos.x += 1;            // &#21066;&#38500;</span>
+        camera.position.x += 2;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
     }
-    <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.UP)) {
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">pos.y += 1;            // &#21066;&#38500;</span>
-        camera.position.y += 2;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+    <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.UP)) {
+        <span class="org-comment-delimiter">//</span><span class="org-comment">pos.y += 1;            // &#21066;&#38500;</span>
+        camera.position.y += 2;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
     }
-    <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.DOWN)) {
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">pos.y -= 1;            // &#21066;&#38500;</span>
-        camera.position.y -= 2;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+    <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.DOWN)) {
+        <span class="org-comment-delimiter">//</span><span class="org-comment">pos.y -= 1;            // &#21066;&#38500;</span>
+        camera.position.y -= 2;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
     }
 </pre>
 </div>
@@ -834,17 +834,17 @@ X軸を赤、Y軸を緑で描画しています。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
   &#65306;
-  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12459;&#12513;&#12521;&#12398;&#24231;&#27161;&#12398;&#25991;&#23383;&#21015;&#12434;&#20316;&#12387;&#12390;</span>
-  String info = String.format(<span style="font-style: italic;">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#12459;&#12513;&#12521;&#12398;&#24231;&#27161;&#12398;&#25991;&#23383;&#21015;&#12434;&#20316;&#12387;&#12390;</span>
+  String info = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
 
 
   batch.setProjectionMatrix(camera.combined);
   batch.begin();
       &#65306;
-  font.draw(batch, info, 0, 20); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+  font.draw(batch, info, 0, 20); <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
       &#65306;
   batch.begin();
 </pre>
@@ -904,7 +904,7 @@ UI専用のカメラを準備して、そのカメラは動かさずにおく。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span> <span style="font-weight: bold; font-style: italic;">uiCamera</span>;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
+<pre class="src src-java"><span class="org-type">OrthographicCamera</span> <span class="org-variable-name">uiCamera</span>;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
 </pre>
 </div>
 
@@ -913,12 +913,12 @@ UI専用のカメラを準備して、そのカメラは動かさずにおく。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
     :
-   <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-   uiCamera = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>();
-   uiCamera.setToOrtho(<span style="font-weight: bold; text-decoration: underline;">false</span>, 800, 480);
+   <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+   uiCamera = <span class="org-keyword">new</span> <span class="org-type">OrthographicCamera</span>();
+   uiCamera.setToOrtho(<span class="org-constant">false</span>, 800, 480);
     :
 </pre>
 </div>
@@ -927,18 +927,18 @@ UI専用のカメラを準備して、そのカメラは動かさずにおく。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
     :
-  <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">font.draw(batch, info, 0, 20);</span>
-  <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">font.draw(batch, "Hello libGDX", 200, 400);</span>
+  <span class="org-comment-delimiter">//</span><span class="org-comment">font.draw(batch, info, 0, 20);</span>
+  <span class="org-comment-delimiter">//</span><span class="org-comment">font.draw(batch, "Hello libGDX", 200, 400);</span>
     :
-  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">render &#12398;&#19968;&#30058;&#26368;&#24460;&#12391;&#25551;&#30011;&#12377;&#12427;&#12371;&#12392;</span>
+  <span class="org-comment-delimiter">// </span><span class="org-comment">render &#12398;&#19968;&#30058;&#26368;&#24460;&#12391;&#25551;&#30011;&#12377;&#12427;&#12371;&#12392;</span>
   uiCamera.update();
       batch.setProjectionMatrix(uiCamera.combined);
   batch.begin();
   font.draw(batch, info, 0, 20);
-  font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
+  font.draw(batch, <span class="org-string">"Hello libGDX"</span>, 200, 400);
   batch.end();
 }
 </pre>
@@ -990,12 +990,12 @@ Desktop版は、ウィンドウなので、初期サイズを変更できます�
 </div>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">DesktopLauncher</span> {
-        <span style="font-weight: bold;">public</span> <span style="font-weight: bold;">static</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">main</span> (<span style="font-weight: bold; text-decoration: underline;">String</span>[] <span style="font-weight: bold; font-style: italic;">arg</span>) {
-                <span style="font-weight: bold; text-decoration: underline;">LwjglApplicationConfiguration</span> <span style="font-weight: bold; font-style: italic;">config</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">LwjglApplicationConfiguration</span>();
-                config.width = 800;  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-                config.height = 480; <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#36861;&#21152;</span>
-                <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">LwjglApplication</span>(<span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">LibGdxSample</span>(), config);
+<pre class="src src-java"><span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">DesktopLauncher</span> {
+        <span class="org-keyword">public</span> <span class="org-keyword">static</span> <span class="org-type">void</span> <span class="org-function-name">main</span> (<span class="org-type">String</span>[] <span class="org-variable-name">arg</span>) {
+                <span class="org-type">LwjglApplicationConfiguration</span> <span class="org-variable-name">config</span> = <span class="org-keyword">new</span> <span class="org-type">LwjglApplicationConfiguration</span>();
+                config.width = 800;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+                config.height = 480; <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
+                <span class="org-keyword">new</span> <span class="org-type">LwjglApplication</span>(<span class="org-keyword">new</span> <span class="org-type">LibGdxSample</span>(), config);
         }
 }
 </pre>
@@ -1034,9 +1034,9 @@ Desktop版は、ウィンドウなので、初期サイズを変更できます�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">if</span> (Gdx.input.isTouched(0)) {
+<pre class="src src-java"><span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
     :
-  <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12394;&#12395;&#12363;&#12398;&#20966;&#29702;</span>
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#12394;&#12395;&#12363;&#12398;&#20966;&#29702;</span>
     :
 }
 </pre>
@@ -1051,8 +1051,8 @@ Desktop版は、ウィンドウなので、初期サイズを変更できます�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">float</span> <span style="font-weight: bold; font-style: italic;">x0</span> = Gdx.input.getX(0);
-<span style="font-weight: bold; text-decoration: underline;">float</span> <span style="font-weight: bold; font-style: italic;">y0</span> = Gdx.input.getY(0);
+<pre class="src src-java"><span class="org-type">float</span> <span class="org-variable-name">x0</span> = Gdx.input.getX(0);
+<span class="org-type">float</span> <span class="org-variable-name">y0</span> = Gdx.input.getY(0);
 </pre>
 </div>
 <p>
@@ -1085,9 +1085,9 @@ x座標は左から右、Y座標は上から下に伸びます。
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">Vector3</span> <span style="font-weight: bold; font-style: italic;">touchPos</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector3</span>();
+<pre class="src src-java"><span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
 touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-camera.unproject(touchPos); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">#1</span>
+camera.unproject(touchPos); <span class="org-comment-delimiter">// </span><span class="org-comment">#1</span>
 targetPos.set(touchPos.x, touchPos.y);
 </pre>
 </div>
@@ -1100,10 +1100,10 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">if</span> (Gdx.input.isTouched(0)) {
-  <span style="font-weight: bold; text-decoration: underline;">Vector3</span> <span style="font-weight: bold; font-style: italic;">touchPos</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector3</span>();
+<pre class="src src-java"><span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
+  <span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
   touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-  camera.unproject(touchPos); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">#1</span>
+  camera.unproject(touchPos); <span class="org-comment-delimiter">// </span><span class="org-comment">#1</span>
   targetPos.set(touchPos.x, touchPos.y);
 }
 </pre>
@@ -1125,7 +1125,7 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">if</span> (Gdx.input.justTouched()) {
+<pre class="src src-java"><span class="org-keyword">if</span> (Gdx.input.justTouched()) {
     sound.play();
 }
 </pre>
@@ -1148,7 +1148,7 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">math</span>.<span style="font-weight: bold; text-decoration: underline;">Vector3</span>;
+<pre class="src src-java"><span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">math</span>.<span class="org-type">Vector3</span>;
 </pre>
 </div>
 
@@ -1157,7 +1157,7 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">Vector2</span> <span style="font-weight: bold; font-style: italic;">targetPos</span>;
+<pre class="src src-java"><span class="org-type">Vector2</span> <span class="org-variable-name">targetPos</span>;
 </pre>
 </div>
 
@@ -1166,31 +1166,31 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.DOWN)) {
+<pre class="src src-java"><span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.DOWN)) {
     pos.y -= 1;
     camera.position.y -= 2;
 }
  :
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#8595;&#36861;&#21152;</span>
-<span style="font-weight: bold;">if</span> (Gdx.input.justTouched()) {
+<span class="org-comment-delimiter">// </span><span class="org-comment">&#8595;&#36861;&#21152;</span>
+<span class="org-keyword">if</span> (Gdx.input.justTouched()) {
      sound.play();
 }
-<span style="font-weight: bold;">if</span> (Gdx.input.isTouched(0)) {
-  <span style="font-weight: bold; text-decoration: underline;">Vector3</span> <span style="font-weight: bold; font-style: italic;">touchPos</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector3</span>();
+<span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
+  <span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
   touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
   camera.unproject(touchPos);
   targetPos.set(touchPos.x, touchPos.y);
 }
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#8593;&#36861;&#21152;</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">&#8593;&#36861;&#21152;</span>
  :
-String info = String.format(<span style="font-style: italic;">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
+String info = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
 </pre>
 </div>
 
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold; text-decoration: underline;">@Override</span>
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
    &#65306;
   pos.lerp(targetPos, 0.2f);
   sprite.setPosition(pos.x, pos.y);
@@ -1231,129 +1231,119 @@ String info = String.format(<span style="font-style: italic;">"cam pos(%f,%f)"</
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span style="font-weight: bold;">package</span> com.zarudama.<span style="font-weight: bold; text-decoration: underline;">libgdxtest</span>;
+<pre class="src src-java"><span class="org-keyword">package</span> com.zarudama.<span class="org-constant">libgdxtest</span>;
 
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">ApplicationAdapter</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">Gdx</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">Input</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">audio</span>.<span style="font-weight: bold; text-decoration: underline;">Music</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">audio</span>.<span style="font-weight: bold; text-decoration: underline;">Sound</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">GL20</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">PerspectiveCamera</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">Camera</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">Texture</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">BitmapFont</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">Sprite</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">g2d</span>.<span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">math</span>.<span style="font-weight: bold; text-decoration: underline;">Vector2</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">math</span>.<span style="font-weight: bold; text-decoration: underline;">Vector3</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">utils</span>.<span style="font-weight: bold; text-decoration: underline;">viewport</span>.<span style="font-weight: bold; text-decoration: underline;">FitViewport</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">utils</span>.<span style="font-weight: bold; text-decoration: underline;">viewport</span>.<span style="font-weight: bold; text-decoration: underline;">FillViewport</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">utils</span>.<span style="font-weight: bold; text-decoration: underline;">viewport</span>.<span style="font-weight: bold; text-decoration: underline;">StretchViewport</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">utils</span>.<span style="font-weight: bold; text-decoration: underline;">viewport</span>.<span style="font-weight: bold; text-decoration: underline;">ScreenViewport</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">utils</span>.<span style="font-weight: bold; text-decoration: underline;">viewport</span>.<span style="font-weight: bold; text-decoration: underline;">ExtendViewport</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">utils</span>.<span style="font-weight: bold; text-decoration: underline;">viewport</span>.<span style="font-weight: bold; text-decoration: underline;">Viewport</span>;
-<span style="font-weight: bold;">import</span> <span style="font-weight: bold; text-decoration: underline;">com</span>.<span style="font-weight: bold; text-decoration: underline;">badlogic</span>.<span style="font-weight: bold; text-decoration: underline;">gdx</span>.<span style="font-weight: bold; text-decoration: underline;">graphics</span>.<span style="font-weight: bold; text-decoration: underline;">glutils</span>.<span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">ApplicationAdapter</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">Gdx</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-type">Input</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">audio</span>.<span class="org-type">Music</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">audio</span>.<span class="org-type">Sound</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">GL20</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">OrthographicCamera</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">PerspectiveCamera</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">Camera</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-type">Texture</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">BitmapFont</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">Sprite</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">g2d</span>.<span class="org-type">SpriteBatch</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">math</span>.<span class="org-type">Vector2</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">math</span>.<span class="org-type">Vector3</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">utils</span>.<span class="org-constant">viewport</span>.<span class="org-type">FitViewport</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">utils</span>.<span class="org-constant">viewport</span>.<span class="org-type">FillViewport</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">utils</span>.<span class="org-constant">viewport</span>.<span class="org-type">StretchViewport</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">utils</span>.<span class="org-constant">viewport</span>.<span class="org-type">ScreenViewport</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">utils</span>.<span class="org-constant">viewport</span>.<span class="org-type">ExtendViewport</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">utils</span>.<span class="org-constant">viewport</span>.<span class="org-type">Viewport</span>;
+<span class="org-keyword">import</span> <span class="org-constant">com</span>.<span class="org-constant">badlogic</span>.<span class="org-constant">gdx</span>.<span class="org-constant">graphics</span>.<span class="org-constant">glutils</span>.<span class="org-type">ShapeRenderer</span>;
 
-<span style="font-weight: bold;">public</span> <span style="font-weight: bold;">class</span> <span style="font-weight: bold; text-decoration: underline;">LibGdxSample</span> <span style="font-weight: bold;">extends</span> <span style="font-weight: bold; text-decoration: underline;">ApplicationAdapter</span> {
-    <span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span> <span style="font-weight: bold; font-style: italic;">batch</span>;
-    <span style="font-weight: bold; text-decoration: underline;">BitmapFont</span> <span style="font-weight: bold; font-style: italic;">font</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Texture</span> <span style="font-weight: bold; font-style: italic;">img</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sprite</span> <span style="font-weight: bold; font-style: italic;">sprite</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sprite</span> <span style="font-weight: bold; font-style: italic;">sprite2</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Vector2</span> <span style="font-weight: bold; font-style: italic;">pos</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sound</span> <span style="font-weight: bold; font-style: italic;">sound</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Music</span> <span style="font-weight: bold; font-style: italic;">music</span>;
-    <span style="font-weight: bold; text-decoration: underline;">float</span> <span style="font-weight: bold; font-style: italic;">angle</span>;
-    <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span> <span style="font-weight: bold; font-style: italic;">camera</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Viewport</span> <span style="font-weight: bold; font-style: italic;">viewport</span>;
+<span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">LibGdxSample</span> <span class="org-keyword">extends</span> <span class="org-type">ApplicationAdapter</span> {
+    <span class="org-type">SpriteBatch</span> <span class="org-variable-name">batch</span>;
+    <span class="org-type">BitmapFont</span> <span class="org-variable-name">font</span>;
+    <span class="org-type">Texture</span> <span class="org-variable-name">img</span>;
+    <span class="org-type">Sprite</span> <span class="org-variable-name">sprite</span>;
+    <span class="org-type">Sprite</span> <span class="org-variable-name">sprite2</span>;
+    <span class="org-type">Vector2</span> <span class="org-variable-name">pos</span>;
+    <span class="org-type">Sound</span> <span class="org-variable-name">sound</span>;
+    <span class="org-type">Music</span> <span class="org-variable-name">music</span>;
+    <span class="org-type">float</span> <span class="org-variable-name">angle</span>;
+    <span class="org-type">OrthographicCamera</span> <span class="org-variable-name">camera</span>;
+    <span class="org-type">Viewport</span> <span class="org-variable-name">viewport</span>;
 
-    <span style="font-weight: bold; text-decoration: underline;">Texture</span> <span style="font-weight: bold; font-style: italic;">bgImg</span>;
-    <span style="font-weight: bold; text-decoration: underline;">Sprite</span> <span style="font-weight: bold; font-style: italic;">bg</span>;
-    <span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span> <span style="font-weight: bold; font-style: italic;">shapeRenderer</span>;
+    <span class="org-type">Texture</span> <span class="org-variable-name">bgImg</span>;
+    <span class="org-type">Sprite</span> <span class="org-variable-name">bg</span>;
+    <span class="org-type">ShapeRenderer</span> <span class="org-variable-name">shapeRenderer</span>;
 
-    <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span> <span style="font-weight: bold; font-style: italic;">uiCamera</span>;
+    <span class="org-type">OrthographicCamera</span> <span class="org-variable-name">uiCamera</span>;
 
-    <span style="font-weight: bold; text-decoration: underline;">Vector2</span> <span style="font-weight: bold; font-style: italic;">targetPos</span>;
+    <span class="org-type">Vector2</span> <span class="org-variable-name">targetPos</span>;
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">create</span> () {
-        batch = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">SpriteBatch</span>();
-        font = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">BitmapFont</span>();
-        img = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Texture</span>(<span style="font-style: italic;">"badlogic.jpg"</span>);
-        sprite = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Sprite</span>(img);
-        sprite2 = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Sprite</span>(img);
-        pos = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector2</span>();
-        sound = Gdx.audio.newSound(Gdx.files.internal(<span style="font-style: italic;">"jump.wav"</span>));
-        music = Gdx.audio.newMusic(Gdx.files.internal(<span style="font-style: italic;">"mixdown.mp3"</span>));
-        music.setLooping(<span style="font-weight: bold; text-decoration: underline;">true</span>);
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">create</span> () {
+        batch = <span class="org-keyword">new</span> <span class="org-type">SpriteBatch</span>();
+        font = <span class="org-keyword">new</span> <span class="org-type">BitmapFont</span>();
+        img = <span class="org-keyword">new</span> <span class="org-type">Texture</span>(<span class="org-string">"badlogic.jpg"</span>);
+        sprite = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img);
+        sprite2 = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img);
+        pos = <span class="org-keyword">new</span> <span class="org-type">Vector2</span>();
+        sound = Gdx.audio.newSound(Gdx.files.internal(<span class="org-string">"jump.wav"</span>));
+        music = Gdx.audio.newMusic(Gdx.files.internal(<span class="org-string">"mixdown.mp3"</span>));
+        music.setLooping(<span class="org-constant">true</span>);
         music.setVolume(0.5f);
         music.play();
 
-        bgImg = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Texture</span>(<span style="font-style: italic;">"bg.png"</span>);
-        bg = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Sprite</span>(bgImg);
+        bgImg = <span class="org-keyword">new</span> <span class="org-type">Texture</span>(<span class="org-string">"bg.png"</span>);
+        bg = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(bgImg);
         bg.setScale(2.0f, 2.0f);
         bg.setPosition(-400, -240);
 
-        camera = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>(800,480);
-        camera.setToOrtho(<span style="font-weight: bold; text-decoration: underline;">false</span>, 800, 480);
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">camera = new PerspectiveCamera();</span>
-        viewport = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">FitViewport</span>(800, 480, camera);
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">viewport = new StretchViewport(800, 480, camera);</span>
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">viewport = new FillViewport(800, 480, camera);</span>
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">viewport = new ScreenViewport(camera);</span>
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">viewport = new ExtendViewport(800, 480, camera);</span>
-        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">camera = new OrthographicCamera(1.67f, 1.0f);</span>
-        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">viewport = new FitViewport(1.67f, 1.0f, camera);</span>
+        camera = <span class="org-keyword">new</span> <span class="org-type">OrthographicCamera</span>(800,480);
+        camera.setToOrtho(<span class="org-constant">false</span>, 800, 480);
+        viewport = <span class="org-keyword">new</span> <span class="org-type">FitViewport</span>(800, 480, camera);
 
-        uiCamera = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">OrthographicCamera</span>();
-        uiCamera.setToOrtho(<span style="font-weight: bold; text-decoration: underline;">false</span>, 800, 480);
+        uiCamera = <span class="org-keyword">new</span> <span class="org-type">OrthographicCamera</span>();
+        uiCamera.setToOrtho(<span class="org-constant">false</span>, 800, 480);
 
-        shapeRenderer = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span>();
+        shapeRenderer = <span class="org-keyword">new</span> <span class="org-type">ShapeRenderer</span>();
 
-        targetPos = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector2</span>();
+        targetPos = <span class="org-keyword">new</span> <span class="org-type">Vector2</span>();
     }
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">resize</span>(<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">width</span>, <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">height</span>) {
-        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Desktop&#29256;&#12391;&#12289;&#12454;&#12451;&#12531;&#12489;&#12454;&#12469;&#12452;&#12474;&#12434;&#22793;&#26356;&#12375;&#12383;&#12392;&#12365;&#12395;</span>
-        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12459;&#12513;&#12521;&#12398;&#12469;&#12452;&#12474;&#12418;&#22793;&#26356;&#12377;&#12427;&#12290;</span>
-        <span style="font-weight: bold; font-style: italic;">//</span><span style="font-weight: bold; font-style: italic;">camera.setToOrtho(false, width, height);</span>
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">resize</span>(<span class="org-type">int</span> <span class="org-variable-name">width</span>, <span class="org-type">int</span> <span class="org-variable-name">height</span>) {
         viewport.update(width, height);
     }
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">render</span> () {
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.LEFT)) {
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.LEFT)) {
             camera.position.x -= 2;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.RIGHT)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.RIGHT)) {
             camera.position.x += 2;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.UP)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.UP)) {
             camera.position.y += 2;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.DOWN)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.DOWN)) {
             camera.position.y -= 2;
         }
-        <span style="font-weight: bold;">if</span> (Gdx.input.justTouched()) {
+        <span class="org-keyword">if</span> (Gdx.input.justTouched()) {
             sound.play();
         }
-                <span style="font-weight: bold;">if</span> (Gdx.input.isTouched(0)) {
-            <span style="font-weight: bold; text-decoration: underline;">Vector3</span> <span style="font-weight: bold; font-style: italic;">touchPos</span> = <span style="font-weight: bold;">new</span> <span style="font-weight: bold; text-decoration: underline;">Vector3</span>();
+                <span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
+            <span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touchPos);
             targetPos.set(touchPos.x, touchPos.y);
         }
-        <span style="font-weight: bold; text-decoration: underline;">String</span> <span style="font-weight: bold; font-style: italic;">info</span> = String.format(<span style="font-style: italic;">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
+        <span class="org-type">String</span> <span class="org-variable-name">info</span> = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
 
-        <span style="font-weight: bold;">if</span> (Gdx.input.isKeyPressed(<span style="font-weight: bold; text-decoration: underline;">Input</span>.<span style="font-weight: bold; text-decoration: underline;">Keys</span>.SPACE)) {
+        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.SPACE)) {
             sound.play();
         }
         pos.lerp(targetPos, 0.2f);
         sprite.setPosition(pos.x, pos.y);
-        sprite.setScale((<span style="font-weight: bold; text-decoration: underline;">float</span>) Math.sin(angle));
+        sprite.setScale((<span class="org-type">float</span>) Math.sin(angle));
         angle += 0.04;
 
         sprite2.setRotation(angle);
@@ -1361,8 +1351,8 @@ String info = String.format(<span style="font-style: italic;">"cam pos(%f,%f)"</
         sprite2.setRotation(angle);
 
         Gdx.gl.glClearColor(1, 0, 0, 1);
-        Gdx.gl.glClear(<span style="font-weight: bold; text-decoration: underline;">GL20</span>.GL_COLOR_BUFFER_BIT);
-        camera.update(); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12527;&#12540;&#12523;&#12489;&#12363;&#12425;&#12473;&#12463;&#12522;&#12540;&#12531;&#12414;&#12391;&#12398;&#12510;&#12488;&#12522;&#12483;&#12463;&#12473;&#12434;&#29983;&#25104;&#12377;&#12427;&#12290;</span>
+        Gdx.gl.glClear(<span class="org-constant">GL20</span>.GL_COLOR_BUFFER_BIT);
+        camera.update(); <span class="org-comment-delimiter">// </span><span class="org-comment">&#12527;&#12540;&#12523;&#12489;&#12363;&#12425;&#12473;&#12463;&#12522;&#12540;&#12531;&#12414;&#12391;&#12398;&#12510;&#12488;&#12522;&#12483;&#12463;&#12473;&#12434;&#29983;&#25104;&#12377;&#12427;&#12290;</span>
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         bg.draw(batch);
@@ -1370,25 +1360,25 @@ String info = String.format(<span style="font-style: italic;">"cam pos(%f,%f)"</
         sprite2.draw(batch);
         batch.end();
 
-        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12527;&#12540;&#12523;&#12489;&#24231;&#27161;&#36600;&#12434;&#25551;&#30011;&#12377;&#12427;&#12290;</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">&#12527;&#12540;&#12523;&#12489;&#24231;&#27161;&#36600;&#12434;&#25551;&#30011;&#12377;&#12427;&#12290;</span>
         shapeRenderer.setProjectionMatrix(camera.combined);
-        shapeRenderer.begin(<span style="font-weight: bold; text-decoration: underline;">ShapeRenderer</span>.<span style="font-weight: bold; text-decoration: underline;">ShapeType</span>.Line);
+        shapeRenderer.begin(<span class="org-constant">ShapeRenderer</span>.<span class="org-constant">ShapeType</span>.Line);
         shapeRenderer.setColor(1, 0, 0, 1);
         shapeRenderer.line(-1024, 0, 1024, 0);
         shapeRenderer.setColor(0, 1, 0, 1);
         shapeRenderer.line(0, -1024, 0, 1024);
         shapeRenderer.end();
 
-        uiCamera.update(); <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">&#12527;&#12540;&#12523;&#12489;&#12363;&#12425;&#12473;&#12463;&#12522;&#12540;&#12531;&#12414;&#12391;&#12398;&#12510;&#12488;&#12522;&#12483;&#12463;&#12473;&#12434;&#29983;&#25104;&#12377;&#12427;&#12290;</span>
+        uiCamera.update(); <span class="org-comment-delimiter">// </span><span class="org-comment">uiCamera&#12434;&#21205;&#12363;&#12373;&#12394;&#12356;&#12398;&#12391;&#12354;&#12428;&#12400;&#12289;&#24517;&#35201;&#12394;&#12356;&#12290;</span>
         batch.setProjectionMatrix(uiCamera.combined);
         batch.begin();
         font.draw(batch, info, 0, 20);
-        font.draw(batch, <span style="font-style: italic;">"Hello libGDX"</span>, 200, 400);
+        font.draw(batch, <span class="org-string">"Hello libGDX"</span>, 200, 400);
         batch.end();
     }
 
-    <span style="font-weight: bold; text-decoration: underline;">@Override</span>
-    <span style="font-weight: bold;">public</span> <span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">dispose</span>() {
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
         sound.dispose();
         music.dispose();
         batch.dispose();

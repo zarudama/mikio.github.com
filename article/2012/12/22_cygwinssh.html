@@ -70,7 +70,7 @@
 OpenSSH_6.1p1, OpenSSL 1.0.1c 10 May 2012
 debug1: Connecting to 192.168.10.2 [192.168.10.2] port 30890.
 debug1: Connection established.
-Could not create directory <span style="font-style: italic;">'/home/mikio/.ssh'</span>.
+Could not create directory <span class="org-string">'/home/mikio/.ssh'</span>.
 </pre>
 </div>
 <p>
@@ -91,7 +91,7 @@ Could not create directory <span style="font-style: italic;">'/home/mikio/.ssh'<
 debug1: Next authentication method: publickey
 debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug1: No more authentication methods to try.
-Permission denied (publickey)<span style="font-weight: bold;">.</span>
+Permission denied (publickey)<span class="org-builtin">.</span>
 </pre>
 </div>
 <p>
@@ -109,10 +109,10 @@ Permission denied (publickey)<span style="font-weight: bold;">.</span>
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">AllowUsers&#12395;&#12518;&#12540;&#12470;&#12434;&#36861;&#21152;</span>
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">AllowUsers&#12395;&#12518;&#12540;&#12470;&#12434;&#36861;&#21152;</span>
 $ sudo vi /etc/ssh/sshd_config
 
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#20877;&#36215;&#21205; </span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">&#20877;&#36215;&#21205; </span>
 $ sudo /etc/init.d/ssh restart
  &#65306;
 debug1: SSH2_MSG_SERVICE_ACCEPT received
@@ -120,7 +120,7 @@ debug1: Authentications that can continue: publickey
 debug1: Next authentication method: publickey
 debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug1: No more authentication methods to try.
-Permission denied (publickey)<span style="font-weight: bold;">.</span>
+Permission denied (publickey)<span class="org-builtin">.</span>
 </pre>
 </div>
 
@@ -164,24 +164,24 @@ debug1: sshd version OpenSSH_5.9p1 Debian-5ubuntu1
 debug1: read PEM private key done: type RSA
 debug1: Checking blacklist file /usr/share/ssh/blacklist.RSA-2048
 debug1: Checking blacklist file /etc/ssh/blacklist.RSA-2048
-debug1: private host key: <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">0 type 1 RSA</span>
+debug1: private host key: <span class="org-comment-delimiter">#</span><span class="org-comment">0 type 1 RSA</span>
 debug1: read PEM private key done: type DSA
 debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
 debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
-debug1: private host key: <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">1 type 2 DSA</span>
+debug1: private host key: <span class="org-comment-delimiter">#</span><span class="org-comment">1 type 2 DSA</span>
 debug1: read PEM private key done: type ECDSA
 debug1: Checking blacklist file /usr/share/ssh/blacklist.ECDSA-256
 debug1: Checking blacklist file /etc/ssh/blacklist.ECDSA-256
-debug1: private host key: <span style="font-weight: bold; font-style: italic;">#</span><span style="font-weight: bold; font-style: italic;">2 type 3 ECDSA</span>
-debug1: <span style="font-weight: bold; font-style: italic;">rexec_argv</span>[0]=<span style="font-style: italic;">'/usr/sbin/sshd'</span>
-debug1: <span style="font-weight: bold; font-style: italic;">rexec_argv</span>[1]=<span style="font-style: italic;">'-d'</span>
+debug1: private host key: <span class="org-comment-delimiter">#</span><span class="org-comment">2 type 3 ECDSA</span>
+debug1: <span class="org-variable-name">rexec_argv</span>[0]=<span class="org-string">'/usr/sbin/sshd'</span>
+debug1: <span class="org-variable-name">rexec_argv</span>[1]=<span class="org-string">'-d'</span>
 Set /proc/self/oom_score_adj from 0 to -1000
 debug1: Bind to port 30890 on 0.0.0.0.
 Server listening on 0.0.0.0 port 30890.
 debug1: Bind to port 30890 on ::.
 Server listening on :: port 30890.
-debug1: Server will not fork when running<span style="font-weight: bold;"> in</span> debugging mode.
-debug1: rexec start<span style="font-weight: bold;"> in</span> 5 out 5 newsock 5 pipe -1 sock 8
+debug1: Server will not fork when running<span class="org-keyword"> in</span> debugging mode.
+debug1: rexec start<span class="org-keyword"> in</span> 5 out 5 newsock 5 pipe -1 sock 8
 debug1: inetd sockets after dupping: 3, 3
 Connection from 192.168.10.229 port 64488
 debug1: Client protocol version 2.0; client software version OpenSSH_6.1
@@ -201,9 +201,9 @@ debug1: SSH2_MSG_NEWKEYS received [preauth]
 debug1: KEX done [preauth]
 debug1: userauth-request for user mikio service ssh-connection method none [preauth]
 debug1: attempt 0 failures 0 [preauth]
-debug1: PAM: initializing for <span style="font-style: italic;">"mikio"</span>
-debug1: PAM: setting PAM_RHOST to <span style="font-style: italic;">"miki-pc.lan"</span>
-debug1: PAM: setting PAM_TTY to <span style="font-style: italic;">"ssh"</span>
+debug1: PAM: initializing for <span class="org-string">"mikio"</span>
+debug1: PAM: setting PAM_RHOST to <span class="org-string">"miki-pc.lan"</span>
+debug1: PAM: setting PAM_TTY to <span class="org-string">"ssh"</span>
 Connection closed by 192.168.10.229 [preauth]
 debug1: do_cleanup [preauth]
 debug1: monitor_read_log: child log fd closed
@@ -229,7 +229,7 @@ debug1: Trying private key: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug3: no such identity: /cygdrive/c/Users/miki/.ssh/id_rsa.whitabase
 debug2: we did not send a packet, disable method
 debug1: No more authentication methods to try.
-Permission denied (publickey)<span style="font-weight: bold;">.</span>
+Permission denied (publickey)<span class="org-builtin">.</span>
 </pre>
 </div>
 <p>

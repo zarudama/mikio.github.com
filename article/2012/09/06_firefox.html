@@ -92,18 +92,18 @@ GreaseMonkeyアドオンをインストールして、下記コードを追加�
 
 <div class="org-src-container">
 
-<pre class="src src-javascript"><span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==UserScript==</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@name        no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@namespace   no-focus</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@version     1</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">@include     http*</span>
-<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">==/UserScript=</span>
-window.addEventListener(<span style="font-style: italic;">'load'</span>,
-<span style="font-weight: bold;">function</span>() {
+<pre class="src src-javascript"><span class="org-comment-delimiter">// </span><span class="org-comment">==UserScript==</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">@name        no-focus</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">@namespace   no-focus</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">@version     1</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">@include     http*</span>
+<span class="org-comment-delimiter">// </span><span class="org-comment">==/UserScript=</span>
+window.addEventListener(<span class="org-string">'load'</span>,
+<span class="org-keyword">function</span>() {
   document.activeElement.blur();
-  <span style="font-weight: bold; text-decoration: underline;">this</span>.removeEventListener(<span style="font-style: italic;">'load'</span>, <span style="font-weight: bold; text-decoration: underline;">arguments</span>.callee, <span style="font-weight: bold; text-decoration: underline;">false</span>);
+  <span class="org-constant">this</span>.removeEventListener(<span class="org-string">'load'</span>, <span class="org-constant">arguments</span>.callee, <span class="org-constant">false</span>);
 },
-<span style="font-weight: bold; text-decoration: underline;">false</span>);
+<span class="org-constant">false</span>);
 </pre>
 </div>
 

@@ -116,11 +116,11 @@ GradleプロジェクトをJDEEの <code>plj.el</code> に変換するスクリ�
 <pre class="src src-sh">     }
  }
 
-+apply from:<span style="font-style: italic;">'jdee.gradle'</span>
++apply from:<span class="org-string">'jdee.gradle'</span>
 
  allprojects {
-     apply plugin: <span style="font-style: italic;">"eclipse"</span>
-     apply plugin: <span style="font-style: italic;">"idea"</span>
+     apply plugin: <span class="org-string">"eclipse"</span>
+     apply plugin: <span class="org-string">"idea"</span>
 </pre>
 </div>
 
@@ -143,22 +143,22 @@ GradleプロジェクトをJDEEの <code>plj.el</code> に変換するスクリ�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(jde-project-file-version <span style="font-style: italic;">"1.0"</span>)
+<pre class="src src-emacs-lisp">(jde-project-file-version <span class="org-string">"1.0"</span>)
 (jde-set-variables
 
- '(jde-jdk (quote (<span style="font-style: italic;">"1.7"</span>)))
+ '(jde-jdk (quote (<span class="org-string">"1.7"</span>)))
  '(jde-jdk-registry (quote (
-                            <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">("1.7" . "c:/Program Files/Java/jdk1.7.0_09/")</span>
-                            (<span style="font-style: italic;">"1.7"</span> . <span style="font-style: italic;">"/usr/lib/jvm/jdk1.7.0/"</span>)
+                            <span class="org-comment-delimiter">;;</span><span class="org-comment">("1.7" . "c:/Program Files/Java/jdk1.7.0_09/")</span>
+                            (<span class="org-string">"1.7"</span> . <span class="org-string">"/usr/lib/jvm/jdk1.7.0/"</span>)
                             )))
- '(jde-jdk-doc-url <span style="font-style: italic;">"http://docs.oracle.com/javase/jp/6/api/"</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">JDK&#12398;javadoc&#12398;URL</span>
- '(jde-help-docsets '((<span style="font-style: italic;">"JDK API"</span> <span style="font-style: italic;">"http://docs.oracle.com/javase/jp/6/api/"</span> nil)
-                      (<span style="font-style: italic;">"libGDX API"</span> <span style="font-style: italic;">"http://libgdx.badlogicgames.com/nightlies/docs/api/"</span> nil)
+ '(jde-jdk-doc-url <span class="org-string">"http://docs.oracle.com/javase/jp/6/api/"</span>) <span class="org-comment-delimiter">;; </span><span class="org-comment">JDK&#12398;javadoc&#12398;URL</span>
+ '(jde-help-docsets '((<span class="org-string">"JDK API"</span> <span class="org-string">"http://docs.oracle.com/javase/jp/6/api/"</span> nil)
+                      (<span class="org-string">"libGDX API"</span> <span class="org-string">"http://libgdx.badlogicgames.com/nightlies/docs/api/"</span> nil)
                       ))
  '(jde-help-use-frames nil)
 
  )
- (setq jde-import-auto-sort t) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">import&#25991;&#25407;&#20837;&#26178;&#12395;&#33258;&#21205;&#12391;&#12477;&#12540;&#12488;</span>
+ (setq jde-import-auto-sort t) <span class="org-comment-delimiter">;; </span><span class="org-comment">import&#25991;&#25407;&#20837;&#26178;&#12395;&#33258;&#21205;&#12391;&#12477;&#12540;&#12488;</span>
 </pre>
 </div>
 <p>

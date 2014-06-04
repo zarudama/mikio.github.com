@@ -81,7 +81,7 @@ touchでダミーファイルを作って、findのnewerオプションと否定
 <div class="org-src-container">
 
 <pre class="src src-sh">$ touch -t 201303030000 /tmp/hoge
-$ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer /tmp/hoge|sort|less
+$ find /usr/local/apache/logs <span class="org-string">\!</span> -newer /tmp/hoge|sort|less
 </pre>
 </div>
 <p>
@@ -89,7 +89,7 @@ $ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer /tmp/hoge|xargs rm
+<pre class="src src-sh">$ find /usr/local/apache/logs <span class="org-string">\!</span> -newer /tmp/hoge|xargs rm
 </pre>
 </div>
 </div>
@@ -147,7 +147,7 @@ tオプションの意味は <code>YYYYMMDDhhmm</code> 。詳細は <code>man to
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">$ find /usr/local/apache/logs <span style="font-style: italic;">\!</span> -newer hoge|sort|less
+<pre class="src src-sh">$ find /usr/local/apache/logs <span class="org-string">\!</span> -newer hoge|sort|less
 </pre>
 </div>
 <p>

@@ -282,7 +282,7 @@ build.propertiesを編集します。 <code>cedet.dir</code>, <code>build.bin.em
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&#32118;&#23550;&#12497;&#12473;&#12391;&#35352;&#36848;&#12377;&#12427;&#12371;&#12392;</span>
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">&#32118;&#23550;&#12497;&#12473;&#12391;&#35352;&#36848;&#12377;&#12427;&#12371;&#12392;</span>
 elib.dir=
 prefix.dir=C:/Users/mikio/Dropbox/site-lisp/jdee
 cedet.dir=
@@ -321,21 +321,21 @@ CEDETとJDEEのビルドができたら下記の設定を.emacsに加えます�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(add-to-list 'load-path <span style="font-style: italic;">"~/site-lisp/jdee/lisp"</span>)
-(load <span style="font-style: italic;">"jde-autoload"</span>)
+<pre class="src src-emacs-lisp">(add-to-list 'load-path <span class="org-string">"~/site-lisp/jdee/lisp"</span>)
+(load <span class="org-string">"jde-autoload"</span>)
 
-(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-jde-mode-hook</span> ()
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">jde</span>)
+(<span class="org-keyword">defun</span> <span class="org-function-name">my-jde-mode-hook</span> ()
+  (<span class="org-keyword">require</span> '<span class="org-constant">jde</span>)
 
-  (setq jde-build-function 'jde-ant-build) <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">&#12499;&#12523;&#12489;&#12395;ant&#12434;&#21033;&#29992;&#12377;&#12427;</span>
-  (setq jde-ant-read-target t)             <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">target&#12434;&#21839;&#12356;&#21512;&#12431;&#12379;&#12427;</span>
-  (setq jde-ant-enable-find t)             <span style="font-weight: bold; font-style: italic;">; </span><span style="font-weight: bold; font-style: italic;">ant&#12395;-find&#12458;&#12503;&#12471;&#12519;&#12531;&#12434;&#25351;&#23450;&#12377;&#12427;(&#35201;&#12425;&#12394;&#12356;&#12363;&#12418;)</span>
+  (setq jde-build-function 'jde-ant-build) <span class="org-comment-delimiter">; </span><span class="org-comment">&#12499;&#12523;&#12489;&#12395;ant&#12434;&#21033;&#29992;&#12377;&#12427;</span>
+  (setq jde-ant-read-target t)             <span class="org-comment-delimiter">; </span><span class="org-comment">target&#12434;&#21839;&#12356;&#21512;&#12431;&#12379;&#12427;</span>
+  (setq jde-ant-enable-find t)             <span class="org-comment-delimiter">; </span><span class="org-comment">ant&#12395;-find&#12458;&#12503;&#12471;&#12519;&#12531;&#12434;&#25351;&#23450;&#12377;&#12427;(&#35201;&#12425;&#12394;&#12356;&#12363;&#12418;)</span>
 
-  <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">complilation&#12496;&#12483;&#12501;&#12449;&#12434;&#33258;&#21205;&#30340;&#12395;&#12473;&#12463;&#12525;&#12540;&#12523;&#12373;&#12379;&#12427;</span>
+  <span class="org-comment-delimiter">;; </span><span class="org-comment">complilation&#12496;&#12483;&#12501;&#12449;&#12434;&#33258;&#21205;&#30340;&#12395;&#12473;&#12463;&#12525;&#12540;&#12523;&#12373;&#12379;&#12427;</span>
   (setq compilation-ask-about-save nil)
   (setq compilation-scroll-output 'first-error)
 
-  (define-key jde-mode-map (kbd <span style="font-style: italic;">"C-c C-v ."</span>) 'jde-complete-minibuf)
+  (define-key jde-mode-map (kbd <span class="org-string">"C-c C-v ."</span>) 'jde-complete-minibuf)
   )
 
 (add-hook 'jde-mode-hook 'my-jde-mode-hook)
@@ -384,34 +384,34 @@ ivyのインストールが終わったら、サンプルプロジェクトを�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(jde-project-file-version <span style="font-style: italic;">"1.0"</span>)
+<pre class="src src-emacs-lisp">(jde-project-file-version <span class="org-string">"1.0"</span>)
 (jde-set-variables
 
- <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">--------------</span>
- <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">project common</span>
- <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">--------------</span>
- '(jde-jdk (quote (<span style="font-style: italic;">"1.7"</span>)))
- '(jde-jdk-registry (quote ((<span style="font-style: italic;">"1.7"</span> . <span style="font-style: italic;">"c:/Program Files/Java/jdk1.7.0_09/"</span>)
+ <span class="org-comment-delimiter">;; </span><span class="org-comment">--------------</span>
+ <span class="org-comment-delimiter">;; </span><span class="org-comment">project common</span>
+ <span class="org-comment-delimiter">;; </span><span class="org-comment">--------------</span>
+ '(jde-jdk (quote (<span class="org-string">"1.7"</span>)))
+ '(jde-jdk-registry (quote ((<span class="org-string">"1.7"</span> . <span class="org-string">"c:/Program Files/Java/jdk1.7.0_09/"</span>)
                             )))
- '(jde-jdk-doc-url <span style="font-style: italic;">"http://docs.oracle.com/javase/jp/6/api/"</span>)
+ '(jde-jdk-doc-url <span class="org-string">"http://docs.oracle.com/javase/jp/6/api/"</span>)
  '(jde-help-docsets '(
-                      <span style="font-weight: bold; font-style: italic;">;;</span><span style="font-weight: bold; font-style: italic;">("JDK API" "file://c:/Users/mikio/Dropbox/java6_ja_apidocs/ja/api" nil)</span>
-                      (<span style="font-style: italic;">"JDK API"</span> <span style="font-style: italic;">"http://docs.oracle.com/javase/jp/6/api/"</span> nil)
+                      <span class="org-comment-delimiter">;;</span><span class="org-comment">("JDK API" "file://c:/Users/mikio/Dropbox/java6_ja_apidocs/ja/api" nil)</span>
+                      (<span class="org-string">"JDK API"</span> <span class="org-string">"http://docs.oracle.com/javase/jp/6/api/"</span> nil)
                       ))
  '(jde-help-use-frames nil)
 
- <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">--------------</span>
- <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">this project only</span>
- <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">--------------</span>
- '(jde-sourcepath (quote (<span style="font-style: italic;">"./src"</span> <span style="font-style: italic;">"./test"</span>)))
- '(jde-global-classpath (quote (<span style="font-style: italic;">"./build/classes"</span> <span style="font-style: italic;">"./build/test"</span> <span style="font-style: italic;">"./lib"</span>)))
- '(jde-lib-directory-names '(<span style="font-style: italic;">"lib"</span>))
+ <span class="org-comment-delimiter">;; </span><span class="org-comment">--------------</span>
+ <span class="org-comment-delimiter">;; </span><span class="org-comment">this project only</span>
+ <span class="org-comment-delimiter">;; </span><span class="org-comment">--------------</span>
+ '(jde-sourcepath (quote (<span class="org-string">"./src"</span> <span class="org-string">"./test"</span>)))
+ '(jde-global-classpath (quote (<span class="org-string">"./build/classes"</span> <span class="org-string">"./build/test"</span> <span class="org-string">"./lib"</span>)))
+ '(jde-lib-directory-names '(<span class="org-string">"lib"</span>))
  '(jde-expand-classpath-p t)
 
  '(jde-build-function (quote jde-ant-build))
  '(jde-ant-enable-find t)
  '(jde-ant-read-target t)
- '(jde-ant-working-directory <span style="font-style: italic;">"./"</span>))
+ '(jde-ant-working-directory <span class="org-string">"./"</span>))
 </pre>
 </div>
 
@@ -495,7 +495,7 @@ BeanShellを起動しておくと、ちょっとしたAPIの挙動を調べる�
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh">bsh % System.out.println(System.getenv().get(<span style="font-style: italic;">"JAVA_HOME"</span>));
+<pre class="src src-sh">bsh % System.out.println(System.getenv().get(<span class="org-string">"JAVA_HOME"</span>));
 C:\Program Files\Java\jdk1.7.0_09
 </pre>
 </div>
@@ -668,10 +668,10 @@ emacserなら当然w3mですよね？ローカルにダウンロードしたAPI�
 
 <div class="org-src-container">
 
-<pre class="src src-emacs-lisp">(<span style="font-weight: bold;">defun</span> <span style="font-weight: bold;">my-jde-mode-hook</span> ()
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">helm-jdee-method</span>) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
-  (<span style="font-weight: bold;">require</span> '<span style="font-weight: bold; text-decoration: underline;">jde</span>)
-  (define-key jde-mode-map (kbd <span style="font-style: italic;">"C-c C-v C-i"</span>) 'helm-jdee-method) <span style="font-weight: bold; font-style: italic;">;; </span><span style="font-weight: bold; font-style: italic;">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+<pre class="src src-emacs-lisp">(<span class="org-keyword">defun</span> <span class="org-function-name">my-jde-mode-hook</span> ()
+  (<span class="org-keyword">require</span> '<span class="org-constant">helm-jdee-method</span>) <span class="org-comment-delimiter">;; </span><span class="org-comment">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
+  (<span class="org-keyword">require</span> '<span class="org-constant">jde</span>)
+  (define-key jde-mode-map (kbd <span class="org-string">"C-c C-v C-i"</span>) 'helm-jdee-method) <span class="org-comment-delimiter">;; </span><span class="org-comment">&#12371;&#12428;&#12434;&#36861;&#21152;</span>
   )
 </pre>
 </div>

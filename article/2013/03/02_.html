@@ -195,7 +195,7 @@ file locks                      (-x) unlimited
 </p>
 <div class="org-src-container">
 
-<pre class="src src-sh"><span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">(open files&#12364;&#35442;&#24403;)</span>
+<pre class="src src-sh"><span class="org-comment-delimiter"># </span><span class="org-comment">(open files&#12364;&#35442;&#24403;)</span>
 $ ulimit -n
 1024
 </pre>
@@ -219,7 +219,7 @@ rootユーザで実行しなくてはならない。
 <div class="org-src-container">
 
 <pre class="src src-sh">$ sudo su
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">ulimit -n 2048</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">ulimit -n 2048</span>
 $ ulimit -n
 2048
 </pre>
@@ -277,9 +277,9 @@ sysctl.confを編集。
 
 <pre class="src src-sh">$ sudo vi /etc/sysctl.conf
 fs.file-max = 1232457
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">FORMAT</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">fs.file-max = N :&#12471;&#12473;&#12486;&#12512;&#20840;&#20307;&#12398;&#12501;&#12449;&#12452;&#12523;&#12487;&#12451;&#12473;&#12463;&#12522;&#12503;&#12479;&#12398;&#19978;&#38480;</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">kernel.threads-max = N :&#12471;&#12473;&#12486;&#12512;&#20840;&#20307;&#12398;&#12503;&#12525;&#12475;&#12473;&#25968;&#12398;&#19978;&#38480;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">FORMAT</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">fs.file-max = N :&#12471;&#12473;&#12486;&#12512;&#20840;&#20307;&#12398;&#12501;&#12449;&#12452;&#12523;&#12487;&#12451;&#12473;&#12463;&#12522;&#12503;&#12479;&#12398;&#19978;&#38480;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">kernel.threads-max = N :&#12471;&#12473;&#12486;&#12512;&#20840;&#20307;&#12398;&#12503;&#12525;&#12475;&#12473;&#25968;&#12398;&#19978;&#38480;</span>
 </pre>
 </div>
 
@@ -333,12 +333,12 @@ limits.confは設定値は、ログインしたユーザのセッション内で
 <pre class="src src-sh">$ sudo vi /etc/security/limits.conf
 mikio soft nofile 2048
 mikio hard nofile 2048
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">FORMAT</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">&lt;USER&gt; &lt;soft|hard&gt; &lt;nofile|noproc&gt; &lt;&#35373;&#23450;&#25968;&gt;</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">soft:&#19968;&#33324;&#12518;&#12540;&#12470;&#12364;&#35373;&#23450;&#21487;&#33021;&#12394;&#19978;&#38480;&#20516;(ulimit -n&#12398;&#12371;&#12392;&#12363;&#12394;&#65311;)</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">hard:&#12523;&#12540;&#12488;&#12518;&#12540;&#12470;&#12364;&#35373;&#23450;&#21487;&#33021;&#12394;&#19978;&#38480;&#20516;</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">nofile: &#12501;&#12449;&#12452;&#12523;&#12487;&#12451;&#12473;&#12463;&#12522;&#12503;&#12479;&#12398;&#19978;&#38480;&#20516;</span>
-<span style="font-weight: bold; font-style: italic;"># </span><span style="font-weight: bold; font-style: italic;">noproc: &#12503;&#12525;&#12475;&#12473;(&#12473;&#12524;&#12483;&#12489;)&#12398;&#19978;&#38480;&#20516;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">FORMAT</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">&lt;USER&gt; &lt;soft|hard&gt; &lt;nofile|noproc&gt; &lt;&#35373;&#23450;&#25968;&gt;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">soft:&#19968;&#33324;&#12518;&#12540;&#12470;&#12364;&#35373;&#23450;&#21487;&#33021;&#12394;&#19978;&#38480;&#20516;(ulimit -n&#12398;&#12371;&#12392;&#12363;&#12394;&#65311;)</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">hard:&#12523;&#12540;&#12488;&#12518;&#12540;&#12470;&#12364;&#35373;&#23450;&#21487;&#33021;&#12394;&#19978;&#38480;&#20516;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">nofile: &#12501;&#12449;&#12452;&#12523;&#12487;&#12451;&#12473;&#12463;&#12522;&#12503;&#12479;&#12398;&#19978;&#38480;&#20516;</span>
+<span class="org-comment-delimiter"># </span><span class="org-comment">noproc: &#12503;&#12525;&#12475;&#12473;(&#12473;&#12524;&#12483;&#12489;)&#12398;&#19978;&#38480;&#20516;</span>
 </pre>
 </div>
 <p>
