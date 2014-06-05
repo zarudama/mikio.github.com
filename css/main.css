@@ -308,11 +308,11 @@ pre code {
 }
 .org-function-name {
   /* font-lock-function-name-face */
-  color: #0000ff;
+  color: #3B64C4;
 }
 .org-keyword {
   /* font-lock-keyword-face */
-  color: #a020f0;
+  color: #E8DA13;
 }
 .org-string {
   /* font-lock-string-face */
