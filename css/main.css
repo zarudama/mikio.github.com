@@ -11,7 +11,7 @@ body, p {
     /* font-family: 'Hiragino Kaku Gothic ProN', Meiryo, 'VL ゴシック', 'MS PGothic', Sans-serif; */
 font-family: 'Helvetica Neue', 'Helvetica', 'Univers', 'Arial', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'VL ゴシック','MS PGothic', sans-serif;
     line-height: 1.6em;
-    word-break:break-all;
+    word-break:normal;
 }
 
 a {
@@ -155,9 +155,27 @@ hr + p {
     color: #444;
 }
 
+/* social buttons */
+.social-buttons {
+    margin-top: 2em;
+    border-top: 1px solid #eaeaea;
+}
+.social-buttons ul { margin: 10px 0 0 30px; padding: 0; list-style: none;  }
+.social-buttons ul li { display: block; margin-right: 10px; }
+.social-buttons .pocket-btn {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    _display: inline;
+}
+.twitter {
+    width: 90px;
+    overflow-x: hidden;
+}
+
 /* tag style */
 .tag {
-    margin-top: 2em;
+    margin-top: 0em;
     border-top: 1px solid #eaeaea;
 }
 .tag ul { margin: 10px 0 0 30px; padding: 0; list-style: none;  }

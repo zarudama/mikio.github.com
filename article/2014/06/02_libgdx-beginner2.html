@@ -53,7 +53,7 @@
 
         <div class="article-header">
   <div class="title">
-  <h1><a href="">libGDX入門 その2 カメラとビューポート</a></h1>
+    <h1><a href="">libGDX入門 その2 カメラとビューポート</a></h1>
   </div>
   <p class="date">2014/6/02</p>
 </div>
@@ -90,6 +90,7 @@
 <li><a href="#sec-11">11. おわりに</a></li>
 <li><a href="#sec-12">12. 参考URL</a></li>
 <li><a href="#sec-13">13. 参考書籍</a></li>
+<li><a href="#sec-14">14. 変更履歴</a></li>
 </ul>
 </div>
 </div>
@@ -338,7 +339,7 @@ libGDXのソースコードを見渡しましたが、他に2D用のカメラは
 <div class="org-src-container">
 
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
     :
   Gdx.gl.glClearColor(1, 0, 0, 1);
   Gdx.gl.glClear(<span class="org-constant">GL20</span>.GL_COLOR_BUFFER_BIT);
@@ -511,7 +512,7 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 <div class="org-src-container">
 
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
     :
       batch.setProjectionMatrix(camera.combined);
     batch.begin();
@@ -684,7 +685,7 @@ libGDXは、OpenGLを直接操作する低レイヤのメソッドも用意し�
 <div class="org-src-container">
 
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
     :
   <span class="org-comment-delimiter">// </span><span class="org-comment">&#12527;&#12540;&#12523;&#12489;&#24231;&#27161;&#36600;&#12434;&#25551;&#30011;&#12377;&#12427;&#12290;</span>
   shapeRenderer.setProjectionMatrix(camera.combined);
@@ -789,7 +790,7 @@ X軸を赤、Y軸を緑で描画しています。
 <div class="org-src-container">
 
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
     <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.LEFT)) {
         <span class="org-comment-delimiter">//</span><span class="org-comment">pos.x -= 1;            // &#21066;&#38500;</span>
         camera.position.x -= 2;  <span class="org-comment-delimiter">// </span><span class="org-comment">&#36861;&#21152;</span>
@@ -835,7 +836,7 @@ X軸を赤、Y軸を緑で描画しています。
 <div class="org-src-container">
 
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
   &#65306;
   <span class="org-comment-delimiter">// </span><span class="org-comment">&#12459;&#12513;&#12521;&#12398;&#24231;&#27161;&#12398;&#25991;&#23383;&#21015;&#12434;&#20316;&#12387;&#12390;</span>
   String info = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
@@ -928,7 +929,7 @@ UI専用のカメラを準備して、そのカメラは動かさずにおく。
 <div class="org-src-container">
 
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
     :
   <span class="org-comment-delimiter">//</span><span class="org-comment">font.draw(batch, info, 0, 20);</span>
   <span class="org-comment-delimiter">//</span><span class="org-comment">font.draw(batch, "Hello libGDX", 200, 400);</span>
@@ -1096,6 +1097,14 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 
 <p>
+2013/06/19 追記
+カメラだけを使用している場合は、 <code>Camera#unproject()</code> メソッドで良いのですが、
+Viewportクラスを使用している場合は、 <code>Viewport#unproject()</code> メソッドを使用する必要があります。
+今回は、Viewportクラスを使用しているので、 <code>Viewport#unproject()</code> を使用しなければなりません。
+説明はこのままにしておきますが、ソースコードの方は訂正してあります。 
+</p>
+
+<p>
 この処理を <code>if</code> で囲ってあげれば判定処理の出来あがりです。
 </p>
 <div class="org-src-container">
@@ -1144,7 +1153,7 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 
 <p>
-インポート
+インポート。
 </p>
 <div class="org-src-container">
 
@@ -1166,35 +1175,31 @@ targetPos.set(touchPos.x, touchPos.y);
 </p>
 <div class="org-src-container">
 
-<pre class="src src-java"><span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.DOWN)) {
-    pos.y -= 1;
-    camera.position.y -= 2;
-}
- :
-<span class="org-comment-delimiter">// </span><span class="org-comment">&#8595;&#36861;&#21152;</span>
-<span class="org-keyword">if</span> (Gdx.input.justTouched()) {
-     sound.play();
-}
-<span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
-  <span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
-  touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-  camera.unproject(touchPos);
-  targetPos.set(touchPos.x, touchPos.y);
-}
-<span class="org-comment-delimiter">// </span><span class="org-comment">&#8593;&#36861;&#21152;</span>
- :
-String info = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
-</pre>
-</div>
-
-<div class="org-src-container">
-
 <pre class="src src-java"><span class="org-c-annotation">@Override</span>
-<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
-   &#65306;
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
+     &#65306;
+  <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.DOWN)) {
+      pos.y -= 1;
+      camera.position.y -= 2;
+  }
+     :
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#8595;&#36861;&#21152;</span>
+  <span class="org-keyword">if</span> (Gdx.input.justTouched()) {
+       sound.play();
+  }
+  <span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
+    <span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
+    touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
+    camera.unproject(touchPos);
+    targetPos.set(touchPos.x, touchPos.y);
+  }
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#8593;&#36861;&#21152;</span>
+  <span class="org-type">String</span> <span class="org-variable-name">info</span> = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#8595;&#36861;&#21152;</span>
   pos.lerp(targetPos, 0.2f);
   sprite.setPosition(pos.x, pos.y);
-   &#65306;
+  <span class="org-comment-delimiter">// </span><span class="org-comment">&#8593;&#36861;&#21152;</span>
+     &#65306;
 }
 </pre>
 </div>
@@ -1314,7 +1319,7 @@ String info = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, ca
     }
 
     <span class="org-c-annotation">@Override</span>
-    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span> () {
+    <span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">render</span>() {
         <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.LEFT)) {
             camera.position.x -= 2;
         }
@@ -1330,17 +1335,14 @@ String info = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, ca
         <span class="org-keyword">if</span> (Gdx.input.justTouched()) {
             sound.play();
         }
-                <span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
+        <span class="org-keyword">if</span> (Gdx.input.isTouched(0)) {
             <span class="org-type">Vector3</span> <span class="org-variable-name">touchPos</span> = <span class="org-keyword">new</span> <span class="org-type">Vector3</span>();
             touchPos.set(Gdx.input.getX(), Gdx.input.getY(), 0);
-            camera.unproject(touchPos);
+            viewport.unproject(touchPos);
             targetPos.set(touchPos.x, touchPos.y);
         }
         <span class="org-type">String</span> <span class="org-variable-name">info</span> = String.format(<span class="org-string">"cam pos(%f,%f)"</span>, camera.position.x, camera.position.y);
 
-        <span class="org-keyword">if</span> (Gdx.input.isKeyPressed(<span class="org-constant">Input</span>.<span class="org-constant">Keys</span>.SPACE)) {
-            sound.play();
-        }
         pos.lerp(targetPos, 0.2f);
         sprite.setPosition(pos.x, pos.y);
         sprite.setScale((<span class="org-type">float</span>) Math.sin(angle));
@@ -1448,7 +1450,43 @@ libGDXの解説ではないけれど、その思想は当然libGDXにも引き�
 <div style="clear:both;"></div>
 </div>
 </div>
+
+<div id="outline-container-sec-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> 変更履歴</h2>
+<div class="outline-text-2" id="text-14">
+<ul class="org-ul">
+<li>2014/06/19 タッチ座標の取得方法に問題があったの訂正
+</li>
+</ul>
+</div>
+</div>
   <footer class="article-footer">
+    <nav class="social-buttons">
+      <ul>
+        <li class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li class="hatebu">
+          <a href="http://b.hatena.ne.jp/entry/"
+             class="hatena-bookmark-button"
+             data-hatena-bookmark-layout="standard-balloon"
+             data-hatena-bookmark-lang="ja"
+             data-hatena-bookmark-title="libGDX入門 その2 カメラとビューポート"
+             title="このエントリーをはてなブックマークに追加">
+            <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png"
+                 alt="このエントリーをはてなブックマークに追加"
+                 width="20" height="20" style="border: none;" /></a>
+            <script type="text/javascript"
+                    src="http://b.st-hatena.com/js/bookmark_button.js"
+                    charset="utf-8" async="async"></script>
+        </li>
+        <li class="pocket">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+          <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </li>
+      </ul>
+    </nav>
     <nav class="tag">
       <ul>
                 <li><span><a href="/tag/libGDX.html">libGDX</a></span></li>
@@ -1458,6 +1496,7 @@ libGDXの解説ではないけれど、その思想は当然libGDXにも引き�
     </nav>
     <nav>
       <ul class="pager">
+                <li class="prev"><a href="/article/2014/06/19_libgdx-beginner3.html">&laquo;&nbsp;libGDX入門 その3 ログ出力とアニメーション</a></li>
         
         &nbsp;&nbsp;
                 <li class="next"><a href="/article/2014/06/01_cask.html">Caskの導入と設定ファイルの棚卸し&nbsp;&raquo;</a></li>

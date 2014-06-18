@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive pricing table.">
-    <title>jvmの初期ヒープサイズ|ざる魂</title>
+    <title>JVMのヒープサイズと変更方法|ざる魂</title>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/css/main-grid-old-ie.css">
@@ -53,19 +53,37 @@
 
         <div class="article-header">
   <div class="title">
-  <h1><a href="">jvmの初期ヒープサイズ</a></h1>
+    <h1><a href="">JVMのヒープサイズと変更方法</a></h1>
   </div>
   <p class="date">2014/3/25</p>
 </div>
 
 <div class="content">
-  <p>
-jvmは、サーバーモードで起動しているのか、クライアントモードで起動しているかで、
+  <div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. JVMの初期ヒープサイズ</a></li>
+<li><a href="#sec-2">2. JVMの稼動時のヒープサイズ</a></li>
+<li><a href="#sec-3">3. ヒープサイズの変更方法</a></li>
+<li><a href="#sec-4">4. 参考</a></li>
+</ul>
+</div>
+</div>
+<p>
+稼動中のJVMのヒープサイズを知りたくなることは良くあるのでその方法。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> JVMの初期ヒープサイズ</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+JVMは、サーバーモードで起動しているのか、クライアントモードで起動しているかで、
 初期割り当てのヒープサイズが異なる。
 </p>
 
 <p>
-サーバーモードなのかクライアントモードなのかは、実行ユーザにて、下記コマンドで確認できる。<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
+サーバーモードなのかクライアントモードなのかは、実行ユーザにて、下記コマンドで確認できる。
 </p>
 <div class="org-src-container">
 
@@ -102,24 +120,208 @@ Severモードの場合は、 <code>Server</code> の表記があるはず。
 </tr>
 </tbody>
 </table>
+<ul class="org-ul">
+<li><a href="http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html">http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> JVMの稼動時のヒープサイズ</h2>
+<div class="outline-text-2" id="text-2">
 <p>
-<a href="http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html">http://docs.oracle.com/javase/jp/6/technotes/guides/vm/gc-ergonomics.html</a>
+JVMの使用しているヒープの量を調べる(以降、すべてOracleJava)。
 </p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ sudo jstat -gc 28905
+ S0C    S1C    S0U    S1U      EC       EU        OC         OU       PC     PU    YGC     YGCT    FGC    FGCT     GCT
+127552.0 137152.0  0.0   68410.3 224000.0 107742.6  996736.0   113947.3  61440.0 61324.8      7    1.323   1      0.045    1.368
+</pre>
+</div>
+
+<p>
+割りあてられた容量を見るには、*Cのサイフィックス、使用量を見るには、*Uのサフィックスに着目する(単位はKb)。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="right"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="left"/>
+
+<col class="right"/>
+
+<col class="right"/>
+
+<col class="right"/>
+
+<col class="right"/>
+
+<col class="right"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="left">S0C</td>
+<td class="left">S1C</td>
+<td class="right">S0U</td>
+<td class="left">S1U</td>
+<td class="left">EC</td>
+<td class="left">EU</td>
+<td class="left">OC</td>
+<td class="left">OU</td>
+<td class="left">PC</td>
+<td class="left">PU</td>
+<td class="right">YGC</td>
+<td class="right">YGCT</td>
+<td class="right">FGC</td>
+<td class="right">FGCT</td>
+<td class="right">GCT</td>
+</tr>
+
+<tr>
+<td class="left">127,552.0</td>
+<td class="left">137,152.0</td>
+<td class="right">0.0</td>
+<td class="left">68,410.3</td>
+<td class="left">224,000.0</td>
+<td class="left">107,742.6</td>
+<td class="left">996,736.0</td>
+<td class="left">113,947.3</td>
+<td class="left">61,440.0</td>
+<td class="left">61,324.8</td>
+<td class="right">7</td>
+<td class="right">1.323</td>
+<td class="right">1</td>
+<td class="right">0.045</td>
+<td class="right">1.368</td>
+</tr>
+</tbody>
+</table>
+
+<pre class="example">
+容量(概算)
+S0C + S1C + EC + OC + PC = 127 + 137 + 224 + 996
+</pre>
+<p>
+この場合、ヒープ領域の合計は、約1,484MBとなる。
+</p>
+
+<p>
+ここで注意が必要なのは、ヒープ領域はnew演算子で割りあてられる領域であるということ。
+</p>
+
+<p>
+プログラムがロードされる領域であるPermanent領域は、
+ヒープ領域とは別に管理される場所なので注意が必要。
+上記の場合、Permanent領域は、PCの61MBとなる。
+(Permanent領域のデフォルトサイズは、64MB)
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> ヒープサイズの変更方法</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+ヒープ領域は、次のオプションで変更できる。
+</p>
+
+<p>
+例)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">-Xms1024m -Xmx1024m
+</pre>
+</div>
+
+<p>
+上記オプションには、プログラム格納用の領域のPermanet領域は割り当てられないので注意が必要である。
+Permanet領域はデフォルトで64MBのようなので、プログラムサイズが足りないときは増やす必要がある。
+この値は、次のオプションで変更できる。
+</p>
+
+<p>
+例)
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">-XX:<span class="org-variable-name">MaxPermSize</span>=128m
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 参考</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html">http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html</a>
+</li>
+<li><a href="http://www.hitachi.co.jp/Prod/comp/soft1/manual/cosmi/v0900/03Y0401D/EY040134.HTM#ID00610">http://www.hitachi.co.jp/Prod/comp/soft1/manual/cosmi/v0900/03Y0401D/EY040134.HTM#ID00610</a>
+</li>
+<li><a href="http://nori3tsu.hatenablog.com/entry/2014/01/11/144927">http://nori3tsu.hatenablog.com/entry/2014/01/11/144927</a>
+</li>
+</ul>
+</div>
+</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
-java 1.5以降のはなし
+OracleJava 1.5以降のはなし
 </p></div>
 
 
 </div>
 </div>
   <footer class="article-footer">
+    <nav class="social-buttons">
+      <ul>
+        <li class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li class="hatebu">
+          <a href="http://b.hatena.ne.jp/entry/"
+             class="hatena-bookmark-button"
+             data-hatena-bookmark-layout="standard-balloon"
+             data-hatena-bookmark-lang="ja"
+             data-hatena-bookmark-title="JVMのヒープサイズと変更方法"
+             title="このエントリーをはてなブックマークに追加">
+            <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png"
+                 alt="このエントリーをはてなブックマークに追加"
+                 width="20" height="20" style="border: none;" /></a>
+            <script type="text/javascript"
+                    src="http://b.st-hatena.com/js/bookmark_button.js"
+                    charset="utf-8" async="async"></script>
+        </li>
+        <li class="pocket">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+          <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </li>
+      </ul>
+    </nav>
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/jvm.html">jvm</a></span></li>
+                <li><span><a href="/tag/JVM.html">JVM</a></span></li>
                 <li><span><a href="/tag/java.html">java</a></span></li>
         
       </ul>

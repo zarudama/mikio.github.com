@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>libGDX入門 その3 ログ出力とアニメーション</title>
+        <link href="http://mikio.github.io/article/2014/06/19_libgdx-beginner3.html" />
+        <updated>2014-06-19T00:00:00</updated>
+        <id>http://mikio.github.io/article/2014/06/19_libgdx-beginner3.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>libGDX入門 その2 カメラとビューポート</title>
         <link href="http://mikio.github.io/article/2014/06/02_libgdx-beginner2.html" />
         <updated>2014-06-02T00:00:00</updated>
@@ -36,7 +43,7 @@
         <content type="html"></content>
     </entry>
         <entry>
-        <title>libGDX入門その1</title>
+        <title>libGDX入門 その1</title>
         <link href="http://mikio.github.io/article/2014/05/04_libgdx-beginner.html" />
         <updated>2014-05-04T00:00:00</updated>
         <id>http://mikio.github.io/article/2014/05/04_libgdx-beginner.html</id>
@@ -64,7 +71,7 @@
         <content type="html"></content>
     </entry>
         <entry>
-        <title>jvmの初期ヒープサイズ</title>
+        <title>JVMのヒープサイズと変更方法</title>
         <link href="http://mikio.github.io/article/2014/03/25_jvm_mem.html" />
         <updated>2014-03-25T00:00:00</updated>
         <id>http://mikio.github.io/article/2014/03/25_jvm_mem.html</id>
