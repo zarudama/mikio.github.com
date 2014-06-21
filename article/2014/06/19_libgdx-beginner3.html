@@ -500,16 +500,13 @@ libGDXには直接関係ありませんが、わかりづらいところかも�
 <div class="org-src-container">
 
 <pre class="src src-java">leftButton = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img, 0, 16*2, 16*3, 16*2);
-rightButton = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img, 0, 16*2, 16*3, 16*2);
+rightButton = <span class="org-keyword">new</span> <span class="org-type">Sprite</span>(img, 16*3, 16*2, 16*3, 16*2);
 leftButton.setPosition(8, 0);
 rightButton.setPosition(8 + 16*3, 0);
-leftButton.setScale(-1, 1);
 </pre>
 </div>
 <p>
 左下に表示させるべく、16ドットを1マスとして計算しています。
-テクスチャとして用意した画像は、右方向のみなので、 
-<code>leftButton</code> は <code>Sprite#setScale()</code> メソッドで左右反転しています。
 </p>
 
 <p>
@@ -1066,12 +1063,9 @@ UIカメラを使って描画しています。
 <h2 id="sec-8"><span class="section-number-2">8</span> おわりに</h2>
 <div class="outline-text-2" id="text-8">
 <p>
-今回は、ログ出力とスプライトアニメーションの方法を学びました。
+今回は、ログ出力とスプライトアニメーション、そしてバーチャルパッドの方法を学びました。
 次回は、画面遷移について解説します。
-</p>
-
-<p>
-もしかしたら、その前にUVスクロールの記事書くかも。
+もしかしたら、ゲームっぽいものに仕上げるかも知れないです。
 </p>
 </div>
 </div>
