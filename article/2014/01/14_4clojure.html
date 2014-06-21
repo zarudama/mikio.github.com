@@ -235,13 +235,14 @@ false
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> For the win 【forの使いかた】</h2>
 <div class="outline-text-2" id="text-2">
 <pre class="example">
 #145
-Difficulty:     Elementary
-Topics: core-functions seqs
+Difficulty:	Elementary
+Topics:	core-functions seqs
 
 Clojure's for macro is a tremendously versatile mechanism 
 for producing a sequence based on some other sequence(s).
@@ -254,16 +255,16 @@ how each of them produces the same result.
 <div class="org-src-container">
 
 <pre class="src src-clojure">(= __ (for [x (range 40)
-            :when (= 1 (rem x 4))]
-        x))
+	    :when (= 1 (rem x 4))]
+	x))
 
 (= __ (for [x (iterate #(+ 4 %) 0)
-            :let [z (inc x)]
-            :while (&lt; z 40)]
-        z))
+	    :let [z (inc x)]
+	    :while (&lt; z 40)]
+	z))
 
 (= __ (for [[x y] (partition 2 (range 20))]
-        (+ x y)))
+	(+ x y)))
 </pre>
 </div>
 
@@ -320,13 +321,14 @@ user&gt; (map inc (filter #(= 0 (rem % 4)) (range 40)))
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><span class="section-number-2">3</span> Logical falsity and truth【真偽について】</h2>
 <div class="outline-text-2" id="text-3">
 <pre class="example">
 #152
-Difficulty:     Elementary
-Topics: logic
+Difficulty:	Elementary
+Topics:	logic
 
 In Clojure, only nil and false represent the values 
  of logical falsity in conditional tests -
@@ -359,13 +361,14 @@ clojureでは、falseとnilだけが偽。それ以外は全て真。
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4"><span class="section-number-2">4</span> Subset and Superset【重量】</h2>
 <div class="outline-text-2" id="text-4">
 <pre class="example">
 #162
-Difficulty:     Elementary
-Topics: set-theory
+Difficulty:	Elementary
+Topics:	set-theory
 
 Set A is a subset of set B, or equivalently B is a superset of A,
  if A is "contained" inside B. A and B may coincide.
@@ -425,12 +428,13 @@ BがAのsupersetとなり、AはBのsubsetとなる。
 </pre>
 </div>
 </div>
+
 <div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5"><span class="section-number-2">5</span> Map Defaults</h2>
 <div class="outline-text-2" id="text-5">
 <pre class="example">
-Difficulty:     Elementary
-Topics: seqs
+Difficulty:	Elementary
+Topics:	seqs
 #156
 
 When retrieving values from a map,
@@ -470,20 +474,21 @@ However, what if you want the map itself to contain
 </div>
 
 
+
 <div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6"><span class="section-number-2">6</span> Lists: conj【重要】</h2>
 <div class="outline-text-2" id="text-6">
 <pre class="example">
 #5
-Difficulty:     Elementary
-Topics: 
+Difficulty:	Elementary
+Topics:	
 
 When operating on a list, the conj function will return
  a new list with one or more items "added" to the front.
-test not run    
+test not run	
 
 (= __ (conj '(2 3 4) 1))
-test not run    
+test not run	
 
 (= __ (conj '(3 4) 2 1))
 </pre>
@@ -527,14 +532,15 @@ user&gt; (cons 1 2 '(2 3))
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-7" class="outline-2">
 <h2 id="sec-7"><span class="section-number-2">7</span> Intro to Vectors【重要】</h2>
 <div class="outline-text-2" id="text-7">
 <pre class="example">
 #6
 Intro to VectorsSolutions
-Difficulty:     Elementary
-Topics: 
+Difficulty:	Elementary
+Topics:	
 Vectors can be constructed several ways. You can compare them with lists.
 test not run
 </pre>
@@ -629,6 +635,7 @@ REPLではtrueになるのになぜ？
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-8" class="outline-2">
 <h2 id="sec-8"><span class="section-number-2">8</span> Vectors :conj【重要】</h2>
 <div class="outline-text-2" id="text-8">
@@ -645,6 +652,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-9" class="outline-2">
 <h2 id="sec-9"><span class="section-number-2">9</span> Intro to Sets【重要】</h2>
 <div class="outline-text-2" id="text-9">
@@ -687,6 +695,7 @@ union関数はふたつのsetを合成するものかな。
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-10" class="outline-2">
 <h2 id="sec-10"><span class="section-number-2">10</span> Sets: conj【重要】</h2>
 <div class="outline-text-2" id="text-10">
@@ -718,6 +727,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-11" class="outline-2">
 <h2 id="sec-11"><span class="section-number-2">11</span> Intro to Maps</h2>
 <div class="outline-text-2" id="text-11">
@@ -738,6 +748,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-12" class="outline-2">
 <h2 id="sec-12"><span class="section-number-2">12</span> Maps: conj</h2>
 <div class="outline-text-2" id="text-12">
@@ -758,6 +769,7 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-13" class="outline-2">
 <h2 id="sec-13"><span class="section-number-2">13</span> Intro to Sequences</h2>
 <div class="outline-text-2" id="text-13">
@@ -770,6 +782,7 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-14" class="outline-2">
 <h2 id="sec-14"><span class="section-number-2">14</span> Sequences: rest</h2>
 <div class="outline-text-2" id="text-14">
@@ -785,6 +798,7 @@ Mapにconjするにはキーと値のペアのベクタを渡す。
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-15" class="outline-2">
 <h2 id="sec-15"><span class="section-number-2">15</span> Intro to Functions【重要】</h2>
 <div class="outline-text-2" id="text-15">
@@ -802,6 +816,7 @@ partial関数ってなに？初見だ。
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-16" class="outline-2">
 <h2 id="sec-16"><span class="section-number-2">16</span> Double Down</h2>
 <div class="outline-text-2" id="text-16">
@@ -825,7 +840,6 @@ partial関数ってなに？初見だ。
 </div>
 </div>
 </div>
-
 <div id="outline-container-sec-17" class="outline-2">
 <h2 id="sec-17"><span class="section-number-2">17</span> Hello World</h2>
 <div class="outline-text-2" id="text-17">
@@ -850,6 +864,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-18" class="outline-2">
 <h2 id="sec-18"><span class="section-number-2">18</span> Sequences: map【重要】</h2>
 <div class="outline-text-2" id="text-18">
@@ -863,7 +878,6 @@ Do not confuse the map function with the map data structure.
 </div>
 </div>
 </div>
-
 <div id="outline-container-sec-19" class="outline-2">
 <h2 id="sec-19"><span class="section-number-2">19</span> Sequences: filter【重要】</h2>
 <div class="outline-text-2" id="text-19">
@@ -879,6 +893,7 @@ of all the items of s for which (f item) returns true.
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-20" class="outline-2">
 <h2 id="sec-20"><span class="section-number-2">20</span> #35 Local bindings</h2>
 <div class="outline-text-2" id="text-20">
@@ -899,6 +914,7 @@ test not run
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-21" class="outline-2">
 <h2 id="sec-21"><span class="section-number-2">21</span> #37 Regular Expressions</h2>
 <div class="outline-text-2" id="text-21">
@@ -921,6 +937,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-22" class="outline-2">
 <h2 id="sec-22"><span class="section-number-2">22</span> #64 Intro to Reduce</h2>
 <div class="outline-text-2" id="text-22">
@@ -950,6 +967,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-23" class="outline-2">
 <h2 id="sec-23"><span class="section-number-2">23</span> #57 Simple Recursion【難しい】</h2>
 <div class="outline-text-2" id="text-23">
@@ -977,6 +995,7 @@ true
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-24" class="outline-2">
 <h2 id="sec-24"><span class="section-number-2">24</span> S#71 Rearranging Code: -&gt;【重要】</h2>
 <div class="outline-text-2" id="text-24">
@@ -1008,6 +1027,7 @@ Using -&gt; can sometimes make your code more readable.
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-25" class="outline-2">
 <h2 id="sec-25"><span class="section-number-2">25</span> #68 Recurring Theme</h2>
 <div class="outline-text-2" id="text-25">
@@ -1023,7 +1043,7 @@ Recur must be called from the tail-position, and calling it elsewhere will resul
 
 (= __
   (loop [x 5
-         result []]
+	 result []]
     (if (&gt; x 0)
       (recur (dec x) (conj result (+ 2 x)))
       result)))
@@ -1031,6 +1051,7 @@ Recur must be called from the tail-position, and calling it elsewhere will resul
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-26" class="outline-2">
 <h2 id="sec-26"><span class="section-number-2">26</span> S#72 Rearranging Code: -&gt;&gt;【重要】</h2>
 <div class="outline-text-2" id="text-26">
@@ -1059,6 +1080,7 @@ test not run
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-27" class="outline-2">
 <h2 id="sec-27"><span class="section-number-2">27</span> Last Element【難しい】</h2>
 <div class="outline-text-2" id="text-27">
@@ -1093,6 +1115,7 @@ true
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-28" class="outline-2">
 <h2 id="sec-28"><span class="section-number-2">28</span> #20 Penultimate Element【難しい】</h2>
 <div class="outline-text-2" id="text-28">

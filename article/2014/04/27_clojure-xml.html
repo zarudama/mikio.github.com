@@ -131,6 +131,7 @@ xmlのデータが画面に表示されると、場合によってはスクロ�
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-2" class="outline-2">
 <h2 id="sec-2"><span class="section-number-2">2</span> xml-seq</h2>
 <div class="outline-text-2" id="text-2">
@@ -175,6 +176,7 @@ user&gt; (for [x (xml-seq (xml-parse xml-doc2)) :when (= :child (:tag x))] (:nam
 </div>
 </div>
 </div>
+
 <div id="outline-container-sec-3" class="outline-2">
 <h2 id="sec-3"><span class="section-number-2">3</span> xml-zip</h2>
 <div class="outline-text-2" id="text-3">
@@ -192,7 +194,7 @@ user&gt; (zip/xml-zip (xml-seq (xml-parse xml-doc)))
       {:tag :child,
        :attrs nil,
        :content [
-          " hello "]}]}
+	  " hello "]}]}
   {:tag :child,
    :attrs nil,
    :content [
@@ -209,6 +211,7 @@ zipperとは、ツリー構造を扱うためのライブラリっぽい。
 </ul>
 </div>
 </div>
+
 <div id="outline-container-sec-4" class="outline-2">
 <h2 id="sec-4"><span class="section-number-2">4</span> XPATH</h2>
 <div class="outline-text-2" id="text-4">
@@ -220,6 +223,7 @@ zipperとは、ツリー構造を扱うためのライブラリっぽい。
 </p>
 </div>
 </div>
+
 <div id="outline-container-sec-5" class="outline-2">
 <h2 id="sec-5"><span class="section-number-2">5</span> 参考</h2>
 <div class="outline-text-2" id="text-5">

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive pricing table.">
-    <title>python window tiler を試す|ざる魂</title>
+    <title>apt-cygがうまくいかなくなった。|ざる魂</title>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/css/main-grid-old-ie.css">
@@ -53,106 +53,124 @@
 
         <div class="article-header">
   <div class="title">
-    <h1><a href="">python window tiler を試す</a></h1>
+    <h1><a href="">apt-cygがうまくいかなくなった。</a></h1>
   </div>
-  <p class="date">2013/1/29</p>
+  <p class="date">2014/6/20</p>
 </div>
 
 <div class="content">
-  <p>
-<a href="http://www.lifehacker.jp/2013/01/130120mykids_command_line.html">この記事</a> にxmonadがでてきたので、自分が普段使っているWindowsでもタイル
-型マネージャを使いたくなった。実は以前にも何度か試したことがあったが、
-どれもキーバインドが好みでなかったり動作が不安定だったりで、いまいち納
-得のいくものがなかったので、使っていなかったのだ。でもその時から大分時
-間も経ってるので、最近は何かないかなと調べたところPythonで実装されたそ
-の名もずばり「Python-windows-tiler」というものを見つけた。
+  <div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> はじめに</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Cygwinには、非公式で、apt-cygというパッケージ管理システムがあります。
+これは、ubuntuでいう <code>apt-get</code> のようなものです。標準のsetup.exeはGUIベースで
+操作が面倒なので、apt-cygを導入すると非常に捗ります。
+</p>
+
+<p>
+そんなapt-cygですが、最近は更新が滞ってるらしく、最新のCygwinではうまく動きません。
 </p>
 
 <ul class="org-ul">
-<li><a href="https://github.com/Tzbob/python-windows-tiler">https://github.com/Tzbob/python-windows-tiler</a>
+<li>2013/08にリポジトリパスの変更があった
 </li>
-<li><a href="http://d.hatena.ne.jp/uhiaha888/20121125/1353824257">http://d.hatena.ne.jp/uhiaha888/20121125/1353824257</a>
+<li>それに伴い、apt-cygが動かなくなった。
+</li>
+<li>さらに2013/10時点で、リポジトリ内のアーカイブ内のフォーマットの変更もあった模様
+</li>
+<li>tar.bz2から、tar.xzなどに変更になった模様。詳細は不明。
+</li>
+<li>インストールできるパッケージとできないパッケージが発生。
+</li>
+<li>上記変更点をサポートするapt-cygは以下(本家はメンテされていない。。。)
+<ul class="org-ul">
+<li><a href="https://github.com/zship/apt-cyg">https://github.com/zship/apt-cyg</a>
+</li>
+</ul>
 </li>
 </ul>
 
 <p>
-使用方法は簡単で、バイナリを解凍してPWT.exeを実行するだけだが、パスに日
-本語を含むとエラーになるのでルートに解凍するのが良いと思う。
+といった感じです。
 </p>
+
 
 <p>
-キーバインディングはAwesomeなどと似ている。ただ、Altキーを使用するので
-Emacsとキーバインディングが被ってしまうのでconfig.iniを開き、altを全て
-winにしてPWT.exeを再起動した。
+私のCygwin。ちなみに32bit版です。
 </p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ uname -r
+<span class="org-function-name">1.7.25</span>(0.270/5/3)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 対応方法</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+対応方法が沢山公開されていますが、自分は下記の方法でうまくいきました。
+</p>
+<ul class="org-ul">
+<li><a href="http://qiita.com/DQNEO/items/f49d5a534eee6c3352a8">http://qiita.com/DQNEO/items/f49d5a534eee6c3352a8</a>
+</li>
+</ul>
 
 <p>
-これでとりあえずEmacsとのキーバインディングの回避ができた。めでたしめで
-たし、と思ったのだが、Win+Lキーでウィンドウの横幅を広げようとしたらロッ
-ク画面になってしまう。。。
+本家の(svn版) <code>apt-cyg</code> を改良する。
 </p>
+<div class="org-src-container">
+
+<pre class="src src-diff"><span class="org-diff-header">--- </span><span class="org-diff-header"><span class="org-diff-file-header">apt-cyg.orig        2013-08-06 03:24:45.062574000 +0900</span></span>
+<span class="org-diff-header">+++ </span><span class="org-diff-header"><span class="org-diff-file-header">apt-cyg     2013-08-06 03:22:53.877214600 +0900</span></span>
+<span class="org-diff-hunk-header">@@ -95,14 +95,14 @@</span>
+<span class="org-diff-context">   then</span>
+<span class="org-diff-context">     touch setup.ini</span>
+<span class="org-diff-context">     mv setup.ini setup.ini-save</span>
+<span class="org-diff-indicator-removed">-</span><span class="org-diff-removed">    wget -N $mirror/setup.bz2</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">    wget -N $mirror/x86_64/setup.bz2</span>
+<span class="org-diff-context">     if test -e setup.bz2 &amp;&amp; test $? -eq 0</span>
+<span class="org-diff-context">     then</span>
+<span class="org-diff-context">       bunzip2 setup.bz2</span>
+<span class="org-diff-context">       mv setup setup.ini</span>
+<span class="org-diff-context">       echo Updated setup.ini</span>
+<span class="org-diff-context">     else</span>
+<span class="org-diff-indicator-removed">-</span><span class="org-diff-removed">      wget -N $mirror/setup.ini</span>
+<span class="org-diff-indicator-added">+</span><span class="org-diff-added">      wget -N $mirror/x86_64/setup.ini</span>
+<span class="org-diff-context">       if test -e setup.ini &amp;&amp; test $? -eq 0</span>
+<span class="org-diff-context">       then</span>
+<span class="org-diff-context">         echo Updated setup.ini</span>
+</pre>
+</div>
 
 <p>
-てことでWin+Lを無効化する方法を模索したけど、結局どれもうまくいかなかっ
-たので横幅操作は封印することにした。てか、Winを使用するコンビネーション
-キーはどれもWindowsに奪われてしまってうまくイカナイ。。。とはいえ、Win
-キー経由でタイル操作はとても使いやすい。多様する操作はこれ。
+その後、下記のとおりupdate
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<div class="org-src-container">
 
-
-<colgroup>
-<col  class="left" />
-
-<col  class="left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="left">Win+SPC</td>
-<td class="left">ウィンドウレイアウトの変更</td>
-</tr>
-
-<tr>
-<td class="left">Win+j, Win+k</td>
-<td class="left">ALT+TABの代りになる</td>
-</tr>
-
-<tr>
-<td class="left">Win+S+Ent</td>
-<td class="left">プライマリの切替</td>
-</tr>
-
-<tr>
-<td class="left">Win+数字キー</td>
-<td class="left">仮想デスクトップの切替</td>
-</tr>
-
-<tr>
-<td class="left">Win+S+数字キー</td>
-<td class="left">カレントアプリを仮想デスクトップへ移動</td>
-</tr>
-</tbody>
-</table>
+<pre class="src src-sh">$ apt-cyg -m http://ftp.jaist.ac.jp/pub/cygwin update
+</pre>
+</div>
 
 <p>
-特にWin+j,kがイイ!
+apt-cyg内に直接 <code>x86</code> を足しているので、リポジトリの指定は、cygwinまでのパスで良い。
 </p>
+</div>
+</div>
 
-<p>
-自宅のUbuntu環境ではStumpWMを使用していたが、これはEmacserにはなじみの
-あるキー操作なんだけど(Screen系のプリフィックスキーのあるやつ)、それが
-逆に操作の混乱を生んでしまう。というのもの、自分の場合デスクトップの
-emacsでは <code>windows.el</code> を使用し、端末ではtmuxを使用してるので、タイル型
-ウィンドウマネージャのキーバインドにプレフィックスを使用すると混乱する
-のだ。それにデスクトップのウィンドウ操作はできるだけすばやくしたいので
-Screen系のStumpWMよりAwesome系のほうがサクサク操作できる。以上から自分
-にはAwesome系の操作体系のほうが向いているような気がした。
-</p>
-
-<p>
-ということで、Ubuntuではxmonadをもう一度使ってみようと思う。
-</p>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 参考</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><a href="http://wiki.livedoor.jp/kou1okada/d/apt-cyg">http://wiki.livedoor.jp/kou1okada/d/apt-cyg</a>
+</li>
+</ul>
+</div>
+</div>
   <footer class="article-footer">
     <nav class="social-buttons">
       <ul>
@@ -165,7 +183,7 @@ Screen系のStumpWMよりAwesome系のほうがサクサク操作できる。以
              class="hatena-bookmark-button"
              data-hatena-bookmark-layout="standard-balloon"
              data-hatena-bookmark-lang="ja"
-             data-hatena-bookmark-title="python window tiler を試す"
+             data-hatena-bookmark-title="apt-cygがうまくいかなくなった。"
              title="このエントリーをはてなブックマークに追加">
             <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png"
                  alt="このエントリーをはてなブックマークに追加"
@@ -182,17 +200,17 @@ Screen系のStumpWMよりAwesome系のほうがサクサク操作できる。以
     </nav>
     <nav class="tag">
       <ul>
-                <li><span><a href="/tag/windows.html">windows</a></span></li>
-                <li><span><a href="/tag/xmonad.html">xmonad</a></span></li>
+                <li><span><a href="/tag/cygwin.html">cygwin</a></span></li>
+                <li><span><a href="/tag/tmux.html">tmux</a></span></li>
         
       </ul>
     </nav>
     <nav>
       <ul class="pager">
-                <li class="prev"><a href="/article/2013/02/16_org-mode.html">&laquo;&nbsp;org-modeの段落の改行を削除したい</a></li>
+                <li class="prev"><a href="/article/2014/06/21_cygwin-tmux.html">&laquo;&nbsp;cygwinにtmuxを導入</a></li>
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2013/01/06_cygwintmux.html">cygwin経由で表示したtmuxの分割罫線が表示崩れする&nbsp;&raquo;</a></li>
+                <li class="next"><a href="/article/2014/06/19_libgdx-beginner3.html">libGDX入門 その3 ログ出力とアニメーションとバーチャルパッド&nbsp;&raquo;</a></li>
         
       </ul>
     </nav>
