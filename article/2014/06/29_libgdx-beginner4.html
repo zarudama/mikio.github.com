@@ -55,7 +55,7 @@
   <div class="title">
     <h1><a href="">libGDX入門 その4 画面遷移</a></h1>
   </div>
-  <p class="date">2014/6/22</p>
+  <p class="date">2014/6/29</p>
 </div>
 
 <div class="content">
@@ -73,7 +73,8 @@
 </li>
 <li><a href="#sec-5">5. ゲームっぽい何か</a>
 <ul>
-<li><a href="#sec-5-1">5.1. アセットの管理について</a></li>
+<li><a href="#sec-5-1">5.1. ソースコードについて</a></li>
+<li><a href="#sec-5-2">5.2. アセットの管理について</a></li>
 </ul>
 </li>
 <li><a href="#sec-6">6. おわりに</a></li>
@@ -245,7 +246,7 @@ libGDXのライフサイクルと呼びだしメソッドの関係は以下の�
 </p>
 
 <p>
-Screenインタフェイスについては、ライフサイクルを確認いたいため、 <code>MyScreenAdapter</code> クラスという
+Screenインタフェイスについては、ライフサイクルを確認したいため、 <code>MyScreenAdapter</code> クラスという
 デフォルト実装クラスを用意し、各メソッドでログを出力することにします。
 </p>
 
@@ -518,7 +519,8 @@ screens around or dispose of them when another screen is set.
 </div>
 
 <p>
-ゲームのプログラムは、ほとんどが今まで説明してきたテクニックでつくられてます。
+ゲームのプログラムは、ほとんどが今まで説明してきたlibGDXのテクニックでつくられてます。
+libGDXとは関係ない部分で解説の必要なところもあるかもしれませんが、本筋でないので今回は解説しません。
 </p>
 
 <p>
@@ -538,7 +540,11 @@ screens around or dispose of them when another screen is set.
 <code>nekoBoudns</code> と <code>fishBounds</code> は、 <code>Rectangle</code> クラスで、それぞれキャラクタの矩形情報です。
 <code>Rectangle#overlaps()</code> メソッドを呼ぶことで、2つの矩形が重なりあっているかを判定できます。
 </p>
+</div>
 
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> ソースコードについて</h3>
+<div class="outline-text-3" id="text-5-1">
 <p>
 今回は、ソースコードが4ファイルになってしまったため、コピペは大変だろうということで
 githubに載せることにしました。
@@ -557,10 +563,11 @@ githubに載せることにしました。
 いろいろ工夫の余地はあると思うので、今後改善していきたいと思います。
 </p>
 </div>
+</div>
 
-<div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1"><span class="section-number-3">5.1</span> アセットの管理について</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> アセットの管理について</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
 今回実装したゲームは非常にシンプルで、Assetsファイルも数えるほどしかありませので、
 画像やサウンドの読み込みは、単純に読みこむだけでした。
