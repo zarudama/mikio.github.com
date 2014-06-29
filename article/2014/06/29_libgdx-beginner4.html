@@ -77,8 +77,8 @@
 <li><a href="#sec-5-2">5.2. アセットの管理について</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">6. おわりに</a></li>
-<li><a href="#sec-7">7. ゲーム中のフォントについて</a></li>
+<li><a href="#sec-6">6. ゲーム中のフォントについて</a></li>
+<li><a href="#sec-7">7. おわりに</a></li>
 <li><a href="#sec-8">8. 参考書籍</a></li>
 </ul>
 </div>
@@ -476,8 +476,7 @@ screens around or dispose of them when another screen is set.
 <h2 id="sec-5"><span class="section-number-2">5</span> ゲームっぽい何か</h2>
 <div class="outline-text-2" id="text-5">
 <p>
-さて、長い説明が終ってやっとゲームの説明です
-(といっても非常に単純なものですが)。
+さて、長い説明が終わってやっとゲームの説明です(といっても非常に単純なものですが)。
 内容は、上から落ちてくる魚を取るだけのゲームです。
 </p>
 
@@ -569,38 +568,28 @@ githubに載せることにしました。
 <h3 id="sec-5-2"><span class="section-number-3">5.2</span> アセットの管理について</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
-今回実装したゲームは非常にシンプルで、Assetsファイルも数えるほどしかありませので、
-画像やサウンドの読み込みは、単純に読みこむだけでした。
+今回実装したゲームのアセットファイルは数えるほどしかありませんので、
+画像やサウンドの読み込みは、単純に読み込むだけでした。
 </p>
 
 <p>
-ゲームの種類によっては、沢山の資産を駆使しなければならない場合もあるでしょう。
-そんなときは、libGDXの <code>AssetManager</code> クラスを使うとよさそうです。
-非同期読み込みや依存管理、キャッシュの管理など便利な機能を多く実装しているようです。
+ゲームの種類によっては、沢山のアセットを駆使しなければならない場合もあるでしょう。
+そんなときは、libGDXの <code>AssetManager</code> クラスを使うのが良さそうです。
+</p>
+<ul class="org-ul">
+<li><a href="https://github.com/libgdx/libgdx/wiki/Managing-your-assets">https://github.com/libgdx/libgdx/wiki/Managing-your-assets</a>
+</li>
+</ul>
+<p>
+非同期読み込みや依存管理、キャッシュの管理など便利な機能を多く実装しているようですね。
 </p>
 </div>
 </div>
 </div>
 
 <div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> おわりに</h2>
+<h2 id="sec-6"><span class="section-number-2">6</span> ゲーム中のフォントについて</h2>
 <div class="outline-text-2" id="text-6">
-<p>
-次回予定している内容は、
-</p>
-<ul class="org-ul">
-<li>ゲームデータの保存
-</li>
-</ul>
-<p>
-です。
-</p>
-</div>
-</div>
-
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> ゲーム中のフォントについて</h2>
-<div class="outline-text-2" id="text-7">
 <p>
 ゲーム中のフォントは、gebsite様の「Fantasy Gezone」フォントを利用させていただきました。
 ありがとうございます。
@@ -611,6 +600,22 @@ githubに載せることにしました。
 <li><a href="http://www.gebsite.org/font/fantasygezone.html">http://www.gebsite.org/font/fantasygezone.html</a>
 </li>
 </ul>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> おわりに</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+次回予定している内容は、
+</p>
+<ul class="org-ul">
+<li>ゲームデータの保存
+</li>
+</ul>
+<p>
+です。
+</p>
 </div>
 </div>
 
