@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>libGDX入門 その4 画面遷移</title>
+        <link href="http://mikio.github.io/article/2014/06/22_libgdx-beginner4.html" />
+        <updated>2014-06-22T00:00:00</updated>
+        <id>http://mikio.github.io/article/2014/06/22_libgdx-beginner4.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>cygwinにtmuxを導入</title>
         <link href="http://mikio.github.io/article/2014/06/21_cygwin-tmux.html" />
         <updated>2014-06-21T00:00:00</updated>

@@ -329,7 +329,7 @@ Gdx.app.debug(<span class="org-string">"MyTag"</span>, <span class="org-string">
 </p>
 
 <p>
-スプライトアニメさせるためには、専用のクラスを準備します。
+スプライトをアニメーションさせるには、 <code>Animation</code> クラスを使用します。
 今回は、走りモーションと待機モーションが2種類あり、左右分用意するため、
 合計4種類のアニメーションが必要になります。
 </p>
@@ -364,8 +364,11 @@ animIdleLeft = <span class="org-keyword">new</span> <span class="org-type">Anima
 stateTime = 0; <span class="org-comment-delimiter">// </span><span class="org-comment">#5</span>
 </pre>
 </div>
+
 <p>
 <code>TextureRegion</code> クラスは、ある一枚のテクスチャの一部の矩形情報をもったオブジェクトです。
+テクスチャにひとつの画像しかない場合は、 <code>Texutre</code> オブジェクトをそのまま利用しますが、
+今回のように1枚の画像にいろいろな画像を詰めこんである場合は、 <code>TexutreRegion</code> オブジェクトを利用します。
 <code>TextureRegion</code> にアニメーションの1コマ1コマを格納し、その <code>TextureRegion</code> を描画することで
 アニメーションさせます。
 </p>
@@ -384,7 +387,9 @@ TextureRegion の2次元配列を取得します。同時にその2次元配列�
 </p>
 
 <p>
-<code>Animeation</code> クラスは、アニメーション情報を保持するオブジェクトです。コンストラクタの第一引数に各コマの秒数、
+<code>Animeation</code> クラスは、アニメーション情報を保持するオブジェクトです。
+アニメーション情報とは、どのコマ(画像)を、何秒間表示させるか、といった情報です。
+コンストラクタの第一引数に各コマの秒数、
 第二引数以降には、そのアニメーションを構成する <code>TextureRegin</code> オブジェクトを可変引数として渡します。
 <code>#4</code> の場合は、3コマを0.1秒ごとに切り替えるアニメで、先に生成したsplitからそれぞれのコマを指定します。
 </p>
@@ -396,7 +401,8 @@ TextureRegion の2次元配列を取得します。同時にその2次元配列�
 <p>
 以上で準備できました。
 あとは、猫の状態に応じて(右を向いてるのか左を向いてるのか、止っているのか、走っているのかなど)、
-適切な <code>Animation</code> オブジェクトを選択して下記のように描画します。
+適切な <code>Animation</code> オブジェクトを選択し、そのAnimationオブジェクトが
+指し示す <code>TextureRegion</code> オブジェクトを描画します。
 </p>
 <div class="org-src-container">
 
@@ -981,7 +987,7 @@ UIカメラを使って描画しています。
         shapeRenderer.line(0, -1024, 0, 1024);
         shapeRenderer.end();
 
-        <span class="org-comment-delimiter">// </span><span class="org-comment">&#12466;&#12540;&#12512;&#12459;&#12513;&#12521;&#12475;&#12483;&#12488;&#12450;&#12483;&#12503;</span>
+        <span class="org-comment-delimiter">// </span><span class="org-comment">UI&#12459;&#12513;&#12521;&#12475;&#12483;&#12488;&#12450;&#12483;&#12503;</span>
         uiCamera.update();
         batch.setProjectionMatrix(uiCamera.combined);
 
@@ -1068,7 +1074,8 @@ UIカメラを使って描画しています。
 <h2 id="sec-8"><span class="section-number-2">8</span> おわりに</h2>
 <div class="outline-text-2" id="text-8">
 <p>
-今回は、ログ出力とスプライトアニメーション、そしてバーチャルパッドの方法を学びました。
+今回は、「 ログ出力」と「スプライトアニメーション」、
+そして「バーチャルパッドの作り方」を学びました。
 次回は、画面遷移について解説します。
 もしかしたら、ゲームっぽいものに仕上げるかも知れないです。
 </p>
