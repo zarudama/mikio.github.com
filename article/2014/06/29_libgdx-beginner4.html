@@ -66,20 +66,28 @@
 <li><a href="#sec-1">1. はじめに</a></li>
 <li><a href="#sec-2">2. ライフサイクルについて</a></li>
 <li><a href="#sec-3">3. 画面遷移</a></li>
-<li><a href="#sec-4">4. Screenインタフェイスの説明</a>
+<li><a href="#sec-4">4. Screenインタフェイス</a>
 <ul>
-<li><a href="#sec-4-1">4.1. Screenインタフェイス利用時の注意点</a></li>
+<li><a href="#sec-4-1">4.1. show()とhide()</a></li>
+<li><a href="#sec-4-2">4.2. dispose()</a></li>
 </ul>
 </li>
-<li><a href="#sec-5">5. ゲームっぽい何か</a>
+<li><a href="#sec-5">5. dispose()の方法</a>
 <ul>
-<li><a href="#sec-5-1">5.1. ソースコードについて</a></li>
-<li><a href="#sec-5-2">5.2. アセットの管理について</a></li>
+<li><a href="#sec-5-1">5.1. その1 hide() で解放する</a></li>
+<li><a href="#sec-5-2">5.2. その2 Game#dispose() で全て解放する</a></li>
+<li><a href="#sec-5-3">5.3. その3 Game クラスを拡張する</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">6. ゲーム中のフォントについて</a></li>
-<li><a href="#sec-7">7. おわりに</a></li>
-<li><a href="#sec-8">8. 参考書籍</a></li>
+<li><a href="#sec-6">6. ゲームっぽい何か</a>
+<ul>
+<li><a href="#sec-6-1">6.1. ソースコードについて</a></li>
+<li><a href="#sec-6-2">6.2. アセットの管理について</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7. ゲーム中のフォントについて</a></li>
+<li><a href="#sec-8">8. おわりに</a></li>
+<li><a href="#sec-9">9. 参考書籍</a></li>
 </ul>
 </div>
 </div>
@@ -181,7 +189,7 @@ libGDXのライフサイクルと呼びだしメソッドの関係は以下の�
 ライフサイクルに関する情報は下記が非常に詳しいです。一読をお勧めします。
 </p>
 <ul class="org-ul">
-<li><a href="http://doc.tir.ne.jp/devel/clan/libgdx#%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB">http://doc.tir.ne.jp/devel/clan/libgdx#%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B5%E3%82%A4%E3%82%AF%E3%83%AB</a>
+<li><a href="http://doc.tir.ne.jp/devel/clan/libgdx#%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%2595%25E3%2582%25B5%25E3%2582%25A4%25E3%2582%25AF%25E3%2583%25AB">clan libGDXメモ</a>
 </li>
 </ul>
 <p>
@@ -284,16 +292,30 @@ Screenインタフェイスについては、ライフサイクルを確認し�
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Screenインタフェイスの説明</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Screenインタフェイス</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-<code>Screen</code> インタフェイスは、画面ごとに実装する必要があるインタフェイスです。
-実装すべきメソッドのほとんどは <code>ApplicationListener</code> と共通で、
-違うのは <code>show()</code> メソッドと <code>hide()</code> メソッドだけです。
+画面遷移がある場合は、画面ごとに <code>Screen</code> インタフェイスを実装します。
+実装すべきメソッドのほとんどは <code>ApplicationListener</code> と共通です。
 ライフサイクルについても、 <code>ApplicationListener</code> とほぼ同じです。
+<code>Screen</code> では、 <code>create()</code> メソッドがなくなり、
+変わりに <code>show()</code> メソッドと <code>hide()</code> メソッドが追加されました。
 ただし、 <code>dispose()</code> メソッドは、名前は同じでも扱いが少し違うので注意が必要です(後述します)。
+ここでは、下記3つのメソッドについて解説します。
 </p>
+<ul class="org-ul">
+<li>show()
+</li>
+<li>hide()
+</li>
+<li>dispose()
+</li>
+</ul>
+</div>
 
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> show()とhide()</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
 <code>show()</code> メソッドは、画面切り替え開始時に1度だけ呼ばれます。
 <code>hide()</code> メソッドは、画面切り替え終了時に1度だけ呼ばれます。
@@ -344,16 +366,76 @@ Screenインタフェイスについては、ライフサイクルを確認し�
 <li>次の画面の <code>Screen#resize()</code>
 </li>
 </ol>
+
+<p>
+以上から、 <code>show()</code> メソッドは初期化処理、
+ <code>hide()</code> メソッドは終了処理を実装すれば良いと思います。
+</p>
+
+<p>
+ただし、 <code>hide()</code> メソッドには、リソース解放処理を記述してはいけません。
+リソース解放処理とは、 <code>Texture#dipose()</code> や、 <code>SpriteBatch#dispose()</code> などのことです。
+理由は後述します。
+</p>
+</div>
 </div>
 
-<div id="outline-container-sec-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Screenインタフェイス利用時の注意点</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> dispose()</h3>
+<div class="outline-text-3" id="text-4-2">
 <p>
-これまでの説明で、 <code>show()</code> メソッドは初期化処理、
- <code>hide()</code> メソッドは終了処理を実装すれば良いということがわかったと思います。
-ただし、注意すべきことがあります。
-それは、 <code>hide()</code> にはリソース解放処理を記述してはいけないということです。
+<code>dispose()</code> メソッドには、注意すべき重要なことがあります。
+それは何かというと、 <code>Screen#dispose()</code> はシステムから自動的に呼びだされないということです。
+<code>ApplicationListener#dispose()</code> とは扱いが違いますね。
+</p>
+
+<p>
+APIマニュアルにも記述されています。
+</p>
+<pre class="example">
+Screens are not disposed automatically. 
+You must handle whether you want to keep 
+screens around or dispose of them when another screen is set.
+</pre>
+<ul class="org-ul">
+<li><a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Game.html">http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Game.html</a>
+</li>
+</ul>
+
+<p>
+ゲームによって、リソースの解放タイミングは様々なので、
+このようにクライアントまかせになっているのかもしれません。
+(そうすると、Screenインタフェイスを使わずに全部自分で作ったほうがいいんじゃないかという気もしてきますが。)
+</p>
+
+<p>
+ということで、 <code>dispose()</code> は自分で呼びだす必要があります。
+</p>
+
+<p>
+<code>AplicationLisner</code> 利用時は、特になにも考えずに <code>ApplicationListener#dispose()</code>
+にリソース解放処理を記述しておけばよかったのですが、 <code>Screen</code> を利用する場合は、
+解放のタイミングを自分で制御しなくてはなりません。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> dispose()の方法</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+サンプルやドキュメントを呼んでもいまいちこの辺の方法がわかりません。
+とはいえ何もしないわけにもいきませんので、
+現時点での解放方法について、私なりのやりかたを考えました。
+他にも良い方法あるよ？ってかたがいたら教えてください。
+</p>
+</div>
+
+<div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> その1 hide() で解放する</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
 例えば、下記のように <code>Screen#render()</code> メソッドから <code>setScreen()</code> メソッドを呼びだすとします。
 </p>
 <div class="org-src-container">
@@ -368,9 +450,8 @@ Screenインタフェイスについては、ライフサイクルを確認し�
 </pre>
 </div>
 <p>
-このとき、現在実行中の <code>hide()</code> メソッドが呼ばれますね。
- <code>hide()</code> メソッドは下記のように実装していたとします。
-<code>leftButton</code> が使用しているテクスチャの開放処理を実装しています。
+このとき、現在実行中の <code>Screen</code> インスタンスの <code>hide()</code> メソッドが呼ばれます。
+ <code>hide()</code> メソッドは下記のようにテクスチャの開放処理を実装していたとします。
 </p>
 <div class="org-src-container">
 
@@ -406,75 +487,88 @@ Screenインタフェイスについては、ライフサイクルを確認し�
 しかしながら、最後に呼びだすなどのルールは忘れやすそうですし、
 強制性がないので個人的にはお勧めしません。
 </p>
-
-<p>
-ではどこに書くべきか。普通に考えたら、 <code>Scree#dispose()</code> ですよね。
-ずばりそのままの名前ですから。確かにそのとおりなのですが、
-ひとつ注意すべきことがあります。
-</p>
-
-<p>
-それは何かというと、 <code>Screen#dispose()</code> は <code>ApplicationListener#dispose()</code> と違って、
-システムから自動的に呼びだされないのです。
-</p>
-
-<p>
-APIマニュアルにも記述されています。
-</p>
-<pre class="example">
-Screens are not disposed automatically. 
-You must handle whether you want to keep 
-screens around or dispose of them when another screen is set.
-</pre>
-<ul class="org-ul">
-<li><a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Game.html">http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/Game.html</a>
-</li>
-</ul>
-
-<p>
-ゲームによって、リソースの解放タイミングは様々なので、
-このようにクライアントまかせになっているのかもしれません。
-(そうすると、Screenインタフェイスを使わずに全部自分で作ったほうがいいんじゃないかという気もしてきますが。)
-</p>
-
-<p>
-ということで、 <code>dispose()</code> は自分で呼びだす必要があります。
-具体的には、 <code>Game</code> クラスを継承したクラスの <code>dispose()</code> メソッドの中で、
-以下のように呼びだします。
-</p>
-
-<div class="org-src-container">
-
-<pre class="src src-java"><span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
-    <span class="org-keyword">super</span>.dispose();
-    getScreen().dispose();
-}
-</pre>
+</div>
 </div>
 
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> その2 Game#dispose() で全て解放する</h3>
+<div class="outline-text-3" id="text-5-2">
 <p>
-<code>getScreen()</code> メソッドによって現在処理中の <code>Screen</code> クラスのインスタンスを取得し、
-その <code>dispose()</code> メソッドを呼びだします。
+扱うリソースが少ないシンプルなゲームの場合に利用できる方法です。
 </p>
 
 <p>
-今回はこのように終了処理を実装しましたが、解放すべきリソースが少ない場合は、
 <code>Game#create()</code> でそのゲームの全リソースをロードし、
- <code>Game#dispose()</code> で全リソースを解放したほうが楽かもしれません
+<code>Game#dispose()</code> で全リソースを解放します。
+<code>Screen</code> クラスでは、リソース管理を一切しません。
 (スクリーンからこれらのリソースにアクセスするには、 <code>Game</code> のインスンタンス経由でアクセスします)。
 </p>
 
 <p>
-終了処理については、まだ自分の中で整理ができていないので、
-これ以上の言及はやめておきます。
+こうすれば、 <code>Screen</code> 毎にリソースの管理を気にせずにすむので楽ですね。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> その3 Game クラスを拡張する</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+今回採用した方法です。その1の方法を改良しました。
+</p>
+
+<p>
+Gameクラスを継承したクラスを少し改造します。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">LibGdxSample</span> <span class="org-keyword">extends</span> <span class="org-type">Game</span> {
+    <span class="org-keyword">private</span> <span class="org-type">Screen</span> <span class="org-variable-name">nextScreen</span>;
+        :
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> render() {
+        <span class="org-keyword">super</span>.render();
+        <span class="org-keyword">if</span> (nextScreen != <span class="org-constant">null</span>) {
+            <span class="org-keyword">super</span>.setScreen(nextScreen);
+            nextScreen = <span class="org-constant">null</span>;
+        }
+    }
+        :
+    <span class="org-c-annotation">@Override</span>
+    <span class="org-keyword">public</span> <span class="org-type">void</span> setScreen (<span class="org-type">Screen</span> <span class="org-variable-name">screen</span>) {
+        Gdx.app.log(LOG_TAG, <span class="org-string">"setScreen"</span>);
+        nextScreen = screen;
+    }
+        :
+}
+</pre>
+</div>
+<p>
+まず、 <code>nextScreen</code> というフィールドを新設します。
+そして <code>setScreen</code> メソッドをオーバライドし、
+<code>nextScreen</code> フィールドに <code>screen</code> をセットするだけの処理にします。
+そして、renderメソッドの最後で、 <code>nextScreen</code> フィールドがセットされたときのみ
+<code>setScreen()</code> を呼びだすようにします。
+</p>
+
+<p>
+このような仕組みを持つことで、
+<code>game.setScreen()</code> をいつでも呼びだすことが可能になります。
+なぜなら、 <code>Screen#hide()</code> の呼びだされるタイミングが必ず <code>render()</code> の一番最後になるからです。
+</p>
+
+<p>
+以上で、 <code>Screen#hide()</code> の実行されるタイミングに気を使うことなく、
+ <code>dispose()</code> 処理を実装できるようになります。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> ゲームっぽい何か</h2>
-<div class="outline-text-2" id="text-5">
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> ゲームっぽい何か</h2>
+<div class="outline-text-2" id="text-6">
 <p>
 さて、長い説明が終わってやっとゲームの説明です(といっても非常に単純なものですが)。
 内容は、上から落ちてくる魚を取るだけのゲームです。
@@ -498,6 +592,30 @@ screens around or dispose of them when another screen is set.
 <p>
 といった感じです。
 </p>
+
+<p>
+画像データは下記のツールを利用して作成しました。
+</p>
+<ul class="org-ul">
+<li><a href="http://takabosoft.com/edge">http://takabosoft.com/edge</a>
+</li>
+</ul>
+
+<p>
+効果音は下記のサイトで作成しました。
+</p>
+<ul class="org-ul">
+<li><a href="http://www.bfxr.net/">http://www.bfxr.net/</a>
+</li>
+</ul>
+
+<p>
+BGMは下記のサイトで作成しました。
+</p>
+<ul class="org-ul">
+<li><a href="http://soundation.com/">http://soundation.com/</a>
+</li>
+</ul>
 
 <p>
 プログラムの骨組みは、前回のものを踏襲しています。
@@ -541,9 +659,9 @@ libGDXとは関係ない部分で解説の必要なところもあるかもし�
 </p>
 </div>
 
-<div id="outline-container-sec-5-1" class="outline-3">
-<h3 id="sec-5-1"><span class="section-number-3">5.1</span> ソースコードについて</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> ソースコードについて</h3>
+<div class="outline-text-3" id="text-6-1">
 <p>
 今回は、ソースコードが4ファイルになってしまったため、コピペは大変だろうということで
 githubに載せることにしました。
@@ -564,9 +682,9 @@ githubに載せることにしました。
 </div>
 </div>
 
-<div id="outline-container-sec-5-2" class="outline-3">
-<h3 id="sec-5-2"><span class="section-number-3">5.2</span> アセットの管理について</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> アセットの管理について</h3>
+<div class="outline-text-3" id="text-6-2">
 <p>
 今回実装したゲームのアセットファイルは数えるほどしかありませんので、
 画像やサウンドの読み込みは、単純に読み込むだけでした。
@@ -582,14 +700,15 @@ githubに載せることにしました。
 </ul>
 <p>
 非同期読み込みや依存管理、キャッシュの管理など便利な機能を多く実装しているようですね。
+<code>Screen</code> 利用時の解放処理の煩雑さも、このクラスを利用すれば解決するのかもしれません。
 </p>
 </div>
 </div>
 </div>
 
-<div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> ゲーム中のフォントについて</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> ゲーム中のフォントについて</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 ゲーム中のフォントは、gebsite様の「Fantasy Gezone」フォントを利用させていただきました。
 ありがとうございます。
@@ -603,9 +722,9 @@ githubに載せることにしました。
 </div>
 </div>
 
-<div id="outline-container-sec-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> おわりに</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> おわりに</h2>
+<div class="outline-text-2" id="text-8">
 <p>
 次回予定している内容は、
 </p>
@@ -619,9 +738,9 @@ githubに載せることにしました。
 </div>
 </div>
 
-<div id="outline-container-sec-8" class="outline-2">
-<h2 id="sec-8"><span class="section-number-2">8</span> 参考書籍</h2>
-<div class="outline-text-2" id="text-8">
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> 参考書籍</h2>
+<div class="outline-text-2" id="text-9">
 <div class="figure" style="float:left">
 <a href="http://www.amazon.co.jp/gp/product/4844331132/ref=as_li_qf_sp_asin_il?ie=UTF8&camp=247&creative=1211&creativeASIN=4844331132&linkCode=as2&tag=ocha04-22"><img border="0" src="http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=4844331132&Format=_SL250_&ID=AsinImage&MarketPlace=JP&ServiceVersion=20070822&WS=1&tag=ocha04-22" ></a><img src="http://ir-jp.amazon-adsystem.com/e/ir?t=ocha04-22&l=as2&o=9&a=4844331132" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>
