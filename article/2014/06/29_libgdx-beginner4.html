@@ -428,7 +428,7 @@ screens around or dispose of them when another screen is set.
 サンプルやドキュメントを呼んでもいまいちこの辺の方法がわかりません。
 とはいえ何もしないわけにもいきませんので、
 現時点での解放方法について、私なりのやりかたを考えました。
-他にも良い方法あるよ？ってかたがいたら教えてください。
+他にも良い方法あるよ？って方がいたら教えてください。
 </p>
 </div>
 
@@ -547,7 +547,7 @@ Gameクラスを継承したクラスを少し改造します。
 まず、 <code>nextScreen</code> というフィールドを新設します。
 そして <code>setScreen</code> メソッドをオーバライドし、
 <code>nextScreen</code> フィールドに <code>screen</code> をセットするだけの処理にします。
-そして、renderメソッドの最後で、 <code>nextScreen</code> フィールドがセットされたときのみ
+更に <code>render()</code> メソッドの最後で、 <code>nextScreen</code> フィールドがセットされたときのみ
 <code>setScreen()</code> を呼びだすようにします。
 </p>
 
@@ -559,12 +559,35 @@ Gameクラスを継承したクラスを少し改造します。
 
 <p>
 以上で、 <code>Screen#hide()</code> の実行されるタイミングに気を使うことなく、
- <code>dispose()</code> 処理を実装できるようになります。
+ <code>dispose()</code> 処理を実装できるようになりました。
 </p>
-</div>
-</div>
-</div>
 
+<p>
+後は次のように、 <code>hide()</code> から <code>dispose()</code> 処理を呼びだせば良いですね。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-java"><span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">hide</span>() {
+    dispose();
+}
+
+<span class="org-c-annotation">@Override</span>
+<span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
+    music.dispose();
+    seGet.dispose();
+    seMiss.dispose();
+    batch.dispose();
+    font.dispose();
+    img.dispose();
+    bgImg.dispose();
+    shapeRenderer.dispose();
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
 
 <div id="outline-container-sec-6" class="outline-2">
 <h2 id="sec-6"><span class="section-number-2">6</span> ゲームっぽい何か</h2>
@@ -636,12 +659,8 @@ BGMは下記のサイトで作成しました。
 </div>
 
 <p>
-ゲームのプログラムは、ほとんどが今まで説明してきたlibGDXのテクニックでつくられてます。
-libGDXとは関係ない部分で解説の必要なところもあるかもしれませんが、本筋でないので今回は解説しません。
-</p>
-
-<p>
-一点だけ解説するとすれば、当たり判定のところでしょうか？
+ゲームのプログラムは、ほとんどが今まで説明してきたlibGDXの内容でつくられてます。
+なので詳しく説明しませんが、一点だけ解説するとすれば、当たり判定のところでしょうか。
 魚と猫の当り判定のコードは以下のようになっています。
 </p>
 <div class="org-src-container">
@@ -663,16 +682,11 @@ libGDXとは関係ない部分で解説の必要なところもあるかもし�
 <h3 id="sec-6-1"><span class="section-number-3">6.1</span> ソースコードについて</h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
-今回は、ソースコードが4ファイルになってしまったため、コピペは大変だろうということで
-githubに載せることにしました。
+今回は、ソースコードが4ファイルになってしまったため、githubに載せることにしました。
 </p>
 
 <p>
 <a href="https://github.com/mikio/fishcatch">https://github.com/mikio/fishcatch</a>
-</p>
-
-<p>
-※Windowsの方はちょっと面倒かもしれません。ただ、最近githubもWindows対応してるようです。
 </p>
 
 <p>
