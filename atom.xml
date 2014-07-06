@@ -8,6 +8,13 @@
     <author><name>mikio_kun</name></author>
 
         <entry>
+        <title>libGDX入門 その5 ゲームデータの保存</title>
+        <link href="http://mikio.github.io/article/2014/07/05_libgdx-beginner5.html" />
+        <updated>2014-07-05T00:00:00</updated>
+        <id>http://mikio.github.io/article/2014/07/05_libgdx-beginner5.html</id>
+        <content type="html"></content>
+    </entry>
+        <entry>
         <title>libGDX入門 その4 画面遷移</title>
         <link href="http://mikio.github.io/article/2014/06/29_libgdx-beginner4.html" />
         <updated>2014-06-29T00:00:00</updated>

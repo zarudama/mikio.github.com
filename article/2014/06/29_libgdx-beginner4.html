@@ -96,7 +96,7 @@
 <h2 id="sec-1"><span class="section-number-2">1</span> はじめに</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<a href="http://libgdx.badlogicgames.com/">libGDX</a> を勉強するついでに解説記事を書くシリーズ4回目です。
+<a href="http://libgdx.badlogicgames.com/">libGDX</a> を勉強するついでに解説記事を書く <a href="http://mikio.github.io/tag/libGDX%E5%85%A5%E9%96%80.html">シリーズ</a> 4回目です。
 </p>
 
 <p>
@@ -585,6 +585,33 @@ Gameクラスを継承したクラスを少し改造します。
 }
 </pre>
 </div>
+
+<p>
+最後に注意というか知っていたほうが良い知識として、
+<code>Screen#hide()</code> は、 <code>Game#dispose()</code> からも自動で呼びだされるということを述べておきます。
+</p>
+<pre class="example">
+public abstract class Game implements ApplicationListener {
+     :
+	public void dispose () {
+		if (screen != null) screen.hide();
+	}
+     :
+}
+</pre>
+<p>
+なので、 <code>Game#dispose()</code> 内でわざわざ自分で  <code>Screen#dispose()</code> を呼びだす必要はありません。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-java"><span class="org-keyword">public</span> <span class="org-type">void</span> <span class="org-function-name">dispose</span>() {
+    <span class="org-keyword">super</span>.dispose();
+    <span class="org-type">Screen</span> <span class="org-variable-name">screen</span> = getScreen();
+    <span class="org-keyword">if</span> (screen != <span class="org-constant">null</span>) screen.dispose();
+}
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -807,6 +834,7 @@ libGDXの解説ではないけれど、その思想は当然libGDXにも引き�
     </nav>
     <nav>
       <ul class="pager">
+                <li class="prev"><a href="/article/2014/07/05_libgdx-beginner5.html">&laquo;&nbsp;libGDX入門 その5 ゲームデータの保存</a></li>
         
         &nbsp;&nbsp;
                 <li class="next"><a href="/article/2014/06/21_cygwin-tmux.html">cygwinにtmuxを導入&nbsp;&raquo;</a></li>
