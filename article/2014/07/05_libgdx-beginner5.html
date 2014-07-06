@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A layout example that shows off a responsive pricing table.">
-    <title>libGDX入門 その5 ゲームデータの保存|ざる魂</title>
+    <title>libGDX入門 その05 ゲームデータの保存|ざる魂</title>
 
     <!--[if lte IE 8]>
     <link rel="stylesheet" href="/css/main-grid-old-ie.css">
@@ -53,7 +53,7 @@
 
         <div class="article-header">
   <div class="title">
-    <h1><a href="">libGDX入門 その5 ゲームデータの保存</a></h1>
+    <h1><a href="">libGDX入門 その05 ゲームデータの保存</a></h1>
   </div>
   <p class="date">2014/7/05</p>
 </div>
@@ -86,7 +86,7 @@
 </p>
 
 <p>
-<a href="http://mikio.github.io/article/2014/06/19_libgdx-beginner3.html">前回</a> は、以下のことを学びました。
+<a href="http://mikio.github.io/article/2014/06/29_libgdx-beginner4.html">前回</a> は、以下のことを学びました。
 </p>
 
 <ul class="org-ul">
@@ -413,7 +413,7 @@ iOSの場合はどこにどんな状態で保存されるかわかりません(�
 
 <pre class="src src-java"><span class="org-keyword">public</span> <span class="org-keyword">class</span> <span class="org-type">FishcatchGame</span> <span class="org-keyword">extends</span> <span class="org-type">Game</span> {
     :
-    <span class="org-keyword">public</span> Settings settings;
+    <span class="org-keyword">private</span> Settings settings;
 
     <span class="org-keyword">public</span> <span class="org-type">boolean</span> <span class="org-function-name">seOn</span>() {
         <span class="org-keyword">return</span> settings.seOn();
@@ -481,11 +481,6 @@ iOSの場合はどこにどんな状態で保存されるかわかりません(�
 <p>
 次回からは、 <code>Scene2d</code> 、 広告の実装、 Googleの「<a href="https://play.google.com/store/apps/details?id=com.google.android.play.games">Google Play ゲーム</a>」あたりを扱っていきたいなと思います。
 </p>
-
-<p>
-しかしその前にこれまで書いてきたコードがあまりに汚ないので(思いつきでベタに実装していった)、
-リファクタリングして別リポジトリに整理したい!と考えております。
-</p>
 </div>
 </div>
 
@@ -544,7 +539,7 @@ libGDXの実装によっては、非同期で書き出している可能性も�
              class="hatena-bookmark-button"
              data-hatena-bookmark-layout="standard-balloon"
              data-hatena-bookmark-lang="ja"
-             data-hatena-bookmark-title="libGDX入門 その5 ゲームデータの保存"
+             data-hatena-bookmark-title="libGDX入門 その05 ゲームデータの保存"
              title="このエントリーをはてなブックマークに追加">
             <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png"
                  alt="このエントリーをはてなブックマークに追加"
@@ -570,7 +565,7 @@ libGDXの実装によっては、非同期で書き出している可能性も�
       <ul class="pager">
         
         &nbsp;&nbsp;
-                <li class="next"><a href="/article/2014/06/29_libgdx-beginner4.html">libGDX入門 その4 画面遷移&nbsp;&raquo;</a></li>
+                <li class="next"><a href="/article/2014/06/29_libgdx-beginner4.html">libGDX入門 その04 画面遷移&nbsp;&raquo;</a></li>
         
       </ul>
     </nav>
