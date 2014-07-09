@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive pricing table.">
+    <title>org-mode でファイルを開くとエラーが発生|ざる魂</title>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/main-grid-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/main-grid.css">
+    <!--<![endif]-->
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/layouts/pricing-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/layouts/pricing.css">
+    <!--<![endif]-->
+
+        <link href="/atom.xml" rel="alternate" title="ざる魂" type="application/atom+xml" />
+    
+
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css" />
+    
+
+        <link rel="stylesheet" href="/css/main.css" />
+    
+
+  </head>
+  <body>
+    <header class="global-header">
+      <div class="container">
+        <div class="site-header">
+          <a href="/"><img src="/img/zarudama-logo.png"></img></a>
+          <p>真似て学んで「まねぶ」サル。知られざる我が魂。</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="l-content">
+      <div class="information ">
+
+        <div class="pure-menu pure-menu-open pure-menu-horizontal">
+          <ul>
+            <li><a href="/archives.html">Archives</a></li>
+            <li><a href="/tags.html">Tags</a></li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
+        </div>
+
+        <div class="article-header">
+  <div class="title">
+    <h1><a href="">org-mode でファイルを開くとエラーが発生</a></h1>
+  </div>
+  <p class="date">2014/7/07</p>
+</div>
+
+<div class="content">
+  <p>
+org-modeをcask経由で新しくしたところ、挙動がおかしくなってしまった。
+*.orgファイルを開くと、下記のようなエラーが <code>*Message*</code> バッファに表示され、
+そのファイルが更新された状態になってしまう。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">Invalid <span class="org-keyword">function</span>: org-with-silent-modifications
+</pre>
+</div>
+
+<p>
+似たような症状が下記にも報告されている。
+</p>
+<ul class="org-ul">
+<li><a href="http://lists.gnu.org/archive/html/emacs-orgmode/2014-06/msg00622.html">http://lists.gnu.org/archive/html/emacs-orgmode/2014-06/msg00622.html</a>
+</li>
+</ul>
+
+<p>
+上記スレッドでは、
+</p>
+<pre class="example">
+...Emacs -q and reinstalling from elpa...
+</pre>
+<p>
+としたら解決したとあるが具体的なコマンド例がないのでよくわからなかった。
+</p>
+
+<p>
+かわりにcask管理のorgを取得しなおした。こんな感じ。
+</p>
+<div class="org-src-container">
+
+<pre class="src src-sh">$ rm -rf ~/.emacs.d/.cask/24.3.1/elpa/org-plus-contrib-20140707/
+$ cd ~/.emacs.d/
+$ cask
+</pre>
+</div>
+
+<p>
+その際、バージョンをひとつ前の2.8.6に変更
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(source org)
+(depends-on <span class="org-string">"org-plus-contrib"</span> <span class="org-string">"2.8.6"</span>)
+</pre>
+</div>
+
+<p>
+これでエラーにならなくなった。しかし、バージョンを確認すると最新の2.8.7bになっている。
+なのでバージョン指定は不要かもしれない。
+</p>
+
+<p>
+Caskの指定方法が間違っていたのだろうか？
+</p>
+  <footer class="article-footer">
+    <nav class="social-buttons">
+      <ul>
+        <li class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li class="hatebu">
+          <a href="http://b.hatena.ne.jp/entry/"
+             class="hatena-bookmark-button"
+             data-hatena-bookmark-layout="standard-balloon"
+             data-hatena-bookmark-lang="ja"
+             data-hatena-bookmark-title="org-mode でファイルを開くとエラーが発生"
+             title="このエントリーをはてなブックマークに追加">
+            <img src="http://b.st-hatena.com/images/entry-button/button-only@2x.png"
+                 alt="このエントリーをはてなブックマークに追加"
+                 width="20" height="20" style="border: none;" /></a>
+            <script type="text/javascript"
+                    src="http://b.st-hatena.com/js/bookmark_button.js"
+                    charset="utf-8" async="async"></script>
+        </li>
+        <li class="pocket">
+          <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+          <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+        </li>
+      </ul>
+    </nav>
+    <nav class="tag">
+      <ul>
+                <li><span><a href="/tag/emacs.html">emacs</a></span></li>
+        
+      </ul>
+    </nav>
+    <nav>
+      <ul class="pager">
+        
+        &nbsp;&nbsp;
+                <li class="next"><a href="/article/2014/07/05_libgdx-beginner5.html">libGDX入門 その05 ゲームデータの保存&nbsp;&raquo;</a></li>
+        
+      </ul>
+    </nav>
+  </footer>
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+   var disqus_shortname = 'mikiokunblog';
+
+   /* * * DON'T EDIT BELOW THIS LINE * * */
+   (function() {
+     var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+     dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+                <script type="text/javascript" src="/js/main.js"></script>
+        
+        <script type="text/javascript">
+
+         var _gaq = _gaq || [];
+         _gaq.push(['_setAccount', 'UA-30203998-1']);
+         _gaq.push(['_trackPageview']);
+
+         (function() {
+           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+         })();
+
+        </script>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="misaki-logo">
+        <p>
+          <a href="https://github.com/mikio/misaki-orgmode" title="generated by Misaki orgmode">
+            <img src="/img/misaki-orgmode-large-banner.png"/></a>
+        </p>
+        <p>Based on <a href="https://github.com/liquidz/misaki">Miaski</a>.</p>
+        <p>This site is built with <a href="http://purecss.io">Pure</a> CSS Framework.</p>
+        <p><a href="http://twitter.com/mikio_kun">@mikio_kun</a> 2014</p>
+      </div>
+    </div>
+  </body>
+</html>
