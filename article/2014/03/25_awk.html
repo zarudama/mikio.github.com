@@ -66,10 +66,88 @@
 <li><a href="#sec-1">1. 基本</a></li>
 <li><a href="#sec-2">2. デリミタを変更するには</a></li>
 <li><a href="#sec-3">3. マッチした文字列だけを表示</a></li>
-<li><a href="#sec-4">4. 参考</a></li>
+<li><a href="#sec-4">4. タブを出力する例</a></li>
+<li><a href="#sec-5">5. 参考</a></li>
 </ul>
 </div>
 </div>
+<p>
+2014/09/08 00:00:00 218.213.143.121 200 "<i>qg" "?MT=%E9%A1%94%E5%89%83%E3%82%8A+%E9%A0%BB%E5%BA%A6&amp;IE=UTF-8" "oshietegoo/2.0 (<a href="http://help.goo.ne.jp/contact">http://help.goo.ne.jp/contact</a></i>)" "-" "-" "-"
+2014/09/08 00:00:00 218.213.143.121 404 "<i>qg" "?MT=%E9%A1%94%E5%89%83%E3%82%8A+%E9%A0%BB%E5%BA%A6&amp;IE=UTF-8" "oshietegoo/2.0 (<a href="http://help.goo.ne.jp/contact">http://help.goo.ne.jp/contact</a></i>)" "-" "-" "-"
+</p>
+
+<p>
+web31-wsrch
+202.217.72.196
+202.217.72.197
+202.217.72.200
+202.217.72.201
+202.217.72.202
+202.217.72.203
+202.217.72.204
+202.217.72.205
+202.217.72.80
+</p>
+
+<p>
+web32-wsrch
+202.217.72.197
+202.217.72.200
+202.217.72.201
+202.217.72.202
+202.217.72.204
+202.217.72.205
+</p>
+
+<p>
+web33-wsrch
+202.217.72.196
+202.217.72.197
+202.217.72.200
+202.217.72.201
+202.217.72.202
+202.217.72.203
+202.217.72.204
+202.217.72.205
+</p>
+
+<p>
+web34-wsrch
+202.217.72.196
+202.217.72.197
+202.217.72.199
+202.217.72.200
+202.217.72.201
+202.217.72.202
+202.217.72.204
+202.217.72.205
+202.217.72.80
+</p>
+
+<p>
+web35-wsrch
+202.217.72.196
+202.217.72.197
+202.217.72.199
+202.217.72.200
+202.217.72.201
+202.217.72.202
+202.217.72.203
+202.217.72.204
+202.217.72.205
+</p>
+
+<p>
+web36-wsrch
+202.217.72.196
+202.217.72.197
+202.217.72.200
+202.217.72.201
+202.217.72.202
+202.217.72.204
+202.217.72.205
+</p>
+
 
 <div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> 基本</h2>
@@ -90,7 +168,7 @@
 </li>
 </ul>
 <pre class="example">
-awk '$4 = "200" {print $4,$5}'# $4が200のとき、$4,$5を表示
+awk '$4 == "200" {print $4,$5}'# $4が200のとき、$4,$5を表示
 awk '$4 != "200" { print }'   # $4が200でないとき、1行まるごと表示
 awk '$4 ~ /200/ { print }'    # $4が200のとき、1行まるごと表示(正規表現)
 awk '$1 ~ /^a/ { print}'      # $1が"a"で始まるとき、表示(正規表現)
@@ -154,8 +232,22 @@ Fオプションを使用する。カンマの場合は以下のとおり。
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> 参考</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> タブを出力する例</h2>
 <div class="outline-text-2" id="text-4">
+<p>
+整形する際、区切り文字としてタブを出力したい場合の例。
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-sh">$ cat hoge.txt |awk <span class="org-string">'{print $1"\t"$2}'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 参考</h2>
+<div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li><a href="http://d.hatena.ne.jp/Rocco/20071120/p6">http://d.hatena.ne.jp/Rocco/20071120/p6</a>
 </li>
