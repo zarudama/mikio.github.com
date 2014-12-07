@@ -66,12 +66,13 @@
 <li><a href="#sec-1">1. EmacsとVim</a></li>
 <li><a href="#sec-2">2. それでもEmacsを選ぶ理由</a></li>
 <li><a href="#sec-3">3. Evilとは、Vimの操作性を備えたelisp実行環境である。</a></li>
-<li><a href="#sec-4">4. 迷ったらEvil。</a></li>
-<li><a href="#sec-5">5. Evil-modeでVimの操作性とEmacsの拡張性を両方手に入れる!</a></li>
-<li><a href="#sec-6">6. 最後にEvilを使う気になった人へのちょっとしたメモ</a>
+<li><a href="#sec-4">4. Evil-modeでVimの操作性とEmacsの拡張性を両方手に入れる!</a></li>
+<li><a href="#sec-5">5. 迷ったらEvil(Emacs)。</a></li>
+<li><a href="#sec-6">6. 最後に</a></li>
+<li><a href="#sec-7">7. Evilを使う気になった人へのちょっとしたメモ</a>
 <ul>
-<li><a href="#sec-6-1">6.1. Emacserじゃない人向け</a></li>
-<li><a href="#sec-6-2">6.2. Emacser向け</a></li>
+<li><a href="#sec-7-1">7.1. Emacserじゃない人向け</a></li>
+<li><a href="#sec-7-2">7.2. Emacser向け</a></li>
 </ul>
 </li>
 </ul>
@@ -170,9 +171,6 @@ LispプログラマにはEmacserが多いですし<sup><a id="fnr.1" name="fnr.1
 <p>
 そんな時Evilに出会ったのです。EmacsなのにVim。「俺の求めていたのはこれだー」と思いました。
 なんせEmacsLispで書かれたVimなので「Lispで拡張できる最高やん」と思ったのです。
-</p>
-
-<p>
 EvilはEmacsでもあるのでもちろんEmacsの沢山の魅力的な拡張がそのまま動かせます。
 </p>
 
@@ -210,55 +208,29 @@ EvilはEmacsでもあるのでもちろんEmacsの沢山の魅力的な拡張が
 </p>
 
 <p>
-EmcasLispという実行環境の上にEmacsLispで書かれたVimを模倣したエディタが動いているのです。
-もうこれは、Evilは EmacsでもVim でもなく第３のエディタとっいってもいいのではないでしょうか？
+Emacsの豊富な資産を継承しつつも、Vimの操作性を高い再現度で手にいれることができる、それがEvilなのです。
+EmcasLispという実行環境の上にEmacsLispで書かれたVimを模倣したエディタが動く。
+もうこれは、EmacsでもVim でもなく第３のエディタとっいってもいいのではないでしょうか？
 </p>
 </div>
 </div>
 
 <div id="outline-container-sec-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> 迷ったらEvil。</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Evil-modeでVimの操作性とEmacsの拡張性を両方手に入れる!</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-今例えば新人くんにどのエディタ使えばいいですかと聞かれたらこう答えます。
+Evilの魅力をちょっとまとめてみます。
 </p>
 <ul class="org-ul">
-<li>VimもEmacsもどちらも操作がわからない場合はEmacsを薦める。
+<li>Evilは、vimの基本的な操作は大体通用する。
 </li>
-<li>最初からVimにいってしまうとなかなかEmacsに戻れなくなる。
+<li>Evil(vim)は、(達人になれば)呪文をとなえるように編集ができる。それが気持ちよさにつながる。
 </li>
-<li>Emacsをメインで覚えたとしても、結局viのキー操作は覚えるはめになる。
+<li>Evil(vim)は、小指への負担が少ない(重要)。
 </li>
-<li>だったらEmacsから覚えとけ
+<li>Evilは、EmacsだからEditorなのに画像が表示できる。その気になれば <a href="http://d.hatena.ne.jp/kiwanami/20110413/1302709536">3Dゲーム</a> もつくれるぜ!
 </li>
-<li>Emacsの基本を覚え、かつviもある程度覚えたらいよいよEvilの出番である。
-</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-sec-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> Evil-modeでVimの操作性とEmacsの拡張性を両方手に入れる!</h2>
-<div class="outline-text-2" id="text-5">
-<p>
-ちょっとまとめてみます。
-</p>
-<ul class="org-ul">
-<li>Evilとは、Vimの効率的なテキスト編集能力と、lisp子孫の機能拡張言語を備えた第3のエディタである。
-<ul class="org-ul">
-<li>elispはまがりなりにもlispの子孫。
-</li>
-</ul>
-</li>
-<li>Vimを選ばない理由のひとつにEmacsは画像が表示できる。その気になれば <a href="http://d.hatena.ne.jp/kiwanami/20110413/1302709536">3Dゲーム</a> もつくれるぜ
-</li>
-<li>Vimの操作になぜこだわるのかといえば、Vimは呪文をとなえるように編集ができるから。それが気持ちよさにつながる。
-</li>
-<li>モード切り替えは慣れればなんの苦痛もない。
-</li>
-<li>小指への負担がない(重要)。
-</li>
-<li>日本語編集にも強いVimとして使用できる。
+<li>Evilは、日本語編集にも強いVimとして使用できる。
 <ul class="org-ul">
 <li>skkが簡単に使える。
 </li>
@@ -266,22 +238,55 @@ EmcasLispという実行環境の上にEmacsLispで書かれたVimを模倣し�
 </li>
 </ul>
 </li>
+<li>Evilとは、Vimの効率的なテキスト編集能力と、lisp子孫の機能拡張言語を備えた第3のエディタである。
+<ul class="org-ul">
+<li>EmacslispはまがりなりにもLispの子孫。言語自体にパワーある。
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 迷ったらEvil(Emacs)。</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+EmacsとVimどちらを使えばいいのか迷っている場合、私はEmacsを進めます。
+Emacs使いは、結局必要に迫られてviを操作することが多いです。
+それに比べてvi使いがEmacsの操作もできることは少ない気がします。
+viやvimの人がわざわざEmacsを操作する機会がないからですね。
+であれば、Emacserのほうが両方の操作を覚えられるという点でお得です(面倒と考えずポジティブにいきましょう)。
+Evilは、VimとEmacs両方の操作能力を求められので、EmacsもVimも全く知らない人がいきなりEvilから始めるのは
+あまりお勧めできません。ある程度両方の操作をマスターしてからのほうがいいでしょう。
+そしてその順序は上述のとおりEmacsからのほうが良いと思います。
+</p>
+</div>
+</div>
+
 <div id="outline-container-sec-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> 最後にEvilを使う気になった人へのちょっとしたメモ</h2>
+<h2 id="sec-6"><span class="section-number-2">6</span> 最後に</h2>
 <div class="outline-text-2" id="text-6">
+<p>
+どうでしょうか？ちょっとはEvilに興味を持っていただけたしょうか？
+面倒くさそうだなって思う人のほうが多そうな気もすごくするのですが、
+少しでも試してみようと思うかたが増えたら幸いです(この記事自体、既にEvilを使ってる人しか読まなそうでけどね)。
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Evilを使う気になった人へのちょっとしたメモ</h2>
+<div class="outline-text-2" id="text-7">
 <p>
 EmacsとVimはコマンド体系が喧嘩しまくる感じです。なのでちょっとした基本は最初に知っておいたほうがいいです。
 とりあえずすぐに思いついたものだけ。
 </p>
 </div>
 
-<div id="outline-container-sec-6-1" class="outline-3">
-<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Emacserじゃない人向け</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Emacserじゃない人向け</h3>
+<div class="outline-text-3" id="text-7-1">
 <ul class="org-ul">
 <li><code>C-g</code> は Vim の ESC みたいなもの。困ったらこれを連打。
 </li>
@@ -295,9 +300,9 @@ EmacsとVimはコマンド体系が喧嘩しまくる感じです。なのでち
 </div>
 </div>
 
-<div id="outline-container-sec-6-2" class="outline-3">
-<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Emacser向け</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Emacser向け</h3>
+<div class="outline-text-3" id="text-7-2">
 <ul class="org-ul">
 <li>迷ったら <code>C-z</code> これでEmacsキーバインドになる。
 </li>
